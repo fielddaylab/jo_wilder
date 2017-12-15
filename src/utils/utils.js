@@ -791,8 +791,8 @@ var animation = function()
   self.src;
 
   self.animations = [];
-  //self.animations[ANIM_NULL] = []; for(var i = 115; i <= 115; i++) self.animations[ANIM_NULL].push(i);
-  //self.animations[ANIM_IDLE] = []; for(var i =   0; i <=   6; i++) self.animations[ANIM_BEGIN].push(i);
+  //self.animations[ANIM_NULL] = []; for(var i = 0; i <= 1; i++) self.animations[ANIM_NULL].push(i);
+  //self.animations[ANIM_IDLE] = []; for(var i = 2; i <= 3; i++) self.animations[ANIM_IDLE].push(i);
 
   self.cur_anim = 0;//ANIM_NULL;
   self.cur_anim_i = 0;
@@ -814,6 +814,21 @@ var animation = function()
     self.anim_queue = [];
   }
 
+  self.transition = function()
+  {
+    switch(self.cur_anim)
+    {
+    /*
+      case ANIM_IDLE:
+        self.cur_anim_i = 0;
+      break;
+    */
+      default:
+        self.cur_anim = 0; //ANIM_NULL;
+        self.cur_anim_i = 0;
+    }
+  }
+
   self.tick = function()
   {
     frame_delay_i = (frame_delay_i + 1)%self.frame_delay;
@@ -830,22 +845,12 @@ var animation = function()
       }
       else
       {
-        switch(self.cur_anim)
-        {
-        /*
-          case ANIM_IDLE:
-            self.cur_anim_i = 0;
-          break;
-        */
-          default:
-            self.cur_anim = 0; //ANIM_NULL;
-            self.cur_anim_i = 0;
-        }
+        self.transition();
       }
     }
   }
 
-  self.draw = function()
+  self.draw = function(ctx)
   {
     ctx.drawImage(self.src[self.animations[self.cur_anim][self.cur_anim_i]],self.x,self.y,self.w,self.h);
   }

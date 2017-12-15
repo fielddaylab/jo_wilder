@@ -43,7 +43,6 @@ body,div
 
 <script type="text/javascript">
 var g;
-var d;
 function resize()
 {
   var w = window.innerWidth;
@@ -56,16 +55,9 @@ function begin()
   var h = 420;
   var content          = document.getElementById("content");
   var stage_container  = document.getElementById("stage_container");
-  var shadow_container = document.getElementById("shadow_container");
-  var shadow           = document.getElementById("shadow");
-  var debug_div        = document.getElementById("debug_div");
   content.style.width          = w; content.style.height          = h;
   stage_container.style.width  = w; stage_container.style.height  = h;
-  shadow_container.style.width = w; shadow_container.style.height = h; shadow_container.style.top = (h+2)+"px";
-  shadow.style.width           = w;
-  debug_div.style.width        = w; debug_div.style.height        = w;
 
-  d = new Debugger({source:debug_div});
   g = new Game({width:w,height:h,container:"stage_container"});
   g.begin();
 }
@@ -79,24 +71,7 @@ window.addEventListener("load",begin,false);
 
 <div id="content" style="margin:50px auto; position:relative;">
   <div id="stage_container" style="position:absolute; top:0px; left:0px; user-select:none;"> </div>
-  <div id="shadow_container" style="position:absolute; left:0px; top:322px; pointer-events:none; user-select:none;">
-    <img id="shadow" src="assets/shadow.png" style="display:block; pointer-events:none; user-select:none;"/>
-  </div>
-  <div id="debug_div" style="display:block; position:absolute; top:0px; left:0px; pointer-events:none; user-select:none;"> </div>
 </div>
-
-<!-- only for use with dom.js
-<div id="fade" style="pointer-events:none; display:none; width:100%; height:100%; background-color:rgba(255,255,255,0.5); position:absolute; top:0px; left:0px;">
-</div>
-
-<div id="bottom_display" style="display:block; position:fixed; bottom:-200px; width:100%; height:200px; background-color:rgba(255,255,255,0.8);">
-  <div id="bottom_text" style="position:absolute; top:20px; left:20px; width:100px;">
-  </div>
-  <div id="bottom_button" style="width:100px; height:20px; position:absolute; right:20px; top:20px; background-color:#BBBBBB;">
-    Continue
-  </div>
-</div>
--->
 
 </body>
 </html>
