@@ -117,11 +117,11 @@ var ptWithin = function(x,y,w,h,ptx,pty) { return (ptx >= x && ptx <= x+w && pty
 var ptNear = function(x,y,r,ptx,pty) { var dx = ptx-x; var dy = pty-y; return (dx*dx+dy*dy) < r*r; }
 var rectCollide = function(ax,ay,aw,ah,bx,by,bw,bh) { return ax < bx+bw && bx < ax+aw && ay < by+bh && by < ay+ah; }
 
-var ptWithinObj = function(obj,ptx,pty)
+var ptWithinBox = function(box,ptx,pty)
 {
-  return (ptx >= obj.x && ptx <= obj.x+obj.w && pty >= obj.y && pty <= obj.y+obj.h);
+  return (ptx >= box.x && ptx <= box.x+box.w && pty >= box.y && pty <= box.y+box.h);
 }
-var objWithinObj = function(obja, objb)
+var boxWithinBox = function(boxa, boxb)
 {
   console.log("not done!");
   return false;
@@ -130,9 +130,9 @@ var worldPtWithin = function(wx, wy, ww, wh, ptx, pty)
 {
   return (ptx >= wx-(ww/2) && ptx <= wx+(ww/2) && pty >= wy-(wh/2) && pty <= wy+(wh/2));
 }
-var worldPtWithinObj = function(obj, ptx, pty)
+var worldPtWithinBox = function(box, ptx, pty)
 {
-  return (ptx >= obj.wx-(obj.ww/2) && ptx <= obj.wx+(obj.ww/2) && pty >= obj.wy-(obj.wh/2) && pty <= obj.wy+(obj.wh/2));
+  return (ptx >= box.wx-(box.ww/2) && ptx <= box.wx+(box.ww/2) && pty >= box.wy-(box.wh/2) && pty <= box.wy+(box.wh/2));
 }
 
 //conversions
@@ -223,43 +223,43 @@ var polarToCart = function(polar,cart)
 //short name- will be used often to place elements by percent, while guaranteeing integer results
 var p    = function(percent, of) { return Math.floor(percent * of); }
 var invp = function(      n, of) { return n/of; }
-var setBox = function(obj, x,y,w,h)
+var setBox = function(box, x,y,w,h)
 {
-  obj.x = x;
-  obj.y = y;
-  obj.w = w;
-  obj.h = h;
+  box.x = x;
+  box.y = y;
+  box.w = w;
+  box.h = h;
 }
 
 //camera
 var screenSpaceX = function(cam, canv, x) { return (((( x)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;  }
 var screenSpaceY = function(cam, canv, y) { return ((((-y)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height; }
-var screenSpace  = function(cam, canv, obj)
+var screenSpace  = function(cam, canv, box)
 {
   //assumng xywh counterparts in world space (wx,wy,ww,wh,etc...)
-  //where wx,wy is *center* of obj and cam
+  //where wx,wy is *center* of box and cam
   //so cam.wx = 0; cam.ww = 1; would be a cam centered at the origin with visible range from -0.5 to 0.5
   //output xywh assume x,y is top left (ready to be 'blit' via canvas api)
-  obj.w = (obj.ww/cam.ww)*canv.width;
-  obj.h = (obj.wh/cam.wh)*canv.height;
-  obj.x = (((( obj.wx-obj.ww/2)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;
-  obj.y = ((((-obj.wy-obj.wh/2)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height;
+  box.w = (box.ww/cam.ww)*canv.width;
+  box.h = (box.wh/cam.wh)*canv.height;
+  box.x = (((( box.wx-box.ww/2)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;
+  box.y = ((((-box.wy-box.wh/2)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height;
 }
 var worldSpaceX = function(cam, canv, x) { return ((x/canv.width) -0.5)* cam.ww + cam.wx; }
 var worldSpaceY = function(cam, canv, y) { return ((y/canv.height)-0.5)*-cam.wh + cam.wy; }
 var worldSpaceW = function(cam, canv, w) { return (w/canv.width)*cam.ww; }
 var worldSpaceH = function(cam, canv, h) { return (h/canv.height)*cam.wh; }
-var worldSpaceCoords = function(cam, canv, obj) //opposite of screenspace, doesn't alter w/h (to preserve fp precision)
+var worldSpaceCoords = function(cam, canv, box) //opposite of screenspace, doesn't alter w/h (to preserve fp precision)
 {
-  obj.wx = (((obj.x/canv.width) -0.5)* cam.ww + cam.wx)+obj.ww/2;
-  obj.wy = (((obj.y/canv.height)-0.5)*-cam.wh + cam.wy)-obj.wh/2;
+  box.wx = (((box.x/canv.width) -0.5)* cam.ww + cam.wx)+box.ww/2;
+  box.wy = (((box.y/canv.height)-0.5)*-cam.wh + cam.wy)-box.wh/2;
 }
-var worldSpace = function(cam, canv, obj) //opposite of screenspace
+var worldSpace = function(cam, canv, box) //opposite of screenspace
 {
-  obj.wx = (((obj.x/canv.width) -0.5)* cam.ww + cam.wx)+obj.ww/2;
-  obj.wy = (((obj.y/canv.height)-0.5)*-cam.wh + cam.wy)-obj.wh/2;
-  obj.ww = (obj.w/canv.width)*cam.ww;
-  obj.wh = (obj.h/canv.height)*cam.wh;
+  box.wx = (((box.x/canv.width) -0.5)* cam.ww + cam.wx)+box.ww/2;
+  box.wy = (((box.y/canv.height)-0.5)*-cam.wh + cam.wy)-box.wh/2;
+  box.ww = (box.w/canv.width)*cam.ww;
+  box.wh = (box.h/canv.height)*cam.wh;
 }
 
 function lensqr(x,y)
@@ -805,6 +805,13 @@ var animation = function()
   self.enqueueAnim = function(anim)
   {
     self.anim_queue.push(anim);
+  }
+
+  self.injectAnim = function(anim)
+  {
+    self.cur_anim = anim;
+    self.cur_anim_i = 0;
+    frame_delay_i = 0;
   }
 
   self.swapAnim = function(anim)
