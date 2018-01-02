@@ -1,0 +1,13 @@
+var ENUM;
+
+ENUM = 0;
+var ANIM_NULL = ENUM; ENUM++;
+var ANIM_IDLE = ENUM; ENUM++;
+var ANIM_WALK = ENUM; ENUM++;
+var ANIM_ACT  = ENUM; ENUM++;
+
+ENUM = 0;
+var STATE_NULL = ENUM; ENUM++;
+var STATE_IDLE = ENUM; ENUM++;
+var STATE_WALK = ENUM; ENUM++;
+var STATE_ACT  = ENUM; ENUM++;
