@@ -75,8 +75,8 @@ var GamePlayScene = function(game, stage)
     {
       var dx = self.toX-self.x;
       var dy = self.toY-self.y;
-      if(dx >  2) dx =  2;
-      if(dx < -2) dx = -2;
+      if(dx >  2) { dx =  2; self.anim.flip = 0; }
+      if(dx < -2) { dx = -2; self.anim.flip = 1; }
       if(dy >  2) dy =  2;
       if(dy < -2) dy = -2;
 
@@ -112,7 +112,7 @@ var GamePlayScene = function(game, stage)
   {
     clicker = new Clicker({source:canvas});
     my_person = new person();
-    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){my_person.toX = evt.doX;my_person.toY = evt.doY;}};
+    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ my_person.toX = evt.doX-my_person.w/2; my_person.toY = evt.doY-my_person.h/2; }};
   };
 
   self.tick = function()

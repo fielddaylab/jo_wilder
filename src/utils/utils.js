@@ -788,6 +788,7 @@ var animation = function()
   self.w = 0;
   self.h = 0;
 
+  self.flip = 0;
   self.src;
 
   self.animations = [];
@@ -852,7 +853,11 @@ var animation = function()
 
   self.draw = function(ctx)
   {
-    ctx.drawImage(self.src[self.animations[self.cur_anim][self.cur_anim_i]],self.x,self.y,self.w,self.h);
+    ctx.save();
+    ctx.translate(self.x+self.w/2,self.y+self.h/2);
+    if(self.flip) ctx.scale(-1,1);
+    ctx.drawImage(self.src[self.animations[self.cur_anim][self.cur_anim_i]],-self.w/2,-self.h/2,self.w,self.h);
+    ctx.restore();
   }
 }
 
