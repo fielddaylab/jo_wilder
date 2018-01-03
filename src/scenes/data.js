@@ -20,98 +20,544 @@ tmp_level = new level();
   tmp_map = new map();
   {
     //scenes
-    tmp_scene = new scene();
     {
-      //rooms
-      tmp_room = new room();
+      tmp_scene = new scene();
       {
-        //persons
-        tmp_person = new person();
+        //rooms
         {
-          //options
-          tmp_option = new option();
+          tmp_room = new room();
           {
-            //reqs (option)
-            tmp_requirement = new requirement();
-            {}
-            requirements.push(tmp_requirement);//register
-            tmp_option.requirements.push(tmp_requirement);//assign
-          }
-          options.push(tmp_option);//register
-          tmp_person.options.push(tmp_option);//assign
-          //reqs (person)
-          tmp_requirement = new requirement();
-          {}
-          requirements.push(tmp_requirement);//register
-          tmp_person.requirements.push(tmp_requirement);//assign
-        }
-        persons.push(tmp_person);//register
-        tmp_room.persons.push(tmp_person);//assign
-        //objects
-        tmp_object = new object();
-        {
-          //views
-          tmp_view = new view();
-          {
-            //zones
-            tmp_zone = new zone();
+            //persons
             {
-              //reqs (zone)
-              tmp_requirement = new requirement();
-              {}
-              requirements.push(tmp_requirement);//register
-              tmp_zone.requirements.push(tmp_requirement);//assign
+              tmp_person = new person();
+              {
+                //options
+                {
+                  tmp_option = new option();
+                  {
+                    //reqs (option)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_option.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  options.push(tmp_option);//register
+                  tmp_person.options.push(tmp_option);//assign
+                }
+                //reqs (person)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_person.requirements.push(tmp_requirement);//assign
+                }
+              }
+              persons.push(tmp_person);//register
+              tmp_room.persons.push(tmp_person);//assign
             }
-            zones.push(tmp_zone);//register
-            tmp_view.zones.push(tmp_zone);//assign
-            //reqs (view)
-            tmp_requirement = new requirement();
-            {}
-            requirements.push(tmp_requirement);//register
-            tmp_view.requirements.push(tmp_requirement);//assign
+            //objects
+            {
+              tmp_object = new object();
+              {
+                //views
+                {
+                  tmp_view = new view();
+                  {
+                    //zones
+                    {
+                      tmp_zone = new zone();
+                      {
+                        //reqs (zone)
+                        {
+                          tmp_requirement = new requirement();
+                          {}
+                          requirements.push(tmp_requirement);//register
+                          tmp_zone.requirements.push(tmp_requirement);//assign
+                        }
+                      }
+                      zones.push(tmp_zone);//register
+                      tmp_view.zones.push(tmp_zone);//assign
+                    }
+                    //reqs (view)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_view.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  views.push(tmp_view);//register
+                  tmp_object.views.push(tmp_view);//assign
+                }
+                //reqs (object)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_object.requirements.push(tmp_requirement);//assign
+                }
+              }
+              objects.push(tmp_object);//register
+              tmp_room.objects.push(tmp_object);//assign
+            }
+            //triggers
+            {
+              tmp_trigger = new trigger();
+              {
+                //reqs (trigger)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                }
+              }
+              triggers.push(tmp_trigger);//register
+              tmp_room.triggers.push(tmp_trigger);//assign
+            }
+            //wildcards
+            {
+              tmp_wildcard = new wildcard();
+              {
+                //reqs (wildcard)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                }
+              }
+              wildcards.push(tmp_wildcard);//register
+              tmp_room.wildcards.push(tmp_wildcard);//assign
+            }
           }
-          views.push(tmp_view);//register
-          tmp_object.views.push(tmp_view);//assign
-          //reqs (object)
-          tmp_requirement = new requirement();
-          {}
-          requirements.push(tmp_requirement);//register
-          tmp_object.requirements.push(tmp_requirement);//assign
+          rooms.push(tmp_room);//register
+          tmp_scene.rooms.push(tmp_room);//assign
         }
-        objects.push(tmp_object);//register
-        tmp_room.objects.push(tmp_object);//assign
-        //triggers
-        tmp_trigger = new trigger();
-        {
-          //reqs (trigger)
-          tmp_requirement = new requirement();
-          {}
-          requirements.push(tmp_requirement);//register
-          tmp_trigger.requirements.push(tmp_requirement);//assign
-        }
-        triggers.push(tmp_trigger);//register
-        tmp_room.triggers.push(tmp_trigger);//assign
-        //wildcards
-        tmp_wildcard = new wildcard();
-        {
-          //reqs (wildcard)
-          tmp_requirement = new requirement();
-          {}
-          requirements.push(tmp_requirement);//register
-          tmp_wildcard.requirements.push(tmp_requirement);//assign
-        }
-        wildcards.push(tmp_wildcard);//register
-        tmp_room.wildcards.push(tmp_wildcard);//assign
       }
-      rooms.push(tmp_room);//register
-      tmp_scene.rooms.push(tmp_room);//assign
+      scenes.push(tmp_scene);//register
+      tmp_map.scenes.push(tmp_scene);//assign
     }
-    scenes.push(tmp_scene);//register
-    tmp_map.scenes.push(tmp_scene);//assign
   }
   maps.push(tmp_map);//register
   tmp_level.map = tmp_map;
 }
 levels.push(tmp_level);
 */
+
+//LEVEL 1
+tmp_level = new level();
+{
+  //map
+  tmp_map = new map();
+  {
+    //scenes
+    {
+      //capitol
+      tmp_scene = new scene();
+      {
+        //rooms
+        {
+          //entrance
+          tmp_room = new room();
+          {
+            //persons
+            {
+              //uncle
+              tmp_person = new person();
+              {
+                //options
+                {
+                  //hello
+                  tmp_option = new option();
+                  {
+                    //reqs (option)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_option.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  options.push(tmp_option);//register
+                  tmp_person.options.push(tmp_option);//assign
+
+                  //goodbye
+                  tmp_option = new option();
+                  {
+                    //reqs (option)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_option.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  options.push(tmp_option);//register
+                  tmp_person.options.push(tmp_option);//assign
+                }
+                //reqs (person)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_person.requirements.push(tmp_requirement);//assign
+                }
+              }
+              persons.push(tmp_person);//register
+              tmp_room.persons.push(tmp_person);//assign
+            }
+            //objects
+            {
+              //book
+              tmp_object = new object();
+              {
+                //views
+                {
+                  //front
+                  tmp_view = new view();
+                  {
+                    //zones
+                    {
+                      tmp_zone = new zone();
+                      {
+                        //reqs (zone)
+                        {
+                          tmp_requirement = new requirement();
+                          {}
+                          requirements.push(tmp_requirement);//register
+                          tmp_zone.requirements.push(tmp_requirement);//assign
+                        }
+                      }
+                      zones.push(tmp_zone);//register
+                      tmp_view.zones.push(tmp_zone);//assign
+                    }
+                    //reqs (view)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_view.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  views.push(tmp_view);//register
+                  tmp_object.views.push(tmp_view);//assign
+
+                  //open
+                  tmp_view = new view();
+                  {
+                    //zones
+                    {
+                      tmp_zone = new zone();
+                      {
+                        //reqs (zone)
+                        {
+                          tmp_requirement = new requirement();
+                          {}
+                          requirements.push(tmp_requirement);//register
+                          tmp_zone.requirements.push(tmp_requirement);//assign
+                        }
+                      }
+                      zones.push(tmp_zone);//register
+                      tmp_view.zones.push(tmp_zone);//assign
+                    }
+                    //reqs (view)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_view.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                }
+                //reqs (object)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_object.requirements.push(tmp_requirement);//assign
+                }
+              }
+              objects.push(tmp_object);//register
+              tmp_room.objects.push(tmp_object);//assign
+            }
+            //triggers
+            {
+              //door
+              tmp_trigger = new trigger();
+              {
+                //reqs (trigger)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                }
+              }
+              triggers.push(tmp_trigger);//register
+              tmp_room.triggers.push(tmp_trigger);//assign
+            }
+            //wildcards
+            {
+              //?
+              tmp_wildcard = new wildcard();
+              {
+                //reqs (wildcard)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                }
+              }
+              wildcards.push(tmp_wildcard);//register
+              tmp_room.wildcards.push(tmp_wildcard);//assign
+            }
+          }
+          rooms.push(tmp_room);//register
+          tmp_scene.rooms.push(tmp_room);//assign
+
+          //exhibit
+          tmp_room = new room();
+          {
+            //persons
+            {
+              tmp_person = new person();
+              {
+                //options
+                {
+                  tmp_option = new option();
+                  {
+                    //reqs (option)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_option.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  options.push(tmp_option);//register
+                  tmp_person.options.push(tmp_option);//assign
+                }
+                //reqs (person)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_person.requirements.push(tmp_requirement);//assign
+                }
+              }
+              persons.push(tmp_person);//register
+              tmp_room.persons.push(tmp_person);//assign
+            }
+            //objects
+            {
+              tmp_object = new object();
+              {
+                //views
+                {
+                  tmp_view = new view();
+                  {
+                    //zones
+                    {
+                      tmp_zone = new zone();
+                      {
+                        //reqs (zone)
+                        {
+                          tmp_requirement = new requirement();
+                          {}
+                          requirements.push(tmp_requirement);//register
+                          tmp_zone.requirements.push(tmp_requirement);//assign
+                        }
+                      }
+                      zones.push(tmp_zone);//register
+                      tmp_view.zones.push(tmp_zone);//assign
+                    }
+                    //reqs (view)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_view.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  views.push(tmp_view);//register
+                  tmp_object.views.push(tmp_view);//assign
+                }
+                //reqs (object)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_object.requirements.push(tmp_requirement);//assign
+                }
+              }
+              objects.push(tmp_object);//register
+              tmp_room.objects.push(tmp_object);//assign
+            }
+            //triggers
+            {
+              tmp_trigger = new trigger();
+              {
+                //reqs (trigger)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                }
+              }
+              triggers.push(tmp_trigger);//register
+              tmp_room.triggers.push(tmp_trigger);//assign
+            }
+            //wildcards
+            {
+              tmp_wildcard = new wildcard();
+              {
+                //reqs (wildcard)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                }
+              }
+              wildcards.push(tmp_wildcard);//register
+              tmp_room.wildcards.push(tmp_wildcard);//assign
+            }
+          }
+          rooms.push(tmp_room);//register
+          tmp_scene.rooms.push(tmp_room);//assign
+        }
+      }
+      scenes.push(tmp_scene);//register
+      tmp_map.scenes.push(tmp_scene);//assign
+
+      //library
+      tmp_scene = new scene();
+      {
+        //rooms
+        {
+          tmp_room = new room();
+          {
+            //persons
+            {
+              tmp_person = new person();
+              {
+                //options
+                {
+                  tmp_option = new option();
+                  {
+                    //reqs (option)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_option.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  options.push(tmp_option);//register
+                  tmp_person.options.push(tmp_option);//assign
+                }
+                //reqs (person)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_person.requirements.push(tmp_requirement);//assign
+                }
+              }
+              persons.push(tmp_person);//register
+              tmp_room.persons.push(tmp_person);//assign
+            }
+            //objects
+            {
+              tmp_object = new object();
+              {
+                //views
+                {
+                  tmp_view = new view();
+                  {
+                    //zones
+                    {
+                      tmp_zone = new zone();
+                      {
+                        //reqs (zone)
+                        {
+                          tmp_requirement = new requirement();
+                          {}
+                          requirements.push(tmp_requirement);//register
+                          tmp_zone.requirements.push(tmp_requirement);//assign
+                        }
+                      }
+                      zones.push(tmp_zone);//register
+                      tmp_view.zones.push(tmp_zone);//assign
+                    }
+                    //reqs (view)
+                    {
+                      tmp_requirement = new requirement();
+                      {}
+                      requirements.push(tmp_requirement);//register
+                      tmp_view.requirements.push(tmp_requirement);//assign
+                    }
+                  }
+                  views.push(tmp_view);//register
+                  tmp_object.views.push(tmp_view);//assign
+                }
+                //reqs (object)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_object.requirements.push(tmp_requirement);//assign
+                }
+              }
+              objects.push(tmp_object);//register
+              tmp_room.objects.push(tmp_object);//assign
+            }
+            //triggers
+            {
+              tmp_trigger = new trigger();
+              {
+                //reqs (trigger)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                }
+              }
+              triggers.push(tmp_trigger);//register
+              tmp_room.triggers.push(tmp_trigger);//assign
+            }
+            //wildcards
+            {
+              tmp_wildcard = new wildcard();
+              {
+                //reqs (wildcard)
+                {
+                  tmp_requirement = new requirement();
+                  {}
+                  requirements.push(tmp_requirement);//register
+                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                }
+              }
+              wildcards.push(tmp_wildcard);//register
+              tmp_room.wildcards.push(tmp_wildcard);//assign
+            }
+          }
+          rooms.push(tmp_room);//register
+          tmp_scene.rooms.push(tmp_room);//assign
+        }
+      }
+      scenes.push(tmp_scene);//register
+      tmp_map.scenes.push(tmp_scene);//assign
+    }
+  }
+  maps.push(tmp_map);//register
+  tmp_level.map = tmp_map;
+}
+levels.push(tmp_level);
 
