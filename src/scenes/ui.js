@@ -150,3 +150,28 @@ var navigable = function()
   }
 };
 
+var toolbar = function()
+{
+  var self = this;
+  self.x = 0;
+  self.y = canv.height-100;
+  self.w = canv.width;
+  self.h = 100;
+
+  self.click = function(evt)
+  {
+
+  }
+
+  self.tick = function()
+  {
+
+  }
+
+  self.draw = function()
+  {
+    strokeBox(self,ctx);
+  }
+
+}
+
