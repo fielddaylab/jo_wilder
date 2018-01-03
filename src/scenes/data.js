@@ -11,6 +11,7 @@ var zones        = []; var tmp_zone;
 var options      = []; var tmp_option;
 var requirements = []; var tmp_requirement;
 
+/*
 //BASE LEVEL STRUCTURE
 //level
 tmp_level = new level();
@@ -33,19 +34,19 @@ tmp_level = new level();
             //reqs (option)
             tmp_requirement = new requirement();
             {}
-            requirements.push(tmp_requirement);
-            tmp_option.requirements.push(tmp_requirement);
+            requirements.push(tmp_requirement);//register
+            tmp_option.requirements.push(tmp_requirement);//assign
           }
-          options.push(tmp_option);
-          tmp_person.options.push(tmp_option);
+          options.push(tmp_option);//register
+          tmp_person.options.push(tmp_option);//assign
           //reqs (person)
           tmp_requirement = new requirement();
           {}
-          tmp_person.requirements.push(tmp_requirement);
-          requirements.push(tmp_requirement);
+          requirements.push(tmp_requirement);//register
+          tmp_person.requirements.push(tmp_requirement);//assign
         }
-        persons.push(tmp_person);
-        tmp_room.persons.push(tmp_person);
+        persons.push(tmp_person);//register
+        tmp_room.persons.push(tmp_person);//assign
         //objects
         tmp_object = new object();
         {
@@ -58,58 +59,59 @@ tmp_level = new level();
               //reqs (zone)
               tmp_requirement = new requirement();
               {}
-              requirements.push(tmp_requirement);
-              tmp_zone.requirements.push(tmp_requirement);
+              requirements.push(tmp_requirement);//register
+              tmp_zone.requirements.push(tmp_requirement);//assign
             }
-            zones.push(tmp_zone);
-            tmp_view.zones.push(tmp_zone);
+            zones.push(tmp_zone);//register
+            tmp_view.zones.push(tmp_zone);//assign
             //reqs (view)
             tmp_requirement = new requirement();
             {}
-            requirements.push(tmp_requirement);
-            tmp_view.requirements.push(tmp_requirement);
+            requirements.push(tmp_requirement);//register
+            tmp_view.requirements.push(tmp_requirement);//assign
           }
-          tmp_object.views.push(tmp_view);
-          views.push(tmp_view);
+          views.push(tmp_view);//register
+          tmp_object.views.push(tmp_view);//assign
           //reqs (object)
           tmp_requirement = new requirement();
           {}
-          requirements.push(tmp_requirement);
-          tmp_object.requirements.push(tmp_requirement);
+          requirements.push(tmp_requirement);//register
+          tmp_object.requirements.push(tmp_requirement);//assign
         }
-        objects.push(tmp_object);
-        tmp_room.objects.push(tmp_object);
+        objects.push(tmp_object);//register
+        tmp_room.objects.push(tmp_object);//assign
         //triggers
         tmp_trigger = new trigger();
         {
           //reqs (trigger)
           tmp_requirement = new requirement();
           {}
-          requirements.push(tmp_requirement);
-          tmp_trigger.requirements.push(tmp_requirement);
+          requirements.push(tmp_requirement);//register
+          tmp_trigger.requirements.push(tmp_requirement);//assign
         }
-        triggers.push(tmp_trigger);
-        tmp_room.triggers.push(tmp_trigger);
+        triggers.push(tmp_trigger);//register
+        tmp_room.triggers.push(tmp_trigger);//assign
         //wildcards
         tmp_wildcard = new wildcard();
         {
           //reqs (wildcard)
           tmp_requirement = new requirement();
           {}
-          requirements.push(tmp_requirement);
-          tmp_wildcard.requirements.push(tmp_requirement);
+          requirements.push(tmp_requirement);//register
+          tmp_wildcard.requirements.push(tmp_requirement);//assign
         }
-        wildcards.push(tmp_wildcard);
-        tmp_room.wildcards.push(tmp_wildcard);
+        wildcards.push(tmp_wildcard);//register
+        tmp_room.wildcards.push(tmp_wildcard);//assign
       }
-      rooms.push(tmp_room);
-      tmp_scene.rooms.push(tmp_room);
+      rooms.push(tmp_room);//register
+      tmp_scene.rooms.push(tmp_room);//assign
     }
-    scenes.push(tmp_scene);
-    tmp_map.scenes.push(tmp_scene);
+    scenes.push(tmp_scene);//register
+    tmp_map.scenes.push(tmp_scene);//assign
   }
-  maps.push(tmp_map);
+  maps.push(tmp_map);//register
   tmp_level.map = tmp_map;
 }
 levels.push(tmp_level);
+*/
 
