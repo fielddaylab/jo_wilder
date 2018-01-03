@@ -147,6 +147,9 @@ tmp_level = new level();
 levels.push(tmp_level);
 */
 
+var init_levels = function()
+{
+
 //LEVEL 1
 tmp_level = new level();
 {
@@ -163,11 +166,21 @@ tmp_level = new level();
           //entrance
           tmp_room = new room();
           {
+            tmp_room.x = 100;
+            tmp_room.y = canv.height/2;
+            tmp_room.w = canv.width-tmp_room.x*2;
+            tmp_room.h = canv.height/2-100;
+
             //persons
             {
               //uncle
               tmp_person = new person();
               {
+                tmp_person.x = 150;
+                tmp_person.y = canv.height/2-50;
+                tmp_person.w = 50;
+                tmp_person.h = 150;
+
                 //options
                 {
                   //hello
@@ -214,6 +227,11 @@ tmp_level = new level();
               //book
               tmp_object = new object();
               {
+                tmp_object.x = canv.width-280;
+                tmp_object.y = canv.height/2-100;
+                tmp_object.w = 40;
+                tmp_object.h = 40;
+
                 //views
                 {
                   //front
@@ -288,6 +306,11 @@ tmp_level = new level();
               //door
               tmp_trigger = new trigger();
               {
+                tmp_trigger.x = canv.width/2-50;
+                tmp_trigger.y = canv.height/2-100;
+                tmp_trigger.w = 100;
+                tmp_trigger.h = 200;
+
                 //reqs (trigger)
                 {
                   tmp_requirement = new requirement();
@@ -560,4 +583,6 @@ tmp_level = new level();
   tmp_level.map = tmp_map;
 }
 levels.push(tmp_level);
+
+}
 

@@ -12,33 +12,33 @@ var GamePlayScene = function(game, stage)
 
   self.ready = function()
   {
+    init_levels();
+    cur_level = levels[0];
+    cur_map = cur_level.map;
+    cur_scene = cur_map.scenes[0];
+    cur_room = cur_scene.rooms[0];
+
     clicker = new Clicker({source:canvas});
-    my_person = new person();
-    my_map = new map();
-    my_map.nav_box.x = 0;
-    my_map.nav_box.y = canv.height/2;
-    my_map.nav_box.w = canv.width;
-    my_map.nav_box.h = canv.height/2;
-    my_map.act_boxes.push({x:10, y:10, w:10, h:10 });
-    my_map.act_boxes.push({x:80, y:200,w:10, h:10 });
-    my_map.act_boxes.push({x:0,  y:0,  w:0,  h:0  });
-    my_map.act_boxes.push({x:0,  y:0,  w:0,  h:0  });
-    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ my_person.toX = evt.doX-my_person.w/2; my_person.toY = evt.doY-my_person.h/2; }};
+    my_avatar = new avatar();
+    my_navigable = new navigable();
+    my_navigable.consume_room(cur_room);
+
+    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
   };
 
   self.tick = function()
   {
-    //clicker.filter(canv_clicker);
-    clicker.filter(my_map);
+    clicker.filter(canv_clicker);
+    clicker.filter(my_navigable);
     clicker.flush();
-    my_person.tick();
-    my_map.tick();
+    my_avatar.tick();
+    my_navigable.tick();
   };
 
   self.draw = function()
   {
-    my_map.draw();
-    my_person.draw();
+    my_navigable.draw();
+    my_avatar.draw();
   };
 
   self.cleanup = function()

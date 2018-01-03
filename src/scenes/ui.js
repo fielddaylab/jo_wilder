@@ -1,4 +1,4 @@
-var person = function()
+var avatar = function()
 {
   var self = this;
   self.x = 0;
@@ -68,11 +68,11 @@ var person = function()
         self.anim.swapAnim(STATE_WALK);
       self.state = STATE_WALK;
     }
-    else if(my_map.selected_act) // < act_dist
+    else if(my_navigable.selected_act) // < act_dist
     {
-      my_person.state = STATE_ACT;
-      my_person.anim.injectAnim(ANIM_ACT);
-      my_map.selected_act = 0;
+      my_avatar.state = STATE_ACT;
+      my_avatar.anim.injectAnim(ANIM_ACT);
+      my_navigable.selected_act = 0;
     }
     else
       self.state = STATE_IDLE;
@@ -93,7 +93,7 @@ var person = function()
   }
 };
 
-var map = function()
+var navigable = function()
 {
   var self = this;
 
@@ -108,6 +108,19 @@ var map = function()
   self.last_click = {x:0,y:0};
   self.nav_click = {x:0,y:0};
 
+  self.consume_room = function(room)
+  {
+    self.nav_box.x = room.x;
+    self.nav_box.y = room.y;
+    self.nav_box.w = room.w;
+    self.nav_box.h = room.h;
+
+    for(var i = 0; i < room.persons.length;   i++) self.act_boxes.push(room.persons[i]);
+    for(var i = 0; i < room.objects.length;   i++) self.act_boxes.push(room.objects[i]);
+    for(var i = 0; i < room.triggers.length;  i++) self.act_boxes.push(room.triggers[i]);
+    for(var i = 0; i < room.wildcards.length; i++) self.act_boxes.push(room.wildcards[i]);
+  }
+
   self.click = function(evt)
   {
     self.last_click.x = evt.doX;
@@ -118,8 +131,8 @@ var map = function()
     if(self.nav_click.x > self.nav_box.x+self.nav_box.w) self.nav_click.x = self.nav_box.x+self.nav_box.w;
     if(self.nav_click.y < self.nav_box.y)                self.nav_click.y = self.nav_box.y;
     if(self.nav_click.y > self.nav_box.y+self.nav_box.h) self.nav_click.y = self.nav_box.y+self.nav_box.h;
-    my_person.toX = self.nav_click.x-my_person.w/2;
-    my_person.toY = self.nav_click.y-my_person.h/2;
+    my_avatar.toX = self.nav_click.x-my_avatar.w/2;
+    my_avatar.toY = self.nav_click.y-my_avatar.h/2;
 
     self.selected_act = 0;
     for(var i = 0; i < self.act_boxes.length; i++)
@@ -132,6 +145,7 @@ var map = function()
 
   self.draw = function()
   {
+    strokeBox(self.nav_box,ctx);
     for(var i = 0; i < self.act_boxes.length; i++) strokeBox(self.act_boxes[i],ctx);
   }
 };

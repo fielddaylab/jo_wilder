@@ -26,7 +26,14 @@ var scene = function()
 var room = function()
 {
   var self = this;
+
   self.img;
+  //nav area
+  self.x = 0;
+  self.y = 0;
+  self.w = 0;
+  self.h = 0;
+
   self.persons = [];
   self.objects = [];
   self.triggers = [];

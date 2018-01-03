@@ -4,8 +4,8 @@ var ctx;
 
 var clicker;
 
-var my_person;
-var my_map;
+var my_avatar;
+var my_navigable;
 
 var canv_clicker;
 
