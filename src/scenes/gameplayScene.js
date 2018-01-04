@@ -24,6 +24,9 @@ var GamePlayScene = function(game, stage)
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
     my_toolbar = new toolbar();
+    my_overworld = new overworld();
+    my_overworld.consume_map(cur_map);
+    my_notebook = new notebook();
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
 
@@ -32,19 +35,59 @@ var GamePlayScene = function(game, stage)
 
   self.tick = function()
   {
-    clicker.filter(my_toolbar);
-    clicker.filter(my_navigable);
-    clicker.filter(canv_clicker);
+    switch(cur_state)
+    {
+      case STATE_INSPECT:
+        clicker.filter(my_toolbar);
+        clicker.filter(my_navigable);
+        clicker.filter(canv_clicker);
+        my_avatar.tick();
+        my_navigable.tick();
+        break;
+      case STATE_MAP:
+        clicker.filter(my_overworld);
+        my_overworld.tick();
+        break;
+      case STATE_NOTEBOOK:
+        clicker.filter(my_notebook);
+        my_notebook.tick();
+        break;
+      case STATE_PERSON:
+        break;
+      case STATE_OBJECT:
+        break;
+      case STATE_WILDCARD:
+        break;
+      case STATE_TRANSITION:
+        break;
+    }
     clicker.flush();
-    my_avatar.tick();
-    my_navigable.tick();
   };
 
   self.draw = function()
   {
-    my_navigable.draw();
-    my_avatar.draw();
-    my_toolbar.draw();
+    switch(cur_state)
+    {
+      case STATE_INSPECT:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_toolbar.draw();
+        break;
+      case STATE_MAP:
+        my_overworld.draw();
+        break;
+      case STATE_NOTEBOOK:
+        my_notebook.draw();
+        break;
+      case STATE_PERSON:
+        break;
+      case STATE_OBJECT:
+        break;
+      case STATE_WILDCARD:
+        break;
+      case STATE_TRANSITION:
+        break;
+    }
   };
 
   self.cleanup = function()

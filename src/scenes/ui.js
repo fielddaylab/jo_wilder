@@ -131,7 +131,6 @@ var navigable = function()
     self.nav_box.y = room.nav_y;
     self.nav_box.w = room.nav_w;
     self.nav_box.h = room.nav_h;
-    console.log(self.nav_box);
 
     for(var i = 0; i < room.persons.length;   i++) self.act_boxes.push(room.persons[i]);
     for(var i = 0; i < room.objects.length;   i++) self.act_boxes.push(room.objects[i]);
@@ -197,5 +196,50 @@ var toolbar = function()
     strokeBox(self.notebook,ctx);
   }
 
+}
+
+var overworld = function()
+{
+  var self = this;
+
+  self.consume_map = function(map)
+  {
+
+  }
+
+  self.click = function(evt)
+  {
+
+  }
+
+  self.tick = function()
+  {
+
+  }
+
+  self.draw = function()
+  {
+
+  }
+}
+
+var notebook = function()
+{
+  var self = this;
+
+  self.click = function(evt)
+  {
+
+  }
+
+  self.tick = function()
+  {
+
+  }
+
+  self.draw = function()
+  {
+
+  }
 }
 
