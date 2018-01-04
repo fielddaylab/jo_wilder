@@ -28,11 +28,12 @@ var room = function()
   var self = this;
 
   self.img;
-  //nav area
-  self.x = 0;
-  self.y = 0;
-  self.w = 0;
-  self.h = 0;
+  self.nav_x = 0;
+  self.nav_y = 0;
+  self.nav_w = 0;
+  self.nav_h = 0;
+  self.start_x = 0;
+  self.start_y = 0;
 
   self.persons = [];
   self.objects = [];

@@ -9,7 +9,7 @@ var avatar = function()
   self.toX = self.x;
   self.toY = self.y;
 
-  self.state = STATE_IDLE;
+  self.state = AVATAR_IDLE;
   self.anim = new animation();
   self.anim.frame_delay = 10;
   self.anim.src = [
@@ -36,7 +36,7 @@ var avatar = function()
         self.anim.cur_anim_i = 0; //repeat
       break;
       case ANIM_WALK:
-        if(self.state != STATE_WALK) self.anim.cur_anim = ANIM_IDLE;
+        if(self.state != AVATAR_WALK) self.anim.cur_anim = ANIM_IDLE;
         self.anim.cur_anim_i = 0; //idle
       break;
       case ANIM_ACT:
@@ -47,6 +47,23 @@ var avatar = function()
         self.anim.cur_anim_i = 0;
       break;
     }
+  }
+
+  self.consume_room = function(room)
+  {
+    self.x = room.start_x-self.w/2;
+    self.y = room.start_y-self.h/2;
+    if(self.x+self.w/2 < room.nav_x)            self.x = room.nav_x           -self.w/2;
+    if(self.x+self.w/2 > room.nav_x+room.nav_w) self.x = room.nav_x+room.nav_w-self.w/2;
+    if(self.y+self.h/2 < room.nav_y)            self.y = room.nav_y           -self.h/2;
+    if(self.y+self.h/2 > room.nav_y+room.nav_h) self.y = room.nav_y+room.nav_h-self.h/2;
+    self.toX = self.x;
+    self.toY = self.y;
+  }
+
+  self.click = function(evt)
+  {
+
   }
 
   self.tick = function()
@@ -64,18 +81,18 @@ var avatar = function()
 
     if(d > act_dist)
     {
-      if(self.state != STATE_WALK)
-        self.anim.swapAnim(STATE_WALK);
-      self.state = STATE_WALK;
+      if(self.state != AVATAR_WALK)
+        self.anim.swapAnim(ANIM_WALK);
+      self.state = AVATAR_WALK;
     }
     else if(my_navigable.selected_act) // < act_dist
     {
-      my_avatar.state = STATE_ACT;
+      my_avatar.state = AVATAR_ACT;
       my_avatar.anim.injectAnim(ANIM_ACT);
       my_navigable.selected_act = 0;
     }
     else
-      self.state = STATE_IDLE;
+      self.state = AVATAR_IDLE;
 
     self.x += dx;
     self.y += dy;
@@ -110,10 +127,11 @@ var navigable = function()
 
   self.consume_room = function(room)
   {
-    self.nav_box.x = room.x;
-    self.nav_box.y = room.y;
-    self.nav_box.w = room.w;
-    self.nav_box.h = room.h;
+    self.nav_box.x = room.nav_x;
+    self.nav_box.y = room.nav_y;
+    self.nav_box.w = room.nav_w;
+    self.nav_box.h = room.nav_h;
+    console.log(self.nav_box);
 
     for(var i = 0; i < room.persons.length;   i++) self.act_boxes.push(room.persons[i]);
     for(var i = 0; i < room.objects.length;   i++) self.act_boxes.push(room.objects[i]);
@@ -158,9 +176,13 @@ var toolbar = function()
   self.w = canv.width;
   self.h = 100;
 
+  self.map      = {x:10,             y:self.y+10,w:self.h-20,h:self.h-20};
+  self.notebook = {x:10+self.h-20+10,y:self.y+10,w:self.h-20,h:self.h-20};
+
   self.click = function(evt)
   {
-
+    if(ptWithinBox(self.map,     evt.doX,evt.doY)) ; //hey
+    if(ptWithinBox(self.notebook,evt.doX,evt.doY)) ; //hey
   }
 
   self.tick = function()
@@ -171,6 +193,8 @@ var toolbar = function()
   self.draw = function()
   {
     strokeBox(self,ctx);
+    strokeBox(self.map,ctx);
+    strokeBox(self.notebook,ctx);
   }
 
 }

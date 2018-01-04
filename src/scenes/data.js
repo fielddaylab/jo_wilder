@@ -166,10 +166,10 @@ tmp_level = new level();
           //entrance
           tmp_room = new room();
           {
-            tmp_room.x = 100;
-            tmp_room.y = canv.height/2;
-            tmp_room.w = canv.width-tmp_room.x*2;
-            tmp_room.h = canv.height/2-100;
+            tmp_room.nav_x = 100;
+            tmp_room.nav_y = canv.height/2;
+            tmp_room.nav_w = canv.width-tmp_room.nav_x*2;
+            tmp_room.nav_h = canv.height/2-100;
 
             //persons
             {
