@@ -33,19 +33,54 @@ var avatar = function()
     switch(self.anim.cur_anim)
     {
       case ANIM_IDLE:
-        self.anim.cur_anim_i = 0; //repeat
       break;
       case ANIM_WALK:
-        if(self.state != AVATAR_WALK) self.anim.cur_anim = ANIM_IDLE;
-        self.anim.cur_anim_i = 0; //idle
       break;
       case ANIM_ACT:
-        self.anim.cur_anim = ANIM_IDLE;
-        self.anim.cur_anim_i = 0;
-      default:
-        self.anim.cur_anim = ANIM_IDLE; //revert
-        self.anim.cur_anim_i = 0;
+      {
+        cur_act = my_navigable.selected_act;
+        state_from = cur_state;
+        cur_state = STATE_TRANSITION;
+        switch(cur_act.act)
+        {
+          case ACT_PERSON:   state_to = STATE_PERSON;   break;
+          case ACT_OBJECT:   state_to = STATE_OBJECT;   break;
+          case ACT_PORTHOLE: state_to = STATE_NAV;      break;
+          case ACT_WILDCARD: state_to = STATE_WILDCARD; break;
+        }
+        my_navigable.selected_act = 0;
+      }
       break;
+      default:
+      break;
+    }
+
+    if(self.anim.anim_queue.length) //has queue
+    {
+      self.anim.cur_anim = self.anim.anim_queue[0];
+      self.anim.anim_queue.splice(0,1);
+      self.anim.cur_anim_i = 0;
+    }
+    else //no queue
+    {
+      switch(self.anim.cur_anim)
+      {
+        case ANIM_IDLE:
+          self.anim.cur_anim_i = 0; //repeat
+        break;
+        case ANIM_WALK:
+          if(self.state != AVATAR_WALK) self.anim.cur_anim = ANIM_IDLE;
+          self.anim.cur_anim_i = 0; //idle
+        break;
+        case ANIM_ACT:
+          self.anim.cur_anim = ANIM_IDLE;
+          self.anim.cur_anim_i = 0;
+        break;
+        default:
+          self.anim.cur_anim = ANIM_IDLE; //revert
+          self.anim.cur_anim_i = 0;
+        break;
+      }
     }
   }
 
@@ -85,14 +120,22 @@ var avatar = function()
         self.anim.swapAnim(ANIM_WALK);
       self.state = AVATAR_WALK;
     }
-    else if(my_navigable.selected_act) // < act_dist
+    else if(d <= act_dist)
     {
-      my_avatar.state = AVATAR_ACT;
-      my_avatar.anim.injectAnim(ANIM_ACT);
-      my_navigable.selected_act = 0;
+      if(my_navigable.selected_act)
+      {
+        if(my_avatar.state != AVATAR_ACT)
+        {
+          my_avatar.state = AVATAR_ACT;
+          my_avatar.anim.injectAnim(ANIM_ACT);
+        }
+      }
+      else
+      {
+        my_avatar.state = AVATAR_IDLE;
+        my_avatar.anim.enqueueAnim(ANIM_IDLE);
+      }
     }
-    else
-      self.state = AVATAR_IDLE;
 
     self.x += dx;
     self.y += dy;
@@ -134,7 +177,7 @@ var navigable = function()
 
     for(var i = 0; i < room.persons.length;   i++) self.act_boxes.push(room.persons[i]);
     for(var i = 0; i < room.objects.length;   i++) self.act_boxes.push(room.objects[i]);
-    for(var i = 0; i < room.triggers.length;  i++) self.act_boxes.push(room.triggers[i]);
+    for(var i = 0; i < room.portholes.length; i++) self.act_boxes.push(room.portholes[i]);
     for(var i = 0; i < room.wildcards.length; i++) self.act_boxes.push(room.wildcards[i]);
   }
 

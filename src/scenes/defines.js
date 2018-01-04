@@ -2,7 +2,7 @@ var ENUM;
 
 ENUM = 0;
 var STATE_NULL       = ENUM; ENUM++;
-var STATE_INSPECT    = ENUM; ENUM++;
+var STATE_NAV        = ENUM; ENUM++;
 var STATE_MAP        = ENUM; ENUM++;
 var STATE_NOTEBOOK   = ENUM; ENUM++;
 var STATE_PERSON     = ENUM; ENUM++;
@@ -15,7 +15,7 @@ ENUM = 0;
 var ACT_NULL     = ENUM; ENUM++;
 var ACT_PERSON   = ENUM; ENUM++;
 var ACT_OBJECT   = ENUM; ENUM++;
-var ACT_TRIGGER  = ENUM; ENUM++;
+var ACT_PORTHOLE = ENUM; ENUM++;
 var ACT_WILDCARD = ENUM; ENUM++;
 var ACT_COUNT    = ENUM; ENUM++;
 

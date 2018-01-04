@@ -824,16 +824,26 @@ var animation = function()
 
   self.transition = function()
   {
-    switch(self.cur_anim)
+    if(self.anim_queue.length)
     {
-    /*
-      case ANIM_IDLE:
-        self.cur_anim_i = 0;
-      break;
-    */
-      default:
-        self.cur_anim = 0; //ANIM_NULL;
-        self.cur_anim_i = 0;
+      self.cur_anim = self.anim_queue[0];
+      self.anim_queue.splice(0,1);
+      self.cur_anim_i = 0;
+    }
+    else
+    {
+      switch(self.cur_anim)
+      {
+      /*
+        case ANIM_IDLE:
+          self.cur_anim_i = 0;
+        break;
+      */
+        default:
+          self.cur_anim = 0; //ANIM_NULL;
+          self.cur_anim_i = 0;
+        break;
+      }
     }
   }
 
@@ -845,16 +855,7 @@ var animation = function()
     self.cur_anim_i++;
     if(self.cur_anim_i >= self.animations[self.cur_anim].length)
     {
-      if(self.anim_queue.length)
-      {
-        self.cur_anim = self.anim_queue[0];
-        self.anim_queue.splice(0,1);
-        self.cur_anim_i = 0;
-      }
-      else
-      {
-        self.transition();
-      }
+      self.transition();
     }
   }
 

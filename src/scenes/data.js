@@ -4,7 +4,7 @@ var scenes       = []; var tmp_scene;
 var rooms        = []; var tmp_room;
 var persons      = []; var tmp_person;
 var objects      = []; var tmp_object;
-var triggers     = []; var tmp_trigger;
+var portholes    = []; var tmp_porthole;
 var wildcards    = []; var tmp_wildcard;
 var views        = []; var tmp_view;
 var zones        = []; var tmp_zone;
@@ -102,20 +102,20 @@ tmp_level = new level();
               objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
-            //triggers
+            //portholes
             {
-              tmp_trigger = new trigger();
+              tmp_porthole = new porthole();
               {
-                //reqs (trigger)
+                //reqs (porthole)
                 {
                   tmp_requirement = new requirement();
                   {}
                   requirements.push(tmp_requirement);//register
-                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.requirements.push(tmp_requirement);//assign
                 }
               }
-              triggers.push(tmp_trigger);//register
-              tmp_room.triggers.push(tmp_trigger);//assign
+              portholes.push(tmp_porthole);//register
+              tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
             {
@@ -152,19 +152,23 @@ var init_levels = function()
 
 //LEVEL 1
 tmp_level = new level();
+tmp_level.id = "l1";
 {
   //map
   tmp_map = new map();
+  tmp_map.id = "map";
   {
     //scenes
     {
       //capitol
       tmp_scene = new scene();
+      tmp_scene.id = "capitol";
       {
         //rooms
         {
           //entrance
           tmp_room = new room();
+          tmp_room.id = "entrance";
           {
             tmp_room.nav_x = 100;
             tmp_room.nav_y = canv.height/2;
@@ -175,6 +179,7 @@ tmp_level = new level();
             {
               //uncle
               tmp_person = new person();
+              tmp_person.id = "uncle";
               {
                 tmp_person.x = 150;
                 tmp_person.y = canv.height/2-50;
@@ -185,6 +190,7 @@ tmp_level = new level();
                 {
                   //hello
                   tmp_option = new option();
+                  tmp_option.id = "hello";
                   {
                     //reqs (option)
                     {
@@ -199,6 +205,7 @@ tmp_level = new level();
 
                   //goodbye
                   tmp_option = new option();
+                  tmp_option.id = "goodbye";
                   {
                     //reqs (option)
                     {
@@ -226,6 +233,7 @@ tmp_level = new level();
             {
               //book
               tmp_object = new object();
+              tmp_object.id = "book";
               {
                 tmp_object.x = canv.width-280;
                 tmp_object.y = canv.height/2-100;
@@ -236,6 +244,7 @@ tmp_level = new level();
                 {
                   //front
                   tmp_view = new view();
+                  tmp_view.id = "front";
                   {
                     //zones
                     {
@@ -265,6 +274,7 @@ tmp_level = new level();
 
                   //open
                   tmp_view = new view();
+                  tmp_view.id = "open";
                   {
                     //zones
                     {
@@ -301,31 +311,34 @@ tmp_level = new level();
               objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
-            //triggers
+            //portholes
             {
               //door
-              tmp_trigger = new trigger();
+              tmp_porthole = new porthole();
+              tmp_porthole.id = "door";
               {
-                tmp_trigger.x = canv.width/2-50;
-                tmp_trigger.y = canv.height/2-100;
-                tmp_trigger.w = 100;
-                tmp_trigger.h = 200;
+                tmp_porthole.x = canv.width/2-50;
+                tmp_porthole.y = canv.height/2-100;
+                tmp_porthole.w = 100;
+                tmp_porthole.h = 200;
+                tmp_porthole.target_room = "exhibit";
 
-                //reqs (trigger)
+                //reqs (porthole)
                 {
                   tmp_requirement = new requirement();
                   {}
                   requirements.push(tmp_requirement);//register
-                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.requirements.push(tmp_requirement);//assign
                 }
               }
-              triggers.push(tmp_trigger);//register
-              tmp_room.triggers.push(tmp_trigger);//assign
+              portholes.push(tmp_porthole);//register
+              tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
             {
               //?
               tmp_wildcard = new wildcard();
+              tmp_wildcard.id = "?";
               {
                 //reqs (wildcard)
                 {
@@ -344,11 +357,17 @@ tmp_level = new level();
 
           //exhibit
           tmp_room = new room();
+          tmp_room.id = "exhibit";
           {
             //persons
             {
               tmp_person = new person();
               {
+                tmp_person.x = 150;
+                tmp_person.y = canv.height/2-50;
+                tmp_person.w = 50;
+                tmp_person.h = 150;
+
                 //options
                 {
                   tmp_option = new option();
@@ -420,20 +439,20 @@ tmp_level = new level();
               objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
-            //triggers
+            //portholes
             {
-              tmp_trigger = new trigger();
+              tmp_porthole = new porthole();
               {
-                //reqs (trigger)
+                //reqs (porthole)
                 {
                   tmp_requirement = new requirement();
                   {}
                   requirements.push(tmp_requirement);//register
-                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.requirements.push(tmp_requirement);//assign
                 }
               }
-              triggers.push(tmp_trigger);//register
-              tmp_room.triggers.push(tmp_trigger);//assign
+              portholes.push(tmp_porthole);//register
+              tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
             {
@@ -460,6 +479,7 @@ tmp_level = new level();
 
       //library
       tmp_scene = new scene();
+      tmp_scene.id = "library";
       {
         //rooms
         {
@@ -540,20 +560,20 @@ tmp_level = new level();
               objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
-            //triggers
+            //portholes
             {
-              tmp_trigger = new trigger();
+              tmp_porthole = new porthole();
               {
-                //reqs (trigger)
+                //reqs (porthole)
                 {
                   tmp_requirement = new requirement();
                   {}
                   requirements.push(tmp_requirement);//register
-                  tmp_trigger.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.requirements.push(tmp_requirement);//assign
                 }
               }
-              triggers.push(tmp_trigger);//register
-              tmp_room.triggers.push(tmp_trigger);//assign
+              portholes.push(tmp_porthole);//register
+              tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
             {
