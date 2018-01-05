@@ -62,16 +62,21 @@ var GamePlayScene = function(game, stage)
       case STATE_TRANSITION:
         var old_state_t = state_t;
         state_t += 0.01;
-        if(old_state_t < 0.5 && state_t >= 0.5)
+        if(state_from == STATE_NAV && state_to == STATE_NAV)
         {
-          if(cur_act.act == ACT_PORTHOLE)
+          my_avatar.tick();
+          my_navigable.tick();
+          if(old_state_t < 0.5 && state_t >= 0.5)
           {
-            var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room,cur_level);
-            if(r) cur_room = r;
-            console.log(r);
-            my_avatar.consume_room(cur_room);
-            my_navigable.consume_room(cur_room);
-            cur_act = 0;
+            if(cur_act.act == ACT_PORTHOLE)
+            {
+              var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room,cur_level);
+              if(r) cur_room = r;
+              console.log(r);
+              my_avatar.consume_room(cur_room);
+              my_navigable.consume_room(cur_room);
+              cur_act = 0;
+            }
           }
         }
         if(state_t >= 1)
@@ -106,6 +111,16 @@ var GamePlayScene = function(game, stage)
       case STATE_WILDCARD:
         break;
       case STATE_TRANSITION:
+        if(state_from == STATE_NAV && state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw();
+          var blur = (state_t*2)-1;
+          blur = 1-(blur*blur);
+          ctx.fillStyle = "rgba(255,255,255,"+blur+")";
+          ctx.fillRect(0,0,canv.width,canv.height);
+        }
         break;
     }
   };
