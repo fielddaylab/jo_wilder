@@ -48,6 +48,7 @@ var avatar = function()
           case ACT_PORTHOLE: state_to = STATE_NAV;      break;
           case ACT_WILDCARD: state_to = STATE_WILDCARD; break;
         }
+        state_t = 0;
         my_navigable.selected_act = 0;
       }
       break;
@@ -223,8 +224,17 @@ var toolbar = function()
 
   self.click = function(evt)
   {
-    if(ptWithinBox(self.map,     evt.doX,evt.doY)) ; //hey
-    if(ptWithinBox(self.notebook,evt.doX,evt.doY)) ; //hey
+    if(ptWithinBox(self.map,     evt.doX,evt.doY))
+    {
+      state_from = cur_state;
+      state_to = STATE_MAP;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+    }
+    if(ptWithinBox(self.notebook,evt.doX,evt.doY))
+    {
+
+    }
   }
 
   self.tick = function()
@@ -232,11 +242,11 @@ var toolbar = function()
 
   }
 
-  self.draw = function()
+  self.draw = function(yoff)
   {
-    strokeBox(self,ctx);
-    strokeBox(self.map,ctx);
-    strokeBox(self.notebook,ctx);
+    ctx.strokeRect(self.x,         self.y         +yoff, self.w,         self.h);
+    ctx.strokeRect(self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    ctx.strokeRect(self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
   }
 
 }
@@ -245,9 +255,17 @@ var overworld = function()
 {
   var self = this;
 
+  self.x = 10;
+  self.y = 10;
+  self.w = canv.width-20;
+  self.h = canv.height-20;
+
+  self.scene_boxes = [];
+
   self.consume_map = function(map)
   {
-
+    self.scene_boxes = [];
+    for(var i = 0; i < map.scenes.length; i++) self.scene_boxes.push(map.scenes[i]);
   }
 
   self.click = function(evt)
@@ -260,9 +278,10 @@ var overworld = function()
 
   }
 
-  self.draw = function()
+  self.draw = function(yoff)
   {
-
+    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+    for(var i = 0; i < self.scene_boxes.length; i++) ctx.strokeRect(self.scene_boxes[i].x, self.scene_boxes[i].y+yoff, self.scene_boxes[i].w, self.scene_boxes[i].h);
   }
 }
 

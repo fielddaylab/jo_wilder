@@ -39,18 +39,26 @@ var GamePlayScene = function(game, stage)
     switch(cur_state)
     {
       case STATE_NAV:
-        clicker.filter(my_toolbar);
-        clicker.filter(my_navigable);
-        clicker.filter(canv_clicker);
+        if(
+        !clicker.filter(my_toolbar) &&
+        !clicker.filter(my_navigable) &&
+        !clicker.filter(canv_clicker) &&
+        false) ;
         my_avatar.tick();
         my_navigable.tick();
         break;
       case STATE_MAP:
-        clicker.filter(my_overworld);
+        if(
+        !clicker.filter(my_overworld) &&
+        false) ;
+        my_avatar.tick();
+        my_navigable.tick();
         my_overworld.tick();
         break;
       case STATE_NOTEBOOK:
-        clicker.filter(my_notebook);
+        if(
+        !clicker.filter(my_notebook) &&
+        false) ;
         my_notebook.tick();
         break;
       case STATE_PERSON:
@@ -73,10 +81,12 @@ var GamePlayScene = function(game, stage)
       case STATE_NAV:
         my_navigable.draw();
         my_avatar.draw();
-        my_toolbar.draw();
+        my_toolbar.draw(0);
         break;
       case STATE_MAP:
-        my_overworld.draw();
+        my_navigable.draw();
+        my_avatar.draw();
+        my_overworld.draw(0);
         break;
       case STATE_NOTEBOOK:
         my_notebook.draw();
@@ -99,38 +109,39 @@ var GamePlayScene = function(game, stage)
     switch(state_from)
     {
       case STATE_NAV:
-        state_t += 0.01;
+        my_avatar.tick();
+        my_navigable.tick();
         if(state_to == STATE_NAV)
         {
-          my_avatar.tick();
-          my_navigable.tick();
+          state_t += 0.01;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
             if(cur_act.act == ACT_PORTHOLE)
             {
               var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room,cur_level);
               if(r) cur_room = r;
-              console.log(r);
               my_avatar.consume_room(cur_room);
               my_navigable.consume_room(cur_room);
               cur_act = 0;
             }
           }
         }
-        if(state_to == STATE_MAP)
-        {
-
-        }
+        else state_t += 0.01;
         break;
       case STATE_MAP:
+        state_t += 0.01;
         break;
       case STATE_NOTEBOOK:
+        state_t += 0.01;
         break;
       case STATE_PERSON:
+        state_t += 0.01;
         break;
       case STATE_OBJECT:
+        state_t += 0.01;
         break;
       case STATE_WILDCARD:
+        state_t += 0.01;
         break;
     }
 
@@ -146,15 +157,22 @@ var GamePlayScene = function(game, stage)
     switch(state_from)
     {
       case STATE_NAV:
-        if(state_to == state_to == STATE_NAV)
+        if(state_to == STATE_NAV)
         {
           my_navigable.draw();
           my_avatar.draw();
-          my_toolbar.draw();
+          my_toolbar.draw(0);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
           ctx.fillStyle = "rgba(255,255,255,"+blur+")";
           ctx.fillRect(0,0,canv.width,canv.height);
+        }
+        if(state_to == STATE_MAP)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw(state_t*my_toolbar.h);
+          my_overworld.draw((1-state_t)*my_overworld.h);
         }
         break;
       case STATE_MAP:
