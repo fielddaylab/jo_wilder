@@ -60,30 +60,7 @@ var GamePlayScene = function(game, stage)
       case STATE_WILDCARD:
         break;
       case STATE_TRANSITION:
-        var old_state_t = state_t;
-        state_t += 0.01;
-        if(state_from == STATE_NAV && state_to == STATE_NAV)
-        {
-          my_avatar.tick();
-          my_navigable.tick();
-          if(old_state_t < 0.5 && state_t >= 0.5)
-          {
-            if(cur_act.act == ACT_PORTHOLE)
-            {
-              var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room,cur_level);
-              if(r) cur_room = r;
-              console.log(r);
-              my_avatar.consume_room(cur_room);
-              my_navigable.consume_room(cur_room);
-              cur_act = 0;
-            }
-          }
-        }
-        if(state_t >= 1)
-        {
-          state_t = 0;
-          cur_state = state_to;
-        }
+        transition_tick();
         break;
     }
     clicker.flush();
@@ -111,7 +88,65 @@ var GamePlayScene = function(game, stage)
       case STATE_WILDCARD:
         break;
       case STATE_TRANSITION:
-        if(state_from == STATE_NAV && state_to == STATE_NAV)
+        transition_draw();
+        break;
+    }
+  };
+
+  var transition_tick = function()
+  {
+    var old_state_t = state_t;
+    switch(state_from)
+    {
+      case STATE_NAV:
+        state_t += 0.01;
+        if(state_to == STATE_NAV)
+        {
+          my_avatar.tick();
+          my_navigable.tick();
+          if(old_state_t < 0.5 && state_t >= 0.5)
+          {
+            if(cur_act.act == ACT_PORTHOLE)
+            {
+              var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room,cur_level);
+              if(r) cur_room = r;
+              console.log(r);
+              my_avatar.consume_room(cur_room);
+              my_navigable.consume_room(cur_room);
+              cur_act = 0;
+            }
+          }
+        }
+        if(state_to == STATE_MAP)
+        {
+
+        }
+        break;
+      case STATE_MAP:
+        break;
+      case STATE_NOTEBOOK:
+        break;
+      case STATE_PERSON:
+        break;
+      case STATE_OBJECT:
+        break;
+      case STATE_WILDCARD:
+        break;
+    }
+
+    if(state_t >= 1)
+    {
+      state_t = 0;
+      cur_state = state_to;
+    }
+  }
+
+  var transition_draw = function()
+  {
+    switch(state_from)
+    {
+      case STATE_NAV:
+        if(state_to == state_to == STATE_NAV)
         {
           my_navigable.draw();
           my_avatar.draw();
@@ -122,8 +157,18 @@ var GamePlayScene = function(game, stage)
           ctx.fillRect(0,0,canv.width,canv.height);
         }
         break;
+      case STATE_MAP:
+        break;
+      case STATE_NOTEBOOK:
+        break;
+      case STATE_PERSON:
+        break;
+      case STATE_OBJECT:
+        break;
+      case STATE_WILDCARD:
+        break;
     }
-  };
+  }
 
   self.cleanup = function()
   {
