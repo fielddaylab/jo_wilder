@@ -17,8 +17,8 @@ var find = function(id,node)
     if(keys.length <= ++k) return person;
     var option; for(var i = 0; i < person.options.length; i++) if(person.options[i].id == keys[k]) option = person.options[i];
     if(!option || keys.length <= ++k) return option;
-    var requirement; for(var i = 0; i < option.requirements.length; i++) if(option.requirements[i].id == keys[k]) requirement = option.requirements[i];
-    if(!requirement || keys.length <= ++k) return requirement;
+    var lock; for(var i = 0; i < option.locks.length; i++) if(option.locks[i].id == keys[k]) lock = option.locks[i];
+    if(!lock || keys.length <= ++k) return lock;
     return;
   }
   var object; for(var i = 0; i < room.objects.length; i++) if(room.objects[i].id == keys[k]) object = room.objects[i];
@@ -29,24 +29,24 @@ var find = function(id,node)
     if(!view || keys.length <= ++k) return view;
     var zone; for(var i = 0; i < view.zones.length; i++) if(view.zones[i].id == keys[k]) zone = view.zones[i];
     if(!zone || keys.length <= ++k) return zone;
-    var requirement; for(var i = 0; i < zone.requirements.length; i++) if(zone.requirements[i].id == keys[k]) requirement = zone.requirements[i];
-    if(!requirement || keys.length <= ++k) return requirement;
+    var lock; for(var i = 0; i < zone.locks.length; i++) if(zone.locks[i].id == keys[k]) lock = zone.locks[i];
+    if(!lock || keys.length <= ++k) return lock;
     return;
   }
   var porthole; for(var i = 0; i < room.portholes.length; i++) if(room.portholes[i].id == keys[k]) porthole = room.portholes[i];
   if(porthole)
   {
     if(keys.length <= ++k) return porthole;
-    var requirement; for(var i = 0; i < porthole.requirements.length; i++) if(porthole.requirements[i].id == keys[k]) requirement = porthole.requirements[i];
-    if(!requirement || keys.length <= ++k) return requirement;
+    var lock; for(var i = 0; i < porthole.locks.length; i++) if(porthole.locks[i].id == keys[k]) lock = porthole.locks[i];
+    if(!lock || keys.length <= ++k) return lock;
     return;
   }
   var wildcard; for(var i = 0; i < room.wildcards.length; i++) if(room.wildcards[i].id == keys[k]) wildcard = room.wildcards[i];
   if(wildcard)
   {
     if(keys.length <= ++k) return wildcard;
-    var requirement; for(var i = 0; i < wildcard.requirements.length; i++) if(wildcard.requirements[i].id == keys[k]) requirement = wildcard.requirements[i];
-    if(!requirement || keys.length <= ++k) return requirement;
+    var lock; for(var i = 0; i < wildcard.locks.length; i++) if(wildcard.locks[i].id == keys[k]) lock = wildcard.locks[i];
+    if(!lock || keys.length <= ++k) return lock;
     return;
   }
 }
@@ -110,7 +110,7 @@ var person = function()
   self.anim;
 
   self.options = [];
-  self.requirements = [];
+  self.locks = [];
 }
 
 var object = function()
@@ -125,7 +125,7 @@ var object = function()
   self.anim;
 
   self.views = [];
-  self.requirements = [];
+  self.locks = [];
 }
 
 var porthole = function()
@@ -139,7 +139,7 @@ var porthole = function()
   self.h = 0;
 
   self.target_room;
-  self.requirements = [];
+  self.locks = [];
 }
 
 var wildcard = function()
@@ -152,7 +152,7 @@ var wildcard = function()
   self.w = 0;
   self.h = 0;
 
-  self.requirements = [];
+  self.locks = [];
 }
 
 var view = function()
@@ -161,7 +161,7 @@ var view = function()
   self.id = "null"
   self.anim;
   self.zones = [];
-  self.requirements = [];
+  self.locks = [];
 }
 
 var zone = function()
@@ -173,17 +173,17 @@ var zone = function()
   self.w = 0;
   self.h = 0;
 
-  self.requirements = [];
+  self.locks = [];
 }
 
 var option = function()
 {
   var self = this;
   self.id = "null"
-  self.requirements = [];
+  self.locks = [];
 }
 
-var requirement = function()
+var lock = function()
 {
   var self = this;
   self.id = "null"

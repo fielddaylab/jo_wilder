@@ -1,15 +1,17 @@
-var levels       = []; var tmp_level;
-var maps         = []; var tmp_map;
-var scenes       = []; var tmp_scene;
-var rooms        = []; var tmp_room;
-var persons      = []; var tmp_person;
-var objects      = []; var tmp_object;
-var portholes    = []; var tmp_porthole;
-var wildcards    = []; var tmp_wildcard;
-var views        = []; var tmp_view;
-var zones        = []; var tmp_zone;
-var options      = []; var tmp_option;
-var requirements = []; var tmp_requirement;
+var levels = [];
+
+var tmp_level;
+var tmp_map;
+var tmp_scene;
+var tmp_room;
+var tmp_person;
+var tmp_object;
+var tmp_porthole;
+var tmp_wildcard;
+var tmp_view;
+var tmp_zone;
+var tmp_option;
+var tmp_lock;
 
 /*
 //BASE LEVEL STRUCTURE
@@ -37,24 +39,20 @@ tmp_level = new level();
                   {
                     //reqs (option)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_option.requirements.push(tmp_requirement);//assign
+                      tmp_option.locks.push(tmp_lock);//assign
                     }
                   }
-                  options.push(tmp_option);//register
                   tmp_person.options.push(tmp_option);//assign
                 }
                 //reqs (person)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_person.requirements.push(tmp_requirement);//assign
+                  tmp_person.locks.push(tmp_lock);//assign
                 }
               }
-              persons.push(tmp_person);//register
               tmp_room.persons.push(tmp_person);//assign
             }
             //objects
@@ -71,35 +69,29 @@ tmp_level = new level();
                       {
                         //reqs (zone)
                         {
-                          tmp_requirement = new requirement();
+                          tmp_lock = new lock();
                           {}
-                          requirements.push(tmp_requirement);//register
-                          tmp_zone.requirements.push(tmp_requirement);//assign
+                          tmp_zone.locks.push(tmp_lock);//assign
                         }
                       }
-                      zones.push(tmp_zone);//register
                       tmp_view.zones.push(tmp_zone);//assign
                     }
                     //reqs (view)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_view.requirements.push(tmp_requirement);//assign
+                      tmp_view.locks.push(tmp_lock);//assign
                     }
                   }
-                  views.push(tmp_view);//register
                   tmp_object.views.push(tmp_view);//assign
                 }
                 //reqs (object)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_object.requirements.push(tmp_requirement);//assign
+                  tmp_object.locks.push(tmp_lock);//assign
                 }
               }
-              objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
             //portholes
@@ -108,13 +100,11 @@ tmp_level = new level();
               {
                 //reqs (porthole)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_porthole.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.locks.push(tmp_lock);//assign
                 }
               }
-              portholes.push(tmp_porthole);//register
               tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
@@ -123,25 +113,20 @@ tmp_level = new level();
               {
                 //reqs (wildcard)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                  tmp_wildcard.locks.push(tmp_lock);//assign
                 }
               }
-              wildcards.push(tmp_wildcard);//register
               tmp_room.wildcards.push(tmp_wildcard);//assign
             }
           }
-          rooms.push(tmp_room);//register
           tmp_scene.rooms.push(tmp_room);//assign
         }
       }
-      scenes.push(tmp_scene);//register
       tmp_map.scenes.push(tmp_scene);//assign
     }
   }
-  maps.push(tmp_map);//register
   tmp_level.map = tmp_map;
 }
 levels.push(tmp_level);
@@ -174,6 +159,8 @@ tmp_level.id = "l1";
             tmp_room.nav_y = canv.height/2;
             tmp_room.nav_w = canv.width-tmp_room.nav_x*2;
             tmp_room.nav_h = canv.height/2-100;
+            tmp_room.start_x = canv.width/2;
+            tmp_room.start_y = canv.height/2;
 
             //persons
             {
@@ -194,13 +181,11 @@ tmp_level.id = "l1";
                   {
                     //reqs (option)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_option.requirements.push(tmp_requirement);//assign
+                      tmp_option.locks.push(tmp_lock);//assign
                     }
                   }
-                  options.push(tmp_option);//register
                   tmp_person.options.push(tmp_option);//assign
 
                   //goodbye
@@ -209,24 +194,20 @@ tmp_level.id = "l1";
                   {
                     //reqs (option)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_option.requirements.push(tmp_requirement);//assign
+                      tmp_option.locks.push(tmp_lock);//assign
                     }
                   }
-                  options.push(tmp_option);//register
                   tmp_person.options.push(tmp_option);//assign
                 }
                 //reqs (person)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_person.requirements.push(tmp_requirement);//assign
+                  tmp_person.locks.push(tmp_lock);//assign
                 }
               }
-              persons.push(tmp_person);//register
               tmp_room.persons.push(tmp_person);//assign
             }
             //objects
@@ -252,24 +233,20 @@ tmp_level.id = "l1";
                       {
                         //reqs (zone)
                         {
-                          tmp_requirement = new requirement();
+                          tmp_lock = new lock();
                           {}
-                          requirements.push(tmp_requirement);//register
-                          tmp_zone.requirements.push(tmp_requirement);//assign
+                          tmp_zone.locks.push(tmp_lock);//assign
                         }
                       }
-                      zones.push(tmp_zone);//register
                       tmp_view.zones.push(tmp_zone);//assign
                     }
                     //reqs (view)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_view.requirements.push(tmp_requirement);//assign
+                      tmp_view.locks.push(tmp_lock);//assign
                     }
                   }
-                  views.push(tmp_view);//register
                   tmp_object.views.push(tmp_view);//assign
 
                   //open
@@ -282,33 +259,28 @@ tmp_level.id = "l1";
                       {
                         //reqs (zone)
                         {
-                          tmp_requirement = new requirement();
+                          tmp_lock = new lock();
                           {}
-                          requirements.push(tmp_requirement);//register
-                          tmp_zone.requirements.push(tmp_requirement);//assign
+                          tmp_zone.locks.push(tmp_lock);//assign
                         }
                       }
-                      zones.push(tmp_zone);//register
                       tmp_view.zones.push(tmp_zone);//assign
                     }
                     //reqs (view)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_view.requirements.push(tmp_requirement);//assign
+                      tmp_view.locks.push(tmp_lock);//assign
                     }
                   }
                 }
                 //reqs (object)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_object.requirements.push(tmp_requirement);//assign
+                  tmp_object.locks.push(tmp_lock);//assign
                 }
               }
-              objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
             //portholes
@@ -325,13 +297,11 @@ tmp_level.id = "l1";
 
                 //reqs (porthole)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_porthole.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.locks.push(tmp_lock);//assign
                 }
               }
-              portholes.push(tmp_porthole);//register
               tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
@@ -342,23 +312,27 @@ tmp_level.id = "l1";
               {
                 //reqs (wildcard)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                  tmp_wildcard.locks.push(tmp_lock);//assign
                 }
               }
-              wildcards.push(tmp_wildcard);//register
               tmp_room.wildcards.push(tmp_wildcard);//assign
             }
           }
-          rooms.push(tmp_room);//register
           tmp_scene.rooms.push(tmp_room);//assign
 
           //exhibit
           tmp_room = new room();
           tmp_room.id = "exhibit";
           {
+            tmp_room.nav_x = 100;
+            tmp_room.nav_y = canv.height/2;
+            tmp_room.nav_w = canv.width-tmp_room.nav_x*2;
+            tmp_room.nav_h = canv.height/2-100;
+            tmp_room.start_x = canv.width/2;
+            tmp_room.start_y = canv.height/2;
+
             //persons
             {
               tmp_person = new person();
@@ -374,24 +348,20 @@ tmp_level.id = "l1";
                   {
                     //reqs (option)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_option.requirements.push(tmp_requirement);//assign
+                      tmp_option.locks.push(tmp_lock);//assign
                     }
                   }
-                  options.push(tmp_option);//register
                   tmp_person.options.push(tmp_option);//assign
                 }
                 //reqs (person)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_person.requirements.push(tmp_requirement);//assign
+                  tmp_person.locks.push(tmp_lock);//assign
                 }
               }
-              persons.push(tmp_person);//register
               tmp_room.persons.push(tmp_person);//assign
             }
             //objects
@@ -408,35 +378,29 @@ tmp_level.id = "l1";
                       {
                         //reqs (zone)
                         {
-                          tmp_requirement = new requirement();
+                          tmp_lock = new lock();
                           {}
-                          requirements.push(tmp_requirement);//register
-                          tmp_zone.requirements.push(tmp_requirement);//assign
+                          tmp_zone.locks.push(tmp_lock);//assign
                         }
                       }
-                      zones.push(tmp_zone);//register
                       tmp_view.zones.push(tmp_zone);//assign
                     }
                     //reqs (view)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_view.requirements.push(tmp_requirement);//assign
+                      tmp_view.locks.push(tmp_lock);//assign
                     }
                   }
-                  views.push(tmp_view);//register
                   tmp_object.views.push(tmp_view);//assign
                 }
                 //reqs (object)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_object.requirements.push(tmp_requirement);//assign
+                  tmp_object.locks.push(tmp_lock);//assign
                 }
               }
-              objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
             //portholes
@@ -445,13 +409,11 @@ tmp_level.id = "l1";
               {
                 //reqs (porthole)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_porthole.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.locks.push(tmp_lock);//assign
                 }
               }
-              portholes.push(tmp_porthole);//register
               tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
@@ -460,21 +422,17 @@ tmp_level.id = "l1";
               {
                 //reqs (wildcard)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                  tmp_wildcard.locks.push(tmp_lock);//assign
                 }
               }
-              wildcards.push(tmp_wildcard);//register
               tmp_room.wildcards.push(tmp_wildcard);//assign
             }
           }
-          rooms.push(tmp_room);//register
           tmp_scene.rooms.push(tmp_room);//assign
         }
       }
-      scenes.push(tmp_scene);//register
       tmp_map.scenes.push(tmp_scene);//assign
 
       //library
@@ -495,24 +453,20 @@ tmp_level.id = "l1";
                   {
                     //reqs (option)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_option.requirements.push(tmp_requirement);//assign
+                      tmp_option.locks.push(tmp_lock);//assign
                     }
                   }
-                  options.push(tmp_option);//register
                   tmp_person.options.push(tmp_option);//assign
                 }
                 //reqs (person)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_person.requirements.push(tmp_requirement);//assign
+                  tmp_person.locks.push(tmp_lock);//assign
                 }
               }
-              persons.push(tmp_person);//register
               tmp_room.persons.push(tmp_person);//assign
             }
             //objects
@@ -529,35 +483,29 @@ tmp_level.id = "l1";
                       {
                         //reqs (zone)
                         {
-                          tmp_requirement = new requirement();
+                          tmp_lock = new lock();
                           {}
-                          requirements.push(tmp_requirement);//register
-                          tmp_zone.requirements.push(tmp_requirement);//assign
+                          tmp_zone.locks.push(tmp_lock);//assign
                         }
                       }
-                      zones.push(tmp_zone);//register
                       tmp_view.zones.push(tmp_zone);//assign
                     }
                     //reqs (view)
                     {
-                      tmp_requirement = new requirement();
+                      tmp_lock = new lock();
                       {}
-                      requirements.push(tmp_requirement);//register
-                      tmp_view.requirements.push(tmp_requirement);//assign
+                      tmp_view.locks.push(tmp_lock);//assign
                     }
                   }
-                  views.push(tmp_view);//register
                   tmp_object.views.push(tmp_view);//assign
                 }
                 //reqs (object)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_object.requirements.push(tmp_requirement);//assign
+                  tmp_object.locks.push(tmp_lock);//assign
                 }
               }
-              objects.push(tmp_object);//register
               tmp_room.objects.push(tmp_object);//assign
             }
             //portholes
@@ -566,13 +514,11 @@ tmp_level.id = "l1";
               {
                 //reqs (porthole)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_porthole.requirements.push(tmp_requirement);//assign
+                  tmp_porthole.locks.push(tmp_lock);//assign
                 }
               }
-              portholes.push(tmp_porthole);//register
               tmp_room.portholes.push(tmp_porthole);//assign
             }
             //wildcards
@@ -581,25 +527,20 @@ tmp_level.id = "l1";
               {
                 //reqs (wildcard)
                 {
-                  tmp_requirement = new requirement();
+                  tmp_lock = new lock();
                   {}
-                  requirements.push(tmp_requirement);//register
-                  tmp_wildcard.requirements.push(tmp_requirement);//assign
+                  tmp_wildcard.locks.push(tmp_lock);//assign
                 }
               }
-              wildcards.push(tmp_wildcard);//register
               tmp_room.wildcards.push(tmp_wildcard);//assign
             }
           }
-          rooms.push(tmp_room);//register
           tmp_scene.rooms.push(tmp_room);//assign
         }
       }
-      scenes.push(tmp_scene);//register
       tmp_map.scenes.push(tmp_scene);//assign
     }
   }
-  maps.push(tmp_map);//register
   tmp_level.map = tmp_map;
 }
 levels.push(tmp_level);
