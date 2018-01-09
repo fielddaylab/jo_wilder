@@ -1,0 +1,4 @@
+object.x = 0;
+object.y = 0;
+object.w = 0;
+object.h = 0;

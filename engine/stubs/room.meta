@@ -1,0 +1,6 @@
+room.nav_x = 0;
+room.nav_y = 0;
+room.nav_w = 0;
+room.nav_h = 0;
+room.start_x = 0;
+room.start_y = 0;
