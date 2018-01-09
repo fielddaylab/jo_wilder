@@ -129,6 +129,8 @@ var GamePlayScene = function(game, stage)
         else state_t += 0.01;
         break;
       case STATE_MAP:
+        my_avatar.tick();
+        my_navigable.tick;
         state_t += 0.01;
         break;
       case STATE_NOTEBOOK:
@@ -176,6 +178,13 @@ var GamePlayScene = function(game, stage)
         }
         break;
       case STATE_MAP:
+        if(state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw((1-state_t)*my_toolbar.h);
+          my_overworld.draw(state_t*my_overworld.h);
+        }
         break;
       case STATE_NOTEBOOK:
         break;

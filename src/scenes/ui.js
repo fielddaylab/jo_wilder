@@ -260,6 +260,7 @@ var overworld = function()
   self.w = canv.width-20;
   self.h = canv.height-20;
 
+  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.scene_boxes = [];
 
   self.consume_map = function(map)
@@ -268,9 +269,16 @@ var overworld = function()
     for(var i = 0; i < map.scenes.length; i++) self.scene_boxes.push(map.scenes[i]);
   }
 
+  self.shouldClick = function(evt) { return true; }
   self.click = function(evt)
   {
-
+    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
+    {
+      state_from = cur_state;
+      state_to = STATE_NAV;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+    }
   }
 
   self.tick = function()
@@ -281,6 +289,7 @@ var overworld = function()
   self.draw = function(yoff)
   {
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     for(var i = 0; i < self.scene_boxes.length; i++) ctx.strokeRect(self.scene_boxes[i].x, self.scene_boxes[i].y+yoff, self.scene_boxes[i].w, self.scene_boxes[i].h);
   }
 }
