@@ -66,7 +66,7 @@ for level in $levels_dir/*.meta; do #levels
     echo "map = new map();" >> $OUT
     echo "map.id = $map_id;" >> $OUT
     echo "{" >> $OUT
-    if [ ! -f $ENGINE_DD/$map_img ]; then echo "ERROR: Map img not found (expected $map_img)"; if querystub; then cp $STUB_D/map.png $ENGINE_DD/$map_img; else continue; fi fi
+    if [ ! -f $ENGINE_DD/$map_img ]; then echo "ERROR: Map img not found (expected $map_img)"; if queryfix; then cp $STUB_D/map.png $ENGINE_DD/$map_img; else continue; fi fi
     echo "map.img = GenImg(\"$GAME_DD/$map_img\");" >> $OUT
     cat $map >> $OUT
 
@@ -83,7 +83,7 @@ for level in $levels_dir/*.meta; do #levels
       echo "scene = new scene();" >> $OUT
       echo "scene.id = $scene_id;" >> $OUT
       echo "{" >> $OUT
-      if [ ! -f $ENGINE_DD/$scene_img ]; then echo "ERROR: Scene img not found (expected $scene_img)"; if querystub; then cp $STUB_D/scene.png $ENGINE_DD/$scene_img; else continue; fi fi
+      if [ ! -f $ENGINE_DD/$scene_img ]; then echo "ERROR: Scene img not found (expected $scene_img)"; if queryfix; then cp $STUB_D/scene.png $ENGINE_DD/$scene_img; else continue; fi fi
       echo "scene.img = GenImg(\"$GAME_DD/$scene_img\");" >> $OUT
       cat $scene >> $OUT
 
@@ -100,7 +100,7 @@ for level in $levels_dir/*.meta; do #levels
         echo "room = new room();" >> $OUT
         echo "room.id = $room_id;" >> $OUT
         echo "{" >> $OUT
-        if [ ! -f $ENGINE_DD/$room_img ]; then echo "ERROR: Room img not found (expected $room_img)"; if querystub; then cp $STUB_D/room.png $ENGINE_DD/$room_img; else continue; fi fi
+        if [ ! -f $ENGINE_DD/$room_img ]; then echo "ERROR: Room img not found (expected $room_img)"; if queryfix; then cp $STUB_D/room.png $ENGINE_DD/$room_img; else continue; fi fi
         echo "room.img = GenImg(\"$GAME_DD/$room_img\");" >> $OUT
         cat $room >> $OUT
 
@@ -117,7 +117,7 @@ for level in $levels_dir/*.meta; do #levels
           echo "person = new person();" >> $OUT
           echo "person.id = $person_id;" >> $OUT
           echo "{" >> $OUT
-          if [ ! -f $ENGINE_DD/$person_img ]; then echo "ERROR: Person img not found (expected $person_img)"; if querystub; then cp $STUB_D/person.png $ENGINE_DD/$person_img; else continue; fi fi
+          if [ ! -f $ENGINE_DD/$person_img ]; then echo "ERROR: Person img not found (expected $person_img)"; if queryfix; then cp $STUB_D/person.png $ENGINE_DD/$person_img; else continue; fi fi
           echo "person.img = GenImg(\"$GAME_DD/$person_img\");" >> $OUT
           cat $person >> $OUT
 
@@ -170,7 +170,7 @@ for level in $levels_dir/*.meta; do #levels
             echo "view = new view();" >> $OUT
             echo "view.id = $view_id;" >> $OUT
             echo "{" >> $OUT
-            if [ ! -f $ENGINE_DD/$view_img ]; then echo "ERROR: View img not found (expected $view_img)"; if querystub; then cp $STUB_D/view.png $ENGINE_DD/$view_img; else continue; fi fi
+            if [ ! -f $ENGINE_DD/$view_img ]; then echo "ERROR: View img not found (expected $view_img)"; if queryfix; then cp $STUB_D/view.png $ENGINE_DD/$view_img; else continue; fi fi
             echo "view.img = GenImg(\"$GAME_DD/$view_img\");" >> $OUT
             cat $view >> $OUT
 
