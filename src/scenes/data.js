@@ -143,18 +143,21 @@ tmp_level.id = "l1";
   tmp_map = new map();
   tmp_map.id = "map";
   {
+    tmp_map.img = GenImg("assets/"+tmp_level.id+"/"+tmp_map.id+".png");
     //scenes
     {
       //capitol
       tmp_scene = new scene();
       tmp_scene.id = "capitol";
       {
+        tmp_scene.img = GenImg("assets/"+tmp_level.id+"/"+tmp_map.id+"/"+tmp_scene.id+".png");
         //rooms
         {
           //entrance
           tmp_room = new room();
           tmp_room.id = "entrance";
           {
+            tmp_room.img = GenImg("assets/"+tmp_level.id+"/"+tmp_map.id+"/"+tmp_scene.id+"/"+tmp_room.id+".png");
             tmp_room.nav_x = 100;
             tmp_room.nav_y = canv.height/2;
             tmp_room.nav_w = canv.width-tmp_room.nav_x*2;
@@ -168,6 +171,7 @@ tmp_level.id = "l1";
               tmp_person = new person();
               tmp_person.id = "uncle";
               {
+                tmp_person.img = GenImg("assets/person_0.png");
                 tmp_person.x = 150;
                 tmp_person.y = canv.height/2-50;
                 tmp_person.w = 50;
@@ -227,6 +231,7 @@ tmp_level.id = "l1";
                   tmp_view = new view();
                   tmp_view.id = "front";
                   {
+                    tmp_view.img = GenImg("assets/object_0_view_0.png");
                     //zones
                     {
                       tmp_zone = new zone();
@@ -253,6 +258,7 @@ tmp_level.id = "l1";
                   tmp_view = new view();
                   tmp_view.id = "open";
                   {
+                    tmp_view.img = GenImg("assets/object_0_view_1.png");
                     //zones
                     {
                       tmp_zone = new zone();
@@ -326,6 +332,7 @@ tmp_level.id = "l1";
           tmp_room = new room();
           tmp_room.id = "exhibit";
           {
+            tmp_room.img = GenImg("assets/scene_0_room_1.png");
             tmp_room.nav_x = 100;
             tmp_room.nav_y = canv.height/2;
             tmp_room.nav_w = canv.width-tmp_room.nav_x*2;
