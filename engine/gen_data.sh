@@ -49,7 +49,7 @@ for level in $levels_dir/*.meta; do #levels
   if [ ! -d $level_dir ]; then echo "ERROR: No directory found for $level_id (expected $level_dir)"; if queryfix; then mkdir $level_dir; else continue; fi fi
   echo - Note: Genning $level_id #debug
   echo "level = new level();" >> $OUT
-  echo "level.id = $level_id;" >> $OUT
+  echo "level.id = \"$level_id\";" >> $OUT
   echo "{" >> $OUT
   cat $level >> $OUT
 
@@ -64,7 +64,7 @@ for level in $levels_dir/*.meta; do #levels
     map_img=`img $map`
     echo - Note: Genning $map_id #debug
     echo "map = new map();" >> $OUT
-    echo "map.id = $map_id;" >> $OUT
+    echo "map.id = \"$map_id\";" >> $OUT
     echo "{" >> $OUT
     if [ ! -f $ENGINE_DD/$map_img ]; then echo "ERROR: Map img not found (expected $map_img)"; if queryfix; then cp $STUB_D/map.png $ENGINE_DD/$map_img; else continue; fi fi
     echo "map.img = GenImg(\"$GAME_DD/$map_img\");" >> $OUT
@@ -81,7 +81,7 @@ for level in $levels_dir/*.meta; do #levels
       scene_img=`img $scene`
       echo - Note: Genning $scene_id #debug
       echo "scene = new scene();" >> $OUT
-      echo "scene.id = $scene_id;" >> $OUT
+      echo "scene.id = \"$scene_id\";" >> $OUT
       echo "{" >> $OUT
       if [ ! -f $ENGINE_DD/$scene_img ]; then echo "ERROR: Scene img not found (expected $scene_img)"; if queryfix; then cp $STUB_D/scene.png $ENGINE_DD/$scene_img; else continue; fi fi
       echo "scene.img = GenImg(\"$GAME_DD/$scene_img\");" >> $OUT
@@ -98,7 +98,7 @@ for level in $levels_dir/*.meta; do #levels
         room_img=`img $room`
         echo - Note: Genning $room_id #debug
         echo "room = new room();" >> $OUT
-        echo "room.id = $room_id;" >> $OUT
+        echo "room.id = \"$room_id\";" >> $OUT
         echo "{" >> $OUT
         if [ ! -f $ENGINE_DD/$room_img ]; then echo "ERROR: Room img not found (expected $room_img)"; if queryfix; then cp $STUB_D/room.png $ENGINE_DD/$room_img; else continue; fi fi
         echo "room.img = GenImg(\"$GAME_DD/$room_img\");" >> $OUT
@@ -115,7 +115,7 @@ for level in $levels_dir/*.meta; do #levels
           person_img=`img $person`
           echo - Note: Genning $person_id #debug
           echo "person = new person();" >> $OUT
-          echo "person.id = $person_id;" >> $OUT
+          echo "person.id = \"$person_id\";" >> $OUT
           echo "{" >> $OUT
           if [ ! -f $ENGINE_DD/$person_img ]; then echo "ERROR: Person img not found (expected $person_img)"; if queryfix; then cp $STUB_D/person.png $ENGINE_DD/$person_img; else continue; fi fi
           echo "person.img = GenImg(\"$GAME_DD/$person_img\");" >> $OUT
@@ -131,15 +131,17 @@ for level in $levels_dir/*.meta; do #levels
             if [ ! -d $option_dir ]; then echo "ERROR: No directory found for $option_id (expected $option_dir)"; if queryfix; then mkdir $option_dir; else continue; fi fi
             echo - Note: Genning $option_id #debug
             echo "option = new option();" >> $OUT
-            echo "option.id = $option_id;" >> $OUT
+            echo "option.id = \"$option_id\";" >> $OUT
             echo "{" >> $OUT
             cat $option >> $OUT
 
             echo "}," >> $OUT
+            echo "person.options.push(option);" >> $OUT
 
           done
 
           echo "}," >> $OUT
+          echo "room.persons.push(person);" >> $OUT
 
         done
 
@@ -153,7 +155,7 @@ for level in $levels_dir/*.meta; do #levels
           if [ ! -d $object_dir ]; then echo "ERROR: No directory found for $object_id (expected $object_dir)"; if queryfix; then mkdir $object_dir; else continue; fi fi
           echo - Note: Genning $object_id #debug
           echo "object = new object();" >> $OUT
-          echo "object.id = $object_id;" >> $OUT
+          echo "object.id = \"$object_id\";" >> $OUT
           echo "{" >> $OUT
           cat $object >> $OUT
 
@@ -168,7 +170,7 @@ for level in $levels_dir/*.meta; do #levels
             view_img=`img $view`
             echo - Note: Genning $view_id #debug
             echo "view = new view();" >> $OUT
-            echo "view.id = $view_id;" >> $OUT
+            echo "view.id = \"$view_id\";" >> $OUT
             echo "{" >> $OUT
             if [ ! -f $ENGINE_DD/$view_img ]; then echo "ERROR: View img not found (expected $view_img)"; if queryfix; then cp $STUB_D/view.png $ENGINE_DD/$view_img; else continue; fi fi
             echo "view.img = GenImg(\"$GAME_DD/$view_img\");" >> $OUT
@@ -184,19 +186,22 @@ for level in $levels_dir/*.meta; do #levels
               if [ ! -d $zone_dir ]; then echo "ERROR: No directory found for $zone_id (expected $zone_dir)"; if queryfix; then mkdir $zone_dir; else continue; fi fi
               echo - Note: Genning $zone_id #debug
               echo "zone = new zone();" >> $OUT
-              echo "zone.id = $zone_id;" >> $OUT
+              echo "zone.id = \"$zone_id\";" >> $OUT
               echo "{" >> $OUT
               cat $zone >> $OUT
 
               echo "}," >> $OUT
+              echo "views.zone.push(zone);" >> $OUT
 
             done
 
             echo "}," >> $OUT
+            echo "object.views.push(view);" >> $OUT
 
           done
 
           echo "}," >> $OUT
+          echo "room.objects.push(object);" >> $OUT
 
         done
 
@@ -210,11 +215,12 @@ for level in $levels_dir/*.meta; do #levels
           if [ ! -d $porthole_dir ]; then echo "ERROR: No directory found for $porthole_id (expected $porthole_dir)"; if queryfix; then mkdir $porthole_dir; else continue; fi fi
           echo - Note: Genning $porthole_id #debug
           echo "porthole = new porthole();" >> $OUT
-          echo "porthole.id = $porthole_id;" >> $OUT
+          echo "porthole.id = \"$porthole_id\";" >> $OUT
           echo "{" >> $OUT
           cat $porthole >> $OUT
 
           echo "}," >> $OUT
+          echo "room.portholes.push(porthole);" >> $OUT
 
         done
 
@@ -228,27 +234,32 @@ for level in $levels_dir/*.meta; do #levels
           if [ ! -d $wildcard_dir ]; then echo "ERROR: No directory found for $wildcard_id (expected $wildcard_dir)"; if queryfix; then mkdir $wildcard_dir; else continue; fi fi
           echo - Note: Genning $wildcard_id #debug
           echo "wildcard = new wildcard();" >> $OUT
-          echo "wildcard.id = $wildcard_id;" >> $OUT
+          echo "wildcard.id = \"$wildcard_id\";" >> $OUT
           echo "{" >> $OUT
           cat $wildcard >> $OUT
 
           echo "}," >> $OUT
+          echo "room.wildcards.push(wildcard);" >> $OUT
 
         done
 
         echo "}," >> $OUT
+        echo "scene.rooms.push(room);" >> $OUT
 
       done
 
       echo "}," >> $OUT
+      echo "map.scenes.push(scene);" >> $OUT
 
     done
 
     echo "}," >> $OUT
+    echo "level.map = map;" >> $OUT
 
   done
 
   echo "}," >> $OUT
+  echo "levels.push(level);" >> $OUT
 
 done
 
