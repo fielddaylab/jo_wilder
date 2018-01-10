@@ -1,4 +1,4 @@
-person.x = 70;
-person.y = canv.height/2-100;
-person.w = 100;
-person.h = 120;
+tmp_person.x = 70;
+tmp_person.y = canv.height/2-100;
+tmp_person.w = 100;
+tmp_person.h = 120;
