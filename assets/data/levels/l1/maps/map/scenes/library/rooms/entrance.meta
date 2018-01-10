@@ -1,6 +1,0 @@
-room.nav_x = 100;
-room.nav_y = canv.height/2;
-room.nav_w = canv.width-200;
-room.nav_h = canv.height/2-100;
-room.start_x = canv.width/2;
-room.start_y = canv.height/2;

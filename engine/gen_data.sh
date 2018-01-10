@@ -166,27 +166,27 @@ fi
 
 RMDIR=$ENGINE_DD
 RMDIR=$RMDIR/levels/$RMLEVEL
-if [ "@"$RMCMD == "@rmlevel" ] && [ "@"$RMLEVEL != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmlevel" ] && [ "@"$RMLEVEL != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/maps/$RMMAP
-if [ "@"$RMCMD == "@rmmap" ] && [ "@"$RMMAP != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmmap" ] && [ "@"$RMMAP != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/scenes/$RMSCENE
-if [ "@"$RMCMD == "@rmscene" ] && [ "@"$RMSCENE != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmscene" ] && [ "@"$RMSCENE != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/rooms/$RMROOM
-if [ "@"$RMCMD == "@rmroom" ] && [ "@"$RMROOM != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmroom" ] && [ "@"$RMROOM != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/persons/$RMPERSON
-if [ "@"$RMCMD == "@rmperson" ] && [ "@"$RMPERSON != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmperson" ] && [ "@"$RMPERSON != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/options/$RMOPTION
-if [ "@"$RMCMD == "@rmoption" ] && [ "@"$RMOPTION != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmoption" ] && [ "@"$RMOPTION != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/objectss/$RMOBJECT
-if [ "@"$RMCMD == "@rmobject" ] && [ "@"$RMOBJECT != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmobject" ] && [ "@"$RMOBJECT != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/views/$RMVIEW
-if [ "@"$RMCMD == "@rmview" ] && [ "@"$RMVIEW != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmview" ] && [ "@"$RMVIEW != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/zones/$RMZONE
-if [ "@"$RMCMD == "@rmzone" ] && [ "@"$RMZONE != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmzone" ] && [ "@"$RMZONE != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/portholes/$RMPORTHOLE
-if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 RMDIR=$RMDIR/wildcards/$RMWILDCARD
-if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@"] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 
 id() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into banana (removes path + .meta) #engine/game
 {
