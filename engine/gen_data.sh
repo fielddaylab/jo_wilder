@@ -62,6 +62,7 @@ for level in $levels_dir/*.meta; do #levels
   echo - Note: Genning $level_id #debug
   echo "level = new level();" >> $OUT
   echo "level.id = \"$level_id\";" >> $OUT
+  echo "level.fqid = \"$level_id\";" >> $OUT
   echo "{" >> $OUT
   cat $level >> $OUT
 
@@ -77,6 +78,7 @@ for level in $levels_dir/*.meta; do #levels
     echo - Note: Genning $map_id #debug
     echo "map = new map();" >> $OUT
     echo "map.id = \"$map_id\";" >> $OUT
+    echo "map.fqid = \"$level_id.$map_id\";" >> $OUT
     echo "{" >> $OUT
     if [ ! -f $ENGINE_DD/$map_img ]; then echo "ERROR: Map img not found (expected $map_img)"; if queryfix; then cp $STUB_D/map.png $ENGINE_DD/$map_img; else continue; fi fi
     echo "map.img = GenImg(\"$GAME_DD/$map_img\");" >> $OUT
@@ -94,6 +96,7 @@ for level in $levels_dir/*.meta; do #levels
       echo - Note: Genning $scene_id #debug
       echo "scene = new scene();" >> $OUT
       echo "scene.id = \"$scene_id\";" >> $OUT
+      echo "scene.fqid = \"$level_id.$map_id.$scene_id\";" >> $OUT
       echo "{" >> $OUT
       if [ ! -f $ENGINE_DD/$scene_img ]; then echo "ERROR: Scene img not found (expected $scene_img)"; if queryfix; then cp $STUB_D/scene.png $ENGINE_DD/$scene_img; else continue; fi fi
       echo "scene.img = GenImg(\"$GAME_DD/$scene_img\");" >> $OUT
@@ -111,6 +114,7 @@ for level in $levels_dir/*.meta; do #levels
         echo - Note: Genning $room_id #debug
         echo "room = new room();" >> $OUT
         echo "room.id = \"$room_id\";" >> $OUT
+        echo "room.fqid = \"$level_id.$map_id.$scene_id.$room_id\";" >> $OUT
         echo "{" >> $OUT
         if [ ! -f $ENGINE_DD/$room_img ]; then echo "ERROR: Room img not found (expected $room_img)"; if queryfix; then cp $STUB_D/room.png $ENGINE_DD/$room_img; else continue; fi fi
         echo "room.img = GenImg(\"$GAME_DD/$room_img\");" >> $OUT
@@ -128,6 +132,7 @@ for level in $levels_dir/*.meta; do #levels
           echo - Note: Genning $person_id #debug
           echo "person = new person();" >> $OUT
           echo "person.id = \"$person_id\";" >> $OUT
+          echo "person.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id\";" >> $OUT
           echo "{" >> $OUT
           if [ ! -f $ENGINE_DD/$person_img ]; then echo "ERROR: Person img not found (expected $person_img)"; if queryfix; then cp $STUB_D/person.png $ENGINE_DD/$person_img; else continue; fi fi
           echo "person.img = GenImg(\"$GAME_DD/$person_img\");" >> $OUT
@@ -143,7 +148,7 @@ for level in $levels_dir/*.meta; do #levels
             if [ ! -d $option_dir ]; then echo "ERROR: No directory found for $option_id (expected $option_dir)"; if queryfix; then mkdir $option_dir; else continue; fi fi
             echo - Note: Genning $option_id #debug
             echo "option = new option();" >> $OUT
-            echo "option.id = \"$option_id\";" >> $OUT
+            echo "option.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$option_id\";" >> $OUT
             echo "{" >> $OUT
             cat $option >> $OUT
 
@@ -168,6 +173,7 @@ for level in $levels_dir/*.meta; do #levels
           echo - Note: Genning $object_id #debug
           echo "object = new object();" >> $OUT
           echo "object.id = \"$object_id\";" >> $OUT
+          echo "object.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id\";" >> $OUT
           echo "{" >> $OUT
           cat $object >> $OUT
 
@@ -183,6 +189,7 @@ for level in $levels_dir/*.meta; do #levels
             echo - Note: Genning $view_id #debug
             echo "view = new view();" >> $OUT
             echo "view.id = \"$view_id\";" >> $OUT
+            echo "view.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id\";" >> $OUT
             echo "{" >> $OUT
             if [ ! -f $ENGINE_DD/$view_img ]; then echo "ERROR: View img not found (expected $view_img)"; if queryfix; then cp $STUB_D/view.png $ENGINE_DD/$view_img; else continue; fi fi
             echo "view.img = GenImg(\"$GAME_DD/$view_img\");" >> $OUT
@@ -199,6 +206,7 @@ for level in $levels_dir/*.meta; do #levels
               echo - Note: Genning $zone_id #debug
               echo "zone = new zone();" >> $OUT
               echo "zone.id = \"$zone_id\";" >> $OUT
+              echo "zone.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id.$zone_id\";" >> $OUT
               echo "{" >> $OUT
               cat $zone >> $OUT
 
@@ -228,6 +236,7 @@ for level in $levels_dir/*.meta; do #levels
           echo - Note: Genning $porthole_id #debug
           echo "porthole = new porthole();" >> $OUT
           echo "porthole.id = \"$porthole_id\";" >> $OUT
+          echo "porthole.fqid = \"$level_id.$map_id.$scene_id.$room_id.$porthole_id\";" >> $OUT
           echo "{" >> $OUT
           cat $porthole >> $OUT
 
@@ -247,6 +256,7 @@ for level in $levels_dir/*.meta; do #levels
           echo - Note: Genning $wildcard_id #debug
           echo "wildcard = new wildcard();" >> $OUT
           echo "wildcard.id = \"$wildcard_id\";" >> $OUT
+          echo "wildcard.fqid = \"$level_id.$map_id.$scene_id.$room_id.$wildcard_id\";" >> $OUT
           echo "{" >> $OUT
           cat $wildcard >> $OUT
 

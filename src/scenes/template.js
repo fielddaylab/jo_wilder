@@ -55,6 +55,7 @@ var level = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.map;
 }
 
@@ -62,6 +63,7 @@ var map = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.scenes = [];
   self.img;
 }
@@ -70,6 +72,7 @@ var scene = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   //for display on the map
   self.x = 0;
   self.y = 0;
@@ -83,6 +86,7 @@ var room = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
 
   self.img;
   self.nav_x = 0;
@@ -102,6 +106,7 @@ var person = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.act = ACT_PERSON;
   self.x = 0;
   self.y = 0;
@@ -117,6 +122,7 @@ var object = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.act = ACT_OBJECT;
   self.x = 0;
   self.y = 0;
@@ -132,6 +138,7 @@ var porthole = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.act = ACT_PORTHOLE;
   self.x = 0;
   self.y = 0;
@@ -146,6 +153,7 @@ var wildcard = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.act = ACT_WILDCARD;
   self.x = 0;
   self.y = 0;
@@ -159,6 +167,7 @@ var view = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.anim;
   self.zones = [];
   self.locks = [];
@@ -168,6 +177,7 @@ var zone = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -180,6 +190,7 @@ var option = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
   self.locks = [];
 }
 
@@ -187,5 +198,6 @@ var lock = function()
 {
   var self = this;
   self.id = "null"
+  self.fqid = "null"
 }
 

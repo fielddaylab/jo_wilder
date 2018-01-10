@@ -255,10 +255,10 @@ var overworld = function()
 {
   var self = this;
 
-  self.x = 10;
-  self.y = 10;
-  self.w = canv.width-20;
-  self.h = canv.height-20;
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
 
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.scene_boxes = [];
