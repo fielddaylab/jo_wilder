@@ -163,23 +163,14 @@ var navigable = function()
   self.w = canv.width;
   self.h = canv.height;
 
-  self.nav_box = {x:0,y:0,w:0,h:0};
-  self.act_boxes = [];
+  self.room;
   self.selected_act = 0;
   self.last_click = {x:0,y:0};
   self.nav_click = {x:0,y:0};
 
   self.consume_room = function(room)
   {
-    self.nav_box.x = room.nav_x;
-    self.nav_box.y = room.nav_y;
-    self.nav_box.w = room.nav_w;
-    self.nav_box.h = room.nav_h;
-
-    for(var i = 0; i < room.persons.length;   i++) self.act_boxes.push(room.persons[i]);
-    for(var i = 0; i < room.objects.length;   i++) self.act_boxes.push(room.objects[i]);
-    for(var i = 0; i < room.portholes.length; i++) self.act_boxes.push(room.portholes[i]);
-    for(var i = 0; i < room.wildcards.length; i++) self.act_boxes.push(room.wildcards[i]);
+    self.room = room;
   }
 
   self.click = function(evt)
@@ -188,16 +179,22 @@ var navigable = function()
     self.last_click.y = evt.doY;
     self.nav_click.x = evt.doX;
     self.nav_click.y = evt.doY;
-    if(self.nav_click.x < self.nav_box.x)                self.nav_click.x = self.nav_box.x;
-    if(self.nav_click.x > self.nav_box.x+self.nav_box.w) self.nav_click.x = self.nav_box.x+self.nav_box.w;
-    if(self.nav_click.y < self.nav_box.y)                self.nav_click.y = self.nav_box.y;
-    if(self.nav_click.y > self.nav_box.y+self.nav_box.h) self.nav_click.y = self.nav_box.y+self.nav_box.h;
+    if(self.nav_click.x < self.room.nav_x)                 self.nav_click.x = self.room.nav_x;
+    if(self.nav_click.x > self.room.nav_x+self.room.nav_w) self.nav_click.x = self.room.nav_x+self.room.nav_w;
+    if(self.nav_click.y < self.room.nav_y)                 self.nav_click.y = self.room.nav_y;
+    if(self.nav_click.y > self.room.nav_y+self.room.nav_h) self.nav_click.y = self.room.nav_y+self.room.nav_h;
     my_avatar.toX = self.nav_click.x-my_avatar.w/2;
     my_avatar.toY = self.nav_click.y-my_avatar.h/2;
 
     self.selected_act = 0;
-    for(var i = 0; i < self.act_boxes.length; i++)
-      if(ptWithinBox(self.act_boxes[i],evt.doX,evt.doY)) { self.selected_act = self.act_boxes[i]; }
+    for(var i = 0; i < self.room.persons.length; i++)
+      if(ptWithinBox(self.room.persons[i],evt.doX,evt.doY)) { self.selected_act = self.room.persons[i]; }
+    for(var i = 0; i < self.room.objects.length; i++)
+      if(ptWithinBox(self.room.objects[i],evt.doX,evt.doY)) { self.selected_act = self.room.objects[i]; }
+    for(var i = 0; i < self.room.portholes.length; i++)
+      if(ptWithinBox(self.room.portholes[i],evt.doX,evt.doY)) { self.selected_act = self.room.portholes[i]; }
+    for(var i = 0; i < self.room.wildcards.length; i++)
+      if(ptWithinBox(self.room.wildcards[i],evt.doX,evt.doY)) { self.selected_act = self.room.wildcards[i]; }
   }
 
   self.tick = function()
@@ -206,8 +203,19 @@ var navigable = function()
 
   self.draw = function()
   {
-    strokeBox(self.nav_box,ctx);
-    for(var i = 0; i < self.act_boxes.length; i++) strokeBox(self.act_boxes[i],ctx);
+    ctx.drawImage(self.room.img,0,0,canv.width,canv.height);
+    for(var i = 0; i < self.room.persons.length;   i++) drawImageBox(self.room.persons[i].img,  self.room.persons[i],ctx);
+    //for(var i = 0; i < self.room.objects.length;   i++) drawImageBox(self.room.objects[i].img,  self.room.objects[i],ctx);
+    //for(var i = 0; i < self.room.portholes.length; i++) drawImageBox(self.room.portholes[i].img,self.room.portholes[i],ctx);
+    //for(var i = 0; i < self.room.wildcards.length; i++) drawImageBox(self.room.wildcards[i].img,self.room.wildcards[i],ctx);
+
+    //debug
+    ctx.strokeStyle = white;
+    ctx.strokeRect(self.room.nav_x,self.room.nav_y,self.room.nav_w,self.room.nav_h);
+    for(var i = 0; i < self.room.persons.length;   i++) strokeBox(self.room.persons[i],ctx);
+    for(var i = 0; i < self.room.objects.length;   i++) strokeBox(self.room.objects[i],ctx);
+    for(var i = 0; i < self.room.portholes.length; i++) strokeBox(self.room.portholes[i],ctx);
+    for(var i = 0; i < self.room.wildcards.length; i++) strokeBox(self.room.wildcards[i],ctx);
   }
 };
 
@@ -261,12 +269,11 @@ var overworld = function()
   self.h = canv.height;
 
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.scene_boxes = [];
+  self.map;
 
   self.consume_map = function(map)
   {
-    self.scene_boxes = [];
-    for(var i = 0; i < map.scenes.length; i++) self.scene_boxes.push(map.scenes[i]);
+    self.map = map;
   }
 
   self.shouldClick = function(evt) { return true; }
@@ -288,15 +295,27 @@ var overworld = function()
 
   self.draw = function(yoff)
   {
+    ctx.drawImage(self.map.img,self.x, self.y+yoff, self.w, self.h);
+    for(var i = 0; i < self.map.scenes.length; i++) ctx.drawImage(self.map.scenes[i].img, self.map.scenes[i].x, self.map.scenes[i].y+yoff, self.map.scenes[i].w, self.map.scenes[i].h);
+
+    //debug
+    ctx.strokeStyle = white;
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-    for(var i = 0; i < self.scene_boxes.length; i++) ctx.strokeRect(self.scene_boxes[i].x, self.scene_boxes[i].y+yoff, self.scene_boxes[i].w, self.scene_boxes[i].h);
+    for(var i = 0; i < self.map.scenes.length; i++) ctx.strokeRect(self.map.scenes[i].x, self.map.scenes[i].y+yoff, self.map.scenes[i].w, self.map.scenes[i].h);
   }
 }
 
 var notebook = function()
 {
   var self = this;
+
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+
+  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
   self.click = function(evt)
   {
@@ -308,8 +327,10 @@ var notebook = function()
 
   }
 
-  self.draw = function()
+  self.draw = function(yoff)
   {
+    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
   }
 }
@@ -318,6 +339,18 @@ var objview = function()
 {
   var self = this;
 
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+
+  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+
+  self.consume_object = function(object)
+  {
+
+  }
+
   self.click = function(evt)
   {
 
@@ -328,8 +361,10 @@ var objview = function()
 
   }
 
-  self.draw = function()
+  self.draw = function(yoff)
   {
+    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
   }
 }
@@ -338,6 +373,18 @@ var personview = function()
 {
   var self = this;
 
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+
+  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+
+  self.consume_person = function(person)
+  {
+
+  }
+
   self.click = function(evt)
   {
 
@@ -348,8 +395,10 @@ var personview = function()
 
   }
 
-  self.draw = function()
+  self.draw = function(yoff)
   {
+    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
   }
 }
