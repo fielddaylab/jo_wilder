@@ -89,6 +89,30 @@ tmp_room.portholes.push(tmp_porthole);
 tmp_scene.rooms.push(tmp_room);
 }
 tmp_map.scenes.push(tmp_scene);
+tmp_scene = new scene();
+tmp_scene.id = "library";
+tmp_scene.fqid = "l1.map.library";
+{
+tmp_scene.img = GenImg("assets/data//levels/l1/maps/map/scenes/library.png");
+scene.x = 100;
+scene.y = 100;
+scene.w = 100;
+scene.h = 100;
+tmp_room = new room();
+tmp_room.id = "entrance";
+tmp_room.fqid = "l1.map.library.entrance";
+{
+tmp_room.img = GenImg("assets/data//levels/l1/maps/map/scenes/library/rooms/entrance.png");
+room.nav_x = 100;
+room.nav_y = canv.height/2;
+room.nav_w = canv.width-200;
+room.nav_h = canv.height/2-100;
+room.start_x = canv.width/2;
+room.start_y = canv.height/2;
+}
+tmp_scene.rooms.push(tmp_room);
+}
+tmp_map.scenes.push(tmp_scene);
 }
 tmp_level.map = tmp_map;
 }
