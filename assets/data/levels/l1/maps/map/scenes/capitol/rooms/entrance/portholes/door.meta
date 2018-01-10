@@ -2,3 +2,4 @@ porthole.x = canv.width/2-50;
 porthole.y = canv.height/2-50;
 porthole.w = 100;
 porthole.h = 100;
+porthole.target_room = "null"

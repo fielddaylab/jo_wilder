@@ -27,6 +27,8 @@ var GamePlayScene = function(game, stage)
     my_overworld = new overworld();
     my_overworld.consume_map(cur_map);
     my_notebook = new notebook();
+    my_objview = new objview();
+    my_personview = new personview();
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
 
@@ -59,13 +61,23 @@ var GamePlayScene = function(game, stage)
         if(
         !clicker.filter(my_notebook) &&
         false) ;
+        my_avatar.tick();
+        my_navigable.tick();
         my_notebook.tick();
         break;
       case STATE_PERSON:
+        my_avatar.tick();
+        my_navigable.tick();
+        my_personview.tick();
         break;
       case STATE_OBJECT:
+        my_avatar.tick();
+        my_navigable.tick();
+        my_objview.tick();
         break;
       case STATE_WILDCARD:
+        my_avatar.tick();
+        my_navigable.tick();
         break;
       case STATE_TRANSITION:
         transition_tick();
@@ -89,13 +101,23 @@ var GamePlayScene = function(game, stage)
         my_overworld.draw(0);
         break;
       case STATE_NOTEBOOK:
+        my_navigable.draw();
+        my_avatar.draw();
         my_notebook.draw();
         break;
       case STATE_PERSON:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_personview.draw();
         break;
       case STATE_OBJECT:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_objview.draw();
         break;
       case STATE_WILDCARD:
+        my_navigable.draw();
+        my_avatar.draw();
         break;
       case STATE_TRANSITION:
         transition_draw();
@@ -134,15 +156,23 @@ var GamePlayScene = function(game, stage)
         state_t += 0.01;
         break;
       case STATE_NOTEBOOK:
+        my_avatar.tick();
+        my_navigable.tick();
         state_t += 0.01;
         break;
       case STATE_PERSON:
+        my_avatar.tick();
+        my_navigable.tick();
         state_t += 0.01;
         break;
       case STATE_OBJECT:
+        my_avatar.tick();
+        my_navigable.tick();
         state_t += 0.01;
         break;
       case STATE_WILDCARD:
+        my_avatar.tick();
+        my_navigable.tick();
         state_t += 0.01;
         break;
     }
@@ -187,10 +217,19 @@ var GamePlayScene = function(game, stage)
         }
         break;
       case STATE_NOTEBOOK:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_notebook.draw();
         break;
       case STATE_PERSON:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_personview.draw();
         break;
       case STATE_OBJECT:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_objview.draw();
         break;
       case STATE_WILDCARD:
         break;

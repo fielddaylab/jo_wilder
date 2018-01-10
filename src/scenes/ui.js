@@ -314,3 +314,43 @@ var notebook = function()
   }
 }
 
+var objview = function()
+{
+  var self = this;
+
+  self.click = function(evt)
+  {
+
+  }
+
+  self.tick = function()
+  {
+
+  }
+
+  self.draw = function()
+  {
+
+  }
+}
+
+var personview = function()
+{
+  var self = this;
+
+  self.click = function(evt)
+  {
+
+  }
+
+  self.tick = function()
+  {
+
+  }
+
+  self.draw = function()
+  {
+
+  }
+}
+
