@@ -8,10 +8,19 @@ FINAL=../src/scenes
 TTY=`tty`
 AUTOFIX="0"
 NOSTUB="0"
+GENFQID="0"
 
 while [ $# -gt 0 ]; do
   if [ "@"$1 == "@autogen" ]; then AUTOFIX="1"; fi
   if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
+  if [ "@"$1 == "@genfquid" ]; then
+    shift;
+    if [ "@"$1 == "@" ]; then
+      echo "usage: $0 genfquid level.map.scene.room..."
+    else
+      GENFQID=$1;
+    fi
+  fi
   shift;
 done
 
