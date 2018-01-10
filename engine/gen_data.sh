@@ -6,7 +6,14 @@ STUB_D=stubs
 OUT=data.js
 FINAL=../src/scenes
 TTY=`tty`
-AUTOFIX=$1
+AUTOFIX="0"
+NOSTUB="0"
+
+while [ $# -gt 0 ]; do
+  if [ "@"$1 == "@autogen" ]; then AUTOFIX="1"; fi
+  if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
+  shift;
+done
 
 id() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into banana (removes path + .meta) #engine/game
 {
@@ -23,7 +30,7 @@ img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into lev
 
 queryfix()
 {
-  if [ $AUTOFIX == "autofix" ]; then echo "(autofix)" > $TTY; return 0; fi
+  if [ $AUTOFIX == "1" ]; then echo "(autofix)" > $TTY; return 0; fi #yes
   echo -n "Fix? (y)/n:" > $TTY
   read x
   if [ "@"$x == "@n" ]; then return 1; #1 = fail
@@ -32,6 +39,7 @@ queryfix()
 }
 querystub()
 {
+  if [ $NOSTUB == "1" ]; then echo "(nostub)" > $TTY; return 1; fi #no
   echo -n "Stub? y/(n):" > $TTY
   read x
   if [ "@"$x == "@y" ]; then return 0; #0 = success
