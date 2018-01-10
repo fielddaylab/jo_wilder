@@ -1,4 +1,4 @@
-zone.x = 0;
-zone.y = 0;
-zone.w = 0;
-zone.h = 0;
+zone.x = canv.width/2-100;
+zone.y = canv.width/2-100;
+zone.w = 100;
+zone.h = 100;

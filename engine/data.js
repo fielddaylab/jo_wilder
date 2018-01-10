@@ -28,157 +28,61 @@ scene = new scene();
 scene.id = "capitol";
 {
 scene.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol.png");
+scene.x = 100;
+scene.y = 100;
+scene.w = 100;
+scene.h = 100;
 room = new room();
 room.id = "entrance";
 {
 room.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/entrance.png");
+room.nav_x = 100;
+room.nav_y = canv.height/2;
+room.nav_w = canv.width-200;
+room.nav_h = canv.height/2-100;
+room.start_x = canv.width/2;
+room.start_y = canv.height/2;
 person = new person();
 person.id = "uncle";
 {
 person.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/entrance/persons/uncle.png");
-option = new option();
-option.id = "option";
-{
-},
-person.options.push(option);
-},
+person.x = 70;
+person.y = canv.height/2-100;
+person.w = 100;
+person.h = 120;
+}
 room.persons.push(person);
 object = new object();
 object.id = "book";
 {
+object.x = canv.width-200;
+object.y = 100;
+object.w = 80;
+object.h = 80;
 view = new view();
 view.id = "front";
 {
 view.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/entrance/objects/book/views/front.png");
-zone = new zone();
-zone.id = "zone";
-{
-},
-views.zone.push(zone);
-},
+}
 object.views.push(view);
-view = new view();
-view.id = "open";
-{
-view.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/entrance/objects/book/views/open.png");
-zone = new zone();
-zone.id = "zone";
-{
-},
-views.zone.push(zone);
-},
-object.views.push(view);
-},
+}
 room.objects.push(object);
 porthole = new porthole();
-porthole.id = "porthole";
+porthole.id = "door";
 {
-},
+porthole.x = canv.width/2-50;
+porthole.y = canv.height/2-50;
+porthole.w = 100;
+porthole.h = 100;
+}
 room.portholes.push(porthole);
-wildcard = new wildcard();
-wildcard.id = "wildcard";
-{
-},
-room.wildcards.push(wildcard);
-},
+}
 scene.rooms.push(room);
-room = new room();
-room.id = "exhibit";
-{
-room.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/exhibit.png");
-person = new person();
-person.id = "person";
-{
-person.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/exhibit/persons/person.png");
-option = new option();
-option.id = "option";
-{
-},
-person.options.push(option);
-},
-room.persons.push(person);
-object = new object();
-object.id = "object";
-{
-view = new view();
-view.id = "view";
-{
-view.img = GenImg("assets/data//levels/l1/map/map/scenes/capitol/rooms/exhibit/objects/object/views/view.png");
-zone = new zone();
-zone.id = "zone";
-{
-},
-views.zone.push(zone);
-},
-object.views.push(view);
-},
-room.objects.push(object);
-porthole = new porthole();
-porthole.id = "porthole";
-{
-},
-room.portholes.push(porthole);
-wildcard = new wildcard();
-wildcard.id = "wildcard";
-{
-},
-room.wildcards.push(wildcard);
-},
-scene.rooms.push(room);
-},
+}
 map.scenes.push(scene);
-scene = new scene();
-scene.id = "library";
-{
-scene.img = GenImg("assets/data//levels/l1/map/map/scenes/library.png");
-room = new room();
-room.id = "room";
-{
-room.img = GenImg("assets/data//levels/l1/map/map/scenes/library/rooms/room.png");
-person = new person();
-person.id = "person";
-{
-person.img = GenImg("assets/data//levels/l1/map/map/scenes/library/rooms/room/persons/person.png");
-option = new option();
-option.id = "option";
-{
-},
-person.options.push(option);
-},
-room.persons.push(person);
-object = new object();
-object.id = "object";
-{
-view = new view();
-view.id = "view";
-{
-view.img = GenImg("assets/data//levels/l1/map/map/scenes/library/rooms/room/objects/object/views/view.png");
-zone = new zone();
-zone.id = "zone";
-{
-},
-views.zone.push(zone);
-},
-object.views.push(view);
-},
-room.objects.push(object);
-porthole = new porthole();
-porthole.id = "porthole";
-{
-},
-room.portholes.push(porthole);
-wildcard = new wildcard();
-wildcard.id = "wildcard";
-{
-},
-room.wildcards.push(wildcard);
-},
-scene.rooms.push(room);
-},
-map.scenes.push(scene);
-},
+}
 level.map = map;
-},
+}
 levels.push(level);
 }
 

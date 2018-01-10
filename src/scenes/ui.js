@@ -13,16 +13,16 @@ var avatar = function()
   self.anim = new animation();
   self.anim.frame_delay = 10;
   self.anim.src = [
-    GenImg("assets/avatar_0_anim_idle_0.png"),
-    GenImg("assets/avatar_0_anim_idle_1.png"),
-    GenImg("assets/avatar_0_anim_idle_2.png"),
-    GenImg("assets/avatar_0_anim_walk_0.png"),
-    GenImg("assets/avatar_0_anim_walk_1.png"),
-    GenImg("assets/avatar_0_anim_walk_2.png"),
-    GenImg("assets/avatar_0_anim_walk_3.png"),
-    GenImg("assets/avatar_0_anim_act_0.png"),
-    GenImg("assets/avatar_0_anim_act_1.png"),
-    GenImg("assets/avatar_0_anim_act_2.png"),
+    GenImg("assets/avatar/anim_idle_0.png"),
+    GenImg("assets/avatar/anim_idle_1.png"),
+    GenImg("assets/avatar/anim_idle_2.png"),
+    GenImg("assets/avatar/anim_walk_0.png"),
+    GenImg("assets/avatar/anim_walk_1.png"),
+    GenImg("assets/avatar/anim_walk_2.png"),
+    GenImg("assets/avatar/anim_walk_3.png"),
+    GenImg("assets/avatar/anim_act_0.png"),
+    GenImg("assets/avatar/anim_act_1.png"),
+    GenImg("assets/avatar/anim_act_2.png"),
   ];
   self.anim.animations[ANIM_NULL] = []; for(var i = 0; i <= 0; i++) self.anim.animations[ANIM_NULL].push(i);
   self.anim.animations[ANIM_IDLE] = []; for(var i = 0; i <= 2; i++) self.anim.animations[ANIM_IDLE].push(i);

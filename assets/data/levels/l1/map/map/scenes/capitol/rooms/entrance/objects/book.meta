@@ -1,0 +1,4 @@
+object.x = canv.width-200;
+object.y = 100;
+object.w = 80;
+object.h = 80;
