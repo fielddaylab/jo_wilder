@@ -88,6 +88,17 @@ room.portholes.push(porthole);
 scene.rooms.push(room);
 }
 map.scenes.push(scene);
+scene = new scene();
+scene.id = "library";
+scene.fqid = "l1.map.library";
+{
+scene.img = GenImg("assets/data//levels/l1/map/map/scenes/library.png");
+scene.x = 100;
+scene.y = 100;
+scene.w = 100;
+scene.h = 100;
+}
+map.scenes.push(scene);
 }
 level.map = map;
 }

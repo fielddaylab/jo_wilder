@@ -1,0 +1,4 @@
+scene.x = 100;
+scene.y = 100;
+scene.w = 100;
+scene.h = 100;
