@@ -8,39 +8,128 @@ FINAL=../src/scenes
 TTY=`tty`
 AUTOFIX="0"
 NOSTUB="0"
+GENCMD=""
 GENFQID=""
 
 while [ $# -gt 0 ]; do
   if [ "@"$1 == "@autogen" ]; then AUTOFIX="1"; fi
   if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
-  if [ "@"$1 == "@genlevel" ];    then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genlevel level"                                else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genmap" ];      then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genmap level.map"                              else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genscene" ];    then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genscene level.map.scene"                      else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genroom" ];     then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genroom level.map.scene.room"                  else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genplayer" ];   then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genplayer level.map.scene.room.player"         else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genoption" ];   then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genoption level.map.scene.room.player.option"  else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genobject" ];   then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genobject level.map.scene.room.object"         else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genview" ];     then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genview level.map.scene.room.object.view"      else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genzone" ];     then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genzone level.map.scene.room.object.view.zone" else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genporthole" ]; then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genporthole level.map.scene.room.porthole"     else GENFQID=$1; fi fi
-  if [ "@"$1 == "@genwildcard" ]; then shift; if [ "@"$1 == "@" ]; then echo "usage: $0 genwildcard level.map.scene.room.wildcard"     else GENFQID=$1; fi fi
+  if [ "@"$1 == "@genlevel" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genlevel level";                                fi fi
+  if [ "@"$1 == "@genmap" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genmap level.map";                              fi fi
+  if [ "@"$1 == "@genscene" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genscene level.map.scene";                      fi fi
+  if [ "@"$1 == "@genroom" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genroom level.map.scene.room";                  fi fi
+  if [ "@"$1 == "@genplayer" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genplayer level.map.scene.room.player";         fi fi
+  if [ "@"$1 == "@genoption" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genoption level.map.scene.room.player.option";  fi fi
+  if [ "@"$1 == "@genobject" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genobject level.map.scene.room.object";         fi fi
+  if [ "@"$1 == "@genview" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genview level.map.scene.room.object.view";      fi fi
+  if [ "@"$1 == "@genzone" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genzone level.map.scene.room.object.view.zone"; fi fi
+  if [ "@"$1 == "@genporthole" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genporthole level.map.scene.room.porthole";     fi fi
+  if [ "@"$1 == "@genwildcard" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genwildcard level.map.scene.room.wildcard";     fi fi
   shift;
 done
 
 GENPROGRESS=""
 GENBREAKDOWN=$GENFQID
 
-GENLEVEL=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENMAP=`     echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENSCENE=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENROOM=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENPLAYER=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENOPTION=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENOBJECT=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENVIEW=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENZONE=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENPORTHOLE=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-GENWILDCARD=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENLEVEL=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENMAP=`     echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENSCENE=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENROOM=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+if [ "@"$GENCMD == "@genplayer" ] || [ "@"$GENCMD == "@genoption" ]; then
+GENPLAYER=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENOPTION=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
+GENOBJECT=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENVIEW=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENZONE=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+elif [ "@"$GENCMD == "@genporthole" ]; then
+GENPORTHOLE=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+elif [ "@"$GENCMD == "@genwildcard" ]; then
+GENWILDCARD=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+fi
+
+GENDIR=$ENGINE_DD
+if [ "@"$GENLEVEL != "@" ]; then
+  GENDIR=$GENDIR/levels/$GENLEVEL
+  if [ ! -f $GENDIR.meta ]; then
+    cp $STUB_D/level.meta $GENDIR.meta; mkdir $GENDIR;
+  fi
+  if [ "@"$GENMAP != "@" ]; then
+    GENDIR=$GENDIR/map/$GENMAP
+    if [ ! -f $GENDIR.meta ]; then
+      cp $STUB_D/map.meta $GENDIR.meta; mkdir $GENDIR;
+    fi
+    if [ "@"$GENSCENE != "@" ]; then
+      GENDIR=$GENDIR/scenes/$GENSCENE
+      if [ ! -f $GENDIR.meta ]; then
+        cp $STUB_D/scene.meta $GENDIR.meta; mkdir $GENDIR;
+      fi
+      if [ "@"$GENROOM != "@" ]; then
+        GENDIR=$GENDIR/rooms/$GENROOM
+        if [ ! -f $GENDIR.meta ]; then
+          cp $STUB_D/room.meta $GENDIR.meta; mkdir $GENDIR;
+        fi
+
+        if [ "@"$GENCMD == "@genplayer" ] || [ "@"$GENCMD == "@genoption" ]; then
+
+          if [ "@"$GENPLAYER != "@" ]; then
+            GENDIR=$GENDIR/players/$GENPLAYER
+            if [ ! -f $GENDIR.meta ]; then
+              cp $STUB_D/player.meta $GENDIR.meta; mkdir $GENDIR;
+            fi
+            if [ "@"$GENOPTION != "@" ]; then
+              GENDIR=$GENDIR/options/$GENOPTION
+              if [ ! -f $GENDIR.meta ]; then
+                cp $STUB_D/option.meta $GENDIR.meta; mkdir $GENDIR;
+              fi
+            fi #option
+          fi #player
+
+        elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
+
+          if [ "@"$GENOBJECT != "@" ]; then
+            GENDIR=$GENDIR/objects/$GENOBJECT
+            if [ ! -f $GENDIR.meta ]; then
+              cp $STUB_D/object.meta $GENDIR.meta; mkdir $GENDIR;
+            fi
+            if [ "@"$GENVIEW != "@" ]; then
+              GENDIR=$GENDIR/views/$GENVIEW
+              if [ ! -f $GENDIR.meta ]; then
+                cp $STUB_D/view.meta $GENDIR.meta; mkdir $GENDIR;
+              fi
+              if [ "@"$GENZONE != "@" ]; then
+                GENDIR=$GENDIR/zones/$GENZONE
+                if [ ! -f $GENDIR.meta ]; then
+                  cp $STUB_D/zone.meta $GENDIR.meta; mkdir $GENDIR;
+                fi
+              fi #zone
+            fi #view
+          fi #object
+
+        elif [ "@"$GENCMD == "@genporthole" ]; then
+
+          if [ "@"$GENPORTHOLE != "@" ]; then
+            GENDIR=$GENDIR/portholes/$GENPORTHOLE
+            if [ ! -f $GENDIR.meta ]; then
+              cp $STUB_D/porthole.meta $GENDIR.meta; mkdir $GENDIR;
+            fi
+          fi #porthole
+
+        elif [ "@"$GENCMD == "@genwildcard" ]; then
+
+          if [ "@"$GENWILDCARD != "@" ]; then
+            GENDIR=$GENDIR/wildcards/$GENWILDCARD
+            if [ ! -f $GENDIR.meta ]; then
+              cp $STUB_D/wildcard.meta $GENDIR.meta; mkdir $GENDIR;
+            fi
+          fi #wildcard
+
+        fi #type
+
+      fi #room
+    fi #scene
+  fi #map
+fi #level
 
 id() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into banana (removes path + .meta) #engine/game
 {
