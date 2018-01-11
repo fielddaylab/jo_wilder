@@ -13,6 +13,53 @@ GENFQID=""
 RMCMD=""
 RMFQID=""
 
+id() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into banana (removes path + .meta) #engine/game
+{
+  basename $@ | sed 's@.meta@@'
+}
+dir() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into ../assets/data/levels/my_level/maps/my_map/.../banana (removes .meta) #engine
+{
+  echo $@ | sed 's@.meta@@'
+}
+img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into levels/my_level/maps/my_map/.../banana.png (makes .png relative to data directory) #engine/game
+{
+  echo $@ | sed -e "s@^$ENGINE_DD@@" -e 's@.meta@.png@'
+}
+annotate()
+{
+  echo annotating...
+  echo $1
+  echo $2
+  convert $1 -gravity south -stroke '#000C' -strokewidth 2 -annotate 0 "$2" -stroke  none   -fill white    -annotate 0 "$2" $1
+}
+
+queryfix()
+{
+  if [ $AUTOFIX == "1" ]; then echo "(autofix)" > $TTY; return 0; fi #yes
+  echo -n "Fix? (y)/n:" > $TTY
+  read x
+  if [ "@"$x == "@n" ]; then return 1; #1 = fail
+  else return 0; #default success
+  fi
+}
+querystub()
+{
+  if [ $NOSTUB == "1" ]; then echo "(nostub)" > $TTY; return 1; fi #no
+  echo -n "Stub? y/(n):" > $TTY
+  read x
+  if [ "@"$x == "@y" ]; then return 0; #0 = success
+  else return 1; #default fail
+  fi
+}
+getname()
+{
+  echo -n "Name ($@):" > $TTY
+  read name
+  if [ "@"$name == "@" ]; then echo $@
+  else echo $name
+  fi
+}
+
 while [ $# -gt 0 ]; do
   if [ "@"$1 == "@autofix" ]; then AUTOFIX="1"; fi
   if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
@@ -70,17 +117,17 @@ if [ "@"$GENLEVEL != "@" ]; then
   if [ "@"$GENMAP != "@" ]; then
     GENDIR=$GENDIR/maps/$GENMAP
     if [ ! -f $GENDIR.meta ]; then
-      cp $STUB_D/map.meta $GENDIR.meta; cp $STUB_D/map.png $GENDIR.png; mkdir $GENDIR;
+      cp $STUB_D/map.meta $GENDIR.meta; cp $STUB_D/map.png $GENDIR.png; annotate $GENDIR.png "MAP $GENMAP"; mkdir $GENDIR;
     fi
     if [ "@"$GENSCENE != "@" ]; then
       GENDIR=$GENDIR/scenes/$GENSCENE
       if [ ! -f $GENDIR.meta ]; then
-        cp $STUB_D/scene.meta $GENDIR.meta; cp $STUB_D/scene.png $GENDIR.png; mkdir $GENDIR;
+        cp $STUB_D/scene.meta $GENDIR.meta; cp $STUB_D/scene.png $GENDIR.png; annotate $GENDIR.png "SCENE $GENSCENE"; mkdir $GENDIR;
       fi
       if [ "@"$GENROOM != "@" ]; then
         GENDIR=$GENDIR/rooms/$GENROOM
         if [ ! -f $GENDIR.meta ]; then
-          cp $STUB_D/room.meta $GENDIR.meta; cp $STUB_D/room.png $GENDIR.png; mkdir $GENDIR;
+          cp $STUB_D/room.meta $GENDIR.meta; cp $STUB_D/room.png $GENDIR.png; annotate $GENDIR.png "ROOM $GENROOM"; mkdir $GENDIR;
         fi
 
         if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genoption" ]; then
@@ -88,7 +135,7 @@ if [ "@"$GENLEVEL != "@" ]; then
           if [ "@"$GENPERSON != "@" ]; then
             GENDIR=$GENDIR/persons/$GENPERSON
             if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/person.meta $GENDIR.meta; cp $STUB_D/person.png $GENDIR.png; mkdir $GENDIR;
+              cp $STUB_D/person.meta $GENDIR.meta; cp $STUB_D/person.png $GENDIR.png; annotate $GENDIR.png "PERSON $GENPERSON"; mkdir $GENDIR;
             fi
             if [ "@"$GENOPTION != "@" ]; then
               GENDIR=$GENDIR/options/$GENOPTION
@@ -103,12 +150,12 @@ if [ "@"$GENLEVEL != "@" ]; then
           if [ "@"$GENOBJECT != "@" ]; then
             GENDIR=$GENDIR/objects/$GENOBJECT
             if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/object.meta $GENDIR.meta; cp $STUB_D/object.png $GENDIR.png; mkdir $GENDIR;
+              cp $STUB_D/object.meta $GENDIR.meta; cp $STUB_D/object.png $GENDIR.png; annotate $GENDIR.png "OBJECT $GENOBJECT"; mkdir $GENDIR;
             fi
             if [ "@"$GENVIEW != "@" ]; then
               GENDIR=$GENDIR/views/$GENVIEW
               if [ ! -f $GENDIR.meta ]; then
-                cp $STUB_D/view.meta $GENDIR.meta; cp $STUB_D/view.png $GENDIR.png; mkdir $GENDIR;
+                cp $STUB_D/view.meta $GENDIR.meta; cp $STUB_D/view.png $GENDIR.png; annotate $GENDIR.png "VIEW $GENVIEW"; mkdir $GENDIR;
               fi
               if [ "@"$GENZONE != "@" ]; then
                 GENDIR=$GENDIR/zones/$GENZONE
@@ -124,7 +171,7 @@ if [ "@"$GENLEVEL != "@" ]; then
           if [ "@"$GENPORTHOLE != "@" ]; then
             GENDIR=$GENDIR/portholes/$GENPORTHOLE
             if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/porthole.meta $GENDIR.meta; cp $STUB_D/porthole.png $GENDIR.png; mkdir $GENDIR;
+              cp $STUB_D/porthole.meta $GENDIR.meta; cp $STUB_D/porthole.png $GENDIR.png; annotate $GENDIR.png "PORTHOLE $GENPORTHOLE"; mkdir $GENDIR;
             fi
           fi #porthole
 
@@ -133,7 +180,7 @@ if [ "@"$GENLEVEL != "@" ]; then
           if [ "@"$GENWILDCARD != "@" ]; then
             GENDIR=$GENDIR/wildcards/$GENWILDCARD
             if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/wildcard.meta $GENDIR.meta; cp $STUB_D/wildcard.png $GENDIR.png; mkdir $GENDIR;
+              cp $STUB_D/wildcard.meta $GENDIR.meta; cp $STUB_D/wildcard.png $GENDIR.png; annotate $GENDIR.png "WILDCARD $GENWILDCARD"; mkdir $GENDIR;
             fi
           fi #wildcard
 
@@ -188,46 +235,7 @@ if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR ];
 RMDIR=$RMDIR/wildcards/$RMWILDCARD
 if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
 
-id() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into banana (removes path + .meta) #engine/game
-{
-  basename $@ | sed 's@.meta@@'
-}
-dir() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into ../assets/data/levels/my_level/maps/my_map/.../banana (removes .meta) #engine
-{
-  echo $@ | sed 's@.meta@@'
-}
-img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into levels/my_level/maps/my_map/.../banana.png (makes .png relative to data directory) #engine/game
-{
-  echo $@ | sed -e "s@^$ENGINE_DD@@" -e 's@.meta@.png@'
-}
-
-queryfix()
-{
-  if [ $AUTOFIX == "1" ]; then echo "(autofix)" > $TTY; return 0; fi #yes
-  echo -n "Fix? (y)/n:" > $TTY
-  read x
-  if [ "@"$x == "@n" ]; then return 1; #1 = fail
-  else return 0; #default success
-  fi
-}
-querystub()
-{
-  if [ $NOSTUB == "1" ]; then echo "(nostub)" > $TTY; return 1; fi #no
-  echo -n "Stub? y/(n):" > $TTY
-  read x
-  if [ "@"$x == "@y" ]; then return 0; #0 = success
-  else return 1; #default fail
-  fi
-}
-getname()
-{
-  echo -n "Name ($@):" > $TTY
-  read name
-  if [ "@"$name == "@" ]; then echo $@
-  else echo $name
-  fi
-}
-
+# BEGIN
 echo > $OUT
 
 cat data.pre_stub >> $OUT
@@ -251,7 +259,7 @@ for level in $levels_dir/*.meta; do #levels
   if [ ! -d $maps_dir ]; then echo "ERROR: Maps directory not found (expected $maps_dir)"; if queryfix; then mkdir $maps_dir; else continue; fi fi
   for map in $maps_dir/*.meta; do #maps
 
-    if [ ! -f $map ]; then echo "ERROR: Map not found in $maps_dir"; if querystub; then name=`getname map`; map=$maps_dir/$name.meta; cp $STUB_D/map.meta $map; cp $STUB_D/map.png $maps_dir/$name.png; mkdir $maps_dir/$name; else continue; fi fi
+    if [ ! -f $map ]; then echo "ERROR: Map not found in $maps_dir"; if querystub; then name=`getname map`; map=$maps_dir/$name.meta; cp $STUB_D/map.meta $map; cp $STUB_D/map.png $maps_dir/$name.png; annotate $maps_dir/$name.png "MAP $name"; mkdir $maps_dir/$name; else continue; fi fi
     map_id=`id $map`
     map_dir=`dir $map`
     if [ ! -d $map_dir ]; then echo "ERROR: No directory found for $map_id (expected $map_dir)"; if queryfix; then mkdir $map_dir; else continue; fi fi
@@ -269,7 +277,7 @@ for level in $levels_dir/*.meta; do #levels
     if [ ! -d $scenes_dir ]; then echo "ERROR: Scenes directory not found (expected $scenes_dir)"; if queryfix; then mkdir $scenes_dir; else continue; fi fi
     for scene in $scenes_dir/*.meta; do #scenes
 
-      if [ ! -f $scene ]; then echo "ERROR: No scenes found in $scenes_dir"; if querystub; then name=`getname scene`; scene=$scenes_dir/$name.meta; cp $STUB_D/scene.meta $scene; cp $STUB_D/scene.png $scenes_dir/$name.png; mkdir $scenes_dir/$name; else continue; fi fi
+      if [ ! -f $scene ]; then echo "ERROR: No scenes found in $scenes_dir"; if querystub; then name=`getname scene`; scene=$scenes_dir/$name.meta; cp $STUB_D/scene.meta $scene; cp $STUB_D/scene.png $scenes_dir/$name.png; annotate $scenes_dir/$name.png "SCENE $name"; mkdir $scenes_dir/$name; else continue; fi fi
       scene_id=`id $scene`
       scene_dir=`dir $scene`
       if [ ! -d $scene_dir ]; then echo "ERROR: No directory found for $scene_id (expected $scene_dir)"; if queryfix; then mkdir $scene_dir; else continue; fi fi
@@ -287,7 +295,7 @@ for level in $levels_dir/*.meta; do #levels
       if [ ! -d $rooms_dir ]; then echo "ERROR: Rooms directory not found (expected $rooms_dir)"; if queryfix; then mkdir $rooms_dir; else continue; fi fi
       for room in $rooms_dir/*.meta; do #rooms
 
-        if [ ! -f $room ]; then echo "ERROR: No rooms found in $rooms_dir"; if querystub; then name=`getname room`; room=$rooms_dir/$name.meta; cp $STUB_D/room.meta $room; cp $STUB_D/room.png $rooms_dir/$name.png; mkdir $rooms_dir/$name; else continue; fi fi
+        if [ ! -f $room ]; then echo "ERROR: No rooms found in $rooms_dir"; if querystub; then name=`getname room`; room=$rooms_dir/$name.meta; cp $STUB_D/room.meta $room; cp $STUB_D/room.png $rooms_dir/$name.png; annotate $rooms_dir/$name.png "ROOM $name"; mkdir $rooms_dir/$name; else continue; fi fi
         room_id=`id $room`
         room_dir=`dir $room`
         if [ ! -d $room_dir ]; then echo "ERROR: No directory found for $room_id (expected $room_dir)"; if queryfix; then mkdir $room_dir; else continue; fi fi
@@ -305,7 +313,7 @@ for level in $levels_dir/*.meta; do #levels
         if [ ! -d $persons_dir ]; then echo "ERROR: Persons directory not found (expected $persons_dir)"; if queryfix; then mkdir $persons_dir; else continue; fi fi
         for person in $persons_dir/*.meta; do #persons
 
-          if [ ! -f $person ]; then echo "Warning: No persons found in $persons_dir"; if querystub; then name=`getname person`; person=$persons_dir/$name.meta; cp $STUB_D/person.meta $person; cp $STUB_D/person.png $persons_dir/$name.png; mkdir $persons_dir/$name; else continue; fi fi
+          if [ ! -f $person ]; then echo "Warning: No persons found in $persons_dir"; if querystub; then name=`getname person`; person=$persons_dir/$name.meta; cp $STUB_D/person.meta $person; cp $STUB_D/person.png $persons_dir/$name.png; annotate $persons_dir/$name.png "PERSON $name"; mkdir $persons_dir/$name; else continue; fi fi
           person_id=`id $person`
           person_dir=`dir $person`
           if [ ! -d $person_dir ]; then echo "ERROR: No directory found for $person_id (expected $person_dir)"; if queryfix; then mkdir $person_dir; else continue; fi fi
@@ -347,7 +355,7 @@ for level in $levels_dir/*.meta; do #levels
         if [ ! -d $objects_dir ]; then echo "ERROR: Objects directory not found (expected $objects_dir)"; if queryfix; then mkdir $objects_dir; else continue; fi fi
         for object in $objects_dir/*.meta; do #objects
 
-          if [ ! -f $object ]; then echo "Warning: No objects found in $objects_dir"; if querystub; then name=`getname object`; object=$objects_dir/$name.meta; cp $STUB_D/object.meta $object; cp $STUB_D/object.png $objects_dir/$name.png; mkdir $objects_dir/$name; else continue; fi fi
+          if [ ! -f $object ]; then echo "Warning: No objects found in $objects_dir"; if querystub; then name=`getname object`; object=$objects_dir/$name.meta; cp $STUB_D/object.meta $object; cp $STUB_D/object.png $objects_dir/$name.png; annotate $objects_dir/$name.png "OBJECT $name"; mkdir $objects_dir/$name; else continue; fi fi
           object_id=`id $object`
           object_dir=`dir $object`
           if [ ! -d $object_dir ]; then echo "ERROR: No directory found for $object_id (expected $object_dir)"; if queryfix; then mkdir $object_dir; else continue; fi fi
@@ -365,7 +373,7 @@ for level in $levels_dir/*.meta; do #levels
           if [ ! -d $views_dir ]; then echo "ERROR: Views directory not found (expected $views_dir)"; if queryfix; then mkdir $views_dir; else continue; fi fi
           for view in $views_dir/*.meta; do #views
 
-            if [ ! -f $view ]; then echo "Warning: No views found in $views_dir"; if querystub; then name=`getname view`; view=$views_dir/$name.meta; cp $STUB_D/view.meta $view; cp $STUB_D/view.png $views_dir/$name.png; mkdir $views_dir/$name; else continue; fi fi
+            if [ ! -f $view ]; then echo "Warning: No views found in $views_dir"; if querystub; then name=`getname view`; view=$views_dir/$name.meta; cp $STUB_D/view.meta $view; cp $STUB_D/view.png $views_dir/$name.png; annotate $views_dir/$name.png "VIEW $name"; mkdir $views_dir/$name; else continue; fi fi
             view_id=`id $view`
             view_dir=`dir $view`
             if [ ! -d $view_dir ]; then echo "ERROR: No directory found for $view_id (expected $view_dir)"; if queryfix; then mkdir $view_dir; else continue; fi fi
@@ -413,7 +421,7 @@ for level in $levels_dir/*.meta; do #levels
         if [ ! -d $portholes_dir ]; then echo "ERROR: Portholes directory not found (expected $portholes_dir)"; if queryfix; then mkdir $portholes_dir; else continue; fi fi
         for porthole in $portholes_dir/*.meta; do #portholes
 
-          if [ ! -f $porthole ]; then echo "Warning: No portholes found in $portholes_dir"; if querystub; then name=`getname porthole`; porthole=$portholes_dir/$name.meta; cp $STUB_D/porthole.meta $porthole; cp $STUB_D/porthole.png $portholes_dir/$name.png; mkdir $portholes_dir/$name; else continue; fi fi
+          if [ ! -f $porthole ]; then echo "Warning: No portholes found in $portholes_dir"; if querystub; then name=`getname porthole`; porthole=$portholes_dir/$name.meta; cp $STUB_D/porthole.meta $porthole; cp $STUB_D/porthole.png $portholes_dir/$name.png; annotate $portholes_dir/$name.png "PORTHOLE $name"; mkdir $portholes_dir/$name; else continue; fi fi
           porthole_id=`id $porthole`
           porthole_dir=`dir $porthole`
           if [ ! -d $porthole_dir ]; then echo "ERROR: No directory found for $porthole_id (expected $porthole_dir)"; if queryfix; then mkdir $porthole_dir; else continue; fi fi
@@ -436,7 +444,7 @@ for level in $levels_dir/*.meta; do #levels
         if [ ! -d $wildcards_dir ]; then echo "ERROR: Wildcards directory not found (expected $wildcards_dir)"; if queryfix; then mkdir $wildcards_dir; else continue; fi fi
         for wildcard in $wildcards_dir/*.meta; do #wildcards
 
-          if [ ! -f $wildcard ]; then echo "Warning: No wildcards found in $wildcards_dir"; if querystub; then name=`getname wildcard`; wildcard=$wildcards_dir/$name.meta; cp $STUB_D/wildcard.meta $wildcard; cp $STUB_D/wildcard.png $wildcards_dir/$name.png; mkdir $wildcards_dir/$name; else continue; fi fi
+          if [ ! -f $wildcard ]; then echo "Warning: No wildcards found in $wildcards_dir"; if querystub; then name=`getname wildcard`; wildcard=$wildcards_dir/$name.meta; cp $STUB_D/wildcard.meta $wildcard; cp $STUB_D/wildcard.png $wildcards_dir/$name.png; annotate $wildcards_dir/$name.png "WILDCARD $name"; mkdir $wildcards_dir/$name; else continue; fi fi
           wildcard_id=`id $wildcard`
           wildcard_dir=`dir $wildcard`
           if [ ! -d $wildcard_dir ]; then echo "ERROR: No directory found for $wildcard_id (expected $wildcard_dir)"; if queryfix; then mkdir $wildcard_dir; else continue; fi fi
