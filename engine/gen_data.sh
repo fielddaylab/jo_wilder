@@ -25,12 +25,107 @@ img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into lev
 {
   echo $@ | sed -e "s@^$ENGINE_DD@@" -e 's@.meta@.png@'
 }
-annotate()
+annotate() #type dir name
 {
   echo annotating...
   echo $1
   echo $2
-  convert $1 -gravity south -stroke '#000C' -strokewidth 2 -annotate 0 "$2" -stroke  none   -fill white    -annotate 0 "$2" $1
+  convert $2/$3.png -gravity south -stroke '#000C' -strokewidth 2 -annotate 0 "$1 $3" -stroke none -fill white -annotate 0 "$1 $3" $2/$3.png
+}
+
+stubimg() #type dir name
+{
+  cp $STUB_D/$1.png $2/$3.png
+  annotate "$1" "$2" "$3"
+}
+
+stubmeta() #type dir name
+{
+  cp $STUB_D/$1.meta $2/$3.meta
+}
+
+stubnoimg()
+{
+  stubmeta "$1" "$2" "$3"
+  mkdir $2/$3
+}
+
+stubnoimgfullifdne() #type dir name
+{
+  if [ ! -f $2/$3.meta ]; then
+    stubnoimgfull "$1" "$2" "$3"
+  fi
+}
+
+stubfull() #type dir name
+{
+  stubmeta "$1" "$2" "$3"
+  stubimg "$1" "$2" "$3"
+  mkdir $2/$3
+}
+
+stubfullifdne() #type dir name
+{
+  if [ ! -f $2/$3.meta ]; then
+    stubfull "$1" "$2" "$3"
+  fi
+}
+
+rmfullnoimg() #type dir name
+{
+  rm $2/$3.meta
+  rm -r $2/$3
+}
+
+rmfullimg() #type dir name
+{
+  rm $2/$3.meta
+  rm $2/$3.png
+  rm -r $2/$3
+}
+
+ensuredelimeter() #type dir
+{
+  if [ ! -d $2/${1}s ]; then
+    echo "ERROR: ${1}s directory not found (expected $2/${1}s)" >&2
+    if queryfix; then
+      mkdir ${1}s
+    else
+      return 1
+    fi
+  fi
+}
+
+stubifnone() #type dir file
+{
+  if [ ! -f $3 ]; then
+    echo "ERROR: No ${1}s found in $2" >&2
+    if querystub; then
+      stubfullnoimg level $levels_dir `getname $1`
+    else
+      return 1
+    fi
+  fi
+}
+
+fixifdne() #type dir name
+{
+  #img
+  if [ ! -f $2/$3.png ]; then
+    echo "ERROR: $1 img not found for $3 (expected $2/$3.png)" >&2
+    if queryfix; then
+      stubimg "$1" "$2" "$3"
+    fi
+  fi
+  #dir
+  if [ ! -d $2/$3 ]; then
+    echo "ERROR: $1 directory not found for $3 (expected $2/$3)" >&2
+    if queryfix; then
+      mkdir $2/$3
+    else
+      return 1
+    fi
+  fi
 }
 
 queryfix()
@@ -108,81 +203,32 @@ elif [ "@"$GENCMD == "@genwildcard" ]; then
 GENWILDCARD=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 fi
 
-GENDIR=$ENGINE_DD
-if [ "@"$GENLEVEL != "@" ]; then
-  GENDIR=$GENDIR/levels/$GENLEVEL
-  if [ ! -f $GENDIR.meta ]; then
-    cp $STUB_D/level.meta $GENDIR.meta; mkdir $GENDIR;
-  fi
-  if [ "@"$GENMAP != "@" ]; then
-    GENDIR=$GENDIR/maps/$GENMAP
-    if [ ! -f $GENDIR.meta ]; then
-      cp $STUB_D/map.meta $GENDIR.meta; cp $STUB_D/map.png $GENDIR.png; annotate $GENDIR.png "MAP $GENMAP"; mkdir $GENDIR;
-    fi
-    if [ "@"$GENSCENE != "@" ]; then
-      GENDIR=$GENDIR/scenes/$GENSCENE
-      if [ ! -f $GENDIR.meta ]; then
-        cp $STUB_D/scene.meta $GENDIR.meta; cp $STUB_D/scene.png $GENDIR.png; annotate $GENDIR.png "SCENE $GENSCENE"; mkdir $GENDIR;
-      fi
-      if [ "@"$GENROOM != "@" ]; then
-        GENDIR=$GENDIR/rooms/$GENROOM
-        if [ ! -f $GENDIR.meta ]; then
-          cp $STUB_D/room.meta $GENDIR.meta; cp $STUB_D/room.png $GENDIR.png; annotate $GENDIR.png "ROOM $GENROOM"; mkdir $GENDIR;
-        fi
+GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubnoimgfullifdne level $GENDIR $GENLEVEL;
+  GENDIR=$GENDIR/$GENLEVEL/maps; if [ "@"$GENMAP != "@" ]; then stubfullifdne map $GENDIR $GENMAP;
+    GENDIR=$GENDIR/$GENMAP/scenes; if [ "@"$GENSCENE != "@" ]; then stubfullifdne scene $GENDIR $GENSCENE;
+      GENDIR=$GENDIR/$GENSCENE/rooms; if [ "@"$GENROOM != "@" ]; then stubfullifdne room $GENDIR $GENROOM;
 
         if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genoption" ]; then
 
-          if [ "@"$GENPERSON != "@" ]; then
-            GENDIR=$GENDIR/persons/$GENPERSON
-            if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/person.meta $GENDIR.meta; cp $STUB_D/person.png $GENDIR.png; annotate $GENDIR.png "PERSON $GENPERSON"; mkdir $GENDIR;
-            fi
-            if [ "@"$GENOPTION != "@" ]; then
-              GENDIR=$GENDIR/options/$GENOPTION
-              if [ ! -f $GENDIR.meta ]; then
-                cp $STUB_D/option.meta $GENDIR.meta; mkdir $GENDIR;
-              fi
-            fi #option
+          GENDIR=$GENDIR/$GENROOM/persons; if [ "@"$GENPERSON != "@" ]; then stubfullifdne person $GENDIR $GENPERSON;
+            GENDIR=$GENDIR/$GENPERSON/options; if [ "@"$GENOPTION != "@" ]; then stubfullifdne option $GENDIR $GENOPTION; fi #option
           fi #person
 
         elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
 
-          if [ "@"$GENOBJECT != "@" ]; then
-            GENDIR=$GENDIR/objects/$GENOBJECT
-            if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/object.meta $GENDIR.meta; cp $STUB_D/object.png $GENDIR.png; annotate $GENDIR.png "OBJECT $GENOBJECT"; mkdir $GENDIR;
-            fi
-            if [ "@"$GENVIEW != "@" ]; then
-              GENDIR=$GENDIR/views/$GENVIEW
-              if [ ! -f $GENDIR.meta ]; then
-                cp $STUB_D/view.meta $GENDIR.meta; cp $STUB_D/view.png $GENDIR.png; annotate $GENDIR.png "VIEW $GENVIEW"; mkdir $GENDIR;
-              fi
-              if [ "@"$GENZONE != "@" ]; then
-                GENDIR=$GENDIR/zones/$GENZONE
-                if [ ! -f $GENDIR.meta ]; then
-                  cp $STUB_D/zone.meta $GENDIR.meta; mkdir $GENDIR;
-                fi
-              fi #zone
+          GENDIR=$GENDIR/$GENROOM/objects; if [ "@"$GENOBJECT != "@" ]; then stubfullifdne object $GENDIR $GENOBJECT;
+            GENDIR=$GENDIR/$GENOBJECT/views; if [ "@"$GENVIEW != "@" ]; then stubfullifdne view $GENDIR $GENVIEW;
+              GENDIR=$GENDIR/$GENVIEW/zones; if [ "@"$GENZONE != "@" ]; then stubfullifdne zone $GENDIR $GENZONE; fi #zone
             fi #view
           fi #object
 
         elif [ "@"$GENCMD == "@genporthole" ]; then
 
-          if [ "@"$GENPORTHOLE != "@" ]; then
-            GENDIR=$GENDIR/portholes/$GENPORTHOLE
-            if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/porthole.meta $GENDIR.meta; cp $STUB_D/porthole.png $GENDIR.png; annotate $GENDIR.png "PORTHOLE $GENPORTHOLE"; mkdir $GENDIR;
-            fi
-          fi #porthole
+          GENDIR=$GENDIR/$GENROOM/portholes; if [ "@"$GENPORTHOLE != "@" ]; then stubfullifdne porthole $GENDIR $GENPORTHOLE; fi #porthole
 
         elif [ "@"$GENCMD == "@genwildcard" ]; then
 
-          if [ "@"$GENWILDCARD != "@" ]; then
-            GENDIR=$GENDIR/wildcards/$GENWILDCARD
-            if [ ! -f $GENDIR.meta ]; then
-              cp $STUB_D/wildcard.meta $GENDIR.meta; cp $STUB_D/wildcard.png $GENDIR.png; annotate $GENDIR.png "WILDCARD $GENWILDCARD"; mkdir $GENDIR;
-            fi
-          fi #wildcard
+          GENDIR=$GENDIR/$GENROOM/wildcards; if [ "@"$GENWILDCARD != "@" ]; then stubfullifdne wildcard $GENDIR $GENWILDCARD; fi #wildcard
 
         fi #type
 
@@ -198,56 +244,50 @@ RMLEVEL=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | g
 RMMAP=`     echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMSCENE=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMROOM=`    echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-if [ "@"$RMCMD == "@genperson" ] || [ "@"$RMCMD == "@genoption" ]; then
+if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmoption" ]; then
 RMPERSON=`  echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMOPTION=`  echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-elif [ "@"$RMCMD == "@genobject" ] || [ "@"$RMCMD == "@genview" ] || [ "@"$RMCMD == "@genzone" ]; then
+elif [ "@"$RMCMD == "@rmobject" ] || [ "@"$RMCMD == "@rmview" ] || [ "@"$RMCMD == "@rmzone" ]; then
 RMOBJECT=`  echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMVIEW=`    echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMZONE=`    echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-elif [ "@"$RMCMD == "@genporthole" ]; then
+elif [ "@"$RMCMD == "@rmporthole" ]; then
 RMPORTHOLE=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-elif [ "@"$RMCMD == "@genwildcard" ]; then
+elif [ "@"$RMCMD == "@rmwildcard" ]; then
 RMWILDCARD=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 fi
 
 RMDIR=$ENGINE_DD
-RMDIR=$RMDIR/levels/$RMLEVEL
-if [ "@"$RMCMD == "@rmlevel" ] && [ "@"$RMLEVEL != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/maps/$RMMAP
-if [ "@"$RMCMD == "@rmmap" ] && [ "@"$RMMAP != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/scenes/$RMSCENE
-if [ "@"$RMCMD == "@rmscene" ] && [ "@"$RMSCENE != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/rooms/$RMROOM
-if [ "@"$RMCMD == "@rmroom" ] && [ "@"$RMROOM != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/persons/$RMPERSON
-if [ "@"$RMCMD == "@rmperson" ] && [ "@"$RMPERSON != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/options/$RMOPTION
-if [ "@"$RMCMD == "@rmoption" ] && [ "@"$RMOPTION != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; fi
-RMDIR=$RMDIR/objectss/$RMOBJECT
-if [ "@"$RMCMD == "@rmobject" ] && [ "@"$RMOBJECT != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/views/$RMVIEW
-if [ "@"$RMCMD == "@rmview" ] && [ "@"$RMVIEW != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/zones/$RMZONE
-if [ "@"$RMCMD == "@rmzone" ] && [ "@"$RMZONE != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; fi
-RMDIR=$RMDIR/portholes/$RMPORTHOLE
-if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
-RMDIR=$RMDIR/wildcards/$RMWILDCARD
-if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR ]; then rm -r $RMDIR; rm $RMDIR.meta; rm $RMDIR.png; fi
+RMDIR=$RMDIR/levels;            if [ "@"$RMCMD == "@rmlevel" ]    && [ "@"$RMLEVEL != "@" ]    && [ -d $RMDIR/$RMLEVEL ];    then rmfullimg level    $RMDIR $RMLEVEL;    fi
+RMDIR=$RMDIR/$RMLEVEL/maps;     if [ "@"$RMCMD == "@rmmap" ]      && [ "@"$RMMAP != "@" ]      && [ -d $RMDIR/$RMMAP ];      then rmfullimg map      $RMDIR $RMMAP;      fi
+RMDIR=$RMDIR/$RMMAP/scenes;     if [ "@"$RMCMD == "@rmscene" ]    && [ "@"$RMSCENE != "@" ]    && [ -d $RMDIR/$RMSCENE ];    then rmfullimg scene    $RMDIR $RMSCENE;    fi
+RMDIR=$RMDIR/$RMSCENE/rooms;    if [ "@"$RMCMD == "@rmroom" ]     && [ "@"$RMROOM != "@" ]     && [ -d $RMDIR/$RMROOM ];     then rmfullimg room     $RMDIR $RMROOM;     fi
+if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmoption" ]; then
+RMDIR=$RMDIR/$RMROOM/persons;   if [ "@"$RMCMD == "@rmperson" ]   && [ "@"$RMPERSON != "@" ]   && [ -d $RMDIR/$RMPERSON ];   then rmfullimg person   $RMDIR $RMPERSON;   fi
+RMDIR=$RMDIR/$RMPERSON/options; if [ "@"$RMCMD == "@rmoption" ]   && [ "@"$RMOPTION != "@" ]   && [ -d $RMDIR/$RMOPTION ];   then rmfullnoimg option $RMDIR $RMOPTION;   fi
+elif [ "@"$RMCMD == "@rmobject" ] || [ "@"$RMCMD == "@rmview" ] || [ "@"$RMCMD == "@rmzone" ]; then
+RMDIR=$RMDIR/$RMROOM/objects;   if [ "@"$RMCMD == "@rmobject" ]   && [ "@"$RMOBJECT != "@" ]   && [ -d $RMDIR/$RMOBJECT ];   then rmfullimg object   $RMDIR $RMOBJECT;   fi
+RMDIR=$RMDIR/$RMOBJECT/views;   if [ "@"$RMCMD == "@rmview" ]     && [ "@"$RMVIEW != "@" ]     && [ -d $RMDIR/$RMVIEW ];     then rmfullimg view     $RMDIR $RMVIEW;     fi
+RMDIR=$RMDIR/$RMVIEW/zones;     if [ "@"$RMCMD == "@rmzone" ]     && [ "@"$RMZONE != "@" ]     && [ -d $RMDIR/$RMZONE ];     then rmfullnoimg zone   $RMDIR $RMZONE;     fi
+elif [ "@"$RMCMD == "@rmporthole" ]; then
+RMDIR=$RMDIR/$RMROOM/portholes; if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR/$RMPORTHOLE ]; then rmfullimg porthole $RMDIR $RMPORTHOLE; fi
+elif [ "@"$RMCMD == "@rmwildcard" ]; then
+RMDIR=$RMDIR/$RMROOM/wildcards; if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR/$RMWILDCARD ]; then rmfullimg wildcard $RMDIR $RMWILDCARD; fi
+fi
 
 # BEGIN
 echo > $OUT
 
 cat data.pre_stub >> $OUT
 
+if ensuredelimeter level $ENGINE_DD; then :; else exit; fi
 levels_dir=$ENGINE_DD/levels
-if [ ! -d $levels_dir ]; then echo "ERROR: Levels directory not found (expected $levels_dir)"; if queryfix; then mkdir $levels_dir; else exit; fi fi
 for level in $levels_dir/*.meta; do #levels
 
-  if [ ! -f $level ]; then echo "ERROR: No levels found in $levels_dir"; if querystub; then name=`getname level`; level=$levels_dir/$name.meta; cp $STUB_D/level.meta $level; mkdir $levels_dir/$name; else continue; fi fi
+  if stubifnone level $levels_dir $level; then level=$levels_dir/*.meta; else continue; fi
   level_id=`id $level`
   level_dir=`dir $level`
-  if [ ! -d $level_dir ]; then echo "ERROR: No directory found for $level_id (expected $level_dir)"; if queryfix; then mkdir $level_dir; else continue; fi fi
+  fixifdne level $levels_dir $level_id
   echo - Note: Genning $level_id #debug
   echo "tmp_level = new level();" >> $OUT
   echo "tmp_level.id = \"$level_id\";" >> $OUT
@@ -255,86 +295,82 @@ for level in $levels_dir/*.meta; do #levels
   echo "{" >> $OUT
   cat $level >> $OUT
 
+  if ensuredelimeter map $level_dir; then :; else continue; fi
   maps_dir=$level_dir/maps
-  if [ ! -d $maps_dir ]; then echo "ERROR: Maps directory not found (expected $maps_dir)"; if queryfix; then mkdir $maps_dir; else continue; fi fi
   for map in $maps_dir/*.meta; do #maps
 
-    if [ ! -f $map ]; then echo "ERROR: Map not found in $maps_dir"; if querystub; then name=`getname map`; map=$maps_dir/$name.meta; cp $STUB_D/map.meta $map; cp $STUB_D/map.png $maps_dir/$name.png; annotate $maps_dir/$name.png "MAP $name"; mkdir $maps_dir/$name; else continue; fi fi
+    if stubifnone map $maps_dir $map; then map=$maps_dir/*.meta; else continue; fi
     map_id=`id $map`
     map_dir=`dir $map`
-    if [ ! -d $map_dir ]; then echo "ERROR: No directory found for $map_id (expected $map_dir)"; if queryfix; then mkdir $map_dir; else continue; fi fi
     map_img=`img $map`
+    fixifdne map $maps_dir $map_id
     echo - Note: Genning $map_id #debug
     echo "tmp_map = new map();" >> $OUT
     echo "tmp_map.id = \"$map_id\";" >> $OUT
     echo "tmp_map.fqid = \"$level_id.$map_id\";" >> $OUT
     echo "{" >> $OUT
-    if [ ! -f $ENGINE_DD/$map_img ]; then echo "ERROR: Map img not found (expected $map_img)"; if queryfix; then cp $STUB_D/map.png $ENGINE_DD/$map_img; else continue; fi fi
     echo "tmp_map.img = GenImg(\"$GAME_DD/$map_img\");" >> $OUT
     cat $map >> $OUT
 
+    if ensuredelimeter scene $map_dir; then :; else continue; fi
     scenes_dir=$map_dir/scenes
-    if [ ! -d $scenes_dir ]; then echo "ERROR: Scenes directory not found (expected $scenes_dir)"; if queryfix; then mkdir $scenes_dir; else continue; fi fi
     for scene in $scenes_dir/*.meta; do #scenes
 
-      if [ ! -f $scene ]; then echo "ERROR: No scenes found in $scenes_dir"; if querystub; then name=`getname scene`; scene=$scenes_dir/$name.meta; cp $STUB_D/scene.meta $scene; cp $STUB_D/scene.png $scenes_dir/$name.png; annotate $scenes_dir/$name.png "SCENE $name"; mkdir $scenes_dir/$name; else continue; fi fi
+      if stubifnone scene $scenes_dir $scene; then scene=$scenes_dir/*.meta; else continue; fi
       scene_id=`id $scene`
       scene_dir=`dir $scene`
-      if [ ! -d $scene_dir ]; then echo "ERROR: No directory found for $scene_id (expected $scene_dir)"; if queryfix; then mkdir $scene_dir; else continue; fi fi
       scene_img=`img $scene`
+      fixifdne scene $scenes_dir $scene_id
       echo - Note: Genning $scene_id #debug
       echo "tmp_scene = new scene();" >> $OUT
       echo "tmp_scene.id = \"$scene_id\";" >> $OUT
       echo "tmp_scene.fqid = \"$level_id.$map_id.$scene_id\";" >> $OUT
       echo "{" >> $OUT
-      if [ ! -f $ENGINE_DD/$scene_img ]; then echo "ERROR: Scene img not found (expected $scene_img)"; if queryfix; then cp $STUB_D/scene.png $ENGINE_DD/$scene_img; else continue; fi fi
       echo "tmp_scene.img = GenImg(\"$GAME_DD/$scene_img\");" >> $OUT
       cat $scene >> $OUT
 
+      if ensuredelimeter room $scene_dir; then :; else continue; fi
       rooms_dir=$scene_dir/rooms
-      if [ ! -d $rooms_dir ]; then echo "ERROR: Rooms directory not found (expected $rooms_dir)"; if queryfix; then mkdir $rooms_dir; else continue; fi fi
       for room in $rooms_dir/*.meta; do #rooms
 
-        if [ ! -f $room ]; then echo "ERROR: No rooms found in $rooms_dir"; if querystub; then name=`getname room`; room=$rooms_dir/$name.meta; cp $STUB_D/room.meta $room; cp $STUB_D/room.png $rooms_dir/$name.png; annotate $rooms_dir/$name.png "ROOM $name"; mkdir $rooms_dir/$name; else continue; fi fi
+        if stubifnone room $rooms_dir $room; then room=$rooms_dir/*.meta; else continue; fi
         room_id=`id $room`
         room_dir=`dir $room`
-        if [ ! -d $room_dir ]; then echo "ERROR: No directory found for $room_id (expected $room_dir)"; if queryfix; then mkdir $room_dir; else continue; fi fi
         room_img=`img $room`
+        fixifdne room $rooms_dir $room_id
         echo - Note: Genning $room_id #debug
         echo "tmp_room = new room();" >> $OUT
         echo "tmp_room.id = \"$room_id\";" >> $OUT
         echo "tmp_room.fqid = \"$level_id.$map_id.$scene_id.$room_id\";" >> $OUT
         echo "{" >> $OUT
-        if [ ! -f $ENGINE_DD/$room_img ]; then echo "ERROR: Room img not found (expected $room_img)"; if queryfix; then cp $STUB_D/room.png $ENGINE_DD/$room_img; else continue; fi fi
         echo "tmp_room.img = GenImg(\"$GAME_DD/$room_img\");" >> $OUT
         cat $room >> $OUT
 
+        if ensuredelimeter person $room_dir; then :; else continue; fi
         persons_dir=$room_dir/persons
-        if [ ! -d $persons_dir ]; then echo "ERROR: Persons directory not found (expected $persons_dir)"; if queryfix; then mkdir $persons_dir; else continue; fi fi
         for person in $persons_dir/*.meta; do #persons
 
-          if [ ! -f $person ]; then echo "Warning: No persons found in $persons_dir"; if querystub; then name=`getname person`; person=$persons_dir/$name.meta; cp $STUB_D/person.meta $person; cp $STUB_D/person.png $persons_dir/$name.png; annotate $persons_dir/$name.png "PERSON $name"; mkdir $persons_dir/$name; else continue; fi fi
+          if stubifnone person $persons_dir $person; then person=$persons_dir/*.meta; else continue; fi
           person_id=`id $person`
           person_dir=`dir $person`
-          if [ ! -d $person_dir ]; then echo "ERROR: No directory found for $person_id (expected $person_dir)"; if queryfix; then mkdir $person_dir; else continue; fi fi
           person_img=`img $person`
+          fixifdne person $persons_dir $person_id
           echo - Note: Genning $person_id #debug
           echo "tmp_person = new person();" >> $OUT
           echo "tmp_person.id = \"$person_id\";" >> $OUT
           echo "tmp_person.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id\";" >> $OUT
           echo "{" >> $OUT
-          if [ ! -f $ENGINE_DD/$person_img ]; then echo "ERROR: Person img not found (expected $person_img)"; if queryfix; then cp $STUB_D/person.png $ENGINE_DD/$person_img; else continue; fi fi
           echo "tmp_person.img = GenImg(\"$GAME_DD/$person_img\");" >> $OUT
           cat $person >> $OUT
 
+          if ensuredelimeter option $person_dir; then :; else continue; fi
           options_dir=$person_dir/options
-          if [ ! -d $options_dir ]; then echo "ERROR: Options directory not found (expected $options_dir)"; if queryfix; then mkdir $options_dir; else continue; fi fi
           for option in $options_dir/*.meta; do #options
 
-            if [ ! -f $option ]; then echo "Warning: No options found in $options_dir"; if querystub; then name=`getname option`; option=$options_dir/$name.meta; cp $STUB_D/option.meta $option; mkdir $options_dir/$name; else continue; fi fi
+            if stubifnone option $options_dir $option; then option=$options_dir/*.meta; else continue; fi
             option_id=`id $option`
             option_dir=`dir $option`
-            if [ ! -d $option_dir ]; then echo "ERROR: No directory found for $option_id (expected $option_dir)"; if queryfix; then mkdir $option_dir; else continue; fi fi
+            fixifdne option $options_dir $option_id
             echo - Note: Genning $option_id #debug
             echo "tmp_option = new option();" >> $OUT
             echo "tmp_option.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$option_id\";" >> $OUT
@@ -351,50 +387,48 @@ for level in $levels_dir/*.meta; do #levels
 
         done
 
+        if ensuredelimeter object $room_dir; then :; else continue; fi
         objects_dir=$room_dir/objects
-        if [ ! -d $objects_dir ]; then echo "ERROR: Objects directory not found (expected $objects_dir)"; if queryfix; then mkdir $objects_dir; else continue; fi fi
         for object in $objects_dir/*.meta; do #objects
 
-          if [ ! -f $object ]; then echo "Warning: No objects found in $objects_dir"; if querystub; then name=`getname object`; object=$objects_dir/$name.meta; cp $STUB_D/object.meta $object; cp $STUB_D/object.png $objects_dir/$name.png; annotate $objects_dir/$name.png "OBJECT $name"; mkdir $objects_dir/$name; else continue; fi fi
+          if stubifnone object $objects_dir $object; then object=$objects_dir/*.meta; else continue; fi
           object_id=`id $object`
           object_dir=`dir $object`
-          if [ ! -d $object_dir ]; then echo "ERROR: No directory found for $object_id (expected $object_dir)"; if queryfix; then mkdir $object_dir; else continue; fi fi
           object_img=`img $object`
+          fixifdne object $objects_dir $object_id
           echo - Note: Genning $object_id #debug
           echo "tmp_object = new object();" >> $OUT
           echo "tmp_object.id = \"$object_id\";" >> $OUT
           echo "tmp_object.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id\";" >> $OUT
           echo "{" >> $OUT
-          if [ ! -f $ENGINE_DD/$object_img ]; then echo "ERROR: Object img not found (expected $object_img)"; if queryfix; then cp $STUB_D/object.png $ENGINE_DD/$object_img; else continue; fi fi
           echo "tmp_object.img = GenImg(\"$GAME_DD/$object_img\");" >> $OUT
           cat $object >> $OUT
 
+          if ensuredelimeter view $object_dir; then :; else continue; fi
           views_dir=$object_dir/views
-          if [ ! -d $views_dir ]; then echo "ERROR: Views directory not found (expected $views_dir)"; if queryfix; then mkdir $views_dir; else continue; fi fi
           for view in $views_dir/*.meta; do #views
 
-            if [ ! -f $view ]; then echo "Warning: No views found in $views_dir"; if querystub; then name=`getname view`; view=$views_dir/$name.meta; cp $STUB_D/view.meta $view; cp $STUB_D/view.png $views_dir/$name.png; annotate $views_dir/$name.png "VIEW $name"; mkdir $views_dir/$name; else continue; fi fi
+            if stubifnone view $views_dir $view; then view=$views_dir/*.meta; else continue; fi
             view_id=`id $view`
             view_dir=`dir $view`
-            if [ ! -d $view_dir ]; then echo "ERROR: No directory found for $view_id (expected $view_dir)"; if queryfix; then mkdir $view_dir; else continue; fi fi
             view_img=`img $view`
+            fixifdne view $views_dir $view_id
             echo - Note: Genning $view_id #debug
             echo "tmp_view = new view();" >> $OUT
             echo "tmp_view.id = \"$view_id\";" >> $OUT
             echo "tmp_view.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id\";" >> $OUT
             echo "{" >> $OUT
-            if [ ! -f $ENGINE_DD/$view_img ]; then echo "ERROR: View img not found (expected $view_img)"; if queryfix; then cp $STUB_D/view.png $ENGINE_DD/$view_img; else continue; fi fi
             echo "tmp_view.img = GenImg(\"$GAME_DD/$view_img\");" >> $OUT
             cat $view >> $OUT
 
+            if ensuredelimeter zone $view_dir; then :; else continue; fi
             zones_dir=$view_dir/zones
-            if [ ! -d $zones_dir ]; then echo "ERROR: zones directory not found (expected $zones_dir)"; if queryfix; then mkdir $zones_dir; else continue; fi fi
             for zone in $zones_dir/*.meta; do #zones
 
-              if [ ! -f $zone ]; then echo "Warning: No Zones found in $zones_dir"; if querystub; then name=`getname zone`; zone=$zones_dir/$name.meta; cp $STUB_D/zone.meta $zone; mkdir $zones_dir/$name; else continue; fi fi
+              if stubifnone zone $zones_dir $zone; then zone=$zones_dir/*.meta; else continue; fi
               zone_id=`id $zone`
               zone_dir=`dir $zone`
-              if [ ! -d $zone_dir ]; then echo "ERROR: No directory found for $zone_id (expected $zone_dir)"; if queryfix; then mkdir $zone_dir; else continue; fi fi
+              fixifdne zone $zones_dir $zone_id
               echo - Note: Genning $zone_id #debug
               echo "tmp_zone = new zone();" >> $OUT
               echo "tmp_zone.id = \"$zone_id\";" >> $OUT
@@ -417,21 +451,20 @@ for level in $levels_dir/*.meta; do #levels
 
         done
 
+        if ensuredelimeter porthole $room_dir; then :; else continue; fi
         portholes_dir=$room_dir/portholes
-        if [ ! -d $portholes_dir ]; then echo "ERROR: Portholes directory not found (expected $portholes_dir)"; if queryfix; then mkdir $portholes_dir; else continue; fi fi
         for porthole in $portholes_dir/*.meta; do #portholes
 
-          if [ ! -f $porthole ]; then echo "Warning: No portholes found in $portholes_dir"; if querystub; then name=`getname porthole`; porthole=$portholes_dir/$name.meta; cp $STUB_D/porthole.meta $porthole; cp $STUB_D/porthole.png $portholes_dir/$name.png; annotate $portholes_dir/$name.png "PORTHOLE $name"; mkdir $portholes_dir/$name; else continue; fi fi
+          if stubifnone porthole $portholes_dir $porthole; then porthole=$portholes_dir/*.meta; else continue; fi
           porthole_id=`id $porthole`
           porthole_dir=`dir $porthole`
-          if [ ! -d $porthole_dir ]; then echo "ERROR: No directory found for $porthole_id (expected $porthole_dir)"; if queryfix; then mkdir $porthole_dir; else continue; fi fi
           porthole_img=`img $porthole`
+          fixifdne porthole $portholes_dir $porthole_id
           echo - Note: Genning $porthole_id #debug
           echo "tmp_porthole = new porthole();" >> $OUT
           echo "tmp_porthole.id = \"$porthole_id\";" >> $OUT
           echo "tmp_porthole.fqid = \"$level_id.$map_id.$scene_id.$room_id.$porthole_id\";" >> $OUT
           echo "{" >> $OUT
-          if [ ! -f $ENGINE_DD/$porthole_img ]; then echo "ERROR: Porthole img not found (expected $porthole_img)"; if queryfix; then cp $STUB_D/porthole.png $ENGINE_DD/$porthole_img; else continue; fi fi
           echo "tmp_porthole.img = GenImg(\"$GAME_DD/$porthole_img\");" >> $OUT
           cat $porthole >> $OUT
 
@@ -440,21 +473,20 @@ for level in $levels_dir/*.meta; do #levels
 
         done
 
+        if ensuredelimeter wildcard $room_dir; then :; else continue; fi
         wildcards_dir=$room_dir/wildcards
-        if [ ! -d $wildcards_dir ]; then echo "ERROR: Wildcards directory not found (expected $wildcards_dir)"; if queryfix; then mkdir $wildcards_dir; else continue; fi fi
         for wildcard in $wildcards_dir/*.meta; do #wildcards
 
-          if [ ! -f $wildcard ]; then echo "Warning: No wildcards found in $wildcards_dir"; if querystub; then name=`getname wildcard`; wildcard=$wildcards_dir/$name.meta; cp $STUB_D/wildcard.meta $wildcard; cp $STUB_D/wildcard.png $wildcards_dir/$name.png; annotate $wildcards_dir/$name.png "WILDCARD $name"; mkdir $wildcards_dir/$name; else continue; fi fi
+          if stubifnone wildcard $wildcards_dir $wildcard; then wildcard=$wildcards_dir/*.meta; else continue; fi
           wildcard_id=`id $wildcard`
           wildcard_dir=`dir $wildcard`
-          if [ ! -d $wildcard_dir ]; then echo "ERROR: No directory found for $wildcard_id (expected $wildcard_dir)"; if queryfix; then mkdir $wildcard_dir; else continue; fi fi
           wildcard_img=`img $wildcard`
+          fixifdne wildcard $wildcards_dir $wildcard_id
           echo - Note: Genning $wildcard_id #debug
           echo "tmp_wildcard = new wildcard();" >> $OUT
           echo "tmp_wildcard.id = \"$wildcard_id\";" >> $OUT
           echo "tmp_wildcard.fqid = \"$level_id.$map_id.$scene_id.$room_id.$wildcard_id\";" >> $OUT
           echo "{" >> $OUT
-          if [ ! -f $ENGINE_DD/$wildcard_img ]; then echo "ERROR: Wildcard img not found (expected $wildcard_img)"; if queryfix; then cp $STUB_D/wildcard.png $ENGINE_DD/$wildcard_img; else continue; fi fi
           echo "tmp_wildcard.img = GenImg(\"$GAME_DD/$wildcard_img\");" >> $OUT
           cat $wildcard >> $OUT
 
