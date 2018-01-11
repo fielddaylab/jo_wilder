@@ -27,7 +27,7 @@ var GamePlayScene = function(game, stage)
     my_overworld = new overworld();
     my_overworld.consume_map(cur_map);
     my_notebook = new notebook();
-    my_objview = new objview();
+    my_objectview = new objectview();
     my_personview = new personview();
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
@@ -66,14 +66,20 @@ var GamePlayScene = function(game, stage)
         my_notebook.tick();
         break;
       case STATE_PERSON:
+        if(
+        !clicker.filter(my_personview) &&
+        false) ;
         my_avatar.tick();
         my_navigable.tick();
         my_personview.tick();
         break;
       case STATE_OBJECT:
+        if(
+        !clicker.filter(my_objectview) &&
+        false) ;
         my_avatar.tick();
         my_navigable.tick();
-        my_objview.tick();
+        my_objectview.tick();
         break;
       case STATE_WILDCARD:
         my_avatar.tick();
@@ -113,7 +119,7 @@ var GamePlayScene = function(game, stage)
       case STATE_OBJECT:
         my_navigable.draw();
         my_avatar.draw();
-        my_objview.draw(0);
+        my_objectview.draw(0);
         break;
       case STATE_WILDCARD:
         my_navigable.draw();
@@ -135,7 +141,7 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         if(state_to == STATE_NAV)
         {
-          state_t += 0.01;
+          state_t += 0.01*state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
             if(cur_act.act == ACT_PORTHOLE)
@@ -148,32 +154,32 @@ var GamePlayScene = function(game, stage)
             }
           }
         }
-        else state_t += 0.01;
+        else state_t += 0.01*state_t_speed;
         break;
       case STATE_MAP:
         my_avatar.tick();
         my_navigable.tick;
-        state_t += 0.01;
+        state_t += 0.01*state_t_speed;
         break;
       case STATE_NOTEBOOK:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01;
+        state_t += 0.01*state_t_speed;
         break;
       case STATE_PERSON:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01;
+        state_t += 0.01*state_t_speed;
         break;
       case STATE_OBJECT:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01;
+        state_t += 0.01*state_t_speed;
         break;
       case STATE_WILDCARD:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01;
+        state_t += 0.01*state_t_speed;
         break;
     }
 
@@ -244,19 +250,31 @@ var GamePlayScene = function(game, stage)
         }
         break;
       case STATE_NOTEBOOK:
-        my_navigable.draw();
-        my_avatar.draw();
-        my_notebook.draw();
+        if(state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw((1-state_t)*my_toolbar.h);
+          my_notebook.draw(state_t*my_notebook.h);
+        }
         break;
       case STATE_PERSON:
-        my_navigable.draw();
-        my_avatar.draw();
-        my_personview.draw();
+        if(state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw((1-state_t)*my_toolbar.h);
+          my_personview.draw(state_t*my_notebook.h);
+        }
         break;
       case STATE_OBJECT:
-        my_navigable.draw();
-        my_avatar.draw();
-        my_objview.draw();
+        if(state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw((1-state_t)*my_toolbar.h);
+          my_objectview.draw(state_t*my_notebook.h);
+        }
         break;
       case STATE_WILDCARD:
         break;

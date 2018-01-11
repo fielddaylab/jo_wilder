@@ -48,6 +48,7 @@ var avatar = function()
           case ACT_PORTHOLE: state_to = STATE_NAV;      break;
           case ACT_WILDCARD: state_to = STATE_WILDCARD; break;
         }
+        console.log(state_to);
         state_t = 0;
         my_navigable.selected_act = 0;
       }
@@ -227,6 +228,9 @@ var toolbar = function()
   self.w = canv.width;
   self.h = 100;
 
+  self.toolbar_img = GenImg("assets/toolbar.png");
+  self.map_icon_img = GenImg("assets/map_icon.png");
+  self.notebook_icon_img = GenImg("assets/notebook_icon.png");
   self.map      = {x:10,             y:self.y+10,w:self.h-20,h:self.h-20};
   self.notebook = {x:10+self.h-20+10,y:self.y+10,w:self.h-20,h:self.h-20};
 
@@ -241,7 +245,10 @@ var toolbar = function()
     }
     if(ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
-
+      state_from = cur_state;
+      state_to = STATE_NOTEBOOK;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
     }
   }
 
@@ -252,6 +259,9 @@ var toolbar = function()
 
   self.draw = function(yoff)
   {
+    ctx.drawImage(self.toolbar_img, self.x,         self.y         +yoff, self.w,         self.h);
+    ctx.drawImage(self.map_icon_img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    ctx.drawImage(self.notebook_icon_img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
     ctx.strokeRect(self.x,         self.y         +yoff, self.w,         self.h);
     ctx.strokeRect(self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
     ctx.strokeRect(self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
@@ -315,11 +325,18 @@ var notebook = function()
   self.w = canv.width;
   self.h = canv.height;
 
+  self.img = GenImg("assets/notebook.png");
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
   self.click = function(evt)
   {
-
+    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
+    {
+      state_from = cur_state;
+      state_to = STATE_NAV;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+    }
   }
 
   self.tick = function()
@@ -329,13 +346,13 @@ var notebook = function()
 
   self.draw = function(yoff)
   {
+    ctx.drawImage(self.img, self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-
   }
 }
 
-var objview = function()
+var objectview = function()
 {
   var self = this;
 
@@ -353,7 +370,13 @@ var objview = function()
 
   self.click = function(evt)
   {
-
+    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
+    {
+      state_from = cur_state;
+      state_to = STATE_NAV;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+    }
   }
 
   self.tick = function()
@@ -387,7 +410,13 @@ var personview = function()
 
   self.click = function(evt)
   {
-
+    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
+    {
+      state_from = cur_state;
+      state_to = STATE_NAV;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+    }
   }
 
   self.tick = function()
@@ -399,7 +428,6 @@ var personview = function()
   {
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-
   }
 }
 
