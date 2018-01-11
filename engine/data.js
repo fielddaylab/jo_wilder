@@ -61,6 +61,7 @@ tmp_object = new object();
 tmp_object.id = "book";
 tmp_object.fqid = "l1.map.capitol.entrance.book";
 {
+tmp_object.img = GenImg("assets/data//levels/l1/maps/map/scenes/capitol/rooms/entrance/objects/book.png");
 tmp_object.x = canv.width-200;
 tmp_object.y = 100;
 tmp_object.w = 80;
@@ -78,6 +79,7 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "door";
 tmp_porthole.fqid = "l1.map.capitol.entrance.door";
 {
+tmp_porthole.img = GenImg("assets/data//levels/l1/maps/map/scenes/capitol/rooms/entrance/portholes/door.png");
 tmp_porthole.x = canv.width/2-50;
 tmp_porthole.y = canv.height/2-50;
 tmp_porthole.w = 100;

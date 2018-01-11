@@ -205,9 +205,9 @@ var navigable = function()
   {
     ctx.drawImage(self.room.img,0,0,canv.width,canv.height);
     for(var i = 0; i < self.room.persons.length;   i++) drawImageBox(self.room.persons[i].img,  self.room.persons[i],ctx);
-    //for(var i = 0; i < self.room.objects.length;   i++) drawImageBox(self.room.objects[i].img,  self.room.objects[i],ctx);
-    //for(var i = 0; i < self.room.portholes.length; i++) drawImageBox(self.room.portholes[i].img,self.room.portholes[i],ctx);
-    //for(var i = 0; i < self.room.wildcards.length; i++) drawImageBox(self.room.wildcards[i].img,self.room.wildcards[i],ctx);
+    for(var i = 0; i < self.room.objects.length;   i++) drawImageBox(self.room.objects[i].img,  self.room.objects[i],ctx);
+    for(var i = 0; i < self.room.portholes.length; i++) drawImageBox(self.room.portholes[i].img,self.room.portholes[i],ctx);
+    for(var i = 0; i < self.room.wildcards.length; i++) drawImageBox(self.room.wildcards[i].img,self.room.wildcards[i],ctx);
 
     //debug
     ctx.strokeStyle = white;
