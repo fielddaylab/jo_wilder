@@ -65,7 +65,7 @@ var map = function()
   self.id = "null"
   self.fqid = "null"
   self.scenes = [];
-  self.img;
+  self.anim;
 }
 
 var scene = function()
@@ -78,7 +78,7 @@ var scene = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
-
+  self.anim;
   self.rooms = [];
 }
 
@@ -87,7 +87,6 @@ var room = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
-
   self.img;
   self.nav_x = 0;
   self.nav_y = 0;
@@ -95,7 +94,6 @@ var room = function()
   self.nav_h = 0;
   self.start_x = 0;
   self.start_y = 0;
-
   self.persons = [];
   self.objects = [];
   self.portholes = [];
@@ -113,7 +111,6 @@ var person = function()
   self.w = 0;
   self.h = 0;
   self.anim;
-
   self.options = [];
   self.locks = [];
 }
@@ -129,7 +126,6 @@ var object = function()
   self.w = 0;
   self.h = 0;
   self.anim;
-
   self.views = [];
   self.locks = [];
 }
@@ -144,7 +140,6 @@ var porthole = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
-
   self.target_room;
   self.locks = [];
 }
@@ -159,7 +154,6 @@ var wildcard = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
-
   self.locks = [];
 }
 
@@ -182,7 +176,6 @@ var zone = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
-
   self.locks = [];
 }
 
@@ -191,6 +184,7 @@ var option = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
+  self.anim;
   self.locks = [];
 }
 

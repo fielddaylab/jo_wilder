@@ -27,7 +27,6 @@ img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into lev
 }
 annotate() #type dir name
 {
-  echo annotating...
   echo $1
   echo $2
   convert $2/$3.png -gravity south -stroke '#000C' -strokewidth 2 -annotate 0 "$1 $3" -stroke none -fill white -annotate 0 "$1 $3" $2/$3.png
@@ -42,19 +41,6 @@ stubimg() #type dir name
 stubmeta() #type dir name
 {
   cp $STUB_D/$1.meta $2/$3.meta
-}
-
-stubnoimg()
-{
-  stubmeta "$1" "$2" "$3"
-  mkdir $2/$3
-}
-
-stubnoimgfullifdne() #type dir name
-{
-  if [ ! -f $2/$3.meta ]; then
-    stubnoimgfull "$1" "$2" "$3"
-  fi
 }
 
 stubfull() #type dir name
@@ -77,7 +63,7 @@ rmfullnoimg() #type dir name
   rm -r $2/$3
 }
 
-rmfullimg() #type dir name
+rmfull() #type dir name
 {
   rm $2/$3.meta
   rm $2/$3.png
@@ -101,7 +87,7 @@ stubifnone() #type dir file
   if [ ! -f $3 ]; then
     echo "ERROR: No ${1}s found in $2" >&2
     if querystub; then
-      stubfullnoimg level $levels_dir `getname $1`
+      stubfull $1 $2 `getname $3`
     else
       return 1
     fi
@@ -203,7 +189,7 @@ elif [ "@"$GENCMD == "@genwildcard" ]; then
 GENWILDCARD=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 fi
 
-GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubnoimgfullifdne level $GENDIR $GENLEVEL;
+GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubfullifdne level $GENDIR $GENLEVEL;
   GENDIR=$GENDIR/$GENLEVEL/maps; if [ "@"$GENMAP != "@" ]; then stubfullifdne map $GENDIR $GENMAP;
     GENDIR=$GENDIR/$GENMAP/scenes; if [ "@"$GENSCENE != "@" ]; then stubfullifdne scene $GENDIR $GENSCENE;
       GENDIR=$GENDIR/$GENSCENE/rooms; if [ "@"$GENROOM != "@" ]; then stubfullifdne room $GENDIR $GENROOM;
@@ -258,21 +244,21 @@ RMWILDCARD=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | g
 fi
 
 RMDIR=$ENGINE_DD
-RMDIR=$RMDIR/levels;            if [ "@"$RMCMD == "@rmlevel" ]    && [ "@"$RMLEVEL != "@" ]    && [ -d $RMDIR/$RMLEVEL ];    then rmfullimg level    $RMDIR $RMLEVEL;    fi
-RMDIR=$RMDIR/$RMLEVEL/maps;     if [ "@"$RMCMD == "@rmmap" ]      && [ "@"$RMMAP != "@" ]      && [ -d $RMDIR/$RMMAP ];      then rmfullimg map      $RMDIR $RMMAP;      fi
-RMDIR=$RMDIR/$RMMAP/scenes;     if [ "@"$RMCMD == "@rmscene" ]    && [ "@"$RMSCENE != "@" ]    && [ -d $RMDIR/$RMSCENE ];    then rmfullimg scene    $RMDIR $RMSCENE;    fi
-RMDIR=$RMDIR/$RMSCENE/rooms;    if [ "@"$RMCMD == "@rmroom" ]     && [ "@"$RMROOM != "@" ]     && [ -d $RMDIR/$RMROOM ];     then rmfullimg room     $RMDIR $RMROOM;     fi
+RMDIR=$RMDIR/levels;            if [ "@"$RMCMD == "@rmlevel" ]    && [ "@"$RMLEVEL != "@" ]    && [ -d $RMDIR/$RMLEVEL ];    then rmfull level     $RMDIR $RMLEVEL;    fi
+RMDIR=$RMDIR/$RMLEVEL/maps;     if [ "@"$RMCMD == "@rmmap" ]      && [ "@"$RMMAP != "@" ]      && [ -d $RMDIR/$RMMAP ];      then rmfull map       $RMDIR $RMMAP;      fi
+RMDIR=$RMDIR/$RMMAP/scenes;     if [ "@"$RMCMD == "@rmscene" ]    && [ "@"$RMSCENE != "@" ]    && [ -d $RMDIR/$RMSCENE ];    then rmfull scene     $RMDIR $RMSCENE;    fi
+RMDIR=$RMDIR/$RMSCENE/rooms;    if [ "@"$RMCMD == "@rmroom" ]     && [ "@"$RMROOM != "@" ]     && [ -d $RMDIR/$RMROOM ];     then rmfull room      $RMDIR $RMROOM;     fi
 if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmoption" ]; then
-RMDIR=$RMDIR/$RMROOM/persons;   if [ "@"$RMCMD == "@rmperson" ]   && [ "@"$RMPERSON != "@" ]   && [ -d $RMDIR/$RMPERSON ];   then rmfullimg person   $RMDIR $RMPERSON;   fi
-RMDIR=$RMDIR/$RMPERSON/options; if [ "@"$RMCMD == "@rmoption" ]   && [ "@"$RMOPTION != "@" ]   && [ -d $RMDIR/$RMOPTION ];   then rmfullnoimg option $RMDIR $RMOPTION;   fi
+RMDIR=$RMDIR/$RMROOM/persons;   if [ "@"$RMCMD == "@rmperson" ]   && [ "@"$RMPERSON != "@" ]   && [ -d $RMDIR/$RMPERSON ];   then rmfull person    $RMDIR $RMPERSON;   fi
+RMDIR=$RMDIR/$RMPERSON/options; if [ "@"$RMCMD == "@rmoption" ]   && [ "@"$RMOPTION != "@" ]   && [ -d $RMDIR/$RMOPTION ];   then rmfull option    $RMDIR $RMOPTION;   fi
 elif [ "@"$RMCMD == "@rmobject" ] || [ "@"$RMCMD == "@rmview" ] || [ "@"$RMCMD == "@rmzone" ]; then
-RMDIR=$RMDIR/$RMROOM/objects;   if [ "@"$RMCMD == "@rmobject" ]   && [ "@"$RMOBJECT != "@" ]   && [ -d $RMDIR/$RMOBJECT ];   then rmfullimg object   $RMDIR $RMOBJECT;   fi
-RMDIR=$RMDIR/$RMOBJECT/views;   if [ "@"$RMCMD == "@rmview" ]     && [ "@"$RMVIEW != "@" ]     && [ -d $RMDIR/$RMVIEW ];     then rmfullimg view     $RMDIR $RMVIEW;     fi
-RMDIR=$RMDIR/$RMVIEW/zones;     if [ "@"$RMCMD == "@rmzone" ]     && [ "@"$RMZONE != "@" ]     && [ -d $RMDIR/$RMZONE ];     then rmfullnoimg zone   $RMDIR $RMZONE;     fi
+RMDIR=$RMDIR/$RMROOM/objects;   if [ "@"$RMCMD == "@rmobject" ]   && [ "@"$RMOBJECT != "@" ]   && [ -d $RMDIR/$RMOBJECT ];   then rmfull object    $RMDIR $RMOBJECT;   fi
+RMDIR=$RMDIR/$RMOBJECT/views;   if [ "@"$RMCMD == "@rmview" ]     && [ "@"$RMVIEW != "@" ]     && [ -d $RMDIR/$RMVIEW ];     then rmfull view      $RMDIR $RMVIEW;     fi
+RMDIR=$RMDIR/$RMVIEW/zones;     if [ "@"$RMCMD == "@rmzone" ]     && [ "@"$RMZONE != "@" ]     && [ -d $RMDIR/$RMZONE ];     then rmfullnoimg zone $RMDIR $RMZONE;     fi
 elif [ "@"$RMCMD == "@rmporthole" ]; then
-RMDIR=$RMDIR/$RMROOM/portholes; if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR/$RMPORTHOLE ]; then rmfullimg porthole $RMDIR $RMPORTHOLE; fi
+RMDIR=$RMDIR/$RMROOM/portholes; if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR/$RMPORTHOLE ]; then rmfull porthole  $RMDIR $RMPORTHOLE; fi
 elif [ "@"$RMCMD == "@rmwildcard" ]; then
-RMDIR=$RMDIR/$RMROOM/wildcards; if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR/$RMWILDCARD ]; then rmfullimg wildcard $RMDIR $RMWILDCARD; fi
+RMDIR=$RMDIR/$RMROOM/wildcards; if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR/$RMWILDCARD ]; then rmfull wildcard  $RMDIR $RMWILDCARD; fi
 fi
 
 # BEGIN
@@ -370,11 +356,13 @@ for level in $levels_dir/*.meta; do #levels
             if stubifnone option $options_dir $option; then option=$options_dir/*.meta; else continue; fi
             option_id=`id $option`
             option_dir=`dir $option`
+            option_img=`img $option`
             fixifdne option $options_dir $option_id
             echo - Note: Genning $option_id #debug
             echo "tmp_option = new option();" >> $OUT
             echo "tmp_option.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$option_id\";" >> $OUT
             echo "{" >> $OUT
+            echo "tmp_option.img = GenImg(\"$GAME_DD/$option_img\");" >> $OUT
             cat $option >> $OUT
 
             echo "}" >> $OUT
