@@ -159,7 +159,20 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         my_avatar.tick();
         my_navigable.tick;
-        state_t += 0.01*state_t_speed;
+        if(state_to == STATE_NAV && my_overworld.selected_scene && my_overworld.selected_scene != cur_scene)
+        {
+          state_t += 0.01*state_t_speed;
+          if(old_state_t < 0.5 && state_t >= 0.5)
+          {
+            cur_scene = my_overworld.selected_scene;
+            my_overworld.selected_scene = 0;
+            cur_room = cur_scene.rooms[0];
+            my_avatar.consume_room(cur_room);
+            my_navigable.consume_room(cur_room);
+            cur_act = 0;
+          }
+        }
+        else state_t += 0.01*state_t_speed;
         break;
       case STATE_NOTEBOOK:
         my_avatar.tick();
@@ -202,7 +215,7 @@ var GamePlayScene = function(game, stage)
           my_toolbar.draw(0);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
-          ctx.fillStyle = "rgba(255,255,255,"+blur+")";
+          ctx.fillStyle = "rgba(0,0,0,"+blur+")";
           ctx.fillRect(0,0,canv.width,canv.height);
         }
         if(state_to == STATE_MAP)
@@ -243,10 +256,25 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         if(state_to == STATE_NAV)
         {
-          my_navigable.draw();
-          my_avatar.draw();
-          my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_overworld.draw(state_t*my_overworld.h);
+          if(my_overworld.selected_scene && my_overworld.selected_scene != cur_scene)
+          {
+            my_navigable.draw();
+            my_avatar.draw();
+            my_toolbar.draw(0);
+            var blur = (state_t*2)-1;
+            blur = 1-(blur*blur);
+            if(blur < 0.5)
+              my_overworld.draw(0);
+            ctx.fillStyle = "rgba(0,0,0,"+blur+")";
+            ctx.fillRect(0,0,canv.width,canv.height);
+          }
+          else
+          {
+            my_navigable.draw();
+            my_avatar.draw();
+            my_toolbar.draw((1-state_t)*my_toolbar.h);
+            my_overworld.draw(state_t*my_overworld.h);
+          }
         }
         break;
       case STATE_NOTEBOOK:

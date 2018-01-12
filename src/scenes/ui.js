@@ -279,8 +279,9 @@ var overworld = function()
   self.w = canv.width;
   self.h = canv.height;
 
-  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.map;
+  self.selected_scene = 0;
+  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
   self.consume_map = function(map)
   {
@@ -296,6 +297,18 @@ var overworld = function()
       state_to = STATE_NAV;
       cur_state = STATE_TRANSITION;
       state_t = 0;
+    }
+    for(var i = 0; i < self.map.scenes.length; i++)
+    {
+      if(ptWithinBox(self.map.scenes[i],evt.doX,evt.doY))
+      {
+        self.selected_scene = self.map.scenes[i];
+        state_from = cur_state;
+        state_to = STATE_NAV;
+        console.log("here");
+        cur_state = STATE_TRANSITION;
+        state_t = 0;
+      }
     }
   }
 

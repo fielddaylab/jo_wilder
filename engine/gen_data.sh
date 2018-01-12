@@ -73,7 +73,7 @@ ensuredelimeter() #type dir
   if [ ! -d $2/${1}s ]; then
     echo "ERROR: ${1}s directory not found (expected $2/${1}s)" >>$TTY
     if queryfix; then
-      mkdir -p ${1}s
+      mkdir -p $2/${1}s
     else
       return 1
     fi
