@@ -27,9 +27,7 @@ img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into lev
 }
 annotate() #type dir name
 {
-  echo $1
-  echo $2
-  convert $2/$3.png -gravity south -stroke '#000C' -strokewidth 2 -annotate 0 "$1 $3" -stroke none -fill white -annotate 0 "$1 $3" $2/$3.png
+  convert $2/$3.png -gravity north -pointsize 50 -stroke '#000C' -strokewidth 2 -annotate 0 "$1 $3" -stroke none -fill white -annotate 0 "$1 $3" $2/$3.png
 }
 
 stubimg() #type dir name
