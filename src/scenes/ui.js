@@ -305,7 +305,6 @@ var overworld = function()
         self.selected_scene = self.map.scenes[i];
         state_from = cur_state;
         state_to = STATE_NAV;
-        console.log("here");
         cur_state = STATE_TRANSITION;
         state_t = 0;
       }

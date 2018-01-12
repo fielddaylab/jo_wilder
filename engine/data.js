@@ -102,7 +102,7 @@ tmp_scene.id = "drycleaners";
 tmp_scene.fqid = "l1.map.drycleaners";
 {
 tmp_scene.img = GenImg("assets/data//levels/l1/maps/map/scenes/drycleaners.png");
-tmp_scene.x = 100;
+tmp_scene.x = 300;
 tmp_scene.y = 100;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
@@ -126,7 +126,7 @@ tmp_scene.id = "library";
 tmp_scene.fqid = "l1.map.library";
 {
 tmp_scene.img = GenImg("assets/data//levels/l1/maps/map/scenes/library.png");
-tmp_scene.x = 100;
+tmp_scene.x = 500;
 tmp_scene.y = 100;
 tmp_scene.w = 100;
 tmp_scene.h = 100;

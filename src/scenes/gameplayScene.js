@@ -263,7 +263,7 @@ var GamePlayScene = function(game, stage)
             my_toolbar.draw(0);
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
-            if(blur < 0.5)
+            if(state_t < 0.5)
               my_overworld.draw(0);
             ctx.fillStyle = "rgba(0,0,0,"+blur+")";
             ctx.fillRect(0,0,canv.width,canv.height);
