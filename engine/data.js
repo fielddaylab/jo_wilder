@@ -91,6 +91,41 @@ tmp_room.portholes.push(tmp_porthole);
 tmp_scene.rooms.push(tmp_room);
 }
 tmp_map.scenes.push(tmp_scene);
+tmp_scene = new scene();
+tmp_scene.id = "drycleaners";
+tmp_scene.fqid = "l1.map.drycleaners";
+{
+tmp_scene.img = GenImg("assets/data//levels/l1/maps/map/scenes/drycleaners.png");
+tmp_scene.x = 100;
+tmp_scene.y = 100;
+tmp_scene.w = 100;
+tmp_scene.h = 100;
+}
+tmp_map.scenes.push(tmp_scene);
+tmp_scene = new scene();
+tmp_scene.id = "library";
+tmp_scene.fqid = "l1.map.library";
+{
+tmp_scene.img = GenImg("assets/data//levels/l1/maps/map/scenes/library.png");
+tmp_scene.x = 100;
+tmp_scene.y = 100;
+tmp_scene.w = 100;
+tmp_scene.h = 100;
+tmp_room = new room();
+tmp_room.id = "entrance";
+tmp_room.fqid = "l1.map.library.entrance";
+{
+tmp_room.img = GenImg("assets/data//levels/l1/maps/map/scenes/library/rooms/entrance.png");
+tmp_room.nav_x = 100;
+tmp_room.nav_y = canv.height/2;
+tmp_room.nav_w = canv.width-200;
+tmp_room.nav_h = canv.height/2-100;
+tmp_room.start_x = canv.width/2;
+tmp_room.start_y = canv.height/2;
+}
+tmp_scene.rooms.push(tmp_room);
+}
+tmp_map.scenes.push(tmp_scene);
 }
 tmp_level.map = tmp_map;
 }
