@@ -43,12 +43,11 @@ var avatar = function()
         cur_state = STATE_TRANSITION;
         switch(cur_act.act)
         {
-          case ACT_PERSON:   state_to = STATE_PERSON;   break;
-          case ACT_OBJECT:   state_to = STATE_OBJECT;   break;
+          case ACT_PERSON:   state_to = STATE_PERSON;   my_personview.consume_person(cur_act); break;
+          case ACT_OBJECT:   state_to = STATE_OBJECT;   my_objectview.consume_object(cur_act); break;
           case ACT_PORTHOLE: state_to = STATE_NAV;      break;
           case ACT_WILDCARD: state_to = STATE_WILDCARD; break;
         }
-        console.log(state_to);
         state_t = 0;
         my_navigable.selected_act = 0;
       }
@@ -238,6 +237,7 @@ var toolbar = function()
   {
     if(ptWithinBox(self.map,     evt.doX,evt.doY))
     {
+      my_navigable.selected_act = 0;
       state_from = cur_state;
       state_to = STATE_MAP;
       cur_state = STATE_TRANSITION;
@@ -245,6 +245,7 @@ var toolbar = function()
     }
     if(ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
+      my_navigable.selected_act = 0;
       state_from = cur_state;
       state_to = STATE_NOTEBOOK;
       cur_state = STATE_TRANSITION;
@@ -361,11 +362,14 @@ var objectview = function()
   self.w = canv.width;
   self.h = canv.height;
 
+  self.object;
+  self.cur_view = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
   self.consume_object = function(object)
   {
-
+    self.object = object;
+    self.cur_view = 0;
   }
 
   self.click = function(evt)
@@ -377,6 +381,16 @@ var objectview = function()
       cur_state = STATE_TRANSITION;
       state_t = 0;
     }
+    var view = self.object.views[self.cur_view];
+    var zone;
+    for(var i = 0; i < view.zones.length; i++)
+    {
+      zone = view.zones[i];
+      if(ptWithinBox(zone,evt.doX,evt.doY))
+      {
+        console.log("click zone "+i);
+      }
+    }
   }
 
   self.tick = function()
@@ -386,9 +400,23 @@ var objectview = function()
 
   self.draw = function(yoff)
   {
+    var view = self.object.views[self.cur_view];
+    var zone;
+    ctx.drawImage(view.img, self.x, self.y+yoff, self.w, self.h);
+    for(var i = 0; i < view.zones.length; i++)
+    {
+      zone = view.zones[i];
+      ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
+    }
+
+    ctx.strokeStyle = white;
+    for(var i = 0; i < view.zones.length; i++)
+    {
+      zone = view.zones[i];
+      ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
+    }
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-
   }
 }
 
@@ -401,11 +429,14 @@ var personview = function()
   self.w = canv.width;
   self.h = canv.height;
 
+  self.person;
+  self.cur_option = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
   self.consume_person = function(person)
   {
-
+    self.person = person;
+    self.cur_option = 0;
   }
 
   self.click = function(evt)
@@ -417,6 +448,15 @@ var personview = function()
       cur_state = STATE_TRANSITION;
       state_t = 0;
     }
+    var option;
+    for(var i = 0; i < self.person.options.length; i++)
+    {
+      option = self.person.options[i];
+      if(ptWithinBox(option,evt.doX,evt.doY))
+      {
+        console.log("click option "+i);
+      }
+    }
   }
 
   self.tick = function()
@@ -426,6 +466,20 @@ var personview = function()
 
   self.draw = function(yoff)
   {
+    var option = self.person.options[self.cur_option];
+    ctx.drawImage(option.img, self.x, self.y+yoff, self.w, self.h);
+    for(var i = 0; i < self.person.options.length; i++)
+    {
+      option = self.person.options[i];
+      ctx.drawImage(option.img, option.x, option.y+yoff, option.w, option.h);
+    }
+
+    ctx.strokeStyle = white;
+    for(var i = 0; i < self.person.options.length; i++)
+    {
+      option = self.person.options[i];
+      ctx.strokeRect(option.x, option.y+yoff, option.w, option.h);
+    }
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
   }

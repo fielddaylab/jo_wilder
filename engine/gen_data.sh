@@ -71,7 +71,7 @@ rmfull() #type dir name
 ensuredelimeter() #type dir
 {
   if [ ! -d $2/${1}s ]; then
-    echo "ERROR: ${1}s directory not found (expected $2/${1}s)" >&2
+    echo "ERROR: ${1}s directory not found (expected $2/${1}s)" >>$TTY
     if queryfix; then
       mkdir -p ${1}s
     else
@@ -80,11 +80,22 @@ ensuredelimeter() #type dir
   fi
 }
 
-trystub() #type dir file
+forcestub() #type dir
 {
-  echo "Warning: No ${1}s found in $2" >&2
+  echo "ERROR: No ${1}s found in $2" >>$TTY
+  if queryfix; then
+    stubfull $1 $2 `getname $1`
+    return 0
+  else
+    return 1
+  fi
+}
+
+trystub() #type dir
+{
+  echo "Warning: No ${1}s found in $2" >>$TTY
   if querystub; then
-    stubfull $1 $2 `getname $3`
+    stubfull $1 $2 `getname $1`
     return 0
   else
     return 1
@@ -95,14 +106,14 @@ fixifdne() #type dir name
 {
   #img
   if [ ! -f $2/$3.png ]; then
-    echo "ERROR: $1 img not found for $3 (expected $2/$3.png)" >&2
+    echo "ERROR: $1 img not found for $3 (expected $2/$3.png)" >>$TTY
     if queryfix; then
       stubimg "$1" "$2" "$3"
     fi
   fi
   #dir
   if [ ! -d $2/$3 ]; then
-    echo "ERROR: $1 directory not found for $3 (expected $2/$3)" >&2
+    echo "ERROR: $1 directory not found for $3 (expected $2/$3)" >>$TTY
     if queryfix; then
       mkdir -p $2/$3
     else
@@ -267,7 +278,7 @@ if ensuredelimeter level $ENGINE_DD; then :; else exit; fi
 levels_dir=$ENGINE_DD/levels
 for level in $levels_dir/*.meta; do #levels
 
-  if [ ! -f $level ]; then if trystub level $levels_dir $level; then level=$levels_dir/*.meta; else continue; fi fi
+  if [ ! -f $level ]; then if forcestub level $levels_dir; then level=$levels_dir/*.meta; else exit; fi fi
   level_id=`id $level`
   level_dir=`dir $level`
   fixifdne level $levels_dir $level_id
@@ -282,7 +293,7 @@ for level in $levels_dir/*.meta; do #levels
   maps_dir=$level_dir/maps
   for map in $maps_dir/*.meta; do #maps
 
-    if [ ! -f $map ]; then if trystub map $maps_dir $map; then map=$maps_dir/*.meta; else continue; fi fi
+    if [ ! -f $map ]; then if forcestub map $maps_dir; then map=$maps_dir/*.meta; else exit; fi fi
     map_id=`id $map`
     map_dir=`dir $map`
     map_img=`img $map`
@@ -299,7 +310,7 @@ for level in $levels_dir/*.meta; do #levels
     scenes_dir=$map_dir/scenes
     for scene in $scenes_dir/*.meta; do #scenes
 
-      if [ ! -f $scene ]; then if trystub scene $scenes_dir $scene; then scene=$scenes_dir/*.meta; else continue; fi fi
+      if [ ! -f $scene ]; then if forcestub scene $scenes_dir; then scene=$scenes_dir/*.meta; else exit; fi fi
       scene_id=`id $scene`
       scene_dir=`dir $scene`
       scene_img=`img $scene`
@@ -316,7 +327,7 @@ for level in $levels_dir/*.meta; do #levels
       rooms_dir=$scene_dir/rooms
       for room in $rooms_dir/*.meta; do #rooms
 
-        if [ ! -f $room ]; then if trystub room $rooms_dir $room; then room=$rooms_dir/*.meta; else continue; fi fi
+        if [ ! -f $room ]; then if forcestub room $rooms_dir; then room=$rooms_dir/*.meta; else exit; fi fi
         room_id=`id $room`
         room_dir=`dir $room`
         room_img=`img $room`
@@ -333,7 +344,7 @@ for level in $levels_dir/*.meta; do #levels
         persons_dir=$room_dir/persons
         for person in $persons_dir/*.meta; do #persons
 
-          if [ ! -f $person ]; then if trystub person $persons_dir $person; then person=$persons_dir/*.meta; else continue; fi fi
+          if [ ! -f $person ]; then if trystub person $persons_dir; then person=$persons_dir/*.meta; else continue; fi fi
           person_id=`id $person`
           person_dir=`dir $person`
           person_img=`img $person`
@@ -350,7 +361,7 @@ for level in $levels_dir/*.meta; do #levels
           options_dir=$person_dir/options
           for option in $options_dir/*.meta; do #options
 
-            if [ ! -f $option ]; then if trystub option $options_dir $option; then option=$options_dir/*.meta; else continue; fi fi
+            if [ ! -f $option ]; then if forcestub option $options_dir; then option=$options_dir/*.meta; else exit; fi fi
             option_id=`id $option`
             option_dir=`dir $option`
             option_img=`img $option`
@@ -376,7 +387,7 @@ for level in $levels_dir/*.meta; do #levels
         objects_dir=$room_dir/objects
         for object in $objects_dir/*.meta; do #objects
 
-          if [ ! -f $object ]; then if trystub object $objects_dir $object; then object=$objects_dir/*.meta; else continue; fi fi
+          if [ ! -f $object ]; then if trystub object $objects_dir; then object=$objects_dir/*.meta; else continue; fi fi
           object_id=`id $object`
           object_dir=`dir $object`
           object_img=`img $object`
@@ -393,7 +404,7 @@ for level in $levels_dir/*.meta; do #levels
           views_dir=$object_dir/views
           for view in $views_dir/*.meta; do #views
 
-            if [ ! -f $view ]; then if trystub view $views_dir $view; then view=$views_dir/*.meta; else continue; fi fi
+            if [ ! -f $view ]; then if forcestub view $views_dir; then view=$views_dir/*.meta; else exit; fi fi
             view_id=`id $view`
             view_dir=`dir $view`
             view_img=`img $view`
@@ -410,7 +421,7 @@ for level in $levels_dir/*.meta; do #levels
             zones_dir=$view_dir/zones
             for zone in $zones_dir/*.meta; do #zones
 
-              if [ ! -f $zone ]; then if trystub zone $zones_dir $zone; then zone=$zones_dir/*.meta; else continue; fi fi
+              if [ ! -f $zone ]; then if trystub zone $zones_dir; then zone=$zones_dir/*.meta; else continue; fi fi
               zone_id=`id $zone`
               zone_dir=`dir $zone`
               fixifdne zone $zones_dir $zone_id
@@ -440,7 +451,7 @@ for level in $levels_dir/*.meta; do #levels
         portholes_dir=$room_dir/portholes
         for porthole in $portholes_dir/*.meta; do #portholes
 
-          if [ ! -f $porthole ]; then if trystub porthole $portholes_dir $porthole; then porthole=$portholes_dir/*.meta; else continue; fi fi
+          if [ ! -f $porthole ]; then if trystub porthole $portholes_dir; then porthole=$portholes_dir/*.meta; else continue; fi fi
           porthole_id=`id $porthole`
           porthole_dir=`dir $porthole`
           porthole_img=`img $porthole`
@@ -462,7 +473,7 @@ for level in $levels_dir/*.meta; do #levels
         wildcards_dir=$room_dir/wildcards
         for wildcard in $wildcards_dir/*.meta; do #wildcards
 
-          if [ ! -f $wildcard ]; then if trystub wildcard $wildcards_dir $wildcard; then wildcard=$wildcards_dir/*.meta; else continue; fi fi
+          if [ ! -f $wildcard ]; then if trystub wildcard $wildcards_dir; then wildcard=$wildcards_dir/*.meta; else continue; fi fi
           wildcard_id=`id $wildcard`
           wildcard_dir=`dir $wildcard`
           wildcard_img=`img $wildcard`

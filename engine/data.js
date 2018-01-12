@@ -55,6 +55,12 @@ tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 100;
 tmp_person.h = 120;
+tmp_option = new option();
+tmp_option.id = "l1.map.capitol.entrance.uncle.option";
+{
+tmp_option.img = GenImg("assets/data//levels/l1/maps/map/scenes/capitol/rooms/entrance/persons/uncle/options/option.png");
+}
+tmp_person.options.push(tmp_option);
 }
 tmp_room.persons.push(tmp_person);
 tmp_object = new object();
@@ -100,6 +106,19 @@ tmp_scene.x = 100;
 tmp_scene.y = 100;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
+tmp_room = new room();
+tmp_room.id = "room";
+tmp_room.fqid = "l1.map.drycleaners.room";
+{
+tmp_room.img = GenImg("assets/data//levels/l1/maps/map/scenes/drycleaners/rooms/room.png");
+tmp_room.nav_x = 100;
+tmp_room.nav_y = canv.height/2;
+tmp_room.nav_w = canv.width-200;
+tmp_room.nav_h = canv.height/2-100;
+tmp_room.start_x = canv.width/2;
+tmp_room.start_y = canv.height/2;
+}
+tmp_scene.rooms.push(tmp_room);
 }
 tmp_map.scenes.push(tmp_scene);
 tmp_scene = new scene();
