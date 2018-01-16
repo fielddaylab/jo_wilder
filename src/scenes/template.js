@@ -51,6 +51,17 @@ var find = function(id,node)
   }
 }
 
+var querylocked = function(o)
+{
+  if(o.locked)
+  {
+    locked = false;
+    for(var i = 0; i < o.locks.length; i++) if(!find(o.locks[i]).key) locked = true;
+    o.locked = locked;
+  }
+  return o.locked;
+}
+
 var level = function()
 {
   var self = this;
@@ -113,6 +124,8 @@ var person = function()
   self.anim;
   self.options = [];
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var object = function()
@@ -128,6 +141,8 @@ var object = function()
   self.anim;
   self.views = [];
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var porthole = function()
@@ -142,6 +157,8 @@ var porthole = function()
   self.h = 0;
   self.target_room;
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var wildcard = function()
@@ -155,6 +172,8 @@ var wildcard = function()
   self.w = 0;
   self.h = 0;
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var view = function()
@@ -165,6 +184,8 @@ var view = function()
   self.anim;
   self.zones = [];
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var zone = function()
@@ -177,6 +198,8 @@ var zone = function()
   self.w = 0;
   self.h = 0;
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var option = function()
@@ -186,6 +209,8 @@ var option = function()
   self.fqid = "null"
   self.anim;
   self.locks = [];
+  self.key = false;
+  self.locked = true;
 }
 
 var lock = function()

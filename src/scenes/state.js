@@ -6,6 +6,6 @@ var cur_act;
 
 var cur_state;
 var state_t; //0-1
-var state_t_speed = 0.1;
+var state_t_speed = 1;
 var state_from;
 var state_to;

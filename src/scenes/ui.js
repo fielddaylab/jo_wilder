@@ -167,10 +167,34 @@ var navigable = function()
   self.selected_act = 0;
   self.last_click = {x:0,y:0};
   self.nav_click = {x:0,y:0};
+  self.cache_unlocked_persons = [];
+  self.cache_unlocked_objects = [];
+  self.cache_unlocked_portholes = [];
+  self.cache_unlocked_wildcards = [];
 
   self.consume_room = function(room)
   {
     self.room = room;
+    self.room.key = true;
+    self.unlock_content();
+  }
+
+  self.unlock_content = function()
+  {
+    var locked;
+    self.cache_unlocked_persons = [];
+    self.cache_unlocked_objects = [];
+    self.cache_unlocked_portholes = [];
+    self.cache_unlocked_wildcards = [];
+
+    for(var i = 0; i < self.room.persons.length; i++)
+      if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
+    for(var i = 0; i < self.room.objects.length; i++)
+      if(!querylocked(self.room.objects[i])) self.cache_unlocked_objects.push(self.room.objects[i]);
+    for(var i = 0; i < self.room.portholes.length; i++)
+      if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
+    for(var i = 0; i < self.room.wildcards.length; i++)
+      if(!querylocked(self.room.wildcards[i])) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
   }
 
   self.click = function(evt)
@@ -187,14 +211,14 @@ var navigable = function()
     my_avatar.toY = self.nav_click.y-my_avatar.h/2;
 
     self.selected_act = 0;
-    for(var i = 0; i < self.room.persons.length; i++)
-      if(ptWithinBox(self.room.persons[i],evt.doX,evt.doY)) { self.selected_act = self.room.persons[i]; }
-    for(var i = 0; i < self.room.objects.length; i++)
-      if(ptWithinBox(self.room.objects[i],evt.doX,evt.doY)) { self.selected_act = self.room.objects[i]; }
-    for(var i = 0; i < self.room.portholes.length; i++)
-      if(ptWithinBox(self.room.portholes[i],evt.doX,evt.doY)) { self.selected_act = self.room.portholes[i]; }
-    for(var i = 0; i < self.room.wildcards.length; i++)
-      if(ptWithinBox(self.room.wildcards[i],evt.doX,evt.doY)) { self.selected_act = self.room.wildcards[i]; }
+    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
+      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_persons[i]; }
+    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
+      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_objects[i]; }
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
+      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_portholes[i]; }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
+      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_wildcards[i]; }
   }
 
   self.tick = function()
@@ -204,18 +228,18 @@ var navigable = function()
   self.draw = function()
   {
     ctx.drawImage(self.room.img,0,0,canv.width,canv.height);
-    for(var i = 0; i < self.room.persons.length;   i++) drawImageBox(self.room.persons[i].img,  self.room.persons[i],ctx);
-    for(var i = 0; i < self.room.objects.length;   i++) drawImageBox(self.room.objects[i].img,  self.room.objects[i],ctx);
-    for(var i = 0; i < self.room.portholes.length; i++) drawImageBox(self.room.portholes[i].img,self.room.portholes[i],ctx);
-    for(var i = 0; i < self.room.wildcards.length; i++) drawImageBox(self.room.wildcards[i].img,self.room.wildcards[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) drawImageBox(self.cache_unlocked_persons[i].img,  self.cache_unlocked_persons[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) drawImageBox(self.cache_unlocked_objects[i].img,  self.cache_unlocked_objects[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) drawImageBox(self.cache_unlocked_portholes[i].img,self.cache_unlocked_portholes[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) drawImageBox(self.cache_unlocked_wildcards[i].img,self.cache_unlocked_wildcards[i],ctx);
 
     //debug
     ctx.strokeStyle = white;
     ctx.strokeRect(self.room.nav_x,self.room.nav_y,self.room.nav_w,self.room.nav_h);
-    for(var i = 0; i < self.room.persons.length;   i++) strokeBox(self.room.persons[i],ctx);
-    for(var i = 0; i < self.room.objects.length;   i++) strokeBox(self.room.objects[i],ctx);
-    for(var i = 0; i < self.room.portholes.length; i++) strokeBox(self.room.portholes[i],ctx);
-    for(var i = 0; i < self.room.wildcards.length; i++) strokeBox(self.room.wildcards[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) strokeBox(self.cache_unlocked_objects[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
   }
 };
 
