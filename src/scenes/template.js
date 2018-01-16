@@ -67,6 +67,7 @@ var level = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
+  self.primary = false;
   self.map;
 }
 
@@ -84,6 +85,7 @@ var scene = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
+  self.primary = false;
   //for display on the map
   self.x = 0;
   self.y = 0;
@@ -98,6 +100,7 @@ var room = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
+  self.primary = false;
   self.img;
   self.nav_x = 0;
   self.nav_y = 0;
@@ -123,6 +126,7 @@ var person = function()
   self.h = 0;
   self.anim;
   self.options = [];
+  self.parent = "null";
   self.locks = [];
   self.key = false;
   self.locked = true;
@@ -181,6 +185,7 @@ var view = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
+  self.primary = false;
   self.anim;
   self.zones = [];
   self.locks = [];
@@ -207,6 +212,7 @@ var option = function()
   var self = this;
   self.id = "null"
   self.fqid = "null"
+  self.primary = false;
   self.anim;
   self.locks = [];
   self.key = false;

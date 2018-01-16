@@ -175,9 +175,9 @@ var navigable = function()
   self.consume_room = function(room)
   {
     self.room = room;
-    self.selected_act = 0;
     self.room.key = true;
     self.unlock_content();
+    self.selected_act = 0;
   }
 
   self.unlock_content = function()
@@ -311,9 +311,9 @@ var overworld = function()
   self.consume_map = function(map)
   {
     self.map = map;
-    self.selected_scene = 0;
     self.map.key = true;
     self.unlock_content();
+    self.selected_scene = 0;
   }
 
   self.unlock_content = function()
@@ -417,9 +417,10 @@ var objectview = function()
   self.consume_object = function(object)
   {
     self.object = object;
-    self.cur_view = 0;
     self.object.key = true;
     self.unlock_content();
+    self.cur_view = 0;
+    for(var i = 1; i < self.cache_unlocked_views.length; i++) if(self.cache_unlocked_views[i].primary) cur_view = i;
   }
 
   self.unlock_content = function()
@@ -490,13 +491,15 @@ var personview = function()
   self.cur_option = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_options = [];
+  self.cache_unlocked_children = [];
 
   self.consume_person = function(person)
   {
     self.person = person;
-    self.cur_option = 0;
     self.person.key = true;
     self.unlock_content();
+    self.cur_option = 0;
+    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) cur_option = i;
   }
 
   self.unlock_content = function()
@@ -504,6 +507,8 @@ var personview = function()
     self.cache_unlocked_options = [];
     for(var i = 0; i < self.person.options.length; i++)
       if(!querylocked(self.person.options[i])) self.cache_unlocked_options.push(self.person.options[i]);
+    for(var i = 0; i < self.cache_unlocked_options; i++)
+      if(self.cache_unlocked_options[i].parent == self.cache_unlocked_options[cur_option].fqid) self.cache_unlocked_children.push(self.cache_unlocked_options[i]);
   }
 
   self.click = function(evt)
@@ -516,9 +521,9 @@ var personview = function()
       state_t = 0;
     }
     var option;
-    for(var i = 0; i < self.cache_unlocked_options.length; i++)
+    for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
-      option = self.cache_unlocked_options[i];
+      option = self.cache_unlocked_children[i];
       if(ptWithinBox(option,evt.doX,evt.doY))
       {
         console.log("click option "+i);
@@ -535,16 +540,17 @@ var personview = function()
   {
     var option = self.cache_unlocked_options[self.cur_option];
     ctx.drawImage(option.img, self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.cache_unlocked_options.length; i++)
+    for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
-      option = self.cache_unlocked_options[i];
+      option = self.cache_unlocked_children[i];
       ctx.drawImage(option.img, option.x, option.y+yoff, option.w, option.h);
     }
 
+    //debug
     ctx.strokeStyle = white;
-    for(var i = 0; i < self.cache_unlocked_options.length; i++)
+    for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
-      option = self.cache_unlocked_options[i];
+      option = self.cache_unlocked_children[i];
       ctx.strokeRect(option.x, option.y+yoff, option.w, option.h);
     }
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
