@@ -175,13 +175,13 @@ var navigable = function()
   self.consume_room = function(room)
   {
     self.room = room;
+    self.selected_act = 0;
     self.room.key = true;
     self.unlock_content();
   }
 
   self.unlock_content = function()
   {
-    var locked;
     self.cache_unlocked_persons = [];
     self.cache_unlocked_objects = [];
     self.cache_unlocked_portholes = [];
@@ -306,10 +306,21 @@ var overworld = function()
   self.map;
   self.selected_scene = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  self.cache_unlocked_scenes = [];
 
   self.consume_map = function(map)
   {
     self.map = map;
+    self.selected_scene = 0;
+    self.map.key = true;
+    self.unlock_content();
+  }
+
+  self.unlock_content = function()
+  {
+    self.cache_unlocked_scenes = [];
+    for(var i = 0; i < self.map.scenes.length; i++)
+      if(!querylocked(self.map.scenes[i])) self.cache_unlocked_scenes.push(self.map.scenes[i]);
   }
 
   self.shouldClick = function(evt) { return true; }
@@ -322,11 +333,11 @@ var overworld = function()
       cur_state = STATE_TRANSITION;
       state_t = 0;
     }
-    for(var i = 0; i < self.map.scenes.length; i++)
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
     {
-      if(ptWithinBox(self.map.scenes[i],evt.doX,evt.doY))
+      if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY))
       {
-        self.selected_scene = self.map.scenes[i];
+        self.selected_scene = self.cache_unlocked_scenes[i];
         state_from = cur_state;
         state_to = STATE_NAV;
         cur_state = STATE_TRANSITION;
@@ -343,13 +354,13 @@ var overworld = function()
   self.draw = function(yoff)
   {
     ctx.drawImage(self.map.img,self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.map.scenes.length; i++) ctx.drawImage(self.map.scenes[i].img, self.map.scenes[i].x, self.map.scenes[i].y+yoff, self.map.scenes[i].w, self.map.scenes[i].h);
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
 
     //debug
     ctx.strokeStyle = white;
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-    for(var i = 0; i < self.map.scenes.length; i++) ctx.strokeRect(self.map.scenes[i].x, self.map.scenes[i].y+yoff, self.map.scenes[i].w, self.map.scenes[i].h);
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.strokeRect(self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
   }
 }
 
@@ -401,11 +412,21 @@ var objectview = function()
   self.object;
   self.cur_view = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  self.cache_unlocked_views = [];
 
   self.consume_object = function(object)
   {
     self.object = object;
     self.cur_view = 0;
+    self.object.key = true;
+    self.unlock_content();
+  }
+
+  self.unlock_content = function()
+  {
+    self.cache_unlocked_views = [];
+    for(var i = 0; i < self.object.views.length; i++)
+      if(!querylocked(self.object.views[i])) self.cache_unlocked_views.push(self.object.views[i]);
   }
 
   self.click = function(evt)
@@ -417,7 +438,7 @@ var objectview = function()
       cur_state = STATE_TRANSITION;
       state_t = 0;
     }
-    var view = self.object.views[self.cur_view];
+    var view = self.cache_unlocked_views[self.cur_view];
     var zone;
     for(var i = 0; i < view.zones.length; i++)
     {
@@ -436,7 +457,7 @@ var objectview = function()
 
   self.draw = function(yoff)
   {
-    var view = self.object.views[self.cur_view];
+    var view = self.cache_unlocked_views[self.cur_view];
     var zone;
     ctx.drawImage(view.img, self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < view.zones.length; i++)
@@ -468,11 +489,21 @@ var personview = function()
   self.person;
   self.cur_option = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  self.cache_unlocked_options = [];
 
   self.consume_person = function(person)
   {
     self.person = person;
     self.cur_option = 0;
+    self.person.key = true;
+    self.unlock_content();
+  }
+
+  self.unlock_content = function()
+  {
+    self.cache_unlocked_options = [];
+    for(var i = 0; i < self.person.options.length; i++)
+      if(!querylocked(self.person.options[i])) self.cache_unlocked_options.push(self.person.options[i]);
   }
 
   self.click = function(evt)
@@ -485,9 +516,9 @@ var personview = function()
       state_t = 0;
     }
     var option;
-    for(var i = 0; i < self.person.options.length; i++)
+    for(var i = 0; i < self.cache_unlocked_options.length; i++)
     {
-      option = self.person.options[i];
+      option = self.cache_unlocked_options[i];
       if(ptWithinBox(option,evt.doX,evt.doY))
       {
         console.log("click option "+i);
@@ -502,18 +533,18 @@ var personview = function()
 
   self.draw = function(yoff)
   {
-    var option = self.person.options[self.cur_option];
+    var option = self.cache_unlocked_options[self.cur_option];
     ctx.drawImage(option.img, self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.person.options.length; i++)
+    for(var i = 0; i < self.cache_unlocked_options.length; i++)
     {
-      option = self.person.options[i];
+      option = self.cache_unlocked_options[i];
       ctx.drawImage(option.img, option.x, option.y+yoff, option.w, option.h);
     }
 
     ctx.strokeStyle = white;
-    for(var i = 0; i < self.person.options.length; i++)
+    for(var i = 0; i < self.cache_unlocked_options.length; i++)
     {
-      option = self.person.options[i];
+      option = self.cache_unlocked_options[i];
       ctx.strokeRect(option.x, option.y+yoff, option.w, option.h);
     }
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
