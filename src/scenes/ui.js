@@ -419,7 +419,7 @@ var objectview = function()
     self.object = object;
     self.object.key = true;
     self.unlock_content();
-    self.cur_view = 0;
+    self.cur_view = self.cache_unlocked_views[0];
     for(var i = 1; i < self.cache_unlocked_views.length; i++) if(self.cache_unlocked_views[i].primary) cur_view = i;
   }
 
@@ -500,8 +500,9 @@ var personview = function()
     self.person = person;
     self.person.key = true;
     self.unlock_content();
-    self.cur_option = 0;
-    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) self.cur_option = i;
+    self.cur_option = self.cache_unlocked_options[0];
+    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) self.cur_option = self.cache_unlocked_options[i].primary;
+    self.unlock_children();
   }
 
   self.unlock_content = function()
@@ -509,8 +510,12 @@ var personview = function()
     self.cache_unlocked_options = [];
     for(var i = 0; i < self.person.options.length; i++)
       if(!querylocked(self.person.options[i])) self.cache_unlocked_options.push(self.person.options[i]);
+  }
+  self.unlock_children = function()
+  {
+    self.cache_unlocked_children = [];
     for(var i = 0; i < self.cache_unlocked_options.length; i++)
-      if(self.cache_unlocked_options[i].parent == self.cache_unlocked_options[self.cur_option].fqid) self.cache_unlocked_children.push(self.cache_unlocked_options[i]);
+      if(self.cache_unlocked_options[i].parent == self.cur_option.fqid) self.cache_unlocked_children.push(self.cache_unlocked_options[i]);
   }
 
   self.click = function(evt)
@@ -529,7 +534,11 @@ var personview = function()
       option = self.cache_unlocked_children[i];
       if(ptWithin(self.x,y,self.w,self.option_h,evt.doX,evt.doY))
       {
-        console.log("click option "+i);
+        option.key = true;
+        self.unlock_content();
+        self.cur_option = option;
+        self.unlock_children();
+        break;
       }
       y += self.option_h;
     }
@@ -542,7 +551,7 @@ var personview = function()
 
   self.draw = function(yoff)
   {
-    var option = self.cache_unlocked_options[self.cur_option];
+    var option = self.cur_option;
     ctx.drawImage(option.img, self.x, self.y+yoff, self.w, self.h);
     var y = self.option_y;
     for(var i = 0; i < self.cache_unlocked_children.length; i++)
