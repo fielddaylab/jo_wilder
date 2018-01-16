@@ -23,7 +23,7 @@ dir() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into ../
 }
 img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into levels/my_level/maps/my_map/.../banana.png (makes .png relative to data directory) #engine/game
 {
-  echo $@ | sed -e "s@^$ENGINE_DD@@" -e 's@.meta@.png@'
+  echo $@ | sed -e "s@^$ENGINE_DD/@@" -e 's@.meta@.png@'
 }
 annotate() #type dir name
 {
@@ -352,7 +352,7 @@ for level in $levels_dir/*.meta; do #levels
           echo - Note: Genning $person_id #debug
           echo "tmp_person = new person();" >> $OUT
           echo "tmp_person.id = \"$person_id\";" >> $OUT
-          echo "tmp_person.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id\";" >> $OUT
+          echo "tmp_person.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id\";" >> $OUT
           echo "{" >> $OUT
           echo "tmp_person.img = GenImg(\"$GAME_DD/$person_img\");" >> $OUT
           cat $person >> $OUT
@@ -368,7 +368,8 @@ for level in $levels_dir/*.meta; do #levels
             fixifdne option $options_dir $option_id
             echo - Note: Genning $option_id #debug
             echo "tmp_option = new option();" >> $OUT
-            echo "tmp_option.id = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$option_id\";" >> $OUT
+            echo "tmp_option.id = \"$option_id\";" >> $OUT
+            echo "tmp_option.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$option_id\";" >> $OUT
             echo "{" >> $OUT
             echo "tmp_option.img = GenImg(\"$GAME_DD/$option_img\");" >> $OUT
             cat $option >> $OUT

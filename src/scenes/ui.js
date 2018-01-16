@@ -486,6 +486,8 @@ var personview = function()
   self.y = 0;
   self.w = canv.width;
   self.h = canv.height;
+  self.option_y = canv.height/2;
+  self.option_h = 20;
 
   self.person;
   self.cur_option = 0;
@@ -499,7 +501,7 @@ var personview = function()
     self.person.key = true;
     self.unlock_content();
     self.cur_option = 0;
-    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) cur_option = i;
+    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) self.cur_option = i;
   }
 
   self.unlock_content = function()
@@ -507,8 +509,8 @@ var personview = function()
     self.cache_unlocked_options = [];
     for(var i = 0; i < self.person.options.length; i++)
       if(!querylocked(self.person.options[i])) self.cache_unlocked_options.push(self.person.options[i]);
-    for(var i = 0; i < self.cache_unlocked_options; i++)
-      if(self.cache_unlocked_options[i].parent == self.cache_unlocked_options[cur_option].fqid) self.cache_unlocked_children.push(self.cache_unlocked_options[i]);
+    for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      if(self.cache_unlocked_options[i].parent == self.cache_unlocked_options[self.cur_option].fqid) self.cache_unlocked_children.push(self.cache_unlocked_options[i]);
   }
 
   self.click = function(evt)
@@ -521,13 +523,15 @@ var personview = function()
       state_t = 0;
     }
     var option;
+    var y = self.option_y;
     for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
       option = self.cache_unlocked_children[i];
-      if(ptWithinBox(option,evt.doX,evt.doY))
+      if(ptWithin(self.x,y,self.w,self.option_h,evt.doX,evt.doY))
       {
         console.log("click option "+i);
       }
+      y += self.option_h;
     }
   }
 
@@ -540,18 +544,21 @@ var personview = function()
   {
     var option = self.cache_unlocked_options[self.cur_option];
     ctx.drawImage(option.img, self.x, self.y+yoff, self.w, self.h);
+    var y = self.option_y;
     for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
       option = self.cache_unlocked_children[i];
-      ctx.drawImage(option.img, option.x, option.y+yoff, option.w, option.h);
+      ctx.drawImage(option.img, self.x, y+yoff, self.w, self.option_h);
+      y += self.option_h;
     }
 
     //debug
     ctx.strokeStyle = white;
+    y = self.option_y;
     for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
       option = self.cache_unlocked_children[i];
-      ctx.strokeRect(option.x, option.y+yoff, option.w, option.h);
+      ctx.strokeRect(self.x, y+yoff, self.w, self.option_h);
     }
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);

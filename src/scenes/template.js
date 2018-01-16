@@ -214,6 +214,9 @@ var option = function()
   self.fqid = "null"
   self.primary = false;
   self.anim;
+  self.qtext = "null";
+  self.atext = "null";
+  self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
   self.locks = [];
   self.key = false;
   self.locked = true;
