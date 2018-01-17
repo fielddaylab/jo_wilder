@@ -450,6 +450,7 @@ var objectview = function()
       state_to = STATE_NAV;
       cur_state = STATE_TRANSITION;
       state_t = 0;
+      my_navigable.unlock_content();
     }
     if(ptWithinBox(self.prev_box,evt.doX,evt.doY))
     {
@@ -551,6 +552,7 @@ var personview = function()
       state_to = STATE_NAV;
       cur_state = STATE_TRANSITION;
       state_t = 0;
+      my_navigable.unlock_content();
     }
     var option;
     var y = self.option_y;
