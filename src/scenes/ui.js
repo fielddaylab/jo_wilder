@@ -593,6 +593,7 @@ var personview = function()
     {
       option = self.cache_unlocked_children[i];
       ctx.strokeRect(self.x, y+yoff, self.w, self.option_h);
+      y += self.option_h;
     }
     ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);

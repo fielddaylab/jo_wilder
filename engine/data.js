@@ -70,7 +70,7 @@ tmp_option.fqid = "l1.map.archives.main.archivist.dryclean";
 {
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/dryclean.png");
 tmp_option.primary = false;
-tmp_option.parent = "l1.map.archive.main.archivist.hub";
+tmp_option.parent = "l1.map.archives.main.archivist.hub";
 tmp_option.qtext = "null";
 tmp_option.atext = "null";
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
@@ -85,7 +85,7 @@ tmp_option.fqid = "l1.map.archives.main.archivist.hello";
 {
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/hello.png");
 tmp_option.primary = false;
-tmp_option.parent = "l1.map.archive.main.archivist.hub";
+tmp_option.parent = "l1.map.archives.main.archivist.hub";
 tmp_option.qtext = "null";
 tmp_option.atext = "null";
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
@@ -114,7 +114,7 @@ tmp_option.fqid = "l1.map.archives.main.archivist.paper";
 {
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/paper.png");
 tmp_option.primary = false;
-tmp_option.parent = "l1.map.archive.main.archivist.hub";
+tmp_option.parent = "l1.map.archives.main.archivist.hub";
 tmp_option.qtext = "null";
 tmp_option.atext = "null";
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
