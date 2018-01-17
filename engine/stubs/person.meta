@@ -4,4 +4,6 @@ tmp_person.w = 100;
 tmp_person.h = 120;
 tmp_person.locks = [
 ];
+tmp_person.notlocks = [
+];
 

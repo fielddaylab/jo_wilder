@@ -266,6 +266,7 @@ var toolbar = function()
       state_to = STATE_MAP;
       cur_state = STATE_TRANSITION;
       state_t = 0;
+      my_overworld.unlock_content();
     }
     if(ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
@@ -437,7 +438,7 @@ var objectview = function()
 
     //re-set self.cur_view_i, ensures cur_view unlocked
     self.cur_view_i = 0;
-    for(var i = 1; i < self.cache_unlocked_views; i++) if(self.cur_view == self.cache_unlocked_views[i]) self.cur_view_i = i;
+    for(var i = 1; i < self.cache_unlocked_views.length; i++) if(self.cur_view == self.cache_unlocked_views[i]) self.cur_view_i = i;
     self.cur_view = self.cache_unlocked_views[self.cur_view_i];
   }
 
@@ -453,31 +454,23 @@ var objectview = function()
     if(ptWithinBox(self.prev_box,evt.doX,evt.doY))
     {
       if(self.cur_view_i == 0) return;
-      else
-      {
-        self.cur_view = self.cache_unlocked_views[self.cur_view_i-1];
-        self.cur_view.key = true;
-        self.unlock_content();
-      }
+      self.cur_view = self.cache_unlocked_views[self.cur_view_i-1];
+      self.cur_view.key = true;
+      self.unlock_content();
     }
     if(ptWithinBox(self.next_box,evt.doX,evt.doY))
     {
       if(self.cur_view_i == self.cache_unlocked_views.length-1) return;
-      else
-      {
-        self.cur_view = self.cache_unlocked_views[self.cur_view_i+1];
-        self.cur_view.key = true;
-        self.unlock_content();
-      }
+      self.cur_view = self.cache_unlocked_views[self.cur_view_i+1];
+      self.cur_view.key = true;
+      self.unlock_content();
     }
     var zone;
     for(var i = 0; i < self.cur_view.zones.length; i++)
     {
       zone = self.cur_view.zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
-      {
-        console.log("click zone "+i);
-      }
+        zone.key = true;
     }
   }
 
@@ -493,7 +486,7 @@ var objectview = function()
     for(var i = 0; i < self.cur_view.zones.length; i++)
     {
       zone = self.cur_view.zones[i];
-      ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
+      //ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
 
     //debug
@@ -533,7 +526,7 @@ var personview = function()
     self.person.key = true;
     self.unlock_content();
     self.cur_option = self.cache_unlocked_options[0];
-    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) self.cur_option = self.cache_unlocked_options[i].primary;
+    for(var i = 1; i < self.cache_unlocked_options.length; i++) if(self.cache_unlocked_options[i].primary) self.cur_option = self.cache_unlocked_options[i];
     self.unlock_children();
   }
 

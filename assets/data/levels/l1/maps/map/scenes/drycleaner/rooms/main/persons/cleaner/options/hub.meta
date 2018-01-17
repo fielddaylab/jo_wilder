@@ -1,8 +1,9 @@
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.archive.main.archivist.hub";
+tmp_option.primary = true;
 tmp_option.qtext = "null";
 tmp_option.atext = "null";
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
-  "l1.map.drycleaner.main.log.number.bingo",
 ];
+tmp_option.notlocks = [
+];
+

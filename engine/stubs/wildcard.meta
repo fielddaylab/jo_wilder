@@ -4,4 +4,6 @@ tmp_wildcard.w = 0;
 tmp_wildcard.h = 0;
 tmp_wildcard.locks = [
 ];
+tmp_wildcard.notlocks = [
+];
 

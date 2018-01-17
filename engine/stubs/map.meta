@@ -1,3 +1,5 @@
 tmp_map.locks = [
 ];
+tmp_map.notlocks = [
+];
 

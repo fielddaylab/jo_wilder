@@ -436,7 +436,7 @@ for level in $levels_dir/*.meta; do #levels
               cat $zone >> $OUT
 
               echo "}" >> $OUT
-              echo "tmp_views.zone.push(tmp_zone);" >> $OUT
+              echo "tmp_view.zones.push(tmp_zone);" >> $OUT
 
             done
 

@@ -4,4 +4,6 @@ tmp_zone.w = 100;
 tmp_zone.h = 100;
 tmp_zone.locks = [
 ];
+tmp_zone.notlocks = [
+];
 

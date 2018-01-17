@@ -4,4 +4,6 @@ tmp_object.w = 80;
 tmp_object.h = 80;
 tmp_object.locks = [
 ];
+tmp_object.notlocks = [
+];
 

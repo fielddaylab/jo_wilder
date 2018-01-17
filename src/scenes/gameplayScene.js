@@ -146,7 +146,7 @@ var GamePlayScene = function(game, stage)
           {
             if(cur_act.act == ACT_PORTHOLE)
             {
-              var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room,cur_level);
+              var r = find(cur_level.id+"."+cur_map.id+"."+cur_scene.id+"."+cur_act.target_room);
               if(r) cur_room = r;
               my_avatar.consume_room(cur_room);
               my_navigable.consume_room(cur_room);

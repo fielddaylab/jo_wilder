@@ -1,4 +1,6 @@
 tmp_level.primary = false;
 tmp_level.locks = [
 ];
+tmp_level.notlocks = [
+];
 

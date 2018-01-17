@@ -5,4 +5,6 @@ tmp_porthole.h = 100;
 tmp_porthole.target_room = "null"
 tmp_porthole.locks = [
 ];
+tmp_porthole.notlocks = [
+];
 
