@@ -38,6 +38,7 @@ tmp_scene.x = 100;
 tmp_scene.y = 100;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
+tmp_
 
 tmp_room = new room();
 tmp_room.id = "main";

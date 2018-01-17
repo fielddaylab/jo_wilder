@@ -2,4 +2,6 @@ tmp_option.primary = false;
 tmp_option.qtext = "null";
 tmp_option.atext = "null";
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-
+tmp_option.locks = [
+  "l1.map.archives.main.paper.pic.conclusion",
+];
