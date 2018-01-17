@@ -8,6 +8,7 @@ FINAL=../src/scenes
 TTY=`tty`
 AUTOFIX="0"
 NOSTUB="0"
+LIST="0"
 GENCMD=""
 GENFQID=""
 RMCMD=""
@@ -152,6 +153,7 @@ getname()
 while [ $# -gt 0 ]; do
   if [ "@"$1 == "@autofix" ]; then AUTOFIX="1"; fi
   if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
+  if [ "@"$1 == "@list" ];    then LIST="1";    fi
   if [ "@"$1 == "@genlevel" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genlevel level";                                fi fi
   if [ "@"$1 == "@genmap" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genmap level.map";                              fi fi
   if [ "@"$1 == "@genscene" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genscene level.map.scene";                      fi fi
@@ -514,4 +516,97 @@ done
 
 cat data.post_stub >> $OUT
 cp $OUT $FINAL
+
+if [ $LIST == "1" ];  then
+echo
+echo Listing:
+
+  levels_dir=$ENGINE_DD/levels
+  for level in $levels_dir/*.meta; do #levels
+    if [ ! -f $level ]; then continue; fi
+    level_dir=`dir $level`
+    echo ""`id $level`" (level)"
+
+    maps_dir=$level_dir/maps
+    for map in $maps_dir/*.meta; do #maps
+      if [ ! -f $map ]; then continue; fi
+      map_dir=`dir $map`
+      echo "	"`id $map`" (map)"
+
+      scenes_dir=$map_dir/scenes
+      for scene in $scenes_dir/*.meta; do #scenes
+        if [ ! -f $scene ]; then continue; fi
+        scene_dir=`dir $scene`
+        echo "		"`id $scene`" (scene)"
+
+        rooms_dir=$scene_dir/rooms
+        for room in $rooms_dir/*.meta; do #rooms
+          if [ ! -f $room ]; then continue; fi
+          room_dir=`dir $room`
+          echo "			"`id $room`" (room)"
+
+          persons_dir=$room_dir/persons
+          for person in $persons_dir/*.meta; do #persons
+            if [ ! -f $person ]; then continue; fi
+            person_dir=`dir $person`
+            echo "				"`id $person`" (person)"
+
+            options_dir=$person_dir/options
+            for option in $options_dir/*.meta; do #options
+              if [ ! -f $option ]; then continue; fi
+              option_dir=`dir $option`
+              echo "					"`id $option`" (option)"
+
+            done
+
+          done
+
+          objects_dir=$room_dir/objects
+          for object in $objects_dir/*.meta; do #objects
+            if [ ! -f $object ]; then continue; fi
+            object_dir=`dir $object`
+            echo "				"`id $object`" (object)"
+
+            views_dir=$object_dir/views
+            for view in $views_dir/*.meta; do #views
+              if [ ! -f $view ]; then continue; fi
+              view_dir=`dir $view`
+              echo "					"`id $view`" (view)"
+
+              zones_dir=$view_dir/zones
+              for zone in $zones_dir/*.meta; do #zones
+                if [ ! -f $zone ]; then continue; fi
+                zone_dir=`dir $zone`
+                echo "						"`id $zone`" (zone)"
+
+              done
+
+            done
+
+          done
+
+          portholes_dir=$room_dir/portholes
+          for porthole in $portholes_dir/*.meta; do #portholes
+            if [ ! -f $porthole ]; then continue; fi
+            porthole_dir=`dir $porthole`
+            echo "				"`id $porthole`" (porthole)"
+
+          done
+
+          wildcards_dir=$room_dir/wildcards
+          for wildcard in $wildcards_dir/*.meta; do #wildcards
+            if [ ! -f $wildcard ]; then continue; fi
+            wildcard_dir=`dir $wildcard`
+            echo "				"`id $wildcard`" (wildcard)"
+
+          done
+
+        done
+
+      done
+
+    done
+
+  done
+fi
 
