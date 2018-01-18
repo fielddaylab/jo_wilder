@@ -1,5 +1,5 @@
 tmp_scene.primary = true;
-tmp_scene.x = canv.width/2-50;
+tmp_scene.x = canv.width/2-75;
 tmp_scene.y = canv.height/2-50;
 tmp_scene.w = 100;
 tmp_scene.h = 100;

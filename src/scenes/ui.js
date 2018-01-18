@@ -502,6 +502,7 @@ var objectview = function()
     for(var i = 0; i < self.cur_view.zones.length; i++)
     {
       zone = self.cur_view.zones[i];
+      ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       //ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);

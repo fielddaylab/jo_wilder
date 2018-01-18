@@ -34,8 +34,8 @@ tmp_scene.fqid = "l1.map.archives";
 {
 tmp_scene.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives.png");
 tmp_scene.primary = false;
-tmp_scene.x = 10;
-tmp_scene.y = 70;
+tmp_scene.x = 130;
+tmp_scene.y = 240;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.locks = [
@@ -178,7 +178,7 @@ tmp_scene.fqid = "l1.map.capitol";
 {
 tmp_scene.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol.png");
 tmp_scene.primary = true;
-tmp_scene.x = canv.width/2-50;
+tmp_scene.x = canv.width/2-75;
 tmp_scene.y = canv.height/2-50;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
@@ -273,10 +273,11 @@ tmp_zone = new zone();
 tmp_zone.id = "slip";
 tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.pocket.slip";
 {
-tmp_zone.x = canv.width/2-100;
-tmp_zone.y = canv.width/2-100;
-tmp_zone.w = 100;
-tmp_zone.h = 100;
+tmp_zone.x = canv.width/2-300;
+tmp_zone.y = canv.width/2-300;
+tmp_zone.w = 300;
+tmp_zone.h = 300;
+tmp_zone.noteworthy = true;
 
 }
 tmp_view.zones.push(tmp_zone);

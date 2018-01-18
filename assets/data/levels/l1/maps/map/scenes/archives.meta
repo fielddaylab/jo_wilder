@@ -1,6 +1,6 @@
 tmp_scene.primary = false;
-tmp_scene.x = 10;
-tmp_scene.y = 70;
+tmp_scene.x = 130;
+tmp_scene.y = 240;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.locks = [
