@@ -65,6 +65,7 @@ var level = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -78,6 +79,7 @@ var map = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -97,6 +99,7 @@ var scene = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -120,6 +123,7 @@ var room = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -138,6 +142,7 @@ var person = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -156,6 +161,7 @@ var object = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -173,6 +179,7 @@ var porthole = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -189,6 +196,7 @@ var wildcard = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -203,6 +211,7 @@ var view = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -218,6 +227,7 @@ var zone = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 
@@ -235,6 +245,7 @@ var option = function()
   self.locks = [];
   self.notlocks = [];
   self.key = false;
+  self.noteworthy = false;
   self.locked = true;
 }
 

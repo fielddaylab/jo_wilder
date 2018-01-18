@@ -3,6 +3,7 @@ tmp_porthole.y = canv.height/2-50;
 tmp_porthole.w = 100;
 tmp_porthole.h = 100;
 tmp_porthole.target_room = "null"
+tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
 tmp_porthole.notlocks = [

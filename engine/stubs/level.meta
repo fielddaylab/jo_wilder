@@ -1,4 +1,5 @@
 tmp_level.primary = false;
+tmp_level.noteworthy = false;
 tmp_level.locks = [
 ];
 tmp_level.notlocks = [
