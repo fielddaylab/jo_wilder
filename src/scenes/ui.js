@@ -615,7 +615,7 @@ var personview = function()
     for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
       option = self.cache_unlocked_children[i];
-      ctx.drawImage(option.img, self.x, y+yoff, self.w, self.option_h);
+      //ctx.drawImage(option.img, self.x, y+yoff, self.w, self.option_h);
       for(var j = 0; j < option.qtext.length; j++)
       {
         ctx.fillText(option.qtext[j],self.x+200,y+yoff+self.option_h);
