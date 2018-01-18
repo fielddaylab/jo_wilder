@@ -1,7 +1,7 @@
 tmp_option.primary = false;
 tmp_option.parent = "null"
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("null");
+tmp_option.atext = otextToLines("null");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.noteworthy = false;
 tmp_option.locks = [

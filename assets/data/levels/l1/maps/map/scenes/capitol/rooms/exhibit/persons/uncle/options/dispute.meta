@@ -1,7 +1,7 @@
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.capitol.exhibit.uncle.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("I think you're wrong!");
+tmp_option.atext = otextToLines("Wow you did it!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
   "l1.map.archives.main.paper.pic.conclusion",

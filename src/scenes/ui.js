@@ -502,6 +502,7 @@ var objectview = function()
     for(var i = 0; i < self.cur_view.zones.length; i++)
     {
       zone = self.cur_view.zones[i];
+      ctx.strokeStyle = white;
       ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       //ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
@@ -534,7 +535,7 @@ var personview = function()
   self.w = canv.width;
   self.h = canv.height;
   self.option_y = canv.height/2;
-  self.option_h = 20;
+  self.option_h = option_h;
 
   self.person;
   self.cur_option = 0;
@@ -601,12 +602,25 @@ var personview = function()
   {
     var option = self.cur_option;
     ctx.drawImage(option.img, self.x, self.y+yoff, self.w, self.h);
-    var y = self.option_y;
+    var y = self.y+100;
+    ctx.fillStyle = white;
+    ctx.font = option_font;
+    for(var j = 0; j < option.atext.length; j++)
+    {
+      ctx.fillText(option.atext[j],self.x+200,y+yoff+self.option_h);
+      y += self.option_h;
+    }
+
+    y = self.option_y;
     for(var i = 0; i < self.cache_unlocked_children.length; i++)
     {
       option = self.cache_unlocked_children[i];
       ctx.drawImage(option.img, self.x, y+yoff, self.w, self.option_h);
-      y += self.option_h;
+      for(var j = 0; j < option.qtext.length; j++)
+      {
+        ctx.fillText(option.qtext[j],self.x+200,y+yoff+self.option_h);
+        y += self.option_h;
+      }
     }
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 

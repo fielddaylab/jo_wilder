@@ -231,6 +231,10 @@ var zone = function()
   self.locked = true;
 }
 
+var otextToLines = function(text)
+{
+  return textToLines(option_font, canv.width/2, text, ctx)
+}
 var option = function()
 {
   var self = this;
@@ -239,8 +243,8 @@ var option = function()
   self.primary = false;
   self.anim;
   self.parent = "null";
-  self.qtext = "null";
-  self.atext = "null";
+  self.qtext = otextToLines("null");
+  self.atext = otextToLines("null");
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
   self.locks = [];
   self.notlocks = [];

@@ -71,8 +71,8 @@ tmp_option.fqid = "l1.map.archives.main.archivist.dryclean";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/dryclean.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("Hey mister, what's this slip!");
+tmp_option.atext = otextToLines("I don't know- I guess it looks like a dry cleaner tag?");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
   "l1.map.capitol.exhibit.tunic.pocket.slip",
@@ -86,8 +86,8 @@ tmp_option.fqid = "l1.map.archives.main.archivist.hello";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/hello.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("How are you doing");
+tmp_option.atext = otextToLines("I'm p good thanks");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 
 }
@@ -98,8 +98,8 @@ tmp_option.fqid = "l1.map.archives.main.archivist.hub";
 {
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/hub.png");
 tmp_option.primary = true;
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("Hello customer");
+tmp_option.atext = otextToLines("Hello customer");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
 ];
@@ -115,8 +115,8 @@ tmp_option.fqid = "l1.map.archives.main.archivist.paper";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/paper.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("What can you tell me about this lady?");
+tmp_option.atext = otextToLines("I've got this stack of papers about this lady!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
   "l1.map.drycleaner.main.log.number.bingo",
@@ -213,8 +213,8 @@ tmp_option.fqid = "l1.map.capitol.exhibit.uncle.dispute";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/options/dispute.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.capitol.exhibit.uncle.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("I think you're wrong!");
+tmp_option.atext = otextToLines("Wow you did it!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
   "l1.map.archives.main.paper.pic.conclusion",
@@ -228,8 +228,8 @@ tmp_option.fqid = "l1.map.capitol.exhibit.uncle.help";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/options/help.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.capitol.exhibit.uncle.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("Hey Uncle");
+tmp_option.atext = otextToLines("You have to help me! I don't know what the heck this tunic is for!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 
 }
@@ -240,8 +240,8 @@ tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub";
 {
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/options/hub.png");
 tmp_option.primary = true;
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("Hello neice");
+tmp_option.atext = otextToLines("Hello neice");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
 ];
@@ -303,8 +303,8 @@ tmp_scene.fqid = "l1.map.drycleaner";
 {
 tmp_scene.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner.png");
 tmp_scene.primary = false;
-tmp_scene.x = canv.width-300;
-tmp_scene.y = canv.height-150;
+tmp_scene.x = canv.width-400;
+tmp_scene.y = canv.height-200;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.locks = [
@@ -340,8 +340,8 @@ tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hello";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/options/hello.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.drycleaner.main.cleaner.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("How ya doin");
+tmp_option.atext = otextToLines("Honestly I've been better");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 
 }
@@ -352,8 +352,8 @@ tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hub";
 {
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/options/hub.png");
 tmp_option.primary = true;
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("Hello customer");
+tmp_option.atext = otextToLines("Hello customer");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
 ];
@@ -369,8 +369,8 @@ tmp_option.fqid = "l1.map.drycleaner.main.cleaner.log";
 tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/options/log.png");
 tmp_option.primary = false;
 tmp_option.parent = "l1.map.drycleaner.main.cleaner.hub";
-tmp_option.qtext = "null";
-tmp_option.atext = "null";
+tmp_option.qtext = otextToLines("What can you tell me about this slip?");
+tmp_option.atext = otextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
   "l1.map.capitol.exhibit.tunic.pocket.slip",
