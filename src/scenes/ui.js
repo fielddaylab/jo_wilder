@@ -233,13 +233,15 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++) drawImageBox(self.cache_unlocked_portholes[i].img,self.cache_unlocked_portholes[i],ctx);
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) drawImageBox(self.cache_unlocked_wildcards[i].img,self.cache_unlocked_wildcards[i],ctx);
 
-    //debug
-    ctx.strokeStyle = white;
-    ctx.strokeRect(self.room.nav_x,self.room.nav_y,self.room.nav_w,self.room.nav_h);
-    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) strokeBox(self.cache_unlocked_objects[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
+    if(DEBUG)
+    {
+      ctx.strokeStyle = white;
+      ctx.strokeRect(self.room.nav_x,self.room.nav_y,self.room.nav_w,self.room.nav_h);
+      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
+      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) strokeBox(self.cache_unlocked_objects[i],ctx);
+      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
+      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
+    }
   }
 };
 
@@ -288,9 +290,13 @@ var toolbar = function()
     ctx.drawImage(self.toolbar_img, self.x,         self.y         +yoff, self.w,         self.h);
     ctx.drawImage(self.map_icon_img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
     ctx.drawImage(self.notebook_icon_img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
-    ctx.strokeRect(self.x,         self.y         +yoff, self.w,         self.h);
-    ctx.strokeRect(self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
-    ctx.strokeRect(self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
+
+    if(DEBUG)
+    {
+      ctx.strokeRect(self.x,         self.y         +yoff, self.w,         self.h);
+      ctx.strokeRect(self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+      ctx.strokeRect(self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
+    }
   }
 
 }
@@ -356,12 +362,15 @@ var overworld = function()
   {
     ctx.drawImage(self.map.img,self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
-
-    //debug
-    ctx.strokeStyle = white;
-    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.strokeRect(self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = white;
+      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+      for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.strokeRect(self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+    }
   }
 }
 
@@ -396,8 +405,14 @@ var notebook = function()
   self.draw = function(yoff)
   {
     ctx.drawImage(self.img, self.x, self.y+yoff, self.w, self.h);
-    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = white;
+      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    }
   }
 }
 
@@ -489,18 +504,23 @@ var objectview = function()
       zone = self.cur_view.zones[i];
       //ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
-
-    //debug
-    ctx.strokeStyle = white;
-    for(var i = 0; i < self.cur_view.zones.length; i++)
-    {
-      zone = self.cur_view.zones[i];
-      ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
-    }
-    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     if(self.cur_view_i > 0) ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
     if(self.cur_view_i < self.cache_unlocked_views.length-1) ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = white;
+      for(var i = 0; i < self.cur_view.zones.length; i++)
+      {
+        zone = self.cur_view.zones[i];
+        ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
+      }
+      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+      if(self.cur_view_i > 0) ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
+      if(self.cur_view_i < self.cache_unlocked_views.length-1) ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
+    }
   }
 }
 
@@ -587,18 +607,21 @@ var personview = function()
       ctx.drawImage(option.img, self.x, y+yoff, self.w, self.option_h);
       y += self.option_h;
     }
-
-    //debug
-    ctx.strokeStyle = white;
-    y = self.option_y;
-    for(var i = 0; i < self.cache_unlocked_children.length; i++)
-    {
-      option = self.cache_unlocked_children[i];
-      ctx.strokeRect(self.x, y+yoff, self.w, self.option_h);
-      y += self.option_h;
-    }
-    ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = white;
+      y = self.option_y;
+      for(var i = 0; i < self.cache_unlocked_children.length; i++)
+      {
+        option = self.cache_unlocked_children[i];
+        ctx.strokeRect(self.x, y+yoff, self.w, self.option_h);
+        y += self.option_h;
+      }
+      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    }
   }
 }
 

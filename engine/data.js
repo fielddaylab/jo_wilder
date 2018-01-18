@@ -203,8 +203,8 @@ tmp_person.fqid = "l1.map.capitol.exhibit.uncle";
 tmp_person.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle.png");
 tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
-tmp_person.w = 100;
-tmp_person.h = 120;
+tmp_person.w = 300;
+tmp_person.h = 300;
 
 tmp_option = new option();
 tmp_option.id = "dispute";
@@ -257,10 +257,10 @@ tmp_object.id = "tunic";
 tmp_object.fqid = "l1.map.capitol.exhibit.tunic";
 {
 tmp_object.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/objects/tunic.png");
-tmp_object.x = canv.width-200;
-tmp_object.y = 100;
-tmp_object.w = 80;
-tmp_object.h = 80;
+tmp_object.x = canv.width-220;
+tmp_object.y = 180;
+tmp_object.w = 120;
+tmp_object.h = 120;
 
 tmp_view = new view();
 tmp_view.id = "pocket";
