@@ -201,8 +201,8 @@ tmp_person.id = "uncle";
 tmp_person.fqid = "l1.map.capitol.exhibit.uncle";
 {
 tmp_person.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle.png");
-tmp_person.x = 70;
-tmp_person.y = canv.height/2-100;
+tmp_person.x = 40;
+tmp_person.y = canv.height/2-140;
 tmp_person.w = 300;
 tmp_person.h = 300;
 

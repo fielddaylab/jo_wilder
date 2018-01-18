@@ -3,8 +3,8 @@ var avatar = function()
   var self = this;
   self.x = 0;
   self.y = 0;
-  self.w = 100;
-  self.h = 100;
+  self.w = 200;
+  self.h = 200;
 
   self.toX = self.x;
   self.toY = self.y;
