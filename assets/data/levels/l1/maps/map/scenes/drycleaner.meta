@@ -1,6 +1,6 @@
 tmp_scene.primary = false;
-tmp_scene.x = canv.width-300;
-tmp_scene.y = canv.height-150;
+tmp_scene.x = canv.width-400;
+tmp_scene.y = canv.height-200;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.locks = [

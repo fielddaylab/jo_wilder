@@ -104,7 +104,7 @@ var avatar = function()
 
   self.tick = function()
   {
-    var speed = 2;
+    var speed = walk_speed;
     var act_dist = 10;
 
     var dx = self.toX-self.x;
