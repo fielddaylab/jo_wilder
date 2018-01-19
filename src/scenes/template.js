@@ -15,8 +15,8 @@ var find = function(id)
   if(person)
   {
     if(ids.length <= ++k) return person;
-    var option; for(var i = 0; i < person.options.length; i++) if(person.options[i].id == ids[k]) option = person.options[i];
-    if(!option || ids.length <= ++k) return option;
+    var speak; for(var i = 0; i < person.speaks.length; i++) if(person.speaks[i].id == ids[k]) speak = person.speaks[i];
+    if(!speak || ids.length <= ++k) return speak;
     return;
   }
   var object; for(var i = 0; i < room.objects.length; i++) if(room.objects[i].id == ids[k]) object = room.objects[i];
@@ -138,7 +138,7 @@ var person = function()
   self.w = 0;
   self.h = 0;
   self.anim;
-  self.options = [];
+  self.speaks = [];
   self.locks = [];
   self.notlocks = [];
   self.key = false;
@@ -232,21 +232,34 @@ var zone = function()
   self.locked = true;
 }
 
-var otextToLines = function(text)
+var stextToLines = function(text)
 {
   return textToLines(option_font, canv.width/2, text, ctx)
 }
-var option = function()
+var speak = function()
 {
   var self = this;
   self.id = "null"
   self.fqid = "null"
   self.primary = false;
   self.anim;
-  self.parent = "null";
-  self.qtext = otextToLines("null");
-  self.atext = otextToLines("null");
+  self.atext = stextToLines("null");
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+  self.options = [];
+  self.locks = [];
+  self.notlocks = [];
+  self.key = false;
+  self.noteworthy = false;
+  self.locked = true;
+}
+
+var option = function()
+{
+  var self = this;
+  self.id = "null";
+  self.fqid = "null"
+  self.index = 0;
+  self.qtext = stextToLines("null");
   self.locks = [];
   self.notlocks = [];
   self.key = false;

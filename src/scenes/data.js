@@ -11,6 +11,7 @@ var tmp_porthole;
 var tmp_wildcard;
 var tmp_view;
 var tmp_zone;
+var tmp_speak;
 var tmp_option;
 var tmp_lock;
 
@@ -64,65 +65,170 @@ tmp_person.y = canv.height/2-100;
 tmp_person.w = 100;
 tmp_person.h = 120;
 
-tmp_option = new option();
-tmp_option.id = "dryclean";
-tmp_option.fqid = "l1.map.archives.main.archivist.dryclean";
+tmp_speak = new speak();
+tmp_speak.id = "dryclean";
+tmp_speak.fqid = "l1.map.archives.main.archivist.dryclean";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/dryclean.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = otextToLines("Hey mister, what's this slip!");
-tmp_option.atext = otextToLines("I don't know- I guess it looks like a dry cleaner tag?");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_option.locks = [
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/dryclean.png");
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("I don't know- I guess it looks like a dry cleaner tag?");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
   "l1.map.capitol.exhibit.tunic.slip",
 ];
-}
-tmp_person.options.push(tmp_option);
 tmp_option = new option();
-tmp_option.id = "hello";
-tmp_option.fqid = "l1.map.archives.main.archivist.hello";
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.archives.main.archivist.dryclean.thanks";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/hello.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = otextToLines("How are you doing");
-tmp_option.atext = otextToLines("I'm p good thanks");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-
-}
-tmp_person.options.push(tmp_option);
-tmp_option = new option();
-tmp_option.id = "hub";
-tmp_option.fqid = "l1.map.archives.main.archivist.hub";
-{
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/hub.png");
-tmp_option.primary = true;
-tmp_option.qtext = otextToLines("Hello customer");
-tmp_option.atext = otextToLines("Hello customer");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/dryclean/options/thanks.png");
+tmp_option.qtext = stextToLines("null");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
 tmp_option.notlocks = [
 ];
 
 }
-tmp_person.options.push(tmp_option);
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "hello";
+tmp_speak.fqid = "l1.map.archives.main.archivist.hello";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hello.png");
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("I'm p good thanks");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.archives.main.archivist.hello.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hello/options/thanks.png");
+tmp_option.qtext = stextToLines("null");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "hub";
+tmp_speak.fqid = "l1.map.archives.main.archivist.hub";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hub.png");
+tmp_speak.primary = true;
+tmp_speak.atext = stextToLines("Hello customer");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+];
+tmp_speak.notlocks = [
+];
+
+tmp_option = new option();
+tmp_option.id = "dryclean";
+tmp_option.fqid = "l1.map.archives.main.archivist.hub.dryclean";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hub/options/dryclean.png");
+tmp_option.qtext = stextToLines("Hey mister what's this slip?");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.archives.main.archivist.dryclean";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
+tmp_option.id = "hello";
+tmp_option.fqid = "l1.map.archives.main.archivist.hub.hello";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hub/options/hello.png");
+tmp_option.qtext = stextToLines("Hey there");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.archives.main.archivist.hello";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
 tmp_option = new option();
 tmp_option.id = "paper";
-tmp_option.fqid = "l1.map.archives.main.archivist.paper";
+tmp_option.fqid = "l1.map.archives.main.archivist.hub.paper";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/options/paper.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = otextToLines("What can you tell me about this lady?");
-tmp_option.atext = otextToLines("I've got this stack of papers about this lady!");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hub/options/paper.png");
+tmp_option.qtext = stextToLines("What do you have about this lady?");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.archives.main.archivist.paper";
+tmp_option.noteworthy = false;
 tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.archives.main.archivist.hub.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/hub/options/thanks.png");
+tmp_option.qtext = stextToLines("Thanks");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "paper";
+tmp_speak.fqid = "l1.map.archives.main.archivist.paper";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/paper.png");
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("I've got this stack of papers about this lady!");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
   "l1.map.drycleaner.main.log.bingo",
 ];
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.archives.main.archivist.paper.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist/speaks/paper/options/thanks.png");
+tmp_option.qtext = stextToLines("null");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
 }
-tmp_person.options.push(tmp_option);
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
 tmp_object = new object();
@@ -272,50 +378,125 @@ tmp_person.y = canv.height/2-140;
 tmp_person.w = 300;
 tmp_person.h = 300;
 
-tmp_option = new option();
-tmp_option.id = "dispute";
-tmp_option.fqid = "l1.map.capitol.exhibit.uncle.dispute";
+tmp_speak = new speak();
+tmp_speak.id = "dispute";
+tmp_speak.fqid = "l1.map.capitol.exhibit.uncle.dispute";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/options/dispute.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.capitol.exhibit.uncle.hub";
-tmp_option.qtext = otextToLines("I think you're wrong!");
-tmp_option.atext = otextToLines("Wow you did it!");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_option.locks = [
-  "l1.map.archives.main.paper.conclusion",
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/dispute.png");
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("Wow you did it!");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
 ];
-}
-tmp_person.options.push(tmp_option);
 tmp_option = new option();
-tmp_option.id = "help";
-tmp_option.fqid = "l1.map.capitol.exhibit.uncle.help";
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.capitol.exhibit.uncle.dispute.thanks";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/options/help.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.capitol.exhibit.uncle.hub";
-tmp_option.qtext = otextToLines("Hey Uncle");
-tmp_option.atext = otextToLines("You have to help me! I don't know what the heck this tunic is for!");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-
-}
-tmp_person.options.push(tmp_option);
-tmp_option = new option();
-tmp_option.id = "hub";
-tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub";
-{
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/options/hub.png");
-tmp_option.primary = true;
-tmp_option.qtext = otextToLines("Hello neice");
-tmp_option.atext = otextToLines("Hello neice");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/dispute/options/thanks.png");
+tmp_option.qtext = stextToLines("thanks");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
 tmp_option.notlocks = [
 ];
 
 }
-tmp_person.options.push(tmp_option);
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "help";
+tmp_speak.fqid = "l1.map.capitol.exhibit.uncle.help";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/help.png");
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("You have to help me! I don't know what the heck this tunic is for!");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.capitol.exhibit.uncle.help.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/help/options/thanks.png");
+tmp_option.qtext = stextToLines("thanks");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "hub";
+tmp_speak.fqid = "l1.map.capitol.exhibit.uncle.hub";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/hub.png");
+tmp_speak.primary = true;
+tmp_speak.atext = stextToLines("Hello neice");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+];
+tmp_speak.notlocks = [
+];
+
+tmp_option = new option();
+tmp_option.id = "dispute";
+tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub.dispute";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/hub/options/dispute.png");
+tmp_option.qtext = stextToLines("I think you're wrong");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.capitol.exhibit.uncle.dispute";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+  "l1.map.archives.main.paper.conclusion",
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
+tmp_option.id = "help";
+tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub.help";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/hub/options/help.png");
+tmp_option.qtext = stextToLines("what's up");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.capitol.exhibit.uncle.help";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/hub/options/thanks.png");
+tmp_option.qtext = stextToLines("thanks");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
 tmp_object = new object();
@@ -465,50 +646,98 @@ tmp_person.y = canv.height/2-100;
 tmp_person.w = 100;
 tmp_person.h = 120;
 
-tmp_option = new option();
-tmp_option.id = "hello";
-tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hello";
+tmp_speak = new speak();
+tmp_speak.id = "hello";
+tmp_speak.fqid = "l1.map.drycleaner.main.cleaner.hello";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/options/hello.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.drycleaner.main.cleaner.hub";
-tmp_option.qtext = otextToLines("How ya doin");
-tmp_option.atext = otextToLines("Honestly I've been better");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/hello.png");
+tmp_speak.primary = false;
+tmp_speak.parent = "l1.map.drycleaner.main.cleaner.hub";
+tmp_speak.qtext = stextToLines("How ya doin");
+tmp_speak.atext = stextToLines("Honestly I've been better");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 
-}
-tmp_person.options.push(tmp_option);
 tmp_option = new option();
-tmp_option.id = "hub";
-tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hub";
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hello.thanks";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/options/hub.png");
-tmp_option.primary = true;
-tmp_option.qtext = otextToLines("Hello customer");
-tmp_option.atext = otextToLines("Hello customer");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/hello/options/thanks.png");
+tmp_option.qtext = stextToLines("null");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
 tmp_option.notlocks = [
 ];
 
 }
-tmp_person.options.push(tmp_option);
-tmp_option = new option();
-tmp_option.id = "log";
-tmp_option.fqid = "l1.map.drycleaner.main.cleaner.log";
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "hub";
+tmp_speak.fqid = "l1.map.drycleaner.main.cleaner.hub";
 {
-tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/options/log.png");
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.drycleaner.main.cleaner.hub";
-tmp_option.qtext = otextToLines("What can you tell me about this slip?");
-tmp_option.atext = otextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/hub.png");
+tmp_speak.primary = true;
+tmp_speak.qtext = stextToLines("Hello customer");
+tmp_speak.atext = stextToLines("Hello customer");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+];
+tmp_speak.notlocks = [
+];
+
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hub.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/hub/options/thanks.png");
+tmp_option.qtext = stextToLines("null");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
 tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "log";
+tmp_speak.fqid = "l1.map.drycleaner.main.cleaner.log";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/log.png");
+tmp_speak.primary = false;
+tmp_speak.parent = "l1.map.drycleaner.main.cleaner.hub";
+tmp_speak.qtext = stextToLines("What can you tell me about this slip?");
+tmp_speak.atext = stextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
   "l1.map.capitol.exhibit.tunic.slip",
 ];
+tmp_option = new option();
+tmp_option.id = "thanks";
+tmp_option.fqid = "l1.map.drycleaner.main.cleaner.log.thanks";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/log/options/thanks.png");
+tmp_option.qtext = stextToLines("null");
+tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
 }
-tmp_person.options.push(tmp_option);
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
 tmp_object = new object();

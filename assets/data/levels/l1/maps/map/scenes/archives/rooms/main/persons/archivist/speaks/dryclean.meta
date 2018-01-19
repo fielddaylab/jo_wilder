@@ -1,0 +1,6 @@
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("I don't know- I guess it looks like a dry cleaner tag?");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+  "l1.map.capitol.exhibit.tunic.slip",
+];

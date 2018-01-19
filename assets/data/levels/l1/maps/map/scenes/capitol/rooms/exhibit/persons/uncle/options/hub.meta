@@ -1,9 +1,0 @@
-tmp_option.primary = true;
-tmp_option.qtext = otextToLines("Hello neice");
-tmp_option.atext = otextToLines("Hello neice");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_option.locks = [
-];
-tmp_option.notlocks = [
-];
-

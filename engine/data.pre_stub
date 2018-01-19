@@ -10,6 +10,7 @@ var tmp_porthole;
 var tmp_wildcard;
 var tmp_view;
 var tmp_zone;
+var tmp_speak;
 var tmp_option;
 var tmp_lock;
 

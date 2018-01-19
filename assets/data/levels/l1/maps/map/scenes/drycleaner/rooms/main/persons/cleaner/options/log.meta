@@ -1,8 +1,0 @@
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.drycleaner.main.cleaner.hub";
-tmp_option.qtext = otextToLines("What can you tell me about this slip?");
-tmp_option.atext = otextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_option.locks = [
-  "l1.map.capitol.exhibit.tunic.slip",
-];

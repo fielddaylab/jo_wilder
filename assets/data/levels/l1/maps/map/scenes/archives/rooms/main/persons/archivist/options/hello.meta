@@ -1,6 +1,0 @@
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = otextToLines("How are you doing");
-tmp_option.atext = otextToLines("I'm p good thanks");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-

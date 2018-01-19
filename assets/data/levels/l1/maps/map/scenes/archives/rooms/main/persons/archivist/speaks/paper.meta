@@ -1,0 +1,6 @@
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("I've got this stack of papers about this lady!");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+  "l1.map.drycleaner.main.log.bingo",
+];

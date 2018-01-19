@@ -1,0 +1,10 @@
+tmp_option.qtext = stextToLines("I think you're wrong");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.capitol.exhibit.uncle.dispute";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+  "l1.map.archives.main.paper.conclusion",
+];
+tmp_option.notlocks = [
+];
+

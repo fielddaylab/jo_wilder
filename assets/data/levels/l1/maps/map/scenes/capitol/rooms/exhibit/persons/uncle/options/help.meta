@@ -1,6 +1,0 @@
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.capitol.exhibit.uncle.hub";
-tmp_option.qtext = otextToLines("Hey Uncle");
-tmp_option.atext = otextToLines("You have to help me! I don't know what the heck this tunic is for!");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-

@@ -1,0 +1,8 @@
+tmp_speak.primary = true;
+tmp_speak.atext = stextToLines("Hello neice");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+];
+tmp_speak.notlocks = [
+];
+

@@ -1,8 +1,0 @@
-tmp_option.primary = false;
-tmp_option.parent = "l1.map.archives.main.archivist.hub";
-tmp_option.qtext = otextToLines("What can you tell me about this lady?");
-tmp_option.atext = otextToLines("I've got this stack of papers about this lady!");
-tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_option.locks = [
-  "l1.map.drycleaner.main.log.bingo",
-];

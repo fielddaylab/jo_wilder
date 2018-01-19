@@ -1,0 +1,9 @@
+tmp_option.qtext = stextToLines("what's up");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.capitol.exhibit.uncle.help";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+

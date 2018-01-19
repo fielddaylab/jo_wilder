@@ -154,28 +154,30 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@autofix" ]; then AUTOFIX="1"; fi
   if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
   if [ "@"$1 == "@list" ];    then LIST="1";    fi
-  if [ "@"$1 == "@genlevel" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genlevel level";                                fi fi
-  if [ "@"$1 == "@genmap" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genmap level.map";                              fi fi
-  if [ "@"$1 == "@genscene" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genscene level.map.scene";                      fi fi
-  if [ "@"$1 == "@genroom" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genroom level.map.scene.room";                  fi fi
-  if [ "@"$1 == "@genperson" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genperson level.map.scene.room.person";         fi fi
-  if [ "@"$1 == "@genoption" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genoption level.map.scene.room.person.option";  fi fi
-  if [ "@"$1 == "@genobject" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genobject level.map.scene.room.object";         fi fi
-  if [ "@"$1 == "@genview" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genview level.map.scene.room.object.view";      fi fi
-  if [ "@"$1 == "@genzone" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genzone level.map.scene.room.object.view.zone"; fi fi
-  if [ "@"$1 == "@genporthole" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genporthole level.map.scene.room.porthole";     fi fi
-  if [ "@"$1 == "@genwildcard" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genwildcard level.map.scene.room.wildcard";     fi fi
-  if [ "@"$1 == "@rmlevel" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmlevel level";                                fi fi
-  if [ "@"$1 == "@rmmap" ];      then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmmap level.map";                              fi fi
-  if [ "@"$1 == "@rmscene" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmscene level.map.scene";                      fi fi
-  if [ "@"$1 == "@rmroom" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmroom level.map.scene.room";                  fi fi
-  if [ "@"$1 == "@rmperson" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmperson level.map.scene.room.person";         fi fi
-  if [ "@"$1 == "@rmoption" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmoption level.map.scene.room.person.option";  fi fi
-  if [ "@"$1 == "@rmobject" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmobject level.map.scene.room.object";         fi fi
-  if [ "@"$1 == "@rmview" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmview level.map.scene.room.object.view";      fi fi
-  if [ "@"$1 == "@rmzone" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmzone level.map.scene.room.object.view.zone"; fi fi
-  if [ "@"$1 == "@rmporthole" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmporthole level.map.scene.room.porthole";     fi fi
-  if [ "@"$1 == "@rmwildcard" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmwildcard level.map.scene.room.wildcard";     fi fi
+  if [ "@"$1 == "@genlevel" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genlevel level";                                     fi fi
+  if [ "@"$1 == "@genmap" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genmap level.map";                                   fi fi
+  if [ "@"$1 == "@genscene" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genscene level.map.scene";                           fi fi
+  if [ "@"$1 == "@genroom" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genroom level.map.scene.room";                       fi fi
+  if [ "@"$1 == "@genperson" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genperson level.map.scene.room.person";              fi fi
+  if [ "@"$1 == "@genspeak" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genspeak level.map.scene.room.person.speak";         fi fi
+  if [ "@"$1 == "@genoption" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genoption level.map.scene.room.person.speak.option"; fi fi
+  if [ "@"$1 == "@genobject" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genobject level.map.scene.room.object";              fi fi
+  if [ "@"$1 == "@genview" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genview level.map.scene.room.object.view";           fi fi
+  if [ "@"$1 == "@genzone" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genzone level.map.scene.room.object.view.zone";      fi fi
+  if [ "@"$1 == "@genporthole" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genporthole level.map.scene.room.porthole";          fi fi
+  if [ "@"$1 == "@genwildcard" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genwildcard level.map.scene.room.wildcard";          fi fi
+  if [ "@"$1 == "@rmlevel" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmlevel level";                                     fi fi
+  if [ "@"$1 == "@rmmap" ];      then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmmap level.map";                                   fi fi
+  if [ "@"$1 == "@rmscene" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmscene level.map.scene";                           fi fi
+  if [ "@"$1 == "@rmroom" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmroom level.map.scene.room";                       fi fi
+  if [ "@"$1 == "@rmperson" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmperson level.map.scene.room.person";              fi fi
+  if [ "@"$1 == "@rmspeak" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmspeak level.map.scene.room.person.speak";         fi fi
+  if [ "@"$1 == "@rmoption" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmoption level.map.scene.room.person.speak.option"; fi fi
+  if [ "@"$1 == "@rmobject" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmobject level.map.scene.room.object";              fi fi
+  if [ "@"$1 == "@rmview" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmview level.map.scene.room.object.view";           fi fi
+  if [ "@"$1 == "@rmzone" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmzone level.map.scene.room.object.view.zone";      fi fi
+  if [ "@"$1 == "@rmporthole" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmporthole level.map.scene.room.porthole";          fi fi
+  if [ "@"$1 == "@rmwildcard" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmwildcard level.map.scene.room.wildcard";          fi fi
   shift;
 done
 
@@ -186,8 +188,9 @@ GENLEVEL=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN 
 GENMAP=`     echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENSCENE=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENROOM=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genoption" ]; then
+if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
 GENPERSON=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+GENSPEAK=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENOPTION=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
 GENOBJECT=`  echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
@@ -204,10 +207,12 @@ GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubfullifdne level $
     GENDIR=$GENDIR/$GENMAP/scenes; if [ "@"$GENSCENE != "@" ]; then stubfullifdne scene $GENDIR $GENSCENE;
       GENDIR=$GENDIR/$GENSCENE/rooms; if [ "@"$GENROOM != "@" ]; then stubfullifdne room $GENDIR $GENROOM;
 
-        if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genoption" ]; then
+        if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
 
           GENDIR=$GENDIR/$GENROOM/persons; if [ "@"$GENPERSON != "@" ]; then stubfullifdne person $GENDIR $GENPERSON;
-            GENDIR=$GENDIR/$GENPERSON/options; if [ "@"$GENOPTION != "@" ]; then stubfullifdne option $GENDIR $GENOPTION; fi #option
+            GENDIR=$GENDIR/$GENPERSON/speaks; if [ "@"$GENSPEAK != "@" ]; then stubfullifdne speak $GENDIR $GENSPEAK;
+              GENDIR=$GENDIR/$GENSPEAK/options; if [ "@"$GENOPTION != "@" ]; then stubfullifdne option $GENDIR $GENOPTION; fi #option
+            fi #speak
           fi #person
 
         elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
@@ -240,8 +245,9 @@ RMLEVEL=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | g
 RMMAP=`     echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMSCENE=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMROOM=`    echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmoption" ]; then
+if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmspeak" ] || [ "@"$RMCMD == "@rmoption" ]; then
 RMPERSON=`  echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
+RMSPEAK=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMOPTION=`  echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 elif [ "@"$RMCMD == "@rmobject" ] || [ "@"$RMCMD == "@rmview" ] || [ "@"$RMCMD == "@rmzone" ]; then
 RMOBJECT=`  echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
@@ -258,9 +264,10 @@ RMDIR=$RMDIR/levels;            if [ "@"$RMCMD == "@rmlevel" ]    && [ "@"$RMLEV
 RMDIR=$RMDIR/$RMLEVEL/maps;     if [ "@"$RMCMD == "@rmmap" ]      && [ "@"$RMMAP != "@" ]      && [ -d $RMDIR/$RMMAP ];      then rmfull map       $RMDIR $RMMAP;      fi
 RMDIR=$RMDIR/$RMMAP/scenes;     if [ "@"$RMCMD == "@rmscene" ]    && [ "@"$RMSCENE != "@" ]    && [ -d $RMDIR/$RMSCENE ];    then rmfull scene     $RMDIR $RMSCENE;    fi
 RMDIR=$RMDIR/$RMSCENE/rooms;    if [ "@"$RMCMD == "@rmroom" ]     && [ "@"$RMROOM != "@" ]     && [ -d $RMDIR/$RMROOM ];     then rmfull room      $RMDIR $RMROOM;     fi
-if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmoption" ]; then
+if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmspeak" ] || [ "@"$RMCMD == "@rmoption" ]; then
 RMDIR=$RMDIR/$RMROOM/persons;   if [ "@"$RMCMD == "@rmperson" ]   && [ "@"$RMPERSON != "@" ]   && [ -d $RMDIR/$RMPERSON ];   then rmfull person    $RMDIR $RMPERSON;   fi
-RMDIR=$RMDIR/$RMPERSON/options; if [ "@"$RMCMD == "@rmoption" ]   && [ "@"$RMOPTION != "@" ]   && [ -d $RMDIR/$RMOPTION ];   then rmfull option    $RMDIR $RMOPTION;   fi
+RMDIR=$RMDIR/$RMPERSON/speaks;  if [ "@"$RMCMD == "@rmspeak" ]    && [ "@"$RMSPEAK != "@" ]    && [ -d $RMDIR/$RMSPEAK ];    then rmfull speak     $RMDIR $RMSPEAK;    fi
+RMDIR=$RMDIR/$RMSPEAK/option;   if [ "@"$RMCMD == "@rmoption" ]   && [ "@"$RMOPTION != "@" ]   && [ -d $RMDIR/$RMOPTION ];   then rmfull option    $RMDIR $RMOPTION;   fi
 elif [ "@"$RMCMD == "@rmobject" ] || [ "@"$RMCMD == "@rmview" ] || [ "@"$RMCMD == "@rmzone" ]; then
 RMDIR=$RMDIR/$RMROOM/objects;   if [ "@"$RMCMD == "@rmobject" ]   && [ "@"$RMOBJECT != "@" ]   && [ -d $RMDIR/$RMOBJECT ];   then rmfull object    $RMDIR $RMOBJECT;   fi
 RMDIR=$RMDIR/$RMOBJECT/views;   if [ "@"$RMCMD == "@rmview" ]     && [ "@"$RMVIEW != "@" ]     && [ -d $RMDIR/$RMVIEW ];     then rmfull view      $RMDIR $RMVIEW;     fi
@@ -359,25 +366,47 @@ for level in $levels_dir/*.meta; do #levels
           echo "tmp_person.img = GenImg(\"$GAME_DD/$person_img\");" >> $OUT
           cat $person >> $OUT
 
-          if ensuredelimeter option $person_dir; then :; else continue; fi
-          options_dir=$person_dir/options
-          for option in $options_dir/*.meta; do #options
+          if ensuredelimeter speak $person_dir; then :; else continue; fi
+          speaks_dir=$person_dir/speaks
+          for speak in $speaks_dir/*.meta; do #speaks
 
-            if [ ! -f $option ]; then if forcestub option $options_dir; then option=$options_dir/*.meta; else exit; fi fi
-            option_id=`id $option`
-            option_dir=`dir $option`
-            option_img=`img $option`
-            fixifdne option $options_dir $option_id
-            echo - Note: Genning $option_id #debug
-            echo "tmp_option = new option();" >> $OUT
-            echo "tmp_option.id = \"$option_id\";" >> $OUT
-            echo "tmp_option.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$option_id\";" >> $OUT
+            if [ ! -f $speak ]; then if forcestub speak $speaks_dir; then speak=$speaks_dir/*.meta; else exit; fi fi
+            speak_id=`id $speak`
+            speak_dir=`dir $speak`
+            speak_img=`img $speak`
+            fixifdne speak $speaks_dir $speak_id
+            echo - Note: Genning $speak_id #debug
+            echo "tmp_speak = new speak();" >> $OUT
+            echo "tmp_speak.id = \"$speak_id\";" >> $OUT
+            echo "tmp_speak.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id\";" >> $OUT
             echo "{" >> $OUT
-            echo "tmp_option.img = GenImg(\"$GAME_DD/$option_img\");" >> $OUT
-            cat $option >> $OUT
+            echo "tmp_speak.img = GenImg(\"$GAME_DD/$speak_img\");" >> $OUT
+            cat $speak >> $OUT
+
+            if ensuredelimeter option $speak_dir; then :; else continue; fi
+            options_dir=$speak_dir/options
+            for option in $options_dir/*.meta; do #options
+
+              if [ ! -f $option ]; then if forcestub option $options_dir; then option=$options_dir/*.meta; else exit; fi fi
+              option_id=`id $option`
+              option_dir=`dir $option`
+              option_img=`img $option`
+              fixifdne option $options_dir $option_id
+              echo - Note: Genning $option_id #debug
+              echo "tmp_option = new option();" >> $OUT
+              echo "tmp_option.id = \"$option_id\";" >> $OUT
+              echo "tmp_option.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id.$option_id\";" >> $OUT
+              echo "{" >> $OUT
+              echo "tmp_option.img = GenImg(\"$GAME_DD/$option_img\");" >> $OUT
+              cat $option >> $OUT
+
+              echo "}" >> $OUT
+              echo "tmp_speak.options.push(tmp_option);" >> $OUT
+
+            done
 
             echo "}" >> $OUT
-            echo "tmp_person.options.push(tmp_option);" >> $OUT
+            echo "tmp_person.speaks.push(tmp_speak);" >> $OUT
 
           done
 
@@ -551,11 +580,19 @@ echo Listing:
             person_dir=`dir $person`
             echo "				"`id $person`" (person)"
 
-            options_dir=$person_dir/options
-            for option in $options_dir/*.meta; do #options
-              if [ ! -f $option ]; then continue; fi
-              option_dir=`dir $option`
-              echo "					"`id $option`" (option)"
+            speaks_dir=$person_dir/speaks
+            for speak in $speaks_dir/*.meta; do #speaks
+              if [ ! -f $speak ]; then continue; fi
+              speak_dir=`dir $speak`
+              echo "					"`id $speak`" (speak)"
+
+              options_dir=$speak_dir/options
+              for option in $options_dir/*.meta; do #options
+                if [ ! -f $option ]; then continue; fi
+                option_dir=`dir $option`
+                echo "						"`id $option`" (option)"
+
+              done
 
             done
 

@@ -1,0 +1,9 @@
+tmp_option.qtext = stextToLines("What do you have about this lady?");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.archives.main.archivist.paper";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+

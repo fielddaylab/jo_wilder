@@ -1,0 +1,4 @@
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("I'm p good thanks");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+

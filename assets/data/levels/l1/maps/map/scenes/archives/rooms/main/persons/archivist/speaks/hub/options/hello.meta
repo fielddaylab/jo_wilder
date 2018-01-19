@@ -1,0 +1,9 @@
+tmp_option.qtext = stextToLines("Hey there");
+tmp_option.index = 0;
+tmp_option.target_speak = "l1.map.archives.main.archivist.hello";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+

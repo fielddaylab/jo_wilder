@@ -1,0 +1,5 @@
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("Wow you did it!");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+];

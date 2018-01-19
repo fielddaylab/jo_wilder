@@ -1,0 +1,8 @@
+tmp_speak.primary = false;
+tmp_speak.parent = "l1.map.drycleaner.main.cleaner.hub";
+tmp_speak.qtext = stextToLines("What can you tell me about this slip?");
+tmp_speak.atext = stextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.locks = [
+  "l1.map.capitol.exhibit.tunic.slip",
+];

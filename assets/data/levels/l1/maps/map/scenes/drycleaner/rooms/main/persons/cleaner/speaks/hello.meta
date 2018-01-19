@@ -1,0 +1,6 @@
+tmp_speak.primary = false;
+tmp_speak.parent = "l1.map.drycleaner.main.cleaner.hub";
+tmp_speak.qtext = stextToLines("How ya doin");
+tmp_speak.atext = stextToLines("Honestly I've been better");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+

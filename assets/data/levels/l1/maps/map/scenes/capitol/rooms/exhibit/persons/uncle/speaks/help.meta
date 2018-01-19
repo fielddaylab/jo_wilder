@@ -1,0 +1,4 @@
+tmp_speak.primary = false;
+tmp_speak.atext = stextToLines("You have to help me! I don't know what the heck this tunic is for!");
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+
