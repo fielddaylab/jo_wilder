@@ -1,0 +1,7 @@
+tmp_view.primary = false;
+tmp_view.noteworthy = false;
+tmp_view.locks = [
+];
+tmp_view.notlocks = [
+];
+

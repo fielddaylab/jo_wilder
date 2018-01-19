@@ -4,5 +4,5 @@ tmp_scene.y = 240;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.locks = [
-  "l1.map.capitol.exhibit.tunic.pocket.slip",
+  "l1.map.capitol.exhibit.tunic.slip",
 ];

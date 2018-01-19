@@ -39,7 +39,7 @@ tmp_scene.y = 240;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.locks = [
-  "l1.map.capitol.exhibit.tunic.pocket.slip",
+  "l1.map.capitol.exhibit.tunic.slip",
 ];
 tmp_room = new room();
 tmp_room.id = "main";
@@ -75,7 +75,7 @@ tmp_option.qtext = otextToLines("Hey mister, what's this slip!");
 tmp_option.atext = otextToLines("I don't know- I guess it looks like a dry cleaner tag?");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
-  "l1.map.capitol.exhibit.tunic.pocket.slip",
+  "l1.map.capitol.exhibit.tunic.slip",
 ];
 }
 tmp_person.options.push(tmp_option);
@@ -119,7 +119,7 @@ tmp_option.qtext = otextToLines("What can you tell me about this lady?");
 tmp_option.atext = otextToLines("I've got this stack of papers about this lady!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
-  "l1.map.drycleaner.main.log.number.bingo",
+  "l1.map.drycleaner.main.log.bingo",
 ];
 }
 tmp_person.options.push(tmp_option);
@@ -138,6 +138,37 @@ tmp_object.locks = [
   "l1.map.archives.main.archivist.paper",
 ];
 tmp_view = new view();
+tmp_view.id = "conclusion";
+tmp_view.fqid = "l1.map.archives.main.paper.conclusion";
+{
+tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/objects/paper/views/conclusion.png");
+tmp_view.primary = false;
+tmp_view.noteworthy = false;
+tmp_view.locks = [
+];
+tmp_view.notlocks = [
+];
+
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.archives.main.paper.conclusion.back";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.archives.main.paper.pic";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
 tmp_view.id = "pic";
 tmp_view.fqid = "l1.map.archives.main.paper.pic";
 {
@@ -145,13 +176,31 @@ tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main
 tmp_view.primary = false;
 
 tmp_zone = new zone();
-tmp_zone.id = "conclusion";
-tmp_zone.fqid = "l1.map.archives.main.paper.pic.conclusion";
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.archives.main.paper.pic.back";
 {
 tmp_zone.x = canv.width/2-100;
 tmp_zone.y = canv.width/2-100;
 tmp_zone.w = 100;
 tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.archives.main.paper.rh";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
+tmp_zone = new zone();
+tmp_zone.id = "conclusion";
+tmp_zone.fqid = "l1.map.archives.main.paper.pic.conclusion";
+{
+tmp_zone.x = canv.width/2+100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.archives.main.paper.conclusion";
 
 }
 tmp_view.zones.push(tmp_zone);
@@ -164,6 +213,23 @@ tmp_view.fqid = "l1.map.archives.main.paper.rh";
 tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/objects/paper/views/rh.png");
 tmp_view.primary = false;
 
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.archives.main.paper.rh.back";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.archives.main.paper.pic";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
@@ -217,7 +283,7 @@ tmp_option.qtext = otextToLines("I think you're wrong!");
 tmp_option.atext = otextToLines("Wow you did it!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
-  "l1.map.archives.main.paper.pic.conclusion",
+  "l1.map.archives.main.paper.conclusion",
 ];
 }
 tmp_person.options.push(tmp_option);
@@ -270,8 +336,8 @@ tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhib
 tmp_view.primary = false;
 
 tmp_zone = new zone();
-tmp_zone.id = "front";
-tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.pocket.front";
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.pocket.back";
 {
 tmp_zone.x = canv.width/2+200;
 tmp_zone.y = canv.width/2-100;
@@ -439,7 +505,7 @@ tmp_option.qtext = otextToLines("What can you tell me about this slip?");
 tmp_option.atext = otextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
-  "l1.map.capitol.exhibit.tunic.pocket.slip",
+  "l1.map.capitol.exhibit.tunic.slip",
 ];
 }
 tmp_person.options.push(tmp_option);
@@ -458,12 +524,60 @@ tmp_object.locks = [
   "l1.map.drycleaner.main.cleaner.log",
 ];
 tmp_view = new view();
+tmp_view.id = "bingo";
+tmp_view.fqid = "l1.map.drycleaner.main.log.bingo";
+{
+tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/objects/log/views/bingo.png");
+tmp_view.primary = false;
+tmp_view.noteworthy = false;
+tmp_view.locks = [
+];
+tmp_view.notlocks = [
+];
+
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.drycleaner.main.log.bingo.back";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.drycleaner.main.log.number";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
 tmp_view.id = "number";
 tmp_view.fqid = "l1.map.drycleaner.main.log.number";
 {
 tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/objects/log/views/number.png");
 tmp_view.primary = false;
 
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.drycleaner.main.log.number.back";
+{
+tmp_zone.x = 100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.drycleaner.main.log.rh";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
 tmp_zone = new zone();
 tmp_zone.id = "bingo";
 tmp_zone.fqid = "l1.map.drycleaner.main.log.number.bingo";
@@ -472,6 +586,7 @@ tmp_zone.x = canv.width/2-100;
 tmp_zone.y = canv.width/2-100;
 tmp_zone.w = 100;
 tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.drycleaner.main.log.bingo";
 
 }
 tmp_view.zones.push(tmp_zone);
@@ -484,6 +599,23 @@ tmp_view.fqid = "l1.map.drycleaner.main.log.rh";
 tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/objects/log/views/rh.png");
 tmp_view.primary = false;
 
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.drycleaner.main.log.rh.back";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.drycleaner.main.log.number";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }

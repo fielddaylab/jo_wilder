@@ -4,5 +4,5 @@ tmp_option.qtext = otextToLines("I think you're wrong!");
 tmp_option.atext = otextToLines("Wow you did it!");
 tmp_option.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_option.locks = [
-  "l1.map.archives.main.paper.pic.conclusion",
+  "l1.map.archives.main.paper.conclusion",
 ];
