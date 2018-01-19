@@ -175,7 +175,7 @@ var porthole = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
-  self.target_room;
+  self.target_room = "null";
   self.locks = [];
   self.notlocks = [];
   self.key = false;
@@ -224,6 +224,7 @@ var zone = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.target_view = "null";
   self.locks = [];
   self.notlocks = [];
   self.key = false;

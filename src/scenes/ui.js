@@ -429,9 +429,8 @@ var objectview = function()
   self.cur_view = 0;
   self.cur_view_i = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:10,             y:canv.height/2-50, w:90, h:90};
-  self.next_box = {x:canv.width-100, y:canv.height/2-50, w:90, h:90};
   self.cache_unlocked_views = [];
+  self.cache_unlocked_zones = [];
 
   self.consume_object = function(object)
   {
@@ -455,6 +454,10 @@ var objectview = function()
     self.cur_view_i = 0;
     for(var i = 1; i < self.cache_unlocked_views.length; i++) if(self.cur_view == self.cache_unlocked_views[i]) self.cur_view_i = i;
     self.cur_view = self.cache_unlocked_views[self.cur_view_i];
+
+    self.cache_unlocked_zones = [];
+    for(var i = 0; i < self.cur_view.zones.length; i++)
+      if(!querylocked(self.cur_view.zones[i])) self.cache_unlocked_zones.push(self.cur_view.zones[i]);
   }
 
   self.click = function(evt)
@@ -467,26 +470,18 @@ var objectview = function()
       state_t = 0;
       my_navigable.unlock_content();
     }
-    if(ptWithinBox(self.prev_box,evt.doX,evt.doY))
-    {
-      if(self.cur_view_i == 0) return;
-      self.cur_view = self.cache_unlocked_views[self.cur_view_i-1];
-      self.cur_view.key = true;
-      self.unlock_content();
-    }
-    if(ptWithinBox(self.next_box,evt.doX,evt.doY))
-    {
-      if(self.cur_view_i == self.cache_unlocked_views.length-1) return;
-      self.cur_view = self.cache_unlocked_views[self.cur_view_i+1];
-      self.cur_view.key = true;
-      self.unlock_content();
-    }
     var zone;
-    for(var i = 0; i < self.cur_view.zones.length; i++)
+    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
     {
-      zone = self.cur_view.zones[i];
+      zone = self.cache_unlocked_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
+      {
         zone.key = true;
+        self.cur_view = find(zone.target_view);
+        self.cur_view.key = true;
+        self.unlock_content();
+        return;
+      }
     }
   }
 
@@ -499,29 +494,25 @@ var objectview = function()
   {
     var zone;
     ctx.drawImage(self.cur_view.img, self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.cur_view.zones.length; i++)
+    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
     {
-      zone = self.cur_view.zones[i];
+      zone = self.cache_unlocked_zones[i];
       ctx.strokeStyle = white;
       ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       //ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-    if(self.cur_view_i > 0) ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
-    if(self.cur_view_i < self.cache_unlocked_views.length-1) ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
 
     if(DEBUG)
     {
       ctx.strokeStyle = white;
-      for(var i = 0; i < self.cur_view.zones.length; i++)
+      for(var i = 0; i < self.cache_unlocked_zones.length; i++)
       {
-        zone = self.cur_view.zones[i];
+        zone = self.cache_unlocked_zones[i];
         ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       }
       ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-      if(self.cur_view_i > 0) ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
-      if(self.cur_view_i < self.cache_unlocked_views.length-1) ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
     }
   }
 }

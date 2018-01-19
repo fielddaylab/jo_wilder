@@ -270,6 +270,23 @@ tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhib
 tmp_view.primary = false;
 
 tmp_zone = new zone();
+tmp_zone.id = "front";
+tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.pocket.front";
+{
+tmp_zone.x = canv.width/2+200;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.capitol.exhibit.tunic.tunic";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
+tmp_zone = new zone();
 tmp_zone.id = "slip";
 tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.pocket.slip";
 {
@@ -277,7 +294,39 @@ tmp_zone.x = canv.width/2-300;
 tmp_zone.y = canv.width/2-300;
 tmp_zone.w = 300;
 tmp_zone.h = 300;
-tmp_zone.noteworthy = true;
+tmp_zone.target_view = "l1.map.capitol.exhibit.tunic.slip"
+tmp_zone.noteworthy = false;
+
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
+tmp_view.id = "slip";
+tmp_view.fqid = "l1.map.capitol.exhibit.tunic.slip";
+{
+tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/objects/tunic/views/slip.png");
+tmp_view.primary = false;
+tmp_view.noteworthy = true;
+tmp_view.locks = [
+];
+tmp_view.notlocks = [
+];
+
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.slip.back";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.capitol.exhibit.tunic.pocket";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
 
 }
 tmp_view.zones.push(tmp_zone);
@@ -289,6 +338,23 @@ tmp_view.fqid = "l1.map.capitol.exhibit.tunic.tunic";
 {
 tmp_view.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/objects/tunic/views/tunic.png");
 tmp_view.primary = true;
+tmp_zone = new zone();
+tmp_zone.id = "back";
+tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.tunic.back";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.target_view = "l1.map.capitol.exhibit.tunic.pocket";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
