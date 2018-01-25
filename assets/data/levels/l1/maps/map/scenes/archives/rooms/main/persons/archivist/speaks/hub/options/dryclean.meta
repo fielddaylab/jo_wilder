@@ -4,6 +4,7 @@ tmp_option.index = 0;
 tmp_option.target_speak = "l1.map.archives.main.archivist.dryclean";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
+  "l1.map.capitol.exhibit.tunic.slip",
 ];
 tmp_option.notlocks = [
 ];

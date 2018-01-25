@@ -171,6 +171,7 @@ tmp_option.index = 0;
 tmp_option.target_speak = "l1.map.archives.main.archivist.dryclean";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
+  "l1.map.capitol.exhibit.tunic.slip",
 ];
 tmp_option.notlocks = [
 ];
@@ -205,6 +206,7 @@ tmp_option.index = 0;
 tmp_option.target_speak = "l1.map.archives.main.archivist.paper";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
+  "l1.map.drycleaner.main.log.bingo",
 ];
 tmp_option.notlocks = [
 ];
@@ -771,6 +773,27 @@ tmp_speak.locks = [
 tmp_speak.notlocks = [
 ];
 
+tmp_option = new option();
+tmp_option.id = "log";
+tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hub.log";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/persons/cleaner/speaks/hub/options/log.png");
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
+tmp_option.index = 0;
+tmp_option.qtext = stextToLines("Can I see your log I have this slip",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+tmp_option.target_speak = "l1.map.drycleaner.main.cleaner.log";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hub.thanks";
