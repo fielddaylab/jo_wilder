@@ -1,5 +1,10 @@
-tmp_option.qtext = stextToLines("null");
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
+tmp_option.qtext = stextToLines("null",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 tmp_option.target_speak = "null";
 tmp_option.noteworthy = false;
 tmp_option.locks = [

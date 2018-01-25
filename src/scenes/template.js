@@ -232,9 +232,9 @@ var zone = function()
   self.locked = true;
 }
 
-var stextToLines = function(text)
+var stextToLines = function(text,w)
 {
-  return textToLines(option_font, canv.width/2, text, ctx)
+  return textToLines(option_font, w, text, ctx)
 }
 var speak = function()
 {
@@ -243,8 +243,16 @@ var speak = function()
   self.fqid = "null"
   self.primary = false;
   self.anim;
-  self.atext = stextToLines("null");
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width/2;
+  self.h = 0;
+  self.atext = stextToLines("null",self.w);
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+  self.options_x = 0;
+  self.options_y = 0;
+  self.options_w = canv.width/2;
+  self.options_h = 0;
   self.options = [];
   self.locks = [];
   self.notlocks = [];
@@ -258,8 +266,13 @@ var option = function()
   var self = this;
   self.id = "null";
   self.fqid = "null"
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width/2;
+  self.h = 0;
+  self.static = false;
   self.index = 0;
-  self.qtext = stextToLines("null");
+  self.qtext = stextToLines("null",self.w);
   self.locks = [];
   self.notlocks = [];
   self.key = false;

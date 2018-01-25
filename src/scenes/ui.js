@@ -529,15 +529,14 @@ var personview = function()
   self.y = 0;
   self.w = canv.width;
   self.h = canv.height;
-  self.option_y = canv.height/2;
-  self.option_h = option_h;
 
   self.person;
   self.cur_speak = 0;
   self.cur_speak_i = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_speaks = [];
-  self.cache_unlocked_options = [];
+  self.cache_unlocked_options_static = [];
+  self.cache_unlocked_options_dynamic = [];
 
   self.consume_person = function(person)
   {
@@ -566,9 +565,16 @@ var personview = function()
   }
   self.unlock_options = function()
   {
-    self.cache_unlocked_options = [];
+    self.cache_unlocked_options_static = [];
+    self.cache_unlocked_options_dynamic = [];
     for(var i = 0; i < self.cur_speak.options.length; i++)
-      if(!querylocked(self.cur_speak.options[i])) self.cache_unlocked_options.push(self.cur_speak.options[i]);
+    {
+      if(!querylocked(self.cur_speak.options[i]))
+      {
+        if(self.cur_speak.options[i].static) self.cache_unlocked_options_static.push( self.cur_speak.options[i]);
+        else                                 self.cache_unlocked_options_dynamic.push(self.cur_speak.options[i]);
+      }
+    }
   }
 
   self.click = function(evt)
@@ -581,34 +587,52 @@ var personview = function()
       state_t = 0;
       my_navigable.unlock_content();
     }
-    var speak;
+    var speak = self.cur_speak;
     var option;
-    var y = self.option_y;
-    for(var i = 0; i < self.cache_unlocked_options.length; i++)
+    var clicked_option;
+    var oyoff;
+    for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
     {
-      option = self.cache_unlocked_options[i];
-      if(ptWithin(self.x,y,self.w,self.option_h,evt.doX,evt.doY))
+      oyoff = 0;
+      option = self.cache_unlocked_options_static[i];
+      for(var j = 0; j < option.qtext.length; j++)
       {
-        option.key = true;
-        speak = find(option.target_speak);
-        if(!speak)
-        {
-          //exits
-          state_from = cur_state;
-          state_to = STATE_NAV;
-          cur_state = STATE_TRANSITION;
-          state_t = 0;
-          my_navigable.unlock_content();
-        }
-        else
-        {
-          self.cur_speak = speak;
-          self.cur_speak.key = true;
-          self.unlock_content();
-        }
-        break;
+        if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
+          clicked_option = option;
+        oyoff += option.h;
       }
-      y += self.option_h;
+    }
+    oyoff = 0;
+    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+    {
+      option = self.cache_unlocked_options_dynamic[i];
+      for(var j = 0; j < option.qtext.length; j++)
+      {
+        if(ptWithin(speak.options_x,speak.options_y+oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+          clicked_option = option;
+        oyoff += speak.options_h;
+      }
+    }
+    if(clicked_option)
+    {
+      option = clicked_option;
+      option.key = true;
+      speak = find(option.target_speak);
+      if(!speak)
+      {
+        //exits
+        state_from = cur_state;
+        state_to = STATE_NAV;
+        cur_state = STATE_TRANSITION;
+        state_t = 0;
+        my_navigable.unlock_content();
+      }
+      else
+      {
+        self.cur_speak = speak;
+        self.cur_speak.key = true;
+        self.unlock_content();
+      }
     }
   }
 
@@ -620,26 +644,38 @@ var personview = function()
   self.draw = function(yoff)
   {
     var speak = self.cur_speak;
-    ctx.drawImage(speak.img, self.x, self.y+yoff, self.w, self.h);
-    var y = self.y+100;
+    var oyoff;
+    ctx.drawImage(speak.img, 0, yoff, self.w, self.h);
     ctx.fillStyle = white;
     ctx.font = option_font;
+    oyoff = 0;
     for(var j = 0; j < speak.atext.length; j++)
     {
-      ctx.fillText(speak.atext[j],self.x+200,y+yoff+self.option_h);
-      y += self.option_h;
+      ctx.fillText(speak.atext[j],speak.x,speak.y+yoff+oyoff+speak.h);
+      oyoff += speak.h;
     }
 
     var option;
-    y = self.option_y;
-    for(var i = 0; i < self.cache_unlocked_options.length; i++)
+    //static
+    for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
     {
-      option = self.cache_unlocked_options[i];
-      //ctx.drawImage(option.img, self.x, y+yoff, self.w, self.option_h);
+      oyoff = 0;
+      option = self.cache_unlocked_options_static[i];
       for(var j = 0; j < option.qtext.length; j++)
       {
-        ctx.fillText(option.qtext[j],self.x+200,y+yoff+self.option_h);
-        y += self.option_h;
+        ctx.fillText(option.qtext[j],option.x,option.y+yoff+oyoff+option.h);
+        oyoff += option.h;
+      }
+    }
+    //dynamic
+    oyoff = 0;
+    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+    {
+      option = self.cache_unlocked_options_dynamic[i];
+      for(var j = 0; j < option.qtext.length; j++)
+      {
+        ctx.fillText(option.qtext[j],speak.options_x,speak.options_y+yoff+oyoff+speak.options_h);
+        oyoff += speak.options_h;
       }
     }
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
@@ -647,17 +683,35 @@ var personview = function()
     if(DEBUG)
     {
       ctx.strokeStyle = white;
-      y = self.option_y;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      speak = self.cur_speak;
+      oyoff = 0;
+      for(var j = 0; j < speak.atext.length; j++)
       {
-        option = self.cache_unlocked_options[i];
+        ctx.strokeRect(speak.x,speak.y+yoff,speak.w,speak.h);
+        oyoff += speak.h;
+      }
+      //static
+      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
+      {
+        oyoff = 0;
+        option = self.cache_unlocked_options_static[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
-          ctx.strokeRect(self.x, y+yoff, self.w, self.option_h);
-          y += self.option_h;
+          ctx.strokeRect(option.x,option.y+yoff+oyoff,option.w,option.h);
+          oyoff += option.h;
         }
       }
-      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      //dynamic
+      oyoff = 0;
+      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+      {
+        option = self.cache_unlocked_options_dynamic[i];
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          ctx.strokeRect(speak.options_x,speak.options_y+yoff+oyoff,speak.options_w,speak.options_h);
+          oyoff += speak.options_h;
+        }
+      }
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }

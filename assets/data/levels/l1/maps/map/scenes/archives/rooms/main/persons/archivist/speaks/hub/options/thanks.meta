@@ -1,4 +1,5 @@
-tmp_option.qtext = stextToLines("Thanks");
+tmp_option.h = 30;
+tmp_option.qtext = stextToLines("Thanks",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 tmp_option.index = 0;
 tmp_option.target_speak = "null";
 tmp_option.noteworthy = false;

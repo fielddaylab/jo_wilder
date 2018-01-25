@@ -1,4 +1,5 @@
-tmp_option.qtext = stextToLines("I think you're wrong");
+tmp_option.h = 30;
+tmp_option.qtext = stextToLines("I think you're wrong",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 tmp_option.index = 0;
 tmp_option.target_speak = "l1.map.capitol.exhibit.uncle.dispute";
 tmp_option.noteworthy = false;

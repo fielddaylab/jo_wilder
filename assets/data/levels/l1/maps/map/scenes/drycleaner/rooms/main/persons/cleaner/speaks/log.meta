@@ -1,8 +1,14 @@
 tmp_speak.primary = false;
-tmp_speak.parent = "l1.map.drycleaner.main.cleaner.hub";
-tmp_speak.qtext = stextToLines("What can you tell me about this slip?");
-tmp_speak.atext = stextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out");
+tmp_speak.x = 100;
+tmp_speak.y = 100;
+tmp_speak.w = canv.width/2;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.atext = stextToLines("I don't really care here's a log from the past 100 years of customers knock yourself out",tmp_speak.w);
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_x = 100;
+tmp_speak.options_y = 200;
+tmp_speak.options_w = canv.width/2;
+tmp_speak.options_h = 30; //h of a single line
 tmp_speak.locks = [
   "l1.map.capitol.exhibit.tunic.slip",
 ];

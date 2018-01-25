@@ -1,4 +1,5 @@
-tmp_option.qtext = stextToLines("Hey mister what's this slip?");
+tmp_option.h = 30;
+tmp_option.qtext = stextToLines("Hey mister what's this slip?",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 tmp_option.index = 0;
 tmp_option.target_speak = "l1.map.archives.main.archivist.dryclean";
 tmp_option.noteworthy = false;
