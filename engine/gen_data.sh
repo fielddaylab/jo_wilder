@@ -166,6 +166,7 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@genzone" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genzone level.map.scene.room.object.view.zone";      fi fi
   if [ "@"$1 == "@genporthole" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genporthole level.map.scene.room.porthole";          fi fi
   if [ "@"$1 == "@genwildcard" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genwildcard level.map.scene.room.wildcard";          fi fi
+  if [ "@"$1 == "@genentry" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genentry level.entry";                               fi fi
   if [ "@"$1 == "@rmlevel" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmlevel level";                                     fi fi
   if [ "@"$1 == "@rmmap" ];      then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmmap level.map";                                   fi fi
   if [ "@"$1 == "@rmscene" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmscene level.map.scene";                           fi fi
@@ -178,6 +179,7 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@rmzone" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmzone level.map.scene.room.object.view.zone";      fi fi
   if [ "@"$1 == "@rmporthole" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmporthole level.map.scene.room.porthole";          fi fi
   if [ "@"$1 == "@rmwildcard" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmwildcard level.map.scene.room.wildcard";          fi fi
+  if [ "@"$1 == "@rmentry" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmentry level.entry";                               fi fi
   shift;
 done
 
@@ -185,6 +187,9 @@ done
 GENBREAKDOWN=$GENFQID
 
 GENLEVEL=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+if [ "@"$GENCMD == "@genentry" ]; then
+GENENTRY=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+else
 GENMAP=`     echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENSCENE=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENROOM=`    echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
@@ -201,47 +206,55 @@ GENPORTHOLE=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN 
 elif [ "@"$GENCMD == "@genwildcard" ]; then
 GENWILDCARD=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 fi
+fi
 
 GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubfullifdne level $GENDIR $GENLEVEL;
-  GENDIR=$GENDIR/$GENLEVEL/maps; if [ "@"$GENMAP != "@" ]; then stubfullifdne map $GENDIR $GENMAP;
-    GENDIR=$GENDIR/$GENMAP/scenes; if [ "@"$GENSCENE != "@" ]; then stubfullifdne scene $GENDIR $GENSCENE;
-      GENDIR=$GENDIR/$GENSCENE/rooms; if [ "@"$GENROOM != "@" ]; then stubfullifdne room $GENDIR $GENROOM;
+  if [ "@"$GENCMD == "@genentry" ]; then
+    GENDIR=$GENDIR/$GENLEVEL/entrys; if [ "@"$GENENTRY != "@" ]; then stubfullifdne entry $GENDIR $GENENTRY; fi #entry
+  else
+    GENDIR=$GENDIR/$GENLEVEL/maps; if [ "@"$GENMAP != "@" ]; then stubfullifdne map $GENDIR $GENMAP;
+      GENDIR=$GENDIR/$GENMAP/scenes; if [ "@"$GENSCENE != "@" ]; then stubfullifdne scene $GENDIR $GENSCENE;
+        GENDIR=$GENDIR/$GENSCENE/rooms; if [ "@"$GENROOM != "@" ]; then stubfullifdne room $GENDIR $GENROOM;
 
-        if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
+          if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
 
-          GENDIR=$GENDIR/$GENROOM/persons; if [ "@"$GENPERSON != "@" ]; then stubfullifdne person $GENDIR $GENPERSON;
-            GENDIR=$GENDIR/$GENPERSON/speaks; if [ "@"$GENSPEAK != "@" ]; then stubfullifdne speak $GENDIR $GENSPEAK;
-              GENDIR=$GENDIR/$GENSPEAK/options; if [ "@"$GENOPTION != "@" ]; then stubfullifdne option $GENDIR $GENOPTION; fi #option
-            fi #speak
-          fi #person
+            GENDIR=$GENDIR/$GENROOM/persons; if [ "@"$GENPERSON != "@" ]; then stubfullifdne person $GENDIR $GENPERSON;
+              GENDIR=$GENDIR/$GENPERSON/speaks; if [ "@"$GENSPEAK != "@" ]; then stubfullifdne speak $GENDIR $GENSPEAK;
+                GENDIR=$GENDIR/$GENSPEAK/options; if [ "@"$GENOPTION != "@" ]; then stubfullifdne option $GENDIR $GENOPTION; fi #option
+              fi #speak
+            fi #person
 
-        elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
+          elif [ "@"$GENCMD == "@genobject" ] || [ "@"$GENCMD == "@genview" ] || [ "@"$GENCMD == "@genzone" ]; then
 
-          GENDIR=$GENDIR/$GENROOM/objects; if [ "@"$GENOBJECT != "@" ]; then stubfullifdne object $GENDIR $GENOBJECT;
-            GENDIR=$GENDIR/$GENOBJECT/views; if [ "@"$GENVIEW != "@" ]; then stubfullifdne view $GENDIR $GENVIEW;
-              GENDIR=$GENDIR/$GENVIEW/zones; if [ "@"$GENZONE != "@" ]; then stubfullifdne zone $GENDIR $GENZONE; fi #zone
-            fi #view
-          fi #object
+            GENDIR=$GENDIR/$GENROOM/objects; if [ "@"$GENOBJECT != "@" ]; then stubfullifdne object $GENDIR $GENOBJECT;
+              GENDIR=$GENDIR/$GENOBJECT/views; if [ "@"$GENVIEW != "@" ]; then stubfullifdne view $GENDIR $GENVIEW;
+                GENDIR=$GENDIR/$GENVIEW/zones; if [ "@"$GENZONE != "@" ]; then stubfullifdne zone $GENDIR $GENZONE; fi #zone
+              fi #view
+            fi #object
 
-        elif [ "@"$GENCMD == "@genporthole" ]; then
+          elif [ "@"$GENCMD == "@genporthole" ]; then
 
-          GENDIR=$GENDIR/$GENROOM/portholes; if [ "@"$GENPORTHOLE != "@" ]; then stubfullifdne porthole $GENDIR $GENPORTHOLE; fi #porthole
+            GENDIR=$GENDIR/$GENROOM/portholes; if [ "@"$GENPORTHOLE != "@" ]; then stubfullifdne porthole $GENDIR $GENPORTHOLE; fi #porthole
 
-        elif [ "@"$GENCMD == "@genwildcard" ]; then
+          elif [ "@"$GENCMD == "@genwildcard" ]; then
 
-          GENDIR=$GENDIR/$GENROOM/wildcards; if [ "@"$GENWILDCARD != "@" ]; then stubfullifdne wildcard $GENDIR $GENWILDCARD; fi #wildcard
+            GENDIR=$GENDIR/$GENROOM/wildcards; if [ "@"$GENWILDCARD != "@" ]; then stubfullifdne wildcard $GENDIR $GENWILDCARD; fi #wildcard
 
-        fi #type
+          fi #type
 
-      fi #room
-    fi #scene
-  fi #map
+        fi #room
+      fi #scene
+    fi #map
+  fi #type
 fi #level
 
 #rm command
 RMBREAKDOWN=$RMFQID
 
 RMLEVEL=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
+if [ "@"$RMCMD == "@rmentry" ]; then
+RMENTRY=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
+else
 RMMAP=`     echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMSCENE=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMROOM=`    echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
@@ -258,9 +271,13 @@ RMPORTHOLE=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | g
 elif [ "@"$RMCMD == "@rmwildcard" ]; then
 RMWILDCARD=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 fi
+fi
 
 RMDIR=$ENGINE_DD
 RMDIR=$RMDIR/levels;            if [ "@"$RMCMD == "@rmlevel" ]    && [ "@"$RMLEVEL != "@" ]    && [ -d $RMDIR/$RMLEVEL ];    then rmfull level     $RMDIR $RMLEVEL;    fi
+if [ "@"$RMCMD == "@rmentry" ]; then
+RMDIR=$RMDIR/$RMLEVEL/entrys;   if [ "@"$RMCMD == "@rmentry" ]    && [ "@"$RMENTRY != "@" ]    && [ -d $RMDIR/$RMENTRY ];    then rmfull entry     $RMDIR $RMENTRY;    fi
+else
 RMDIR=$RMDIR/$RMLEVEL/maps;     if [ "@"$RMCMD == "@rmmap" ]      && [ "@"$RMMAP != "@" ]      && [ -d $RMDIR/$RMMAP ];      then rmfull map       $RMDIR $RMMAP;      fi
 RMDIR=$RMDIR/$RMMAP/scenes;     if [ "@"$RMCMD == "@rmscene" ]    && [ "@"$RMSCENE != "@" ]    && [ -d $RMDIR/$RMSCENE ];    then rmfull scene     $RMDIR $RMSCENE;    fi
 RMDIR=$RMDIR/$RMSCENE/rooms;    if [ "@"$RMCMD == "@rmroom" ]     && [ "@"$RMROOM != "@" ]     && [ -d $RMDIR/$RMROOM ];     then rmfull room      $RMDIR $RMROOM;     fi
@@ -276,6 +293,7 @@ elif [ "@"$RMCMD == "@rmporthole" ]; then
 RMDIR=$RMDIR/$RMROOM/portholes; if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR/$RMPORTHOLE ]; then rmfull porthole  $RMDIR $RMPORTHOLE; fi
 elif [ "@"$RMCMD == "@rmwildcard" ]; then
 RMDIR=$RMDIR/$RMROOM/wildcards; if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR/$RMWILDCARD ]; then rmfull wildcard  $RMDIR $RMWILDCARD; fi
+fi
 fi
 
 # BEGIN
@@ -297,6 +315,28 @@ for level in $levels_dir/*.meta; do #levels
   echo "tmp_level.fqid = \"$level_id\";" >> $OUT
   echo "{" >> $OUT
   cat $level >> $OUT
+
+  if ensuredelimeter entry $level_dir; then :; else continue; fi
+  entrys_dir=$level_dir/entrys
+  for entry in $entrys_dir/*.meta; do #entrys
+
+    if [ ! -f $entry ]; then if forcestub entry $entrys_dir; then entry=$entrys_dir/*.meta; else exit; fi fi
+    entry_id=`id $entry`
+    entry_dir=`dir $entry`
+    entry_img=`img $entry`
+    fixifdne entry $entrys_dir $entry_id
+    echo - Note: Genning $entry_id #debug
+    echo "tmp_entry = new entry();" >> $OUT
+    echo "tmp_entry.id = \"$entry_id\";" >> $OUT
+    echo "tmp_entry.fqid = \"$level_id.$entry_id\";" >> $OUT
+    echo "{" >> $OUT
+    echo "tmp_entry.img = GenImg(\"$GAME_DD/$entry_img\");" >> $OUT
+    cat $entry >> $OUT
+
+    echo "}" >> $OUT
+    echo "tmp_level.entrys.push(tmp_entry);" >> $OUT
+
+  done
 
   if ensuredelimeter map $level_dir; then :; else continue; fi
   maps_dir=$level_dir/maps
@@ -555,6 +595,13 @@ echo Listing:
     if [ ! -f $level ]; then continue; fi
     level_dir=`dir $level`
     echo ""`id $level`" (level)"
+
+    entrys_dir=$level_dir/entrys
+    for entry in $entrys_dir/*.meta; do #entrys
+      if [ ! -f $entry ]; then continue; fi
+      entry_dir=`dir $entry`
+      echo "	"`id $entry`" (entry)"
+    done
 
     maps_dir=$level_dir/maps
     for map in $maps_dir/*.meta; do #maps

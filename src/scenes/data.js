@@ -13,7 +13,7 @@ var tmp_view;
 var tmp_zone;
 var tmp_speak;
 var tmp_option;
-var tmp_lock;
+var tmp_entry;
 
 var init_levels = function()
 {
@@ -24,6 +24,19 @@ tmp_level.fqid = "l1";
 {
 tmp_level.primary = false;
 
+tmp_entry = new entry();
+tmp_entry.id = "testentry";
+tmp_entry.fqid = "l1.testentry";
+{
+tmp_entry.img = GenImg("assets/data/levels/l1/entrys/testentry.png");
+tmp_entry.index = 0;
+tmp_entry.locks = [
+];
+tmp_entry.notlocks = [
+];
+
+}
+tmp_level.entrys.push(tmp_entry);
 tmp_map = new map();
 tmp_map.id = "map";
 tmp_map.fqid = "l1.map";

@@ -61,6 +61,7 @@ var level = function()
   self.id = "null"
   self.fqid = "null"
   self.primary = false;
+  self.entrys = [];
   self.map;
   self.locks = [];
   self.notlocks = [];
@@ -236,6 +237,7 @@ var stextToLines = function(text,w)
 {
   return textToLines(option_font, w, text, ctx)
 }
+
 var speak = function()
 {
   var self = this;
@@ -273,6 +275,20 @@ var option = function()
   self.static = false;
   self.index = 0;
   self.qtext = stextToLines("null",self.w);
+  self.locks = [];
+  self.notlocks = [];
+  self.key = false;
+  self.noteworthy = false;
+  self.locked = true;
+}
+
+var entry = function()
+{
+  var self = this;
+  self.id = "null";
+  self.fqid = "null";
+  self.img;
+  self.index = 0;
   self.locks = [];
   self.notlocks = [];
   self.key = false;

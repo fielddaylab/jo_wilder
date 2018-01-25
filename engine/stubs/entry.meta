@@ -1,0 +1,6 @@
+tmp_entry.index = 0;
+tmp_entry.locks = [
+];
+tmp_entry.notlocks = [
+];
+

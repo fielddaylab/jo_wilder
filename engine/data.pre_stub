@@ -12,7 +12,7 @@ var tmp_view;
 var tmp_zone;
 var tmp_speak;
 var tmp_option;
-var tmp_lock;
+var tmp_entry;
 
 var init_levels = function()
 {
