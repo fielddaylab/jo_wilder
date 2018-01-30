@@ -288,6 +288,10 @@ var entry = function()
   self.id = "null";
   self.fqid = "null";
   self.img;
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width/2;
+  self.h = 100;
   self.index = 0;
   self.locks = [];
   self.notlocks = [];

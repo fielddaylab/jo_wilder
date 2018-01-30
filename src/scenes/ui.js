@@ -383,8 +383,29 @@ var notebook = function()
   self.w = canv.width;
   self.h = canv.height;
 
+  self.entrys;
   self.img = GenImg("assets/notebook.png");
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  self.cache_unlocked_entrys = [];
+
+  self.consume_level = function(level)
+  {
+    self.entrys = level.entrys;
+    self.unlock_content();
+  }
+
+  self.unlock_content = function()
+  {
+    self.cache_unlocked_entrys = [];
+    self.cur_y = 0;
+    for(var i = 0; i < self.entrys.length; i++)
+      if(!querylocked(self.entrys[i]))
+      {
+        self.entrys[i].y = self.cur_y;
+        self.cache_unlocked_entrys.push(self.entrys[i]);
+        self.cur_y += self.entrys[i].h;
+      }
+  }
 
   self.click = function(evt)
   {
@@ -406,6 +427,13 @@ var notebook = function()
   {
     ctx.drawImage(self.img, self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+
+    var entry;
+    for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+    {
+      entry = self.cache_unlocked_entrys[i];
+      ctx.drawImage(entry.img,self.x,self.y+yoff+entry.y,entry.w,entry.h);
+    }
 
     if(DEBUG)
     {

@@ -27,6 +27,7 @@ var GamePlayScene = function(game, stage)
     my_overworld = new overworld();
     my_overworld.consume_map(cur_map);
     my_notebook = new notebook();
+    my_notebook.consume_level(cur_level);
     my_objectview = new objectview();
     my_personview = new personview();
 
