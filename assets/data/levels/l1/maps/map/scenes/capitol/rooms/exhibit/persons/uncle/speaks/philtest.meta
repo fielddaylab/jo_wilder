@@ -1,0 +1,17 @@
+tmp_speak.primary = false;
+tmp_speak.x = 100;
+tmp_speak.y = 100;
+tmp_speak.w = canv.width/2;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.atext = stextToLines("null",tmp_speak.w);
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_x = 100;
+tmp_speak.options_y = 200;
+tmp_speak.options_w = canv.width/2;
+tmp_speak.options_h = 20; //h of a single line
+tmp_speak.noteworthy = false;
+tmp_speak.locks = [
+];
+tmp_speak.notlocks = [
+];
+

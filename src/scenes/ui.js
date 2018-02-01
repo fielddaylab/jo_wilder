@@ -3,7 +3,7 @@ var avatar = function()
   var self = this;
   self.x = 0;
   self.y = 0;
-  self.w = 200;
+  self.w = 85;
   self.h = 200;
 
   self.toX = self.x;
@@ -249,15 +249,15 @@ var toolbar = function()
 {
   var self = this;
   self.x = 0;
-  self.y = canv.height-100;
+  self.y = canv.height-90;
   self.w = canv.width;
   self.h = 100;
 
   self.toolbar_img = GenImg("assets/toolbar.png");
   self.map_icon_img = GenImg("assets/map_icon.png");
   self.notebook_icon_img = GenImg("assets/notebook_icon.png");
-  self.map      = {x:10,             y:self.y+10,w:self.h-20,h:self.h-20};
-  self.notebook = {x:10+self.h-20+10,y:self.y+10,w:self.h-20,h:self.h-20};
+  self.map      = {x:20,             y:self.y+15,w:self.h-40,h:self.h-40};
+  self.notebook = {x:10+self.h-20+20,y:self.y+12,w:self.h-55,h:self.h-35};
 
   self.click = function(evt)
   {
@@ -674,8 +674,8 @@ var personview = function()
     var speak = self.cur_speak;
     var oyoff;
     ctx.drawImage(speak.img, 0, yoff, self.w, self.h);
-    ctx.fillStyle = white;
-    ctx.font = option_font;
+    ctx.fillStyle = "#4c4c4c";
+    ctx.font = "20px Helvetica";
     oyoff = 0;
     for(var j = 0; j < speak.atext.length; j++)
     {
@@ -744,4 +744,3 @@ var personview = function()
     }
   }
 }
-

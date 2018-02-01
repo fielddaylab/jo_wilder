@@ -1,5 +1,4 @@
-tmp_person.x = 40;
-tmp_person.y = canv.height/2-140;
-tmp_person.w = 300;
-tmp_person.h = 300;
-
+tmp_person.x = 150;
+tmp_person.y = canv.height/2-160;
+tmp_person.w = 120;
+tmp_person.h = 270;

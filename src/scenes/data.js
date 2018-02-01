@@ -427,11 +427,10 @@ tmp_person.id = "uncle";
 tmp_person.fqid = "l1.map.capitol.exhibit.uncle";
 {
 tmp_person.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle.png");
-tmp_person.x = 40;
-tmp_person.y = canv.height/2-140;
-tmp_person.w = 300;
-tmp_person.h = 300;
-
+tmp_person.x = 150;
+tmp_person.y = canv.height/2-160;
+tmp_person.w = 120;
+tmp_person.h = 270;
 tmp_speak = new speak();
 tmp_speak.id = "dispute";
 tmp_speak.fqid = "l1.map.capitol.exhibit.uncle.dispute";
@@ -511,21 +510,20 @@ tmp_speak.fqid = "l1.map.capitol.exhibit.uncle.hub";
 {
 tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/hub.png");
 tmp_speak.primary = true;
-tmp_speak.x = 100;
-tmp_speak.y = 100;
+tmp_speak.x = 500;
+tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30;
 tmp_speak.atext = stextToLines("Hello neice",tmp_speak.w);
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_speak.options_x = 100;
-tmp_speak.options_y = 200;
+tmp_speak.options_x = 500;
+tmp_speak.options_y = 250;
 tmp_speak.options_w = canv.width/2;
 tmp_speak.options_h = 30;
 tmp_speak.locks = [
 ];
 tmp_speak.notlocks = [
 ];
-
 tmp_option = new option();
 tmp_option.id = "dispute";
 tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub.dispute";
@@ -569,6 +567,51 @@ tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exh
 tmp_option.h = 30;
 tmp_option.qtext = stextToLines("thanks",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 tmp_option.index = 0;
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "philtest";
+tmp_speak.fqid = "l1.map.capitol.exhibit.uncle.philtest";
+{
+tmp_speak.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/philtest.png");
+tmp_speak.primary = false;
+tmp_speak.x = 100;
+tmp_speak.y = 100;
+tmp_speak.w = canv.width/2;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.atext = stextToLines("null",tmp_speak.w);
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_x = 100;
+tmp_speak.options_y = 200;
+tmp_speak.options_w = canv.width/2;
+tmp_speak.options_h = 20; //h of a single line
+tmp_speak.noteworthy = false;
+tmp_speak.locks = [
+];
+tmp_speak.notlocks = [
+];
+
+tmp_option = new option();
+tmp_option.id = "goodbye";
+tmp_option.fqid = "l1.map.capitol.exhibit.uncle.philtest.goodbye";
+{
+tmp_option.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol/rooms/exhibit/persons/uncle/speaks/philtest/options/goodbye.png");
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
+tmp_option.index = 0;
+tmp_option.qtext = stextToLines("null",tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 tmp_option.target_speak = "null";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
