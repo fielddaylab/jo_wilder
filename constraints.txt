@@ -76,6 +76,6 @@ A notebook has entries, displayed atop it (static, locked-display, spacially-arb
 upgrade-expected: cutscene
 A game has cutscenes that play as soon as they unlock (conceptual)
 
-A cutscene consists of sized animations that play/move according to timing cues w/ input pauses (n-cycle, tween, spacially-arbitrary)
+A cutscene consists of sized animations that play/move according to timing cues w/ input pauses (n-cycle, tween, spacially-arbitrary) note- it will literally be a list of commands with timestamps ("display this animation, start here, tween here over this amount of time, starting at t=20", or "display text at t=30", or "wait for input at t=40")- will pick up where left off at the end of the cutscene
 
 
