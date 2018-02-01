@@ -1,0 +1,26 @@
+- Purpose
+- - We have to design a game
+- - will more-or-less conform to a formula
+- - let's learn a bit about the formula to orient ourselves
+- - we'll use the history of the genre to figure out why/how it's at where it's at
+- History
+- - Zork (http://textadventures.co.uk/games/play/5zyoqrsugeopel3ffhz_vq)
+- - - design-a-zork:
+- - - - what can we do to make a _bad_ game (actually answer)
+- - - - what can we do to make a _good_ game (rhetorical)
+- - Maniac Mansion (https://classicreload.com/maniac-mansion.html)
+- - - design-a-mansion:
+- - - - what can we do to make a _bad_ game
+- - - - what can we do to make a _good_ game
+- - Broken Age (steam)
+- - - design-a-broken-age:
+- - - - let's talk about what makes this _good_
+- - - - - interactions tell the story
+- - - - - posing a question as communication
+- - - - - leans into mystery
+- - - - - there's "what happens next" as well as "what's happening"
+- - Carmen San Diego (https://classicreload.com/where-in-the-world-is-carmen-sandiego-deluxe-edition.html)
+- - - mechanically driven
+- - - - uses reality as a test
+- - - - NOT AVENUE worth persuing
+- - - tight bounds per-room
