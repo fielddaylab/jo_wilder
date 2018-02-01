@@ -1,0 +1,48 @@
+specs vocab:
+"full-screen" = 880x660
+"full-screen-overlay" = 880x660, but can have transparency around the edges/elsewhere that will show through to the image underneath
+"spacially-arbitrary" = can have any x,y position, and any width and height, with transparency
+"conceptual" = no specific correponding image
+
+"locked-display" = not shown when locked, visible when unlocked
+
+"interactible" = can be interacted with from within the room
+
+--------------------
+
+The game will consist of levels (conceptual)
+
+The game has a main character (conceptual)
+
+The character has 3 animations-
+  Walk (as many/few frames as you want)
+  Idle (as many/few frames as you want)
+  Act (as many/few frames as you want)
+The character will walk to any location clicked. If an interactible is clicked, the character will walk to the interactible, perform the act animation once, and then the interaction will execute (pop up a different screen, etc...)
+
+Each level has its own map (full-screen-overlay)
+
+Each level will have a default starting scene (conceptual) [example: "the capitol"]
+
+The map has scene icons atop it (locked-display, spacially-arbitrary)
+
+Each scene will have a set of rooms, with one default starting room (full-screen) [example: "exhibit room"]
+
+A room can contain objects, characters, and portholes atop it (interactible, locked-display, spacially-arbitrary)
+
+A room has a rectangular area within which the character will walk. If an object exists outside of this area and is clicked, the character will walk _as close as possible to the object within the specified rectangle_ before acting.
+
+When interacting with a character, a character has a set of lines, with one default starting line (full-screen-overlay) [example: "hey there neice"] note- each line has a single image displaying the demeanor of the character speaking it; many lines will likely share the same image.
+
+Each line has a set of options, clicking on one loads up another line (conceptual) [example: "Hi! What do you know about this?"]
+
+When interacting with an object, an object has a set of views, with one default starting view (full-screen-overlay) [example: "the front of the tunic"]
+
+Each view has a set of zones, clicking on one loads up another view (locked-display, spacially-arbitrary) [example: "a 'turn around' arrow on the front of the tunic", or "a slip sticking out of a pocket"] note- the "zone" image _can_ be completely transparent if you want
+
+When interacting with a porthole, a new room loads up [example: "door to the lobby"]
+
+Each level has a notebook (full-screen-overlay)
+
+A notebook has entries, displayed atop it (locked-display, spacially-arbitrary) [example: "the slip in the pocket of the tunic"]
+
