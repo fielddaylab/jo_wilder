@@ -663,10 +663,10 @@ tmp_zone = new zone();
 tmp_zone.id = "slip";
 tmp_zone.fqid = "l1.map.capitol.exhibit.tunic.pocket.slip";
 {
-tmp_zone.x = canv.width/2-300;
-tmp_zone.y = canv.width/2-300;
-tmp_zone.w = 300;
-tmp_zone.h = 300;
+tmp_zone.x = canv.width/2+40;
+tmp_zone.y = canv.height/2+30;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
 tmp_zone.target_view = "l1.map.capitol.exhibit.tunic.slip"
 tmp_zone.noteworthy = false;
 
