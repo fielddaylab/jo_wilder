@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.x = canv.width-400;
-tmp_scene.y = canv.height-200;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
+tmp_scene.x = canv.width-422;
+tmp_scene.y = canv.height-222;
+tmp_scene.w = 80;
+tmp_scene.h = 80;
 tmp_scene.locks = [
   "l1.map.archives.main.archivist.dryclean",
 ];

@@ -48,10 +48,10 @@ tmp_scene.fqid = "l1.map.archives";
 {
 tmp_scene.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives.png");
 tmp_scene.primary = false;
-tmp_scene.x = 130;
-tmp_scene.y = 240;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
+tmp_scene.x = 198;
+tmp_scene.y = 420;
+tmp_scene.w = 102;
+tmp_scene.h = 83;
 tmp_scene.locks = [
   "l1.map.capitol.exhibit.tunic.slip",
 ];
@@ -73,11 +73,10 @@ tmp_person.id = "archivist";
 tmp_person.fqid = "l1.map.archives.main.archivist";
 {
 tmp_person.img = GenImg("assets/data/levels/l1/maps/map/scenes/archives/rooms/main/persons/archivist.png");
-tmp_person.x = 70;
-tmp_person.y = canv.height/2-100;
+tmp_person.x = 150;
+tmp_person.y = canv.height/2-170;
 tmp_person.w = 100;
-tmp_person.h = 120;
-
+tmp_person.h = 200;
 tmp_speak = new speak();
 tmp_speak.id = "dryclean";
 tmp_speak.fqid = "l1.map.archives.main.archivist.dryclean";
@@ -404,11 +403,10 @@ tmp_scene.fqid = "l1.map.capitol";
 {
 tmp_scene.img = GenImg("assets/data/levels/l1/maps/map/scenes/capitol.png");
 tmp_scene.primary = true;
-tmp_scene.x = canv.width/2-75;
-tmp_scene.y = canv.height/2-50;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
-
+tmp_scene.x = canv.width/2-55;
+tmp_scene.y = canv.height/2-60;
+tmp_scene.w = 124;
+tmp_scene.h = 124;
 tmp_room = new room();
 tmp_room.id = "exhibit";
 tmp_room.fqid = "l1.map.capitol.exhibit";
@@ -742,10 +740,10 @@ tmp_scene.fqid = "l1.map.drycleaner";
 {
 tmp_scene.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner.png");
 tmp_scene.primary = false;
-tmp_scene.x = canv.width-400;
-tmp_scene.y = canv.height-200;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
+tmp_scene.x = canv.width-422;
+tmp_scene.y = canv.height-222;
+tmp_scene.w = 80;
+tmp_scene.h = 80;
 tmp_scene.locks = [
   "l1.map.archives.main.archivist.dryclean",
 ];
@@ -915,7 +913,7 @@ tmp_object.fqid = "l1.map.drycleaner.main.log";
 {
 tmp_object.img = GenImg("assets/data/levels/l1/maps/map/scenes/drycleaner/rooms/main/objects/log.png");
 tmp_object.x = canv.width-200;
-tmp_object.y = 100;
+tmp_object.y = 250;
 tmp_object.w = 80;
 tmp_object.h = 80;
 tmp_object.locks = [

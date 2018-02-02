@@ -432,7 +432,7 @@ var notebook = function()
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
     {
       entry = self.cache_unlocked_entrys[i];
-      ctx.drawImage(entry.img,self.x+100,self.y+yoff+entry.y+200,entry.w,entry.h);
+      ctx.drawImage(entry.img,self.x,self.y+yoff+entry.y,entry.w,entry.h);
     }
 
     if(DEBUG)
