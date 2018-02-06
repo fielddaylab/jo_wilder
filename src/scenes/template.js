@@ -300,3 +300,65 @@ var entry = function()
   self.locked = true;
 }
 
+var cutscene_command = function()
+{
+  var self = this;
+
+  self.command = COMMAND_NULL;
+  self.t = 0;
+  self.end_t = 0;
+  self.cutscene_entity_id = "null";
+  self.animation_id = "null";
+  self.animation_anim = 0;
+  self.x;
+  self.y;
+  self.w;
+  self.h;
+}
+
+/*
+//example create
+c.command = COMMAND_CREATE;
+c.t = 4.5;
+c.cutscene_entity_id = "penny"; //this is time-of-creation. defines entity
+c.animation_id = "penny"; //picks out animation
+c.animation_anim = 1;
+c.x = 10;
+c.y = 10;
+c.w = 10;
+c.h = 10;
+
+//example set animation
+c.command = COMMAND_ANIMATE;
+c.t = 4.5;
+c.cutscene_entity_id = "penny"; //this is time-of-creation. picks out entity
+c.animation_anim = 1;
+
+//example move
+c.command = COMMAND_MOVE;
+c.t = 8.5;
+c.end_t = 12.5;
+c.cutscene_entity_id = "penny"; //this is time-of-creation. picks out entity
+c.x = 20;
+c.y = 20;
+c.w = 0; //optional- 0 means stay the same
+c.h = 0; //optional- 0 means stay the same
+
+*/
+
+var cutscene = function()
+{
+  var self = this;
+  self.id = "null";
+  self.fqid = "null";
+
+  self.animations = []; //takes animations as specified in utils.js
+  self.commands = []; //takes cutscene_commands
+
+  self.noteworthy = false;
+  self.locks = [
+  ];
+  self.notlocks = [
+  ];
+}
+

@@ -13,6 +13,7 @@ var tmp_zone;
 var tmp_speak;
 var tmp_option;
 var tmp_entry;
+var tmp_cutscene;
 
 var init_levels = function()
 {

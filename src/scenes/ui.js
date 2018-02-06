@@ -744,3 +744,15 @@ var personview = function()
     }
   }
 }
+
+var cutscene_view = function()
+{
+  var self = this;
+
+  self.cutscene;
+
+  //playback vars
+  self.t = 0;
+  self.content = [];
+}
+

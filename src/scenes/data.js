@@ -14,6 +14,7 @@ var tmp_zone;
 var tmp_speak;
 var tmp_option;
 var tmp_entry;
+var tmp_cutscene;
 
 var init_levels = function()
 {
@@ -37,6 +38,40 @@ tmp_entry.notlocks = [
 
 }
 tmp_level.entrys.push(tmp_entry);
+tmp_cutscene = new cutscene();
+tmp_cutscene.id = "my_cutscene";
+tmp_cutscene.fqid = "l1.my_cutscene";
+{
+tmp_cutscene.img = GenImg("assets/data/levels/l1/cutscenes/my_cutscene.png");
+tmp_cutscene.x = canv.width-200;
+tmp_cutscene.y = 100;
+tmp_cutscene.w = 100;
+tmp_cutscene.h = 100;
+tmp_cutscene.animations = [
+];
+tmp_cutscene.noteworthy = false;
+tmp_cutscene.locks = [
+];
+tmp_cutscene.notlocks = [
+];
+
+tmp_cutscene.commands = [];
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_NULL;
+tmp_cutscene_command.t = 0;
+tmp_cutscene_command.end_t = 0;
+tmp_cutscene_command.cutscene_entity_id = "null"; //references entity
+tmp_cutscene_command.animation_id = "null"; //references animation ("penny")
+tmp_cutscene_command.animation_anim = 0; //references anim ("walk")
+tmp_cutscene_command.x = 10;
+tmp_cutscene_command.y = 10;
+tmp_cutscene_command.w = 10;
+tmp_cutscene_command.h = 10;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+}
+tmp_level.cutscenes.push(tmp_cutscene);
 tmp_map = new map();
 tmp_map.id = "map";
 tmp_map.fqid = "l1.map";
