@@ -750,6 +750,96 @@ var cutscene_view = function()
   var self = this;
 
   self.cutscene;
+  self.entities = [];
+  self.t = 0;
+  self.end = false;
+  self.command_i = 0;
+  self.running_commands = [];
+
+  self.consume_cutscene = function(cutscene)
+  {
+    self.cutscene = cutscene;
+    self.cutscene.key = true;
+
+    self.entities = [];
+    self.t = 0;
+    self.end = false;
+    self.command_i = 0;
+  }
+
+  self.find_animation = function(animation)
+  {
+    for(var i = 0; i < self.cutscene.animations.length; i++)
+      if(self.cutscene.animations[i].id == animation) return self.cutscene.animations[i];
+  }
+
+  self.find_entity = function(entity)
+  {
+    for(var i = 0; i < self.entities.length; i++)
+      if(self.entities[i].id == entity) return self.entities[i];
+  }
+
+  self.entity_from_animation = function(animation)
+  {
+    var e = new animation(); //rename 'animation'
+    self.entities.push(e);
+    return e;
+  }
+
+  self.tick = function()
+  {
+    while(!self.end && self.command_i > self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t)
+    {
+      var c = self.cutscene.commands[self.command_i];
+      switch(c.command)
+      {
+        case COMMAND_NULL:
+          break;
+        case COMMAND_CREATE:
+          var e = self.entity_from_animation(self.find_animation(c.animation_id));
+          e.x = c.x;
+          e.y = c.y;
+          e.w = c.w;
+          e.h = c.h;
+          break;
+        case COMMAND_ANIMATE:
+          break;
+        case COMMAND_MOVE:
+          break;
+        case COMMAND_END:
+          break;
+      }
+      self.command_i++;
+    }
+
+    for(var i = 0; i < self.running_commands.length; i++)
+    {
+      var c = self.running_commands[i];
+      switch(c.command)
+      {
+        case COMMAND_NULL:
+          break;
+        case COMMAND_CREATE:
+          break;
+        case COMMAND_ANIMATE:
+          break;
+        case COMMAND_MOVE:
+          break;
+        case COMMAND_END:
+          break;
+      }
+    }
+
+    self.t += 0.01;
+  }
+
+  self.draw = function()
+  {
+    for(var i = 0; i < self.entities.length; i++)
+    {
+
+    }
+  }
 
   //playback vars
   self.t = 0;

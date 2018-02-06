@@ -62,6 +62,7 @@ var level = function()
   self.fqid = "null"
   self.primary = false;
   self.entrys = [];
+  self.cutscenes = [];
   self.map;
   self.locks = [];
   self.notlocks = [];
