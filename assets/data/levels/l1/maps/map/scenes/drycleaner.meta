@@ -1,4 +1,5 @@
 tmp_scene.primary = false;
+tmp_scene.animcycle_id = "null";
 tmp_scene.x = canv.width-422;
 tmp_scene.y = canv.height-222;
 tmp_scene.w = 80;

@@ -1,19 +1,20 @@
 var levels = [];
 
+var tmp_animcycle;
+var tmp_entry;
+var tmp_cutscene;
 var tmp_level;
 var tmp_map;
 var tmp_scene;
 var tmp_room;
 var tmp_person;
-var tmp_object;
-var tmp_porthole;
-var tmp_wildcard;
-var tmp_view;
-var tmp_zone;
 var tmp_speak;
 var tmp_option;
-var tmp_entry;
-var tmp_cutscene;
+var tmp_object;
+var tmp_view;
+var tmp_zone;
+var tmp_porthole;
+var tmp_wildcard;
 
 var init_levels = function()
 {

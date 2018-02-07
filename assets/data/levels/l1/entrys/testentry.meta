@@ -1,4 +1,5 @@
 tmp_entry.index = 0;
+tmp_entry.animcycle_id = "null";
 tmp_entry.locks = [
 ];
 tmp_entry.notlocks = [

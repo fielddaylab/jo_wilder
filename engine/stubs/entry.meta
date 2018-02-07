@@ -3,6 +3,7 @@ tmp_entry.x = 0;
 tmp_entry.y = 0;
 tmp_entry.w = canv.width/2;
 tmp_entry.h = 100;
+tmp_entry.animcycle_id = "null";
 tmp_entry.locks = [
 ];
 tmp_entry.notlocks = [

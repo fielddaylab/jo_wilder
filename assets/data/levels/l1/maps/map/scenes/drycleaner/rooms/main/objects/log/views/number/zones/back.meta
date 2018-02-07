@@ -2,6 +2,7 @@ tmp_zone.x = 100;
 tmp_zone.y = canv.width/2-100;
 tmp_zone.w = 100;
 tmp_zone.h = 100;
+tmp_zone.animcycle_id = "null";
 tmp_zone.target_view = "l1.map.drycleaner.main.log.rh";
 tmp_zone.noteworthy = false;
 tmp_zone.locks = [

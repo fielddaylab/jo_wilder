@@ -227,11 +227,11 @@ var navigable = function()
 
   self.draw = function()
   {
-    ctx.drawImage(self.room.img,0,0,canv.width,canv.height);
-    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) drawImageBox(self.cache_unlocked_persons[i].img,  self.cache_unlocked_persons[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) drawImageBox(self.cache_unlocked_objects[i].img,  self.cache_unlocked_objects[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) drawImageBox(self.cache_unlocked_portholes[i].img,self.cache_unlocked_portholes[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) drawImageBox(self.cache_unlocked_wildcards[i].img,self.cache_unlocked_wildcards[i],ctx);
+    ctx.drawImage(self.room.animcycle_inst.img,0,0,canv.width,canv.height);
+    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) drawImageBox(self.cache_unlocked_persons[i].animcycle_inst.img,  self.cache_unlocked_persons[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) drawImageBox(self.cache_unlocked_objects[i].animcycle_inst.img,  self.cache_unlocked_objects[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) drawImageBox(self.cache_unlocked_portholes[i].animcycle_inst.img,self.cache_unlocked_portholes[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) drawImageBox(self.cache_unlocked_wildcards[i].animcycle_inst.img,self.cache_unlocked_wildcards[i],ctx);
 
     if(DEBUG)
     {
@@ -360,8 +360,8 @@ var overworld = function()
 
   self.draw = function(yoff)
   {
-    ctx.drawImage(self.map.img,self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+    ctx.drawImage(self.map.animcycle_inst.img,self.x, self.y+yoff, self.w, self.h);
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
@@ -432,7 +432,7 @@ var notebook = function()
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
     {
       entry = self.cache_unlocked_entrys[i];
-      ctx.drawImage(entry.img,self.x,self.y+yoff+entry.y,entry.w,entry.h);
+      ctx.drawImage(entry.animcycle_inst.img,self.x,self.y+yoff+entry.y,entry.w,entry.h);
     }
 
     if(DEBUG)
@@ -525,13 +525,13 @@ var objectview = function()
   self.draw = function(yoff)
   {
     var zone;
-    ctx.drawImage(self.cur_view.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.cur_view.animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
     {
       zone = self.cache_unlocked_zones[i];
       ctx.strokeStyle = white;
       ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
-      //ctx.drawImage(zone.img, zone.x, zone.y+yoff, zone.w, zone.h);
+      ctx.drawImage(zone.animcycle_inst.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
@@ -673,7 +673,7 @@ var personview = function()
   {
     var speak = self.cur_speak;
     var oyoff;
-    ctx.drawImage(speak.img, 0, yoff, self.w, self.h);
+    ctx.drawImage(speak.animcycle_inst.img, 0, yoff, self.w, self.h);
     ctx.fillStyle = "#4c4c4c";
     ctx.font = "20px Helvetica";
     oyoff = 0;

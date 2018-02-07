@@ -2,6 +2,7 @@ tmp_object.x = canv.width-200;
 tmp_object.y = 100;
 tmp_object.w = 80;
 tmp_object.h = 80;
+tmp_object.animcycle_id = "null";
 tmp_object.locks = [
   "l1.map.archives.main.archivist.paper",
 ];
