@@ -1099,7 +1099,7 @@ tmp_room.id = "exhibit";
 tmp_room.fqid = "l1.map.capitol.exhibit";
 {
 tmp_room.primary = false;
-tmp_room.animcycle_id = "null";
+tmp_room.animcycle_id = "exhibit";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
 tmp_room.nav_w = canv.width-200;

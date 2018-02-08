@@ -154,6 +154,25 @@ var avatar = function()
   }
 };
 
+var animcycle_inst = function()
+{
+  var self = this;
+  self.animcycle;
+  self.frame_t;
+  self.frame_i;
+  self.img;
+  self.tick = function()
+  {
+    self.frame_t++;
+    while(self.frame_t > self.animcycle.frame_t)
+    {
+      self.frame_t -= self.animcycle.frame_t;
+      self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      self.img = self.animcycle.frames[self.frame_i];
+    }
+  }
+}
+
 var navigable = function()
 {
   var self = this;
@@ -223,6 +242,11 @@ var navigable = function()
 
   self.tick = function()
   {
+    self.room.animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) self.cache_unlocked_persons[i].animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) self.cache_unlocked_objects[i].animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) self.cache_unlocked_portholes[i].animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) self.cache_unlocked_wildcards[i].animcycle_inst.tick();
   }
 
   self.draw = function()
@@ -355,7 +379,8 @@ var overworld = function()
 
   self.tick = function()
   {
-
+    self.map.animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) self.cache_unlocked_scenes[i].animcycle_inst.tick();
   }
 
   self.draw = function(yoff)
@@ -420,7 +445,8 @@ var notebook = function()
 
   self.tick = function()
   {
-
+    for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+      self.cache_unlocked_entrys[i].animcycle_inst.tick();
   }
 
   self.draw = function(yoff)
@@ -457,35 +483,20 @@ var objectview = function()
   self.cur_view = 0;
   self.cur_view_i = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.cache_unlocked_views = [];
   self.cache_unlocked_zones = [];
 
   self.consume_object = function(object)
   {
     self.object = object;
     self.object.key = true;
-    self.unlock_content();
     self.cur_view_i = 0;
-    for(var i = 1; i < self.cache_unlocked_views.length; i++) if(self.cache_unlocked_views[i].primary) self.cur_view_i = i;
-    self.cur_view = self.cache_unlocked_views[self.cur_view_i];
+    for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary) self.cur_view_i = i;
+    self.cur_view = self.object.views[self.cur_view_i];
     self.cur_view.key = true;
     self.unlock_content();
   }
 
   self.unlock_content = function()
-  {
-    self.cache_unlocked_views = [];
-    for(var i = 0; i < self.object.views.length; i++)
-      if(!querylocked(self.object.views[i])) self.cache_unlocked_views.push(self.object.views[i]);
-
-    //re-set self.cur_view_i, ensures cur_view unlocked
-    self.cur_view_i = 0;
-    for(var i = 1; i < self.cache_unlocked_views.length; i++) if(self.cur_view == self.cache_unlocked_views[i]) self.cur_view_i = i;
-    self.cur_view = self.cache_unlocked_views[self.cur_view_i];
-
-    self.unlock_zones();
-  }
-  self.unlock_zones = function()
   {
     self.cache_unlocked_zones = [];
     for(var i = 0; i < self.cur_view.zones.length; i++)
@@ -519,7 +530,9 @@ var objectview = function()
 
   self.tick = function()
   {
-
+    self.cur_view.animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+      self.cache_unlocked_zones[i].animcycle_inst.tick();
   }
 
   self.draw = function(yoff)
@@ -666,7 +679,7 @@ var personview = function()
 
   self.tick = function()
   {
-
+    self.cur_speak.animcycle_inst.tick();
   }
 
   self.draw = function(yoff)
@@ -745,12 +758,23 @@ var personview = function()
   }
 }
 
-var cutscene_view = function()
+var cutscene_entity = function()
+{
+  var self = this;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
+  self.w = 0;
+  self.h = 0;
+  self.animcycle;
+}
+
+var cutsceneview = function()
 {
   var self = this;
 
   self.cutscene;
-  self.entities = [];
+  self.cutscene_entities = [];
   self.t = 0;
   self.end = false;
   self.command_i = 0;
@@ -761,10 +785,13 @@ var cutscene_view = function()
     self.cutscene = cutscene;
     self.cutscene.key = true;
 
-    self.entities = [];
+    self.cutscene_entities = [];
     self.t = 0;
     self.end = false;
     self.command_i = 0;
+
+    while(self.command_i < cutscene.commands.length && cutscene.commands[self.command_i].t < self.t)
+      self.execute_next_command();
   }
 
   self.find_animation = function(animation)
@@ -775,42 +802,46 @@ var cutscene_view = function()
 
   self.find_entity = function(entity)
   {
-    for(var i = 0; i < self.entities.length; i++)
-      if(self.entities[i].id == entity) return self.entities[i];
+    for(var i = 0; i < self.cutscene_entities.length; i++)
+      if(self.cutscene_entities[i].id == entity) return self.cutscene_entities[i];
   }
 
   self.entity_from_animation = function(animation)
   {
     var e = new animation(); //rename 'animation'
-    self.entities.push(e);
+    self.cutscene_entities.push(e);
     return e;
+  }
+
+  self.execute_next_command = function()
+  {
+    var c = self.cutscene.commands[self.command_i];
+    switch(c.command)
+    {
+      case COMMAND_NULL:
+        break;
+      case COMMAND_CREATE:
+        var e = self.entity_from_animation(self.find_animation(c.animation_id));
+        e.x = c.x;
+        e.y = c.y;
+        e.w = c.w;
+        e.h = c.h;
+        break;
+      case COMMAND_ANIMATE:
+        break;
+      case COMMAND_MOVE:
+        break;
+      case COMMAND_END:
+        self.end = 1;
+        break;
+    }
+    self.command_i++;
   }
 
   self.tick = function()
   {
-    while(!self.end && self.command_i > self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t)
-    {
-      var c = self.cutscene.commands[self.command_i];
-      switch(c.command)
-      {
-        case COMMAND_NULL:
-          break;
-        case COMMAND_CREATE:
-          var e = self.entity_from_animation(self.find_animation(c.animation_id));
-          e.x = c.x;
-          e.y = c.y;
-          e.w = c.w;
-          e.h = c.h;
-          break;
-        case COMMAND_ANIMATE:
-          break;
-        case COMMAND_MOVE:
-          break;
-        case COMMAND_END:
-          break;
-      }
-      self.command_i++;
-    }
+    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t)
+      self.execute_next_command();
 
     for(var i = 0; i < self.running_commands.length; i++)
     {
@@ -835,7 +866,7 @@ var cutscene_view = function()
 
   self.draw = function()
   {
-    for(var i = 0; i < self.entities.length; i++)
+    for(var i = 0; i < self.cutscene_entities.length; i++)
     {
 
     }

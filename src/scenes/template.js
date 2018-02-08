@@ -329,15 +329,6 @@ var entry = function()
   self.locked = true;
 }
 
-var animcycle_inst = function() //USED TO INSTANTIATE ANIMCYCLE W/O CONTAMINATION; PURELY EPHEMERAL
-{
-  var self = this;
-  self.animcycle;
-  self.frame_t;
-  self.frame_i;
-  self.img;
-}
-
 var animcycle = function()
 {
   var self = this;
@@ -362,6 +353,7 @@ var cutscene_command = function()
   self.animation_anim = 0;
   self.x;
   self.y;
+  self.z;
   self.w;
   self.h;
 }
@@ -405,6 +397,7 @@ var cutscene = function()
   self.animcycles = [];
   self.commands = [];
 
+  self.key = false;
   self.noteworthy = false;
   self.locks = [
   ];

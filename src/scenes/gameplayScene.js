@@ -30,6 +30,7 @@ var GamePlayScene = function(game, stage)
     my_notebook.consume_level(cur_level);
     my_objectview = new objectview();
     my_personview = new personview();
+    my_cutsceneview = new cutsceneview();
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
 
@@ -49,6 +50,22 @@ var GamePlayScene = function(game, stage)
         false) ;
         my_avatar.tick();
         my_navigable.tick();
+        //trigger cutscenes only from within nav
+        for(var i = 0; i < cur_level.cutscenes.length; i++)
+        {
+          var cutscene = cur_level.cutscenes[i];
+          var found = 0;
+          if(!found && !cutscene.key && querylocked(cutscene)) found = cutscene;
+          if(found)
+          {
+            cur_act = found;
+            state_from = cur_state;
+            cur_state = STATE_TRANSITION;
+            state_to = STATE_CUTSCENE;
+            my_cutsceneview.consume_cutscene(cur_act);
+            state_t = 0;
+          }
+        }
         break;
       case STATE_MAP:
         if(
@@ -85,6 +102,11 @@ var GamePlayScene = function(game, stage)
       case STATE_WILDCARD:
         my_avatar.tick();
         my_navigable.tick();
+        break;
+      case STATE_CUTSCENE:
+        my_avatar.tick();
+        my_navigable.tick();
+        my_cutsceneview.tick();
         break;
       case STATE_TRANSITION:
         transition_tick();
@@ -125,6 +147,11 @@ var GamePlayScene = function(game, stage)
       case STATE_WILDCARD:
         my_navigable.draw();
         my_avatar.draw();
+        break;
+      case STATE_CUTSCENE:
+        my_navigable.draw();
+        my_avatar.draw();
+        my_cutsceneview.draw(0);
         break;
       case STATE_TRANSITION:
         transition_draw();
@@ -195,6 +222,11 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         state_t += 0.01*state_t_speed;
         break;
+      case STATE_CUTSCENE:
+        my_avatar.tick();
+        my_navigable.tick();
+        state_t += 0.01*state_t_speed;
+        break;
     }
 
     if(state_t >= 1)
@@ -202,7 +234,7 @@ var GamePlayScene = function(game, stage)
       state_t = 0;
       cur_state = state_to;
     }
-  }
+  };
 
   var transition_draw = function()
   {
@@ -253,6 +285,13 @@ var GamePlayScene = function(game, stage)
           my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
         }
+        if(state_to == STATE_CUTSCENE)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw(state_t*my_toolbar.h);
+          my_cutsceneview.draw((1-state_t)*my_cutsceneview.h);
+        }
         break;
       case STATE_MAP:
         if(state_to == STATE_NAV)
@@ -293,7 +332,7 @@ var GamePlayScene = function(game, stage)
           my_navigable.draw();
           my_avatar.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_personview.draw(state_t*my_notebook.h);
+          my_personview.draw(state_t*my_personview.h);
         }
         break;
       case STATE_OBJECT:
@@ -302,13 +341,22 @@ var GamePlayScene = function(game, stage)
           my_navigable.draw();
           my_avatar.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_objectview.draw(state_t*my_notebook.h);
+          my_objectview.draw(state_t*my_objectview.h);
         }
         break;
       case STATE_WILDCARD:
         break;
+      case STATE_CUTSCENE:
+        if(state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_avatar.draw();
+          my_toolbar.draw((1-state_t)*my_toolbar.h);
+          my_cutsceneview.draw(state_t*my_cutsceneview.h);
+        }
+        break;
     }
-  }
+  };
 
   self.cleanup = function()
   {
