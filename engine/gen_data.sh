@@ -353,7 +353,7 @@ for level in $levels_dir/*.meta; do #levels
     echo "tmp_entry.fqid = \"$level_id.$entry_id\";" >> $OUT
     echo "{" >> $OUT
     cat $entry >> $OUT
-    echo "tmp_entry.animcycle_inst = find_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);" >> $OUT
+    echo "tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);" >> $OUT
     echo "}" >> $OUT
     echo "tmp_level.entrys.push(tmp_entry);" >> $OUT
 
@@ -393,7 +393,7 @@ for level in $levels_dir/*.meta; do #levels
     echo "tmp_map.fqid = \"$level_id.$map_id\";" >> $OUT
     echo "{" >> $OUT
     cat $map >> $OUT
-    echo "tmp_map.animcycle_inst = find_animcycle_inst(tmp_map.animcycle_id,tmp_level.animcycles);" >> $OUT
+    echo "tmp_map.animcycle_inst = gen_animcycle_inst(tmp_map.animcycle_id,tmp_level.animcycles);" >> $OUT
 
     if ensuredelimeter scene $map_dir; then :; else continue; fi
     scenes_dir=$map_dir/scenes
@@ -409,7 +409,7 @@ for level in $levels_dir/*.meta; do #levels
       echo "tmp_scene.fqid = \"$level_id.$map_id.$scene_id\";" >> $OUT
       echo "{" >> $OUT
       cat $scene >> $OUT
-      echo "tmp_scene.animcycle_inst = find_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);" >> $OUT
+      echo "tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);" >> $OUT
 
       if ensuredelimeter room $scene_dir; then :; else continue; fi
       rooms_dir=$scene_dir/rooms
@@ -425,7 +425,7 @@ for level in $levels_dir/*.meta; do #levels
         echo "tmp_room.fqid = \"$level_id.$map_id.$scene_id.$room_id\";" >> $OUT
         echo "{" >> $OUT
         cat $room >> $OUT
-        echo "tmp_room.animcycle_inst = find_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);" >> $OUT
+        echo "tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);" >> $OUT
 
         if ensuredelimeter person $room_dir; then :; else continue; fi
         persons_dir=$room_dir/persons
@@ -441,7 +441,7 @@ for level in $levels_dir/*.meta; do #levels
           echo "tmp_person.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id\";" >> $OUT
           echo "{" >> $OUT
           cat $person >> $OUT
-          echo "tmp_person.animcycle_inst = find_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);" >> $OUT
 
           if ensuredelimeter speak $person_dir; then :; else continue; fi
           speaks_dir=$person_dir/speaks
@@ -457,7 +457,7 @@ for level in $levels_dir/*.meta; do #levels
             echo "tmp_speak.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id\";" >> $OUT
             echo "{" >> $OUT
             cat $speak >> $OUT
-            echo "tmp_speak.animcycle_inst = find_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);" >> $OUT
+            echo "tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);" >> $OUT
             echo "tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);" >> $OUT
 
             if ensuredelimeter option $speak_dir; then :; else continue; fi
@@ -505,7 +505,7 @@ for level in $levels_dir/*.meta; do #levels
           echo "tmp_object.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id\";" >> $OUT
           echo "{" >> $OUT
           cat $object >> $OUT
-          echo "tmp_object.animcycle_inst = find_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);" >> $OUT
 
           if ensuredelimeter view $object_dir; then :; else continue; fi
           views_dir=$object_dir/views
@@ -521,7 +521,7 @@ for level in $levels_dir/*.meta; do #levels
             echo "tmp_view.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id\";" >> $OUT
             echo "{" >> $OUT
             cat $view >> $OUT
-            echo "tmp_view.animcycle_inst = find_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);" >> $OUT
+            echo "tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);" >> $OUT
 
             if ensuredelimeter zone $view_dir; then :; else continue; fi
             zones_dir=$view_dir/zones
@@ -537,7 +537,7 @@ for level in $levels_dir/*.meta; do #levels
               echo "tmp_zone.fqid = \"$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id.$zone_id\";" >> $OUT
               echo "{" >> $OUT
               cat $zone >> $OUT
-              echo "tmp_zone.animcycle_inst = find_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);" >> $OUT
+              echo "tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);" >> $OUT
 
               echo "}" >> $OUT
               echo "tmp_view.zones.push(tmp_zone);" >> $OUT
@@ -568,7 +568,7 @@ for level in $levels_dir/*.meta; do #levels
           echo "tmp_porthole.fqid = \"$level_id.$map_id.$scene_id.$room_id.$porthole_id\";" >> $OUT
           echo "{" >> $OUT
           cat $porthole >> $OUT
-          echo "tmp_porthole.animcycle_inst = find_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.portholes.push(tmp_porthole);" >> $OUT
@@ -589,7 +589,7 @@ for level in $levels_dir/*.meta; do #levels
           echo "tmp_wildcard.fqid = \"$level_id.$map_id.$scene_id.$room_id.$wildcard_id\";" >> $OUT
           echo "{" >> $OUT
           cat $wildcard >> $OUT
-          echo "tmp_wildcard.animcycle_inst = find_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_wildcard.animcycle_inst = gen_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.wildcards.push(tmp_wildcard);" >> $OUT

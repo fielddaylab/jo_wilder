@@ -1,9 +1,3 @@
-tmp_cutscene.x = canv.width-200;
-tmp_cutscene.y = 100;
-tmp_cutscene.w = 100;
-tmp_cutscene.h = 100;
-tmp_cutscene.animations = [
-];
 tmp_cutscene.noteworthy = false;
 tmp_cutscene.locks = [
 ];
@@ -12,15 +6,19 @@ tmp_cutscene.notlocks = [
 
 tmp_cutscene.commands = [];
 
+/*
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_NULL;
 tmp_cutscene_command.t = 0;
 tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.cutscene_entity_id = "null"; //references entity
+tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.animcycle_id = "null";
+tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.x = 10;
 tmp_cutscene_command.y = 10;
+tmp_cutscene_command.z = 0;
 tmp_cutscene_command.w = 10;
 tmp_cutscene_command.h = 10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+*/
 

@@ -55,7 +55,7 @@ var GamePlayScene = function(game, stage)
         {
           var cutscene = cur_level.cutscenes[i];
           var found = 0;
-          if(!found && !cutscene.key && querylocked(cutscene)) found = cutscene;
+          if(!found && !cutscene.key && !querylocked(cutscene)) found = cutscene;
           if(found)
           {
             cur_act = found;
@@ -104,6 +104,9 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         break;
       case STATE_CUTSCENE:
+        if(
+        !clicker.filter(my_cutsceneview) &&
+        false) ;
         my_avatar.tick();
         my_navigable.tick();
         my_cutsceneview.tick();
