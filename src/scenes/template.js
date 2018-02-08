@@ -319,6 +319,7 @@ var animcycle = function()
   self.offset_t = 0;
 }
 
+var CUTSCENE_COMMAND_IGNORE = -927345892; //lolololol type system
 var cutscene_command = function()
 {
   var self = this;
@@ -329,11 +330,11 @@ var cutscene_command = function()
   self.cutscene_entity_id = "null";
   self.animcycle_id = "null";
   self.animcycle_offset_t = 0;
-  self.x;
-  self.y;
-  self.z;
-  self.w;
-  self.h;
+  self.x = CUTSCENE_COMMAND_IGNORE;
+  self.y = CUTSCENE_COMMAND_IGNORE;
+  self.z = CUTSCENE_COMMAND_IGNORE;
+  self.w = CUTSCENE_COMMAND_IGNORE;
+  self.h = CUTSCENE_COMMAND_IGNORE;
 
   //ephemeral
   self.from_x;

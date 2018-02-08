@@ -7,6 +7,16 @@ tmp_cutscene.notlocks = [
 tmp_cutscene.commands = [];
 
 /*
+Possible Commands:
+COMMAND_CREATE
+COMMAND_ANIMATE
+COMMAND_TWEEN
+COMMAND_WAIT
+COMMAND_END
+*/
+
+/*
+//skeleton command addition
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_NULL;
 tmp_cutscene_command.t = 0;
@@ -21,4 +31,10 @@ tmp_cutscene_command.w = 10;
 tmp_cutscene_command.h = 10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
+
+//Leave this at the end- remember to set t!
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
 

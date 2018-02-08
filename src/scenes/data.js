@@ -222,6 +222,38 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/exhibit/0.png
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "girl_walk";
+tmp_animcycle.fqid = "l1.girl_walk";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_walk/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_walk/1.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_walk/2.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_walk/3.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "guy_walk";
+tmp_animcycle.fqid = "l1.guy_walk";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/1.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/2.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/3.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "log_evidence";
 tmp_animcycle.fqid = "l1.log_evidence";
 {
@@ -670,31 +702,69 @@ tmp_cutscene = new cutscene();
 tmp_cutscene.id = "my_cutscene";
 tmp_cutscene.fqid = "l1.my_cutscene";
 {
-tmp_cutscene.x = canv.width-200;
-tmp_cutscene.y = 100;
-tmp_cutscene.w = 100;
-tmp_cutscene.h = 100;
-tmp_cutscene.animations = [
-];
 tmp_cutscene.noteworthy = false;
 tmp_cutscene.locks = [
+  "l1.map.capitol.exhibit.tunic",
 ];
 tmp_cutscene.notlocks = [
 ];
 
 tmp_cutscene.commands = [];
 
+/*
+Possible Commands:
+COMMAND_CREATE
+COMMAND_ANIMATE
+COMMAND_TWEEN
+COMMAND_WAIT
+COMMAND_END
+*/
+
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = COMMAND_NULL;
+tmp_cutscene_command.command = COMMAND_CREATE;
 tmp_cutscene_command.t = 0;
-tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.cutscene_entity_id = "null"; //references entity
-tmp_cutscene_command.animation_id = "null"; //references animation ("penny")
-tmp_cutscene_command.animation_anim = 0; //references anim ("walk")
-tmp_cutscene_command.x = 10;
-tmp_cutscene_command.y = 10;
-tmp_cutscene_command.w = 10;
-tmp_cutscene_command.h = 10;
+tmp_cutscene_command.cutscene_entity_id = "girl";
+tmp_cutscene_command.animcycle_id = "girl_walk";
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene_command.x = canv.width;
+tmp_cutscene_command.y = 20;
+tmp_cutscene_command.z = 0;
+tmp_cutscene_command.w = 100;
+tmp_cutscene_command.h = 200;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_CREATE;
+tmp_cutscene_command.t = 0;
+tmp_cutscene_command.cutscene_entity_id = "guy";
+tmp_cutscene_command.animcycle_id = "guy_walk";
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene_command.x = -100;
+tmp_cutscene_command.y = 30;
+tmp_cutscene_command.z = 1;
+tmp_cutscene_command.w = 100;
+tmp_cutscene_command.h = 200;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_TWEEN;
+tmp_cutscene_command.t = 10;
+tmp_cutscene_command.end_t = 100;
+tmp_cutscene_command.cutscene_entity_id = "girl";
+tmp_cutscene_command.x = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_TWEEN;
+tmp_cutscene_command.t = 10;
+tmp_cutscene_command.end_t = 100;
+tmp_cutscene_command.cutscene_entity_id = "guy";
+tmp_cutscene_command.x = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_END;
+tmp_cutscene_command.t = 150;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 }

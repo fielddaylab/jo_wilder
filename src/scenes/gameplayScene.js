@@ -51,19 +51,22 @@ var GamePlayScene = function(game, stage)
         my_avatar.tick();
         my_navigable.tick();
         //trigger cutscenes only from within nav
-        for(var i = 0; i < cur_level.cutscenes.length; i++)
+        if(cur_state == STATE_NAV) //_still_ must be NAV...
         {
-          var cutscene = cur_level.cutscenes[i];
-          var found = 0;
-          if(!found && !cutscene.key && !querylocked(cutscene)) found = cutscene;
-          if(found)
+          for(var i = 0; i < cur_level.cutscenes.length; i++)
           {
-            cur_act = found;
-            state_from = cur_state;
-            cur_state = STATE_TRANSITION;
-            state_to = STATE_CUTSCENE;
-            my_cutsceneview.consume_cutscene(cur_act);
-            state_t = 0;
+            var cutscene = cur_level.cutscenes[i];
+            var found = 0;
+            if(!found && !cutscene.key && !querylocked(cutscene)) found = cutscene;
+            if(found)
+            {
+              cur_act = found;
+              state_from = cur_state;
+              cur_state = STATE_TRANSITION;
+              state_to = STATE_CUTSCENE;
+              my_cutsceneview.consume_cutscene(cur_act);
+              state_t = 0;
+            }
           }
         }
         break;

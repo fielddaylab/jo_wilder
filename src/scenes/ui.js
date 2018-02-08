@@ -776,6 +776,7 @@ var personview = function()
 var cutscene_entity = function()
 {
   var self = this;
+  self.id = "null";
   self.x = 0;
   self.y = 0;
   self.z = 0;
@@ -830,6 +831,7 @@ var cutsceneview = function()
         break;
       case COMMAND_CREATE:
         var e = new cutscene_entity();
+        e.id = c.cutscene_entity_id;
         e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
         e.animcycle_inst.frame_t += c.animcycle_offset_t;
         e.x = c.x;
@@ -837,7 +839,7 @@ var cutsceneview = function()
         e.z = c.z;
         e.w = c.w;
         e.h = c.h;
-        self.cutscene_entities.push(e);
+        self.cutscene_entitys.push(e);
         break;
       case COMMAND_ANIMATE:
         var e = self.find_entity(c.cutscene_entity_id);
@@ -886,17 +888,22 @@ var cutsceneview = function()
       if(c.command != COMMAND_TWEEN) continue;
       var e = self.find_entity(c.cutscene_entity_id);
       var t = invlerp(c.t,c.end_t,self.t)
-      e.x = lerp(c.from_x,c.x,t);
-      e.y = lerp(c.from_y,c.y,t);
-      e.z = lerp(c.from_z,c.z,t);
-      e.w = lerp(c.from_w,c.w,t);
-      e.h = lerp(c.from_h,c.h,t);
+      if(c.x != CUTSCENE_COMMAND_IGNORE) e.x = lerp(c.from_x,c.x,t);
+      if(c.y != CUTSCENE_COMMAND_IGNORE) e.y = lerp(c.from_y,c.y,t);
+      if(c.z != CUTSCENE_COMMAND_IGNORE) e.z = lerp(c.from_z,c.z,t);
+      if(c.w != CUTSCENE_COMMAND_IGNORE) e.w = lerp(c.from_w,c.w,t);
+      if(c.h != CUTSCENE_COMMAND_IGNORE) e.h = lerp(c.from_h,c.h,t);
+      if(t >= 1)
+      {
+        self.running_commands.splice(i,1);
+        i--;
+      }
     }
 
     for(var i = 0; i < self.cutscene_entitys.length; i++)
-      self.cutscene_entitys.length.animcycle_inst.tick();
+      self.cutscene_entitys[i].animcycle_inst.tick();
 
-    self.t += 0.01;
+    self.t++;
 
     if(self.end)
     {
