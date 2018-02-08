@@ -540,6 +540,19 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/tunic_back_zo
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "tunic_front";
+tmp_animcycle.fqid = "l1.tunic_front";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 1;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/tunic_front/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "tunic_object";
 tmp_animcycle.fqid = "l1.tunic_object";
 {
@@ -1398,7 +1411,7 @@ tmp_object.x = canv.width-220;
 tmp_object.y = 180;
 tmp_object.w = 120;
 tmp_object.h = 120;
-tmp_object.animcycle_id = "null";
+tmp_object.animcycle_id = "tunic";
 
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_view = new view();
@@ -1406,7 +1419,7 @@ tmp_view.id = "pocket";
 tmp_view.fqid = "l1.map.capitol.exhibit.tunic.pocket";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "null";
+tmp_view.animcycle_id = "tunic_pocket";
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 tmp_zone = new zone();
@@ -1450,13 +1463,8 @@ tmp_view.id = "slip";
 tmp_view.fqid = "l1.map.capitol.exhibit.tunic.slip";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "null";
+tmp_view.animcycle_id = "tunic_slip";
 tmp_view.noteworthy = true;
-tmp_view.locks = [
-];
-tmp_view.notlocks = [
-];
-
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 tmp_zone = new zone();
 tmp_zone.id = "back";
@@ -1484,7 +1492,7 @@ tmp_view.id = "tunic";
 tmp_view.fqid = "l1.map.capitol.exhibit.tunic.tunic";
 {
 tmp_view.primary = true;
-tmp_view.animcycle_id = "null";
+tmp_view.animcycle_id = "tunic_front";
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 tmp_zone = new zone();
