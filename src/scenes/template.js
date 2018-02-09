@@ -256,6 +256,7 @@ var speak = function()
   self.w = canv.width/2;
   self.h = 0;
   self.raw_atext = "null";
+  self.atext_hard_coded = false;
   self.atext = stextToLines(self.raw_atext,self.w);
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
   self.options_x = 0;
@@ -279,6 +280,7 @@ var option = function()
   self.static = false;
   self.index = 0;
   self.raw_qtext = "null";
+  self.qtext_hard_coded = false;
   self.qtext = stextToLines(self.raw_qtext,self.w);
   self.target_speak = "null";
   self.noteworthy = false;
@@ -325,16 +327,19 @@ var cutscene_command = function()
   var self = this;
 
   self.command = COMMAND_NULL;
+  self.cutscene_entity_id = "null";
+  self.cutscene_entity_type = ENTITY_NULL;
   self.t = 0;
   self.end_t = 0;
-  self.cutscene_entity_id = "null";
-  self.animcycle_id = "null";
-  self.animcycle_offset_t = 0;
   self.x = CUTSCENE_COMMAND_IGNORE;
   self.y = CUTSCENE_COMMAND_IGNORE;
   self.z = CUTSCENE_COMMAND_IGNORE;
   self.w = CUTSCENE_COMMAND_IGNORE;
   self.h = CUTSCENE_COMMAND_IGNORE;
+  self.animcycle_id = "null";
+  self.animcycle_offset_t = 0;
+  self.raw_text = "null";
+  self.text = stextToLines(self.raw_text,self.w);
 
   //ephemeral
   self.from_x;

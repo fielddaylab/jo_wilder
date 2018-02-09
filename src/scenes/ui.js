@@ -782,7 +782,9 @@ var cutscene_entity = function()
   self.z = 0;
   self.w = 0;
   self.h = 0;
+  self.entity_type = ENTITY_NULL;
   self.animcycle_inst;
+  self.text = ["null"];
 }
 
 var cutsceneview = function()
@@ -798,7 +800,8 @@ var cutsceneview = function()
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cutscene_entitys = [];
   self.t = 0;
-  self.end = false;
+  self.end = 0;
+  self.waiting = 0;
   self.command_i = 0;
   self.running_commands = [];
 
@@ -816,10 +819,10 @@ var cutsceneview = function()
       self.execute_next_command();
   }
 
-  self.find_entity = function(entity)
+  self.find_entity = function(entity_id)
   {
     for(var i = 0; i < self.cutscene_entitys.length; i++)
-      if(self.cutscene_entitys[i].id == entity) return self.cutscene_entitys[i];
+      if(self.cutscene_entitys[i].id == entity_id) return self.cutscene_entitys[i];
   }
 
   self.execute_next_command = function()
@@ -832,14 +835,26 @@ var cutsceneview = function()
       case COMMAND_CREATE:
         var e = new cutscene_entity();
         e.id = c.cutscene_entity_id;
-        e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-        e.animcycle_inst.frame_t += c.animcycle_offset_t;
+        e.entity_type = c.cutscene_entity_type;
+        if(c.cutscene_entity_type == ENTITY_ANIM)
+        {
+          e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          e.animcycle_inst.frame_t += c.animcycle_offset_t;
+        }
+        else
+        {
+          e.text = c.text;
+        }
         e.x = c.x;
         e.y = c.y;
         e.z = c.z;
         e.w = c.w;
         e.h = c.h;
         self.cutscene_entitys.push(e);
+        break;
+      case COMMAND_DESTROY:
+        for(var i = 0; i < self.cutscene_entitys.length; i++)
+          if(self.cutscene_entitys[i].id == c.cutscene_entity_id) self.cutscene_entitys.splice(i,1);
         break;
       case COMMAND_ANIMATE:
         var e = self.find_entity(c.cutscene_entity_id);
@@ -856,6 +871,7 @@ var cutsceneview = function()
         self.running_commands.push(c);
         break;
       case COMMAND_WAIT:
+        self.waiting = 1;
         break;
       case COMMAND_END:
         self.end = 1;
@@ -870,10 +886,14 @@ var cutsceneview = function()
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
-      state_t = 0;
+      if(self.waiting) self.waiting = 0;
+      else
+      {
+        state_from = cur_state;
+        state_to = STATE_NAV;
+        cur_state = STATE_TRANSITION;
+        state_t = 0;
+      }
     }
   }
 
@@ -901,9 +921,10 @@ var cutsceneview = function()
     }
 
     for(var i = 0; i < self.cutscene_entitys.length; i++)
-      self.cutscene_entitys[i].animcycle_inst.tick();
+      if(self.cutscene_entitys[i].entity_type == ENTITY_ANIM)
+        self.cutscene_entitys[i].animcycle_inst.tick();
 
-    self.t++;
+    if(!self.waiting) self.t++;
 
     if(self.end)
     {
@@ -916,6 +937,8 @@ var cutsceneview = function()
 
   self.draw = function(yoff)
   {
+    ctx.fillStyle = "#4c4c4c";
+    ctx.font = "20px Helvetica";
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     //bubble sort on z
@@ -939,7 +962,17 @@ var cutsceneview = function()
     for(var i = 0; i < self.cutscene_entitys.length; i++)
     {
       var entity = self.cutscene_entitys[i];
-      ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+      if(entity.entity_type == ENTITY_ANIM)
+        ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+      else
+      {
+        var oyoff = 0;
+        for(var j = 0; j < entity.text.length; j++)
+        {
+          ctx.fillText(entity.text[j],entity.x,entity.y+yoff+oyoff+entity.h);
+          oyoff += entity.h;
+        }
+      }
     }
   }
 

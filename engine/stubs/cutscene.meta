@@ -9,30 +9,38 @@ tmp_cutscene.commands = [];
 /*
 Possible Commands:
 COMMAND_CREATE
+COMMAND_DESTROY
 COMMAND_ANIMATE
 COMMAND_TWEEN
 COMMAND_WAIT
 COMMAND_END
+
+Possible Entity Types:
+ENTITY_ANIM
+ENTITY_TEXT
 */
 
 /*
 //skeleton command addition
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_NULL;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = ENTITY_NULL;
 tmp_cutscene_command.t = 0;
 tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.x = 10;
 tmp_cutscene_command.y = 10;
 tmp_cutscene_command.z = 0;
 tmp_cutscene_command.w = 10;
 tmp_cutscene_command.h = 10;
+tmp_cutscene_command.animcycle_id = "null";
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene_command.raw_text = "null";
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
-//Leave this at the end- remember to set t!
+//Leave this at the end- remember to set tmp_cutscene_command.t!
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_END;
 tmp_cutscene_command.t = 0;

@@ -737,6 +737,7 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_CREATE;
 tmp_cutscene_command.t = 0;
 tmp_cutscene_command.cutscene_entity_id = "girl";
+tmp_cutscene_command.cutscene_entity_type = ENTITY_ANIM;
 tmp_cutscene_command.animcycle_id = "girl_walk";
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.x = canv.width;
@@ -750,6 +751,7 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_CREATE;
 tmp_cutscene_command.t = 0;
 tmp_cutscene_command.cutscene_entity_id = "guy";
+tmp_cutscene_command.cutscene_entity_type = ENTITY_ANIM;
 tmp_cutscene_command.animcycle_id = "guy_walk";
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.x = -100;
@@ -760,11 +762,36 @@ tmp_cutscene_command.h = 200;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_CREATE;
+tmp_cutscene_command.t = 0;
+tmp_cutscene_command.cutscene_entity_id = "mytext";
+tmp_cutscene_command.cutscene_entity_type = ENTITY_TEXT;
+tmp_cutscene_command.x = 200;
+tmp_cutscene_command.y = 30;
+tmp_cutscene_command.z = 1;
+tmp_cutscene_command.w = 300;
+tmp_cutscene_command.h = 20;
+tmp_cutscene_command.raw_text = "Hey there banana rama this is a test wheeeeeeeee";
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_TWEEN;
 tmp_cutscene_command.t = 10;
 tmp_cutscene_command.end_t = 100;
 tmp_cutscene_command.cutscene_entity_id = "girl";
 tmp_cutscene_command.x = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_WAIT;
+tmp_cutscene_command.t = 20;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_DESTROY;
+tmp_cutscene_command.cutscene_entity_id = "mytext";
+tmp_cutscene_command.t = 21;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
@@ -846,7 +873,7 @@ tmp_speak.locks = [
   "l1.map.capitol.exhibit.tunic.slip",
 ];
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.archives.main.archivist.dryclean.thanks";
@@ -861,7 +888,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -884,7 +911,7 @@ tmp_speak.options_w = canv.width/2;
 tmp_speak.options_h = 30; //h of a single line
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.archives.main.archivist.hello.thanks";
@@ -899,7 +926,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -926,7 +953,7 @@ tmp_speak.notlocks = [
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "dryclean";
 tmp_option.fqid = "l1.map.archives.main.archivist.hub.dryclean";
@@ -942,7 +969,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -959,7 +986,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -977,7 +1004,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -994,7 +1021,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1019,7 +1046,7 @@ tmp_speak.locks = [
   "l1.map.drycleaner.main.log.bingo",
 ];
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.archives.main.archivist.paper.thanks";
@@ -1034,7 +1061,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1199,7 +1226,7 @@ tmp_person.x = 150;
 tmp_person.y = canv.height/2-160;
 tmp_person.w = 120;
 tmp_person.h = 270;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "uncle";
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
 tmp_speak = new speak();
 tmp_speak.id = "dispute";
@@ -1220,7 +1247,7 @@ tmp_speak.options_h = 30; //h of a single line
 tmp_speak.locks = [
 ];
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.capitol.exhibit.uncle.dispute.thanks";
@@ -1235,7 +1262,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1258,7 +1285,7 @@ tmp_speak.options_w = canv.width/2;
 tmp_speak.options_h = 30; //h of a single line
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.capitol.exhibit.uncle.help.thanks";
@@ -1273,7 +1300,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1299,7 +1326,7 @@ tmp_speak.locks = [
 tmp_speak.notlocks = [
 ];
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "dispute";
 tmp_option.fqid = "l1.map.capitol.exhibit.uncle.hub.dispute";
@@ -1315,7 +1342,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1332,7 +1359,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1349,7 +1376,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1377,7 +1404,7 @@ tmp_speak.notlocks = [
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "l1.map.capitol.exhibit.uncle.philtest.goodbye";
@@ -1396,7 +1423,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1579,7 +1606,7 @@ tmp_speak.options_w = canv.width/2;
 tmp_speak.options_h = 30; //h of a single line
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hello.thanks";
@@ -1594,7 +1621,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1621,7 +1648,7 @@ tmp_speak.notlocks = [
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "log";
 tmp_option.fqid = "l1.map.drycleaner.main.cleaner.hub.log";
@@ -1640,7 +1667,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1657,7 +1684,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1682,7 +1709,7 @@ tmp_speak.locks = [
   "l1.map.capitol.exhibit.tunic.slip",
 ];
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "thanks";
 tmp_option.fqid = "l1.map.drycleaner.main.cleaner.log.thanks";
@@ -1697,7 +1724,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
