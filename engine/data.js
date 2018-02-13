@@ -741,23 +741,9 @@ tmp_cutscene_command.cutscene_entity_type = ENTITY_ANIM;
 tmp_cutscene_command.animcycle_id = "girl_walk";
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.x = canv.width;
-tmp_cutscene_command.y = 20;
+tmp_cutscene_command.y = 300;
 tmp_cutscene_command.z = 0;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 200;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = COMMAND_CREATE;
-tmp_cutscene_command.t = 0;
-tmp_cutscene_command.cutscene_entity_id = "guy";
-tmp_cutscene_command.cutscene_entity_type = ENTITY_ANIM;
-tmp_cutscene_command.animcycle_id = "guy_walk";
-tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.x = -100;
-tmp_cutscene_command.y = 30;
-tmp_cutscene_command.z = 1;
-tmp_cutscene_command.w = 100;
+tmp_cutscene_command.w = -100;
 tmp_cutscene_command.h = 200;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -767,11 +753,11 @@ tmp_cutscene_command.t = 0;
 tmp_cutscene_command.cutscene_entity_id = "mytext";
 tmp_cutscene_command.cutscene_entity_type = ENTITY_TEXT;
 tmp_cutscene_command.x = 200;
-tmp_cutscene_command.y = 30;
+tmp_cutscene_command.y = 400;
 tmp_cutscene_command.z = 1;
 tmp_cutscene_command.w = 300;
 tmp_cutscene_command.h = 20;
-tmp_cutscene_command.raw_text = "Hey there banana rama this is a test wheeeeeeeee";
+tmp_cutscene_command.raw_text = "Hey there this is some test text! This is what text in a cutscene might look like! Hit next to continue!";
 tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -792,14 +778,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = COMMAND_DESTROY;
 tmp_cutscene_command.cutscene_entity_id = "mytext";
 tmp_cutscene_command.t = 21;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = COMMAND_TWEEN;
-tmp_cutscene_command.t = 10;
-tmp_cutscene_command.end_t = 100;
-tmp_cutscene_command.cutscene_entity_id = "guy";
-tmp_cutscene_command.x = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();

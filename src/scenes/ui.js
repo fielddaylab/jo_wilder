@@ -963,7 +963,14 @@ var cutsceneview = function()
     {
       var entity = self.cutscene_entitys[i];
       if(entity.entity_type == ENTITY_ANIM)
-        ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+      {
+        //ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+        ctx.save();
+        ctx.translate(entity.x,entity.y);
+        if(entity.w < 0) ctx.scale(-1,1);
+        ctx.drawImage(entity.animcycle_inst.img,0,0,entity.w,entity.h);
+        ctx.restore();
+      }
       else
       {
         var oyoff = 0;
