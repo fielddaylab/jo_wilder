@@ -1,0 +1,14 @@
+tmp_room.primary = false;
+tmp_room.animcycle_id = "room_humanecology_hallway";
+tmp_room.nav_x = 100;
+tmp_room.nav_y = canv.height/2;
+tmp_room.nav_w = canv.width-200;
+tmp_room.nav_h = canv.height/2-100;
+tmp_room.start_x = canv.width/2;
+tmp_room.start_y = canv.height/2;
+tmp_room.noteworthy = false;
+tmp_room.locks = [
+];
+tmp_room.notlocks = [
+];
+
