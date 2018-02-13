@@ -1,8 +1,8 @@
-tmp_porthole.x = canv.width/2-50;
-tmp_porthole.y = canv.height/2-50;
 tmp_porthole.w = 100;
 tmp_porthole.h = 100;
-tmp_porthole.animcycle_id = "null";
+tmp_porthole.x = canv.width/2-tmp_porthole.w/2;
+tmp_porthole.y = canv.height-tmp_porthole.h;
+tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "map";
 tmp_porthole.target_start_x = 0;
 tmp_porthole.target_start_y = 0;
