@@ -12,22 +12,6 @@ var avatar = function()
   self.state = AVATAR_IDLE;
   self.anim = new animation();
   self.anim.frame_delay = 10;
-  self.anim.src = [
-    GenImg("assets/avatar/anim_idle_0.png"),
-    GenImg("assets/avatar/anim_idle_1.png"),
-    GenImg("assets/avatar/anim_idle_2.png"),
-    GenImg("assets/avatar/anim_walk_0.png"),
-    GenImg("assets/avatar/anim_walk_1.png"),
-    GenImg("assets/avatar/anim_walk_2.png"),
-    GenImg("assets/avatar/anim_walk_3.png"),
-    GenImg("assets/avatar/anim_act_0.png"),
-    GenImg("assets/avatar/anim_act_1.png"),
-    GenImg("assets/avatar/anim_act_2.png"),
-  ];
-  self.anim.animations[ANIM_NULL] = []; for(var i = 0; i <= 0; i++) self.anim.animations[ANIM_NULL].push(i);
-  self.anim.animations[ANIM_IDLE] = []; for(var i = 0; i <= 2; i++) self.anim.animations[ANIM_IDLE].push(i);
-  self.anim.animations[ANIM_WALK] = []; for(var i = 3; i <= 6; i++) self.anim.animations[ANIM_WALK].push(i);
-  self.anim.animations[ANIM_ACT]  = []; for(var i = 7; i <= 9; i++) self.anim.animations[ANIM_ACT].push(i);
   self.anim.transition = function()
   {
     switch(self.anim.cur_anim)
@@ -83,6 +67,31 @@ var avatar = function()
         break;
       }
     }
+  }
+
+  self.consume_level = function(level)
+  {
+    var idle_animcycle = null_animcycle;
+    var walk_animcycle = null_animcycle;
+    var act_animcycle  = null_animcycle;
+    for(var i = 0; i < level.animcycles.length; i++)
+    {
+      if(level.animcycles[i].id == level.avatar_idle_animcycle_id) idle_animcycle = level.animcycles[i];
+      if(level.animcycles[i].id == level.avatar_walk_animcycle_id) walk_animcycle = level.animcycles[i];
+      if(level.animcycles[i].id == level.avatar_act_animcycle_id)  act_animcycle  = level.animcycles[i];
+    }
+    self.anim.src = [];
+    for(var i = 0; i < idle_animcycle.frames.length; i++) self.anim.src.push(idle_animcycle.frames[i]);
+    for(var i = 0; i < walk_animcycle.frames.length; i++) self.anim.src.push(walk_animcycle.frames[i]);
+    for(var i = 0; i < act_animcycle.frames.length; i++)  self.anim.src.push(act_animcycle.frames[i]);
+    self.anim.animations[ANIM_NULL] = []; self.anim.animations[ANIM_NULL].push(0);
+    var j = 0;
+    self.anim.animations[ANIM_IDLE] = []; for(var i = j; i < j+idle_animcycle.frames.length; i++) self.anim.animations[ANIM_IDLE].push(i);
+    j += idle_animcycle.frames.length;
+    self.anim.animations[ANIM_WALK] = []; for(var i = j; i < j+walk_animcycle.frames.length; i++) self.anim.animations[ANIM_WALK].push(i);
+    j += walk_animcycle.frames.length;
+    self.anim.animations[ANIM_ACT]  = []; for(var i = j; i < j+act_animcycle.frames.length; i++)  self.anim.animations[ANIM_ACT].push(i);
+    j += act_animcycle.frames.length;
   }
 
   self.consume_room = function(room)
@@ -292,11 +301,18 @@ var toolbar = function()
   self.w = canv.width;
   self.h = 100;
 
-  self.toolbar_img = GenImg("assets/toolbar.png");
-  self.map_icon_img = GenImg("assets/map_icon.png");
-  self.notebook_icon_img = GenImg("assets/notebook_icon.png");
+  self.toolbar_animcycle_inst;
+  self.icon_map__instanimcycle_inst;
+  self.icon_notebook_animcycle_inst;
   self.map      = {x:20,             y:self.y+15,w:self.h-40,h:self.h-40};
   self.notebook = {x:10+self.h-20+20,y:self.y+12,w:self.h-55,h:self.h-35};
+
+  self.consume_level = function(level)
+  {
+    self.toolbar_animcycle_inst       = gen_animcycle_inst(level.toolbar_animcycle_id,level.animcycles);
+    self.icon_map_animcycle_inst      = gen_animcycle_inst(level.icon_map_animcycle_id,level.animcycles);
+    self.icon_notebook_animcycle_inst = gen_animcycle_inst(level.icon_notebook_animcycle_id,level.animcycles);
+  }
 
   self.click = function(evt)
   {
@@ -321,14 +337,16 @@ var toolbar = function()
 
   self.tick = function()
   {
-
+    self.toolbar_animcycle_inst.tick();
+    self.icon_map_animcycle_inst.tick();
+    self.icon_notebook_animcycle_inst.tick();
   }
 
   self.draw = function(yoff)
   {
-    ctx.drawImage(self.toolbar_img, self.x,         self.y         +yoff, self.w,         self.h);
-    ctx.drawImage(self.map_icon_img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
-    ctx.drawImage(self.notebook_icon_img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
+    ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
+    ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
 
     if(DEBUG)
     {
@@ -424,7 +442,7 @@ var notebook = function()
   self.h = canv.height;
 
   self.entrys;
-  self.img = GenImg("assets/notebook.png");
+  self.notebook_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_entrys = [];
 
@@ -432,6 +450,7 @@ var notebook = function()
   {
     self.entrys = level.entrys;
     self.unlock_content();
+    self.notebook_animcycle_inst = gen_animcycle_inst(level.notebook_animcycle_id,level.animcycles);
   }
 
   self.unlock_content = function()
@@ -462,11 +481,12 @@ var notebook = function()
   {
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
       self.cache_unlocked_entrys[i].animcycle_inst.tick();
+    self.notebook_animcycle_inst.tick();
   }
 
   self.draw = function(yoff)
   {
-    ctx.drawImage(self.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     var entry;

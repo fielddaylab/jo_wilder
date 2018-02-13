@@ -1,2 +1,17 @@
-tmp_level.primary = false;
+tmp_level.primary = true;
+tmp_level.toolbar_animcycle_id = "toolbar";
+tmp_level.icon_map_animcycle_id = "icon_map";
+tmp_level.icon_notebook_animcycle_id = "icon_notebook";
+tmp_level.notebook_animcycle_id = "notebook";
+tmp_level.avatar_walk_animcycle_id = "girl_walk";
+tmp_level.avatar_idle_animcycle_id = "girl_idle";
+tmp_level.avatar_act_animcycle_id = "girl_act";
+tmp_level.person_hover_animcycle_id = "null";
+tmp_level.object_hover_animcycle_id = "null";
+tmp_level.porthole_hover_animcycle_id = "null";
+tmp_level.noteworthy = false;
+tmp_level.locks = [
+];
+tmp_level.notlocks = [
+];
 

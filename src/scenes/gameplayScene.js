@@ -20,10 +20,12 @@ var GamePlayScene = function(game, stage)
 
     clicker = new Clicker({source:canvas});
     my_avatar = new avatar();
+    my_avatar.consume_level(cur_level);
     my_avatar.consume_room(cur_room);
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
     my_toolbar = new toolbar();
+    my_toolbar.consume_level(cur_level);
     my_overworld = new overworld();
     my_overworld.consume_map(cur_map);
     my_notebook = new notebook();

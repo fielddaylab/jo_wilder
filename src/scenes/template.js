@@ -64,6 +64,12 @@ var level = function()
   self.animcycles = [];
   self.entrys = [];
   self.cutscenes = [];
+  self.avatar_walk_animcycle_id = "null";
+  self.avatar_idle_animcycle_id = "null";
+  self.avatar_act_animcycle_id = "null";
+  self.person_hover_animcycle_id = "null";
+  self.object_hover_animcycle_id = "null";
+  self.porthole_hover_animcycle_id = "null";
   self.map;
   self.noteworthy = false;
   self.key = false;

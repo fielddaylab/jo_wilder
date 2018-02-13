@@ -24,7 +24,22 @@ tmp_level = new level();
 tmp_level.id = "l1";
 tmp_level.fqid = "l1";
 {
-tmp_level.primary = false;
+tmp_level.primary = true;
+tmp_level.toolbar_animcycle_id = "toolbar";
+tmp_level.icon_map_animcycle_id = "icon_map";
+tmp_level.icon_notebook_animcycle_id = "icon_notebook";
+tmp_level.notebook_animcycle_id = "notebook";
+tmp_level.avatar_walk_animcycle_id = "girl_walk";
+tmp_level.avatar_idle_animcycle_id = "girl_idle";
+tmp_level.avatar_act_animcycle_id = "girl_act";
+tmp_level.person_hover_animcycle_id = "null";
+tmp_level.object_hover_animcycle_id = "null";
+tmp_level.porthole_hover_animcycle_id = "null";
+tmp_level.noteworthy = false;
+tmp_level.locks = [
+];
+tmp_level.notlocks = [
+];
 
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archives";
@@ -222,6 +237,36 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/exhibit/0.png
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "girl_act";
+tmp_animcycle.fqid = "l1.girl_act";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_act/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_act/1.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_act/2.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "girl_idle";
+tmp_animcycle.fqid = "l1.girl_idle";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_idle/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_idle/1.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/girl_idle/2.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "girl_walk";
 tmp_animcycle.fqid = "l1.girl_walk";
 {
@@ -251,6 +296,32 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/0.pn
 tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/1.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/2.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/guy_walk/3.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "icon_map";
+tmp_animcycle.fqid = "l1.icon_map";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/icon_map/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "icon_notebook";
+tmp_animcycle.fqid = "l1.icon_notebook";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/icon_notebook/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -384,6 +455,19 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/my_cutscene/0
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "notebook";
+tmp_animcycle.fqid = "l1.notebook";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/notebook/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "null";
 tmp_animcycle.fqid = "l1.null";
 {
@@ -485,6 +569,19 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/test_entry/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "toolbar";
+tmp_animcycle.fqid = "l1.toolbar";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/l1/animcycles/toolbar/toolbar.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
