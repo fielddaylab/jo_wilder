@@ -1,4 +1,4 @@
-tmp_map.animcycle_id = "null";
+tmp_map.animcycle_id = "map";
 tmp_map.noteworthy = false;
 tmp_map.locks = [
 ];
