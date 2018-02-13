@@ -662,6 +662,8 @@ function drawImageHeightCentered(image,x,y,h,ctx)
 }
 function drawImageBox(image,box,ctx)
 {
+  ctx.strokeStyle = black;
+  ctx.strokeRect(box.x,box.y,box.w,box.h);
   ctx.drawImage(image,box.x,box.y,box.w,box.h);
 }
 function strokeBox(box,ctx)

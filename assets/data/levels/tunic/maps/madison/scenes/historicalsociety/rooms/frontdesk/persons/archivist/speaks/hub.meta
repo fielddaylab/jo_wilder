@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;

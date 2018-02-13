@@ -1,4 +1,4 @@
-tmp_level.primary = false;
+tmp_level.primary = true;
 tmp_level.toolbar_animcycle_id = "toolbar";
 tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";
