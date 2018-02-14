@@ -1,9 +1,0 @@
-tmp_scene.primary = false;
-tmp_scene.animcycle_id = "null";
-tmp_scene.x = 198;
-tmp_scene.y = 420;
-tmp_scene.w = 102;
-tmp_scene.h = 83;
-tmp_scene.locks = [
-  "l1.map.capitol.exhibit.tunic.slip",
-];

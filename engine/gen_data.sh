@@ -332,6 +332,7 @@ if [ $NOGEN == "0" ]; then
       #SPECIAL CASE FOR ANIMCYCLE
       echo "tmp_animcycle.frames = [];" >> $OUT
       for frame in $animcycle_dir/*; do
+        if [ ! -f $frame ]; then cp $animcycle_dir/../null/0.png $animcycle_dir/0.png; $frame=$animcycle_dir/0.png; fi
         echo "tmp_animcycle.frames.push(GenImg(\"`img $frame`\"));" >> $OUT
       done
 

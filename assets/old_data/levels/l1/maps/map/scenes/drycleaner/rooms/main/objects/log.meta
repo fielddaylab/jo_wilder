@@ -1,8 +1,0 @@
-tmp_object.x = canv.width-200;
-tmp_object.y = 250;
-tmp_object.w = 80;
-tmp_object.h = 80;
-tmp_object.animcycle_id = "log";
-tmp_object.locks = [
-  "l1.map.drycleaner.main.cleaner.log",
-];

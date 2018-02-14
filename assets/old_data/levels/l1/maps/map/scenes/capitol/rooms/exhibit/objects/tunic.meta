@@ -1,6 +1,0 @@
-tmp_object.x = canv.width-220;
-tmp_object.y = 180;
-tmp_object.w = 120;
-tmp_object.h = 120;
-tmp_object.animcycle_id = "tunic";
-

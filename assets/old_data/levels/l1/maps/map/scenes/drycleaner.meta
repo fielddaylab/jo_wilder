@@ -1,9 +1,0 @@
-tmp_scene.primary = false;
-tmp_scene.animcycle_id = "null";
-tmp_scene.x = canv.width-422;
-tmp_scene.y = canv.height-222;
-tmp_scene.w = 80;
-tmp_scene.h = 80;
-tmp_scene.locks = [
-  "l1.map.archives.main.archivist.dryclean",
-];

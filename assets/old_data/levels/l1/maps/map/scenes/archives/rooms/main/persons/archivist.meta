@@ -1,6 +1,0 @@
-tmp_person.x = 150;
-tmp_person.y = canv.height/2-170;
-tmp_person.w = 100;
-tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
-

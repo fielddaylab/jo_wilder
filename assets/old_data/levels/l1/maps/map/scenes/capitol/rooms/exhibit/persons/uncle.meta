@@ -1,5 +1,0 @@
-tmp_person.x = 150;
-tmp_person.y = canv.height/2-160;
-tmp_person.w = 120;
-tmp_person.h = 270;
-tmp_person.animcycle_id = "uncle";
