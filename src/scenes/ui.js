@@ -573,7 +573,7 @@ var objectview = function()
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
         zone.key = true;
-        self.cur_view = find(zone.target_view);
+        self.cur_view = find(self.object.fqid+"."+zone.target_view);
         self.cur_view.key = true;
         self.unlock_content();
         return;

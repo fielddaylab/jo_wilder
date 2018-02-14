@@ -1018,8 +1018,8 @@ tmp_option.w = canv.width/2;
 tmp_option.h = 30; //h of single line
 tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
-tmp_option.target_speak = "null";
+tmp_option.raw_qtext = "Hey, what do you know about this slip?";
+tmp_option.target_speak = "slip";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
@@ -1041,7 +1041,7 @@ tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
 tmp_speak.animcycle_id = "null";
-tmp_speak.raw_atext = "null";
+tmp_speak.raw_atext = "Wow, that looks old. Here, check the logbook over on the desk.";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
 tmp_speak.options_y = 250;
@@ -1061,8 +1061,8 @@ tmp_option.w = canv.width/2;
 tmp_option.h = 30; //h of single line
 tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
-tmp_option.target_speak = "null";
+tmp_option.raw_qtext = "Ok, thanks!";
+tmp_option.target_speak = "hub";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
@@ -1316,6 +1316,55 @@ tmp_view.animcycle_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+tmp_zone = new zone();
+tmp_zone.id = "slip";
+tmp_zone.fqid = "tunic.madison.historicalsociety.closet.tunic.hub.slip";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.animcycle_id = "null";
+tmp_zone.target_view = "slip";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
+tmp_view.id = "slip";
+tmp_view.fqid = "tunic.madison.historicalsociety.closet.tunic.slip";
+{
+tmp_view.primary = false;
+tmp_view.animcycle_id = "null";
+tmp_view.noteworthy = false;
+
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+tmp_zone = new zone();
+tmp_zone.id = "return";
+tmp_zone.fqid = "tunic.madison.historicalsociety.closet.tunic.slip.return";
+{
+tmp_zone.x = canv.width/2-100;
+tmp_zone.y = canv.width/2-100;
+tmp_zone.w = 100;
+tmp_zone.h = 100;
+tmp_zone.animcycle_id = "null";
+tmp_zone.target_view = "hub";
+tmp_zone.noteworthy = false;
+tmp_zone.locks = [
+];
+tmp_zone.notlocks = [
+];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
@@ -1513,8 +1562,8 @@ tmp_option.w = canv.width/2;
 tmp_option.h = 30; //h of single line
 tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
-tmp_option.target_speak = "null";
+tmp_option.raw_qtext = "Do you know what this piece of paper is?";
+tmp_option.target_speak = "slip";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
@@ -1536,7 +1585,7 @@ tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
 tmp_speak.animcycle_id = "null";
-tmp_speak.raw_atext = "null";
+tmp_speak.raw_atext = "I have no idea what that is- you might want to ask a specialist over in the Human Ecology building.";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
 tmp_speak.options_y = 250;
@@ -1556,8 +1605,8 @@ tmp_option.w = canv.width/2;
 tmp_option.h = 30; //h of single line
 tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
-tmp_option.target_speak = "null";
+tmp_option.raw_qtext = "Thanks for your help!";
+tmp_option.target_speak = "hub";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
@@ -1835,6 +1884,70 @@ tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
 tmp_option.raw_qtext = "Nevermind!";
 tmp_option.target_speak = "";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
+tmp_option.id = "inquire";
+tmp_option.fqid = "tunic.madison.humanecology.frontdesk.worker.hub.inquire";
+{
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
+tmp_option.index = 0;
+tmp_option.raw_qtext = "I was told you might know something about this slip...";
+tmp_option.target_speak = "slip";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "slip";
+tmp_speak.fqid = "tunic.madison.humanecology.frontdesk.worker.slip";
+{
+tmp_speak.primary = false;
+tmp_speak.x = 500;
+tmp_speak.y = 150;
+tmp_speak.w = canv.width/2;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.animcycle_id = "null";
+tmp_speak.raw_atext = "Hey! That looks like a drycleaner's tag- and an old one at that! They haven't used these printing methods since the early 40s? Not sure what more I can tell you...";
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_x = 500;
+tmp_speak.options_y = 250;
+tmp_speak.options_w = canv.width/2;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.noteworthy = false;
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
+tmp_option.id = "return";
+tmp_option.fqid = "tunic.madison.humanecology.frontdesk.worker.slip.return";
+{
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
+tmp_option.index = 0;
+tmp_option.raw_qtext = "That's a start!";
+tmp_option.target_speak = "hub";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
@@ -2236,6 +2349,70 @@ tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
 tmp_option.raw_qtext = "Nevermind!";
 tmp_option.target_speak = "";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
+tmp_option.id = "inquire";
+tmp_option.fqid = "tunic.madison.library.frontdesk.worker.hub.inquire";
+{
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
+tmp_option.index = 0;
+tmp_option.raw_qtext = "What can you tell me about [historical lady's name]?";
+tmp_option.target_speak = "records";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "records";
+tmp_speak.fqid = "tunic.madison.library.frontdesk.worker.records";
+{
+tmp_speak.primary = false;
+tmp_speak.x = 500;
+tmp_speak.y = 150;
+tmp_speak.w = canv.width/2;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.animcycle_id = "null";
+tmp_speak.raw_atext = "I don't know off the top of my head, but you're more than welcome to the microfiche in back; we've got tons of old papers!";
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_x = 500;
+tmp_speak.options_y = 250;
+tmp_speak.options_w = canv.width/2;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.noteworthy = false;
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
+tmp_option.id = "return";
+tmp_option.fqid = "tunic.madison.library.frontdesk.worker.records.return";
+{
+tmp_option.x = 100;
+tmp_option.y = 100;
+tmp_option.w = canv.width/2;
+tmp_option.h = 30; //h of single line
+tmp_option.static = false; //static = use xyw
+tmp_option.index = 0;
+tmp_option.raw_qtext = "Alright, thanks!";
+tmp_option.target_speak = "hub";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];

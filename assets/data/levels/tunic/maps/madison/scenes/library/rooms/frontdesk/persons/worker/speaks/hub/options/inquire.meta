@@ -4,8 +4,8 @@ tmp_option.w = canv.width/2;
 tmp_option.h = 30; //h of single line
 tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
-tmp_option.raw_qtext = "Thanks for your help!";
-tmp_option.target_speak = "hub";
+tmp_option.raw_qtext = "What can you tell me about [historical lady's name]?";
+tmp_option.target_speak = "records";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];

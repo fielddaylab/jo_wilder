@@ -4,8 +4,8 @@ tmp_option.w = canv.width/2;
 tmp_option.h = 30; //h of single line
 tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
-tmp_option.target_speak = "null";
+tmp_option.raw_qtext = "Do you know what this piece of paper is?";
+tmp_option.target_speak = "slip";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
 ];
