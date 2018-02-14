@@ -110,7 +110,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/cleaner_face/hub.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/cleaner_face/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -136,7 +136,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps/uncle.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -149,7 +149,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_face/hub.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_face/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -162,7 +162,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_nervous/help.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_nervous/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -201,7 +201,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/log/log.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/log/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -214,7 +214,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/log_front/bingo.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/log_front/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -280,7 +280,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_drycleaner_frontdesk/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_drycleaner_frontdesk/main.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -294,7 +293,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_closet/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_closet/exhibit.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -321,7 +319,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_frontdesk/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_frontdesk/main.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -452,7 +449,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/scene_drycleaner/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/scene_drycleaner/drycleaner.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -466,7 +462,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/scene_historicalsociety/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/scene_historicalsociety/archives.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -506,7 +501,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/scene_library/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/scene_library/capitol.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -532,7 +526,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic/tunic.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -545,7 +539,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_back/pocket.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_back/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -558,7 +552,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_front/tunic.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_front/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -571,7 +565,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_slip/slip.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_slip/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 for(var i = 0; i < tmp_level.animcycles.length; i++)
@@ -911,14 +905,14 @@ tmp_room.notlocks = [
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
-tmp_person.id = "grandpa";
-tmp_person.fqid = "tunic.madison.historicalsociety.closet.grandpa";
+tmp_person.id = "gramps";
+tmp_person.fqid = "tunic.madison.historicalsociety.closet.gramps";
 {
 tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "gramps";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -928,7 +922,7 @@ tmp_person.notlocks = [
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
 tmp_speak = new speak();
 tmp_speak.id = "hub";
-tmp_speak.fqid = "tunic.madison.historicalsociety.closet.grandpa.hub";
+tmp_speak.fqid = "tunic.madison.historicalsociety.closet.gramps.hub";
 {
 tmp_speak.primary = true;
 tmp_speak.x = 500;
@@ -948,7 +942,7 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "goodbye";
-tmp_option.fqid = "tunic.madison.historicalsociety.closet.grandpa.hub.goodbye";
+tmp_option.fqid = "tunic.madison.historicalsociety.closet.gramps.hub.goodbye";
 {
 tmp_option.x = 100;
 tmp_option.y = 100;
