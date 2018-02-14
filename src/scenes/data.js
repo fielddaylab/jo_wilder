@@ -516,7 +516,7 @@ tmp_scene.id = "drycleaner";
 tmp_scene.fqid = "tunic.madison.drycleaner";
 {
 tmp_scene.primary = false;
-tmp_scene.x = 100;
+tmp_scene.x = 110;
 tmp_scene.y = 100;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
@@ -730,8 +730,8 @@ tmp_scene.id = "historicalsociety";
 tmp_scene.fqid = "tunic.madison.historicalsociety";
 {
 tmp_scene.primary = true;
-tmp_scene.x = 100;
-tmp_scene.y = 100;
+tmp_scene.x = 350;
+tmp_scene.y = 120;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.animcycle_id = "scene_historicalsociety";
@@ -1160,8 +1160,8 @@ tmp_scene.id = "humanecology";
 tmp_scene.fqid = "tunic.madison.humanecology";
 {
 tmp_scene.primary = false;
-tmp_scene.x = 100;
-tmp_scene.y = 100;
+tmp_scene.x = 200;
+tmp_scene.y = 300;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.animcycle_id = "scene_humanecology";
@@ -1408,8 +1408,8 @@ tmp_scene.id = "kohlcenter";
 tmp_scene.fqid = "tunic.madison.kohlcenter";
 {
 tmp_scene.primary = false;
-tmp_scene.x = 100;
-tmp_scene.y = 100;
+tmp_scene.x = 400;
+tmp_scene.y = 400;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.animcycle_id = "scene_kohlcenter";
@@ -1561,8 +1561,8 @@ tmp_scene.id = "library";
 tmp_scene.fqid = "tunic.madison.library";
 {
 tmp_scene.primary = false;
-tmp_scene.x = 100;
-tmp_scene.y = 100;
+tmp_scene.x = 500;
+tmp_scene.y = 220;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
 tmp_scene.animcycle_id = "scene_library";
