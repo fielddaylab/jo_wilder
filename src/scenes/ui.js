@@ -711,7 +711,7 @@ var personview = function()
     {
       option = clicked_option;
       option.key = true;
-      speak = find(option.target_speak);
+      speak = find(self.person.fqid+"."+option.target_speak);
       if(!speak)
       {
         //exits
