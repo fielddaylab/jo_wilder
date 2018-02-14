@@ -1837,5 +1837,26 @@ tmp_map.scenes.push(tmp_scene);
 tmp_level.map = tmp_map;
 }
 levels.push(tmp_level);
+
+  //precompile in any .find's
+  for(var i = 0; i < levels.length; i++)
+  {
+    tmp_level = levels[i];
+    tmp_map = tmp_level.map;
+    for(var j = 0; j < tmp_map.scenes.length; j++)
+    {
+      tmp_scene = tmp_map.scenes[j];
+      for(var k = 0; k < tmp_scene.rooms.length; k++)
+      {
+        tmp_room = tmp_scene.rooms[k];
+        for(var l = 0; l < tmp_room.portholes.length; l++)
+        {
+          tmp_porthole = tmp_room.portholes[l];
+          var id = tmp_scene.fqid+"."+tmp_porthole.target_room;
+          tmp_porthole.target_room_found = find(id);
+        }
+      }
+    }
+  }
 }
 

@@ -190,6 +190,7 @@ var porthole = function()
   self.animcycle_id;
   self.animcycle_inst;
   self.target_room = "null";
+  self.target_room_found; //auto precompiled in
   self.target_start_x = 0;
   self.target_start_y = 0;
   self.noteworthy = false;

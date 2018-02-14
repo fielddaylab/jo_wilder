@@ -29,7 +29,17 @@ var avatar = function()
         {
           case ACT_PERSON:   state_to = STATE_PERSON;   my_personview.consume_person(cur_act); break;
           case ACT_OBJECT:   state_to = STATE_OBJECT;   my_objectview.consume_object(cur_act); break;
-          case ACT_PORTHOLE: state_to = STATE_NAV;      break;
+          case ACT_PORTHOLE:
+          {
+            if(cur_act.target_room_found) state_to = STATE_NAV;
+            else //go to map
+            {
+              my_navigable.selected_act = 0;
+              state_to = STATE_MAP;
+              my_mapview.unlock_content();
+            }
+          }
+          break;
           case ACT_WILDCARD: state_to = STATE_WILDCARD; break;
         }
         state_t = 0;
@@ -430,10 +440,12 @@ var mapview = function()
 
     if(DEBUG)
     {
-      ctx.strokeStyle = white;
+      ctx.strokeStyle = red;
       ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
       for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.strokeRect(self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+      ctx.strokeStyle = black;
+      for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.fillText(self.cache_unlocked_scenes[i].fqid, self.cache_unlocked_scenes[i].x+10, self.cache_unlocked_scenes[i].y+yoff+20);
     }
   }
 }
