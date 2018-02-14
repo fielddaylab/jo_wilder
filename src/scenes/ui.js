@@ -285,10 +285,16 @@ var navigable = function()
     {
       ctx.strokeStyle = white;
       ctx.strokeRect(self.room.nav_x,self.room.nav_y,self.room.nav_w,self.room.nav_h);
+      ctx.strokeStyle = red;
       for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
+      ctx.strokeStyle = blue;
       for(var i = 0; i < self.cache_unlocked_objects.length;   i++) strokeBox(self.cache_unlocked_objects[i],ctx);
+      ctx.strokeStyle = green;
       for(var i = 0; i < self.cache_unlocked_portholes.length; i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
+      ctx.strokeStyle = magenta;
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
+      ctx.fillStyle = black;
+      ctx.fillText(self.room.fqid,20,20);
     }
   }
 };
@@ -323,7 +329,7 @@ var toolbar = function()
       state_to = STATE_MAP;
       cur_state = STATE_TRANSITION;
       state_t = 0;
-      my_overworld.unlock_content();
+      my_mapview.unlock_content();
     }
     if(ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
@@ -358,7 +364,7 @@ var toolbar = function()
 
 }
 
-var overworld = function()
+var mapview = function()
 {
   var self = this;
 

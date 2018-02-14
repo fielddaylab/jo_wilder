@@ -24,7 +24,7 @@ tmp_level = new level();
 tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
-tmp_level.primary = false;
+tmp_level.primary = true;
 tmp_level.toolbar_animcycle_id = "toolbar";
 tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";
@@ -532,7 +532,7 @@ tmp_room = new room();
 tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.drycleaner.entry";
 {
-tmp_room.primary = false;
+tmp_room.primary = true;
 tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
@@ -630,7 +630,7 @@ tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.madison.drycleaner.frontdesk.worker.hub";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
@@ -691,7 +691,7 @@ tmp_view = new view();
 tmp_view.id = "hub";
 tmp_view.fqid = "tunic.madison.drycleaner.frontdesk.logbook.hub";
 {
-tmp_view.primary = false;
+tmp_view.primary = true;
 tmp_view.animcycle_id = "null";
 tmp_view.noteworthy = false;
 
@@ -729,7 +729,7 @@ tmp_scene = new scene();
 tmp_scene.id = "historicalsociety";
 tmp_scene.fqid = "tunic.madison.historicalsociety";
 {
-tmp_scene.primary = false;
+tmp_scene.primary = true;
 tmp_scene.x = 100;
 tmp_scene.y = 100;
 tmp_scene.w = 100;
@@ -781,7 +781,7 @@ tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.madison.historicalsociety.closet.grandpa.hub";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
@@ -842,7 +842,7 @@ tmp_view = new view();
 tmp_view.id = "hub";
 tmp_view.fqid = "tunic.madison.historicalsociety.closet.tunic.hub";
 {
-tmp_view.primary = false;
+tmp_view.primary = true;
 tmp_view.animcycle_id = "null";
 tmp_view.noteworthy = false;
 
@@ -878,7 +878,7 @@ tmp_room = new room();
 tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.historicalsociety.entry";
 {
-tmp_room.primary = false;
+tmp_room.primary = true;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
@@ -997,7 +997,7 @@ tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.hub";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
@@ -1100,7 +1100,7 @@ tmp_view = new view();
 tmp_view.id = "hub";
 tmp_view.fqid = "tunic.madison.historicalsociety.stacks.journalsaz.hub";
 {
-tmp_view.primary = false;
+tmp_view.primary = true;
 tmp_view.animcycle_id = "null";
 tmp_view.noteworthy = false;
 
@@ -1176,7 +1176,7 @@ tmp_room = new room();
 tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.humanecology.entry";
 {
-tmp_room.primary = false;
+tmp_room.primary = true;
 tmp_room.animcycle_id = "room_humanecology_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
@@ -1274,7 +1274,7 @@ tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.madison.humanecology.frontdesk.worker.hub";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
@@ -1424,7 +1424,7 @@ tmp_room = new room();
 tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.kohlcenter.entry";
 {
-tmp_room.primary = false;
+tmp_room.primary = true;
 tmp_room.animcycle_id = "room_cohlcenter_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
@@ -1522,7 +1522,7 @@ tmp_view = new view();
 tmp_view.id = "hub";
 tmp_view.fqid = "tunic.madison.kohlcenter.halloffame.oldpictures.hub";
 {
-tmp_view.primary = false;
+tmp_view.primary = true;
 tmp_view.animcycle_id = "null";
 tmp_view.noteworthy = false;
 
@@ -1577,7 +1577,7 @@ tmp_room = new room();
 tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.library.entry";
 {
-tmp_room.primary = false;
+tmp_room.primary = true;
 tmp_room.animcycle_id = "room_library_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
@@ -1675,7 +1675,7 @@ tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.madison.library.frontdesk.worker.hub";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
@@ -1799,7 +1799,7 @@ tmp_view = new view();
 tmp_view.id = "hub";
 tmp_view.fqid = "tunic.madison.library.microfiche.newspaper.hub";
 {
-tmp_view.primary = false;
+tmp_view.primary = true;
 tmp_view.animcycle_id = "null";
 tmp_view.noteworthy = false;
 

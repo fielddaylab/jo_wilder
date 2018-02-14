@@ -6,7 +6,7 @@ var clicker;
 
 var my_avatar;
 var my_navigable;
-var my_overworld;
+var my_mapview;
 var my_notebook;
 var my_objectview;
 var my_personview;

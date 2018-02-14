@@ -13,4 +13,5 @@ var walk_speed = 4;
 var option_h = 30;
 var option_font = option_h+"px arial";
 
-var DEBUG = 0;
+var DEBUG = 1;
+

@@ -26,8 +26,8 @@ var GamePlayScene = function(game, stage)
     my_navigable.consume_room(cur_room);
     my_toolbar = new toolbar();
     my_toolbar.consume_level(cur_level);
-    my_overworld = new overworld();
-    my_overworld.consume_map(cur_map);
+    my_mapview = new mapview();
+    my_mapview.consume_map(cur_map);
     my_notebook = new notebook();
     my_notebook.consume_level(cur_level);
     my_objectview = new objectview();
@@ -74,11 +74,11 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_MAP:
         if(
-        !clicker.filter(my_overworld) &&
+        !clicker.filter(my_mapview) &&
         false) ;
         my_avatar.tick();
         my_navigable.tick();
-        my_overworld.tick();
+        my_mapview.tick();
         break;
       case STATE_NOTEBOOK:
         if(
@@ -135,7 +135,7 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         my_navigable.draw();
         my_avatar.draw();
-        my_overworld.draw(0);
+        my_mapview.draw(0);
         break;
       case STATE_NOTEBOOK:
         my_navigable.draw();
@@ -195,13 +195,13 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         my_avatar.tick();
         my_navigable.tick;
-        if(state_to == STATE_NAV && my_overworld.selected_scene && my_overworld.selected_scene != cur_scene)
+        if(state_to == STATE_NAV && my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
         {
           state_t += 0.01*state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
-            cur_scene = my_overworld.selected_scene;
-            my_overworld.selected_scene = 0;
+            cur_scene = my_mapview.selected_scene;
+            my_mapview.selected_scene = 0;
             cur_room = cur_scene.rooms[0];
             my_avatar.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
@@ -264,7 +264,7 @@ var GamePlayScene = function(game, stage)
           my_navigable.draw();
           my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
-          my_overworld.draw((1-state_t)*my_overworld.h);
+          my_mapview.draw((1-state_t)*my_mapview.h);
         }
         if(state_to == STATE_NOTEBOOK)
         {
@@ -304,7 +304,7 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         if(state_to == STATE_NAV)
         {
-          if(my_overworld.selected_scene && my_overworld.selected_scene != cur_scene)
+          if(my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
           {
             my_navigable.draw();
             my_avatar.draw();
@@ -312,7 +312,7 @@ var GamePlayScene = function(game, stage)
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
             if(state_t < 0.5)
-              my_overworld.draw(0);
+              my_mapview.draw(0);
             ctx.fillStyle = "rgba(0,0,0,"+blur+")";
             ctx.fillRect(0,0,canv.width,canv.height);
           }
@@ -321,7 +321,7 @@ var GamePlayScene = function(game, stage)
             my_navigable.draw();
             my_avatar.draw();
             my_toolbar.draw((1-state_t)*my_toolbar.h);
-            my_overworld.draw(state_t*my_overworld.h);
+            my_mapview.draw(state_t*my_mapview.h);
           }
         }
         break;
