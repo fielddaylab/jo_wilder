@@ -687,21 +687,21 @@ echo Listing:
             if [ ! -f $person ]; then continue; fi
             person_dir=`dir $person`
             person_id=`id $person`
-            echo "				"$person_id" (person) [$level_id.$map_id.$scene_id.$person_id]"
+            echo "				"$person_id" (person) [$level_id.$map_id.$scene_id.$room_id.$person_id]"
 
             speaks_dir=$person_dir/speaks
             for speak in $speaks_dir/*.meta; do #speaks
               if [ ! -f $speak ]; then continue; fi
               speak_dir=`dir $speak`
               speak_id=`id $speak`
-              echo "					"$speak_id" (speak) [$level_id.$map_id.$scene_id.$person_id.$speak_id]"
+              echo "					"$speak_id" (speak) [$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id]"
 
               options_dir=$speak_dir/options
               for option in $options_dir/*.meta; do #options
                 if [ ! -f $option ]; then continue; fi
                 option_dir=`dir $option`
                 option_id=`id $option`
-                echo "						"$option_id" (option) [$level_id.$map_id.$scene_id.$person_id.$speak_id.$option_id]"
+                echo "						"$option_id" (option) [$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id.$option_id]"
 
               done
 
@@ -714,21 +714,21 @@ echo Listing:
             if [ ! -f $object ]; then continue; fi
             object_dir=`dir $object`
             object_id=`id $object`
-            echo "				"$object_id" (object) [$level_id.$map_id.$scene_id.$object_id]"
+            echo "				"$object_id" (object) [$level_id.$map_id.$scene_id.$room_id.$object_id]"
 
             views_dir=$object_dir/views
             for view in $views_dir/*.meta; do #views
               if [ ! -f $view ]; then continue; fi
               view_dir=`dir $view`
               view_id=`id $view`
-              echo "					"$view_id" (view) [$level_id.$map_id.$scene_id.$object_id.$view_id]"
+              echo "					"$view_id" (view) [$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id]"
 
               zones_dir=$view_dir/zones
               for zone in $zones_dir/*.meta; do #zones
                 if [ ! -f $zone ]; then continue; fi
                 zone_dir=`dir $zone`
                 zone_id=`id $zone`
-                echo "						"$zone_id" (zone) [$level_id.$map_id.$scene_id.$object_id.$view_id.$zone_id]"
+                echo "						"$zone_id" (zone) [$level_id.$map_id.$scene_id.$room_id.$object_id.$view_id.$zone_id]"
 
               done
 
@@ -741,7 +741,7 @@ echo Listing:
             if [ ! -f $porthole ]; then continue; fi
             porthole_dir=`dir $porthole`
             porthole_id=`id $porthole`
-            echo "				"$porthole_id" (porthole) [$level_id.$map_id.$scene_id.$porthole_id]"
+            echo "				"$porthole_id" (porthole) [$level_id.$map_id.$scene_id.$room_id.$porthole_id]"
 
           done
 
@@ -750,7 +750,7 @@ echo Listing:
             if [ ! -f $wildcard ]; then continue; fi
             wildcard_dir=`dir $wildcard`
             wildcard_id=`id $wildcard`
-            echo "				"$wildcard_id" (wildcard) [$level_id.$map_id.$scene_id.$wildcard_id]"
+            echo "				"$wildcard_id" (wildcard) [$level_id.$map_id.$scene_id.$room_id.$wildcard_id]"
 
           done
 
