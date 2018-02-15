@@ -1,7 +1,8 @@
-tmp_wildcard.x = 0;
-tmp_wildcard.y = 0;
 tmp_wildcard.w = 0;
 tmp_wildcard.h = 0;
+tmp_wildcard.x = 0;
+tmp_wildcard.y = 0;
+tmp_wildcard.z = 0;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.noteworthy = false;
 tmp_wildcard.locks = [

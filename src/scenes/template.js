@@ -140,10 +140,11 @@ var person = function()
   self.id = "null"
   self.fqid = "null"
   self.act = ACT_PERSON;
-  self.x = 0;
-  self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.speaks = [];
@@ -160,10 +161,11 @@ var object = function()
   self.id = "null"
   self.fqid = "null"
   self.act = ACT_OBJECT;
-  self.x = 0;
-  self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.views = [];
@@ -180,10 +182,11 @@ var porthole = function()
   self.id = "null"
   self.fqid = "null"
   self.act = ACT_PORTHOLE;
-  self.x = 0;
-  self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.target_room = "null";
@@ -203,10 +206,11 @@ var wildcard = function()
   self.id = "null"
   self.fqid = "null"
   self.act = ACT_WILDCARD;
-  self.x = 0;
-  self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.noteworthy = false;

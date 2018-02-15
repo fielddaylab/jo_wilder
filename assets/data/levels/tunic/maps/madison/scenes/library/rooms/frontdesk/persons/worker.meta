@@ -1,7 +1,8 @@
-tmp_person.x = 70;
-tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
+tmp_person.x = 70;
+tmp_person.y = canv.height/2-100;
+tmp_person.z = 0;
 tmp_person.animcycle_id = "librarian";
 tmp_person.noteworthy = false;
 tmp_person.locks = [

@@ -153,19 +153,6 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps/0.p
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "gramps_face";
-tmp_animcycle.fqid = "tunic.gramps_face";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-
-tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_face/0.png"));
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
 tmp_animcycle.id = "icon_map";
 tmp_animcycle.fqid = "tunic.icon_map";
 {
@@ -439,8 +426,8 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_histo
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "room_historicalsociety_stocks";
-tmp_animcycle.fqid = "tunic.room_historicalsociety_stocks";
+tmp_animcycle.id = "room_historicalsociety_stacks";
+tmp_animcycle.fqid = "tunic.room_historicalsociety_stacks";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
@@ -448,7 +435,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_stocks/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_stacks/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();

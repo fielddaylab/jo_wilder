@@ -759,7 +759,7 @@ var personview = function()
   {
     var speak = self.cur_speak;
     var oyoff;
-    ctx.drawImage(speak.animcycle_inst.img, 0, yoff, self.w, self.h);
+    //ctx.drawImage(speak.animcycle_inst.img, 0, yoff, self.w, self.h);
     ctx.fillStyle = "#4c4c4c";
     ctx.font = "20px Helvetica";
     oyoff = 0;

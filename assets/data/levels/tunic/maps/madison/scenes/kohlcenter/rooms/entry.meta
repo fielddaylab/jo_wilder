@@ -1,5 +1,5 @@
 tmp_room.primary = true;
-tmp_room.animcycle_id = "room_cohlcenter_entry";
+tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
 tmp_room.nav_w = canv.width-200;
