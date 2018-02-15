@@ -224,6 +224,7 @@ var navigable = function()
   self.cache_unlocked_objects = [];
   self.cache_unlocked_portholes = [];
   self.cache_unlocked_wildcards = [];
+  self.cache_unlocked_drawables = [];
 
   self.consume_room = function(room)
   {
@@ -239,6 +240,7 @@ var navigable = function()
     self.cache_unlocked_objects = [];
     self.cache_unlocked_portholes = [];
     self.cache_unlocked_wildcards = [];
+    self.cache_unlocked_drawables = [];
 
     for(var i = 0; i < self.room.persons.length; i++)
       if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
@@ -248,6 +250,16 @@ var navigable = function()
       if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
     for(var i = 0; i < self.room.wildcards.length; i++)
       if(!querylocked(self.room.wildcards[i])) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
+
+    //insertion sort on each list
+    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_persons[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_persons[i]); }
+    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_objects[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_objects[i]); }
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_portholes[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_portholes[i]); }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_wildcards[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_wildcards[i]); }
   }
 
   self.click = function(evt)
@@ -286,10 +298,7 @@ var navigable = function()
   self.draw = function()
   {
     ctx.drawImage(self.room.animcycle_inst.img,0,0,canv.width,canv.height);
-    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) drawImageBox(self.cache_unlocked_persons[i].animcycle_inst.img,  self.cache_unlocked_persons[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) drawImageBox(self.cache_unlocked_objects[i].animcycle_inst.img,  self.cache_unlocked_objects[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) drawImageBox(self.cache_unlocked_portholes[i].animcycle_inst.img,self.cache_unlocked_portholes[i],ctx);
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) drawImageBox(self.cache_unlocked_wildcards[i].animcycle_inst.img,self.cache_unlocked_wildcards[i],ctx);
+    for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
     if(DEBUG)
     {
