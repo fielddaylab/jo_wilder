@@ -131,9 +131,6 @@ var room = function()
   self.portholes = [];
   self.wildcards = [];
   self.noteworthy = false;
-  self.locks = [];
-  self.notlocks = [];
-  self.locked = true;
   self.key = false;
 }
 

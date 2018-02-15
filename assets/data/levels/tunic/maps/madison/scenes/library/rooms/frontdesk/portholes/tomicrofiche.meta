@@ -8,6 +8,7 @@ tmp_porthole.target_start_x = 0;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
+"tunic.madison.library.frontdesk.worker.log"
 ];
 tmp_porthole.notlocks = [
 ];
