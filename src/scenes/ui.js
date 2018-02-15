@@ -669,6 +669,23 @@ var personview = function()
         else                                 self.cache_unlocked_options_dynamic.push(self.cur_speak.options[i]);
       }
     }
+    //bubble sort dynamic on index
+    var sorted = false;
+    while(!sorted)
+    {
+      sorted = true;
+      for(var i = 0; i < self.cache_unlocked_options_dynamic.length-1; i++)
+      {
+        var option = self.cache_unlocked_options_dynamic[i];
+        var noption = self.cache_unlocked_options_dynamic[i+1];
+        if(option.index > noption.index)
+        {
+          self.cache_unlocked_options_dynamic[i] = noption;
+          self.cache_unlocked_options_dynamic[i+1] = option;
+          sorted = false;
+        }
+      }
+    }
   }
 
   self.click = function(evt)
