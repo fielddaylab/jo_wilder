@@ -150,6 +150,7 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@genzone" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genzone level.map.scene.room.object.view.zone";       fi fi
   if [ "@"$1 == "@genporthole" ];  then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genporthole level.map.scene.room.porthole";           fi fi
   if [ "@"$1 == "@genwildcard" ];  then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genwildcard level.map.scene.room.wildcard";           fi fi
+  if [ "@"$1 == "@geninert" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 geninert level.map.scene.room.inert";                 fi fi
   if [ "@"$1 == "@rmlevel" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmlevel level";                                      fi fi
   if [ "@"$1 == "@rmanimcycle" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmanimcycle level.animcycle";                        fi fi
   if [ "@"$1 == "@rmentry" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmentry level.entry";                                fi fi
@@ -165,6 +166,7 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@rmzone" ];      then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmzone level.map.scene.room.object.view.zone";       fi fi
   if [ "@"$1 == "@rmporthole" ];  then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmporthole level.map.scene.room.porthole";           fi fi
   if [ "@"$1 == "@rmwildcard" ];  then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmwildcard level.map.scene.room.wildcard";           fi fi
+  if [ "@"$1 == "@rminert" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rminert level.map.scene.room.inert";                 fi fi
   shift;
 done
 
@@ -194,6 +196,8 @@ elif [ "@"$GENCMD == "@genporthole" ]; then
 GENPORTHOLE=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 elif [ "@"$GENCMD == "@genwildcard" ]; then
 GENWILDCARD=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+elif [ "@"$GENCMD == "@geninert" ]; then
+GENINERT=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 fi
 fi
 
@@ -233,6 +237,10 @@ GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubfullifdne level $
 
             GENDIR=$GENDIR/$GENROOM/wildcards; if [ "@"$GENWILDCARD != "@" ]; then stubfullifdne wildcard $GENDIR $GENWILDCARD; fi #wildcard
 
+          elif [ "@"$GENCMD == "@geninert" ]; then
+
+            GENDIR=$GENDIR/$GENROOM/inerts; if [ "@"$GENINERT != "@" ]; then stubfullifdne inert $GENDIR $GENINERT; fi #inert
+
           fi #type
 
         fi #room
@@ -267,6 +275,8 @@ elif [ "@"$RMCMD == "@rmporthole" ]; then
 RMPORTHOLE=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 elif [ "@"$RMCMD == "@rmwildcard" ]; then
 RMWILDCARD=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
+elif [ "@"$RMCMD == "@rminert" ]; then
+RMINERT=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 fi
 fi
 
@@ -294,6 +304,8 @@ elif [ "@"$RMCMD == "@rmporthole" ]; then
 RMDIR=$RMDIR/$RMROOM/portholes; if [ "@"$RMCMD == "@rmporthole" ] && [ "@"$RMPORTHOLE != "@" ] && [ -d $RMDIR/$RMPORTHOLE ]; then rmfull porthole  $RMDIR $RMPORTHOLE; fi
 elif [ "@"$RMCMD == "@rmwildcard" ]; then
 RMDIR=$RMDIR/$RMROOM/wildcards; if [ "@"$RMCMD == "@rmwildcard" ] && [ "@"$RMWILDCARD != "@" ] && [ -d $RMDIR/$RMWILDCARD ]; then rmfull wildcard  $RMDIR $RMWILDCARD; fi
+elif [ "@"$RMCMD == "@rminert" ]; then
+RMDIR=$RMDIR/$RMROOM/inerts;    if [ "@"$RMCMD == "@rminert" ]    && [ "@"$RMINERT != "@" ]    && [ -d $RMDIR/$RMINERT ];    then rmfull inert     $RMDIR $RMINERT;    fi
 fi
 fi
 
@@ -605,6 +617,27 @@ if [ $NOGEN == "0" ]; then
 
           done
 
+          if ensuredelimeter inert $room_dir; then :; else continue; fi
+          inerts_dir=$room_dir/inerts
+          for inert in $inerts_dir/*.meta; do #inerts
+
+            if [ ! -f $inert ]; then if trystub inert $inerts_dir; then inert=$inerts_dir/*.meta; else continue; fi fi
+            inert_id=`id $inert`
+            inert_dir=`dir $inert`
+            fixifdne inert $inerts_dir $inert_id
+            echo - Note: Genning $inert_id #debug
+            echo "tmp_inert = new inert();" >> $OUT
+            echo "tmp_inert.id = \"$inert_id\";" >> $OUT
+            echo "tmp_inert.fqid = \"$level_id.$map_id.$scene_id.$room_id.$inert_id\";" >> $OUT
+            echo "{" >> $OUT
+            cat $inert >> $OUT
+            echo "tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);" >> $OUT
+
+            echo "}" >> $OUT
+            echo "tmp_room.inerts.push(tmp_inert);" >> $OUT
+
+          done
+
           echo "}" >> $OUT
           echo "tmp_scene.rooms.push(tmp_room);" >> $OUT
 
@@ -755,6 +788,15 @@ echo Listing:
             wildcard_dir=`dir $wildcard`
             wildcard_id=`id $wildcard`
             if [ @`echo $wildcard_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo wildcard | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[32mwildcard\e[39m) $wildcard_id [\e[2m$level_id.$map_id.$scene_id.$room_id.$wildcard_id\e[22m]\n"; fi
+
+          done
+
+          inerts_dir=$room_dir/inerts
+          for inert in $inerts_dir/*.meta; do #inerts
+            if [ ! -f $inert ]; then continue; fi
+            inert_dir=`dir $inert`
+            inert_id=`id $inert`
+            if [ @`echo $inert_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo inert | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[32minert\e[39m) $inert_id [\e[2m$level_id.$map_id.$scene_id.$room_id.$inert_id\e[22m]\n"; fi
 
           done
 

@@ -1,0 +1,12 @@
+tmp_inert.w = 0;
+tmp_inert.h = 0;
+tmp_inert.x = 0;
+tmp_inert.y = 0;
+tmp_inert.z = 0;
+tmp_inert.animcycle_id = "null";
+tmp_inert.noteworthy = false;
+tmp_inert.locks = [
+];
+tmp_inert.notlocks = [
+];
+

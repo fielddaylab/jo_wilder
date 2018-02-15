@@ -41,6 +41,12 @@ var find = function(id)
     if(ids.length <= ++k) return wildcard;
     return;
   }
+  var inert; for(var i = 0; i < room.inerts.length; i++) if(room.inerts[i].id == keys[k]) inert = room.inerts[i];
+  if(inert)
+  {
+    if(ids.length <= ++k) return inert;
+    return;
+  }
 }
 
 var querylocked = function(o)
@@ -130,6 +136,7 @@ var room = function()
   self.objects = [];
   self.portholes = [];
   self.wildcards = [];
+  self.inerts = [];
   self.noteworthy = false;
   self.key = false;
 }
@@ -206,6 +213,26 @@ var wildcard = function()
   self.id = "null"
   self.fqid = "null"
   self.act = ACT_WILDCARD;
+  self.w = 0;
+  self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
+  self.animcycle_id;
+  self.animcycle_inst;
+  self.noteworthy = false;
+  self.locks = [];
+  self.notlocks = [];
+  self.locked = true;
+  self.key = false;
+}
+
+var inert = function()
+{
+  var self = this;
+  self.id = "null"
+  self.fqid = "null"
+  self.act = ACT_INERT;
   self.w = 0;
   self.h = 0;
   self.x = 0;

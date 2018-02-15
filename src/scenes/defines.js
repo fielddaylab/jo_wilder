@@ -18,6 +18,7 @@ var ACT_PERSON   = ENUM; ENUM++;
 var ACT_OBJECT   = ENUM; ENUM++;
 var ACT_PORTHOLE = ENUM; ENUM++;
 var ACT_WILDCARD = ENUM; ENUM++;
+var ACT_INERT    = ENUM; ENUM++;
 var ACT_COUNT    = ENUM; ENUM++;
 
 ENUM = 0;
