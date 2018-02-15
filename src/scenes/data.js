@@ -42,6 +42,19 @@ tmp_level.notlocks = [
 ];
 
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "archivist";
+tmp_animcycle.fqid = "tunic.archivist";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/archivist/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "avatar_act";
 tmp_animcycle.fqid = "tunic.avatar_act";
 {
@@ -101,19 +114,6 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/cleaner/0.
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "cleaner_face";
-tmp_animcycle.fqid = "tunic.cleaner_face";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-
-tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/cleaner_face/0.png"));
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
 tmp_animcycle.id = "door";
 tmp_animcycle.fqid = "tunic.door";
 {
@@ -124,6 +124,19 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/door/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "ecologist";
+tmp_animcycle.fqid = "tunic.ecologist";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/ecologist/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -150,19 +163,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_face/0.png"));
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
-tmp_animcycle.id = "gramps_nervous";
-tmp_animcycle.fqid = "tunic.gramps_nervous";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-
-tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps_nervous/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -215,6 +215,19 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/journalsaz_front/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "librarian";
+tmp_animcycle.fqid = "tunic.librarian";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/librarian/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -332,6 +345,32 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/oldpictures_front/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "room_capitol_entry";
+tmp_animcycle.fqid = "tunic.room_capitol_entry";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_capitol_entry/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "room_capitol_hall";
+tmp_animcycle.fqid = "tunic.room_capitol_hall";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_capitol_hall/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -659,6 +698,19 @@ tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/tunic_slip/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "youngboy";
+tmp_animcycle.fqid = "tunic.youngboy";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/youngboy/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
 for(var i = 0; i < tmp_level.animcycles.length; i++)
 if(tmp_level.animcycles[i].id == "null") null_animcycle = tmp_level.animcycles[i];
 tmp_entry = new entry();
@@ -767,7 +819,7 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.capitol.entry";
 {
 tmp_room.primary = false;
-tmp_room.animcycle_id = "null";
+tmp_room.animcycle_id = "room_capitol_entry";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
 tmp_room.nav_w = canv.width-200;
@@ -826,7 +878,7 @@ tmp_room.id = "hall";
 tmp_room.fqid = "tunic.madison.capitol.hall";
 {
 tmp_room.primary = false;
-tmp_room.animcycle_id = "null";
+tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.nav_x = 100;
 tmp_room.nav_y = canv.height/2;
 tmp_room.nav_w = canv.width-200;
@@ -844,7 +896,7 @@ tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "youngboy";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -861,7 +913,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "youngboy";
 tmp_speak.raw_atext = "Get away from me, I have a speech to give...";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1022,7 +1074,7 @@ tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "cleaner";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -1039,7 +1091,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "cleaner";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1103,7 +1155,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "cleaner";
 tmp_speak.raw_atext = "Wow, that looks old. Here, check the logbook over on the desk.";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1251,7 +1303,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "gramps";
 tmp_speak.raw_atext = "I've got work to do- but youngboy is going to tell everyone that this is a basketball jersey! I just know he's wrong... If only I could prove it...";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1294,7 +1346,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "gramps";
 tmp_speak.raw_atext = "Hey there youngster...";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1555,7 +1607,7 @@ tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "archivist";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -1572,7 +1624,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "archivist";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1681,7 +1733,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "archivist";
 tmp_speak.raw_atext = "I'll get started on looking; but in the meanwhile, you might also want to check out the library!";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1724,7 +1776,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "archivist";
 tmp_speak.raw_atext = "That's great! Also, you should check the archives- I think we have something. It's #12345";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -1767,7 +1819,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "archivist";
 tmp_speak.raw_atext = "I have no idea what that is- you might want to ask a specialist over in the Human Ecology building.";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -2017,7 +2069,7 @@ tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "ecologist";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -2034,7 +2086,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "ecologist";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -2098,7 +2150,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "ecologist";
 tmp_speak.raw_atext = "Hey! That looks like a drycleaner's tag- and an old one at that! They haven't used these printing methods since the early 40s? Not sure what more I can tell you...";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -2463,7 +2515,7 @@ tmp_person.x = 70;
 tmp_person.y = canv.height/2-100;
 tmp_person.w = 200;
 tmp_person.h = 200;
-tmp_person.animcycle_id = "null";
+tmp_person.animcycle_id = "librarian";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -2480,7 +2532,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "librarian";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
@@ -2544,7 +2596,7 @@ tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.w = canv.width/2;
 tmp_speak.h = 30; //h of a single line
-tmp_speak.animcycle_id = "null";
+tmp_speak.animcycle_id = "librarian";
 tmp_speak.raw_atext = "I don't know off the top of my head, but you're more than welcome to the microfiche in back; we've got tons of old papers!";
 tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
 tmp_speak.options_x = 500;
