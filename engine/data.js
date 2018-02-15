@@ -1299,7 +1299,7 @@ tmp_object.x = canv.width-200;
 tmp_object.y = 100;
 tmp_object.w = 100;
 tmp_object.h = 100;
-tmp_object.animcycle_id = "null";
+tmp_object.animcycle_id = "tunic";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
 ];

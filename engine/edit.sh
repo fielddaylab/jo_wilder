@@ -28,20 +28,20 @@ WILDCARD=` echo $BREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $BREAKDOWN | grep '
 fi
 fi
 
-  if [ "@"$1 == "@level" ];     then vim ../assets/data/levels/$LEVEL.meta;
-elif [ "@"$1 == "@animcycle" ]; then vim ../assets/data/levels/$LEVEL/animcycles/$ANIMCYCLE.meta;
-elif [ "@"$1 == "@entry" ];     then vim ../assets/data/levels/$LEVEL/entrys/$ENTRY.meta;
-elif [ "@"$1 == "@cutscene" ];  then vim ../assets/data/levels/$LEVEL/cutscenes/$CUTSCENE.meta;
-elif [ "@"$1 == "@map" ];       then vim ../assets/data/levels/$LEVEL/maps/$MAP.meta;
-elif [ "@"$1 == "@scene" ];     then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE.meta;
-elif [ "@"$1 == "@room" ];      then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM.meta;
-elif [ "@"$1 == "@person" ];    then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/persons/$PERSON.meta;
-elif [ "@"$1 == "@speak" ];     then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/persons/$PERSON/speaks/$SPEAK.meta;
-elif [ "@"$1 == "@option" ];    then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/persons/$PERSON/speaks/$SPEAK/options/$OPTION.meta;
-elif [ "@"$1 == "@object" ];    then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT.meta;
-elif [ "@"$1 == "@view" ];      then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT/views/$VIEW.meta;
-elif [ "@"$1 == "@zone" ];      then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT/views/$VIEW/zones/$ZONE.meta;
-elif [ "@"$1 == "@porthole" ];  then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/portholes/$PORTHOLE.meta;
-elif [ "@"$1 == "@wildcard" ];  then vim ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/wildcards/$WILDCARD.meta;
+  if [ "@"$1 == "@level" ];     then $EDITOR ../assets/data/levels/$LEVEL.meta;
+elif [ "@"$1 == "@animcycle" ]; then $EDITOR ../assets/data/levels/$LEVEL/animcycles/$ANIMCYCLE.meta;
+elif [ "@"$1 == "@entry" ];     then $EDITOR ../assets/data/levels/$LEVEL/entrys/$ENTRY.meta;
+elif [ "@"$1 == "@cutscene" ];  then $EDITOR ../assets/data/levels/$LEVEL/cutscenes/$CUTSCENE.meta;
+elif [ "@"$1 == "@map" ];       then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP.meta;
+elif [ "@"$1 == "@scene" ];     then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE.meta;
+elif [ "@"$1 == "@room" ];      then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM.meta;
+elif [ "@"$1 == "@person" ];    then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/persons/$PERSON.meta;
+elif [ "@"$1 == "@speak" ];     then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/persons/$PERSON/speaks/$SPEAK.meta;
+elif [ "@"$1 == "@option" ];    then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/persons/$PERSON/speaks/$SPEAK/options/$OPTION.meta;
+elif [ "@"$1 == "@object" ];    then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT.meta;
+elif [ "@"$1 == "@view" ];      then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT/views/$VIEW.meta;
+elif [ "@"$1 == "@zone" ];      then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT/views/$VIEW/zones/$ZONE.meta;
+elif [ "@"$1 == "@porthole" ];  then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/portholes/$PORTHOLE.meta;
+elif [ "@"$1 == "@wildcard" ];  then $EDITOR ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/wildcards/$WILDCARD.meta;
 fi
 

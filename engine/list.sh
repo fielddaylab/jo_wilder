@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./gen_data.sh nogen list
+./gen_data.sh nogen list $@
 

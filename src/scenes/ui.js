@@ -702,6 +702,7 @@ var personview = function()
     var option;
     var clicked_option;
     var oyoff;
+    //static
     for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
     {
       oyoff = 0;
@@ -713,13 +714,15 @@ var personview = function()
         oyoff += option.h;
       }
     }
-    oyoff = 0;
+    //dynamic
+    oyoff = speak.options_y;
+    if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
     for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
     {
       option = self.cache_unlocked_options_dynamic[i];
       for(var j = 0; j < option.qtext.length; j++)
       {
-        if(ptWithin(speak.options_x,speak.options_y+oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+        if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
           clicked_option = option;
         oyoff += speak.options_h;
       }
@@ -779,13 +782,14 @@ var personview = function()
       }
     }
     //dynamic
-    oyoff = 0;
+    oyoff = speak.options_y;
+    if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
     for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
     {
       option = self.cache_unlocked_options_dynamic[i];
       for(var j = 0; j < option.qtext.length; j++)
       {
-        ctx.fillText(option.qtext[j],speak.options_x,speak.options_y+yoff+oyoff+speak.options_h);
+        ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
         oyoff += speak.options_h;
       }
     }
@@ -813,13 +817,14 @@ var personview = function()
         }
       }
       //dynamic
-      oyoff = 0;
+      oyoff = speak.options_y;
+      if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
       for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
       {
         option = self.cache_unlocked_options_dynamic[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
-          ctx.strokeRect(speak.options_x,speak.options_y+yoff+oyoff,speak.options_w,speak.options_h);
+          ctx.strokeRect(speak.options_x,yoff+oyoff,speak.options_w,speak.options_h);
           oyoff += speak.options_h;
         }
       }
