@@ -14,5 +14,5 @@ var option_h = 30;
 var option_font = option_h+"px arial";
 
 var DEBUG = 1;
-var UNLOCK = 1;
+var UNLOCK = 0;
 

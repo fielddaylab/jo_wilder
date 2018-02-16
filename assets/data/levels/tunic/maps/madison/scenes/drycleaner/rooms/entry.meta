@@ -4,6 +4,6 @@ tmp_room.navs = [
 {x:-5, y:489, w:866, h:174 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 

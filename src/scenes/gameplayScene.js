@@ -238,6 +238,8 @@ var GamePlayScene = function(game, stage)
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
             cur_room = cur_scene.rooms[0];
+            for(var i = 1; i < cur_scene.rooms.length; i++)
+              if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
             my_avatar.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
             cur_act = 0;

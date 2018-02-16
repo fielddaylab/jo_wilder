@@ -811,7 +811,7 @@ tmp_room.navs = [
 {x:-7, y:372, w:876, h:275 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -991,7 +991,7 @@ tmp_room.navs = [
 {x:-5, y:489, w:866, h:174 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -1051,7 +1051,7 @@ tmp_room.navs = [
 {x:4, y:406, w:868, h:244 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -1508,7 +1508,7 @@ tmp_room.navs = [
 {x:7, y:332, w:876, h:323 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -1996,7 +1996,7 @@ tmp_room.navs = [
 {x:6, y:517, w:870, h:142 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -2299,7 +2299,7 @@ tmp_room.navs = [
 {x:33, y:507, w:793, h:147 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -2447,7 +2447,7 @@ tmp_room.navs = [
 {x:17, y:418, w:855, h:236 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
