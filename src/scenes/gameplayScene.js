@@ -19,6 +19,7 @@ var GamePlayScene = function(game, stage)
     cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room  = cur_scene.rooms[i];
 
     clicker = new Clicker({source:canvas});
+    dragger = new Dragger({source:canvas});
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
     my_avatar = new avatar();
@@ -34,6 +35,8 @@ var GamePlayScene = function(game, stage)
     my_personview = new personview();
     my_cutsceneview = new cutsceneview();
 
+    my_placer = new placer(null, 100,100,100,100, canv);
+
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
 
     cur_state = STATE_NAV;
@@ -42,6 +45,12 @@ var GamePlayScene = function(game, stage)
 
   self.tick = function()
   {
+    if(DEBUG)
+    {
+      clicker.filter(my_placer);
+      dragger.filter(my_placer);
+    }
+
     switch(cur_state)
     {
       case STATE_NAV:
@@ -121,6 +130,7 @@ var GamePlayScene = function(game, stage)
         break;
     }
     clicker.flush();
+    dragger.flush();
   };
 
   self.draw = function()
@@ -164,6 +174,11 @@ var GamePlayScene = function(game, stage)
       case STATE_TRANSITION:
         transition_draw();
         break;
+    }
+
+    if(DEBUG)
+    {
+      my_placer.draw(ctx);
     }
   };
 

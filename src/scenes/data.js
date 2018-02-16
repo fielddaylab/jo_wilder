@@ -1273,10 +1273,10 @@ tmp_person = new person();
 tmp_person.id = "gramps";
 tmp_person.fqid = "tunic.madison.historicalsociety.closet.gramps";
 {
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = canv.height/2-100;
+tmp_person.w=169;
+tmp_person.h=255;
+tmp_person.x=118;
+tmp_person.y=202;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "gramps";
 tmp_person.noteworthy = false;
@@ -1399,10 +1399,10 @@ tmp_object = new object();
 tmp_object.id = "tunic";
 tmp_object.fqid = "tunic.madison.historicalsociety.closet.tunic";
 {
-tmp_object.w = 100;
-tmp_object.h = 100;
-tmp_object.x = canv.width-200;
-tmp_object.y = 100;
+tmp_object.w=133;
+tmp_object.h=168;
+tmp_object.x=650;
+tmp_object.y=150;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "tunic";
 tmp_object.noteworthy = false;
@@ -1560,10 +1560,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tostacks";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tostacks";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = canv.width/2-tmp_porthole.w/2;
-tmp_porthole.y = canv.height/2-tmp_porthole.h/2-100;
+tmp_porthole.w=92;
+tmp_porthole.h=168;
+tmp_porthole.x=368;
+tmp_porthole.y=156;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "stacks";
@@ -1882,7 +1882,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.stacks";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.navs = [
-{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+{ w:341, h:371, x:242, y:284 }
 ];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
@@ -1946,10 +1946,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tofrontdesk";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.stacks.tofrontdesk";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = canv.width/2-tmp_porthole.w/2;
-tmp_porthole.y = canv.height/2-tmp_porthole.h/2-100;
+tmp_porthole.w=85;
+tmp_porthole.h=134;
+tmp_porthole.x=349;
+tmp_porthole.y=174;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";

@@ -14,3 +14,5 @@ var my_cutsceneview;
 
 var canv_clicker;
 
+var my_placer;
+

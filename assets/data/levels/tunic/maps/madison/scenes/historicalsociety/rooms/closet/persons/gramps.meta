@@ -1,7 +1,7 @@
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = canv.height/2-100;
+tmp_person.w=169;
+tmp_person.h=255;
+tmp_person.x=118;
+tmp_person.y=202;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "gramps";
 tmp_person.noteworthy = false;
