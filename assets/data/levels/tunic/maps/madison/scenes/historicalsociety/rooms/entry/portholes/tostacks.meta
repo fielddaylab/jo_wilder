@@ -1,7 +1,7 @@
-tmp_porthole.w=92;
-tmp_porthole.h=168;
-tmp_porthole.x=368;
-tmp_porthole.y=156;
+tmp_porthole.w = 92;
+tmp_porthole.h = 168;
+tmp_porthole.x = 368;
+tmp_porthole.y = 156;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "stacks";

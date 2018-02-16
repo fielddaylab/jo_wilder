@@ -1,8 +1,8 @@
+tmp_option.w = 440;
+tmp_option.h = 30;
 tmp_option.x = 100;
 tmp_option.y = 100;
-tmp_option.w = canv.width/2;
-tmp_option.h = 30; //h of single line
-tmp_option.static = false; //static = use xyw
+tmp_option.static = false;
 tmp_option.index = 999;
 tmp_option.raw_qtext = "Thanks for your help!";
 tmp_option.target_speak = "hub";

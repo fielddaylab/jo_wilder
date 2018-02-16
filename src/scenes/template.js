@@ -449,12 +449,12 @@ var print_level_meta = function(l)
   "tmp_level.noteworthy = "+l.noteworthy+";\n"+
   "tmp_level.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_level.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -467,12 +467,12 @@ var print_map_meta = function(l)
   "tmp_map.noteworthy = "+l.noteworthy+";\n"+
   "tmp_map.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_map.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -490,12 +490,12 @@ var print_scene_meta = function(l)
   "tmp_scene.noteworthy = "+l.noteworthy+";\n"+
   "tmp_scene.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_scene.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -508,9 +508,11 @@ var print_room_meta = function(l)
   "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_room.navs = [\n";
   for(var i = 0; i < l.navs.length; i++)
-    str += "{x:"+tmp_room.navs[i].x+", y:"+tmp_room.navs[i].y+", w:"+tmp_room.navs[i].w+", h:"+tmp_room.navs[i].h+" },";
+    str += "{x:"+tmp_room.navs[i].x+", y:"+tmp_room.navs[i].y+", w:"+tmp_room.navs[i].w+", h:"+tmp_room.navs[i].h+" },\n";
   str +=
   "];\n"+
+  "tmp_room.start_x = "+l.start_x+";\n"+
+  "tmp_room.start_y = "+l.start_y+";\n"+
   "tmp_room.noteworthy = "+l.noteworthy+";\n";
   console.log(str);
 }
@@ -527,12 +529,12 @@ var print_person_meta = function(l)
   "tmp_person.noteworthy = "+l.noteworthy+";\n"+
   "tmp_person.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_person.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -548,7 +550,7 @@ var print_speak_meta = function(l)
   "tmp_speak.y = "+l.y+";\n"+
   "tmp_speak.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_speak.raw_atext = \""+l.raw_atext+"\";\n"+
-  "tmp_speak.speaker = "+l.speaker+";\n";
+  "tmp_speak.speaker = "+l.speaker+";\n"+
   "tmp_speak.options_w = "+l.options_w+";\n"+
   "tmp_speak.options_h = "+l.options_h+";\n"+
   "tmp_speak.options_x = "+l.options_x+";\n"+
@@ -571,12 +573,12 @@ var print_option_meta = function(l)
   "tmp_option.noteworthy = "+l.noteworthy+";\n"+
   "tmp_option.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_option.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -594,12 +596,12 @@ var print_object_meta = function(l)
   "tmp_object.noteworthy = "+l.noteworthy+";\n"+
   "tmp_object.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_object.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -626,12 +628,12 @@ var print_zone_meta = function(l)
   "tmp_zone.noteworthy = "+l.noteworthy+";\n"+
   "tmp_zone.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_zone.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -652,12 +654,12 @@ var print_porthole_meta = function(l)
   "tmp_porthole.noteworthy = "+l.noteworthy+";\n"+
   "tmp_porthole.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_porthole.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -675,12 +677,12 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.noteworthy = "+l.noteworthy+";\n"+
   "tmp_wildcard.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_wildcard.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);
@@ -698,12 +700,12 @@ var print_inert_meta = function(l)
   "tmp_inert.noteworthy = "+l.noteworthy+";\n"+
   "tmp_inert.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",";
+    str += "\""+l.locks[i]+"\",\n";
   str +=
   "];\n"+
   "tmp_inert.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",";
+    str += "\""+l.notlocks[i]+"\",\n";
   str +=
   "];\n"
   console.log(str);

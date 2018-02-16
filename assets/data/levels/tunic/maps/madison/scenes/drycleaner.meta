@@ -1,12 +1,12 @@
 tmp_scene.primary = false;
-tmp_scene.x = 110;
-tmp_scene.y = 100;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
+tmp_scene.x = 110;
+tmp_scene.y = 100;
 tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
-"tunic.madison.humanecology.frontdesk.worker.slip"
+"tunic.madison.humanecology.frontdesk.worker.slip",
 ];
 tmp_scene.notlocks = [
 ];

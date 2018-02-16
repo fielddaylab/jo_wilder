@@ -1,9 +1,9 @@
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_library_entry";
 tmp_room.navs = [
-{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+{x:100, y:330, w:680, h:230 },
 ];
-tmp_room.start_x = canv.width/2;
-tmp_room.start_y = canv.height/2;
+tmp_room.start_x = 440;
+tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
 

@@ -1,6 +1,6 @@
 tmp_object.w = 100;
 tmp_object.h = 100;
-tmp_object.x = canv.width-200;
+tmp_object.x = 680;
 tmp_object.y = 100;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "newspaper";

@@ -1,8 +1,8 @@
 tmp_scene.primary = true;
-tmp_scene.x = 350;
-tmp_scene.y = 120;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
+tmp_scene.x = 350;
+tmp_scene.y = 120;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
