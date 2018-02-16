@@ -107,7 +107,16 @@ var avatar = function()
 
   self.consume_room = function(room)
   {
-    my_navigable.ptInNavigable(room.start_x,room.start_y,self);
+    my_navigable.pt_in_navigable(room.start_x,room.start_y,self);
+    self.x = self.x-self.w/2;
+    self.y = self.y-self.h/2;
+    self.toX = self.x;
+    self.toY = self.y;
+  }
+
+  self.from_porthole = function(porthole)
+  {
+    my_navigable.pt_in_navigable(porthole.target_start_x,porthole.target_start_y,self);
     self.x = self.x-self.w/2;
     self.y = self.y-self.h/2;
     self.toX = self.x;
@@ -266,7 +275,7 @@ var navigable = function()
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
   }
 
-  self.ptInNavigable = function(x,y,obj)
+  self.pt_in_navigable = function(x,y,obj)
   {
     var tryx;
     var tryy;
@@ -305,7 +314,7 @@ var navigable = function()
     self.last_click.y = evt.doY;
     self.nav_click.x = evt.doX;
     self.nav_click.y = evt.doY;
-    self.ptInNavigable(self.nav_click.x,self.nav_click.y,clickptholder);
+    self.pt_in_navigable(self.nav_click.x,self.nav_click.y,clickptholder);
     my_avatar.toX = clickptholder.x-my_avatar.w/2;
     my_avatar.toY = clickptholder.y-my_avatar.h/2;
 
@@ -337,7 +346,7 @@ var navigable = function()
 
     if(DEBUG)
     {
-      ctx.strokeStyle = white;
+      ctx.strokeStyle = yellow;
       for(var i = 0; i < self.room.navs.length; i++)
         ctx.strokeRect(self.room.navs[i].x,self.room.navs[i].y,self.room.navs[i].w,self.room.navs[i].h);
       ctx.strokeStyle = red;
@@ -361,14 +370,16 @@ var toolbar = function()
   var self = this;
   self.x = 0;
   self.y = canv.height-90;
-  self.w = 200;
+  self.w = 100;
   self.h = 100;
 
   self.toolbar_animcycle_inst;
-  self.icon_map__instanimcycle_inst;
+  self.icon_map_instanimcycle_inst;
   self.icon_notebook_animcycle_inst;
-  self.map      = {x:20,             y:self.y+15,w:self.h-40,h:self.h-40};
-  self.notebook = {x:10+self.h-20+20,y:self.y+12,w:self.h-55,h:self.h-35};
+  self.notebook = {x:20,             y:self.y+15,w:self.h-40,h:self.h-40};
+  self.map      = {x:10+self.h-20+20,y:self.y+12,w:self.h-55,h:self.h-35};
+
+  var MAP_ENABLED = 0;
 
   self.consume_level = function(level)
   {
@@ -379,7 +390,7 @@ var toolbar = function()
 
   self.click = function(evt)
   {
-    if(ptWithinBox(self.map,     evt.doX,evt.doY))
+    if(MAP_ENABLED && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
       state_from = cur_state;
@@ -408,14 +419,16 @@ var toolbar = function()
   self.draw = function(yoff)
   {
     ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
-    ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
     ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
+    if(MAP_ENABLED)
+    ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
 
     if(DEBUG)
     {
       ctx.strokeRect(self.x,         self.y         +yoff, self.w,         self.h);
-      ctx.strokeRect(self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
       ctx.strokeRect(self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
+      if(MAP_ENABLED)
+      ctx.strokeRect(self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
     }
   }
 

@@ -177,26 +177,27 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         if(state_to == STATE_NAV)
         {
-          state_t += 0.01*state_t_speed;
+          state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
             if(cur_act.act == ACT_PORTHOLE)
             {
               if(cur_act.target_room_found) cur_room = cur_act.target_room_found;
-              my_avatar.consume_room(cur_room);
               my_navigable.consume_room(cur_room);
+              my_avatar.consume_room(cur_room);
+              my_avatar.from_porthole(cur_act);
               cur_act = 0;
             }
           }
         }
-        else state_t += 0.01*state_t_speed;
+        else state_t += state_t_speed;
         break;
       case STATE_MAP:
         my_avatar.tick();
         my_navigable.tick;
         if(state_to == STATE_NAV && my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
         {
-          state_t += 0.01*state_t_speed;
+          state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
             cur_scene = my_mapview.selected_scene;
@@ -207,32 +208,32 @@ var GamePlayScene = function(game, stage)
             cur_act = 0;
           }
         }
-        else state_t += 0.01*state_t_speed;
+        else state_t += state_t_speed;
         break;
       case STATE_NOTEBOOK:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01*state_t_speed;
+        state_t += state_t_speed;
         break;
       case STATE_PERSON:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01*state_t_speed;
+        state_t += state_t_speed;
         break;
       case STATE_OBJECT:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01*state_t_speed;
+        state_t += state_t_speed;
         break;
       case STATE_WILDCARD:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01*state_t_speed;
+        state_t += state_t_speed;
         break;
       case STATE_CUTSCENE:
         my_avatar.tick();
         my_navigable.tick();
-        state_t += 0.01*state_t_speed;
+        state_t += state_t_speed;
         break;
     }
 
