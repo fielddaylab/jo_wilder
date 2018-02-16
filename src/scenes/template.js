@@ -126,10 +126,7 @@ var room = function()
   self.primary = false;
   self.animcycle_id;
   self.animcycle_inst;
-  self.nav_x = 0;
-  self.nav_y = 0;
-  self.nav_w = 0;
-  self.nav_h = 0;
+  self.navs = [];
   self.start_x = 0;
   self.start_y = 0;
   self.persons = [];

@@ -107,12 +107,9 @@ var avatar = function()
 
   self.consume_room = function(room)
   {
-    self.x = room.start_x-self.w/2;
-    self.y = room.start_y-self.h/2;
-    if(self.x+self.w/2 < room.nav_x)            self.x = room.nav_x           -self.w/2;
-    if(self.x+self.w/2 > room.nav_x+room.nav_w) self.x = room.nav_x+room.nav_w-self.w/2;
-    if(self.y+self.h/2 < room.nav_y)            self.y = room.nav_y           -self.h/2;
-    if(self.y+self.h/2 > room.nav_y+room.nav_h) self.y = room.nav_y+room.nav_h-self.h/2;
+    my_navigable.ptInNavigable(room.start_x,room.start_y,self);
+    self.x = self.x-self.w/2;
+    self.y = self.y-self.h/2;
     self.toX = self.x;
     self.toY = self.y;
   }
@@ -269,18 +266,48 @@ var navigable = function()
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
   }
 
+  self.ptInNavigable = function(x,y,obj)
+  {
+    var tryx;
+    var tryy;
+    var trydist;
+    var dist = 9999999;
+    obj.x = 9999999;
+    obj.y = 9999999;
+    if(!self.room.navs.length)
+    {
+      dist = 0;
+      obj.x = x;
+      obj.y = y;
+    }
+    for(var i = 0; dist > 0 && i < self.room.navs.length; i++)
+    {
+      tryx = x;
+      tryy = y;
+      if(x < self.room.navs[i].x)                     tryx = self.room.navs[i].x;
+      if(x > self.room.navs[i].x+self.room.navs[i].w) tryx = self.room.navs[i].x+self.room.navs[i].w;
+      if(y < self.room.navs[i].y)                     tryy = self.room.navs[i].y;
+      if(y > self.room.navs[i].y+self.room.navs[i].h) tryy = self.room.navs[i].y+self.room.navs[i].h;
+      trydist = distsqr(tryx, tryy, x, y);
+      if(trydist < dist)
+      {
+        obj.x = tryx;
+        obj.y = tryy;
+        dist = trydist;
+      }
+    }
+  }
+
+  var clickptholder = {x:0,y:0};
   self.click = function(evt)
   {
     self.last_click.x = evt.doX;
     self.last_click.y = evt.doY;
     self.nav_click.x = evt.doX;
     self.nav_click.y = evt.doY;
-    if(self.nav_click.x < self.room.nav_x)                 self.nav_click.x = self.room.nav_x;
-    if(self.nav_click.x > self.room.nav_x+self.room.nav_w) self.nav_click.x = self.room.nav_x+self.room.nav_w;
-    if(self.nav_click.y < self.room.nav_y)                 self.nav_click.y = self.room.nav_y;
-    if(self.nav_click.y > self.room.nav_y+self.room.nav_h) self.nav_click.y = self.room.nav_y+self.room.nav_h;
-    my_avatar.toX = self.nav_click.x-my_avatar.w/2;
-    my_avatar.toY = self.nav_click.y-my_avatar.h/2;
+    self.ptInNavigable(self.nav_click.x,self.nav_click.y,clickptholder);
+    my_avatar.toX = clickptholder.x-my_avatar.w/2;
+    my_avatar.toY = clickptholder.y-my_avatar.h/2;
 
     self.selected_act = 0;
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
@@ -311,7 +338,8 @@ var navigable = function()
     if(DEBUG)
     {
       ctx.strokeStyle = white;
-      ctx.strokeRect(self.room.nav_x,self.room.nav_y,self.room.nav_w,self.room.nav_h);
+      for(var i = 0; i < self.room.navs.length; i++)
+        ctx.strokeRect(self.room.navs[i].x,self.room.navs[i].y,self.room.navs[i].w,self.room.navs[i].h);
       ctx.strokeStyle = red;
       for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
       ctx.strokeStyle = blue;
@@ -333,7 +361,7 @@ var toolbar = function()
   var self = this;
   self.x = 0;
   self.y = canv.height-90;
-  self.w = canv.width;
+  self.w = 200;
   self.h = 100;
 
   self.toolbar_animcycle_inst;

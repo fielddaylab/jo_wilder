@@ -807,10 +807,9 @@ tmp_room.fqid = "tunic.madison.capitol.entry";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_entry";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -868,10 +867,9 @@ tmp_room.fqid = "tunic.madison.capitol.hall";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_hall";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -989,10 +987,9 @@ tmp_room.fqid = "tunic.madison.drycleaner.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_drycleaner_entry";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -1050,10 +1047,9 @@ tmp_room.fqid = "tunic.madison.drycleaner.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -1265,10 +1261,9 @@ tmp_room.fqid = "tunic.madison.historicalsociety.closet";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -1509,10 +1504,9 @@ tmp_room.fqid = "tunic.madison.historicalsociety.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -1592,10 +1586,9 @@ tmp_room.fqid = "tunic.madison.historicalsociety.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -1888,10 +1881,9 @@ tmp_room.fqid = "tunic.madison.historicalsociety.stacks";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2000,10 +1992,9 @@ tmp_room.fqid = "tunic.madison.humanecology.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_humanecology_entry";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2061,10 +2052,9 @@ tmp_room.fqid = "tunic.madison.humanecology.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2226,10 +2216,9 @@ tmp_room.fqid = "tunic.madison.humanecology.hallway";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_humanecology_hallway";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2306,10 +2295,9 @@ tmp_room.fqid = "tunic.madison.kohlcenter.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2367,10 +2355,9 @@ tmp_room.fqid = "tunic.madison.kohlcenter.halloffame";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2456,10 +2443,9 @@ tmp_room.fqid = "tunic.madison.library.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_library_entry";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2517,10 +2503,9 @@ tmp_room.fqid = "tunic.madison.library.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_frontdesk";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;
@@ -2705,10 +2690,9 @@ tmp_room.fqid = "tunic.madison.library.microfiche";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_microfiche";
-tmp_room.nav_x = 100;
-tmp_room.nav_y = canv.height/2;
-tmp_room.nav_w = canv.width-200;
-tmp_room.nav_h = canv.height/2-100;
+tmp_room.navs = [
+{x:100, y:canv.height/2, w:canv.width-200, h:canv.height/2-100},
+];
 tmp_room.start_x = canv.width/2;
 tmp_room.start_y = canv.height/2;
 tmp_room.noteworthy = false;

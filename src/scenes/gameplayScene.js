@@ -19,11 +19,11 @@ var GamePlayScene = function(game, stage)
     cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room  = cur_scene.rooms[i];
 
     clicker = new Clicker({source:canvas});
+    my_navigable = new navigable();
+    my_navigable.consume_room(cur_room);
     my_avatar = new avatar();
     my_avatar.consume_level(cur_level);
     my_avatar.consume_room(cur_room);
-    my_navigable = new navigable();
-    my_navigable.consume_room(cur_room);
     my_toolbar = new toolbar();
     my_toolbar.consume_level(cur_level);
     my_mapview = new mapview();
