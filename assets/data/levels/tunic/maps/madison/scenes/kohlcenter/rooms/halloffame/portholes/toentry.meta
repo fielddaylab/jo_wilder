@@ -1,7 +1,7 @@
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 764;
+tmp_porthole.h = 78;
+tmp_porthole.x = 103;
+tmp_porthole.y = 572;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";

@@ -62,11 +62,9 @@ var GamePlayScene = function(game, stage)
   {
     if(DEBUG)
     {
-      clicker.filter(my_placer);
-      dragger.filter(my_placer);
+      //clicker.filter(my_placer);
+      //dragger.filter(my_placer);
       keyer.filter(my_keyable);
-      if(my_keyable.e)
-        dragger.filter(my_navigable);
     }
 
     switch(cur_state)
@@ -77,6 +75,7 @@ var GamePlayScene = function(game, stage)
         !clicker.filter(my_navigable) &&
         !clicker.filter(canv_clicker) &&
         false) ;
+        if(DEBUG && my_keyable.e) dragger.filter(my_navigable);
         my_avatar.tick();
         my_navigable.tick();
         //trigger cutscenes only from within nav
@@ -100,7 +99,8 @@ var GamePlayScene = function(game, stage)
         }
         break;
       case STATE_MAP:
-        if(
+        if(DEBUG && my_keyable.e) dragger.filter(my_mapview);
+        else if(
         !clicker.filter(my_mapview) &&
         false) ;
         my_avatar.tick();
@@ -127,6 +127,7 @@ var GamePlayScene = function(game, stage)
         if(
         !clicker.filter(my_objectview) &&
         false) ;
+        if(DEBUG && my_keyable.e) dragger.filter(my_objectview);
         my_avatar.tick();
         my_navigable.tick();
         my_objectview.tick();
@@ -197,7 +198,7 @@ var GamePlayScene = function(game, stage)
 
     if(DEBUG)
     {
-      my_placer.draw(ctx);
+      //my_placer.draw(ctx);
     }
   };
 

@@ -1,5 +1,5 @@
-tmp_person.w = 200;
-tmp_person.h = 200;
+tmp_person.w = 117;
+tmp_person.h = 216;
 tmp_person.x = 70;
 tmp_person.y = 230;
 tmp_person.z = 0;

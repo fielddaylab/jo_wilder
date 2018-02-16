@@ -1,7 +1,7 @@
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 141;
+tmp_person.h = 293;
+tmp_person.x = 104;
+tmp_person.y = 124;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "archivist";
 tmp_person.noteworthy = false;

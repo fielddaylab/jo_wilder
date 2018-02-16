@@ -1,7 +1,7 @@
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 755;
+tmp_porthole.h = 86;
+tmp_porthole.x = 73;
+tmp_porthole.y = 569;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
@@ -12,4 +12,3 @@ tmp_porthole.locks = [
 ];
 tmp_porthole.notlocks = [
 ];
-

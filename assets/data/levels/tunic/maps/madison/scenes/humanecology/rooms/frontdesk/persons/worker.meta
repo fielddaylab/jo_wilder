@@ -1,7 +1,7 @@
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 170;
+tmp_person.h = 310;
+tmp_person.x = 511;
+tmp_person.y = 120;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "ecologist";
 tmp_person.noteworthy = false;

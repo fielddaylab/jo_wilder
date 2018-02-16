@@ -1,7 +1,7 @@
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:220, y:266, w:390, h:406 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;

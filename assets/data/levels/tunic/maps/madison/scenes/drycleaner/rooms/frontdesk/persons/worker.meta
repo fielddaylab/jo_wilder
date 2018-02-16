@@ -1,7 +1,7 @@
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 150;
+tmp_person.h = 187;
+tmp_person.x = 60;
+tmp_person.y = 142;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "cleaner";
 tmp_person.noteworthy = false;

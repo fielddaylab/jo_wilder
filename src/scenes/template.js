@@ -51,6 +51,7 @@ var find = function(id)
 
 var querylocked = function(o)
 {
+  if(UNLOCK) return false;
   if(o.locked)
   {
     locked = false;
@@ -508,7 +509,7 @@ var print_room_meta = function(l)
   "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_room.navs = [\n";
   for(var i = 0; i < l.navs.length; i++)
-    str += "{x:"+tmp_room.navs[i].x+", y:"+tmp_room.navs[i].y+", w:"+tmp_room.navs[i].w+", h:"+tmp_room.navs[i].h+" },\n";
+    str += "{x:"+l.navs[i].x+", y:"+l.navs[i].y+", w:"+l.navs[i].w+", h:"+l.navs[i].h+" },\n";
   str +=
   "];\n"+
   "tmp_room.start_x = "+l.start_x+";\n"+

@@ -808,7 +808,7 @@ tmp_room.fqid = "tunic.madison.capitol.entry";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_entry";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:-7, y:372, w:876, h:275 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -819,10 +819,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tohall";
 tmp_porthole.fqid = "tunic.madison.capitol.entry.tohall";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 180;
+tmp_porthole.w = 264;
+tmp_porthole.h = 229;
+tmp_porthole.x = 329;
+tmp_porthole.y = 137;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.target_room = "hall";
@@ -841,10 +841,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.capitol.entry.tomap";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 760;
+tmp_porthole.h = 98;
+tmp_porthole.x = 116;
+tmp_porthole.y = 568;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.target_room = "";
@@ -868,7 +868,7 @@ tmp_room.fqid = "tunic.madison.capitol.hall";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:45, y:305, w:831, h:351 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -879,10 +879,10 @@ tmp_person = new person();
 tmp_person.id = "youngboy";
 tmp_person.fqid = "tunic.madison.capitol.hall.youngboy";
 {
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 128;
+tmp_person.h = 224;
+tmp_person.x = 271;
+tmp_person.y = 177;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "youngboy";
 tmp_person.noteworthy = false;
@@ -941,10 +941,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.capitol.hall.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 739;
+tmp_porthole.h = 65;
+tmp_porthole.x = 125;
+tmp_porthole.y = 591;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.target_room = "entry";
@@ -970,8 +970,8 @@ tmp_scene.fqid = "tunic.madison.drycleaner";
 tmp_scene.primary = false;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
-tmp_scene.x = 110;
-tmp_scene.y = 100;
+tmp_scene.x = 601;
+tmp_scene.y = 404;
 tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
@@ -988,7 +988,7 @@ tmp_room.fqid = "tunic.madison.drycleaner.entry";
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:-5, y:489, w:866, h:174 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -999,10 +999,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tofrontdesk";
 tmp_porthole.fqid = "tunic.madison.drycleaner.entry.tofrontdesk";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
+tmp_porthole.w = 138;
+tmp_porthole.h = 194;
 tmp_porthole.x = 390;
-tmp_porthole.y = 180;
+tmp_porthole.y = 298;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
@@ -1021,10 +1021,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.drycleaner.entry.tomap";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 715;
+tmp_porthole.h = 91;
+tmp_porthole.x = 132;
+tmp_porthole.y = 581;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
@@ -1048,7 +1048,7 @@ tmp_room.fqid = "tunic.madison.drycleaner.frontdesk";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:4, y:406, w:868, h:244 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -1059,10 +1059,10 @@ tmp_person = new person();
 tmp_person.id = "worker";
 tmp_person.fqid = "tunic.madison.drycleaner.frontdesk.worker";
 {
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 150;
+tmp_person.h = 187;
+tmp_person.x = 60;
+tmp_person.y = 142;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "cleaner";
 tmp_person.noteworthy = false;
@@ -1187,8 +1187,8 @@ tmp_object.fqid = "tunic.madison.drycleaner.frontdesk.logbook";
 {
 tmp_object.w = 100;
 tmp_object.h = 100;
-tmp_object.x = 680;
-tmp_object.y = 100;
+tmp_object.x = 603;
+tmp_object.y = 275;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "logbook";
 tmp_object.noteworthy = false;
@@ -1216,10 +1216,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.drycleaner.frontdesk.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 771;
+tmp_porthole.h = 88;
+tmp_porthole.x = 107;
+tmp_porthole.y = 567;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
@@ -1245,8 +1245,8 @@ tmp_scene.fqid = "tunic.madison.historicalsociety";
 tmp_scene.primary = true;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
-tmp_scene.x = 350;
-tmp_scene.y = 120;
+tmp_scene.x = 263;
+tmp_scene.y = 342;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
@@ -1262,7 +1262,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.closet";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:3, y:358, w:867, h:293 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -1273,10 +1273,10 @@ tmp_person = new person();
 tmp_person.id = "gramps";
 tmp_person.fqid = "tunic.madison.historicalsociety.closet.gramps";
 {
-tmp_person.w = 169;
-tmp_person.h = 255;
-tmp_person.x = 118;
-tmp_person.y = 202;
+tmp_person.w = 107;
+tmp_person.h = 257;
+tmp_person.x = 193;
+tmp_person.y = 162;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "gramps";
 tmp_person.noteworthy = false;
@@ -1399,10 +1399,10 @@ tmp_object = new object();
 tmp_object.id = "tunic";
 tmp_object.fqid = "tunic.madison.historicalsociety.closet.tunic";
 {
-tmp_object.w = 133;
-tmp_object.h = 168;
-tmp_object.x = 650;
-tmp_object.y = 150;
+tmp_object.w = 109;
+tmp_object.h = 130;
+tmp_object.x = 662;
+tmp_object.y = 172;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "tunic";
 tmp_object.noteworthy = false;
@@ -1478,10 +1478,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.closet.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 780;
-tmp_porthole.y = 280;
+tmp_porthole.w = 61;
+tmp_porthole.h = 356;
+tmp_porthole.x = 808;
+tmp_porthole.y = 296;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
@@ -1505,7 +1505,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.entry";
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:7, y:332, w:876, h:323 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -1516,10 +1516,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tocloset";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tocloset";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
+tmp_porthole.w = 80;
+tmp_porthole.h = 312;
 tmp_porthole.x = 0;
-tmp_porthole.y = 280;
+tmp_porthole.y = 256;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "closet";
@@ -1538,10 +1538,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tomap";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 761;
+tmp_porthole.h = 73;
+tmp_porthole.x = 119;
+tmp_porthole.y = 581;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "map";
@@ -1562,8 +1562,8 @@ tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tostacks";
 {
 tmp_porthole.w = 92;
 tmp_porthole.h = 168;
-tmp_porthole.x = 368;
-tmp_porthole.y = 156;
+tmp_porthole.x = 374;
+tmp_porthole.y = 158;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "stacks";
@@ -1587,7 +1587,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.frontdesk";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:7, y:330, w:868, h:327 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -1598,10 +1598,10 @@ tmp_person = new person();
 tmp_person.id = "archivist";
 tmp_person.fqid = "tunic.madison.historicalsociety.frontdesk.archivist";
 {
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 141;
+tmp_person.h = 293;
+tmp_person.x = 104;
+tmp_person.y = 124;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "archivist";
 tmp_person.noteworthy = false;
@@ -1855,10 +1855,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tostacks";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.frontdesk.tostacks";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 767;
+tmp_porthole.h = 87;
+tmp_porthole.x = 105;
+tmp_porthole.y = 565;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "stacks";
@@ -1882,7 +1882,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.stacks";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:220, y:266, w:390, h:406 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -1924,10 +1924,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.stacks.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 689;
+tmp_porthole.h = 66;
+tmp_porthole.x = 95;
+tmp_porthole.y = 595;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
@@ -1975,8 +1975,8 @@ tmp_scene.fqid = "tunic.madison.humanecology";
 tmp_scene.primary = false;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
-tmp_scene.x = 200;
-tmp_scene.y = 300;
+tmp_scene.x = 395;
+tmp_scene.y = 110;
 tmp_scene.animcycle_id = "scene_humanecology";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
@@ -1993,7 +1993,7 @@ tmp_room.fqid = "tunic.madison.humanecology.entry";
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_humanecology_entry";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:6, y:517, w:870, h:142 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2004,10 +2004,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tohallway";
 tmp_porthole.fqid = "tunic.madison.humanecology.entry.tohallway";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 180;
+tmp_porthole.w = 114;
+tmp_porthole.h = 175;
+tmp_porthole.x = 384;
+tmp_porthole.y = 338;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "hallway";
@@ -2026,10 +2026,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.humanecology.entry.tomap";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 862;
+tmp_porthole.h = 60;
+tmp_porthole.x = 15;
+tmp_porthole.y = 602;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
@@ -2053,7 +2053,7 @@ tmp_room.fqid = "tunic.madison.humanecology.frontdesk";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:0, y:404, w:873, h:253 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2064,10 +2064,10 @@ tmp_person = new person();
 tmp_person.id = "worker";
 tmp_person.fqid = "tunic.madison.humanecology.frontdesk.worker";
 {
-tmp_person.w = 200;
-tmp_person.h = 200;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.w = 170;
+tmp_person.h = 310;
+tmp_person.x = 511;
+tmp_person.y = 120;
 tmp_person.z = 0;
 tmp_person.animcycle_id = "ecologist";
 tmp_person.noteworthy = false;
@@ -2190,8 +2190,8 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tohallway";
 tmp_porthole.fqid = "tunic.madison.humanecology.frontdesk.tohallway";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
+tmp_porthole.w = 91;
+tmp_porthole.h = 287;
 tmp_porthole.x = 0;
 tmp_porthole.y = 280;
 tmp_porthole.z = 999;
@@ -2217,7 +2217,7 @@ tmp_room.fqid = "tunic.madison.humanecology.hallway";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_humanecology_hallway";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:100, y:330, w:780, h:308 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2228,10 +2228,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.humanecology.hallway.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 794;
+tmp_porthole.h = 80;
+tmp_porthole.x = 84;
+tmp_porthole.y = 573;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
@@ -2250,10 +2250,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tofrontdesk";
 tmp_porthole.fqid = "tunic.madison.humanecology.hallway.tofrontdesk";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 780;
-tmp_porthole.y = 280;
+tmp_porthole.w = 77;
+tmp_porthole.h = 395;
+tmp_porthole.x = 797;
+tmp_porthole.y = 261;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
@@ -2279,8 +2279,8 @@ tmp_scene.fqid = "tunic.madison.kohlcenter";
 tmp_scene.primary = false;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
-tmp_scene.x = 400;
-tmp_scene.y = 400;
+tmp_scene.x = 301;
+tmp_scene.y = 512;
 tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
@@ -2296,7 +2296,7 @@ tmp_room.fqid = "tunic.madison.kohlcenter.entry";
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:33, y:507, w:793, h:147 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2307,10 +2307,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tohalloffame";
 tmp_porthole.fqid = "tunic.madison.kohlcenter.entry.tohalloffame";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 180;
+tmp_porthole.w = 244;
+tmp_porthole.h = 179;
+tmp_porthole.x = 310;
+tmp_porthole.y = 311;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "halloffame";
@@ -2329,10 +2329,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.kohlcenter.entry.tomap";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 689;
+tmp_porthole.h = 57;
+tmp_porthole.x = 143;
+tmp_porthole.y = 600;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
@@ -2356,7 +2356,7 @@ tmp_room.fqid = "tunic.madison.kohlcenter.halloffame";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:7, y:481, w:866, h:169 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2369,8 +2369,8 @@ tmp_object.fqid = "tunic.madison.kohlcenter.halloffame.oldpictures";
 {
 tmp_object.w = 100;
 tmp_object.h = 100;
-tmp_object.x = 680;
-tmp_object.y = 100;
+tmp_object.x = 496;
+tmp_object.y = 225;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "oldpictures";
 tmp_object.noteworthy = false;
@@ -2397,10 +2397,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.kohlcenter.halloffame.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 764;
+tmp_porthole.h = 78;
+tmp_porthole.x = 103;
+tmp_porthole.y = 572;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
@@ -2426,8 +2426,8 @@ tmp_scene.fqid = "tunic.madison.library";
 tmp_scene.primary = false;
 tmp_scene.w = 100;
 tmp_scene.h = 100;
-tmp_scene.x = 500;
-tmp_scene.y = 220;
+tmp_scene.x = 629;
+tmp_scene.y = 225;
 tmp_scene.animcycle_id = "scene_library";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
@@ -2444,7 +2444,7 @@ tmp_room.fqid = "tunic.madison.library.entry";
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_library_entry";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:17, y:418, w:855, h:236 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2455,10 +2455,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tofrontdesk";
 tmp_porthole.fqid = "tunic.madison.library.entry.tofrontdesk";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 180;
+tmp_porthole.w = 271;
+tmp_porthole.h = 174;
+tmp_porthole.x = 334;
+tmp_porthole.y = 259;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
@@ -2477,10 +2477,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.library.entry.tomap";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 738;
+tmp_porthole.h = 73;
+tmp_porthole.x = 121;
+tmp_porthole.y = 587;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
@@ -2504,7 +2504,7 @@ tmp_room.fqid = "tunic.madison.library.frontdesk";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:23, y:400, w:844, h:250 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2515,8 +2515,8 @@ tmp_person = new person();
 tmp_person.id = "worker";
 tmp_person.fqid = "tunic.madison.library.frontdesk.worker";
 {
-tmp_person.w = 200;
-tmp_person.h = 200;
+tmp_person.w = 117;
+tmp_person.h = 216;
 tmp_person.x = 70;
 tmp_person.y = 230;
 tmp_person.z = 0;
@@ -2641,10 +2641,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.library.frontdesk.toentry";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 751;
+tmp_porthole.h = 73;
+tmp_porthole.x = 116;
+tmp_porthole.y = 585;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
@@ -2663,10 +2663,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomicrofiche";
 tmp_porthole.fqid = "tunic.madison.library.frontdesk.tomicrofiche";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 180;
+tmp_porthole.w = 87;
+tmp_porthole.h = 136;
+tmp_porthole.x = 422;
+tmp_porthole.y = 240;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "microfiche";
@@ -2691,7 +2691,7 @@ tmp_room.fqid = "tunic.madison.library.microfiche";
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:79, y:394, w:744, h:261 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2704,8 +2704,8 @@ tmp_object.fqid = "tunic.madison.library.microfiche.newspaper";
 {
 tmp_object.w = 100;
 tmp_object.h = 100;
-tmp_object.x = 680;
-tmp_object.y = 100;
+tmp_object.x = 562;
+tmp_object.y = 268;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "newspaper";
 tmp_object.noteworthy = false;
@@ -2732,10 +2732,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tofrontdesk";
 tmp_porthole.fqid = "tunic.madison.library.microfiche.tofrontdesk";
 {
-tmp_porthole.w = 100;
-tmp_porthole.h = 100;
-tmp_porthole.x = 390;
-tmp_porthole.y = 560;
+tmp_porthole.w = 755;
+tmp_porthole.h = 86;
+tmp_porthole.x = 73;
+tmp_porthole.y = 569;
 tmp_porthole.z = 999;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
@@ -2746,7 +2746,6 @@ tmp_porthole.locks = [
 ];
 tmp_porthole.notlocks = [
 ];
-
 tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);

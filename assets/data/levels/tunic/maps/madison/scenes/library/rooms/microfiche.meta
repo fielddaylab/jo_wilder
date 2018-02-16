@@ -1,7 +1,7 @@
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.navs = [
-{x:100, y:330, w:680, h:230 },
+{x:79, y:394, w:744, h:261 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;

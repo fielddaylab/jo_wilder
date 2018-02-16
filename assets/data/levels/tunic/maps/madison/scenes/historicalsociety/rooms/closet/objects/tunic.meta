@@ -1,7 +1,7 @@
-tmp_object.w = 133;
-tmp_object.h = 168;
-tmp_object.x = 650;
-tmp_object.y = 150;
+tmp_object.w = 109;
+tmp_object.h = 130;
+tmp_object.x = 662;
+tmp_object.y = 172;
 tmp_object.z = 0;
 tmp_object.animcycle_id = "tunic";
 tmp_object.noteworthy = false;

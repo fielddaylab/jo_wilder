@@ -7,6 +7,7 @@ while IFS='' read -r LINE || [[ -n "$LINE" ]]; do
   if [ $BLOCK == 0 ]; then
     ARGS="`echo $LINE | sed 's/.*SAVE //'`"
     FILE="`./filefrom.sh $ARGS`"
+    echo $FILE...
     echo -n "" > $FILE
     BLOCK=1;
   else
@@ -18,4 +19,6 @@ while IFS='' read -r LINE || [[ -n "$LINE" ]]; do
     fi
   fi
 done < "$1"
+
+./quickgen.sh
 
