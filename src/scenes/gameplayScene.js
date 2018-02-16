@@ -41,6 +41,8 @@ var GamePlayScene = function(game, stage)
 
     cur_state = STATE_NAV;
     state_t = 0;
+
+    //print_whole_level(cur_level);
   };
 
   self.tick = function()

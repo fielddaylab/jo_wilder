@@ -432,3 +432,366 @@ var cutscene = function()
   self.key = false;
 }
 
+var print_level_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_level.primary = "+l.primary+";\n"+
+  "tmp_level.toolbar_animcycle_id = \""+l.toolbar_animcycle_id+"\";\n"+
+  "tmp_level.icon_map_animcycle_id = \""+l.icon_map_animcycle_id+"\";\n"+
+  "tmp_level.icon_notebook_animcycle_id = \""+l.icon_notebook_animcycle_id+"\";\n"+
+  "tmp_level.notebook_animcycle_id = \""+l.notebook_animcycle_id+"\";\n"+
+  "tmp_level.avatar_walk_animcycle_id = \""+l.avatar_walk_animcycle_id+"\";\n"+
+  "tmp_level.avatar_idle_animcycle_id = \""+l.avatar_idle_animcycle_id+"\";\n"+
+  "tmp_level.avatar_act_animcycle_id = \""+l.avatar_act_animcycle_id+"\";\n"+
+  "tmp_level.person_hover_animcycle_id = \""+l.person_hover_animcycle_id+"\";\n"+
+  "tmp_level.object_hover_animcycle_id = \""+l.object_hover_animcycle_id+"\";\n"+
+  "tmp_level.porthole_hover_animcycle_id = \""+l.porthole_hover_animcycle_id+"\";\n"+
+  "tmp_level.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_level.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_level.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_map_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_map.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_map.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_map.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_map.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_scene_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_scene.primary = "+l.primary+";\n"+
+  "tmp_scene.w = "+l.w+";\n"+
+  "tmp_scene.h = "+l.h+";\n"+
+  "tmp_scene.x = "+l.x+";\n"+
+  "tmp_scene.y = "+l.y+";\n"+
+  "tmp_scene.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_scene.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_scene.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_scene.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_room_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_room.primary = "+l.primary+";\n"+
+  "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_room.navs = [\n";
+  for(var i = 0; i < l.navs.length; i++)
+    str += "{x:"+tmp_room.navs[i].x+", y:"+tmp_room.navs[i].y+", w:"+tmp_room.navs[i].w+", h:"+tmp_room.navs[i].h+" },";
+  str +=
+  "];\n"+
+  "tmp_room.noteworthy = "+l.noteworthy+";\n";
+  console.log(str);
+}
+
+var print_person_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_person.w = "+l.w+";\n"+
+  "tmp_person.h = "+l.h+";\n"+
+  "tmp_person.x = "+l.x+";\n"+
+  "tmp_person.y = "+l.y+";\n"+
+  "tmp_person.z = "+l.z+";\n"+
+  "tmp_person.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_person.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_person.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_person.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_speak_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_speak.primary = "+l.primary+";\n"+
+  "tmp_speak.w = "+l.w+";\n"+
+  "tmp_speak.h = "+l.h+";\n"+
+  "tmp_speak.x = "+l.x+";\n"+
+  "tmp_speak.y = "+l.y+";\n"+
+  "tmp_speak.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_speak.raw_atext = \""+l.raw_atext+"\";\n"+
+  "tmp_speak.speaker = "+l.speaker+";\n";
+  "tmp_speak.options_w = "+l.options_w+";\n"+
+  "tmp_speak.options_h = "+l.options_h+";\n"+
+  "tmp_speak.options_x = "+l.options_x+";\n"+
+  "tmp_speak.options_y = "+l.options_y+";\n"+
+  "tmp_speak.noteworthy = "+l.noteworthy+";\n";
+  console.log(str);
+}
+
+var print_option_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_option.w = "+l.w+";\n"+
+  "tmp_option.h = "+l.h+";\n"+
+  "tmp_option.x = "+l.x+";\n"+
+  "tmp_option.y = "+l.y+";\n"+
+  "tmp_option.static = "+l.static+";\n"+
+  "tmp_option.index = "+l.index+";\n"+
+  "tmp_option.raw_qtext = \""+l.raw_qtext+"\";\n"+
+  "tmp_option.target_speak = \""+l.target_speak+"\";\n"+
+  "tmp_option.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_option.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_option.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_object_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_object.w = "+l.w+";\n"+
+  "tmp_object.h = "+l.h+";\n"+
+  "tmp_object.x = "+l.x+";\n"+
+  "tmp_object.y = "+l.y+";\n"+
+  "tmp_object.z = "+l.z+";\n"+
+  "tmp_object.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_object.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_object.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_object.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_view_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_view.primary = "+l.primary+";\n"+
+  "tmp_view.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_view.noteworthy = "+l.noteworthy+";\n";
+  console.log(str);
+}
+
+var print_zone_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_zone.w = "+l.w+";\n"+
+  "tmp_zone.h = "+l.h+";\n"+
+  "tmp_zone.x = "+l.x+";\n"+
+  "tmp_zone.y = "+l.y+";\n"+
+  "tmp_zone.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_zone.target_view = \""+l.target_view+"\";\n"+
+  "tmp_zone.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_zone.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_zone.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_porthole_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_porthole.w = "+l.w+";\n"+
+  "tmp_porthole.h = "+l.h+";\n"+
+  "tmp_porthole.x = "+l.x+";\n"+
+  "tmp_porthole.y = "+l.y+";\n"+
+  "tmp_porthole.z = "+l.z+";\n"+
+  "tmp_porthole.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
+  "tmp_porthole.target_start_x = "+l.target_start_x+";\n"+
+  "tmp_porthole.target_start_y = "+l.target_start_y+";\n"+
+  "tmp_porthole.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_porthole.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_porthole.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_wildcard_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_wildcard.w = "+l.w+";\n"+
+  "tmp_wildcard.h = "+l.h+";\n"+
+  "tmp_wildcard.x = "+l.x+";\n"+
+  "tmp_wildcard.y = "+l.y+";\n"+
+  "tmp_wildcard.z = "+l.z+";\n"+
+  "tmp_wildcard.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_wildcard.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_wildcard.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_wildcard.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_inert_meta = function(l)
+{
+  var str = "";
+  str += "SAVE "+l.fqid+"\n"+
+  "tmp_inert.w = "+l.w+";\n"+
+  "tmp_inert.h = "+l.h+";\n"+
+  "tmp_inert.x = "+l.x+";\n"+
+  "tmp_inert.y = "+l.y+";\n"+
+  "tmp_inert.z = "+l.z+";\n"+
+  "tmp_inert.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_inert.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_inert.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",";
+  str +=
+  "];\n"+
+  "tmp_inert.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_whole_level = function(l)
+{
+  print_level_meta(l);
+  var map = l.map;
+  print_map_meta(map);
+  var scene;
+  for(var i = 0; i < map.scenes.length; i++)
+  {
+    scene = map.scenes[i];
+    print_scene_meta(scene);
+    var room;
+    for(var j = 0; j < scene.rooms.length; j++)
+    {
+      room = scene.rooms[j];
+      print_room_meta(room);
+      var person;
+      for(var k = 0; k < room.persons.length; k++)
+      {
+        person = room.persons[k];
+        print_person_meta(person);
+        var speak;
+        for(var l = 0; l < person.speaks.length; l++)
+        {
+          speak = person.speaks[l];
+          print_speak_meta(speak);
+          var option;
+          for(var m = 0; m < speak.options.length; m++)
+          {
+            option = speak.options[m];
+            print_option_meta(option);
+          }
+        }
+      }
+      var object;
+      for(var k = 0; k < room.objects.length; k++)
+      {
+        object = room.objects[k];
+        print_object_meta(object);
+        var view;
+        for(var l = 0; l < object.views.length; l++)
+        {
+          view = object.views[l];
+          print_view_meta(view);
+          var zone;
+          for(var m = 0; m < view.zones.length; m++)
+          {
+            zone = view.zones[m];
+            print_zone_meta(zone);
+          }
+        }
+      }
+      var porthole;
+      for(var k = 0; k < room.portholes.length; k++)
+      {
+        porthole = room.portholes[k];
+        print_porthole_meta(porthole);
+      }
+      var wildcard;
+      for(var k = 0; k < room.wildcards.length; k++)
+      {
+        wildcard = room.wildcards[k];
+        print_wildcard_meta(wildcard);
+      }
+      var inert;
+      for(var k = 0; k < room.inerts.length; k++)
+      {
+        inert = room.inerts[k];
+        print_inert_meta(inert);
+      }
+    }
+  }
+}
+
