@@ -307,26 +307,92 @@ var navigable = function()
     }
   }
 
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+    for(var i = 0; !self.edit_o && i < self.cache_unlocked_persons.length; i++)
+      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_persons[i]; }
+    for(var i = 0; !self.edit_o && i < self.cache_unlocked_objects.length; i++)
+      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_objects[i]; }
+    for(var i = 0; !self.edit_o && i < self.cache_unlocked_portholes.length; i++)
+      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_portholes[i]; }
+    for(var i = 0; !self.edit_o && i < self.cache_unlocked_wildcards.length; i++)
+      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
+    for(var i = 0; !self.edit_o && i < self.room.navs.length; i++)
+      if(ptWithinBox(self.room.navs[i],evt.doX,evt.doY)) { self.edit_o = self.room.navs[i]; }
+
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+      self.edit_o.h += self.deltaY;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    self._dirty = true;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
   var clickptholder = {x:0,y:0};
   self.click = function(evt)
   {
-    self.last_click.x = evt.doX;
-    self.last_click.y = evt.doY;
-    self.nav_click.x = evt.doX;
-    self.nav_click.y = evt.doY;
-    self.pt_in_navigable(self.nav_click.x,self.nav_click.y,clickptholder);
-    my_avatar.toX = clickptholder.x-my_avatar.w/2;
-    my_avatar.toY = clickptholder.y-my_avatar.h/2;
+    if(!(DEBUG && my_keyable.e))
+    {
+      self.last_click.x = evt.doX;
+      self.last_click.y = evt.doY;
+      self.nav_click.x = evt.doX;
+      self.nav_click.y = evt.doY;
+      self.pt_in_navigable(self.nav_click.x,self.nav_click.y,clickptholder);
+      my_avatar.toX = clickptholder.x-my_avatar.w/2;
+      my_avatar.toY = clickptholder.y-my_avatar.h/2;
 
-    self.selected_act = 0;
-    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_persons[i]; }
-    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_objects[i]; }
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_portholes[i]; }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_wildcards[i]; }
+      self.selected_act = 0;
+      for(var i = 0; i < self.cache_unlocked_persons.length; i++)
+        if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_persons[i]; }
+      for(var i = 0; i < self.cache_unlocked_objects.length; i++)
+        if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_objects[i]; }
+      for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
+        if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_portholes[i]; }
+      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
+        if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_wildcards[i]; }
+    }
   }
 
   self.tick = function()

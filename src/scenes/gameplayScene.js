@@ -65,6 +65,8 @@ var GamePlayScene = function(game, stage)
       clicker.filter(my_placer);
       dragger.filter(my_placer);
       keyer.filter(my_keyable);
+      if(my_keyable.e)
+        dragger.filter(my_navigable);
     }
 
     switch(cur_state)
