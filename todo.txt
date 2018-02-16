@@ -1,0 +1,4 @@
+actables have "action offset" (where player walks to, relative to them, to interact)
+editor zone mover
+editor conversation placer
+
