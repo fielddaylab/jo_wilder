@@ -150,6 +150,8 @@ var person = function()
   self.x = 0;
   self.y = 0;
   self.z = 0;
+  self.act_x = 0;
+  self.act_y = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.speaks = [];
@@ -171,6 +173,8 @@ var object = function()
   self.x = 0;
   self.y = 0;
   self.z = 0;
+  self.act_x = 0;
+  self.act_y = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.views = [];
@@ -192,6 +196,8 @@ var porthole = function()
   self.x = 0;
   self.y = 0;
   self.z = 0;
+  self.act_x = 0;
+  self.act_y = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.target_room = "null";
@@ -216,6 +222,8 @@ var wildcard = function()
   self.x = 0;
   self.y = 0;
   self.z = 0;
+  self.act_x = 0;
+  self.act_y = 0;
   self.animcycle_id;
   self.animcycle_inst;
   self.noteworthy = false;
@@ -526,6 +534,8 @@ var print_person_meta = function(l)
   "tmp_person.x = "+l.x+";\n"+
   "tmp_person.y = "+l.y+";\n"+
   "tmp_person.z = "+l.z+";\n"+
+  "tmp_person.act_x = "+l.act_x+";\n"+
+  "tmp_person.act_y = "+l.act_y+";\n"+
   "tmp_person.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_person.noteworthy = "+l.noteworthy+";\n"+
   "tmp_person.locks = [\n";
@@ -593,6 +603,8 @@ var print_object_meta = function(l)
   "tmp_object.x = "+l.x+";\n"+
   "tmp_object.y = "+l.y+";\n"+
   "tmp_object.z = "+l.z+";\n"+
+  "tmp_object.act_x = "+l.act_x+";\n"+
+  "tmp_object.act_y = "+l.act_y+";\n"+
   "tmp_object.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_object.noteworthy = "+l.noteworthy+";\n"+
   "tmp_object.locks = [\n";
@@ -648,6 +660,8 @@ var print_porthole_meta = function(l)
   "tmp_porthole.x = "+l.x+";\n"+
   "tmp_porthole.y = "+l.y+";\n"+
   "tmp_porthole.z = "+l.z+";\n"+
+  "tmp_porthole.act_x = "+l.act_x+";\n"+
+  "tmp_porthole.act_y = "+l.act_y+";\n"+
   "tmp_porthole.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
   "tmp_porthole.target_start_x = "+l.target_start_x+";\n"+
@@ -674,6 +688,8 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.x = "+l.x+";\n"+
   "tmp_wildcard.y = "+l.y+";\n"+
   "tmp_wildcard.z = "+l.z+";\n"+
+  "tmp_wildcard.act_x = "+l.act_x+";\n"+
+  "tmp_wildcard.act_y = "+l.act_y+";\n"+
   "tmp_wildcard.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_wildcard.noteworthy = "+l.noteworthy+";\n"+
   "tmp_wildcard.locks = [\n";
