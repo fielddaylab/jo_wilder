@@ -20,6 +20,7 @@ var GamePlayScene = function(game, stage)
 
     clicker = new Clicker({source:canvas});
     dragger = new Dragger({source:canvas});
+    keyer = new Keyer({source:canvas});
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
     my_avatar = new avatar();
@@ -36,13 +37,25 @@ var GamePlayScene = function(game, stage)
     my_cutsceneview = new cutsceneview();
 
     my_placer = new placer(null, 100,100,100,100, canv);
+    my_keyable = new keyable({});
+    my_keyable.key = function(evt)
+    {
+      if(evt.key == " ") print_whole_level(cur_level);
+    }
+    my_keyable.key_down = function(evt)
+    {
+      if(evt.key == "e") my_keyable.e = 1;
+    }
+    my_keyable.key_up = function(evt)
+    {
+      if(evt.key == "e") my_keyable.e = 0;
+    }
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
 
     cur_state = STATE_NAV;
     state_t = 0;
 
-    print_whole_level(cur_level);
   };
 
   self.tick = function()
@@ -51,6 +64,7 @@ var GamePlayScene = function(game, stage)
     {
       clicker.filter(my_placer);
       dragger.filter(my_placer);
+      keyer.filter(my_keyable);
     }
 
     switch(cur_state)
@@ -133,6 +147,7 @@ var GamePlayScene = function(game, stage)
     }
     clicker.flush();
     dragger.flush();
+    keyer.flush();
   };
 
   self.draw = function()

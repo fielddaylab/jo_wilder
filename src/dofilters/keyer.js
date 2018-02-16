@@ -96,7 +96,7 @@ var Keyer = function(init)
 }
 
 //example keyable- just needs key callback
-var Keyable = function(args)
+var keyable = function(args)
 {
   var self = this;
 
