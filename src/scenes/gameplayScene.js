@@ -53,7 +53,7 @@ var GamePlayScene = function(game, stage)
       if(evt.key == "e") my_keyable.e = 0;
     }
 
-    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ }};
+    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
 
     cur_state = STATE_NAV;
     state_t = 0;
@@ -63,6 +63,7 @@ var GamePlayScene = function(game, stage)
   self.tick = function()
   {
     keyer.filter(my_keyable);
+    if(!init_audio) clicker.filter(canv_clicker);
 
     switch(cur_state)
     {

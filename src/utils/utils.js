@@ -360,13 +360,12 @@ var GenImg = function(src)
   return img;
 }
 
-var GenAudio = function(src)
+var GenAud = function(src)
 {
   var aud = new Audio();
   aud.src = src;
   return aud;
 }
-
 
 var SeededRand = function(s)
 {

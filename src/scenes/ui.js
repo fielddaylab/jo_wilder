@@ -29,20 +29,25 @@ var avatar = function()
         cur_state = STATE_TRANSITION;
         switch(cur_act.act)
         {
-          case ACT_PERSON:   state_to = STATE_PERSON;   my_personview.consume_person(cur_act); break;
-          case ACT_OBJECT:   state_to = STATE_OBJECT;   my_objectview.consume_object(cur_act); break;
+          case ACT_PERSON: state_to = STATE_PERSON; my_personview.consume_person(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT: state_to = STATE_OBJECT; my_objectview.consume_object(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_PORTHOLE:
           {
-            if(cur_act.target_room_found) state_to = STATE_NAV;
+            if(cur_act.target_room_found)
+            {
+              state_to = STATE_NAV;
+              get_audio(cur_act.audio_id,cur_level.audios).aud.play();
+            }
             else //go to map
             {
               my_navigable.selected_act = 0;
               state_to = STATE_MAP;
               my_mapview.unlock_content();
+              get_audio(my_mapview.map.audio_id,cur_level.audios).aud.play();
             }
           }
           break;
-          case ACT_WILDCARD: state_to = STATE_WILDCARD; break;
+          case ACT_WILDCARD: state_to = STATE_WILDCARD; get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_INERT: /*do nothing*/; break;
         }
         state_t = 0;
@@ -217,6 +222,15 @@ var avatar = function()
     ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
   }
 };
+
+var null_audio;
+var get_audio = function(id,audios)
+{
+  var audio = null_audio;
+  for(var i = 0; i < audios.length; i++)
+    if(audios[i].id == id) audio = audios[i];
+  return audio;
+}
 
 var null_animcycle;
 var gen_animcycle_inst = function(id,animcycles)

@@ -1,6 +1,7 @@
 var levels = [];
 
 var tmp_animcycle;
+var tmp_audio;
 var tmp_entry;
 var tmp_cutscene;
 var tmp_level;

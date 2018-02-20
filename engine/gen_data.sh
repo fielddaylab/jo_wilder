@@ -19,11 +19,11 @@ SEARCHTYPE="."
 
 id() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into banana (removes path + .meta) #engine/game
 {
-  basename $@ | sed 's@.meta@@'
+  basename $@ | sed 's@\.meta@@'
 }
 dir() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.meta into ../assets/data/levels/my_level/maps/my_map/.../banana (removes .meta) #engine
 {
-  echo $@ | sed 's@.meta@@'
+  echo $@ | sed 's@\.meta@@'
 }
 img() #turns ../assets/data/levels/my_level/maps/my_map/.../banana.png into assets/data/levels/my_level/maps/my_map/.../banana.png (makes .png relative to data directory) #engine/game
 {
@@ -137,6 +137,7 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@type" ];   then shift; SEARCHTYPE=$1; if [ "@"$SEARCHTYPE == "@" ]; then echo "usage: $0 list type animcycle"; fi fi
   if [ "@"$1 == "@genlevel" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genlevel level";                                      fi fi
   if [ "@"$1 == "@genanimcycle" ]; then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genanimcycle level.animcycle";                        fi fi
+  if [ "@"$1 == "@genaudio" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genaudio level.audio";                                fi fi
   if [ "@"$1 == "@genentry" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genentry level.entry";                                fi fi
   if [ "@"$1 == "@gencutscene" ];  then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 gencutscene level.cutscene";                          fi fi
   if [ "@"$1 == "@genmap" ];       then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genmap level.map";                                    fi fi
@@ -153,6 +154,7 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@geninert" ];     then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 geninert level.map.scene.room.inert";                 fi fi
   if [ "@"$1 == "@rmlevel" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmlevel level";                                      fi fi
   if [ "@"$1 == "@rmanimcycle" ]; then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmanimcycle level.animcycle";                        fi fi
+  if [ "@"$1 == "@rmaudio" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmaudio level.audio";                                fi fi
   if [ "@"$1 == "@rmentry" ];     then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmentry level.entry";                                fi fi
   if [ "@"$1 == "@rmcutscene" ];  then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmcutscene level.cutscene";                          fi fi
   if [ "@"$1 == "@rmmap" ];       then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmmap level.map";                                    fi fi
@@ -176,6 +178,8 @@ GENBREAKDOWN=$GENFQID
 GENLEVEL=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 if [ "@"$GENCMD == "@genanimcycle" ]; then
 GENANIMCYCLE=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+elif [ "@"$GENCMD == "@genaudio" ]; then
+GENAUDIO=`echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 elif [ "@"$GENCMD == "@genentry" ]; then
 GENENTRY=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 elif [ "@"$GENCMD == "@gencutscene" ]; then
@@ -204,6 +208,8 @@ fi
 GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubfullifdne level $GENDIR $GENLEVEL;
   if [ "@"$GENCMD == "@genanimcycle" ]; then
     GENDIR=$GENDIR/$GENLEVEL/animcycles; if [ "@"$GENANIMCYCLE != "@" ]; then stubfullifdne animcycle $GENDIR $GENANIMCYCLE; fi #animcycle
+  elif [ "@"$GENCMD == "@genaudio" ]; then
+    GENDIR=$GENDIR/$GENLEVEL/audios; if [ "@"$GENAUDIO != "@" ]; then stubfullifdne audio $GENDIR $GENAUDIO; fi #audio
   elif [ "@"$GENCMD == "@genentry" ]; then
     GENDIR=$GENDIR/$GENLEVEL/entrys; if [ "@"$GENENTRY != "@" ]; then stubfullifdne entry $GENDIR $GENENTRY; fi #entry
   elif [ "@"$GENCMD == "@gencutscene" ]; then
@@ -255,6 +261,8 @@ RMBREAKDOWN=$RMFQID
 RMLEVEL=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 if [ "@"$RMCMD == "@rmanimcycle" ]; then
 RMANIMCYCLE=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
+elif [ "@"$RMCMD == "@rmaudio" ]; then
+RMAUDIO=`echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 elif [ "@"$RMCMD == "@rmentry" ]; then
 RMENTRY=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 elif [ "@"$RMCMD == "@rmcutscene" ]; then
@@ -284,6 +292,8 @@ RMDIR=$ENGINE_DD
 RMDIR=$RMDIR/levels;            if [ "@"$RMCMD == "@rmlevel" ]    && [ "@"$RMLEVEL != "@" ]    && [ -d $RMDIR/$RMLEVEL ];    then rmfull level     $RMDIR $RMLEVEL;    fi
 if [ "@"$RMCMD == "@rmanimcycle" ]; then
 RMDIR=$RMDIR/$RMLEVEL/animcycles;if [ "@"$RMCMD == "@rmanimcycle" ] && [ "@"$RMANIMCYCLE != "@" ] && [ -d $RMDIR/$RMANIMCYCLE ]; then rmfull animcycle  $RMDIR $RMANIMCYCLE; fi
+elif [ "@"$RMCMD == "@rmaudio" ]; then
+RMDIR=$RMDIR/$RMLEVEL/audios;if [ "@"$RMCMD == "@rmaudio" ] && [ "@"$RMAUDIO != "@" ] && [ -d $RMDIR/$RMAUDIO ]; then rmfull audio  $RMDIR $RMAUDIO; fi
 elif [ "@"$RMCMD == "@rmentry" ]; then
 RMDIR=$RMDIR/$RMLEVEL/entrys;   if [ "@"$RMCMD == "@rmentry" ]    && [ "@"$RMENTRY != "@" ]    && [ -d $RMDIR/$RMENTRY ];    then rmfull entry     $RMDIR $RMENTRY;    fi
 elif [ "@"$RMCMD == "@rmcutscene" ]; then
@@ -359,6 +369,25 @@ if [ $NOGEN == "0" ]; then
     #SPECIAL CASE FOR ANIMCYCLE TODO: ENFORCE EXISTENCE
     echo "for(var i = 0; i < tmp_level.animcycles.length; i++)" >> $OUT
       echo "if(tmp_level.animcycles[i].id == \"null\") null_animcycle = tmp_level.animcycles[i];" >> $OUT
+
+    if ensuredelimeter audio $level_dir; then :; else continue; fi
+    audios_dir=$level_dir/audios
+    for audio in $audios_dir/*.mp3; do #audios
+
+      audio_id=`basename $audio | sed 's@\.mp3@@'` #manually overwrite `id` to replace mp3
+      echo - Note: Genning $audio_id #debug
+      echo "tmp_audio = new audio();" >> $OUT
+      echo "tmp_audio.id = \"$audio_id\";" >> $OUT
+      echo "tmp_audio.fqid = \"$level_id.$audio_id\";" >> $OUT
+      echo "{" >> $OUT
+      echo "tmp_audio.aud = GenAud(\"`img $audio`\");" >> $OUT
+      echo "}" >> $OUT
+      echo "tmp_level.audios.push(tmp_audio);" >> $OUT
+
+    done
+    #SPECIAL CASE FOR AUDIO TODO: ENFORCE EXISTENCE
+    echo "for(var i = 0; i < tmp_level.audios.length; i++)" >> $OUT
+      echo "if(tmp_level.audios[i].id == \"null\") null_audio = tmp_level.audios[i];" >> $OUT
 
     if ensuredelimeter entry $level_dir; then :; else continue; fi
     entrys_dir=$level_dir/entrys
@@ -680,6 +709,13 @@ echo Listing:
       animcycle_dir=`dir $animcycle`
       animcycle_id=`id $animcycle`
       if [ @`echo $animcycle_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo animcycle | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[33manimcycle\e[39m) $animcycle_id [\e[2m$level_id.$animcycle_id\e[22m]\n"; fi
+    done
+
+    audios_dir=$level_dir/audios
+    for audio in $audios_dir/*.mp3; do #audios
+      if [ ! -f $audio ]; then continue; fi
+      audio_id=`basename $audio | sed 's@\.mp3@@'` #manually overwrite `id` to replace mp3
+      if [ @`echo $audio_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo audio | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[31maudio\e[39m) $audio_id [\e[2m$level_id.$audio_id\e[22m]\n"; fi
     done
 
     entrys_dir=$level_dir/entrys
