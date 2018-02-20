@@ -128,6 +128,8 @@ var room = function()
   self.animcycle_id;
   self.animcycle_inst;
   self.navs = [];
+  self.lights = [];
+  self.shadows = [];
   self.start_x = 0;
   self.start_y = 0;
   self.persons = [];
@@ -518,6 +520,16 @@ var print_room_meta = function(l)
   "tmp_room.navs = [\n";
   for(var i = 0; i < l.navs.length; i++)
     str += "{x:"+l.navs[i].x+", y:"+l.navs[i].y+", w:"+l.navs[i].w+", h:"+l.navs[i].h+" },\n";
+  str +=
+  "];\n"+
+  "tmp_room.lights = [\n";
+  for(var i = 0; i < l.lights.length; i++)
+    str += "{x:"+l.lights[i].x+", y:"+l.lights[i].y+", w:"+l.lights[i].w+", h:"+l.lights[i].h+" },\n";
+  str +=
+  "];\n"+
+  "tmp_room.shadows = [\n";
+  for(var i = 0; i < l.shadows.length; i++)
+    str += "{x:"+l.shadows[i].x+", y:"+l.shadows[i].y+", w:"+l.shadows[i].w+", h:"+l.shadows[i].h+" },\n";
   str +=
   "];\n"+
   "tmp_room.start_x = "+l.start_x+";\n"+

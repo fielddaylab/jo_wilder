@@ -15,14 +15,17 @@ function jsonFromURL()
 }
 
 //colors
-var black = "#000000";
-var white = "#FFFFFF";
-var red   = "#FF0000";
-var green = "#00FF00";
-var blue  = "#0000FF";
+var black   = "#000000";
+var white   = "#FFFFFF";
+var red     = "#FF0000";
+var green   = "#00FF00";
+var blue    = "#0000FF";
 var cyan    = "#00FFFF";
 var magenta = "#FF00FF";
 var yellow  = "#FFFF00";
+
+var purple  = "#7856CB";
+var orange  = "#EE682C";
 
 //math (raw)
 function mapVal(from_min, from_max, to_min, to_max, v) { return ((v-from_min)/(from_max-from_min))*(to_max-to_min)+to_min; }

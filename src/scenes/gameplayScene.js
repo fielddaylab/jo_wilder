@@ -159,36 +159,29 @@ var GamePlayScene = function(game, stage)
     {
       case STATE_NAV:
         my_navigable.draw();
-        my_avatar.draw();
         my_toolbar.draw(0);
         break;
       case STATE_MAP:
         my_navigable.draw();
-        my_avatar.draw();
         my_mapview.draw(0);
         break;
       case STATE_NOTEBOOK:
         my_navigable.draw();
-        my_avatar.draw();
         my_notebook.draw(0);
         break;
       case STATE_PERSON:
         my_navigable.draw();
-        my_avatar.draw();
         my_personview.draw(0);
         break;
       case STATE_OBJECT:
         my_navigable.draw();
-        my_avatar.draw();
         my_objectview.draw(0);
         break;
       case STATE_WILDCARD:
         my_navigable.draw();
-        my_avatar.draw();
         break;
       case STATE_CUTSCENE:
         my_navigable.draw();
-        my_avatar.draw();
         my_cutsceneview.draw(0);
         break;
       case STATE_TRANSITION:
@@ -289,7 +282,6 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(0);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
@@ -299,41 +291,35 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_MAP)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
           my_mapview.draw((1-state_t)*my_mapview.h);
         }
         if(state_to == STATE_NOTEBOOK)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
           my_notebook.draw((1-state_t)*my_notebook.h);
         }
         if(state_to == STATE_PERSON)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
           my_personview.draw((1-state_t)*my_personview.h);
         }
         if(state_to == STATE_OBJECT)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
           my_objectview.draw((1-state_t)*my_objectview.h);
         }
         if(state_to == STATE_WILDCARD)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
         }
         if(state_to == STATE_CUTSCENE)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw(state_t*my_toolbar.h);
           my_cutsceneview.draw((1-state_t)*my_cutsceneview.h);
         }
@@ -344,7 +330,6 @@ var GamePlayScene = function(game, stage)
           if(my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
           {
             my_navigable.draw();
-            my_avatar.draw();
             my_toolbar.draw(0);
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
@@ -356,7 +341,6 @@ var GamePlayScene = function(game, stage)
           else
           {
             my_navigable.draw();
-            my_avatar.draw();
             my_toolbar.draw((1-state_t)*my_toolbar.h);
             my_mapview.draw(state_t*my_mapview.h);
           }
@@ -366,7 +350,6 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
           my_notebook.draw(state_t*my_notebook.h);
         }
@@ -375,7 +358,6 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
           my_personview.draw(state_t*my_personview.h);
         }
@@ -384,7 +366,6 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
           my_objectview.draw(state_t*my_objectview.h);
         }
@@ -395,7 +376,6 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_avatar.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
           my_cutsceneview.draw(state_t*my_cutsceneview.h);
         }

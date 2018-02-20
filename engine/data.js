@@ -1507,6 +1507,12 @@ tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.navs = [
 {x:7, y:332, w:876, h:323 },
 ];
+tmp_room.lights = [
+{x:7, y:332, w:876, h:323 },
+];
+tmp_room.shadows = [
+{x:7, y:332, w:876, h:323 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = canv.height;
 tmp_room.noteworthy = false;

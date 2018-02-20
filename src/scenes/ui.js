@@ -9,6 +9,8 @@ var avatar = function()
   self.toX = self.x;
   self.toY = self.y;
 
+  self.shade = 0;
+
   self.state = AVATAR_IDLE;
   self.anim = new animation();
   self.anim.frame_delay = 10;
@@ -170,13 +172,43 @@ var avatar = function()
     self.anim.tick();
   }
 
-  self.draw = function()
+  var shading_canv = GenIcon(canv.width,canv.height);
+  var done = 0;
+  self.draw = function(shading)
   {
+    self.shade = lerp(self.shade,shading,0.02);
+  /*
     self.anim.x = self.x;
     self.anim.y = self.y;
     self.anim.w = self.w;
     self.anim.h = self.h;
     self.anim.draw(ctx);
+  */
+
+    shading_canv.context.clearRect(self.x-5,self.y-5,self.w+10,self.h+10);
+    //this is just ^ hoisted, + shading
+    var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
+    shading_canv.context.save();
+    shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
+    if(self.anim.flip) shading_canv.context.scale(-1,1);
+    shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+    shading_canv.context.restore();
+
+    if(self.shade > 0.01)
+    {
+      shading_canv.context.globalCompositeOperation = "source-atop";
+      shading_canv.context.fillStyle = "rgba(255,255,255,"+self.shade/5+")";
+      shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+    }
+    else if(self.shade < -0.01)
+    {
+      shading_canv.context.globalCompositeOperation = "source-atop";
+      shading_canv.context.fillStyle = "rgba(0,0,0,"+self.shade/-10+")";
+      shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+    }
+
+    ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
+    shading_canv.context.globalCompositeOperation = "source-over";
   }
 };
 
@@ -307,6 +339,18 @@ var navigable = function()
     }
   }
 
+  self.pt_shade = function(x,y)
+  {
+    var shade = 0;
+    for(var i = 0; i < self.room.lights.length; i++)
+      if(ptWithinBox(self.room.lights[i],x,y)) shade++;
+    for(var i = 0; i < self.room.shadows.length; i++)
+      if(ptWithinBox(self.room.shadows[i],x,y)) shade--;
+    if(shade > 0) return 1;
+    if(shade < 0) return -1;
+    return 0;
+  }
+
   //DRAG DEBUG EDIT STUFF
   self.edit_cur_dragging = false;
   self.edit_cur_resizing = false;
@@ -324,6 +368,10 @@ var navigable = function()
       if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_portholes[i]; }
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_wildcards.length; i++)
       if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
+    for(var i = 0; !self.edit_o && i < self.room.shadows.length; i++)
+      if(ptWithinBox(self.room.shadows[i],evt.doX,evt.doY)) { self.edit_o = self.room.shadows[i]; }
+    for(var i = 0; !self.edit_o && i < self.room.lights.length; i++)
+      if(ptWithinBox(self.room.lights[i],evt.doX,evt.doY)) { self.edit_o = self.room.lights[i]; }
     for(var i = 0; !self.edit_o && i < self.room.navs.length; i++)
       if(ptWithinBox(self.room.navs[i],evt.doX,evt.doY)) { self.edit_o = self.room.navs[i]; }
 
@@ -410,9 +458,17 @@ var navigable = function()
     ctx.drawImage(self.room.animcycle_inst.img,0,0,canv.width,canv.height);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
+    my_avatar.draw(self.pt_shade(my_avatar.x+my_avatar.w/2,my_avatar.y+my_avatar.h/2));
+
     if(DEBUG)
     {
+      ctx.strokeStyle = purple;
+      for(var i = 0; i < self.room.shadows.length; i++)
+        ctx.strokeRect(self.room.shadows[i].x,self.room.shadows[i].y,self.room.shadows[i].w,self.room.shadows[i].h);
       ctx.strokeStyle = yellow;
+      for(var i = 0; i < self.room.lights.length; i++)
+        ctx.strokeRect(self.room.lights[i].x,self.room.lights[i].y,self.room.lights[i].w,self.room.lights[i].h);
+      ctx.strokeStyle = orange;
       for(var i = 0; i < self.room.navs.length; i++)
         ctx.strokeRect(self.room.navs[i].x,self.room.navs[i].y,self.room.navs[i].w,self.room.navs[i].h);
       ctx.strokeStyle = red;
