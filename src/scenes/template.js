@@ -130,6 +130,9 @@ var room = function()
   self.navs = [];
   self.lights = [];
   self.shadows = [];
+  self.light_color = "rgba(255,255,255,0.2)";
+  self.shadow_color = "rgba(0,0,0,0.2)";
+  self.ambient_color = "rgba(0,0,0,0)";
   self.start_x = 0;
   self.start_y = 0;
   self.persons = [];
@@ -512,6 +515,7 @@ var print_scene_meta = function(l)
   console.log(str);
 }
 
+var rgba = function(a,b,c,d) { return "rgba("+a+","+b+","+c+","+d+")";};
 var print_room_meta = function(l)
 {
   var str = "SAVE room "+l.fqid+"\n"+
@@ -532,6 +536,9 @@ var print_room_meta = function(l)
     str += "{x:"+l.shadows[i].x+", y:"+l.shadows[i].y+", w:"+l.shadows[i].w+", h:"+l.shadows[i].h+" },\n";
   str +=
   "];\n"+
+  "tmp_room.light_color = \""+l.light_color+"\";\n"+
+  "tmp_room.shadow_color = \""+l.shadow_color+"\";\n"+
+  "tmp_room.ambient_color = \""+l.ambient_color+"\";\n"+
   "tmp_room.start_x = "+l.start_x+";\n"+
   "tmp_room.start_y = "+l.start_y+";\n"+
   "tmp_room.noteworthy = "+l.noteworthy+";\n";

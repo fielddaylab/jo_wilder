@@ -814,6 +814,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:-7, y:372, w:876, h:275 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -884,6 +887,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:45, y:305, w:831, h:351 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -1014,6 +1020,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:-5, y:489, w:866, h:174 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -1084,6 +1093,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:4, y:406, w:868, h:244 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -1310,6 +1322,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:284, y:49, w:588, h:594 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -1565,6 +1580,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:593, y:311, w:275, h:341 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -1659,6 +1677,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:7, y:330, w:868, h:327 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -1964,6 +1985,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:220, y:266, w:390, h:406 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2087,6 +2111,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:6, y:517, w:870, h:142 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -2157,6 +2184,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:0, y:404, w:873, h:253 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2331,6 +2361,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:100, y:330, w:780, h:308 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2420,6 +2453,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:33, y:507, w:793, h:147 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -2490,6 +2526,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:7, y:481, w:866, h:169 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2588,6 +2627,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:17, y:418, w:855, h:236 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
@@ -2658,6 +2700,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:-125, y:66, w:488, h:585 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2857,6 +2902,9 @@ tmp_room.lights = [
 tmp_room.shadows = [
 {x:79, y:394, w:744, h:261 },
 ];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

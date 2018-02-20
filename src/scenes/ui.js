@@ -174,20 +174,14 @@ var avatar = function()
 
   var shading_canv = GenIcon(canv.width,canv.height);
   var done = 0;
-  self.draw = function(shading)
+  self.draw = function(shading,light_color,shadow_color,ambient_color)
   {
     self.shade = lerp(self.shade,shading,0.02);
-  /*
-    self.anim.x = self.x;
-    self.anim.y = self.y;
-    self.anim.w = self.w;
-    self.anim.h = self.h;
-    self.anim.draw(ctx);
-  */
 
+    shading_canv.context.globalCompositeOperation = "source-over";
     var b = 10;
     shading_canv.context.clearRect(self.x-b,self.y-b,self.w+2*b,self.h+2*b);
-    //this is just ^ hoisted, + shading
+
     var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
     shading_canv.context.save();
     shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
@@ -197,19 +191,30 @@ var avatar = function()
 
     if(self.shade > 0.01)
     {
-      shading_canv.context.globalCompositeOperation = "source-atop";
-      shading_canv.context.fillStyle = "rgba(255,255,255,"+self.shade/5+")";
+      shading_canv.context.globalAlpha = self.shade;
+      shading_canv.context.fillStyle = light_color;
       shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+      shading_canv.context.globalAlpha = 1-self.shade;
     }
     else if(self.shade < -0.01)
     {
-      shading_canv.context.globalCompositeOperation = "source-atop";
-      shading_canv.context.fillStyle = "rgba(0,0,0,"+self.shade/-10+")";
+      shading_canv.context.globalAlpha = -self.shade;
+      shading_canv.context.fillStyle = shadow_color;
       shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+      shading_canv.context.globalAlpha = 1+self.shade;
     }
+    shading_canv.context.fillStyle = ambient_color;
+    shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+
+    shading_canv.context.globalCompositeOperation = "destination-in";
+    shading_canv.context.globalAlpha = 1;
+    shading_canv.context.save();
+    shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
+    if(self.anim.flip) shading_canv.context.scale(-1,1);
+    shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+    shading_canv.context.restore();
 
     ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
-    shading_canv.context.globalCompositeOperation = "source-over";
   }
 };
 
@@ -459,7 +464,7 @@ var navigable = function()
     ctx.drawImage(self.room.animcycle_inst.img,0,0,canv.width,canv.height);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
-    my_avatar.draw(self.pt_shade(my_avatar.x+my_avatar.w/2,my_avatar.y+my_avatar.h/2));
+    my_avatar.draw(self.pt_shade(my_avatar.x+my_avatar.w/2,my_avatar.y+my_avatar.h/2),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
 
     if(DEBUG)
     {
