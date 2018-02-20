@@ -80,8 +80,6 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_idle/0.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_idle/1.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_idle/2.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -2655,10 +2653,10 @@ tmp_room.navs = [
 {x:23, y:400, w:844, h:250 },
 ];
 tmp_room.lights = [
-{x:23, y:400, w:844, h:250 },
+{x:344, y:307, w:645, h:359 },
 ];
 tmp_room.shadows = [
-{x:23, y:400, w:844, h:250 },
+{x:-125, y:66, w:488, h:585 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
@@ -2671,8 +2669,8 @@ tmp_person.fqid = "tunic.madison.library.frontdesk.worker";
 {
 tmp_person.w = 117;
 tmp_person.h = 216;
-tmp_person.x = 70;
-tmp_person.y = 230;
+tmp_person.x = 520;
+tmp_person.y = 251;
 tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
@@ -2821,10 +2819,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomicrofiche";
 tmp_porthole.fqid = "tunic.madison.library.frontdesk.tomicrofiche";
 {
-tmp_porthole.w = 87;
-tmp_porthole.h = 136;
-tmp_porthole.x = 422;
-tmp_porthole.y = 240;
+tmp_porthole.w = 148;
+tmp_porthole.h = 235;
+tmp_porthole.x = 187;
+tmp_porthole.y = 139;
 tmp_porthole.z = 999;
 tmp_porthole.act_x = 0;
 tmp_porthole.act_y = 0;

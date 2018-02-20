@@ -4,10 +4,10 @@ tmp_room.navs = [
 {x:23, y:400, w:844, h:250 },
 ];
 tmp_room.lights = [
-{x:23, y:400, w:844, h:250 },
+{x:344, y:307, w:645, h:359 },
 ];
 tmp_room.shadows = [
-{x:23, y:400, w:844, h:250 },
+{x:-125, y:66, w:488, h:585 },
 ];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;

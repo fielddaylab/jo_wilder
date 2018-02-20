@@ -41,6 +41,8 @@ var GamePlayScene = function(game, stage)
     my_keyable.key = function(evt)
     {
       if(evt.key == " ") print_whole_level(cur_level);
+      if(evt.key == "d") DEBUG = !DEBUG;
+      if(evt.key == "u") UNLOCK = !UNLOCK;
     }
     my_keyable.key_down = function(evt)
     {
@@ -60,12 +62,7 @@ var GamePlayScene = function(game, stage)
 
   self.tick = function()
   {
-    if(DEBUG)
-    {
-      //clicker.filter(my_placer);
-      //dragger.filter(my_placer);
-      keyer.filter(my_keyable);
-    }
+    keyer.filter(my_keyable);
 
     switch(cur_state)
     {
