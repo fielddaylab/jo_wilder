@@ -3,6 +3,12 @@ tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.navs = [
 {x:79, y:394, w:744, h:261 },
 ];
+tmp_room.lights = [
+{x:79, y:394, w:744, h:261 },
+];
+tmp_room.shadows = [
+{x:79, y:394, w:744, h:261 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

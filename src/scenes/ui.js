@@ -185,7 +185,8 @@ var avatar = function()
     self.anim.draw(ctx);
   */
 
-    shading_canv.context.clearRect(self.x-5,self.y-5,self.w+10,self.h+10);
+    var b = 10;
+    shading_canv.context.clearRect(self.x-b,self.y-b,self.w+2*b,self.h+2*b);
     //this is just ^ hoisted, + shading
     var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
     shading_canv.context.save();

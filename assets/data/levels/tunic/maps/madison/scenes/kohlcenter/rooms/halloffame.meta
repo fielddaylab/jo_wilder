@@ -3,6 +3,12 @@ tmp_room.animcycle_id = "room_kohlcenter_halloffame";
 tmp_room.navs = [
 {x:7, y:481, w:866, h:169 },
 ];
+tmp_room.lights = [
+{x:7, y:481, w:866, h:169 },
+];
+tmp_room.shadows = [
+{x:7, y:481, w:866, h:169 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

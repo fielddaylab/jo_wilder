@@ -3,6 +3,12 @@ tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.navs = [
 {x:220, y:266, w:390, h:406 },
 ];
+tmp_room.lights = [
+{x:220, y:266, w:390, h:406 },
+];
+tmp_room.shadows = [
+{x:220, y:266, w:390, h:406 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

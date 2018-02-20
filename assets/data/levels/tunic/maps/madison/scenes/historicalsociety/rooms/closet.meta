@@ -3,6 +3,12 @@ tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.navs = [
 {x:3, y:358, w:867, h:293 },
 ];
+tmp_room.lights = [
+{x:-55, y:179, w:359, h:467 },
+];
+tmp_room.shadows = [
+{x:284, y:49, w:588, h:594 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

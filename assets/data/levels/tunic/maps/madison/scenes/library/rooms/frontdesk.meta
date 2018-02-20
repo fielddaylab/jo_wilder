@@ -3,6 +3,12 @@ tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.navs = [
 {x:23, y:400, w:844, h:250 },
 ];
+tmp_room.lights = [
+{x:23, y:400, w:844, h:250 },
+];
+tmp_room.shadows = [
+{x:23, y:400, w:844, h:250 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

@@ -4,12 +4,12 @@ tmp_room.navs = [
 {x:7, y:332, w:876, h:323 },
 ];
 tmp_room.lights = [
-{x:7, y:332, w:876, h:323 },
+{x:-1, y:269, w:324, h:383 },
 ];
 tmp_room.shadows = [
-{x:7, y:332, w:876, h:323 },
+{x:593, y:311, w:275, h:341 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 

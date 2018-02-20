@@ -3,6 +3,12 @@ tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.navs = [
 {x:0, y:404, w:873, h:253 },
 ];
+tmp_room.lights = [
+{x:0, y:404, w:873, h:253 },
+];
+tmp_room.shadows = [
+{x:0, y:404, w:873, h:253 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;

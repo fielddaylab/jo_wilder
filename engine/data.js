@@ -810,8 +810,14 @@ tmp_room.animcycle_id = "room_capitol_entry";
 tmp_room.navs = [
 {x:-7, y:372, w:876, h:275 },
 ];
+tmp_room.lights = [
+{x:-7, y:372, w:876, h:275 },
+];
+tmp_room.shadows = [
+{x:-7, y:372, w:876, h:275 },
+];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -824,10 +830,12 @@ tmp_porthole.h = 229;
 tmp_porthole.x = 329;
 tmp_porthole.y = 137;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.target_room = "hall";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -846,6 +854,8 @@ tmp_porthole.h = 98;
 tmp_porthole.x = 116;
 tmp_porthole.y = 568;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.target_room = "";
 tmp_porthole.target_start_x = 0;
@@ -870,6 +880,12 @@ tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.navs = [
 {x:45, y:305, w:831, h:351 },
 ];
+tmp_room.lights = [
+{x:45, y:305, w:831, h:351 },
+];
+tmp_room.shadows = [
+{x:45, y:305, w:831, h:351 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -884,6 +900,8 @@ tmp_person.h = 224;
 tmp_person.x = 271;
 tmp_person.y = 177;
 tmp_person.z = 0;
+tmp_person.act_x = 0;
+tmp_person.act_y = 0;
 tmp_person.animcycle_id = "youngboy";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
@@ -946,9 +964,11 @@ tmp_porthole.h = 65;
 tmp_porthole.x = 125;
 tmp_porthole.y = 591;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -990,8 +1010,14 @@ tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.navs = [
 {x:-5, y:489, w:866, h:174 },
 ];
+tmp_room.lights = [
+{x:-5, y:489, w:866, h:174 },
+];
+tmp_room.shadows = [
+{x:-5, y:489, w:866, h:174 },
+];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -1004,10 +1030,12 @@ tmp_porthole.h = 194;
 tmp_porthole.x = 390;
 tmp_porthole.y = 298;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -1026,6 +1054,8 @@ tmp_porthole.h = 91;
 tmp_porthole.x = 132;
 tmp_porthole.y = 581;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
 tmp_porthole.target_start_x = 0;
@@ -1050,8 +1080,14 @@ tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.navs = [
 {x:4, y:406, w:868, h:244 },
 ];
+tmp_room.lights = [
+{x:4, y:406, w:868, h:244 },
+];
+tmp_room.shadows = [
+{x:4, y:406, w:868, h:244 },
+];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -1064,6 +1100,8 @@ tmp_person.h = 187;
 tmp_person.x = 60;
 tmp_person.y = 142;
 tmp_person.z = 0;
+tmp_person.act_x = 0;
+tmp_person.act_y = 0;
 tmp_person.animcycle_id = "cleaner";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
@@ -1190,6 +1228,8 @@ tmp_object.h = 100;
 tmp_object.x = 603;
 tmp_object.y = 275;
 tmp_object.z = 0;
+tmp_object.act_x = 0;
+tmp_object.act_y = 0;
 tmp_object.animcycle_id = "logbook";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
@@ -1221,9 +1261,11 @@ tmp_porthole.h = 88;
 tmp_porthole.x = 107;
 tmp_porthole.y = 567;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -1264,6 +1306,12 @@ tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.navs = [
 {x:3, y:358, w:867, h:293 },
 ];
+tmp_room.lights = [
+{x:-55, y:179, w:359, h:467 },
+];
+tmp_room.shadows = [
+{x:284, y:49, w:588, h:594 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -1278,6 +1326,8 @@ tmp_person.h = 257;
 tmp_person.x = 193;
 tmp_person.y = 162;
 tmp_person.z = 0;
+tmp_person.act_x = 0;
+tmp_person.act_y = 0;
 tmp_person.animcycle_id = "gramps";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
@@ -1401,9 +1451,11 @@ tmp_object.fqid = "tunic.madison.historicalsociety.closet.tunic";
 {
 tmp_object.w = 109;
 tmp_object.h = 130;
-tmp_object.x = 662;
-tmp_object.y = 172;
+tmp_object.x = 665;
+tmp_object.y = 180;
 tmp_object.z = 0;
+tmp_object.act_x = 0;
+tmp_object.act_y = 0;
 tmp_object.animcycle_id = "tunic";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
@@ -1483,6 +1535,8 @@ tmp_porthole.h = 356;
 tmp_porthole.x = 808;
 tmp_porthole.y = 296;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
 tmp_porthole.target_start_x = 0;
@@ -1508,13 +1562,13 @@ tmp_room.navs = [
 {x:7, y:332, w:876, h:323 },
 ];
 tmp_room.lights = [
-{x:7, y:332, w:876, h:323 },
+{x:-1, y:269, w:324, h:383 },
 ];
 tmp_room.shadows = [
-{x:7, y:332, w:876, h:323 },
+{x:593, y:311, w:275, h:341 },
 ];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -1527,9 +1581,11 @@ tmp_porthole.h = 312;
 tmp_porthole.x = 0;
 tmp_porthole.y = 256;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "closet";
-tmp_porthole.target_start_x = canv.width;
+tmp_porthole.target_start_x = 880;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -1546,9 +1602,11 @@ tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tomap";
 {
 tmp_porthole.w = 761;
 tmp_porthole.h = 73;
-tmp_porthole.x = 119;
-tmp_porthole.y = 581;
+tmp_porthole.x = 109;
+tmp_porthole.y = 585;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "map";
 tmp_porthole.target_start_x = 0;
@@ -1571,10 +1629,12 @@ tmp_porthole.h = 168;
 tmp_porthole.x = 374;
 tmp_porthole.y = 158;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "stacks";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -1595,6 +1655,12 @@ tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.navs = [
 {x:7, y:330, w:868, h:327 },
 ];
+tmp_room.lights = [
+{x:7, y:330, w:868, h:327 },
+];
+tmp_room.shadows = [
+{x:7, y:330, w:868, h:327 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -1609,6 +1675,8 @@ tmp_person.h = 293;
 tmp_person.x = 104;
 tmp_person.y = 124;
 tmp_person.z = 0;
+tmp_person.act_x = 0;
+tmp_person.act_y = 0;
 tmp_person.animcycle_id = "archivist";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
@@ -1866,9 +1934,11 @@ tmp_porthole.h = 87;
 tmp_porthole.x = 105;
 tmp_porthole.y = 565;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "stacks";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -1890,6 +1960,12 @@ tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.navs = [
 {x:220, y:266, w:390, h:406 },
 ];
+tmp_room.lights = [
+{x:220, y:266, w:390, h:406 },
+];
+tmp_room.shadows = [
+{x:220, y:266, w:390, h:406 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -1904,6 +1980,8 @@ tmp_object.h = 100;
 tmp_object.x = 680;
 tmp_object.y = 100;
 tmp_object.z = 0;
+tmp_object.act_x = 0;
+tmp_object.act_y = 0;
 tmp_object.animcycle_id = "journalsaz";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
@@ -1935,9 +2013,11 @@ tmp_porthole.h = 66;
 tmp_porthole.x = 95;
 tmp_porthole.y = 595;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -1957,10 +2037,12 @@ tmp_porthole.h = 134;
 tmp_porthole.x = 349;
 tmp_porthole.y = 174;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2001,8 +2083,14 @@ tmp_room.animcycle_id = "room_humanecology_entry";
 tmp_room.navs = [
 {x:6, y:517, w:870, h:142 },
 ];
+tmp_room.lights = [
+{x:6, y:517, w:870, h:142 },
+];
+tmp_room.shadows = [
+{x:6, y:517, w:870, h:142 },
+];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -2015,10 +2103,12 @@ tmp_porthole.h = 175;
 tmp_porthole.x = 384;
 tmp_porthole.y = 338;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "hallway";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2037,6 +2127,8 @@ tmp_porthole.h = 60;
 tmp_porthole.x = 15;
 tmp_porthole.y = 602;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
 tmp_porthole.target_start_x = 0;
@@ -2061,6 +2153,12 @@ tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.navs = [
 {x:0, y:404, w:873, h:253 },
 ];
+tmp_room.lights = [
+{x:0, y:404, w:873, h:253 },
+];
+tmp_room.shadows = [
+{x:0, y:404, w:873, h:253 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2075,6 +2173,8 @@ tmp_person.h = 310;
 tmp_person.x = 511;
 tmp_person.y = 120;
 tmp_person.z = 0;
+tmp_person.act_x = 0;
+tmp_person.act_y = 0;
 tmp_person.animcycle_id = "ecologist";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
@@ -2201,9 +2301,11 @@ tmp_porthole.h = 287;
 tmp_porthole.x = 0;
 tmp_porthole.y = 280;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "hallway";
-tmp_porthole.target_start_x = canv.width;
+tmp_porthole.target_start_x = 880;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -2225,6 +2327,12 @@ tmp_room.animcycle_id = "room_humanecology_hallway";
 tmp_room.navs = [
 {x:100, y:330, w:780, h:308 },
 ];
+tmp_room.lights = [
+{x:100, y:330, w:780, h:308 },
+];
+tmp_room.shadows = [
+{x:100, y:330, w:780, h:308 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2239,9 +2347,11 @@ tmp_porthole.h = 80;
 tmp_porthole.x = 84;
 tmp_porthole.y = 573;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -2261,6 +2371,8 @@ tmp_porthole.h = 395;
 tmp_porthole.x = 797;
 tmp_porthole.y = 261;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
 tmp_porthole.target_start_x = 0;
@@ -2304,8 +2416,14 @@ tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.navs = [
 {x:33, y:507, w:793, h:147 },
 ];
+tmp_room.lights = [
+{x:33, y:507, w:793, h:147 },
+];
+tmp_room.shadows = [
+{x:33, y:507, w:793, h:147 },
+];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -2318,10 +2436,12 @@ tmp_porthole.h = 179;
 tmp_porthole.x = 310;
 tmp_porthole.y = 311;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "halloffame";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2340,6 +2460,8 @@ tmp_porthole.h = 57;
 tmp_porthole.x = 143;
 tmp_porthole.y = 600;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
 tmp_porthole.target_start_x = 0;
@@ -2364,6 +2486,12 @@ tmp_room.animcycle_id = "room_kohlcenter_halloffame";
 tmp_room.navs = [
 {x:7, y:481, w:866, h:169 },
 ];
+tmp_room.lights = [
+{x:7, y:481, w:866, h:169 },
+];
+tmp_room.shadows = [
+{x:7, y:481, w:866, h:169 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2378,6 +2506,8 @@ tmp_object.h = 100;
 tmp_object.x = 496;
 tmp_object.y = 225;
 tmp_object.z = 0;
+tmp_object.act_x = 0;
+tmp_object.act_y = 0;
 tmp_object.animcycle_id = "oldpictures";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
@@ -2408,9 +2538,11 @@ tmp_porthole.h = 78;
 tmp_porthole.x = 103;
 tmp_porthole.y = 572;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -2452,8 +2584,14 @@ tmp_room.animcycle_id = "room_library_entry";
 tmp_room.navs = [
 {x:17, y:418, w:855, h:236 },
 ];
+tmp_room.lights = [
+{x:17, y:418, w:855, h:236 },
+];
+tmp_room.shadows = [
+{x:17, y:418, w:855, h:236 },
+];
 tmp_room.start_x = 440;
-tmp_room.start_y = canv.height;
+tmp_room.start_y = 660;
 tmp_room.noteworthy = false;
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
@@ -2466,10 +2604,12 @@ tmp_porthole.h = 174;
 tmp_porthole.x = 334;
 tmp_porthole.y = 259;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2488,6 +2628,8 @@ tmp_porthole.h = 73;
 tmp_porthole.x = 121;
 tmp_porthole.y = 587;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "";
 tmp_porthole.target_start_x = 0;
@@ -2512,6 +2654,12 @@ tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.navs = [
 {x:23, y:400, w:844, h:250 },
 ];
+tmp_room.lights = [
+{x:23, y:400, w:844, h:250 },
+];
+tmp_room.shadows = [
+{x:23, y:400, w:844, h:250 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2526,6 +2674,8 @@ tmp_person.h = 216;
 tmp_person.x = 70;
 tmp_person.y = 230;
 tmp_person.z = 0;
+tmp_person.act_x = 0;
+tmp_person.act_y = 0;
 tmp_person.animcycle_id = "librarian";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
@@ -2652,9 +2802,11 @@ tmp_porthole.h = 73;
 tmp_porthole.x = 116;
 tmp_porthole.y = 585;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
@@ -2674,10 +2826,12 @@ tmp_porthole.h = 136;
 tmp_porthole.x = 422;
 tmp_porthole.y = 240;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "microfiche";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 "tunic.madison.library.frontdesk.worker.log",
@@ -2699,6 +2853,12 @@ tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.navs = [
 {x:79, y:394, w:744, h:261 },
 ];
+tmp_room.lights = [
+{x:79, y:394, w:744, h:261 },
+];
+tmp_room.shadows = [
+{x:79, y:394, w:744, h:261 },
+];
 tmp_room.start_x = 440;
 tmp_room.start_y = 330;
 tmp_room.noteworthy = false;
@@ -2713,6 +2873,8 @@ tmp_object.h = 100;
 tmp_object.x = 562;
 tmp_object.y = 268;
 tmp_object.z = 0;
+tmp_object.act_x = 0;
+tmp_object.act_y = 0;
 tmp_object.animcycle_id = "newspaper";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
@@ -2743,9 +2905,11 @@ tmp_porthole.h = 86;
 tmp_porthole.x = 73;
 tmp_porthole.y = 569;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_x = canv.width/2;
+tmp_porthole.target_start_x = 440;
 tmp_porthole.target_start_y = 0;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [

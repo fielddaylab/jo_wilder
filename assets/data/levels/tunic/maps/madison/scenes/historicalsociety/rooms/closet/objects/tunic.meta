@@ -1,8 +1,10 @@
 tmp_object.w = 109;
 tmp_object.h = 130;
-tmp_object.x = 662;
-tmp_object.y = 172;
+tmp_object.x = 665;
+tmp_object.y = 180;
 tmp_object.z = 0;
+tmp_object.act_x = 0;
+tmp_object.act_y = 0;
 tmp_object.animcycle_id = "tunic";
 tmp_object.noteworthy = false;
 tmp_object.locks = [

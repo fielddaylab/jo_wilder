@@ -3,10 +3,12 @@ tmp_porthole.h = 179;
 tmp_porthole.x = 310;
 tmp_porthole.y = 311;
 tmp_porthole.z = 999;
+tmp_porthole.act_x = 0;
+tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.target_room = "halloffame";
-tmp_porthole.target_start_x = canv.width/2;
-tmp_porthole.target_start_y = canv.height;
+tmp_porthole.target_start_x = 440;
+tmp_porthole.target_start_y = 660;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
