@@ -993,6 +993,87 @@ var personview = function()
     }
   }
 
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.options_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.cur_speak;
+    self.consume_speak = function(s)
+    {
+      self.cur_speak = s;
+      self.x = self.cur_speak.options_x;
+      self.y = self.cur_speak.options_y;
+      self.w = self.cur_speak.options_w;
+      self.h = self.cur_speak.options_h;
+    }
+    self.edit = function()
+    {
+      self.cur_speak.options_x = self.x;
+      self.cur_speak.options_y = self.y;
+      self.cur_speak.options_w = self.w;
+      self.cur_speak.options_h = self.h;
+    }
+  })();
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+    if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY)) self.edit_o = self.cur_speak;
+    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { console.log("hello"); self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); }
+
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+      self.edit_o.h += self.deltaY;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_o == self.options_editor) self.options_editor.edit();
+
+    self._dirty = true;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
   self.click = function(evt)
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
