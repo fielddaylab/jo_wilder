@@ -1,15 +1,15 @@
 tmp_speak.primary = false;
-tmp_speak.w = 440;
-tmp_speak.h = 30;
-tmp_speak.x = 500;
-tmp_speak.y = 150;
+tmp_speak.w = 317;
+tmp_speak.h = 27;
+tmp_speak.x = 327;
+tmp_speak.y = 158;
 tmp_speak.animcycle_id = "gramps";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I've got work to do- but youngboy is going to tell everyone that this is a basketball jersey! I just know he's wrong... If only I could prove it...";
 tmp_speak.speaker = 2;
-tmp_speak.options_w = 440;
-tmp_speak.options_h = 30;
-tmp_speak.options_x = 500;
-tmp_speak.options_y = 250;
+tmp_speak.options_w = 212;
+tmp_speak.options_h = 29;
+tmp_speak.options_x = 330;
+tmp_speak.options_y = 326;
 tmp_speak.noteworthy = false;
 

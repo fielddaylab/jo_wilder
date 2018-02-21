@@ -10,8 +10,8 @@ var state_t_speed = 0.08;
 var state_from;
 var state_to;
 var walk_speed = 4;
-var option_h = 30;
-var option_font = option_h+"px arial";
+var option_h = 20;
+var option_font = option_h+"px Helvetica";
 
 var DEBUG = 1;
 var UNLOCK = 1;

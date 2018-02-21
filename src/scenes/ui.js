@@ -932,7 +932,6 @@ var personview = function()
   self.person;
   self.cur_speak = 0;
   self.cur_speak_i = 0;
-  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_speaks = [];
   self.cache_unlocked_options_static = [];
   self.cache_unlocked_options_dynamic = [];
@@ -1027,7 +1026,7 @@ var personview = function()
   {
     self.edit_o = 0;
     if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY)) self.edit_o = self.cur_speak;
-    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { console.log("hello"); self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); }
+    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); }
 
     if(!self.edit_o) return;
 
@@ -1064,6 +1063,19 @@ var personview = function()
 
     if(self.edit_o == self.options_editor) self.options_editor.edit();
 
+    //recalc text
+    if(self.edit_o == self.options_editor) //its an option
+    {
+      var s = self.options_editor.cur_speak;
+      for(var i = 0; i < s.options.length; i++)
+        s.options[i].qtext = stextToLines(s.options[i].raw_qtext, s.options_w);
+    }
+    else //its the speak
+    {
+      var s = self.edit_o;
+      s.atext = stextToLines(s.raw_atext, s.w);
+    }
+
     self._dirty = true;
   };
   self.dragFinish = function()
@@ -1076,14 +1088,6 @@ var personview = function()
 
   self.click = function(evt)
   {
-    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
-    {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
-      state_t = 0;
-      my_navigable.unlock_content();
-    }
     var speak = self.cur_speak;
     var option;
     var clicked_option;
@@ -1146,8 +1150,11 @@ var personview = function()
     var speak = self.cur_speak;
     var oyoff;
     //ctx.drawImage(speak.animcycle_inst.img, 0, yoff, self.w, self.h);
+    var b = 10;
+    ctx.fillStyle = white;
+    fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
     ctx.fillStyle = "#4c4c4c";
-    ctx.font = "20px Helvetica";
+    ctx.font = option_font;
     oyoff = 0;
     for(var j = 0; j < speak.atext.length; j++)
     {
@@ -1161,6 +1168,9 @@ var personview = function()
     {
       oyoff = 0;
       option = self.cache_unlocked_options_static[i];
+      ctx.fillStyle = white;
+      fillRRect(option.x-b-5,option.y-b+5+yoff,option.w+b*2+10,option.h*option.qtext.length+b*2+5,b,ctx);
+      ctx.fillStyle = "#4c4c4c";
       for(var j = 0; j < option.qtext.length; j++)
       {
         ctx.fillText(option.qtext[j],option.x,option.y+yoff+oyoff+option.h);
@@ -1170,6 +1180,11 @@ var personview = function()
     //dynamic
     oyoff = speak.options_y;
     if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
+    var h = 0;
+    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++) h += self.cache_unlocked_options_dynamic[i].qtext.length*speak.options_h;
+    ctx.fillStyle = white;
+    fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
+    ctx.fillStyle = "#4c4c4c";
     for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
     {
       option = self.cache_unlocked_options_dynamic[i];
@@ -1179,11 +1194,10 @@ var personview = function()
         oyoff += speak.options_h;
       }
     }
-    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
     {
-      ctx.strokeStyle = white;
+      ctx.strokeStyle = black;
       speak = self.cur_speak;
       oyoff = 0;
       for(var j = 0; j < speak.atext.length; j++)
@@ -1214,7 +1228,6 @@ var personview = function()
           oyoff += speak.options_h;
         }
       }
-      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
 }
