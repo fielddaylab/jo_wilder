@@ -1,10 +1,10 @@
-tmp_person.w = 107;
-tmp_person.h = 257;
-tmp_person.x = 175;
-tmp_person.y = 155;
+tmp_person.w = 138;
+tmp_person.h = 249;
+tmp_person.x = 19;
+tmp_person.y = 215;
 tmp_person.z = 0;
-tmp_person.act_x = -80;
-tmp_person.act_y = 44;
+tmp_person.act_x = 112;
+tmp_person.act_y = 16;
 tmp_person.animcycle_id = "gramps";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;

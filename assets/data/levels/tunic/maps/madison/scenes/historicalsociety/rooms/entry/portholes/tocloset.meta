@@ -1,7 +1,7 @@
-tmp_porthole.w = 80;
-tmp_porthole.h = 312;
-tmp_porthole.x = 0;
-tmp_porthole.y = 256;
+tmp_porthole.w = 99;
+tmp_porthole.h = 409;
+tmp_porthole.x = -10;
+tmp_porthole.y = 254;
 tmp_porthole.z = 999;
 tmp_porthole.act_x = 17;
 tmp_porthole.act_y = 20;
