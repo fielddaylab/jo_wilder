@@ -4,6 +4,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "archivist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I'll get started on looking; but in the meanwhile, you might also want to check out the library!";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;

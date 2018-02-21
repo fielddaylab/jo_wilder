@@ -4,6 +4,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "librarian";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;

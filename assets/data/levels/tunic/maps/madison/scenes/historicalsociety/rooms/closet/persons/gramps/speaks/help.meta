@@ -4,6 +4,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "gramps";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I've got work to do- but youngboy is going to tell everyone that this is a basketball jersey! I just know he's wrong... If only I could prove it...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;

@@ -3,6 +3,7 @@ tmp_zone.h = 100;
 tmp_zone.x = 340;
 tmp_zone.y = 340;
 tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
 tmp_zone.target_view = "hub";
 tmp_zone.noteworthy = false;
 tmp_zone.locks = [

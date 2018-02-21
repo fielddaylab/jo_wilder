@@ -792,6 +792,7 @@ tmp_map.id = "madison";
 tmp_map.fqid = "tunic.madison";
 {
 tmp_map.animcycle_id = "map";
+tmp_map.audio_id = "null";
 tmp_map.noteworthy = false;
 tmp_map.locks = [
 ];
@@ -809,6 +810,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 390;
 tmp_scene.y = 290;
 tmp_scene.animcycle_id = "scene_capitol";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 ];
@@ -822,6 +824,7 @@ tmp_room.fqid = "tunic.madison.capitol.entry";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:-7, y:372, w:876, h:275 },
 ];
@@ -897,6 +900,7 @@ tmp_room.fqid = "tunic.madison.capitol.hall";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_hall";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:45, y:305, w:831, h:351 },
 ];
@@ -926,6 +930,7 @@ tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
 tmp_person.animcycle_id = "youngboy";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -943,6 +948,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "youngboy";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Get away from me, I have a speech to give...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1017,6 +1023,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 601;
 tmp_scene.y = 404;
 tmp_scene.animcycle_id = "scene_drycleaner";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 "tunic.madison.humanecology.frontdesk.worker.slip",
@@ -1031,6 +1038,7 @@ tmp_room.fqid = "tunic.madison.drycleaner.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_drycleaner_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:-5, y:489, w:866, h:174 },
 ];
@@ -1106,6 +1114,7 @@ tmp_room.fqid = "tunic.madison.drycleaner.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:4, y:406, w:868, h:244 },
 ];
@@ -1135,6 +1144,7 @@ tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
 tmp_person.animcycle_id = "cleaner";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -1152,6 +1162,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "cleaner";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1216,6 +1227,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "cleaner";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Wow, that looks old. Here, check the logbook over on the desk.";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1263,6 +1275,7 @@ tmp_object.z = 0;
 tmp_object.act_x = 0;
 tmp_object.act_y = 0;
 tmp_object.animcycle_id = "logbook";
+tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
 "tunic.madison.drycleaner.frontdesk.worker.slip",
@@ -1277,6 +1290,7 @@ tmp_view.fqid = "tunic.madison.drycleaner.frontdesk.logbook.hub";
 {
 tmp_view.primary = true;
 tmp_view.animcycle_id = "logbook_front";
+tmp_view.audio_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -1323,6 +1337,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 263;
 tmp_scene.y = 342;
 tmp_scene.animcycle_id = "scene_historicalsociety";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 ];
@@ -1336,6 +1351,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.closet";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:3, y:358, w:867, h:293 },
 ];
@@ -1359,12 +1375,13 @@ tmp_person.fqid = "tunic.madison.historicalsociety.closet.gramps";
 {
 tmp_person.w = 107;
 tmp_person.h = 257;
-tmp_person.x = 193;
-tmp_person.y = 162;
+tmp_person.x = 175;
+tmp_person.y = 155;
 tmp_person.z = 0;
-tmp_person.act_x = 0;
-tmp_person.act_y = 0;
+tmp_person.act_x = -80;
+tmp_person.act_y = 44;
 tmp_person.animcycle_id = "gramps";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -1382,6 +1399,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "gramps";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I've got work to do- but youngboy is going to tell everyone that this is a basketball jersey! I just know he's wrong... If only I could prove it...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1425,6 +1443,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "gramps";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Hey there youngster...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1490,9 +1509,10 @@ tmp_object.h = 130;
 tmp_object.x = 665;
 tmp_object.y = 180;
 tmp_object.z = 0;
-tmp_object.act_x = 0;
-tmp_object.act_y = 0;
+tmp_object.act_x = -85;
+tmp_object.act_y = 120;
 tmp_object.animcycle_id = "tunic";
+tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
 ];
@@ -1506,6 +1526,7 @@ tmp_view.fqid = "tunic.madison.historicalsociety.closet.tunic.hub";
 {
 tmp_view.primary = true;
 tmp_view.animcycle_id = "tunic_front";
+tmp_view.audio_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -1518,6 +1539,7 @@ tmp_zone.h = 100;
 tmp_zone.x = 340;
 tmp_zone.y = 340;
 tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
 tmp_zone.target_view = "slip";
 tmp_zone.noteworthy = false;
 tmp_zone.locks = [
@@ -1536,6 +1558,7 @@ tmp_view.fqid = "tunic.madison.historicalsociety.closet.tunic.slip";
 {
 tmp_view.primary = false;
 tmp_view.animcycle_id = "tunic_slip";
+tmp_view.audio_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -1548,6 +1571,7 @@ tmp_zone.h = 100;
 tmp_zone.x = 340;
 tmp_zone.y = 340;
 tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
 tmp_zone.target_view = "hub";
 tmp_zone.noteworthy = false;
 tmp_zone.locks = [
@@ -1571,7 +1595,7 @@ tmp_porthole.h = 356;
 tmp_porthole.x = 808;
 tmp_porthole.y = 296;
 tmp_porthole.z = 999;
-tmp_porthole.act_x = 0;
+tmp_porthole.act_x = -18;
 tmp_porthole.act_y = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
@@ -1595,6 +1619,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:7, y:332, w:876, h:323 },
 ];
@@ -1621,8 +1646,8 @@ tmp_porthole.h = 312;
 tmp_porthole.x = 0;
 tmp_porthole.y = 256;
 tmp_porthole.z = 999;
-tmp_porthole.act_x = 0;
-tmp_porthole.act_y = 0;
+tmp_porthole.act_x = 17;
+tmp_porthole.act_y = 20;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "closet";
@@ -1695,6 +1720,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:7, y:330, w:868, h:327 },
 ];
@@ -1724,6 +1750,7 @@ tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
 tmp_person.animcycle_id = "archivist";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -1741,6 +1768,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "archivist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1850,6 +1878,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "archivist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I'll get started on looking; but in the meanwhile, you might also want to check out the library!";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1893,6 +1922,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "archivist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "That's great! Also, you should check the archives- I think we have something. It's #12345";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -1936,6 +1966,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "archivist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I have no idea what that is- you might want to ask a specialist over in the Human Ecology building.";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -2004,6 +2035,7 @@ tmp_room.fqid = "tunic.madison.historicalsociety.stacks";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:220, y:266, w:390, h:406 },
 ];
@@ -2027,12 +2059,13 @@ tmp_object.fqid = "tunic.madison.historicalsociety.stacks.journalsaz";
 {
 tmp_object.w = 100;
 tmp_object.h = 100;
-tmp_object.x = 680;
-tmp_object.y = 100;
+tmp_object.x = 716;
+tmp_object.y = 361;
 tmp_object.z = 0;
 tmp_object.act_x = 0;
 tmp_object.act_y = 0;
 tmp_object.animcycle_id = "journalsaz";
+tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
 "tunic.madison.historicalsociety.frontdesk.archivist.newspaper",
@@ -2047,6 +2080,7 @@ tmp_view.fqid = "tunic.madison.historicalsociety.stacks.journalsaz.hub";
 {
 tmp_view.primary = true;
 tmp_view.animcycle_id = "journalsaz_front";
+tmp_view.audio_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -2118,6 +2152,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 395;
 tmp_scene.y = 110;
 tmp_scene.animcycle_id = "scene_humanecology";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 "tunic.madison.historicalsociety.frontdesk.archivist.slip",
@@ -2132,6 +2167,7 @@ tmp_room.fqid = "tunic.madison.humanecology.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_humanecology_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:6, y:517, w:870, h:142 },
 ];
@@ -2207,6 +2243,7 @@ tmp_room.fqid = "tunic.madison.humanecology.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:0, y:404, w:873, h:253 },
 ];
@@ -2236,6 +2273,7 @@ tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
 tmp_person.animcycle_id = "ecologist";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -2253,6 +2291,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "ecologist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -2317,6 +2356,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "ecologist";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Hey! That looks like a drycleaner's tag- and an old one at that! They haven't used these printing methods since the early 40s? Not sure what more I can tell you...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -2385,6 +2425,7 @@ tmp_room.fqid = "tunic.madison.humanecology.hallway";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_humanecology_hallway";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:100, y:330, w:780, h:308 },
 ];
@@ -2466,6 +2507,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 301;
 tmp_scene.y = 512;
 tmp_scene.animcycle_id = "scene_kohlcenter";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 ];
@@ -2479,6 +2521,7 @@ tmp_room.fqid = "tunic.madison.kohlcenter.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:33, y:507, w:793, h:147 },
 ];
@@ -2554,6 +2597,7 @@ tmp_room.fqid = "tunic.madison.kohlcenter.halloffame";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:7, y:481, w:866, h:169 },
 ];
@@ -2583,6 +2627,7 @@ tmp_object.z = 0;
 tmp_object.act_x = 0;
 tmp_object.act_y = 0;
 tmp_object.animcycle_id = "oldpictures";
+tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
 ];
@@ -2596,6 +2641,7 @@ tmp_view.fqid = "tunic.madison.kohlcenter.halloffame.oldpictures.hub";
 {
 tmp_view.primary = true;
 tmp_view.animcycle_id = "oldpictures_front";
+tmp_view.audio_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -2642,6 +2688,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 629;
 tmp_scene.y = 225;
 tmp_scene.animcycle_id = "scene_library";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 "tunic.madison.historicalsociety.frontdesk.archivist.log",
@@ -2656,6 +2703,7 @@ tmp_room.fqid = "tunic.madison.library.entry";
 {
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_library_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:17, y:418, w:855, h:236 },
 ];
@@ -2731,6 +2779,7 @@ tmp_room.fqid = "tunic.madison.library.frontdesk";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_frontdesk";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:23, y:400, w:844, h:250 },
 ];
@@ -2760,6 +2809,7 @@ tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
 tmp_person.animcycle_id = "librarian";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];
@@ -2777,6 +2827,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "librarian";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -2841,6 +2892,7 @@ tmp_speak.h = 30;
 tmp_speak.x = 500;
 tmp_speak.y = 150;
 tmp_speak.animcycle_id = "librarian";
+tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I don't know off the top of my head, but you're more than welcome to the microfiche in back; we've got tons of old papers!";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 440;
@@ -2935,6 +2987,7 @@ tmp_room.fqid = "tunic.madison.library.microfiche";
 {
 tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_microfiche";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:79, y:394, w:744, h:261 },
 ];
@@ -2964,6 +3017,7 @@ tmp_object.z = 0;
 tmp_object.act_x = 0;
 tmp_object.act_y = 0;
 tmp_object.animcycle_id = "newspaper";
+tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.locks = [
 ];
@@ -2977,6 +3031,7 @@ tmp_view.fqid = "tunic.madison.library.microfiche.newspaper.hub";
 {
 tmp_view.primary = true;
 tmp_view.animcycle_id = "newspaper_front";
+tmp_view.audio_id = "null";
 tmp_view.noteworthy = false;
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);

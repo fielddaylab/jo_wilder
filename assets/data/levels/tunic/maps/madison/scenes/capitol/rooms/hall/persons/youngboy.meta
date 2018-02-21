@@ -6,6 +6,7 @@ tmp_person.z = 0;
 tmp_person.act_x = 0;
 tmp_person.act_y = 0;
 tmp_person.animcycle_id = "youngboy";
+tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.locks = [
 ];

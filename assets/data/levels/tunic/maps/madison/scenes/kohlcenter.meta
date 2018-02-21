@@ -4,6 +4,7 @@ tmp_scene.h = 100;
 tmp_scene.x = 301;
 tmp_scene.y = 512;
 tmp_scene.animcycle_id = "scene_kohlcenter";
+tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
 ];

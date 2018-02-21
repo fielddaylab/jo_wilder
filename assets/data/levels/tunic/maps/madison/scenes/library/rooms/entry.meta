@@ -1,5 +1,6 @@
 tmp_room.primary = true;
 tmp_room.animcycle_id = "room_library_entry";
+tmp_room.audio_id = "null";
 tmp_room.navs = [
 {x:17, y:418, w:855, h:236 },
 ];

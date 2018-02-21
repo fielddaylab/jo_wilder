@@ -379,9 +379,39 @@ var navigable = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
+  self.act_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.act = 0;
+    self.consume_act = function(a)
+    {
+      self.act = a;
+      self.x = self.act.x+self.act.w/2+self.act.act_x-2;
+      self.y = self.act.y+self.act.h/2+self.act.act_y-2;
+      self.w = 4;
+      self.h = 4;
+    }
+    self.edit = function()
+    {
+      self.w = 4;
+      self.h = 4;
+      self.act.act_x = (self.x+self.w/2)-(self.act.x+self.act.w/2);
+      self.act.act_y = (self.y+self.h/2)-(self.act.y+self.act.h/2);
+    }
+  })();
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
+
+    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_persons.length; i++)
       if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_persons[i]; }
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_objects.length; i++)
@@ -429,6 +459,8 @@ var navigable = function()
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_o == self.act_editor) self.act_editor.edit();
 
     self._dirty = true;
   };
@@ -494,14 +526,12 @@ var navigable = function()
     if(DEBUG)
     {
       ctx.strokeStyle = purple;
-      for(var i = 0; i < self.room.shadows.length; i++)
-        ctx.strokeRect(self.room.shadows[i].x,self.room.shadows[i].y,self.room.shadows[i].w,self.room.shadows[i].h);
+      for(var i = 0; i < self.room.shadows.length; i++) ctx.strokeRect(self.room.shadows[i].x,self.room.shadows[i].y,self.room.shadows[i].w,self.room.shadows[i].h);
       ctx.strokeStyle = yellow;
-      for(var i = 0; i < self.room.lights.length; i++)
-        ctx.strokeRect(self.room.lights[i].x,self.room.lights[i].y,self.room.lights[i].w,self.room.lights[i].h);
+      for(var i = 0; i < self.room.lights.length; i++) ctx.strokeRect(self.room.lights[i].x,self.room.lights[i].y,self.room.lights[i].w,self.room.lights[i].h);
       ctx.strokeStyle = orange;
-      for(var i = 0; i < self.room.navs.length; i++)
-        ctx.strokeRect(self.room.navs[i].x,self.room.navs[i].y,self.room.navs[i].w,self.room.navs[i].h);
+      for(var i = 0; i < self.room.navs.length; i++) ctx.strokeRect(self.room.navs[i].x,self.room.navs[i].y,self.room.navs[i].w,self.room.navs[i].h);
+
       ctx.strokeStyle = red;
       for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
       ctx.strokeStyle = blue;
@@ -512,6 +542,13 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
       ctx.strokeStyle = cyan;
       for(var i = 0; i < self.cache_unlocked_inerts.length;    i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
+
+      ctx.strokeStyle = cyan;
+      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+
       ctx.fillStyle = black;
       ctx.fillText(self.room.fqid,20,20);
     }
