@@ -147,6 +147,8 @@ var avatar = function()
     if(dx < -speed) { dx = -speed; self.anim.flip = 1; }
     if(dy >  speed) { dy =  speed;                     }
     if(dy < -speed) { dy = -speed;                     }
+    self.x += dx;
+    self.y += dy;
 
     if(d > act_dist)
     {
@@ -162,17 +164,17 @@ var avatar = function()
         {
           my_avatar.state = AVATAR_ACT;
           my_avatar.anim.injectAnim(ANIM_ACT);
+          var dir = (my_navigable.selected_act.x+my_navigable.selected_act.w/2) - (self.x+self.w/2);
+               if(dir >  2) self.anim.flip = 0;
+          else if(dir < -2) self.anim.flip = 1;
         }
       }
       else
       {
         my_avatar.state = AVATAR_IDLE;
-        my_avatar.anim.enqueueAnim(ANIM_IDLE);
+        if(!my_avatar.anim.cur_anim) my_avatar.anim.enqueueAnim(ANIM_IDLE);
       }
     }
-
-    self.x += dx;
-    self.y += dy;
 
     self.anim.tick();
   }
@@ -438,7 +440,6 @@ var navigable = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
-  var clickptholder = {x:0,y:0};
   self.click = function(evt)
   {
     if(!(DEBUG && my_keyable.e))
@@ -447,19 +448,29 @@ var navigable = function()
       self.last_click.y = evt.doY;
       self.nav_click.x = evt.doX;
       self.nav_click.y = evt.doY;
-      self.pt_in_navigable(self.nav_click.x,self.nav_click.y,clickptholder);
-      my_avatar.toX = clickptholder.x-my_avatar.w/2;
-      my_avatar.toY = clickptholder.y-my_avatar.h/2;
 
       self.selected_act = 0;
       for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-        if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_persons[i]; }
+        if(ptWithinBox(self.cache_unlocked_persons[i],self.last_click.x,self.last_click.y))
+          self.selected_act = self.cache_unlocked_persons[i];
       for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-        if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_objects[i]; }
+        if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y))
+          self.selected_act = self.cache_unlocked_objects[i];
       for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-        if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_portholes[i]; }
+        if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y))
+          self.selected_act = self.cache_unlocked_portholes[i];
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-        if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.selected_act = self.cache_unlocked_wildcards[i]; }
+        if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y))
+          self.selected_act = self.cache_unlocked_wildcards[i];
+
+      if(self.selected_act)
+      {
+        self.nav_click.x = self.selected_act.x+self.selected_act.w/2+self.selected_act.act_x;
+        self.nav_click.y = self.selected_act.y+self.selected_act.h/2+self.selected_act.act_y;
+      }
+      self.pt_in_navigable(self.nav_click.x,self.nav_click.y,self.nav_click);
+      my_avatar.toX = self.nav_click.x-my_avatar.w/2;
+      my_avatar.toY = self.nav_click.y-my_avatar.h/2;
     }
   }
 
