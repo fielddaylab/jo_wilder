@@ -1,6 +1,15 @@
 var ENUM;
 
 ENUM = 0;
+var CURSOR_NULL     = ENUM; ENUM++;
+var CURSOR_NORMAL   = ENUM; ENUM++;
+var CURSOR_PERSON   = ENUM; ENUM++;
+var CURSOR_OBJECT   = ENUM; ENUM++;
+var CURSOR_PORTHOLE = ENUM; ENUM++;
+var CURSOR_VIEW     = ENUM; ENUM++;
+var CURSOR_COUNT    = ENUM; ENUM++;
+
+ENUM = 0;
 var STATE_NULL       = ENUM; ENUM++;
 var STATE_NAV        = ENUM; ENUM++;
 var STATE_MAP        = ENUM; ENUM++;

@@ -4,6 +4,7 @@ var ctx;
 
 var clicker;
 var dragger;
+var hoverer;
 var keyer;
 
 var my_avatar;

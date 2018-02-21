@@ -1,5 +1,4 @@
 possible: actions have toggle of "play act anim" or not
-editor zone mover
 hover icons/stuff
 save game
 entrys

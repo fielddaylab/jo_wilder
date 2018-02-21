@@ -472,6 +472,13 @@ var navigable = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
+
   self.click = function(evt)
   {
     if(!(DEBUG && my_keyable.e))
@@ -919,6 +926,13 @@ var objectview = function()
     self.edit_cur_resizing = false;
   };
   //DRAG DEBUG EDIT STUFF END
+
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
 
   self.click = function(evt)
   {

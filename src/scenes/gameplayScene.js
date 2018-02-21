@@ -20,6 +20,7 @@ var GamePlayScene = function(game, stage)
 
     clicker = new Clicker({source:canvas});
     dragger = new Dragger({source:canvas});
+    hoverer = new PersistentHoverer({source:canvas});
     keyer = new Keyer({source:canvas});
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
@@ -57,7 +58,7 @@ var GamePlayScene = function(game, stage)
 
     cur_state = STATE_NAV;
     state_t = 0;
-
+    cursor = CURSOR_NORMAL;
   };
 
   self.tick = function()
@@ -68,6 +69,7 @@ var GamePlayScene = function(game, stage)
     switch(cur_state)
     {
       case STATE_NAV:
+        hoverer.filter(my_navigable);
         if(
         !clicker.filter(my_toolbar) &&
         !clicker.filter(my_navigable) &&
@@ -126,6 +128,7 @@ var GamePlayScene = function(game, stage)
         my_personview.tick();
         break;
       case STATE_OBJECT:
+        hoverer.filter(my_objectview);
         if(DEBUG && my_keyable.e) dragger.filter(my_objectview);
         else
         {
@@ -155,6 +158,7 @@ var GamePlayScene = function(game, stage)
     }
     clicker.flush();
     dragger.flush();
+    hoverer.flush();
     keyer.flush();
   };
 

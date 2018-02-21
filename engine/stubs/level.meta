@@ -9,6 +9,7 @@ tmp_level.avatar_act_animcycle_id = "null";
 tmp_level.person_hover_animcycle_id = "null";
 tmp_level.object_hover_animcycle_id = "null";
 tmp_level.porthole_hover_animcycle_id = "null";
+tmp_level.zone_hover_animcycle_id = "null";
 tmp_level.noteworthy = false;
 tmp_level.locks = [
 ];
