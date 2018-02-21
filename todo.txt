@@ -1,5 +1,10 @@
-actables have "action offset" (where player walks to, relative to them, to interact)
 possible: actions have toggle of "play act anim" or not
 editor zone mover
-editor conversation placer
+hover icons/stuff
+save game
+entrys
+sounds for everything
+sounds in cutscene
+noteworthy entry notifications
+"picture taking"
 

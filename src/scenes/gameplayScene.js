@@ -126,10 +126,13 @@ var GamePlayScene = function(game, stage)
         my_personview.tick();
         break;
       case STATE_OBJECT:
-        if(
-        !clicker.filter(my_objectview) &&
-        false) ;
         if(DEBUG && my_keyable.e) dragger.filter(my_objectview);
+        else
+        {
+          if(
+          !clicker.filter(my_objectview) &&
+          false) ;
+        }
         my_avatar.tick();
         my_navigable.tick();
         my_objectview.tick();
