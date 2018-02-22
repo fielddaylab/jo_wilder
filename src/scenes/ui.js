@@ -1,3 +1,67 @@
+var cursor = function()
+{
+  var self = this;
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+  self.known_x = 0;
+  self.known_y = 0;
+  self.mode_prev = CURSOR_NULL;
+  self.mode = CURSOR_NULL;
+
+  self.person_animcycle_inst;
+  self.object_animcycle_inst;
+  self.porthole_animcycle_inst;
+  self.view_animcycle_inst;
+
+  self.consume_level = function(level)
+  {
+    self.person_animcycle_inst   = gen_animcycle_inst(level.person_hover_animcycle_id,  level.animcycles);
+    self.object_animcycle_inst   = gen_animcycle_inst(level.object_hover_animcycle_id,  level.animcycles);
+    self.porthole_animcycle_inst = gen_animcycle_inst(level.porthole_hover_animcycle_id,level.animcycles);
+    self.view_animcycle_inst     = gen_animcycle_inst(level.zone_hover_animcycle_id,    level.animcycles);
+  }
+
+  self.hover = function(evt)
+  {
+    self.known_x = evt.doX;
+    self.known_y = evt.doY;
+  }
+  self.unhover = function(evt)
+  {
+  }
+
+  self.tick = function()
+  {
+    if(self.mode != self.mode_prev)
+    {
+      if(self.mode_prev == CURSOR_NORMAL) canvas.style.cursor = 'none';
+      if(self.mode      == CURSOR_NORMAL) canvas.style.cursor = 'auto';
+      self.mode_prev = self.mode;
+    }
+
+    switch(self.mode)
+    {
+      case CURSOR_PERSON:   self.person_animcycle_inst.tick();   break;
+      case CURSOR_OBJECT:   self.object_animcycle_inst.tick();   break;
+      case CURSOR_PORTHOLE: self.porthole_animcycle_inst.tick(); break;
+      case CURSOR_VIEW:     self.view_animcycle_inst.tick();     break;
+    }
+  }
+
+  self.draw = function()
+  {
+    switch(self.mode)
+    {
+      case CURSOR_PERSON:   ctx.drawImage(self.person_animcycle_inst.img,  self.known_x-50,self.known_y-50,100,100); break;
+      case CURSOR_OBJECT:   ctx.drawImage(self.object_animcycle_inst.img,  self.known_x-50,self.known_y-50,100,100); break;
+      case CURSOR_PORTHOLE: ctx.drawImage(self.porthole_animcycle_inst.img,self.known_x-50,self.known_y-50,100,100); break;
+      case CURSOR_VIEW:     ctx.drawImage(self.view_animcycle_inst.img,    self.known_x-50,self.known_y-50,100,100); break;
+    }
+  }
+}
+
 var avatar = function()
 {
   var self = this;
@@ -52,6 +116,7 @@ var avatar = function()
         }
         state_t = 0;
         my_navigable.selected_act = 0;
+        my_cursor.mode = CURSOR_NORMAL;
       }
       break;
       default:
@@ -474,6 +539,16 @@ var navigable = function()
 
   self.hover = function(evt)
   {
+    my_cursor.mode = CURSOR_NORMAL;
+    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
+      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_PERSON;
+    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
+      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_OBJECT;
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
+      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_PORTHOLE;
   }
   self.unhover = function(evt)
   {

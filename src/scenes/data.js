@@ -36,6 +36,7 @@ tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.person_hover_animcycle_id = "null";
 tmp_level.object_hover_animcycle_id = "null";
 tmp_level.porthole_hover_animcycle_id = "null";
+tmp_level.zone_hover_animcycle_id = "null";
 tmp_level.noteworthy = false;
 tmp_level.locks = [
 ];
@@ -149,6 +150,58 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "hover_object";
+tmp_animcycle.fqid = "tunic.hover_object";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/hover_object/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "hover_person";
+tmp_animcycle.fqid = "tunic.hover_person";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/hover_person/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "hover_porthole";
+tmp_animcycle.fqid = "tunic.hover_porthole";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/hover_porthole/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "hover_zone";
+tmp_animcycle.fqid = "tunic.hover_zone";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/hover_zone/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1395,7 +1448,7 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.closet.gramps.help";
 {
 tmp_speak.primary = false;
 tmp_speak.w = 317;
-tmp_speak.h = 27;
+tmp_speak.h = 30;
 tmp_speak.x = 179;
 tmp_speak.y = 99;
 tmp_speak.animcycle_id = "gramps";
@@ -1403,7 +1456,7 @@ tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I've got work to do- but youngboy is going to tell everyone that this is a basketball jersey! I just know he's wrong... If only I could prove it...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 212;
-tmp_speak.options_h = 29;
+tmp_speak.options_h = 30;
 tmp_speak.options_x = 291;
 tmp_speak.options_y = 248;
 tmp_speak.noteworthy = false;
@@ -1439,7 +1492,7 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.closet.gramps.hub";
 {
 tmp_speak.primary = true;
 tmp_speak.w = 197;
-tmp_speak.h = 24;
+tmp_speak.h = 30;
 tmp_speak.x = 150;
 tmp_speak.y = 121;
 tmp_speak.animcycle_id = "gramps";
@@ -1447,7 +1500,7 @@ tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Hey there youngster...";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 261;
-tmp_speak.options_h = 27;
+tmp_speak.options_h = 30;
 tmp_speak.options_x = 286;
 tmp_speak.options_y = 203;
 tmp_speak.noteworthy = false;
@@ -1764,7 +1817,7 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.hub";
 {
 tmp_speak.primary = true;
 tmp_speak.w = 200;
-tmp_speak.h = 27;
+tmp_speak.h = 30;
 tmp_speak.x = 304;
 tmp_speak.y = 124;
 tmp_speak.animcycle_id = "archivist";
@@ -1772,7 +1825,7 @@ tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 375;
-tmp_speak.options_h = 29;
+tmp_speak.options_h = 30;
 tmp_speak.options_x = 343;
 tmp_speak.options_y = 223;
 tmp_speak.noteworthy = false;
@@ -1874,7 +1927,7 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.log";
 {
 tmp_speak.primary = false;
 tmp_speak.w = 285;
-tmp_speak.h = 25;
+tmp_speak.h = 30;
 tmp_speak.x = 283;
 tmp_speak.y = 120;
 tmp_speak.animcycle_id = "archivist";
@@ -1882,7 +1935,7 @@ tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I'll get started on looking; but in the meanwhile, you might also want to check out the library!";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 97;
-tmp_speak.options_h = 23;
+tmp_speak.options_h = 30;
 tmp_speak.options_x = 346;
 tmp_speak.options_y = 250;
 tmp_speak.noteworthy = false;
@@ -1918,7 +1971,7 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.newspaper"
 {
 tmp_speak.primary = false;
 tmp_speak.w = 359;
-tmp_speak.h = 27;
+tmp_speak.h = 30;
 tmp_speak.x = 276;
 tmp_speak.y = 112;
 tmp_speak.animcycle_id = "archivist";
@@ -1926,7 +1979,7 @@ tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "That's great! Also, you should check the archives- I think we have something. It's #12345";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 161;
-tmp_speak.options_h = 29;
+tmp_speak.options_h = 30;
 tmp_speak.options_x = 350;
 tmp_speak.options_y = 249;
 tmp_speak.noteworthy = false;
@@ -1962,7 +2015,7 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.slip";
 {
 tmp_speak.primary = false;
 tmp_speak.w = 312;
-tmp_speak.h = 29;
+tmp_speak.h = 30;
 tmp_speak.x = 288;
 tmp_speak.y = 129;
 tmp_speak.animcycle_id = "archivist";
@@ -1970,7 +2023,7 @@ tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I have no idea what that is- you might want to ask a specialist over in the Human Ecology building.";
 tmp_speak.speaker = 2;
 tmp_speak.options_w = 203;
-tmp_speak.options_h = 25;
+tmp_speak.options_h = 30;
 tmp_speak.options_x = 326;
 tmp_speak.options_y = 259;
 tmp_speak.noteworthy = false;

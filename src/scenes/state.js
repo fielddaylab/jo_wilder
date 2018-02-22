@@ -12,7 +12,11 @@ var state_to;
 var walk_speed = 4;
 var option_h = 20;
 var option_font = option_h+"px Helvetica";
+
+var cursor_prev;
 var cursor;
+var cursor_x = 0;
+var cursor_y = 0;
 
 var DEBUG = 1;
 var UNLOCK = 1;

@@ -7,6 +7,7 @@ var dragger;
 var hoverer;
 var keyer;
 
+var my_cursor;
 var my_avatar;
 var my_navigable;
 var my_mapview;

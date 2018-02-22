@@ -22,6 +22,9 @@ var GamePlayScene = function(game, stage)
     dragger = new Dragger({source:canvas});
     hoverer = new PersistentHoverer({source:canvas});
     keyer = new Keyer({source:canvas});
+
+    my_cursor = new cursor();
+    my_cursor.consume_level(cur_level);
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
     my_avatar = new avatar();
@@ -58,13 +61,13 @@ var GamePlayScene = function(game, stage)
 
     cur_state = STATE_NAV;
     state_t = 0;
-    cursor = CURSOR_NORMAL;
   };
 
   self.tick = function()
   {
     keyer.filter(my_keyable);
     if(!init_audio) clicker.filter(canv_clicker);
+    hoverer.filter(my_cursor);
 
     switch(cur_state)
     {
@@ -160,6 +163,8 @@ var GamePlayScene = function(game, stage)
     dragger.flush();
     hoverer.flush();
     keyer.flush();
+
+    my_cursor.tick();
   };
 
   self.draw = function()
@@ -202,6 +207,8 @@ var GamePlayScene = function(game, stage)
     {
       //my_placer.draw(ctx);
     }
+
+    my_cursor.draw();
   };
 
   var transition_tick = function()
