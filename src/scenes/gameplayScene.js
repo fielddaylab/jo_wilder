@@ -45,6 +45,7 @@ var GamePlayScene = function(game, stage)
     my_keyable.key = function(evt)
     {
       if(evt.key == " ") print_whole_level(cur_level);
+      if(evt.key == "c") get_save_code();
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
     }

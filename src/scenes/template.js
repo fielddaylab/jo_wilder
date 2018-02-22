@@ -49,6 +49,134 @@ var find = function(id)
   }
 }
 
+var save_slate = function()
+{
+  var self = this;
+  self.stuff = [];
+
+  self.insert = function(o)
+  {
+    var i;
+    for(i = 0; i < self.stuff.length && o.fqid > self.stuff[i]; i++) ;
+    self.stuff.splice(i,0,o);
+  }
+  self.gen_stuff = function(level)
+  {
+    self.insert(level);
+    var map = cur_level.map;
+    self.insert(map);
+    for(var i = 0; i < map.scenes.length; i++)
+    {
+      var scene = map.scenes[i];
+      self.insert(scene);
+      for(var j = 0; j < scene.rooms.length; j++)
+      {
+        var room = scene.rooms[j];
+        self.insert(room);
+        for(var k = 0; k < room.persons.length; k++)
+        {
+          var person = room.persons[k];
+          self.insert(person);
+          for(var l = 0; l < person.speaks.length; l++)
+          {
+            var speak = person.speaks[l];
+            self.insert(speak);
+            for(var m = 0; m < speak.options.length; m++)
+            {
+              option = speak.options[m];
+              self.insert(option);
+            }
+          }
+        }
+        for(var k = 0; k < room.objects.length; k++)
+        {
+          var object = room.objects[k];
+          self.insert(object);
+          for(var l = 0; l < object.views.length; l++)
+          {
+            var view = object.views[l];
+            self.insert(view);
+            for(var m = 0; m < view.zones.length; m++)
+            {
+              var zone = view.zones[m];
+              self.insert(zone);
+            }
+          }
+        }
+        for(var k = 0; k < room.portholes.length; k++)
+        {
+          var porthole = room.portholes[k];
+          self.insert(porthole);
+        }
+        for(var k = 0; k < room.wildcards.length; k++)
+        {
+          var wildcard = room.wildcards[k];
+          self.insert(wildcard);
+        }
+      }
+    }
+  }
+  var ac_pow = 23;
+  var ac_pt = 8388608;
+  var ac_len = (""+(ac_pt-1)).length;
+  //accrue pt = 2 ^ 23 (chosen for high significant digit)
+  self.code = function()
+  {
+    var c = "";
+    var a = 0;
+    var p = 1;
+    for(var i = 0; i < self.stuff.length; i++)
+    {
+      if(self.stuff[i].key) a += p;
+      p *= 2;
+      if(p == ac_pt || i == self.stuff.length-1)
+      {
+        var len = ac_len-(""+a).length;
+        for(var j = 0; j < len; j++) c += "0";
+        c += a;
+        p = 1;
+        a = 0;
+      }
+    }
+    return c;
+  }
+  self.decode = function(c)
+  {
+    var stuff_i = 0;
+    while(c.length > 0)
+    {
+      var sub_c = c.substring(0,ac_len);
+      var int_c = parseInt(sub_c);
+      var c = c.substring(ac_len);
+      var p = ac_pt/2;
+      for(var sub_stuff_i = 0; sub_stuff_i < ac_pow; sub_stuff_i++)
+      {
+        if(int_c >= p)
+        {
+          int_c -= p;
+          self.stuff[stuff_i+ac_pow-1-sub_stuff_i].key = 1;
+        }
+        p /= 2;
+      }
+      stuff_i += ac_pow;
+    }
+  }
+
+}
+
+var get_save_code = function()
+{
+  var s = new save_slate();
+  s.gen_stuff(cur_level);
+  console.log(s.code());
+  s.decode("00000027437320000204900000000000000");
+}
+
+var load_save_code = function()
+{
+
+}
+
 var querylocked = function(o)
 {
   if(UNLOCK) return false;
