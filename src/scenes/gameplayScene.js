@@ -73,12 +73,21 @@ var GamePlayScene = function(game, stage)
     {
       case STATE_NAV:
         hoverer.filter(my_navigable);
-        if(
-        !clicker.filter(my_toolbar) &&
-        !clicker.filter(my_navigable) &&
-        !clicker.filter(canv_clicker) &&
-        false) ;
-        if(DEBUG && my_keyable.e) dragger.filter(my_navigable);
+        if(DEBUG && my_keyable.e)
+        {
+          if(
+          !dragger.filter(my_avatar) &&
+          !dragger.filter(my_navigable) &&
+          false) ;
+        }
+        else
+        {
+          if(
+          !clicker.filter(my_toolbar) &&
+          !clicker.filter(my_navigable) &&
+          !clicker.filter(canv_clicker) &&
+          false) ;
+        }
         my_avatar.tick();
         my_navigable.tick();
         //trigger cutscenes only from within nav

@@ -154,6 +154,9 @@ var avatar = function()
 
   self.consume_level = function(level)
   {
+    self.w = level.avatar_w;
+    self.h = level.avatar_h;
+
     var idle_animcycle = null_animcycle;
     var walk_animcycle = null_animcycle;
     var act_animcycle  = null_animcycle;
@@ -194,6 +197,60 @@ var avatar = function()
     self.toX = self.x;
     self.toY = self.y;
   }
+
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.dragStart = function(evt)
+  {
+    self.edit_o = self;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+      self.edit_o.h += self.deltaY;
+      //propagate to level
+      cur_level.avatar_w = self.w;
+      cur_level.avatar_h = self.h;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    self._dirty = true;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
 
   self.click = function(evt)
   {
@@ -287,6 +344,12 @@ var avatar = function()
     shading_canv.context.restore();
 
     ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = black;
+      ctx.strokeRect(self.x,self.y,self.w,self.h);
+    }
   }
 };
 
@@ -1184,7 +1247,7 @@ var personview = function()
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
 
-    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+    if(self.edit_offX > 0.4*self.edit_o.w)
       self.edit_cur_resizing = true
     else
       self.edit_cur_dragging = true;
@@ -1203,7 +1266,6 @@ var personview = function()
     else if(self.edit_cur_resizing)
     {
       self.edit_o.w += self.deltaX;
-      self.edit_o.h += self.deltaY;
     }
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));

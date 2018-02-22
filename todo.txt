@@ -1,9 +1,9 @@
 possible: actions have toggle of "play act anim" or not
-hover icons/stuff
 save game
 entrys
 sounds for everything
 sounds in cutscene
+commands-for-scene-actors in a cutscene
 noteworthy entry notifications
 "picture taking"
 
