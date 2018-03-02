@@ -78,6 +78,11 @@ var avatar = function()
   self.state = AVATAR_IDLE;
   self.anim = new animation();
   self.anim.frame_delay = 10;
+
+  self.idle_animcycle = null_animcycle;
+  self.walk_animcycle = null_animcycle;
+  self.act_animcycle  = null_animcycle;
+
   self.anim.transition = function()
   {
     switch(self.anim.cur_anim)
@@ -157,27 +162,27 @@ var avatar = function()
     self.w = level.avatar_w;
     self.h = level.avatar_h;
 
-    var idle_animcycle = null_animcycle;
-    var walk_animcycle = null_animcycle;
-    var act_animcycle  = null_animcycle;
+    self.idle_animcycle = null_animcycle;
+    self.walk_animcycle = null_animcycle;
+    self.act_animcycle  = null_animcycle;
     for(var i = 0; i < level.animcycles.length; i++)
     {
-      if(level.animcycles[i].id == level.avatar_idle_animcycle_id) idle_animcycle = level.animcycles[i];
-      if(level.animcycles[i].id == level.avatar_walk_animcycle_id) walk_animcycle = level.animcycles[i];
-      if(level.animcycles[i].id == level.avatar_act_animcycle_id)  act_animcycle  = level.animcycles[i];
+      if(level.animcycles[i].id == level.avatar_idle_animcycle_id) self.idle_animcycle = level.animcycles[i];
+      if(level.animcycles[i].id == level.avatar_walk_animcycle_id) self.walk_animcycle = level.animcycles[i];
+      if(level.animcycles[i].id == level.avatar_act_animcycle_id)  self.act_animcycle  = level.animcycles[i];
     }
     self.anim.src = [];
-    for(var i = 0; i < idle_animcycle.frames.length; i++) self.anim.src.push(idle_animcycle.frames[i]);
-    for(var i = 0; i < walk_animcycle.frames.length; i++) self.anim.src.push(walk_animcycle.frames[i]);
-    for(var i = 0; i < act_animcycle.frames.length; i++)  self.anim.src.push(act_animcycle.frames[i]);
+    for(var i = 0; i < self.idle_animcycle.frames.length; i++) self.anim.src.push(self.idle_animcycle.frames[i]);
+    for(var i = 0; i < self.walk_animcycle.frames.length; i++) self.anim.src.push(self.walk_animcycle.frames[i]);
+    for(var i = 0; i < self.act_animcycle.frames.length; i++)  self.anim.src.push(self.act_animcycle.frames[i]);
     self.anim.animations[ANIM_NULL] = []; self.anim.animations[ANIM_NULL].push(0);
     var j = 0;
-    self.anim.animations[ANIM_IDLE] = []; for(var i = j; i < j+idle_animcycle.frames.length; i++) self.anim.animations[ANIM_IDLE].push(i);
-    j += idle_animcycle.frames.length;
-    self.anim.animations[ANIM_WALK] = []; for(var i = j; i < j+walk_animcycle.frames.length; i++) self.anim.animations[ANIM_WALK].push(i);
-    j += walk_animcycle.frames.length;
-    self.anim.animations[ANIM_ACT]  = []; for(var i = j; i < j+act_animcycle.frames.length; i++)  self.anim.animations[ANIM_ACT].push(i);
-    j += act_animcycle.frames.length;
+    self.anim.animations[ANIM_IDLE] = []; for(var i = j; i < j+self.idle_animcycle.frames.length; i++) self.anim.animations[ANIM_IDLE].push(i);
+    j += self.idle_animcycle.frames.length;
+    self.anim.animations[ANIM_WALK] = []; for(var i = j; i < j+self.walk_animcycle.frames.length; i++) self.anim.animations[ANIM_WALK].push(i);
+    j += self.walk_animcycle.frames.length;
+    self.anim.animations[ANIM_ACT]  = []; for(var i = j; i < j+self.act_animcycle.frames.length; i++)  self.anim.animations[ANIM_ACT].push(i);
+    j += self.act_animcycle.frames.length;
   }
 
   self.consume_room = function(room)
@@ -272,6 +277,13 @@ var avatar = function()
     self.x += dx;
     self.y += dy;
 
+    switch(self.anim.cur_anim)
+    {
+      case ANIM_IDLE: self.anim.frame_delay = self.idle_animcycle.frame_t; break;
+      case ANIM_WALK: self.anim.frame_delay = self.walk_animcycle.frame_t; break;
+      case ANIM_ACT:  self.anim.frame_delay = self.act_animcycle.frame_t;  break;
+    }
+
     if(d > act_dist)
     {
       if(self.state != AVATAR_WALK)
@@ -294,7 +306,7 @@ var avatar = function()
       else
       {
         my_avatar.state = AVATAR_IDLE;
-        if(!my_avatar.anim.cur_anim) my_avatar.anim.enqueueAnim(ANIM_IDLE);
+        if(my_avatar.anim.cur_anim != AVATAR_IDLE) my_avatar.anim.injectAnim(ANIM_IDLE);
       }
     }
 
