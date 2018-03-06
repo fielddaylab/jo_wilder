@@ -100,8 +100,6 @@ tmp_animcycle.offset_t = 0;
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/0.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/1.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/10.png"));
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/11.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/2.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/3.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/4.png"));
@@ -110,6 +108,8 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_wal
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/7.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/8.png"));
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/9.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/10.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_walk/11.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
