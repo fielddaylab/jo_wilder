@@ -5,6 +5,7 @@ tmp_person.y = 171;
 tmp_person.z = 0;
 tmp_person.act_x = 150;
 tmp_person.act_y = 41;
+tmp_person.act_anim = true;
 tmp_person.animcycle_id = "gramps";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;

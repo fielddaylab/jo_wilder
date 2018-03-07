@@ -5,6 +5,7 @@ tmp_wildcard.y = 0;
 tmp_wildcard.z = 0;
 tmp_wildcard.act_x = 0;
 tmp_wildcard.act_y = 0;
+tmp_wildcard.act_anim = 1;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
 tmp_wildcard.noteworthy = false;

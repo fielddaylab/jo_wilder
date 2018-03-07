@@ -52,15 +52,15 @@ var find = function(id)
 var save_slate = function()
 {
   var self = this;
-  self.stuff = [];
+  self.slate = [];
 
   self.insert = function(o)
   {
     var i;
-    for(i = 0; i < self.stuff.length && o.fqid > self.stuff[i]; i++) ;
-    self.stuff.splice(i,0,o);
+    for(i = 0; i < self.slate.length && o.fqid > self.slate[i]; i++) ;
+    self.slate.splice(i,0,o);
   }
-  self.gen_stuff = function(level)
+  self.gen_slate = function(level)
   {
     self.insert(level);
     var map = cur_level.map;
@@ -125,11 +125,11 @@ var save_slate = function()
     var c = "";
     var a = 0;
     var p = 1;
-    for(var i = 0; i < self.stuff.length; i++)
+    for(var i = 0; i < self.slate.length; i++)
     {
-      if(self.stuff[i].key) a += p;
+      if(self.slate[i].key) a += p;
       p *= 2;
-      if(p == ac_pt || i == self.stuff.length-1)
+      if(p == ac_pt || i == self.slate.length-1)
       {
         var len = ac_len-(""+a).length;
         for(var j = 0; j < len; j++) c += "0";
@@ -142,39 +142,40 @@ var save_slate = function()
   }
   self.decode = function(c)
   {
-    var stuff_i = 0;
+    var slate_i = 0;
     while(c.length > 0)
     {
       var sub_c = c.substring(0,ac_len);
       var int_c = parseInt(sub_c);
       var c = c.substring(ac_len);
       var p = ac_pt/2;
-      for(var sub_stuff_i = 0; sub_stuff_i < ac_pow; sub_stuff_i++)
+      for(var sub_slate_i = 0; sub_slate_i < ac_pow; sub_slate_i++)
       {
         if(int_c >= p)
         {
           int_c -= p;
-          self.stuff[stuff_i+ac_pow-1-sub_stuff_i].key = 1;
+          self.slate[slate_i+ac_pow-1-sub_slate_i].key = 1;
         }
         p /= 2;
       }
-      stuff_i += ac_pow;
+      slate_i += ac_pow;
     }
   }
-
 }
 
 var get_save_code = function()
 {
   var s = new save_slate();
-  s.gen_stuff(cur_level);
+  s.gen_slate(cur_level);
   console.log(s.code());
-  s.decode("00000027437320000204900000000000000");
+  //s.decode("00000027437320000204900000000000000");
 }
 
-var load_save_code = function()
+var load_save_code = function(code)
 {
-
+  var s = new save_slate();
+  s.gen_slate(cur_level);
+  s.decode(code);
 }
 
 var querylocked = function(o)
@@ -294,6 +295,7 @@ var person = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.act_anim = true;
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
@@ -318,6 +320,7 @@ var object = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.act_anim = true;
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
@@ -342,6 +345,7 @@ var porthole = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.act_anim = true;
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
@@ -369,6 +373,7 @@ var wildcard = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.act_anim = true;
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
@@ -717,6 +722,7 @@ var print_person_meta = function(l)
   "tmp_person.z = "+l.z+";\n"+
   "tmp_person.act_x = "+l.act_x+";\n"+
   "tmp_person.act_y = "+l.act_y+";\n"+
+  "tmp_person.act_anim = "+l.act_anim+";\n"+
   "tmp_person.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_person.noteworthy = "+l.noteworthy+";\n"+
@@ -788,6 +794,7 @@ var print_object_meta = function(l)
   "tmp_object.z = "+l.z+";\n"+
   "tmp_object.act_x = "+l.act_x+";\n"+
   "tmp_object.act_y = "+l.act_y+";\n"+
+  "tmp_object.act_anim = "+l.act_anim+";\n"+
   "tmp_object.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_object.noteworthy = "+l.noteworthy+";\n"+
@@ -848,6 +855,7 @@ var print_porthole_meta = function(l)
   "tmp_porthole.z = "+l.z+";\n"+
   "tmp_porthole.act_x = "+l.act_x+";\n"+
   "tmp_porthole.act_y = "+l.act_y+";\n"+
+  "tmp_porthole.act_anim = "+l.act_anim+";\n"+
   "tmp_porthole.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_porthole.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
@@ -877,6 +885,7 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.z = "+l.z+";\n"+
   "tmp_wildcard.act_x = "+l.act_x+";\n"+
   "tmp_wildcard.act_y = "+l.act_y+";\n"+
+  "tmp_wildcard.act_anim = "+l.act_anim+";\n"+
   "tmp_wildcard.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_wildcard.noteworthy = "+l.noteworthy+";\n"+

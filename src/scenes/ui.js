@@ -301,6 +301,8 @@ var avatar = function()
           var dir = (my_navigable.selected_act.x+my_navigable.selected_act.w/2) - (self.x+self.w/2);
                if(dir >  2) self.anim.flip = 0;
           else if(dir < -2) self.anim.flip = 1;
+
+          if(!my_navigable.selected_act.act_anim) self.anim.transition();
         }
       }
       else

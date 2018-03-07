@@ -5,6 +5,7 @@ tmp_porthole.y = canv.height/2-tmp_porthole.h/2;
 tmp_porthole.z = 999;
 tmp_porthole.act_x = 0;
 tmp_porthole.act_y = 0;
+tmp_porthole.act_anim = 1;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "null";

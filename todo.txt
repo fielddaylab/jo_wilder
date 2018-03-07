@@ -6,4 +6,5 @@ sounds in cutscene
 commands-for-scene-actors in a cutscene
 noteworthy entry notifications
 "picture taking"
+speech bubble pointer arrows
 

@@ -5,6 +5,7 @@ tmp_porthole.y = 158;
 tmp_porthole.z = 999;
 tmp_porthole.act_x = 32;
 tmp_porthole.act_y = 24;
+tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "stacks";
