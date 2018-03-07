@@ -54,10 +54,10 @@ var cursor = function()
   {
     switch(self.mode)
     {
-      case CURSOR_PERSON:   ctx.drawImage(self.person_animcycle_inst.img,  self.known_x-50,self.known_y-50,100,100); break;
-      case CURSOR_OBJECT:   ctx.drawImage(self.object_animcycle_inst.img,  self.known_x-50,self.known_y-50,100,100); break;
-      case CURSOR_PORTHOLE: ctx.drawImage(self.porthole_animcycle_inst.img,self.known_x-50,self.known_y-50,100,100); break;
-      case CURSOR_VIEW:     ctx.drawImage(self.view_animcycle_inst.img,    self.known_x-50,self.known_y-50,100,100); break;
+      case CURSOR_PERSON:   ctx.drawImage(self.person_animcycle_inst.img,  self.known_x-10,self.known_y-10,20,20); break;
+      case CURSOR_OBJECT:   ctx.drawImage(self.object_animcycle_inst.img,  self.known_x-10,self.known_y-10,20,20); break;
+      case CURSOR_PORTHOLE: ctx.drawImage(self.porthole_animcycle_inst.img,self.known_x-10,self.known_y-10,20,20); break;
+      case CURSOR_VIEW:     ctx.drawImage(self.view_animcycle_inst.img,    self.known_x-10,self.known_y-10,20,20); break;
     }
   }
 }
@@ -1081,6 +1081,10 @@ var objectview = function()
 
   self.hover = function(evt)
   {
+    my_cursor.mode = CURSOR_NORMAL;
+    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+      if(ptWithinBox(self.cache_unlocked_zones[i],evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_PERSON;
   }
   self.unhover = function(evt)
   {
