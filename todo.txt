@@ -1,6 +1,4 @@
 room navs topz bottomz
-options cursor
-map cursor
 exit cursor
 entrys
 sounds for everything

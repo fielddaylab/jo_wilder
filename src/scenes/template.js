@@ -214,6 +214,8 @@ var level = function()
   self.object_hover_animcycle_id = "hover_object";
   self.porthole_hover_animcycle_id = "hover_porthole";
   self.zone_hover_animcycle_id = "hover_zone";
+  self.option_hover_animcycle_id = "hover_option";
+  self.map_hover_animcycle_id = "hover_map";
   self.cursor_w = 0;
   self.cursor_h = 0;
   self.map;
@@ -697,6 +699,8 @@ var print_level_meta = function(l)
   "tmp_level.object_hover_animcycle_id = \""+l.object_hover_animcycle_id+"\";\n"+
   "tmp_level.porthole_hover_animcycle_id = \""+l.porthole_hover_animcycle_id+"\";\n"+
   "tmp_level.zone_hover_animcycle_id = \""+l.zone_hover_animcycle_id+"\";\n"+
+  "tmp_level.option_hover_animcycle_id = \""+l.option_hover_animcycle_id+"\";\n"+
+  "tmp_level.map_hover_animcycle_id = \""+l.map_hover_animcycle_id+"\";\n"+
   "tmp_level.cursor_w = "+l.cursor_w+";\n"+
   "tmp_level.cursor_h = "+l.cursor_h+";\n"+
   "tmp_level.noteworthy = "+l.noteworthy+";\n"+

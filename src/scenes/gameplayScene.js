@@ -113,6 +113,7 @@ var GamePlayScene = function(game, stage)
         }
         break;
       case STATE_MAP:
+        hoverer.filter(my_mapview);
         if(DEBUG && my_keyable.e) dragger.filter(my_mapview);
         else if(
         !clicker.filter(my_mapview) &&
@@ -130,6 +131,7 @@ var GamePlayScene = function(game, stage)
         my_notebook.tick();
         break;
       case STATE_PERSON:
+        hoverer.filter(my_personview);
         if(DEBUG && my_keyable.e) dragger.filter(my_personview);
         else
         {

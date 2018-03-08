@@ -14,6 +14,8 @@ var cursor = function()
   self.object_animcycle_inst;
   self.porthole_animcycle_inst;
   self.view_animcycle_inst;
+  self.option_animcycle_inst;
+  self.map_animcycle_inst;
 
   self.consume_level = function(level)
   {
@@ -21,6 +23,8 @@ var cursor = function()
     self.object_animcycle_inst   = gen_animcycle_inst(level.object_hover_animcycle_id,  level.animcycles);
     self.porthole_animcycle_inst = gen_animcycle_inst(level.porthole_hover_animcycle_id,level.animcycles);
     self.view_animcycle_inst     = gen_animcycle_inst(level.zone_hover_animcycle_id,    level.animcycles);
+    self.option_animcycle_inst   = gen_animcycle_inst(level.option_hover_animcycle_id,  level.animcycles);
+    self.map_animcycle_inst      = gen_animcycle_inst(level.map_hover_animcycle_id,     level.animcycles);
   }
 
   self.hover = function(evt)
@@ -47,6 +51,8 @@ var cursor = function()
       case CURSOR_OBJECT:   self.object_animcycle_inst.tick();   break;
       case CURSOR_PORTHOLE: self.porthole_animcycle_inst.tick(); break;
       case CURSOR_VIEW:     self.view_animcycle_inst.tick();     break;
+      case CURSOR_OPTION:   self.option_animcycle_inst.tick();   break;
+      case CURSOR_MAP:      self.map_animcycle_inst.tick();      break;
     }
   }
 
@@ -62,6 +68,8 @@ var cursor = function()
       case CURSOR_OBJECT:   ctx.drawImage(self.object_animcycle_inst.img,  self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_PORTHOLE: ctx.drawImage(self.porthole_animcycle_inst.img,self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_VIEW:     ctx.drawImage(self.view_animcycle_inst.img,    self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_OPTION:   ctx.drawImage(self.option_animcycle_inst.img,  self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_MAP:      ctx.drawImage(self.map_animcycle_inst.img,     self.known_x-hw,self.known_y-hh,w,h); break;
     }
   }
 }
@@ -894,6 +902,17 @@ var mapview = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
+  self.hover = function(evt)
+  {
+    my_cursor.mode = CURSOR_NORMAL;
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
+      if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_MAP;
+  }
+  self.unhover = function(evt)
+  {
+  }
+
   self.shouldClick = function(evt) { return true; }
   self.click = function(evt)
   {
@@ -1133,7 +1152,7 @@ var objectview = function()
     my_cursor.mode = CURSOR_NORMAL;
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
       if(ptWithinBox(self.cache_unlocked_zones[i],evt.doX,evt.doY))
-        my_cursor.mode = CURSOR_PERSON;
+        my_cursor.mode = CURSOR_VIEW;
   }
   self.unhover = function(evt)
   {
@@ -1370,6 +1389,38 @@ var personview = function()
     self.edit_cur_resizing = false;
   };
   //DRAG DEBUG EDIT STUFF END
+
+  self.hover = function(evt)
+  {
+    my_cursor.mode = CURSOR_NORMAL;
+    var speak = self.cur_speak;
+    var oyoff;
+    for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
+    {
+      oyoff = 0;
+      option = self.cache_unlocked_options_static[i];
+      for(var j = 0; j < option.qtext.length; j++)
+      {
+        if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
+          my_cursor.mode = CURSOR_OPTION;
+        oyoff += option.h;
+      }
+    }
+    oyoff = speak.options_y;
+    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+    {
+      option = self.cache_unlocked_options_dynamic[i];
+      for(var j = 0; j < option.qtext.length; j++)
+      {
+        if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+          my_cursor.mode = CURSOR_OPTION;
+        oyoff += speak.options_h;
+      }
+    }
+  }
+  self.unhover = function(evt)
+  {
+  }
 
   self.click = function(evt)
   {
