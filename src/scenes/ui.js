@@ -443,6 +443,8 @@ var navigable = function()
     self.room.key = true;
     self.unlock_content();
     self.selected_act = 0;
+    my_camera.wx = 0;
+    my_camera.wy = 0;
   }
 
   self.unlock_content = function()
@@ -681,6 +683,12 @@ var navigable = function()
 
   self.tick = function()
   {
+    //move camera
+    var xp = invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, my_avatar.wx);
+    var camwd = self.room.ww-my_camera.ww;
+    var target_cam_wx = self.room.wx-camwd/2+xp*camwd;
+    my_camera.wx = lerp(my_camera.wx,target_cam_wx,0.01);
+
     self.room.animcycle_inst.tick();
     screenSpace(my_camera,canv,self.room);
     for(var i = 0; i < self.room.navs.length;    i++) screenSpace(my_camera,canv,self.room.navs[i]);
