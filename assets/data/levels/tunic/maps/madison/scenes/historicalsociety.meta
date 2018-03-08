@@ -1,8 +1,8 @@
 tmp_scene.primary = true;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
-tmp_scene.x = 263;
-tmp_scene.y = 342;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
+tmp_scene.wx = 263;
+tmp_scene.wy = 342;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;

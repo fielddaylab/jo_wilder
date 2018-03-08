@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
-tmp_scene.x = 395;
-tmp_scene.y = 110;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
+tmp_scene.wx = 395;
+tmp_scene.wy = 110;
 tmp_scene.animcycle_id = "scene_humanecology";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;

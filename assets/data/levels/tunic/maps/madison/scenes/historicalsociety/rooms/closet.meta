@@ -2,18 +2,18 @@ tmp_room.primary = false;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{x:3, y:358, w:867, h:293 },
+{wx:3, wy:358, ww:867, wh:293 },
 ];
 tmp_room.lights = [
-{x:-55, y:179, w:359, h:467 },
+{wx:-55, wy:179, ww:359, wh:467 },
 ];
 tmp_room.shadows = [
-{x:284, y:49, w:588, h:594 },
+{wx:284, wy:49, ww:588, wh:594 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_wx = 440;
+tmp_room.start_wy = 330;
 tmp_room.noteworthy = false;
 

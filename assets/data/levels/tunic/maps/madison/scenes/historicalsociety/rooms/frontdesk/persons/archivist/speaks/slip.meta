@@ -1,15 +1,15 @@
 tmp_speak.primary = false;
-tmp_speak.w = 312;
-tmp_speak.h = 30;
-tmp_speak.x = 288;
-tmp_speak.y = 129;
+tmp_speak.ww = 312;
+tmp_speak.wh = 30;
+tmp_speak.wx = 288;
+tmp_speak.wy = 129;
 tmp_speak.animcycle_id = "archivist";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I have no idea what that is- you might want to ask a specialist over in the Human Ecology building.";
 tmp_speak.speaker = 2;
-tmp_speak.options_w = 203;
-tmp_speak.options_h = 30;
-tmp_speak.options_x = 326;
-tmp_speak.options_y = 259;
+tmp_speak.options_ww = 203;
+tmp_speak.options_wh = 30;
+tmp_speak.options_wx = 326;
+tmp_speak.options_wy = 259;
 tmp_speak.noteworthy = false;
 

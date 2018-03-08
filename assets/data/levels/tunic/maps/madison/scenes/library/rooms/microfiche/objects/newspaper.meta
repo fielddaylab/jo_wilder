@@ -1,10 +1,10 @@
-tmp_object.w = 100;
-tmp_object.h = 100;
-tmp_object.x = 562;
-tmp_object.y = 268;
-tmp_object.z = 0;
-tmp_object.act_x = 0;
-tmp_object.act_y = 0;
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 562;
+tmp_object.wy = 268;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
 tmp_object.act_anim = true;
 tmp_object.animcycle_id = "newspaper";
 tmp_object.audio_id = "null";

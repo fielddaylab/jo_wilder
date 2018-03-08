@@ -2,18 +2,18 @@ tmp_room.primary = false;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{x:23, y:400, w:844, h:250 },
+{wx:23, wy:400, ww:844, wh:250 },
 ];
 tmp_room.lights = [
-{x:344, y:307, w:645, h:359 },
+{wx:344, wy:307, ww:645, wh:359 },
 ];
 tmp_room.shadows = [
-{x:-125, y:66, w:488, h:585 },
+{wx:-125, wy:66, ww:488, wh:585 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_wx = 440;
+tmp_room.start_wy = 330;
 tmp_room.noteworthy = false;
 

@@ -2,18 +2,18 @@ tmp_room.primary = true;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{x:7, y:332, w:876, h:323 },
+{wx:7, wy:332, ww:876, wh:323 },
 ];
 tmp_room.lights = [
-{x:-1, y:269, w:324, h:383 },
+{wx:-1, wy:269, ww:324, wh:383 },
 ];
 tmp_room.shadows = [
-{x:593, y:311, w:275, h:341 },
+{wx:593, wy:311, ww:275, wh:341 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_x = 440;
-tmp_room.start_y = 660;
+tmp_room.start_wx = 440;
+tmp_room.start_wy = 660;
 tmp_room.noteworthy = false;
 

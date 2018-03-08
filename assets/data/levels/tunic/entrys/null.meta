@@ -1,8 +1,8 @@
 tmp_entry.index = 0;
-tmp_entry.x = 0;
-tmp_entry.y = 0;
-tmp_entry.w = canv.width/2;
-tmp_entry.h = 100;
+tmp_entry.wx = 0;
+tmp_entry.wy = 0;
+tmp_entry.ww = canv.width/2;
+tmp_entry.wh = 100;
 tmp_entry.animcycle_id = "null";
 tmp_entry.locks = [
 ];

@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.x = 100;
-tmp_scene.y = 100;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
+tmp_scene.wx = 100;
+tmp_scene.wy = 100;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
 tmp_scene.animcycle_id = "null";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;

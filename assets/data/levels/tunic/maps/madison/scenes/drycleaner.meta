@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.w = 100;
-tmp_scene.h = 100;
-tmp_scene.x = 601;
-tmp_scene.y = 404;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
+tmp_scene.wx = 601;
+tmp_scene.wy = 404;
 tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;

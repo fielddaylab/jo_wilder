@@ -1,10 +1,10 @@
-tmp_person.w = 128;
-tmp_person.h = 224;
-tmp_person.x = 271;
-tmp_person.y = 177;
-tmp_person.z = 0;
-tmp_person.act_x = 0;
-tmp_person.act_y = 0;
+tmp_person.ww = 128;
+tmp_person.wh = 224;
+tmp_person.wx = 271;
+tmp_person.wy = 177;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
 tmp_person.act_anim = true;
 tmp_person.animcycle_id = "youngboy";
 tmp_person.audio_id = "null";

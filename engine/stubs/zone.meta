@@ -1,7 +1,7 @@
-tmp_zone.w = 100;
-tmp_zone.h = 100;
-tmp_zone.x = canv.width/2-100;
-tmp_zone.y = canv.width/2-100;
+tmp_zone.ww = 100;
+tmp_zone.wh = 100;
+tmp_zone.wx = canv.width/2-100;
+tmp_zone.wy = canv.width/2-100;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "null";

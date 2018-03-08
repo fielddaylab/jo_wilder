@@ -1,15 +1,15 @@
 tmp_speak.primary = true;
-tmp_speak.w = 440;
-tmp_speak.h = 30;
-tmp_speak.x = 500;
-tmp_speak.y = 150;
+tmp_speak.ww = 440;
+tmp_speak.wh = 30;
+tmp_speak.wx = 500;
+tmp_speak.wy = 150;
 tmp_speak.animcycle_id = "ecologist";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
-tmp_speak.options_w = 440;
-tmp_speak.options_h = 30;
-tmp_speak.options_x = 500;
-tmp_speak.options_y = 250;
+tmp_speak.options_ww = 440;
+tmp_speak.options_wh = 30;
+tmp_speak.options_wx = 500;
+tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 

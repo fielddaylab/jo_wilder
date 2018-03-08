@@ -2,18 +2,18 @@ tmp_room.primary = false;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{x:45, y:305, w:831, h:351 },
+{wx:45, wy:305, ww:831, wh:351 },
 ];
 tmp_room.lights = [
-{x:45, y:305, w:831, h:351 },
+{wx:45, wy:305, ww:831, wh:351 },
 ];
 tmp_room.shadows = [
-{x:45, y:305, w:831, h:351 },
+{wx:45, wy:305, ww:831, wh:351 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_x = 440;
-tmp_room.start_y = 330;
+tmp_room.start_wx = 440;
+tmp_room.start_wy = 330;
 tmp_room.noteworthy = false;
 
