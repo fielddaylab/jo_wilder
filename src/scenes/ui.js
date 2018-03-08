@@ -243,13 +243,15 @@ var avatar = function()
     {
       self.edit_o.w += self.deltaX;
       self.edit_o.h += self.deltaY;
-      //propagate to level
-      cur_level.avatar_w = self.w;
-      cur_level.avatar_h = self.h;
     }
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    worldSpace(my_camera,canv,self.edit_o);
+    //propagate to level
+    cur_level.avatar_ww = self.edit_o.ww;
+    cur_level.avatar_wh = self.edit_o.wh;
 
     self._dirty = true;
   };
@@ -548,6 +550,8 @@ var navigable = function()
       self.h = 4;
       self.act.act_x = (self.x+self.w/2)-(self.act.x+self.act.w/2);
       self.act.act_y = (self.y+self.h/2)-(self.act.y+self.act.h/2);
+      self.act.act_wx =  worldSpaceW(my_camera,canv,self.act.act_x);
+      self.act.act_wy = -worldSpaceH(my_camera,canv,self.act.act_y);
     }
   })();
   self.dragStart = function(evt)
@@ -608,6 +612,7 @@ var navigable = function()
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
 
     if(self.edit_o == self.act_editor) self.act_editor.edit();
+    else worldSpace(my_camera,canv,self.edit_o);
 
     self._dirty = true;
   };
@@ -716,10 +721,10 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_inerts.length;    i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
 
       ctx.strokeStyle = cyan;
-      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
 
       ctx.fillStyle = black;
       ctx.fillText(self.room.fqid,20,20);
@@ -869,6 +874,7 @@ var mapview = function()
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+    worldSpace(my_camera,canv,self.edit_o);
 
     self._dirty = true;
   };
@@ -1102,6 +1108,7 @@ var objectview = function()
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+    worldSpace(my_camera,canv,self.edit_o);
 
     self._dirty = true;
   };
@@ -1286,6 +1293,10 @@ var personview = function()
       self.cur_speak.options_y = self.y;
       self.cur_speak.options_w = self.w;
       self.cur_speak.options_h = self.h;
+      self.cur_speak.options_ww = worldSpaceW(my_camera,canv,self.cur_speak.options_w);
+      self.cur_speak.options_wh = worldSpaceH(my_camera,canv,self.cur_speak.options_h);
+      self.cur_speak.options_wx = worldSpaceX(my_camera,canv,self.cur_speak.options_w,self.cur_speak.options_x);
+      self.cur_speak.options_wy = worldSpaceY(my_camera,canv,self.cur_speak.options_h,self.cur_speak.options_y);
     }
   })();
   self.dragStart = function(evt)
@@ -1327,6 +1338,7 @@ var personview = function()
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
 
     if(self.edit_o == self.options_editor) self.options_editor.edit();
+    else worldSpace(my_camera,canv,self.edit_o);
 
     //recalc text
     if(self.edit_o == self.options_editor) //its an option
