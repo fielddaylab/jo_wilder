@@ -1,7 +1,7 @@
 tmp_porthole.ww = 148;
 tmp_porthole.wh = 235;
-tmp_porthole.wx = 187;
-tmp_porthole.wy = 139;
+tmp_porthole.wx = -178.99999999999997;
+tmp_porthole.wy = 73.50000000000003;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -9,8 +9,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "microfiche";
-tmp_porthole.target_start_wx = 440;
-tmp_porthole.target_start_wy = 660;
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 "tunic.madison.library.frontdesk.worker.log",

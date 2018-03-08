@@ -906,7 +906,11 @@ var mapview = function()
   self.tick = function()
   {
     self.map.animcycle_inst.tick();
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) self.cache_unlocked_scenes[i].animcycle_inst.tick();
+    for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
+    {
+      self.cache_unlocked_scenes[i].animcycle_inst.tick();
+      screenSpace(my_camera,canv,self.cache_unlocked_scenes[i]);
+    }
   }
 
   self.draw = function(yoff)
@@ -1149,7 +1153,10 @@ var objectview = function()
   {
     self.cur_view.animcycle_inst.tick();
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+    {
       self.cache_unlocked_zones[i].animcycle_inst.tick();
+      screenSpace(my_camera,canv,self.cache_unlocked_zones[i]);
+    }
   }
 
   self.draw = function(yoff)

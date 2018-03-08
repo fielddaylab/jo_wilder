@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
 tmp_scene.ww = 100;
 tmp_scene.wh = 100;
-tmp_scene.wx = 301;
-tmp_scene.wy = 512;
+tmp_scene.wx = -89;
+tmp_scene.wy = -232;
 tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;

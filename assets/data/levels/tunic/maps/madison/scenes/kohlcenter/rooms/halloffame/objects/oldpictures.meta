@@ -1,7 +1,7 @@
 tmp_object.ww = 100;
 tmp_object.wh = 100;
-tmp_object.wx = 496;
-tmp_object.wy = 225;
+tmp_object.wx = 105.99999999999997;
+tmp_object.wy = 55.000000000000014;
 tmp_object.wz = 0;
 tmp_object.act_wx = 0;
 tmp_object.act_wy = 0;

@@ -24,8 +24,6 @@ var GamePlayScene = function(game, stage)
     keyer = new Keyer({source:canvas});
 
     my_camera = {wx:0,wy:0,ww:canv.width,wh:canv.height};
-HACK_FIX_WORLD_COORDS(cur_level);
-
     my_cursor = new cursor();
     my_cursor.consume_level(cur_level);
     my_navigable = new navigable();
@@ -251,6 +249,16 @@ HACK_FIX_WORLD_COORDS(cur_level);
         {
           state_t += state_t_speed;
           my_personview.tick();
+        }
+        else if(state_to == STATE_OBJECT)
+        {
+          state_t += state_t_speed;
+          my_objectview.tick();
+        }
+        else if(state_to == STATE_MAP)
+        {
+          state_t += state_t_speed;
+          my_mapview.tick();
         }
         else state_t += state_t_speed;
         break;

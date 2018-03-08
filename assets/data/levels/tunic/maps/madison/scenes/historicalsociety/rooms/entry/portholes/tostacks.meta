@@ -1,7 +1,7 @@
 tmp_porthole.ww = 92;
-tmp_porthole.wh = 168;
-tmp_porthole.wx = 374;
-tmp_porthole.wy = 158;
+tmp_porthole.wh = 167.99999999999997;
+tmp_porthole.wx = -20.000000000000014;
+tmp_porthole.wy = 88.00000000000001;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 32;
 tmp_porthole.act_wy = 24;
@@ -9,8 +9,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "stacks";
-tmp_porthole.target_start_wx = 440;
-tmp_porthole.target_start_wy = 660;
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
