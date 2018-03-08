@@ -1,3 +1,4 @@
+room navs topz bottomz
 entrys
 sounds for everything
 sounds in cutscene

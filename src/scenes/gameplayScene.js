@@ -247,6 +247,11 @@ HACK_FIX_WORLD_COORDS(cur_level);
             }
           }
         }
+        else if(state_to == STATE_PERSON)
+        {
+          state_t += state_t_speed;
+          my_personview.tick();
+        }
         else state_t += state_t_speed;
         break;
       case STATE_MAP:

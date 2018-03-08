@@ -55,8 +55,11 @@ var HACK_FIX_WORLD_COORDS = function(level)
   for(var i = 0; i < map.scenes.length; i++)
   {
     var scene = map.scenes[i];
-    scene.wx = worldSpaceX(my_camera,canv,scene.ww,scene.wx);
-    scene.wy = worldSpaceY(my_camera,canv,scene.wh,scene.wy);
+    scene.x = scene.wx;
+    scene.y = scene.wy;
+    scene.w = scene.ww;
+    scene.h = scene.wh;
+    worldSpace(my_camera,canv,scene);
     for(var j = 0; j < scene.rooms.length; j++)
     {
       var room = scene.rooms[j];
@@ -114,6 +117,11 @@ var HACK_FIX_WORLD_COORDS = function(level)
           for(var m = 0; m < speak.options.length; m++)
           {
             option = speak.options[m];
+            option.x = option.wx;
+            option.y = option.wy;
+            option.w = option.ww;
+            option.h = option.wh;
+            worldSpace(my_camera,canv,option);
           }
         }
       }
@@ -133,6 +141,11 @@ var HACK_FIX_WORLD_COORDS = function(level)
           for(var m = 0; m < view.zones.length; m++)
           {
             var zone = view.zones[m];
+            zone.x = zone.wx;
+            zone.y = zone.wy;
+            zone.w = zone.ww;
+            zone.h = zone.wh;
+            worldSpace(my_camera,canv,zone);
           }
         }
       }

@@ -1402,10 +1402,10 @@ var personview = function()
   {
     self.cur_speak.animcycle_inst.tick();
     screenSpace(my_camera,canv,self.cur_speak);
-    self.cur_speak.options_x = screenSpaceX(my_camera,canv,self.cur_speak.ww,self.cur_speak.wx);
-    self.cur_speak.options_y = screenSpaceY(my_camera,canv,self.cur_speak.wh,self.cur_speak.wy);
-    self.cur_speak.options_w = screenSpaceW(my_camera,canv,self.cur_speak.ww);
-    self.cur_speak.options_h = screenSpaceH(my_camera,canv,self.cur_speak.wh);
+    self.cur_speak.options_x = screenSpaceX(my_camera,canv,self.cur_speak.options_ww,self.cur_speak.options_wx);
+    self.cur_speak.options_y = screenSpaceY(my_camera,canv,self.cur_speak.options_wh,self.cur_speak.options_wy);
+    self.cur_speak.options_w = screenSpaceW(my_camera,canv,self.cur_speak.options_ww);
+    self.cur_speak.options_h = screenSpaceH(my_camera,canv,self.cur_speak.options_wh);
   }
 
   self.draw = function(yoff)
