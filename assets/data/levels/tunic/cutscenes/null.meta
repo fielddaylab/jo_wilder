@@ -36,7 +36,7 @@ tmp_cutscene_command.wz = 0;
 tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.raw_text = "null";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.ww);
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 

@@ -12,8 +12,8 @@ tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
 tmp_level.zone_hover_animcycle_id = "hover_zone";
-tmp_level.cursor_w = 0;
-tmp_level.cursor_h = 0;
+tmp_level.cursor_w = 20;
+tmp_level.cursor_h = 20;
 tmp_level.noteworthy = false;
 tmp_level.locks = [
 ];

@@ -49,6 +49,121 @@ var find = function(id)
   }
 }
 
+var HACK_FIX_WORLD_COORDS = function(level)
+{
+  var map = cur_level.map;
+  for(var i = 0; i < map.scenes.length; i++)
+  {
+    var scene = map.scenes[i];
+    scene.wx = worldSpaceX(my_camera,canv,scene.ww,scene.wx);
+    scene.wy = worldSpaceY(my_camera,canv,scene.wh,scene.wy);
+    for(var j = 0; j < scene.rooms.length; j++)
+    {
+      var room = scene.rooms[j];
+      room.x = room.wx;
+      room.y = room.wy;
+      room.w = room.ww;
+      room.h = room.wh;
+      worldSpace(my_camera,canv,room);
+      room.start_wx = worldSpaceXpt(my_camera,canv,room.start_wx);
+      room.start_wy = worldSpaceYpt(my_camera,canv,room.start_wy);
+      for(var k = 0; k < room.navs.length; k++)
+      {
+        room.navs[k].x = room.navs[k].wx;
+        room.navs[k].y = room.navs[k].wy;
+        room.navs[k].w = room.navs[k].ww;
+        room.navs[k].h = room.navs[k].wh;
+        worldSpace(my_camera,canv,room.navs[k]);
+      }
+      for(var k = 0; k < room.lights.length; k++)
+      {
+        room.lights[k].x = room.lights[k].wx;
+        room.lights[k].y = room.lights[k].wy;
+        room.lights[k].w = room.lights[k].ww;
+        room.lights[k].h = room.lights[k].wh;
+        worldSpace(my_camera,canv,room.lights[k]);
+      }
+      for(var k = 0; k < room.shadows.length; k++)
+      {
+        room.shadows[k].x = room.shadows[k].wx;
+        room.shadows[k].y = room.shadows[k].wy;
+        room.shadows[k].w = room.shadows[k].ww;
+        room.shadows[k].h = room.shadows[k].wh;
+        worldSpace(my_camera,canv,room.shadows[k]);
+      }
+      for(var k = 0; k < room.persons.length; k++)
+      {
+        var person = room.persons[k];
+        person.x = person.wx;
+        person.y = person.wy;
+        person.w = person.ww;
+        person.h = person.wh;
+        worldSpace(my_camera,canv,person);
+        person.act_wx = worldSpaceW(my_camera,canv,person.act_wx);
+        person.act_wy = worldSpaceH(my_camera,canv,person.act_wy);
+        for(var l = 0; l < person.speaks.length; l++)
+        {
+          var speak = person.speaks[l];
+          speak.x = speak.wx;
+          speak.y = speak.wy;
+          speak.w = speak.ww;
+          speak.h = speak.wh;
+          worldSpace(my_camera,canv,speak);
+          speak.options_wx = worldSpaceX(my_camera,canv,speak.options_ww,speak.options_wx);
+          speak.options_wy = worldSpaceY(my_camera,canv,speak.options_wh,speak.options_wy);
+          for(var m = 0; m < speak.options.length; m++)
+          {
+            option = speak.options[m];
+          }
+        }
+      }
+      for(var k = 0; k < room.objects.length; k++)
+      {
+        var object = room.objects[k];
+        object.x = object.wx;
+        object.y = object.wy;
+        object.w = object.ww;
+        object.h = object.wh;
+        worldSpace(my_camera,canv,object);
+        object.act_wx = worldSpaceW(my_camera,canv,object.act_wx);
+        object.act_wy = worldSpaceH(my_camera,canv,object.act_wy);
+        for(var l = 0; l < object.views.length; l++)
+        {
+          var view = object.views[l];
+          for(var m = 0; m < view.zones.length; m++)
+          {
+            var zone = view.zones[m];
+          }
+        }
+      }
+      for(var k = 0; k < room.portholes.length; k++)
+      {
+        var porthole = room.portholes[k];
+        porthole.x = porthole.wx;
+        porthole.y = porthole.wy;
+        porthole.w = porthole.ww;
+        porthole.h = porthole.wh;
+        worldSpace(my_camera,canv,porthole);
+        porthole.act_wx = worldSpaceW(my_camera,canv,porthole.act_wx);
+        porthole.act_wy = worldSpaceH(my_camera,canv,porthole.act_wy);
+        porthole.target_start_wx = worldSpaceXpt(my_camera,canv,porthole.target_start_wx);
+        porthole.target_start_wy = worldSpaceYpt(my_camera,canv,porthole.target_start_wy);
+      }
+      for(var k = 0; k < room.wildcards.length; k++)
+      {
+        var wildcard = room.wildcards[k];
+        wildcard.x = wildcard.wx;
+        wildcard.y = wildcard.wy;
+        wildcard.w = wildcard.ww;
+        wildcard.h = wildcard.wh;
+        worldSpace(my_camera,canv,wildcard);
+        wildcard.act_wx = worldSpaceW(my_camera,canv,wildcard.act_wx);
+        wildcard.act_wy = worldSpaceH(my_camera,canv,wildcard.act_wy);
+      }
+    }
+  }
+}
+
 var save_slate = function()
 {
   var self = this;
@@ -266,6 +381,10 @@ var room = function()
   self.id = "null"
   self.fqid = "null"
   self.primary = false;
+  self.wx = 0;
+  self.wy = 0;
+  self.ww = 0;
+  self.wh = 0;
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
@@ -284,6 +403,10 @@ var room = function()
   self.inerts = [];
   self.noteworthy = false;
   self.key = false;
+  self.x = 0;
+  self.y = 0;
+  self.w = 0;
+  self.h = 0;
 }
 
 var person = function()
@@ -753,6 +876,10 @@ var print_room_meta = function(l)
 {
   var str = "SAVE room "+l.fqid+"\n"+
   "tmp_room.primary = "+l.primary+";\n"+
+  "tmp_room.ww = "+l.ww+";\n"+
+  "tmp_room.wh = "+l.wh+";\n"+
+  "tmp_room.wx = "+l.wx+";\n"+
+  "tmp_room.wy = "+l.wy+";\n"+
   "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_room.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_room.navs = [\n";

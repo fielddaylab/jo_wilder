@@ -39,8 +39,8 @@ tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
 tmp_level.zone_hover_animcycle_id = "hover_zone";
-tmp_level.cursor_w = 0;
-tmp_level.cursor_h = 0;
+tmp_level.cursor_w = 20;
+tmp_level.cursor_h = 20;
 tmp_level.noteworthy = false;
 tmp_level.locks = [
 ];
@@ -840,7 +840,7 @@ tmp_cutscene_command.wz = 0;
 tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.raw_text = "null";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.ww);
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
@@ -888,6 +888,10 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.capitol.entry";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_capitol_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -966,6 +970,10 @@ tmp_room.id = "hall";
 tmp_room.fqid = "tunic.madison.capitol.hall";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -1026,7 +1034,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "tunic.madison.capitol.hall.youngboy.hub.goodbye";
@@ -1045,7 +1053,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1106,6 +1114,10 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.drycleaner.entry";
 {
 tmp_room.primary = true;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -1184,6 +1196,10 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.drycleaner.frontdesk";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -1244,7 +1260,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "tunic.madison.drycleaner.frontdesk.worker.hub.goodbye";
@@ -1263,7 +1279,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1284,7 +1300,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1309,7 +1325,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.drycleaner.frontdesk.worker.slip.return";
@@ -1328,7 +1344,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1424,6 +1440,10 @@ tmp_room.id = "closet";
 tmp_room.fqid = "tunic.madison.historicalsociety.closet";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -1484,7 +1504,7 @@ tmp_speak.options_wy = 261;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.historicalsociety.closet.gramps.help.return";
@@ -1503,7 +1523,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1528,7 +1548,7 @@ tmp_speak.options_wy = 252;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "tunic.madison.historicalsociety.closet.gramps.hub.goodbye";
@@ -1547,7 +1567,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1568,7 +1588,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1695,6 +1715,10 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.historicalsociety.entry";
 {
 tmp_room.primary = true;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -1799,6 +1823,10 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.historicalsociety.frontdesk";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -1859,7 +1887,7 @@ tmp_speak.options_wy = 223;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.hub.goodbye";
@@ -1878,7 +1906,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1900,7 +1928,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1922,7 +1950,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1944,7 +1972,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1969,7 +1997,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.log.return";
@@ -1988,7 +2016,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2013,7 +2041,7 @@ tmp_speak.options_wy = 249;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.newspaper.return";
@@ -2032,7 +2060,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2057,7 +2085,7 @@ tmp_speak.options_wy = 259;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.slip.return";
@@ -2076,7 +2104,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2116,6 +2144,10 @@ tmp_room.id = "stacks";
 tmp_room.fqid = "tunic.madison.historicalsociety.stacks";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2251,6 +2283,10 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.humanecology.entry";
 {
 tmp_room.primary = true;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_humanecology_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2329,6 +2365,10 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.humanecology.frontdesk";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2389,7 +2429,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "tunic.madison.humanecology.frontdesk.worker.hub.goodbye";
@@ -2408,7 +2448,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -2429,7 +2469,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2454,7 +2494,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.humanecology.frontdesk.worker.slip.return";
@@ -2473,7 +2513,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2513,6 +2553,10 @@ tmp_room.id = "hallway";
 tmp_room.fqid = "tunic.madison.humanecology.hallway";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_humanecology_hallway";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2611,6 +2655,10 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.kohlcenter.entry";
 {
 tmp_room.primary = true;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2689,6 +2737,10 @@ tmp_room.id = "halloffame";
 tmp_room.fqid = "tunic.madison.kohlcenter.halloffame";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2797,6 +2849,10 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.library.entry";
 {
 tmp_room.primary = true;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_library_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2875,6 +2931,10 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.library.frontdesk";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
@@ -2935,7 +2995,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "goodbye";
 tmp_option.fqid = "tunic.madison.library.frontdesk.worker.hub.goodbye";
@@ -2954,7 +3014,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -2975,7 +3035,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -3000,7 +3060,7 @@ tmp_speak.options_wy = 250;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);
 tmp_option = new option();
 tmp_option.id = "return";
 tmp_option.fqid = "tunic.madison.library.frontdesk.worker.log.return";
@@ -3019,7 +3079,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -3086,6 +3146,10 @@ tmp_room.id = "microfiche";
 tmp_room.fqid = "tunic.madison.library.microfiche";
 {
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.audio_id = "null";
 tmp_room.navs = [

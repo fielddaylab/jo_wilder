@@ -508,7 +508,7 @@ if [ $NOGEN == "0" ]; then
               echo "{" >> $OUT
               cat $speak >> $OUT
               echo "tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);" >> $OUT
-              echo "if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);" >> $OUT
+              echo "if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.ww);" >> $OUT
 
               if ensuredelimeter option $speak_dir; then :; else continue; fi
               options_dir=$speak_dir/options
@@ -524,7 +524,7 @@ if [ $NOGEN == "0" ]; then
                 echo "tmp_option.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id.$option_id\";" >> $OUT
                 echo "{" >> $OUT
                 cat $option >> $OUT
-                echo "if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);" >> $OUT
+                echo "if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.ww : tmp_speak.options_ww);" >> $OUT
 
                 echo "}" >> $OUT
                 echo "tmp_speak.options.push(tmp_option);" >> $OUT

@@ -1,4 +1,8 @@
 tmp_room.primary = false;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.navs = [

@@ -196,8 +196,6 @@ var avatar = function()
   self.consume_room = function(room)
   {
     my_navigable.wpt_in_navigable(room.start_wx,room.start_wy,self);
-    self.wx = self.wx-self.ww/2;
-    self.wy = self.wy-self.wh/2;
     self.to_wx = self.wx;
     self.to_wy = self.wy;
   }
@@ -205,8 +203,6 @@ var avatar = function()
   self.from_porthole = function(porthole)
   {
     my_navigable.wpt_in_navigable(porthole.target_start_wx,porthole.target_start_wy,self);
-    self.wx = self.wx-self.ww/2;
-    self.wy = self.wy-self.wh/2;
     self.to_wx = self.wx;
     self.to_wy = self.wy;
   }
@@ -423,20 +419,15 @@ var navigable = function()
 {
   var self = this;
 
-  self.wx = 0;
-  self.wy = 0;
-  self.ww = canv.width;
-  self.wh = canv.height;
-
   self.x = 0;
   self.y = 0;
-  self.w = 0;
-  self.h = 0;
+  self.w = canv.width;
+  self.h = canv.height;
 
   self.room;
   self.selected_act = 0;
-  self.last_click = {x:0,y:0};
-  self.nav_click = {x:0,y:0};
+  self.last_click = {x:0,y:0,wx:0,wy:0};
+  self.nav_click = {x:0,y:0,wx:0,wy:0};
   self.cache_unlocked_persons   = [];
   self.cache_unlocked_objects   = [];
   self.cache_unlocked_portholes = [];
@@ -503,10 +494,10 @@ var navigable = function()
     {
       try_wx = wx;
       try_wy = wy;
-      if(wx < self.room.navs[i].wx)                      try_wx = self.room.navs[i].wx;
-      if(wx > self.room.navs[i].wx+self.room.navs[i].ww) try_wx = self.room.navs[i].wx+self.room.navs[i].ww;
-      if(wy < self.room.navs[i].wy)                      try_wy = self.room.navs[i].wy;
-      if(wy > self.room.navs[i].wy+self.room.navs[i].wh) try_wy = self.room.navs[i].wy+self.room.navs[i].wh;
+      if(wx < self.room.navs[i].wx-self.room.navs[i].ww/2) try_wx = self.room.navs[i].wx-self.room.navs[i].ww/2;
+      if(wx > self.room.navs[i].wx+self.room.navs[i].ww/2) try_wx = self.room.navs[i].wx+self.room.navs[i].ww/2;
+      if(wy < self.room.navs[i].wy-self.room.navs[i].wh/2) try_wy = self.room.navs[i].wy-self.room.navs[i].wh/2;
+      if(wy > self.room.navs[i].wy+self.room.navs[i].wh/2) try_wy = self.room.navs[i].wy+self.room.navs[i].wh/2;
       trydist = distsqr(try_wx, try_wy, wx, wy);
       if(trydist < dist)
       {
@@ -651,8 +642,8 @@ var navigable = function()
     {
       self.last_click.x = evt.doX;
       self.last_click.y = evt.doY;
-      self.last_click.wx = worldSpaceX(my_camera,canv,evt.doX);
-      self.last_click.wy = worldSpaceX(my_camera,canv,evt.doY);
+      self.last_click.wx = worldSpaceXpt(my_camera,canv,evt.doX);
+      self.last_click.wy = worldSpaceYpt(my_camera,canv,evt.doY);
       self.nav_click.x = self.last_click.x;
       self.nav_click.y = self.last_click.y;
       self.nav_click.wx = self.last_click.wx;
@@ -674,18 +665,22 @@ var navigable = function()
 
       if(self.selected_act)
       {
-        self.nav_click.x = self.selected_act.x+self.selected_act.w/2+self.selected_act.act_x;
-        self.nav_click.y = self.selected_act.y+self.selected_act.h/2+self.selected_act.act_y;
+        self.nav_click.wx = self.selected_act.wx+self.selected_act.act_wx;
+        self.nav_click.wy = self.selected_act.wy+self.selected_act.act_wy;
       }
       self.wpt_in_navigable(self.nav_click.wx,self.nav_click.wy,self.nav_click);
-      my_avatar.to_wx = self.nav_click.x-my_avatar.w/2;
-      my_avatar.to_wy = self.nav_click.y-my_avatar.h/2;
+      my_avatar.to_wx = self.nav_click.wx;
+      my_avatar.to_wy = self.nav_click.wy;
     }
   }
 
   self.tick = function()
   {
     self.room.animcycle_inst.tick();
+    screenSpace(my_camera,canv,self.room);
+    for(var i = 0; i < self.room.navs.length;    i++) screenSpace(my_camera,canv,self.room.navs[i]);
+    for(var i = 0; i < self.room.lights.length;  i++) screenSpace(my_camera,canv,self.room.lights[i]);
+    for(var i = 0; i < self.room.shadows.length; i++) screenSpace(my_camera,canv,self.room.shadows[i]);
     for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { self.cache_unlocked_persons[i].animcycle_inst.tick();   screenSpace(my_camera, canv, self.cache_unlocked_persons[i]); }
     for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { self.cache_unlocked_objects[i].animcycle_inst.tick();   screenSpace(my_camera, canv, self.cache_unlocked_objects[i]); }
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { self.cache_unlocked_portholes[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_portholes[i]); }
@@ -698,7 +693,7 @@ var navigable = function()
     ctx.drawImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
-    my_avatar.draw(self.pt_shade(my_avatar.x+my_avatar.w/2,my_avatar.y+my_avatar.h/2),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+    my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
 
     if(DEBUG)
     {
@@ -721,10 +716,10 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_inerts.length;    i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
 
       ctx.strokeStyle = cyan;
-      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
 
       ctx.fillStyle = black;
       ctx.fillText(self.room.fqid,20,20);
@@ -1406,6 +1401,11 @@ var personview = function()
   self.tick = function()
   {
     self.cur_speak.animcycle_inst.tick();
+    screenSpace(my_camera,canv,self.cur_speak);
+    self.cur_speak.options_x = screenSpaceX(my_camera,canv,self.cur_speak.ww,self.cur_speak.wx);
+    self.cur_speak.options_y = screenSpaceY(my_camera,canv,self.cur_speak.wh,self.cur_speak.wy);
+    self.cur_speak.options_w = screenSpaceW(my_camera,canv,self.cur_speak.ww);
+    self.cur_speak.options_h = screenSpaceH(my_camera,canv,self.cur_speak.wh);
   }
 
   self.draw = function(yoff)

@@ -235,8 +235,12 @@ var setBox = function(box, x,y,w,h)
 }
 
 //camera
-var screenSpaceX = function(cam, canv, x) { return (((( x)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;  }
-var screenSpaceY = function(cam, canv, y) { return ((((-y)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height; }
+var screenSpaceXpt = function(cam, canv, wx) { return (((( wx)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;  } //only operates on points!
+var screenSpaceYpt = function(cam, canv, wy) { return ((((-wy)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height; } //only operates on points!
+var screenSpaceX = function(cam, canv, ww, wx) { return (((( wx-ww/2)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;  }
+var screenSpaceY = function(cam, canv, wh, wy) { return ((((-wy-wh/2)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height; }
+var screenSpaceW = function(cam, canv, ww) { return (ww/cam.ww)*canv.width;  }
+var screenSpaceH = function(cam, canv, wh) { return (wh/cam.wh)*canv.height; }
 var screenSpace  = function(cam, canv, box)
 {
   //assumng xywh counterparts in world space (wx,wy,ww,wh,etc...)
@@ -248,8 +252,10 @@ var screenSpace  = function(cam, canv, box)
   box.x = (((( box.wx-box.ww/2)-cam.wx)+(cam.ww/2))/cam.ww)*canv.width;
   box.y = ((((-box.wy-box.wh/2)+cam.wy)+(cam.wh/2))/cam.wh)*canv.height;
 }
-var worldSpaceX = function(cam, canv, x) { return ((x/canv.width) -0.5)* cam.ww + cam.wx; }
-var worldSpaceY = function(cam, canv, y) { return ((y/canv.height)-0.5)*-cam.wh + cam.wy; }
+var worldSpaceXpt = function(cam, canv, x) { return ((x/canv.width) -0.5)* cam.ww + cam.wx; }
+var worldSpaceYpt = function(cam, canv, y) { return ((y/canv.height)-0.5)*-cam.wh + cam.wy; }
+var worldSpaceX = function(cam, canv, ww, x) { return ((x/canv.width) -0.5)* cam.ww + cam.wx + ww/2; }
+var worldSpaceY = function(cam, canv, wh, y) { return ((y/canv.height)-0.5)*-cam.wh + cam.wy + wh/2; }
 var worldSpaceW = function(cam, canv, w) { return (w/canv.width)*cam.ww; }
 var worldSpaceH = function(cam, canv, h) { return (h/canv.height)*cam.wh; }
 var worldSpaceCoords = function(cam, canv, box) //opposite of screenspace, doesn't alter w/h (to preserve fp precision)
@@ -259,10 +265,10 @@ var worldSpaceCoords = function(cam, canv, box) //opposite of screenspace, doesn
 }
 var worldSpace = function(cam, canv, box) //opposite of screenspace
 {
-  box.wx = (((box.x/canv.width) -0.5)* cam.ww + cam.wx)+box.ww/2;
-  box.wy = (((box.y/canv.height)-0.5)*-cam.wh + cam.wy)-box.wh/2;
   box.ww = (box.w/canv.width)*cam.ww;
   box.wh = (box.h/canv.height)*cam.wh;
+  box.wx = (((box.x/canv.width) -0.5)* cam.ww + cam.wx)+box.ww/2;
+  box.wy = (((box.y/canv.height)-0.5)*-cam.wh + cam.wy)-box.wh/2;
 }
 
 function lensqr(x,y)
