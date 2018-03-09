@@ -794,14 +794,14 @@ tmp_audio = new audio();
 tmp_audio.id = "door";
 tmp_audio.fqid = "tunic.door";
 {
-tmp_audio.aud = GenAud("assets/data/levels/tunic/audios/door.mp3");
+tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/door.mp3");
 }
 tmp_level.audios.push(tmp_audio);
 tmp_audio = new audio();
 tmp_audio.id = "null";
 tmp_audio.fqid = "tunic.null";
 {
-tmp_audio.aud = GenAud("assets/data/levels/tunic/audios/null.mp3");
+tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/null.mp3");
 }
 tmp_level.audios.push(tmp_audio);
 for(var i = 0; i < tmp_level.audios.length; i++)

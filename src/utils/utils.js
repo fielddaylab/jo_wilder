@@ -366,7 +366,7 @@ var GenImg = function(src)
   return img;
 }
 
-var GenAud = function(src)
+var GenAudio = function(src)
 {
   var aud = new Audio();
   aud.src = src;
@@ -862,9 +862,7 @@ var animation = function()
 
     self.cur_anim_i++;
     if(self.cur_anim_i >= self.animations[self.cur_anim].length)
-    {
       self.transition();
-    }
   }
 
   self.draw = function(ctx)

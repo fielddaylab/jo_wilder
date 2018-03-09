@@ -380,7 +380,7 @@ if [ $NOGEN == "0" ]; then
       echo "tmp_audio.id = \"$audio_id\";" >> $OUT
       echo "tmp_audio.fqid = \"$level_id.$audio_id\";" >> $OUT
       echo "{" >> $OUT
-      echo "tmp_audio.aud = GenAud(\"`img $audio`\");" >> $OUT
+      echo "tmp_audio.aud = GenAudio(\"`img $audio`\");" >> $OUT
       echo "}" >> $OUT
       echo "tmp_level.audios.push(tmp_audio);" >> $OUT
 
