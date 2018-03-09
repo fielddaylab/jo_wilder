@@ -1,4 +1,5 @@
 room navs topz bottomz
+camera lerp from top-possible-y to bottom-possible-y, ditto for x
 exit cursor
 entrys
 sounds for everything
