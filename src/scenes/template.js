@@ -437,6 +437,7 @@ var inert = function()
   self.wx = 0;
   self.wy = 0;
   self.wz = 0;
+  self.g = 0; //"ground", as in "foreground", "background", etc... (bg < 0 < fg)
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.noteworthy = false;
@@ -449,6 +450,11 @@ var inert = function()
   self.x = 0;
   self.y = 0;
   self.z = 0;
+  self.dw = 0;
+  self.dh = 0;
+  self.dx = 0;
+  self.dy = 0;
+  self.dz = 0;
 }
 
 var view = function()
@@ -993,6 +999,7 @@ var print_inert_meta = function(l)
   "tmp_inert.wx = "+l.wx+";\n"+
   "tmp_inert.wy = "+l.wy+";\n"+
   "tmp_inert.wz = "+l.wz+";\n"+
+  "tmp_inert.g = "+l.g+";\n"+
   "tmp_inert.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_inert.noteworthy = "+l.noteworthy+";\n"+
   "tmp_inert.locks = [\n";

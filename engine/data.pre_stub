@@ -16,6 +16,7 @@ var tmp_view;
 var tmp_zone;
 var tmp_porthole;
 var tmp_wildcard;
+var tmp_inert;
 
 var init_levels = function()
 {

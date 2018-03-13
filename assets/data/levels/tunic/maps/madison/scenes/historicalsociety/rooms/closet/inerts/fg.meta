@@ -1,10 +1,10 @@
-tmp_inert.ww = 0;
-tmp_inert.wh = 0;
+tmp_inert.ww = 880;
+tmp_inert.wh = 660;
 tmp_inert.wx = 0;
 tmp_inert.wy = 0;
 tmp_inert.wz = 0;
-tmp_inert.g = 0;
-tmp_inert.animcycle_id = "null";
+tmp_inert.g = 1;
+tmp_inert.animcycle_id = "fg";
 tmp_inert.noteworthy = false;
 tmp_inert.locks = [
 ];

@@ -462,7 +462,10 @@ var navigable = function()
     self.cache_unlocked_portholes = [];
     self.cache_unlocked_wildcards = [];
     self.cache_unlocked_inerts    = [];
+
     self.cache_unlocked_drawables = [];
+    self.cache_unlocked_bg_drawables = [];
+    self.cache_unlocked_fg_drawables = [];
 
     for(var i = 0; i < self.room.persons.length; i++)
       if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
@@ -485,7 +488,14 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_wildcards[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_wildcards[i]); }
     for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    {
+    if(self.cache_unlocked_inerts[i].g < 0)
+    { var j = 0; while(j < self.cache_unlocked_bg_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_bg_drawables[j]) j++; self.cache_unlocked_bg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    else if(self.cache_unlocked_inerts[i].g > 0)
+    { var j = 0; while(j < self.cache_unlocked_fg_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_fg_drawables[j]) j++; self.cache_unlocked_fg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    else
+    { var j = 0; while(j < self.cache_unlocked_drawables.length    && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_drawables[j])    j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    }
   }
 
   self.wpt_in_navigable = function(wx,wy,obj)
@@ -712,14 +722,36 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { self.cache_unlocked_portholes[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_portholes[i]); }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { self.cache_unlocked_wildcards[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_wildcards[i]); }
     for(var i = 0; i < self.cache_unlocked_inerts.length;    i++) { self.cache_unlocked_inerts[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_inerts[i]); }
+
+    for(var i = 0; i < self.cache_unlocked_bg_drawables.length;    i++)
+    {
+      var d = self.cache_unlocked_bg_drawables[i];
+      var m = (d.g*d.g)/5;
+      d.dx = d.x + (my_camera.wx-d.wx)*m;
+      d.dy = d.y - (my_camera.wy-d.wy)*m;
+      d.dw = d.w;
+      d.dh = d.h;
+    }
+    for(var i = 0; i < self.cache_unlocked_fg_drawables.length;    i++)
+    {
+      var d = self.cache_unlocked_fg_drawables[i];
+      var m = (d.g*d.g);
+      d.dx = d.x - (my_camera.wx-d.wx)*m;
+      d.dy = d.y + (my_camera.wy-d.wy)*m;
+      d.dw = d.w;
+      d.dh = d.h;
+    }
   }
 
   self.draw = function()
   {
+    for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
     ctx.drawImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+
+    for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
 
     if(DEBUG)
     {

@@ -25,6 +25,8 @@ elif [ "@"$1 == "@porthole" ]; then
 PORTHOLE=` echo $BREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $BREAKDOWN | grep '\.'` != "@" ]; then BREAKDOWN=`echo $BREAKDOWN | sed 's/^[^.]*\.//g'`; else BREAKDOWN=""; fi
 elif [ "@"$1 == "@wildcard" ]; then
 WILDCARD=` echo $BREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $BREAKDOWN | grep '\.'` != "@" ]; then BREAKDOWN=`echo $BREAKDOWN | sed 's/^[^.]*\.//g'`; else BREAKDOWN=""; fi
+elif [ "@"$1 == "@inert" ]; then
+INERT=` echo $BREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $BREAKDOWN | grep '\.'` != "@" ]; then BREAKDOWN=`echo $BREAKDOWN | sed 's/^[^.]*\.//g'`; else BREAKDOWN=""; fi
 fi
 fi
 
@@ -43,5 +45,6 @@ elif [ "@"$1 == "@view" ];      then echo ../assets/data/levels/$LEVEL/maps/$MAP
 elif [ "@"$1 == "@zone" ];      then echo ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/objects/$OBJECT/views/$VIEW/zones;
 elif [ "@"$1 == "@porthole" ];  then echo ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/portholes;
 elif [ "@"$1 == "@wildcard" ];  then echo ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/wildcards;
+elif [ "@"$1 == "@inert" ];     then echo ../assets/data/levels/$LEVEL/maps/$MAP/scenes/$SCENE/rooms/$ROOM/inerts;
 fi
 

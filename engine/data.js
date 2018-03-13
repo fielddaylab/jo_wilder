@@ -17,6 +17,7 @@ var tmp_view;
 var tmp_zone;
 var tmp_porthole;
 var tmp_wildcard;
+var tmp_inert;
 
 var init_levels = function()
 {
@@ -113,6 +114,19 @@ tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/avatar_wal
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "bg";
+tmp_animcycle.fqid = "tunic.bg";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/bg/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "cleaner";
 tmp_animcycle.fqid = "tunic.cleaner";
 {
@@ -149,6 +163,19 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/ecologist/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "fg";
+tmp_animcycle.fqid = "tunic.fg";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/fg/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1734,6 +1761,46 @@ tmp_porthole.notlocks = [
 tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
+tmp_inert = new inert();
+tmp_inert.id = "bg";
+tmp_inert.fqid = "tunic.madison.historicalsociety.closet.bg";
+{
+tmp_inert.ww = 880;
+tmp_inert.wh = 660;
+tmp_inert.wx = 0;
+tmp_inert.wy = 0;
+tmp_inert.wz = 0;
+tmp_inert.g = -1;
+tmp_inert.animcycle_id = "bg";
+tmp_inert.noteworthy = false;
+tmp_inert.locks = [
+];
+tmp_inert.notlocks = [
+];
+
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "fg";
+tmp_inert.fqid = "tunic.madison.historicalsociety.closet.fg";
+{
+tmp_inert.ww = 880;
+tmp_inert.wh = 660;
+tmp_inert.wx = 0;
+tmp_inert.wy = 0;
+tmp_inert.wz = 0;
+tmp_inert.g = 1;
+tmp_inert.animcycle_id = "fg";
+tmp_inert.noteworthy = false;
+tmp_inert.locks = [
+];
+tmp_inert.notlocks = [
+];
+
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
 }
 tmp_scene.rooms.push(tmp_room);
 tmp_room = new room();
@@ -1842,6 +1909,26 @@ tmp_porthole.notlocks = [
 tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
+tmp_inert = new inert();
+tmp_inert.id = "fg";
+tmp_inert.fqid = "tunic.madison.historicalsociety.entry.fg";
+{
+tmp_inert.ww = 880;
+tmp_inert.wh = 660;
+tmp_inert.wx = 0;
+tmp_inert.wy = 0;
+tmp_inert.wz = 0;
+tmp_inert.g = 1;
+tmp_inert.animcycle_id = "fg";
+tmp_inert.noteworthy = false;
+tmp_inert.locks = [
+];
+tmp_inert.notlocks = [
+];
+
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
 }
 tmp_scene.rooms.push(tmp_room);
 tmp_room = new room();
