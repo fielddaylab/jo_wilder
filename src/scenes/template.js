@@ -797,7 +797,8 @@ var print_room_meta = function(l)
   "tmp_room.ambient_color = \""+l.ambient_color+"\";\n"+
   "tmp_room.start_wx = "+l.start_wx+";\n"+
   "tmp_room.start_wy = "+l.start_wy+";\n"+
-  "tmp_room.noteworthy = "+l.noteworthy+";\n";
+  "tmp_room.noteworthy = "+l.noteworthy+";\n"+
+  "//SUGGEST_H:"+l.wh/660;
   console.log(str);
 }
 

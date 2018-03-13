@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 1227.0104529616724;
-tmp_room.wh = 670;
+tmp_room.ww = 1208.6968641114984;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
@@ -20,4 +20,21 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.historicalsociety.frontdesk.archivist
+tmp_person.ww = 141;
+tmp_person.wh = 293;
+tmp_person.wx = -131.99393728222998;
+tmp_person.wy = -47.299999999999926;
+tmp_person.wz = 0;
+tmp_person.act_wx = 98.57342676974002;
+tmp_person.act_wy = -50;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "archivist";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 

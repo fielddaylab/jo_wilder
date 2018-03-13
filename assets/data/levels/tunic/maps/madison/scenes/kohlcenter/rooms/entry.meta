@@ -1,6 +1,6 @@
 tmp_room.primary = true;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
@@ -20,4 +20,24 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.kohlcenter.entry.tohalloffame
+tmp_porthole.ww = 244;
+tmp_porthole.wh = 179.00000000000003;
+tmp_porthole.wx = -7.999999999999972;
+tmp_porthole.wy = -70.5;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "halloffame";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 

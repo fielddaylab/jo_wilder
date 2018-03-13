@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 1134.0955837870538;
-tmp_room.wh = 670;
+tmp_room.ww = 1117.168784029038;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
@@ -20,4 +20,21 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.drycleaner.frontdesk.worker
+tmp_person.ww = 150;
+tmp_person.wh = 187;
+tmp_person.wx = -305;
+tmp_person.wy = 94.5;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "cleaner";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 

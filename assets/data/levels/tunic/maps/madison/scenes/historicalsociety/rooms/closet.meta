@@ -1,18 +1,18 @@
 tmp_room.primary = false;
-tmp_room.ww = 886.0507246376811;
-tmp_room.wh = 670;
+tmp_room.ww = 2134.4544349939247;
+tmp_room.wh = 792;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{wx:-3.5, wy:-174.50000000000003, ww:867, wh:293 },
+{wx:-1.7535310058158302, wy:-258.0672727272727, ww:2161.16735225892, wh:300.30909090909086 },
 ];
 tmp_room.lights = [
-{wx:-315.5, wy:-82.5, ww:359, wh:466.99999999999994 },
+{wx:-394.0363142292491, wy:223.8727272727272, ww:61.77025691699601, wh:56.472727272727056 },
 ];
 tmp_room.shadows = [
-{wx:138.00000000000003, wy:-16, ww:588, wh:594 },
+{wx:-306.03223814229244, wy:225.2, ww:59.994318181818386, wh:62.872727272727595 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -20,4 +20,21 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1.2
+template.js:829 SAVE person tunic.madison.historicalsociety.closet.gramps
+tmp_person.ww = 176.99999935560783;
+tmp_person.wh = 343.9999890712546;
+tmp_person.wx = -475.02573992676673;
+tmp_person.wy = -47.3254281078156;
+tmp_person.wz = 0;
+tmp_person.act_wx = 137.58904854645314;
+tmp_person.act_wy = -113.1608805092052;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "gramps";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 

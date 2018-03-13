@@ -1,15 +1,15 @@
 tmp_speak.primary = true;
 tmp_speak.ww = 197;
 tmp_speak.wh = 30;
-tmp_speak.wx = -142.5;
-tmp_speak.wy = 156;
+tmp_speak.wx = -304.03911269418234;
+tmp_speak.wy = 112.10339532150519;
 tmp_speak.animcycle_id = "gramps";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Hey there youngster...";
 tmp_speak.speaker = 2;
 tmp_speak.options_ww = 261;
 tmp_speak.options_wh = 30;
-tmp_speak.options_wx = 60.500000000000014;
-tmp_speak.options_wy = 92.99999999999999;
+tmp_speak.options_wx = -112.4877865590484;
+tmp_speak.options_wy = -57.995943210740734;
 tmp_speak.noteworthy = false;
 

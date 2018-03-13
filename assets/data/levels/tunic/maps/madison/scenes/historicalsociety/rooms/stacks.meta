@@ -1,18 +1,18 @@
 tmp_room.primary = false;
-tmp_room.ww = 971.4397120575885;
-tmp_room.wh = 670;
+tmp_room.ww = 956.9406118776245;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{wx:-25, wy:-139, ww:390, wh:406 },
+{wx:66.34433113377327, wy:-117.40000000000003, ww:572.6886622675465, wh:487.6 },
 ];
 tmp_room.lights = [
-{wx:-25, wy:-139, ww:390, wh:406 },
+{wx:333.20026994601085, wy:299.6000000000001, ww:44.19646070785856, wh:35.19999999999998 },
 ];
 tmp_room.shadows = [
-{wx:-25, wy:-139, ww:390, wh:406 },
+{wx:391.921625674865, wy:299.59999999999997, ww:46.806298740251876, wh:39.99999999999999 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -20,4 +20,22 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:901 SAVE object tunic.madison.historicalsociety.stacks.journalsaz
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 337.7442711457709;
+tmp_object.wy = 120.60000000000002;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.animcycle_id = "journalsaz";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.locks = [
+"tunic.madison.historicalsociety.frontdesk.archivist.newspaper",
+];
+tmp_object.notlocks = [
+];
 

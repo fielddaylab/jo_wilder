@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 1156.4087685364282;
-tmp_room.wh = 670;
+tmp_room.ww = 1139.1489361702127;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_microfiche";
@@ -20,4 +20,21 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:901 SAVE object tunic.madison.library.microfiche.newspaper
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 172.00000000000003;
+tmp_object.wy = 11.999999999999993;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.animcycle_id = "newspaper";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.locks = [
+];
+tmp_object.notlocks = [
+];
 

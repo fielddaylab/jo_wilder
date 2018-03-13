@@ -1,3 +1,4 @@
+cam height per room
 inert fg and bg
 room navs topz bottomz
 camera lerp from top-possible-y to bottom-possible-y, ditto for x

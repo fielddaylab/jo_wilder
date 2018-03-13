@@ -1,10 +1,10 @@
 tmp_object.ww = 109;
 tmp_object.wh = 130;
-tmp_object.wx = 279.50000000000006;
-tmp_object.wy = 85;
+tmp_object.wx = -871.8517307594153;
+tmp_object.wy = -177.09818181818176;
 tmp_object.wz = 0;
-tmp_object.act_wx = -85;
-tmp_object.act_wy = 120;
+tmp_object.act_wx = 99.54719920102725;
+tmp_object.act_wy = -29.687272727272703;
 tmp_object.act_anim = true;
 tmp_object.animcycle_id = "tunic";
 tmp_object.audio_id = "null";

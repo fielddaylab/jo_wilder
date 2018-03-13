@@ -34,8 +34,8 @@ tmp_level.notebook_animcycle_id = "notebook";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
-tmp_level.avatar_ww = 276.22820095030045;
-tmp_level.avatar_wh = 260.69641933077685;
+tmp_level.avatar_ww = 229.3143006650962;
+tmp_level.avatar_wh = 249.78830665884493;
 tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
@@ -515,7 +515,7 @@ tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
-tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_closet/0.jpg"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/room_historicalsociety_closet/0.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -943,8 +943,8 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.capitol.entry";
 {
 tmp_room.primary = false;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_entry";
@@ -964,6 +964,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.capitol.entry.tohall
+tmp_porthole.ww = 264;
+tmp_porthole.wh = 229;
+tmp_porthole.wx = 20.999999999999986;
+tmp_porthole.wy = 78.5;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "null";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "hall";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -1025,8 +1045,8 @@ tmp_room.id = "hall";
 tmp_room.fqid = "tunic.madison.capitol.hall";
 {
 tmp_room.primary = false;
-tmp_room.ww = 932.2423632091305;
-tmp_room.wh = 670;
+tmp_room.ww = 918.3282980866062;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_hall";
@@ -1046,6 +1066,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.capitol.hall.youngboy
+tmp_person.ww = 128;
+tmp_person.wh = 224;
+tmp_person.wx = -104.99999999999997;
+tmp_person.wy = 41;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "youngboy";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
@@ -1169,8 +1206,8 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.drycleaner.entry";
 {
 tmp_room.primary = true;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_entry";
@@ -1190,6 +1227,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.drycleaner.entry.tofrontdesk
+tmp_porthole.ww = 138;
+tmp_porthole.wh = 194;
+tmp_porthole.wx = 18.999999999999993;
+tmp_porthole.wy = -65.00000000000001;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "frontdesk";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -1251,8 +1308,8 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.drycleaner.frontdesk";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1134.0955837870538;
-tmp_room.wh = 670;
+tmp_room.ww = 1117.168784029038;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
@@ -1272,6 +1329,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.drycleaner.frontdesk.worker
+tmp_person.ww = 150;
+tmp_person.wh = 187;
+tmp_person.wx = -305;
+tmp_person.wy = 94.5;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "cleaner";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
@@ -1495,20 +1569,20 @@ tmp_room.id = "closet";
 tmp_room.fqid = "tunic.madison.historicalsociety.closet";
 {
 tmp_room.primary = false;
-tmp_room.ww = 886.0507246376811;
-tmp_room.wh = 670;
+tmp_room.ww = 2134.4544349939247;
+tmp_room.wh = 792;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{wx:-3.5, wy:-174.50000000000003, ww:867, wh:293 },
+{wx:-1.7535310058158302, wy:-258.0672727272727, ww:2161.16735225892, wh:300.30909090909086 },
 ];
 tmp_room.lights = [
-{wx:-315.5, wy:-82.5, ww:359, wh:466.99999999999994 },
+{wx:-394.0363142292491, wy:223.8727272727272, ww:61.77025691699601, wh:56.472727272727056 },
 ];
 tmp_room.shadows = [
-{wx:138.00000000000003, wy:-16, ww:588, wh:594 },
+{wx:-306.03223814229244, wy:225.2, ww:59.994318181818386, wh:62.872727272727595 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -1516,19 +1590,36 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1.2
+template.js:829 SAVE person tunic.madison.historicalsociety.closet.gramps
+tmp_person.ww = 176.99999935560783;
+tmp_person.wh = 343.9999890712546;
+tmp_person.wx = -475.02573992676673;
+tmp_person.wy = -47.3254281078156;
+tmp_person.wz = 0;
+tmp_person.act_wx = 137.58904854645314;
+tmp_person.act_wy = -113.1608805092052;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "gramps";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "gramps";
 tmp_person.fqid = "tunic.madison.historicalsociety.closet.gramps";
 {
-tmp_person.ww = 205;
-tmp_person.wh = 332;
-tmp_person.wx = -323.5;
-tmp_person.wy = -7;
+tmp_person.ww = 176.99999935560783;
+tmp_person.wh = 343.9999890712546;
+tmp_person.wx = -475.02573992676673;
+tmp_person.wy = -47.3254281078156;
 tmp_person.wz = 0;
-tmp_person.act_wx = 150;
-tmp_person.act_wy = 41;
+tmp_person.act_wx = 137.58904854645314;
+tmp_person.act_wy = -113.1608805092052;
 tmp_person.act_anim = true;
 tmp_person.animcycle_id = "gramps";
 tmp_person.audio_id = "null";
@@ -1590,16 +1681,16 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.closet.gramps.hub";
 tmp_speak.primary = true;
 tmp_speak.ww = 197;
 tmp_speak.wh = 30;
-tmp_speak.wx = -142.5;
-tmp_speak.wy = 156;
+tmp_speak.wx = -304.03911269418234;
+tmp_speak.wy = 112.10339532150519;
 tmp_speak.animcycle_id = "gramps";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Hey there youngster...";
 tmp_speak.speaker = 2;
 tmp_speak.options_ww = 261;
 tmp_speak.options_wh = 30;
-tmp_speak.options_wx = 60.500000000000014;
-tmp_speak.options_wy = 92.99999999999999;
+tmp_speak.options_wx = -112.4877865590484;
+tmp_speak.options_wy = -57.995943210740734;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -1656,11 +1747,11 @@ tmp_object.fqid = "tunic.madison.historicalsociety.closet.tunic";
 {
 tmp_object.ww = 109;
 tmp_object.wh = 130;
-tmp_object.wx = 279.50000000000006;
-tmp_object.wy = 85;
+tmp_object.wx = -871.8517307594153;
+tmp_object.wy = -177.09818181818176;
 tmp_object.wz = 0;
-tmp_object.act_wx = -85;
-tmp_object.act_wy = 120;
+tmp_object.act_wx = 99.54719920102725;
+tmp_object.act_wy = -29.687272727272703;
 tmp_object.act_anim = true;
 tmp_object.animcycle_id = "tunic";
 tmp_object.audio_id = "null";
@@ -1741,13 +1832,13 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.closet.toentry";
 {
-tmp_porthole.ww = 104;
-tmp_porthole.wh = 407;
-tmp_porthole.wx = 423.00000000000006;
-tmp_porthole.wy = -126.50000000000001;
+tmp_porthole.ww = 310.8303987628411;
+tmp_porthole.wh = 488.861818181818;
+tmp_porthole.wx = 928.2571169777978;
+tmp_porthole.wy = -164.50727272727266;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = -35;
-tmp_porthole.act_wy = 35;
+tmp_porthole.act_wx = -76.08053359683801;
+tmp_porthole.act_wy = -44.1818181818182;
 tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
@@ -1767,10 +1858,10 @@ tmp_inert = new inert();
 tmp_inert.id = "bg";
 tmp_inert.fqid = "tunic.madison.historicalsociety.closet.bg";
 {
-tmp_inert.ww = 880;
-tmp_inert.wh = 660;
-tmp_inert.wx = 0;
-tmp_inert.wy = 0;
+tmp_inert.ww = 68.05533596837992;
+tmp_inert.wh = 41.16363636363629;
+tmp_inert.wx = -306.77799336168374;
+tmp_inert.wy = 296.85468501475515;
 tmp_inert.wz = 0;
 tmp_inert.g = -1;
 tmp_inert.animcycle_id = "bg";
@@ -1787,10 +1878,10 @@ tmp_inert = new inert();
 tmp_inert.id = "fg";
 tmp_inert.fqid = "tunic.madison.historicalsociety.closet.fg";
 {
-tmp_inert.ww = 880;
-tmp_inert.wh = 660;
-tmp_inert.wx = 0;
-tmp_inert.wy = 0;
+tmp_inert.ww = 69.26358695652179;
+tmp_inert.wh = 47.254545454545216;
+tmp_inert.wx = -394.4939476284585;
+tmp_inert.wy = 291.7545454545453;
 tmp_inert.wz = 0;
 tmp_inert.g = 1;
 tmp_inert.animcycle_id = "fg";
@@ -1810,14 +1901,14 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.historicalsociety.entry";
 {
 tmp_room.primary = true;
-tmp_room.ww = 1426.8016194331983;
-tmp_room.wh = 670;
+tmp_room.ww = 2529.910931174089;
+tmp_room.wh = 1188;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{wx:-0.8369157158630287, wy:-215.88181818181818, ww:1230.106220095694, wh:330.3090909090909 },
+{wx:-88.8088185498716, wy:-402.7218181818181, ww:2068.426705925653, wh:466.38909090909084 },
 ];
 tmp_room.lights = [
 {wx:606.2655502392346, wy:297.6909090909091, ww:63.28443135811556, wh:38.25454545454535 },
@@ -1831,6 +1922,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1.8
+template.js:965 SAVE porthole tunic.madison.historicalsociety.entry.tocloset
+tmp_porthole.ww = 261.667000368053;
+tmp_porthole.wh = 533.9745454545455;
+tmp_porthole.wx = -925.4274788369526;
+tmp_porthole.wy = -167.0018181818183;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 15.05436142804566;
+tmp_porthole.act_wy = -48.218181818181826;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "closet";
+tmp_porthole.target_start_wx = 440;
+tmp_porthole.target_start_wy = 330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -1863,10 +1974,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tomap";
 {
-tmp_porthole.ww = 1431.7244387191756;
-tmp_porthole.wh = 100.40000000000002;
-tmp_porthole.wx = -14.439952153110312;
-tmp_porthole.wy = -292.2363636363638;
+tmp_porthole.ww = 2539.1354508649247;
+tmp_porthole.wh = 160.88000000000005;
+tmp_porthole.wx = 7.984258373205648;
+tmp_porthole.wy = -562.2363636363636;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -1889,10 +2000,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tostacks";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tostacks";
 {
-tmp_porthole.ww = 292.40077291129927;
-tmp_porthole.wh = 403.1090909090908;
-tmp_porthole.wx = 47.12453073242544;
-tmp_porthole.wy = 131.2454545454546;
+tmp_porthole.ww = 502.8433640044164;
+tmp_porthole.wh = 714.1490909090909;
+tmp_porthole.wx = 55.74922708870059;
+tmp_porthole.wy = 215.4854545454545;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = -1.0758557232241373;
 tmp_porthole.act_wy = -170.90909090909088;
@@ -1915,10 +2026,10 @@ tmp_inert = new inert();
 tmp_inert.id = "fg";
 tmp_inert.fqid = "tunic.madison.historicalsociety.entry.fg";
 {
-tmp_inert.ww = 1372.2465587044537;
-tmp_inert.wh = 736.7454545454543;
-tmp_inert.wx = -10.70101214574936;
-tmp_inert.wy = -9.136363636363512;
+tmp_inert.ww = 4180.447692307692;
+tmp_inert.wh = 1911.785454545454;
+tmp_inert.wx = 47.94692307692253;
+tmp_inert.wy = 29.74363636363637;
 tmp_inert.wz = 0;
 tmp_inert.g = 1;
 tmp_inert.animcycle_id = "fg";
@@ -1938,8 +2049,8 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.historicalsociety.frontdesk";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1227.0104529616724;
-tmp_room.wh = 670;
+tmp_room.ww = 1208.6968641114984;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
@@ -1959,6 +2070,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.historicalsociety.frontdesk.archivist
+tmp_person.ww = 141;
+tmp_person.wh = 293;
+tmp_person.wx = -131.99393728222998;
+tmp_person.wy = -47.299999999999926;
+tmp_person.wz = 0;
+tmp_person.act_wx = 98.57342676974002;
+tmp_person.act_wy = -50;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "archivist";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
@@ -1989,16 +2117,16 @@ tmp_speak.fqid = "tunic.madison.historicalsociety.frontdesk.archivist.hub";
 tmp_speak.primary = true;
 tmp_speak.ww = 200;
 tmp_speak.wh = 30;
-tmp_speak.wx = -36;
-tmp_speak.wy = 191;
+tmp_speak.wx = 55.99942827955791;
+tmp_speak.wy = 120;
 tmp_speak.animcycle_id = "archivist";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I help you?";
 tmp_speak.speaker = 2;
 tmp_speak.options_ww = 375;
 tmp_speak.options_wh = 30;
-tmp_speak.options_wx = 90.5;
-tmp_speak.options_wy = 122;
+tmp_speak.options_wx = 221.5603124828554;
+tmp_speak.options_wy = 2;
 tmp_speak.noteworthy = false;
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -2259,20 +2387,20 @@ tmp_room.id = "stacks";
 tmp_room.fqid = "tunic.madison.historicalsociety.stacks";
 {
 tmp_room.primary = false;
-tmp_room.ww = 971.4397120575885;
-tmp_room.wh = 670;
+tmp_room.ww = 956.9406118776245;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{wx:-25, wy:-139, ww:390, wh:406 },
+{wx:66.34433113377327, wy:-117.40000000000003, ww:572.6886622675465, wh:487.6 },
 ];
 tmp_room.lights = [
-{wx:-25, wy:-139, ww:390, wh:406 },
+{wx:333.20026994601085, wy:299.6000000000001, ww:44.19646070785856, wh:35.19999999999998 },
 ];
 tmp_room.shadows = [
-{wx:-25, wy:-139, ww:390, wh:406 },
+{wx:391.921625674865, wy:299.59999999999997, ww:46.806298740251876, wh:39.99999999999999 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -2280,6 +2408,24 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:901 SAVE object tunic.madison.historicalsociety.stacks.journalsaz
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 337.7442711457709;
+tmp_object.wy = 120.60000000000002;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.animcycle_id = "journalsaz";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.locks = [
+"tunic.madison.historicalsociety.frontdesk.archivist.newspaper",
+];
+tmp_object.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_object = new object();
@@ -2322,10 +2468,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.stacks.toentry";
 {
-tmp_porthole.ww = 768;
-tmp_porthole.wh = 83;
-tmp_porthole.wx = 23;
-tmp_porthole.wy = -310.5;
+tmp_porthole.ww = 381.74397120575856;
+tmp_porthole.wh = 216.20000000000005;
+tmp_porthole.wx = 19.08524295140981;
+tmp_porthole.wy = -255.90000000000035;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -2348,13 +2494,13 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tofrontdesk";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.stacks.tofrontdesk";
 {
-tmp_porthole.ww = 85;
-tmp_porthole.wh = 134;
-tmp_porthole.wx = -48.499999999999986;
-tmp_porthole.wy = 89.00000000000003;
+tmp_porthole.ww = 117.622975404919;
+tmp_porthole.wh = 170.00000000000003;
+tmp_porthole.wx = 59.15581883623271;
+tmp_porthole.wy = 155.00000000000006;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
+tmp_porthole.act_wx = 6.524595080983803;
+tmp_porthole.act_wy = -19.2;
 tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
@@ -2398,8 +2544,8 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.humanecology.entry";
 {
 tmp_room.primary = true;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_entry";
@@ -2419,6 +2565,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.humanecology.entry.tohallway
+tmp_porthole.ww = 114;
+tmp_porthole.wh = 175;
+tmp_porthole.wx = 0.9999999999999787;
+tmp_porthole.wy = -95.49999999999997;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "hallway";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -2480,8 +2646,8 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.humanecology.frontdesk";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1212.6501240694788;
-tmp_room.wh = 670;
+tmp_room.ww = 1194.5508684863523;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
@@ -2501,6 +2667,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.humanecology.frontdesk.worker
+tmp_person.ww = 170;
+tmp_person.wh = 310;
+tmp_person.wx = 156;
+tmp_person.wy = 55;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "ecologist";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
@@ -2668,8 +2851,8 @@ tmp_room.id = "hallway";
 tmp_room.fqid = "tunic.madison.humanecology.hallway";
 {
 tmp_room.primary = false;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_hallway";
@@ -2689,6 +2872,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.humanecology.hallway.toentry
+tmp_porthole.ww = 794;
+tmp_porthole.wh = 80;
+tmp_porthole.wx = 41;
+tmp_porthole.wy = -283;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "entry";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = 330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -2770,8 +2973,8 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.kohlcenter.entry";
 {
 tmp_room.primary = true;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
@@ -2791,6 +2994,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.kohlcenter.entry.tohalloffame
+tmp_porthole.ww = 244;
+tmp_porthole.wh = 179.00000000000003;
+tmp_porthole.wx = -7.999999999999972;
+tmp_porthole.wy = -70.5;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "halloffame";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -2852,8 +3075,8 @@ tmp_room.id = "halloffame";
 tmp_room.fqid = "tunic.madison.kohlcenter.halloffame";
 {
 tmp_room.primary = false;
-tmp_room.ww = 2069.8990627253065;
-tmp_room.wh = 670;
+tmp_room.ww = 2039.0050468637346;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
@@ -2873,6 +3096,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:901 SAVE object tunic.madison.kohlcenter.halloffame.oldpictures
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 105.99999999999997;
+tmp_object.wy = 55.000000000000014;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.animcycle_id = "oldpictures";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.locks = [
+];
+tmp_object.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_object = new object();
@@ -2964,8 +3204,8 @@ tmp_room.id = "entry";
 tmp_room.fqid = "tunic.madison.library.entry";
 {
 tmp_room.primary = true;
-tmp_room.ww = 893.3333333333334;
-tmp_room.wh = 670;
+tmp_room.ww = 880;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_entry";
@@ -2985,6 +3225,26 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:965 SAVE porthole tunic.madison.library.entry.tofrontdesk
+tmp_porthole.ww = 271;
+tmp_porthole.wh = 173.99999999999997;
+tmp_porthole.wx = 29.49999999999997;
+tmp_porthole.wy = -15.999999999999972;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 0;
+tmp_porthole.act_wy = 0;
+tmp_porthole.act_anim = true;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.audio_id = "door";
+tmp_porthole.target_room = "frontdesk";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = -330;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
@@ -3046,8 +3306,8 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.madison.library.frontdesk";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1445.6552474170744;
-tmp_room.wh = 670;
+tmp_room.ww = 1424.078303425775;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_frontdesk";
@@ -3067,6 +3327,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:829 SAVE person tunic.madison.library.frontdesk.worker
+tmp_person.ww = 117.00000000000001;
+tmp_person.wh = 216;
+tmp_person.wx = 138.50000000000003;
+tmp_person.wy = -29;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = true;
+tmp_person.animcycle_id = "librarian";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.locks = [
+];
+tmp_person.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
@@ -3261,8 +3538,8 @@ tmp_room.id = "microfiche";
 tmp_room.fqid = "tunic.madison.library.microfiche";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1156.4087685364282;
-tmp_room.wh = 670;
+tmp_room.ww = 1139.1489361702127;
+tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_microfiche";
@@ -3282,6 +3559,23 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
+//SUGGEST_H:1
+template.js:901 SAVE object tunic.madison.library.microfiche.newspaper
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 172.00000000000003;
+tmp_object.wy = 11.999999999999993;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.animcycle_id = "newspaper";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.locks = [
+];
+tmp_object.notlocks = [
+];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_object = new object();
