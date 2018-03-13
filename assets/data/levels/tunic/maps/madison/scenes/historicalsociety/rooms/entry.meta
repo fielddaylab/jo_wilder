@@ -21,23 +21,4 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1.8
-template.js:965 SAVE porthole tunic.madison.historicalsociety.entry.tocloset
-tmp_porthole.ww = 261.667000368053;
-tmp_porthole.wh = 533.9745454545455;
-tmp_porthole.wx = -925.4274788369526;
-tmp_porthole.wy = -167.0018181818183;
-tmp_porthole.wz = 999;
-tmp_porthole.act_wx = 15.05436142804566;
-tmp_porthole.act_wy = -48.218181818181826;
-tmp_porthole.act_anim = true;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "closet";
-tmp_porthole.target_start_wx = 440;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.noteworthy = false;
-tmp_porthole.locks = [
-];
-tmp_porthole.notlocks = [
-];
 

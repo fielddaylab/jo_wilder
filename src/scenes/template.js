@@ -798,7 +798,7 @@ var print_room_meta = function(l)
   "tmp_room.start_wx = "+l.start_wx+";\n"+
   "tmp_room.start_wy = "+l.start_wy+";\n"+
   "tmp_room.noteworthy = "+l.noteworthy+";\n"+
-  "//SUGGEST_H:"+l.wh/660;
+  "//SUGGEST_H:"+l.wh/660+"\n";
   console.log(str);
 }
 
