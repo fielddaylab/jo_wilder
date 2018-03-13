@@ -21,3 +21,11 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
+//../assets/data/levels/tunic/animcycles/room_library_frontdesk/0.jpg JPEG 3968x1839 3968x1839+0+0 8-bit sRGB 1.03572MiB 0.000u 0:00.000
+//3968x1839
+//3968x1839
+tmp_room.ww = 3968*890/1839;
+tmp_room.wh = 890;
+//3968x1839
+tmp_room.ww = 3968*670/1839;
+tmp_room.wh = 670;

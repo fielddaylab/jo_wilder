@@ -21,3 +21,11 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
+//../assets/data/levels/tunic/animcycles/room_historicalsociety_stacks/0.jpg JPEG 2417x1667 2417x1667+0+0 8-bit sRGB 655449B 0.000u 0:00.000
+//2417x1667
+//2417x1667
+tmp_room.ww = 2417*890/1667;
+tmp_room.wh = 890;
+//2417x1667
+tmp_room.ww = 2417*670/1667;
+tmp_room.wh = 670;

@@ -23,7 +23,7 @@ var GamePlayScene = function(game, stage)
     hoverer = new PersistentHoverer({source:canvas});
     keyer = new Keyer({source:canvas});
 
-    my_camera = {wx:0,wy:0,ww:canv.width*0.8,wh:canv.height*0.8};
+    my_camera = {wx:0,wy:0,ww:canv.width*660/canv.height,wh:660};
     my_cursor = new cursor();
     my_cursor.consume_level(cur_level);
     my_navigable = new navigable();

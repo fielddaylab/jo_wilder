@@ -21,3 +21,11 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
 
+//../assets/data/levels/tunic/animcycles/room_drycleaner_frontdesk/0.jpg JPEG 2798x1653 2798x1653+0+0 8-bit sRGB 698774B 0.000u 0:00.000
+//2798x1653
+//2798x1653
+tmp_room.ww = 2798*890/1653;
+tmp_room.wh = 890;
+//2798x1653
+tmp_room.ww = 2798*670/1653;
+tmp_room.wh = 670;

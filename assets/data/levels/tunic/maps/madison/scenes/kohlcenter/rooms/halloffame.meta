@@ -21,3 +21,11 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
+//../assets/data/levels/tunic/animcycles/room_kohlcenter_halloffame/0.jpg JPEG 4285x1387 4285x1387+0+0 8-bit sRGB 648826B 0.000u 0:00.000
+//4285x1387
+//4285x1387
+tmp_room.ww = 4285*890/1387;
+tmp_room.wh = 890;
+//4285x1387
+tmp_room.ww = 4285*670/1387;
+tmp_room.wh = 670;

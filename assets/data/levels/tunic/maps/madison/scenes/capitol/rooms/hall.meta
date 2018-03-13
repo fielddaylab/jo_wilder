@@ -21,3 +21,11 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
+//../assets/data/levels/tunic/animcycles/room_capitol_hall/0.jpg JPEG 4145x2979 4145x2979+0+0 8-bit sRGB 1.519MiB 0.000u 0:00.000
+//4145x2979
+//4145x2979
+tmp_room.ww = 4145*890/2979;
+tmp_room.wh = 890;
+//4145x2979
+tmp_room.ww = 4145*670/2979;
+tmp_room.wh = 670;

@@ -453,6 +453,8 @@ var navigable = function()
     self.selected_act = 0;
     my_camera.wx = 0;
     my_camera.wy = 0;
+    console.log(room.ww);
+    console.log(room.wh);
   }
 
   self.unlock_content = function()
@@ -709,7 +711,7 @@ var navigable = function()
     my_camera.wx = lerp(my_camera.wx,target_cam_wx,lerp_s);
     var yp = invlerp(self.room.wy-self.room.wh/2, self.room.wy+self.room.wh/2, my_avatar.wy);
     var camhd = self.room.wh-my_camera.wh;
-    var target_cam_wy = self.room.wy-camhd/2+yp*camwd;
+    var target_cam_wy = self.room.wy-camhd/2+yp*camhd;
     my_camera.wy = lerp(my_camera.wy,target_cam_wy,lerp_s);
 
     self.room.animcycle_inst.tick();

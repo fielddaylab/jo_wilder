@@ -21,3 +21,11 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
+//../assets/data/levels/tunic/animcycles/room_humanecology_frontdesk/0.jpg JPEG 3647x2015 3647x2015+0+0 8-bit sRGB 741357B 0.000u 0:00.000
+//3647x2015
+//3647x2015
+tmp_room.ww = 3647*890/2015;
+tmp_room.wh = 890;
+//3647x2015
+tmp_room.ww = 3647*670/2015;
+tmp_room.wh = 670;
