@@ -1,10 +1,10 @@
-tmp_porthole.ww = 92;
-tmp_porthole.wh = 167.99999999999997;
-tmp_porthole.wx = -20.000000000000014;
-tmp_porthole.wy = 88.00000000000001;
+tmp_porthole.ww = 292.40077291129927;
+tmp_porthole.wh = 403.1090909090908;
+tmp_porthole.wx = 47.12453073242544;
+tmp_porthole.wy = 131.2454545454546;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = 32;
-tmp_porthole.act_wy = 24;
+tmp_porthole.act_wx = -1.0758557232241373;
+tmp_porthole.act_wy = -170.90909090909088;
 tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";

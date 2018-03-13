@@ -1,7 +1,7 @@
-tmp_inert.ww = 880;
-tmp_inert.wh = 660;
-tmp_inert.wx = 0;
-tmp_inert.wy = 0;
+tmp_inert.ww = 1372.2465587044537;
+tmp_inert.wh = 736.7454545454543;
+tmp_inert.wx = -10.70101214574936;
+tmp_inert.wy = -9.136363636363512;
 tmp_inert.wz = 0;
 tmp_inert.g = 1;
 tmp_inert.animcycle_id = "fg";

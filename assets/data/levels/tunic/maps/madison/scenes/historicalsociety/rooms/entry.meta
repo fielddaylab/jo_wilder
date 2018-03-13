@@ -1,18 +1,18 @@
 tmp_room.primary = true;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1426.8016194331983;
+tmp_room.wh = 670;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
 tmp_room.navs = [
-{wx:5, wy:-163.5, ww:876, wh:323 },
+{wx:-0.8369157158630287, wy:-215.88181818181818, ww:1230.106220095694, wh:330.3090909090909 },
 ];
 tmp_room.lights = [
-{wx:-278.99999999999994, wy:-130.5, ww:324, wh:383 },
+{wx:606.2655502392346, wy:297.6909090909091, ww:63.28443135811556, wh:38.25454545454535 },
 ];
 tmp_room.shadows = [
-{wx:290.5, wy:-151.5, ww:275, wh:341.00000000000006 },
+{wx:522.0309900625689, wy:296.790909090909, ww:68.76231137283743, wh:36.45454545454559 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -21,11 +21,3 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
 
-//../assets/data/levels/tunic/animcycles/room_historicalsociety_entry/0.jpg JPEG 3156x1482 3156x1482+0+0 8-bit sRGB 2.29133MiB 0.000u 0:00.000
-//3156x1482
-//3156x1482
-tmp_room.ww = 3156*890/1482;
-tmp_room.wh = 890;
-//3156x1482
-tmp_room.ww = 3156*670/1482;
-tmp_room.wh = 670;

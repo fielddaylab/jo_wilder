@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1156.4087685364282;
+tmp_room.wh = 670;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_microfiche";
@@ -21,11 +21,3 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
-//../assets/data/levels/tunic/animcycles/room_library_microfiche/0.jpg JPEG 2677x1551 2677x1551+0+0 8-bit sRGB 431017B 0.000u 0:00.000
-//2677x1551
-//2677x1551
-tmp_room.ww = 2677*890/1551;
-tmp_room.wh = 890;
-//2677x1551
-tmp_room.ww = 2677*670/1551;
-tmp_room.wh = 670;

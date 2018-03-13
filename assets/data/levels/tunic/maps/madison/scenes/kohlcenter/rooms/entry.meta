@@ -1,6 +1,6 @@
 tmp_room.primary = true;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 893.3333333333334;
+tmp_room.wh = 670;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
@@ -21,11 +21,3 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = -330;
 tmp_room.noteworthy = false;
 
-//../assets/data/levels/tunic/animcycles/room_kohlcenter_entry/0.png PNG 880x660 880x660+0+0 8-bit sRGB 53554B 0.000u 0:00.009
-//880x660
-//880x660
-tmp_room.ww = 880*890/660;
-tmp_room.wh = 890;
-//880x660
-tmp_room.ww = 880*670/660;
-tmp_room.wh = 670;

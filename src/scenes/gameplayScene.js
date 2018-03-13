@@ -23,7 +23,9 @@ var GamePlayScene = function(game, stage)
     hoverer = new PersistentHoverer({source:canvas});
     keyer = new Keyer({source:canvas});
 
-    my_camera = {wx:0,wy:0,ww:canv.width*660/canv.height,wh:660};
+    my_real_camera = {wx:0,wy:0,ww:canv.width*660/canv.height,wh:660};
+    my_debug_camera = {wx:0,wy:0,ww:my_real_camera.ww,wh:my_real_camera.wh};
+    my_camera = my_real_camera;
     my_cursor = new cursor();
     my_cursor.consume_level(cur_level);
     my_navigable = new navigable();
@@ -49,6 +51,11 @@ var GamePlayScene = function(game, stage)
       if(evt.key == "c") get_save_code();
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
+      if(evt.key == "v")
+      {
+        if(my_camera == my_real_camera) my_camera = my_debug_camera;
+        else                            my_camera = my_real_camera;
+      }
     }
     my_keyable.key_down = function(evt)
     {

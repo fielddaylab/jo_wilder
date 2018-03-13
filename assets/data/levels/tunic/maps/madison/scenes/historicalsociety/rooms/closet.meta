@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 886.0507246376811;
+tmp_room.wh = 670;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
@@ -21,11 +21,3 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
-//../assets/data/levels/tunic/animcycles/room_historicalsociety_closet/0.jpg JPEG 1460x1104 1460x1104+0+0 8-bit sRGB 637174B 0.000u 0:00.000
-//1460x1104
-//1460x1104
-tmp_room.ww = 1460*890/1104;
-tmp_room.wh = 890;
-//1460x1104
-tmp_room.ww = 1460*670/1104;
-tmp_room.wh = 670;

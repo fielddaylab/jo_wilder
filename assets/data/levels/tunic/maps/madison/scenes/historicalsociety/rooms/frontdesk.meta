@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1227.0104529616724;
+tmp_room.wh = 670;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
@@ -21,11 +21,3 @@ tmp_room.start_wx = 0;
 tmp_room.start_wy = 0;
 tmp_room.noteworthy = false;
 
-//../assets/data/levels/tunic/animcycles/room_historicalsociety_frontdesk/0.jpg JPEG 2628x1435 2628x1435+0+0 8-bit sRGB 560671B 0.000u 0:00.000
-//2628x1435
-//2628x1435
-tmp_room.ww = 2628*890/1435;
-tmp_room.wh = 890;
-//2628x1435
-tmp_room.ww = 2628*670/1435;
-tmp_room.wh = 670;
