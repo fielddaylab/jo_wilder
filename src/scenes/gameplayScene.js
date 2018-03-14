@@ -97,8 +97,8 @@ var GamePlayScene = function(game, stage)
           !clicker.filter(canv_clicker) &&
           false) ;
         }
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         //trigger cutscenes only from within nav
         if(cur_state == STATE_NAV) //_still_ must be NAV...
         {
@@ -125,16 +125,16 @@ var GamePlayScene = function(game, stage)
         else if(
         !clicker.filter(my_mapview) &&
         false) ;
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         my_mapview.tick();
         break;
       case STATE_NOTEBOOK:
         if(
         !clicker.filter(my_notebook) &&
         false) ;
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         my_notebook.tick();
         break;
       case STATE_PERSON:
@@ -146,8 +146,8 @@ var GamePlayScene = function(game, stage)
           !clicker.filter(my_personview) &&
           false) ;
         }
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         my_personview.tick();
         break;
       case STATE_OBJECT:
@@ -159,20 +159,20 @@ var GamePlayScene = function(game, stage)
           !clicker.filter(my_objectview) &&
           false) ;
         }
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         my_objectview.tick();
         break;
       case STATE_WILDCARD:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         break;
       case STATE_CUTSCENE:
         if(
         !clicker.filter(my_cutsceneview) &&
         false) ;
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         my_cutsceneview.tick();
         break;
       case STATE_TRANSITION:
@@ -237,8 +237,8 @@ var GamePlayScene = function(game, stage)
     switch(state_from)
     {
       case STATE_NAV:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         if(state_to == STATE_NAV)
         {
           state_t += state_t_speed;
@@ -272,8 +272,8 @@ var GamePlayScene = function(game, stage)
         else state_t += state_t_speed;
         break;
       case STATE_MAP:
-        my_avatar.tick();
         my_navigable.tick;
+        my_avatar.tick();
         if(state_to == STATE_NAV && my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
         {
           state_t += state_t_speed;
@@ -292,28 +292,28 @@ var GamePlayScene = function(game, stage)
         else state_t += state_t_speed;
         break;
       case STATE_NOTEBOOK:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         state_t += state_t_speed;
         break;
       case STATE_PERSON:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         state_t += state_t_speed;
         break;
       case STATE_OBJECT:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         state_t += state_t_speed;
         break;
       case STATE_WILDCARD:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         state_t += state_t_speed;
         break;
       case STATE_CUTSCENE:
-        my_avatar.tick();
         my_navigable.tick();
+        my_avatar.tick();
         state_t += state_t_speed;
         break;
     }
