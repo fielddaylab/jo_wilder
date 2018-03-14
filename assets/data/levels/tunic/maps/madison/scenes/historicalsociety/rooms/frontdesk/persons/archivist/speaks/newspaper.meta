@@ -1,15 +1,15 @@
 tmp_speak.primary = false;
 tmp_speak.ww = 359;
 tmp_speak.wh = 30;
-tmp_speak.wx = 15.500000000000028;
-tmp_speak.wy = 203;
+tmp_speak.wx = 13.5;
+tmp_speak.wy = 169;
 tmp_speak.animcycle_id = "archivist";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "That's great! Also, you should check the archives- I think we have something. It's #12345";
 tmp_speak.speaker = 2;
 tmp_speak.options_ww = 161;
 tmp_speak.options_wh = 30;
-tmp_speak.options_wx = -9.500000000000014;
-tmp_speak.options_wy = 96.00000000000001;
+tmp_speak.options_wx = 210.5;
+tmp_speak.options_wy = 16.999999999999986;
 tmp_speak.noteworthy = false;
 

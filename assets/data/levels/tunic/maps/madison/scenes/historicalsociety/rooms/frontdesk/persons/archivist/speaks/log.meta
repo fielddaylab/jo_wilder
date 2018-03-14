@@ -1,15 +1,15 @@
 tmp_speak.primary = false;
-tmp_speak.ww = 285;
+tmp_speak.ww = 289.69588850174216;
 tmp_speak.wh = 30;
-tmp_speak.wx = -14.5;
-tmp_speak.wy = 195;
+tmp_speak.wx = -5.523623693379676;
+tmp_speak.wy = 166.80000000000004;
 tmp_speak.animcycle_id = "archivist";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I'll get started on looking; but in the meanwhile, you might also want to check out the library!";
 tmp_speak.speaker = 2;
-tmp_speak.options_ww = 97;
+tmp_speak.options_ww = 84.7984668989547;
 tmp_speak.options_wh = 30;
-tmp_speak.options_wx = -45.5;
-tmp_speak.options_wy = 95;
+tmp_speak.options_wx = 197.2809059233447;
+tmp_speak.options_wy = 22.99999999999995;
 tmp_speak.noteworthy = false;
 

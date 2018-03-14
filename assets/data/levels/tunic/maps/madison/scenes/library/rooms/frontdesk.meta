@@ -7,19 +7,19 @@ tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
 tmp_room.navs = [
-{wx:5, wy:-195, ww:844, wh:250 },
+{wx:69.08352365415988, wy:-104.99999999999996, ww:1278.9911908646006, wh:430.0000000000001 },
 ];
 tmp_room.lights = [
-{wx:226.5, wy:-156.5, ww:645, wh:359 },
+{wx:541.0918433931482, wy:259.3000000000001, ww:66.30636215334421, wh:29.000000000000053 },
 ];
 tmp_room.shadows = [
-{wx:-321, wy:-28.5, ww:488, wh:585 },
+{wx:627.6303425774877, wy:258.90000000000003, ww:54.95073409461684, wh:43.79999999999989 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
+tmp_room.target_start_wx = 73.81875195937431;
+tmp_room.target_start_wy = -268.4000000000001;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 

@@ -9,8 +9,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = 457.162180563776;
-tmp_porthole.target_start_wy = -139.17553782529032;
+tmp_porthole.target_start_wx = 50.076512547581466;
+tmp_porthole.target_start_wy = -113.25553782528996;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
