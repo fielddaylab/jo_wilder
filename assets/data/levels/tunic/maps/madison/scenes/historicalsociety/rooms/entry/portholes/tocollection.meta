@@ -1,0 +1,19 @@
+tmp_porthole.ww = 241.4450202429149;
+tmp_porthole.wh = 227.44000000000003;
+tmp_porthole.wx = 458.9743319838055;
+tmp_porthole.wy = -31.800000000000026;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = -3.449878542510121;
+tmp_porthole.act_wy = -131.76;
+tmp_porthole.act_anim = 1;
+tmp_porthole.animcycle_id = "null";
+tmp_porthole.audio_id = "null";
+tmp_porthole.target_room = "collection";
+tmp_porthole.target_start_wx = 396;
+tmp_porthole.target_start_wy = -54.00000000000004;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
+

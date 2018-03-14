@@ -15,6 +15,7 @@ import export should have BEGIN IMPORT signifier and END IMPORT signifier, for s
 subtle slide of avatar on camera move... why?
 walk diagonally
 toggle fg/bg (for easier editing)
+fix map camera weirdness
 
 LOADING
 

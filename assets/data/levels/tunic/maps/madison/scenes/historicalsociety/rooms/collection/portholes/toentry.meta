@@ -1,0 +1,19 @@
+tmp_porthole.ww = 95.2;
+tmp_porthole.wh = 262;
+tmp_porthole.wx = 396.8;
+tmp_porthole.wy = 21;
+tmp_porthole.wz = 999;
+tmp_porthole.act_wx = 10.8;
+tmp_porthole.act_wy = -62.4;
+tmp_porthole.act_anim = 1;
+tmp_porthole.animcycle_id = "null";
+tmp_porthole.audio_id = "null";
+tmp_porthole.target_room = "entry";
+tmp_porthole.target_start_wx = 0;
+tmp_porthole.target_start_wy = 0;
+tmp_porthole.noteworthy = false;
+tmp_porthole.locks = [
+];
+tmp_porthole.notlocks = [
+];
+
