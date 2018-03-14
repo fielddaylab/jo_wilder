@@ -5,6 +5,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:1, wy:-163.5, ww:868, wh:327 },
 ];

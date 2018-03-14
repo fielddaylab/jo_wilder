@@ -949,6 +949,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-9, wy:-179.49999999999997, ww:876, wh:275 },
 ];
@@ -1032,6 +1033,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:20.5, wy:-150.5, ww:831, wh:351 },
 ];
@@ -1177,6 +1179,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-12.000000000000057, wy:-246, ww:866, wh:173.99999999999997 },
 ];
@@ -1260,6 +1263,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-2, wy:-197.99999999999997, ww:868, wh:244 },
 ];
@@ -1505,6 +1509,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-1.7535310058158302, wy:-258.0672727272727, ww:2161.16735225892, wh:300.30909090909086 },
 ];
@@ -1821,8 +1826,9 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
-{wx:-88.8088185498716, wy:-402.7218181818181, ww:2068.426705925653, wh:466.38909090909084 },
+{wx:45.736444608023135, wy:-370.3218181818179, ww:2068.426705925653, wh:466.38909090909084 },
 ];
 tmp_room.lights = [
 {wx:606.2655502392346, wy:297.6909090909091, ww:63.28443135811556, wh:38.25454545454535 },
@@ -1923,8 +1929,8 @@ tmp_inert.fqid = "tunic.madison.historicalsociety.entry.fg";
 {
 tmp_inert.ww = 4180.447692307692;
 tmp_inert.wh = 1911.785454545454;
-tmp_inert.wx = 47.94692307692253;
-tmp_inert.wy = 29.74363636363637;
+tmp_inert.wx = -690.3270850202434;
+tmp_inert.wy = -1326.7363636363636;
 tmp_inert.wz = 0;
 tmp_inert.g = 1;
 tmp_inert.animcycle_id = "fg";
@@ -1950,6 +1956,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:1, wy:-163.5, ww:868, wh:327 },
 ];
@@ -2272,6 +2279,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:66.34433113377327, wy:-117.40000000000003, ww:572.6886622675465, wh:487.6 },
 ];
@@ -2412,6 +2420,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:1, wy:-258, ww:870, wh:142 },
 ];
@@ -2495,6 +2504,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
 ];
@@ -2684,6 +2694,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_hallway";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:50, wy:-154, ww:780, wh:308 },
 ];
@@ -2787,6 +2798,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-10.5, wy:-250.5, ww:793, wh:147 },
 ];
@@ -2870,6 +2882,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:0, wy:-235.49999999999997, ww:866, wh:169 },
 ];
@@ -2983,6 +2996,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:4.5, wy:-206, ww:855, wh:236.00000000000003 },
 ];
@@ -3066,6 +3080,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:5, wy:-195, ww:844, wh:250 },
 ];
@@ -3282,6 +3297,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:11, wy:-194.49999999999997, ww:744, wh:261 },
 ];

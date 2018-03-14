@@ -33,6 +33,15 @@ function clamp(a,b,v) { if(v < a) return a; if(v > b) return b; return v; }
 function eq(a,b,e) { return (a < b+e && a > b-e); }
 function lerp(s,e,t) { return s+((e-s)*t); }
 function invlerp(s,e,v) { return (v-s)/(e-s); }
+function smooth(x) { return 3*x*x - 2*x*x*x; } //only valid from 0-1!
+function smoothn(n,x) //not at all done...
+{
+  switch(n)
+  {
+    case 0: return x;
+  }
+  return smooth(x); //lol
+}
 function clerp(s,e,t)
 {
   while(s < 0) s += Math.PI*2;

@@ -275,6 +275,7 @@ var room = function()
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
+  self.cam_wh = 660;
   self.navs = [];
   self.lights = [];
   self.shadows = [];
@@ -777,6 +778,7 @@ var print_room_meta = function(l)
   "tmp_room.wy = "+l.wy+";\n"+
   "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_room.audio_id = \""+l.audio_id+"\";\n"+
+  "tmp_room.cam_wh = "+l.cam_wh+";\n"+
   "tmp_room.navs = [\n";
   for(var i = 0; i < l.navs.length; i++)
     str += "{wx:"+l.navs[i].wx+", wy:"+l.navs[i].wy+", ww:"+l.navs[i].ww+", wh:"+l.navs[i].wh+" },\n";

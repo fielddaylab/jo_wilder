@@ -5,6 +5,7 @@ tmp_room.ww = canv.width;
 tmp_room.wh = canv.height;
 tmp_room.animcycle_id = "null";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:100, wy:canv.height/2, ww:canv.width-200, wh:canv.height/2-100},
 ];

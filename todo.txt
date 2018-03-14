@@ -11,3 +11,8 @@ noteworthy entry notifications
 "picture taking"
 speech bubble pointer arrows
 
+rooms should have links to portholes _leading to them_ to be able to edit those positions
+ripple on click
+import export should have BEGIN IMPORT signifier and END IMPORT signifier, for safe ctrl+a ctrl+c
+subtle slide of avatar on camera move... why?
+

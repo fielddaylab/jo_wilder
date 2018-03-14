@@ -453,6 +453,8 @@ var navigable = function()
     self.selected_act = 0;
     my_camera.wx = 0;
     my_camera.wy = 0;
+    my_camera.wh = room.cam_wh;
+    my_camera.ww = canv.width*room.cam_wh/canv.height;
     my_debug_camera.ww = room.ww*1.2;
     my_debug_camera.wh = room.wh*1.2;
   }
@@ -707,11 +709,12 @@ var navigable = function()
   {
     //move camera
     var lerp_s = 0.03;
-    var xp = invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, my_avatar.wx);
+    var xp = smooth(invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, my_avatar.wx));
     var camwd = self.room.ww-my_real_camera.ww;
     var target_cam_wx = self.room.wx-camwd/2+xp*camwd;
     my_real_camera.wx = lerp(my_real_camera.wx,target_cam_wx,lerp_s);
-    var yp = invlerp(self.room.wy-self.room.wh/2, self.room.wy+self.room.wh/2, my_avatar.wy);
+
+    var yp = smooth(invlerp(self.room.wy-self.room.wh/2, self.room.wy+self.room.wh/2, my_avatar.wy));
     var camhd = self.room.wh-my_real_camera.wh;
     var target_cam_wy = self.room.wy-camhd/2+yp*camhd;
     my_real_camera.wy = lerp(my_real_camera.wy,target_cam_wy,lerp_s);

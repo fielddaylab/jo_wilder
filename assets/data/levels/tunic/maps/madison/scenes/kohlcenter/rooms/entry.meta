@@ -5,6 +5,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:-10.5, wy:-250.5, ww:793, wh:147 },
 ];

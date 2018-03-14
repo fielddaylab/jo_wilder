@@ -5,6 +5,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
 tmp_room.navs = [
 {wx:11, wy:-194.49999999999997, ww:744, wh:261 },
 ];
