@@ -35,7 +35,7 @@ tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 229.3143006650962;
-tmp_level.avatar_wh = 249.78830665884493;
+tmp_level.avatar_wh = 249.78830665884496;
 tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
@@ -1833,21 +1833,21 @@ tmp_room.id = "collection";
 tmp_room.fqid = "tunic.madison.historicalsociety.collection";
 {
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1626.7701863354039;
+tmp_room.wh = 990;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_collection";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
 tmp_room.navs = [
-{wx:55.59999999999991, wy:-155.4, ww:735.1999999999999, wh:360.79999999999995 },
+{wx:126.58633540372637, wy:-267.9000000000001, ww:1440.6267080745342, wh:470.59999999999985 },
 ];
 tmp_room.lights = [
-{wx:-451.40000000000015, wy:160.2, ww:42.799999999999805, wh:39.19999999999994 },
+{wx:643.3423913043476, wy:341.0999999999999, ww:58.32826086956502, wh:55.39999999999993 },
 ];
 tmp_room.shadows = [
-{wx:-360.79999999999984, wy:11.399999999999906, ww:67.99999999999962, wh:60.79999999999998 },
+{wx:570.895652173913, wy:351.6000000000001, ww:67.99999999999962, wh:60.799999999999976 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2);";
 tmp_room.shadow_color = "rgba(0,0,0,0.5);";
@@ -1855,17 +1855,17 @@ tmp_room.ambient_color = "rgba(0,0,0,0);";
 tmp_room.target_start_wx = 58.79999999999998;
 tmp_room.target_start_wy = -212.4;
 tmp_room.noteworthy = false;
-//SUGGEST_H:1
+//SUGGEST_H:1.5
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.collection.toentry";
 {
-tmp_porthole.ww = 95.2;
-tmp_porthole.wh = 262;
-tmp_porthole.wx = 396.8;
-tmp_porthole.wy = 21;
+tmp_porthole.ww = 155.09472049689438;
+tmp_porthole.wh = 357.4;
+tmp_porthole.wx = 748.4041925465838;
+tmp_porthole.wy = 18.29999999999987;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 10.8;
 tmp_porthole.act_wy = -62.4;
@@ -1957,8 +1957,8 @@ tmp_porthole.act_anim = 1;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "collection";
-tmp_porthole.target_start_wx = 396;
-tmp_porthole.target_start_wy = -54.00000000000004;
+tmp_porthole.target_start_wx = 744.2767080745341;
+tmp_porthole.target_start_wy = -57.59999999999997;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2446,8 +2446,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = 55.198056680161955;
-tmp_porthole.target_start_wy = -158.15999999999994;
+tmp_porthole.target_start_wx = 457.162180563776;
+tmp_porthole.target_start_wy = -139.17553782529032;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];

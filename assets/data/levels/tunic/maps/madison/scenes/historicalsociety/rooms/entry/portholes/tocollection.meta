@@ -9,8 +9,8 @@ tmp_porthole.act_anim = 1;
 tmp_porthole.animcycle_id = "null";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "collection";
-tmp_porthole.target_start_wx = 396;
-tmp_porthole.target_start_wy = -54.00000000000004;
+tmp_porthole.target_start_wx = 744.2767080745341;
+tmp_porthole.target_start_wy = -57.59999999999997;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
