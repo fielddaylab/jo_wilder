@@ -203,7 +203,7 @@ var avatar = function()
 
   self.consume_room = function(room)
   {
-    my_navigable.wpt_in_navigable(room.start_wx,room.start_wy,self);
+    my_navigable.wpt_in_navigable(room.target_start_wx,room.target_start_wy,self);
     self.to_wx = self.wx;
     self.to_wy = self.wy;
   }
@@ -578,6 +578,32 @@ var navigable = function()
       self.act.act_wy = -worldSpaceH(my_camera,canv,self.act.act_y);
     }
   })();
+  self.target_start_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.target_start = 0;
+    self.consume_target_start = function(a)
+    {
+      self.target_start = a;
+      self.x = self.target_start.target_start_x-2;
+      self.y = self.target_start.target_start_y-2;
+      self.w = 4;
+      self.h = 4;
+    }
+    self.edit = function()
+    {
+      self.w = 4;
+      self.h = 4;
+      self.target_start.target_start_x = self.x+self.w/2;
+      self.target_start.target_start_y = self.y+self.h/2;
+      self.target_start.target_start_wx = worldSpaceXpt(my_camera,canv,self.target_start.target_start_x);
+      self.target_start.target_start_wy = worldSpaceYpt(my_camera,canv,self.target_start.target_start_y);
+    }
+  })();
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
@@ -586,6 +612,8 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.room.entry_doors_found.length;   i++) { var o = self.room.entry_doors_found[i];   if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
+                                                                  { var o = self.room;                        if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
 
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_persons.length; i++)
       if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_persons[i]; }
@@ -637,7 +665,8 @@ var navigable = function()
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
 
-    if(self.edit_o == self.act_editor) self.act_editor.edit();
+         if(self.edit_o == self.act_editor) self.act_editor.edit();
+    else if(self.edit_o == self.target_start_editor) self.target_start_editor.edit();
     else worldSpace(my_camera,canv,self.edit_o);
 
     self._dirty = true;
@@ -768,6 +797,10 @@ var navigable = function()
       for(var i = 0; i < self.room.lights.length; i++) ctx.strokeRect(self.room.lights[i].x,self.room.lights[i].y,self.room.lights[i].w,self.room.lights[i].h);
       ctx.strokeStyle = orange;
       for(var i = 0; i < self.room.navs.length; i++) ctx.strokeRect(self.room.navs[i].x,self.room.navs[i].y,self.room.navs[i].w,self.room.navs[i].h);
+      ctx.strokeStyle = gray;
+      for(var i = 0; i < self.room.entry_doors_found.length; i++) { var o = self.room.entry_doors_found[i]; o.target_start_x = screenSpaceXpt(my_camera,canv,o.target_start_wx); o.target_start_y = screenSpaceYpt(my_camera,canv,o.target_start_wy); ctx.strokeRect(o.target_start_x-2,o.target_start_y-2,4,4); }
+      ctx.strokeStyle = dark_gray;
+                                                                  { var o = self.room;                      o.target_start_x = screenSpaceXpt(my_camera,canv,o.target_start_wx); o.target_start_y = screenSpaceYpt(my_camera,canv,o.target_start_wy); ctx.strokeRect(o.target_start_x-2,o.target_start_y-2,4,4); }
 
       ctx.strokeStyle = red;
       for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
@@ -785,6 +818,7 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+
 
       ctx.fillStyle = black;
       ctx.fillText(self.room.fqid,20,20);

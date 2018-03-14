@@ -254,6 +254,7 @@ var scene = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.x = 0;
@@ -282,19 +283,21 @@ var room = function()
   self.light_color = "rgba(255,255,255,0.2)";
   self.shadow_color = "rgba(0,0,0,0.2)";
   self.ambient_color = "rgba(0,0,0,0)";
-  self.start_wx = 0;
-  self.start_wy = 0;
+  self.target_start_wx = 0; //self-target (room entered "from nowhere")
+  self.target_start_wy = 0; //self-target (room entered "from nowhere")
   self.persons = [];
   self.objects = [];
   self.portholes = [];
   self.wildcards = [];
   self.inerts = [];
   self.noteworthy = false;
+  //
   self.key = false;
   self.x = 0;
   self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.entry_doors_found = []; //auto precompiled in
 }
 
 var person = function()
@@ -318,6 +321,7 @@ var person = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.w = 0;
@@ -350,6 +354,7 @@ var object = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.w = 0;
@@ -379,12 +384,12 @@ var porthole = function()
   self.animcycle_inst;
   self.audio_id = "null";
   self.target_room = "null";
-  self.target_room_found; //auto precompiled in
   self.target_start_wx = 0;
   self.target_start_wy = 0;
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.w = 0;
@@ -394,6 +399,9 @@ var porthole = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.target_start_x = 0;
+  self.target_start_y = 0;
+  self.target_room_found; //auto precompiled in
 }
 
 var wildcard = function()
@@ -416,6 +424,7 @@ var wildcard = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.w = 0;
@@ -444,6 +453,7 @@ var inert = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.w = 0;
@@ -488,6 +498,7 @@ var zone = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.w = 0;
@@ -553,6 +564,7 @@ var option = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.x = 0;
@@ -577,6 +589,7 @@ var entry = function()
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
+  //
   self.locked = true;
   self.key = false;
   self.x = 0;
@@ -797,8 +810,8 @@ var print_room_meta = function(l)
   "tmp_room.light_color = \""+l.light_color+"\";\n"+
   "tmp_room.shadow_color = \""+l.shadow_color+"\";\n"+
   "tmp_room.ambient_color = \""+l.ambient_color+"\";\n"+
-  "tmp_room.start_wx = "+l.start_wx+";\n"+
-  "tmp_room.start_wy = "+l.start_wy+";\n"+
+  "tmp_room.target_start_wx = "+l.target_start_wx+";\n"+
+  "tmp_room.target_start_wy = "+l.target_start_wy+";\n"+
   "tmp_room.noteworthy = "+l.noteworthy+";\n"+
   "//SUGGEST_H:"+l.wh/660+"\n";
   console.log(str);

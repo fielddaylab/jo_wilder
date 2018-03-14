@@ -1,5 +1,3 @@
-cam height per room
-inert fg and bg
 room navs topz bottomz
 camera lerp from top-possible-y to bottom-possible-y, ditto for x
 exit cursor
@@ -15,4 +13,8 @@ rooms should have links to portholes _leading to them_ to be able to edit those 
 ripple on click
 import export should have BEGIN IMPORT signifier and END IMPORT signifier, for safe ctrl+a ctrl+c
 subtle slide of avatar on camera move... why?
+walk diagonally
+toggle fg/bg (for easier editing)
+
+LOADING
 

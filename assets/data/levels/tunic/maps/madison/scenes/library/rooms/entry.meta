@@ -18,8 +18,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 

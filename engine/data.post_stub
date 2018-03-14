@@ -14,7 +14,9 @@
         {
           tmp_porthole = tmp_room.portholes[l];
           var id = tmp_scene.fqid+"."+tmp_porthole.target_room;
-          tmp_porthole.target_room_found = find(id);
+          var target_room = find(id);
+          tmp_porthole.target_room_found = target_room;
+          if(target_room) target_room.entry_doors_found.push(tmp_porthole);
         }
       }
     }

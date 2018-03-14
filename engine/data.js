@@ -962,8 +962,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -1046,8 +1046,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -1192,8 +1192,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -1276,8 +1276,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -1522,8 +1522,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = -279.4194896719319;
+tmp_room.target_start_wy = -143.99999999999997;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1.2
 
@@ -1762,8 +1762,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = -440;
-tmp_porthole.target_start_wy = 330;
+tmp_porthole.target_start_wx = -912.6333603238866;
+tmp_porthole.target_start_wy = -218.63999999999984;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -1839,8 +1839,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 10.349635627530388;
+tmp_room.target_start_wy = -548.64;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1.8
 
@@ -1860,8 +1860,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "closet";
-tmp_porthole.target_start_wx = 440;
-tmp_porthole.target_start_wy = 330;
+tmp_porthole.target_start_wx = 856.2186148238155;
+tmp_porthole.target_start_wy = -227.27999999999994;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -1906,8 +1906,8 @@ tmp_porthole.wh = 714.1490909090909;
 tmp_porthole.wx = 55.74922708870059;
 tmp_porthole.wy = 215.4854545454545;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = -1.0758557232241373;
-tmp_porthole.act_wy = -170.90909090909088;
+tmp_porthole.act_wx = 2.374022819286067;
+tmp_porthole.act_wy = -335.06909090909085;
 tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
@@ -1969,8 +1969,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 44.502020905923295;
+tmp_room.target_start_wy = -171.6;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -2255,8 +2255,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "stacks";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = 330;
+tmp_porthole.target_start_wx = 65.24595080983798;
+tmp_porthole.target_start_wy = 110.4;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2292,8 +2292,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 43.06232753449308;
+tmp_room.target_start_wy = -44.39999999999998;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -2349,8 +2349,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = 330;
+tmp_porthole.target_start_wx = 55.198056680161955;
+tmp_porthole.target_start_wy = -158.15999999999994;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2375,8 +2375,8 @@ tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = -330;
+tmp_porthole.target_start_wx = 46.15024390243908;
+tmp_porthole.target_start_wy = -296.40000000000003;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
 ];
@@ -2433,8 +2433,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -2517,8 +2517,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -2707,8 +2707,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -2811,8 +2811,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -2895,8 +2895,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -3009,8 +3009,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = -330;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -3093,8 +3093,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -3310,8 +3310,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.start_wx = 0;
-tmp_room.start_wy = 0;
+tmp_room.target_start_wx = 0;
+tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
 //SUGGEST_H:1
 
@@ -3400,7 +3400,9 @@ levels.push(tmp_level);
         {
           tmp_porthole = tmp_room.portholes[l];
           var id = tmp_scene.fqid+"."+tmp_porthole.target_room;
-          tmp_porthole.target_room_found = find(id);
+          var target_room = find(id);
+          tmp_porthole.target_room_found = target_room;
+          if(target_room) target_room.entry_doors_found.push(tmp_porthole);
         }
       }
     }
