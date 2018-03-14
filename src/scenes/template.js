@@ -216,6 +216,7 @@ var level = function()
   self.zone_hover_animcycle_id = "hover_zone";
   self.option_hover_animcycle_id = "hover_option";
   self.map_hover_animcycle_id = "hover_map";
+  self.ripple_click_animcycle_id = "click_ripple";
   self.cursor_w = 0;
   self.cursor_h = 0;
   self.map;
@@ -721,6 +722,7 @@ var print_level_meta = function(l)
   "tmp_level.zone_hover_animcycle_id = \""+l.zone_hover_animcycle_id+"\";\n"+
   "tmp_level.option_hover_animcycle_id = \""+l.option_hover_animcycle_id+"\";\n"+
   "tmp_level.map_hover_animcycle_id = \""+l.map_hover_animcycle_id+"\";\n"+
+  "tmp_level.ripple_click_animcycle_id = \""+l.ripple_click_animcycle_id+"\";\n"+
   "tmp_level.cursor_w = "+l.cursor_w+";\n"+
   "tmp_level.cursor_h = "+l.cursor_h+";\n"+
   "tmp_level.noteworthy = "+l.noteworthy+";\n"+
@@ -1033,6 +1035,7 @@ var print_inert_meta = function(l)
 
 var print_whole_level = function(l)
 {
+  console.log("===BEGIN_IMPORT===");
   print_level_meta(l);
   var map = l.map;
   print_map_meta(map);
@@ -1102,5 +1105,6 @@ var print_whole_level = function(l)
       }
     }
   }
+  console.log("===END_IMPORT===");
 }
 

@@ -9,6 +9,7 @@ var keyer;
 
 var my_real_camera;
 var my_debug_camera;
+var my_ui_camera;
 var my_camera;
 var my_cursor;
 var my_avatar;

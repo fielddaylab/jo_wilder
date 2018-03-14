@@ -42,6 +42,7 @@ tmp_level.porthole_hover_animcycle_id = "hover_porthole";
 tmp_level.zone_hover_animcycle_id = "hover_zone";
 tmp_level.option_hover_animcycle_id = "hover_option";
 tmp_level.map_hover_animcycle_id = "hover_map";
+tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.cursor_w = 20;
 tmp_level.cursor_h = 20;
 tmp_level.noteworthy = false;
@@ -139,6 +140,23 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/cleaner/0.png"));
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "click_ripple";
+tmp_animcycle.fqid = "tunic.click_ripple";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 3;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frames = [];
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/click_ripple/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/click_ripple/1.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/click_ripple/2.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/click_ripple/3.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/click_ripple/4.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -3470,6 +3488,7 @@ tmp_porthole.locks = [
 ];
 tmp_porthole.notlocks = [
 ];
+
 tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);

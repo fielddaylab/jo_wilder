@@ -14,6 +14,7 @@ tmp_level.porthole_hover_animcycle_id = "hover_porthole";
 tmp_level.zone_hover_animcycle_id = "hover_zone";
 tmp_level.option_hover_animcycle_id = "hover_option";
 tmp_level.map_hover_animcycle_id = "hover_map";
+tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.cursor_w = 20;
 tmp_level.cursor_h = 20;
 tmp_level.noteworthy = false;

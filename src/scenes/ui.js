@@ -9,6 +9,10 @@ var cursor = function()
   self.known_y = 0;
   self.mode_prev = CURSOR_NULL;
   self.mode = CURSOR_NULL;
+  self.ripple_wx = 0;
+  self.ripple_wy = 0;
+  self.ripple_x = 0;
+  self.ripple_y = 0;
 
   self.person_animcycle_inst;
   self.object_animcycle_inst;
@@ -16,6 +20,7 @@ var cursor = function()
   self.view_animcycle_inst;
   self.option_animcycle_inst;
   self.map_animcycle_inst;
+  self.ripple_animcycle_inst;
 
   self.consume_level = function(level)
   {
@@ -25,6 +30,17 @@ var cursor = function()
     self.view_animcycle_inst     = gen_animcycle_inst(level.zone_hover_animcycle_id,    level.animcycles);
     self.option_animcycle_inst   = gen_animcycle_inst(level.option_hover_animcycle_id,  level.animcycles);
     self.map_animcycle_inst      = gen_animcycle_inst(level.map_hover_animcycle_id,     level.animcycles);
+    self.ripple_animcycle_inst   = gen_animcycle_inst(level.ripple_click_animcycle_id,  level.animcycles);
+  }
+
+  self.ripple = function(x,y)
+  {
+    self.ripple_x = x;
+    self.ripple_y = y;
+    self.ripple_wx = worldSpaceXpt(my_camera,canv,self.ripple_x);
+    self.ripple_wy = worldSpaceYpt(my_camera,canv,self.ripple_y);
+    self.ripple_animcycle_inst.frame_i = 0;
+    self.ripple_animcycle_inst.frame_t = 2;
   }
 
   self.hover = function(evt)
@@ -54,10 +70,20 @@ var cursor = function()
       case CURSOR_OPTION:   self.option_animcycle_inst.tick();   break;
       case CURSOR_MAP:      self.map_animcycle_inst.tick();      break;
     }
+
+    if(self.ripple_animcycle_inst.frame_i || self.ripple_animcycle_inst.frame_t > 1)
+    {
+      self.ripple_x = screenSpaceXpt(my_camera,canv,self.ripple_wx);
+      self.ripple_y = screenSpaceYpt(my_camera,canv,self.ripple_wy);
+      self.ripple_animcycle_inst.tick();
+    }
   }
 
   self.draw = function()
   {
+    if(self.ripple_animcycle_inst.frame_i || self.ripple_animcycle_inst.frame_t > 1)
+      ctx.drawImage(self.ripple_animcycle_inst.img, self.ripple_x-100, self.ripple_y-100, 200, 200);
+
     var w = cur_level.cursor_w;
     var h = cur_level.cursor_h;
     var hw = cur_level.cursor_w/2;
@@ -624,7 +650,7 @@ var navigable = function()
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_wildcards.length; i++)
       if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_inerts.length; i++)
-      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_inerts[i]; }
+      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; }
     for(var i = 0; !self.edit_o && i < self.room.shadows.length; i++)
       if(ptWithinBox(self.room.shadows[i],evt.doX,evt.doY)) { self.edit_o = self.room.shadows[i]; }
     for(var i = 0; !self.edit_o && i < self.room.lights.length; i++)
@@ -728,6 +754,7 @@ var navigable = function()
         self.nav_click.wx = self.selected_act.wx+self.selected_act.act_wx;
         self.nav_click.wy = self.selected_act.wy+self.selected_act.act_wy;
       }
+      else my_cursor.ripple(self.nav_click.x,self.nav_click.y);
       self.wpt_in_navigable(self.nav_click.wx,self.nav_click.wy,self.nav_click);
       my_avatar.to_wx = self.nav_click.wx;
       my_avatar.to_wy = self.nav_click.wy;
@@ -781,13 +808,13 @@ var navigable = function()
 
   self.draw = function()
   {
-    for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
+    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
     ctx.drawImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
 
-    for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
+    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
 
     if(DEBUG)
     {
@@ -968,7 +995,7 @@ var mapview = function()
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
-    worldSpace(my_camera,canv,self.edit_o);
+    worldSpace(my_ui_camera,canv,self.edit_o);
 
     self._dirty = true;
   };
@@ -1020,7 +1047,7 @@ var mapview = function()
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
     {
       self.cache_unlocked_scenes[i].animcycle_inst.tick();
-      screenSpace(my_camera,canv,self.cache_unlocked_scenes[i]);
+      screenSpace(my_ui_camera,canv,self.cache_unlocked_scenes[i]);
     }
   }
 
