@@ -74,8 +74,10 @@ var GamePlayScene = function(game, stage)
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
 
-    cur_state = STATE_NAV;
-    state_t = 0;
+    cur_state = STATE_TRANSITION;
+    state_from = STATE_NAV;
+    state_to = STATE_NAV;
+    state_t = 0.5;
   };
 
   self.tick = function()
@@ -250,6 +252,7 @@ var GamePlayScene = function(game, stage)
           state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
+            state_t = 0.5;
             if(cur_act.act == ACT_PORTHOLE)
             {
               if(cur_act.target_room_found) cur_room = cur_act.target_room_found;
@@ -260,6 +263,7 @@ var GamePlayScene = function(game, stage)
               cur_act = 0;
             }
           }
+          else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
         }
         else if(state_to == STATE_PERSON)
         {
@@ -286,6 +290,7 @@ var GamePlayScene = function(game, stage)
           state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
+            state_t = 0.5;
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
             cur_room = cur_scene.rooms[0];
@@ -296,6 +301,7 @@ var GamePlayScene = function(game, stage)
             my_navigable.consume_room(cur_room);
             cur_act = 0;
           }
+          else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
         }
         else state_t += state_t_speed;
         break;
@@ -346,6 +352,11 @@ var GamePlayScene = function(game, stage)
           blur = 1-(blur*blur);
           ctx.fillStyle = "rgba(0,0,0,"+blur+")";
           ctx.fillRect(0,0,canv.width,canv.height);
+          if(my_loader.loading)
+          {
+            ctx.fillStyle = white;
+            ctx.fillText("loading...",canv.width-100,canv.height-20);
+          }
         }
         if(state_to == STATE_MAP)
         {

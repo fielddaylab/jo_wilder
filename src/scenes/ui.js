@@ -12,7 +12,7 @@ var loader = function()
   self.loaded = function(args)
   {
     for(var i = 0; i < self.loading_q.length; i++)
-      if(self.loading_q[i] == args) { self.loading_q.splice(i,1); break; }
+      if(self.loading_q[i] == args.target) { self.loading_q.splice(i,1); break; }
     if(!self.loading_q.length) self.loading = false;
   }
   self.load_animcycle_inst = function(inst)
