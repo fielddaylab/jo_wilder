@@ -356,10 +356,12 @@ if [ $NOGEN == "0" ]; then
       echo "{" >> $OUT
       cat $animcycle >> $OUT
       #SPECIAL CASE FOR ANIMCYCLE
+      echo "tmp_animcycle.frame_files = [];" >> $OUT
       echo "tmp_animcycle.frames = [];" >> $OUT
       for frame in `ls $animcycle_dir/* | sort -V`; do
         if [ ! -f $frame ]; then cp $animcycle_dir/../null/0.png $animcycle_dir/0.png; frame=$animcycle_dir/0.png; fi
-        echo "tmp_animcycle.frames.push(GenImg(\"`img $frame`\"));" >> $OUT
+        echo "tmp_animcycle.frame_files.push(\"`img $frame`\");" >> $OUT
+        #echo "tmp_animcycle.frames.push(GenImg(\"`img $frame`\"));" >> $OUT
       done
 
       echo "}" >> $OUT

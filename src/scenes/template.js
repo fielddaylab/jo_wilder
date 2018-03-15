@@ -48,6 +48,13 @@ var find = function(id)
     return;
   }
 }
+var find_animcycle = function(id,animcycles)
+{
+  var animcycle = null_animcycle;
+  for(var i = 0; i < animcycles.length; i++)
+    if(animcycles[i].id == id) animcycle = animcycles[i];
+  return animcycle;
+}
 
 var save_slate = function()
 {
@@ -606,6 +613,7 @@ var animcycle = function()
   self.fqid = "null";
   self.w = 0;
   self.h = 0;
+  self.frame_files = [];
   self.frames = [];
   self.frame_t = 0;
   self.offset_t = 0;

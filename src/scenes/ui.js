@@ -1,3 +1,128 @@
+var loader = function()
+{
+  var self = this;
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+
+  self.loading = false;
+  self.loading_q = [];
+
+  self.loaded = function(args)
+  {
+    for(var i = 0; i < self.loading_q.length; i++)
+      if(self.loading_q[i] == args) { self.loading_q.splice(i,1); break; }
+    if(!self.loading_q.length) self.loading = false;
+  }
+  self.load_animcycle_inst = function(inst)
+  {
+    var animcycle = inst.animcycle;
+    self.load_animcycle(inst.animcycle);
+    if(!inst.img) inst.img = animcycle.frames[inst.frame_i];
+  }
+  self.load_animcycle = function(animcycle)
+  {
+    for(var i = 0; i < animcycle.frame_files.length; i++)
+    {
+      if(!animcycle.frames[i]) animcycle.frames[i] = GenImg(animcycle.frame_files[i]);
+      var img = animcycle.frames[i];
+      if(!img.complete)
+      {
+        var im = new Image();
+        var found = false;
+        for(var j = 0; j < self.loading_q.length; j++)
+          if(self.loading_q[j] == im) return;
+        self.loading_q.push(im);
+        self.loading = true;
+        im.onload = self.loaded;
+        im.src = animcycle.frame_files[i];
+      }
+    }
+  }
+
+  self.consume_level = function(level)
+  {
+    self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.icon_map_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.noebook_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.avatar_walk_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.avatar_idle_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.person_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.object_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.porthole_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.zone_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.option_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.map_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
+  }
+
+  self.consume_room = function(room)
+  {
+    self.load_animcycle_inst(room.animcycle_inst);
+    var person;
+    for(var k = 0; k < room.persons.length; k++)
+    {
+      person = room.persons[k];
+      self.load_animcycle_inst(person.animcycle_inst);
+      var speak;
+      for(var l = 0; l < person.speaks.length; l++)
+      {
+        speak = person.speaks[l];
+        self.load_animcycle_inst(speak.animcycle_inst);
+        /*
+        var option;
+        for(var m = 0; m < speak.options.length; m++)
+        {
+          option = speak.options[m];
+          print_option_meta(option);
+        }
+        */
+      }
+    }
+    var object;
+    for(var k = 0; k < room.objects.length; k++)
+    {
+      object = room.objects[k];
+      self.load_animcycle_inst(object.animcycle_inst);
+      var view;
+      for(var l = 0; l < object.views.length; l++)
+      {
+        view = object.views[l];
+        self.load_animcycle_inst(view.animcycle_inst);
+        var zone;
+        for(var m = 0; m < view.zones.length; m++)
+        {
+          zone = view.zones[m];
+          self.load_animcycle_inst(zone.animcycle_inst);
+        }
+      }
+    }
+    var porthole;
+    for(var k = 0; k < room.portholes.length; k++)
+    {
+      porthole = room.portholes[k];
+      self.load_animcycle_inst(porthole.animcycle_inst);
+    }
+    var wildcard;
+    for(var k = 0; k < room.wildcards.length; k++)
+    {
+      wildcard = room.wildcards[k];
+      self.load_animcycle_inst(wildcard.animcycle_inst);
+    }
+    var inert;
+    for(var k = 0; k < room.inerts.length; k++)
+    {
+      inert = room.inerts[k];
+      self.load_animcycle_inst(inert.animcycle_inst);
+    }
+
+  }
+
+}
+
 var cursor = function()
 {
   var self = this;
@@ -420,10 +545,7 @@ var get_audio = function(id,audios)
 var null_animcycle;
 var gen_animcycle_inst = function(id,animcycles)
 {
-  var animcycle = null_animcycle;
-  for(var i = 0; i < animcycles.length; i++)
-    if(animcycles[i].id == id) animcycle = animcycles[i];
-
+  var animcycle = find_animcycle(id,animcycles);
   var inst = new animcycle_inst();
   inst.animcycle = animcycle;
   inst.frame_t = animcycle.offset_t;
