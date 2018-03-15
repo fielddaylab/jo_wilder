@@ -613,6 +613,10 @@ var navigable = function()
     my_camera.ww = canv.width*room.cam_wh/canv.height;
     my_debug_camera.ww = room.ww*1.2;
     my_debug_camera.wh = room.wh*1.2;
+    if(my_debug_camera.ww/my_debug_camera.wh > canv.width/canv.height)
+      my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
+    else
+      my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
   }
 
   self.unlock_content = function()
