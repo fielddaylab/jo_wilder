@@ -983,13 +983,13 @@ var navigable = function()
 
   self.draw = function()
   {
-    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
-    ctx.drawImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h);
+    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
+    drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
 
-    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; ctx.drawImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh); }
+    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
 
     if(DEBUG)
     {

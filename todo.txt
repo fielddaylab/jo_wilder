@@ -19,4 +19,5 @@ camera start at beginning of scene
 thought objects (click to think)
 blit only canvas
 test framebuffer as perf increase
+conversation animcycles target convo owner
 

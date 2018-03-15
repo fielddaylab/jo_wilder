@@ -656,6 +656,43 @@ var bounce2 = function(targetx,targety,vx,vy,velx,vely,pull,drag)
   }
 }
 
+function drawCanvMaskedImage(image,x,y,w,h,canv,ctx)
+{
+  var srcx = 0;
+  var srcy = 0;
+  var srcw = image.width;
+  var srch = image.height;
+  var p;
+  if(x < 0)
+  {
+    p = (-x/w)*srcw;
+    srcx = p;
+    srcw -= p;
+    w += x;
+    x = 0;
+  }
+  if(y < 0)
+  {
+    p = (-y/h)*srch;
+    srcy = p;
+    srch -= p;
+    h += y;
+    y = 0;
+  }
+  if(x+w > canv.width)
+  {
+    p = (canv.width-x)/w;
+    w = canv.width-x;
+    srcw *= p;
+  }
+  if(y+h > canv.height)
+  {
+    p = (canv.height-y)/h;
+    h = canv.height-y;
+    srch *= p;
+  }
+  ctx.drawImage(image,srcx,srcy,srcw,srch,x,y,w,h);
+}
 function drawImageCentered(image,x,y,w,h,ctx)
 {
   ctx.drawImage(image,x-w/2,y-h/2,w,h);
