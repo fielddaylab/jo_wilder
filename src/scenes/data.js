@@ -209,6 +209,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frames = [];
 tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps/0.png"));
+tmp_animcycle.frames.push(GenImg("assets/data/levels/tunic/animcycles/gramps/1.png"));
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
