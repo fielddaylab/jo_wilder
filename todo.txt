@@ -8,13 +8,13 @@ commands-for-scene-actors in a cutscene
 noteworthy entry notifications
 "picture taking"
 speech bubble pointer arrows
+notebook sections
 
 walk diagonally
 
-LOADING
+intro screen
 
-edit camera sizing from editor
-sizing in terms of universal # (jolies? meters?)
+(room, cam, jolie) sizing in terms of universal # (jolies? meters?)
 camera start at beginning of scene
 thought objects (click to think)
 

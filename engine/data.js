@@ -35,7 +35,7 @@ tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 229.3143006650962;
-tmp_level.avatar_wh = 249.78830665884502;
+tmp_level.avatar_wh = 249.788306658845;
 tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
@@ -1976,7 +1976,7 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
+tmp_room.cam_wh = 1074.7199999999993;
 tmp_room.navs = [
 {wx:45.736444608023135, wy:-370.3218181818179, ww:2068.426705925653, wh:466.38909090909084 },
 ];
@@ -2053,8 +2053,8 @@ tmp_porthole.fqid = "tunic.madison.historicalsociety.entry.tomap";
 {
 tmp_porthole.ww = 2539.1354508649247;
 tmp_porthole.wh = 160.88000000000005;
-tmp_porthole.wx = 7.984258373205648;
-tmp_porthole.wy = -562.2363636363636;
+tmp_porthole.wx = 45.93292234081696;
+tmp_porthole.wy = -527.6763636363636;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
