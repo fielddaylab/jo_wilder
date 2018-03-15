@@ -252,7 +252,6 @@ var GamePlayScene = function(game, stage)
           state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
-            state_t = 0.5;
             if(cur_act.act == ACT_PORTHOLE)
             {
               if(cur_act.target_room_found) cur_room = cur_act.target_room_found;
@@ -261,6 +260,7 @@ var GamePlayScene = function(game, stage)
               my_avatar.consume_room(cur_room);
               my_avatar.from_porthole(cur_act);
               cur_act = 0;
+              if(my_loader.loading) state_t = 0.5;
             }
           }
           else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
@@ -290,7 +290,6 @@ var GamePlayScene = function(game, stage)
           state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
           {
-            state_t = 0.5;
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
             cur_room = cur_scene.rooms[0];
@@ -300,9 +299,10 @@ var GamePlayScene = function(game, stage)
             my_avatar.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
             cur_act = 0;
+            if(my_loader.loading) state_t = 0.5;
           }
-          else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
         }
+        else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
         else state_t += state_t_speed;
         break;
       case STATE_NOTEBOOK:
@@ -403,8 +403,7 @@ var GamePlayScene = function(game, stage)
             my_toolbar.draw(0);
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
-            if(state_t < 0.5)
-              my_mapview.draw(0);
+            my_mapview.draw(0);
             ctx.fillStyle = "rgba(0,0,0,"+blur+")";
             ctx.fillRect(0,0,canv.width,canv.height);
           }
@@ -413,6 +412,13 @@ var GamePlayScene = function(game, stage)
             my_navigable.draw();
             my_toolbar.draw((1-state_t)*my_toolbar.h);
             my_mapview.draw(state_t*my_mapview.h);
+            ctx.fillStyle = "rgba(0,0,0,"+blur+")";
+            ctx.fillRect(0,0,canv.width,canv.height);
+          }
+          if(my_loader.loading)
+          {
+            ctx.fillStyle = white;
+            ctx.fillText("loading...",canv.width-100,canv.height-20);
           }
         }
         break;

@@ -14,6 +14,7 @@ var loader = function()
     for(var i = 0; i < self.loading_q.length; i++)
       if(self.loading_q[i] == args.target) { self.loading_q.splice(i,1); break; }
     if(!self.loading_q.length) self.loading = false;
+    //console.log(self.loading_q.length+" "+args.target.src);
   }
   self.load_animcycle_inst = function(inst)
   {
@@ -29,14 +30,13 @@ var loader = function()
       var img = animcycle.frames[i];
       if(!img.complete)
       {
-        var im = new Image();
         var found = false;
+        img.onload = self.loaded;
         for(var j = 0; j < self.loading_q.length; j++)
-          if(self.loading_q[j] == im) return;
-        self.loading_q.push(im);
+          if(self.loading_q[j] == img) return;
+        self.loading_q.push(img);
         self.loading = true;
-        im.onload = self.loaded;
-        im.src = animcycle.frame_files[i];
+        if(!img.src) img.src = animcycle.frame_files[i];
       }
     }
   }
@@ -57,6 +57,10 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.option_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.map_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
+
+    self.load_animcycle_inst(level.map.animcycle_inst);
+    for(var i = 0; i < level.map.scenes.length; i++)
+      self.load_animcycle_inst(level.map.scenes[i].animcycle_inst);
   }
 
   self.consume_room = function(room)
