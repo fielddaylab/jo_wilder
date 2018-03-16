@@ -15,9 +15,8 @@ walk diagonally
 intro screen
 
 (room, cam, jolie) sizing in terms of universal # (jolies? meters?)
-camera start at beginning of scene
 thought objects (click to think)
-blit only canvas
 test framebuffer as perf increase
 conversation animcycles target convo owner
+quality toggle
 

@@ -361,6 +361,13 @@ var avatar = function()
     my_navigable.wpt_in_navigable(room.target_start_wx,room.target_start_wy,self);
     self.to_wx = self.wx;
     self.to_wy = self.wy;
+
+    var xp = smooth(invlerp(room.wx-room.ww/2, room.wx+room.ww/2, self.wx));
+    var camwd = room.ww-my_real_camera.ww;
+    my_real_camera.wx = room.wx-camwd/2+xp*camwd;
+    var yp = smooth(invlerp(room.wy-room.wh/2, room.wy+room.wh/2, self.wy));
+    var camhd = room.wh-my_real_camera.wh;
+    my_real_camera.wy = room.wy-camhd/2+yp*camhd;
   }
 
   self.from_porthole = function(porthole)
@@ -368,6 +375,13 @@ var avatar = function()
     my_navigable.wpt_in_navigable(porthole.target_start_wx,porthole.target_start_wy,self);
     self.to_wx = self.wx;
     self.to_wy = self.wy;
+
+    var xp = smooth(invlerp(my_navigable.room.wx-my_navigable.room.ww/2, my_navigable.room.wx+my_navigable.room.ww/2, self.wx));
+    var camwd = my_navigable.room.ww-my_real_camera.ww;
+    my_real_camera.wx = my_navigable.room.wx-camwd/2+xp*camwd;
+    var yp = smooth(invlerp(my_navigable.room.wy-my_navigable.room.wh/2, my_navigable.room.wy+my_navigable.room.wh/2, self.wy));
+    var camhd = my_navigable.room.wh-my_real_camera.wh;
+    my_real_camera.wy = my_navigable.room.wy-camhd/2+yp*camhd;
   }
 
   //DRAG DEBUG EDIT STUFF
