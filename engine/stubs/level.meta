@@ -10,6 +10,7 @@ tmp_level.avatar_ww = 10;
 tmp_level.avatar_wh = 10;
 tmp_level.person_hover_animcycle_id = "null";
 tmp_level.object_hover_animcycle_id = "null";
+tmp_level.observation_hover_animcycle_id = "null";
 tmp_level.porthole_hover_animcycle_id = "null";
 tmp_level.zone_hover_animcycle_id = "null";
 tmp_level.option_hover_animcycle_id = "null";

@@ -1,4 +1,4 @@
-tmp_option.ww = canv.width/2;
+tmp_option.ww = 100;
 tmp_option.wh = 30; //h of single line
 tmp_option.wx = 100;
 tmp_option.wy = 100;

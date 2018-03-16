@@ -1,6 +1,6 @@
 tmp_object.ww = 100;
 tmp_object.wh = 100;
-tmp_object.wx = canv.width-200;
+tmp_object.wx = 100;
 tmp_object.wy = 100;
 tmp_object.wz = 0;
 tmp_object.act_wx = 0;

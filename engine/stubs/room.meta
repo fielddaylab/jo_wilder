@@ -1,19 +1,19 @@
 tmp_room.primary = false;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
 tmp_room.ww = canv.width;
 tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
 tmp_room.animcycle_id = "null";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
 tmp_room.navs = [
-{wx:100, wy:canv.height/2, ww:canv.width-200, wh:canv.height/2-100},
+{wx:100, wy:100, ww:100, wh:100},
 ];
 tmp_room.lights = [
-{wx:100, wy:canv.height/2, ww:canv.width-200, wh:canv.height/2-100},
+{wx:100, wy:100, ww:100, wh:100},
 ];
 tmp_room.shadows = [
-{wx:100, wy:canv.height/2, ww:canv.width-200, wh:canv.height/2-100},
+{wx:100, wy:100, ww:100, wh:100},
 ];
 tmp_room.light_color   = "rgba(255,255,255,0.2);";
 tmp_room.shadow_color  = "rgba(0,0,0,0.5);";

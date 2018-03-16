@@ -52,6 +52,7 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.person_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.object_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.observation_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.porthole_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.zone_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.option_hover_animcycle_id,level.animcycles));
@@ -104,6 +105,12 @@ var loader = function()
         }
       }
     }
+    var observation;
+    for(var k = 0; k < room.observations.length; k++)
+    {
+      observation = room.observations[k];
+      self.load_animcycle_inst(observation.animcycle_inst);
+    }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
     {
@@ -145,6 +152,7 @@ var cursor = function()
 
   self.person_animcycle_inst;
   self.object_animcycle_inst;
+  self.observation_animcycle_inst;
   self.porthole_animcycle_inst;
   self.view_animcycle_inst;
   self.option_animcycle_inst;
@@ -153,13 +161,14 @@ var cursor = function()
 
   self.consume_level = function(level)
   {
-    self.person_animcycle_inst   = gen_animcycle_inst(level.person_hover_animcycle_id,  level.animcycles);
-    self.object_animcycle_inst   = gen_animcycle_inst(level.object_hover_animcycle_id,  level.animcycles);
-    self.porthole_animcycle_inst = gen_animcycle_inst(level.porthole_hover_animcycle_id,level.animcycles);
-    self.view_animcycle_inst     = gen_animcycle_inst(level.zone_hover_animcycle_id,    level.animcycles);
-    self.option_animcycle_inst   = gen_animcycle_inst(level.option_hover_animcycle_id,  level.animcycles);
-    self.map_animcycle_inst      = gen_animcycle_inst(level.map_hover_animcycle_id,     level.animcycles);
-    self.ripple_animcycle_inst   = gen_animcycle_inst(level.ripple_click_animcycle_id,  level.animcycles);
+    self.person_animcycle_inst      = gen_animcycle_inst(level.person_hover_animcycle_id,      level.animcycles);
+    self.object_animcycle_inst      = gen_animcycle_inst(level.object_hover_animcycle_id,      level.animcycles);
+    self.observation_animcycle_inst = gen_animcycle_inst(level.observation_hover_animcycle_id, level.animcycles);
+    self.porthole_animcycle_inst    = gen_animcycle_inst(level.porthole_hover_animcycle_id,    level.animcycles);
+    self.view_animcycle_inst        = gen_animcycle_inst(level.zone_hover_animcycle_id,        level.animcycles);
+    self.option_animcycle_inst      = gen_animcycle_inst(level.option_hover_animcycle_id,      level.animcycles);
+    self.map_animcycle_inst         = gen_animcycle_inst(level.map_hover_animcycle_id,         level.animcycles);
+    self.ripple_animcycle_inst      = gen_animcycle_inst(level.ripple_click_animcycle_id,      level.animcycles);
   }
 
   self.ripple = function(x,y)
@@ -192,12 +201,13 @@ var cursor = function()
 
     switch(self.mode)
     {
-      case CURSOR_PERSON:   self.person_animcycle_inst.tick();   break;
-      case CURSOR_OBJECT:   self.object_animcycle_inst.tick();   break;
-      case CURSOR_PORTHOLE: self.porthole_animcycle_inst.tick(); break;
-      case CURSOR_VIEW:     self.view_animcycle_inst.tick();     break;
-      case CURSOR_OPTION:   self.option_animcycle_inst.tick();   break;
-      case CURSOR_MAP:      self.map_animcycle_inst.tick();      break;
+      case CURSOR_PERSON:      self.person_animcycle_inst.tick();      break;
+      case CURSOR_OBJECT:      self.object_animcycle_inst.tick();      break;
+      case CURSOR_OBSERVATION: self.observation_animcycle_inst.tick(); break;
+      case CURSOR_PORTHOLE:    self.porthole_animcycle_inst.tick();    break;
+      case CURSOR_VIEW:        self.view_animcycle_inst.tick();        break;
+      case CURSOR_OPTION:      self.option_animcycle_inst.tick();      break;
+      case CURSOR_MAP:         self.map_animcycle_inst.tick();         break;
     }
 
     if(self.ripple_animcycle_inst.frame_i || self.ripple_animcycle_inst.frame_t > 1)
@@ -219,12 +229,13 @@ var cursor = function()
     var hh = cur_level.cursor_h/2;
     switch(self.mode)
     {
-      case CURSOR_PERSON:   ctx.drawImage(self.person_animcycle_inst.img,  self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_OBJECT:   ctx.drawImage(self.object_animcycle_inst.img,  self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_PORTHOLE: ctx.drawImage(self.porthole_animcycle_inst.img,self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_VIEW:     ctx.drawImage(self.view_animcycle_inst.img,    self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_OPTION:   ctx.drawImage(self.option_animcycle_inst.img,  self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_MAP:      ctx.drawImage(self.map_animcycle_inst.img,     self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_PERSON:      ctx.drawImage(self.person_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_OBJECT:      ctx.drawImage(self.object_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_OBSERVATION: ctx.drawImage(self.observation_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_PORTHOLE:    ctx.drawImage(self.porthole_animcycle_inst.img,    self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_VIEW:        ctx.drawImage(self.view_animcycle_inst.img,        self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_OPTION:      ctx.drawImage(self.option_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_MAP:         ctx.drawImage(self.map_animcycle_inst.img,         self.known_x-hw,self.known_y-hh,w,h); break;
     }
   }
 }
@@ -269,8 +280,9 @@ var avatar = function()
         cur_state = STATE_TRANSITION;
         switch(cur_act.act)
         {
-          case ACT_PERSON: state_to = STATE_PERSON; my_personview.consume_person(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBJECT: state_to = STATE_OBJECT; my_objectview.consume_object(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_PORTHOLE:
           {
             if(cur_act.target_room_found)
@@ -611,12 +623,13 @@ var navigable = function()
   self.selected_act = 0;
   self.last_click = {x:0,y:0,wx:0,wy:0};
   self.nav_click = {x:0,y:0,wx:0,wy:0};
-  self.cache_unlocked_persons   = [];
-  self.cache_unlocked_objects   = [];
-  self.cache_unlocked_portholes = [];
-  self.cache_unlocked_wildcards = [];
-  self.cache_unlocked_inerts    = [];
-  self.cache_unlocked_drawables = [];
+  self.cache_unlocked_persons      = [];
+  self.cache_unlocked_objects      = [];
+  self.cache_unlocked_observations = [];
+  self.cache_unlocked_portholes    = [];
+  self.cache_unlocked_wildcards    = [];
+  self.cache_unlocked_inerts       = [];
+  self.cache_unlocked_drawables    = [];
 
   self.consume_room = function(room)
   {
@@ -638,13 +651,14 @@ var navigable = function()
 
   self.unlock_content = function()
   {
-    self.cache_unlocked_persons   = [];
-    self.cache_unlocked_objects   = [];
-    self.cache_unlocked_portholes = [];
-    self.cache_unlocked_wildcards = [];
-    self.cache_unlocked_inerts    = [];
+    self.cache_unlocked_persons      = [];
+    self.cache_unlocked_objects      = [];
+    self.cache_unlocked_observations = [];
+    self.cache_unlocked_portholes    = [];
+    self.cache_unlocked_wildcards    = [];
+    self.cache_unlocked_inerts       = [];
 
-    self.cache_unlocked_drawables = [];
+    self.cache_unlocked_drawables    = [];
     self.cache_unlocked_bg_drawables = [];
     self.cache_unlocked_fg_drawables = [];
 
@@ -652,6 +666,8 @@ var navigable = function()
       if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
     for(var i = 0; i < self.room.objects.length; i++)
       if(!querylocked(self.room.objects[i])) self.cache_unlocked_objects.push(self.room.objects[i]);
+    for(var i = 0; i < self.room.observations.length; i++)
+      if(!querylocked(self.room.observations[i])) self.cache_unlocked_observations.push(self.room.observations[i]);
     for(var i = 0; i < self.room.portholes.length; i++)
       if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
     for(var i = 0; i < self.room.wildcards.length; i++)
@@ -664,6 +680,8 @@ var navigable = function()
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_persons[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_persons[i]); }
     for(var i = 0; i < self.cache_unlocked_objects.length; i++)
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_objects[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_objects[i]); }
+    for(var i = 0; i < self.cache_unlocked_observations.length; i++)
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_observations[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_observations[i]); }
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_portholes[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_portholes[i]); }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
@@ -816,17 +834,20 @@ var navigable = function()
     self.edit_o = 0;
 
     if(my_camera == my_debug_camera && ptWithinBox(my_real_camera,evt.doX,evt.doY)) { self.edit_o = self.camera_editor; self.camera_editor.consume_camera(); }
-    for(var i = 0; i < self.cache_unlocked_persons.length;     i++) { var o = self.cache_unlocked_persons[i];     if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_objects.length;     i++) { var o = self.cache_unlocked_objects[i];     if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_portholes.length;   i++) { var o = self.cache_unlocked_portholes[i];   if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length;   i++) { var o = self.cache_unlocked_wildcards[i];   if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.room.entry_portholes_found.length; i++) { var o = self.room.entry_portholes_found[i]; if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
-                                                                    { var o = self.room;                          if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
+    for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.room.entry_portholes_found.length;  i++) { var o = self.room.entry_portholes_found[i];  if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
+                                                                     { var o = self.room;                           if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
 
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_persons.length; i++)
       if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_persons[i]; }
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_objects.length; i++)
       if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_objects[i]; }
+    for(var i = 0; !self.edit_o && i < self.cache_unlocked_observations.length; i++)
+      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_observations[i]; }
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_portholes.length; i++)
       if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_portholes[i]; }
     for(var i = 0; !self.edit_o && i < self.cache_unlocked_wildcards.length; i++)
@@ -897,6 +918,9 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_objects.length; i++)
       if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY))
         my_cursor.mode = CURSOR_OBJECT;
+    for(var i = 0; i < self.cache_unlocked_observations.length; i++)
+      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_OBSERVATION;
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
       if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY))
         my_cursor.mode = CURSOR_PORTHOLE;
@@ -925,6 +949,9 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_objects.length; i++)
         if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y))
           self.selected_act = self.cache_unlocked_objects[i];
+      for(var i = 0; i < self.cache_unlocked_observations.length; i++)
+        if(ptWithinBox(self.cache_unlocked_observations[i],self.last_click.x,self.last_click.y))
+          self.selected_act = self.cache_unlocked_observations[i];
       for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
         if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y))
           self.selected_act = self.cache_unlocked_portholes[i];
@@ -966,11 +993,12 @@ var navigable = function()
     for(var i = 0; i < self.room.navs.length;    i++) screenSpace(my_camera,canv,self.room.navs[i]);
     for(var i = 0; i < self.room.lights.length;  i++) screenSpace(my_camera,canv,self.room.lights[i]);
     for(var i = 0; i < self.room.shadows.length; i++) screenSpace(my_camera,canv,self.room.shadows[i]);
-    for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { self.cache_unlocked_persons[i].animcycle_inst.tick();   screenSpace(my_camera, canv, self.cache_unlocked_persons[i]); }
-    for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { self.cache_unlocked_objects[i].animcycle_inst.tick();   screenSpace(my_camera, canv, self.cache_unlocked_objects[i]); }
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { self.cache_unlocked_portholes[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_portholes[i]); }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { self.cache_unlocked_wildcards[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_wildcards[i]); }
-    for(var i = 0; i < self.cache_unlocked_inerts.length;    i++) { self.cache_unlocked_inerts[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_inerts[i]); }
+    for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { self.cache_unlocked_persons[i].animcycle_inst.tick();      screenSpace(my_camera, canv, self.cache_unlocked_persons[i]); }
+    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { self.cache_unlocked_objects[i].animcycle_inst.tick();      screenSpace(my_camera, canv, self.cache_unlocked_objects[i]); }
+    for(var i = 0; i < self.cache_unlocked_observations.length; i++) { self.cache_unlocked_observations[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_observations[i]); }
+    for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { self.cache_unlocked_portholes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_portholes[i]); }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { self.cache_unlocked_wildcards[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_wildcards[i]); }
+    for(var i = 0; i < self.cache_unlocked_inerts.length;       i++) { self.cache_unlocked_inerts[i].animcycle_inst.tick();       screenSpace(my_camera, canv, self.cache_unlocked_inerts[i]); }
 
     for(var i = 0; i < self.cache_unlocked_bg_drawables.length;    i++)
     {
@@ -1021,22 +1049,19 @@ var navigable = function()
       ctx.strokeStyle = dark_gray;
                                                                       { var o = self.room;                          o.target_start_x = screenSpaceXpt(my_camera,canv,o.target_start_wx); o.target_start_y = screenSpaceYpt(my_camera,canv,o.target_start_wy); ctx.strokeRect(o.target_start_x-2,o.target_start_y-2,4,4); }
 
-      ctx.strokeStyle = red;
-      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) strokeBox(self.cache_unlocked_persons[i],ctx);
-      ctx.strokeStyle = blue;
-      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) strokeBox(self.cache_unlocked_objects[i],ctx);
-      ctx.strokeStyle = green;
-      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
-      ctx.strokeStyle = magenta;
-      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
-      ctx.strokeStyle = cyan;
-      for(var i = 0; i < self.cache_unlocked_inerts.length;    i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
+      ctx.strokeStyle = red;     for(var i = 0; i < self.cache_unlocked_persons.length;      i++) strokeBox(self.cache_unlocked_persons[i],ctx);
+      ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) strokeBox(self.cache_unlocked_objects[i],ctx);
+      ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_unlocked_observations.length; i++) strokeBox(self.cache_unlocked_observations[i],ctx);
+      ctx.strokeStyle = green;   for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
+      ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
+      ctx.strokeStyle = cyan;    for(var i = 0; i < self.cache_unlocked_inerts.length;       i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
 
       ctx.strokeStyle = cyan;
-      for(var i = 0; i < self.cache_unlocked_persons.length;   i++) { var o = self.cache_unlocked_persons[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_objects.length;   i++) { var o = self.cache_unlocked_objects[i];   o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_portholes.length; i++) { var o = self.cache_unlocked_portholes[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++) { var o = self.cache_unlocked_wildcards[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
 
       if(my_camera == my_debug_camera)
       {
@@ -1522,6 +1547,166 @@ var objectview = function()
   }
 }
 
+var observationview = function()
+{
+  var self = this;
+
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+
+  self.observation;
+  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+
+  self.consume_observation = function(observation)
+  {
+    self.observation = observation;
+    self.observation.key = true;
+  }
+
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.blip_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.blip;
+    self.consume_blip = function(b)
+    {
+      self.blip = b;
+      self.x = self.blip.blip_x;
+      self.y = self.blip.blip_y;
+      self.w = self.blip.blip_w;
+      self.h = self.blip.blip_h;
+      self.blip.blip_ww = worldSpaceW(my_camera,canv,self.blip.blip_w);
+      self.blip.blip_wh = worldSpaceH(my_camera,canv,self.blip.blip_h);
+      self.blip.blip_wx = worldSpaceX(my_camera,canv,self.blip.blip_ww,self.blip.blip_x);
+      self.blip.blip_wy = worldSpaceY(my_camera,canv,self.blip.blip_wh,self.blip.blip_y);
+    }
+    self.edit = function()
+    {
+      self.blip.blip_x = self.x;
+      self.blip.blip_y = self.y;
+      self.blip.blip_w = self.w;
+      self.blip.blip_h = self.h;
+      self.blip.blip_ww = worldSpaceW(my_camera,canv,self.blip.blip_w);
+      self.blip.blip_wh = worldSpaceH(my_camera,canv,self.blip.blip_h);
+      self.blip.blip_wx = worldSpaceX(my_camera,canv,self.blip.blip_ww,self.blip.blip_x);
+      self.blip.blip_wy = worldSpaceY(my_camera,canv,self.blip.blip_wh,self.blip.blip_y);
+    }
+  })();
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+
+    if(!self.edit_o && ptWithin(self.observation.blip_x,self.observation.blip_y,self.observation.blip_w,self.observation.blip_h,evt.doX,evt.doY)) { self.edit_o = self.blip_editor; self.blip_editor.consume_blip(self.observation); }
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_o == self.blip_editor) self.blip_editor.edit();
+    worldSpace(my_camera,canv,self.edit_o);
+
+    if(self.edit_o == self.blip_editor)
+      self.observation.text = stextToLines(self.observation.raw_text, self.observation.blip_w);
+
+    self._dirty = true;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
+
+  self.click = function(evt)
+  {
+    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
+    {
+      state_from = cur_state;
+      state_to = STATE_NAV;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+      my_navigable.unlock_content();
+    }
+  }
+
+  self.tick = function()
+  {
+    self.observation.blip_w = screenSpaceW(my_camera,canv,self.observation.blip_ww);
+    self.observation.blip_h = screenSpaceH(my_camera,canv,self.observation.blip_wh);
+    self.observation.blip_x = screenSpaceX(my_camera,canv,self.observation.blip_ww,self.observation.blip_wx);
+    self.observation.blip_y = screenSpaceY(my_camera,canv,self.observation.blip_wh,self.observation.blip_wy);
+  }
+
+  self.draw = function(yoff)
+  {
+    var b = 10;
+    var oyoff = 0;
+    ctx.fillStyle = white;
+    fillRRect(self.observation.blip_x-b-5,self.observation.blip_y-b+5+yoff,self.observation.blip_w+b*2+10,self.observation.blip_h*self.observation.text.length+b*2+5,b,ctx);
+    ctx.fillStyle = "#4c4c4c";
+    for(var j = 0; j < self.observation.text.length; j++)
+    {
+      ctx.fillText(self.observation.text[j],self.observation.blip_x,self.observation.blip_y+yoff+oyoff+self.observation.blip_h);
+      oyoff += self.observation.blip_h;
+    }
+
+    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+
+    if(DEBUG)
+    {
+      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      ctx.strokeRect(self.observation.blip_x,self.observation.blip_y+yoff,self.observation.blip_w,self.observation.blip_h);
+      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    }
+  }
+}
+
 var personview = function()
 {
   var self = this;
@@ -1630,6 +1815,7 @@ var personview = function()
       self.cur_speak.options_wh = worldSpaceH(my_camera,canv,self.cur_speak.options_h);
       self.cur_speak.options_wx = worldSpaceX(my_camera,canv,self.cur_speak.options_ww,self.cur_speak.options_x);
       self.cur_speak.options_wy = worldSpaceY(my_camera,canv,self.cur_speak.options_wh,self.cur_speak.options_y);
+      console.log(self.cur_speak.options_wh);
     }
   })();
   self.dragStart = function(evt)

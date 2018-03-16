@@ -13,6 +13,7 @@ var tmp_person;
 var tmp_speak;
 var tmp_option;
 var tmp_object;
+var tmp_observation;
 var tmp_view;
 var tmp_zone;
 var tmp_porthole;
@@ -38,6 +39,7 @@ tmp_level.avatar_ww = 229.3143006650962;
 tmp_level.avatar_wh = 249.788306658845;
 tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
+tmp_level.observation_hover_animcycle_id = "hover_observation";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
 tmp_level.zone_hover_animcycle_id = "hover_zone";
 tmp_level.option_hover_animcycle_id = "hover_option";
@@ -249,6 +251,20 @@ tmp_animcycle.offset_t = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/hover_object/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "hover_observation";
+tmp_animcycle.fqid = "tunic.hover_observation";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/hover_observation/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1603,7 +1619,7 @@ tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
 tmp_room.navs = [
-{wx:-6.119460531939694, wy:-213.4272727272728, ww:2158.2567325748373, wh:380.9490909090909 },
+{wx:-7.119460531939694, wy:-213.42727272727282, ww:2158.2567325748373, wh:380.94909090909096 },
 ];
 tmp_room.lights = [
 {wx:-394.0363142292491, wy:223.8727272727272, ww:61.77025691699601, wh:56.472727272727056 },
@@ -1839,6 +1855,35 @@ tmp_view.zones.push(tmp_zone);
 tmp_object.views.push(tmp_view);
 }
 tmp_room.objects.push(tmp_object);
+tmp_observation = new observation();
+tmp_observation.id = "photo";
+tmp_observation.fqid = "tunic.madison.historicalsociety.closet.photo";
+{
+tmp_observation.ww = 242.5221929444906;
+tmp_observation.wh = 164.0023109162744;
+tmp_observation.wx = 483.67784643177754;
+tmp_observation.wy = -52.05610462944;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = -108.779743216709;
+tmp_observation.act_wy = -132.105369012786;
+tmp_observation.act_anim = 1;
+tmp_observation.animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "null";
+tmp_observation.blip_ww = 169;
+tmp_observation.blip_wh = 30;
+tmp_observation.blip_wx = 245.59517201023257;
+tmp_observation.blip_wy = -49.88266452525622;
+tmp_observation.noteworthy = false;
+tmp_observation.locks = [
+];
+tmp_observation.notlocks = [
+];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.ww);
+}
+tmp_room.observations.push(tmp_observation);
 tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.madison.historicalsociety.closet.toentry";

@@ -12,6 +12,7 @@ var tmp_person;
 var tmp_speak;
 var tmp_option;
 var tmp_object;
+var tmp_observation;
 var tmp_view;
 var tmp_zone;
 var tmp_porthole;

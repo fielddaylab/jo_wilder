@@ -45,6 +45,7 @@ var GamePlayScene = function(game, stage)
     my_notebook = new notebook();
     my_notebook.consume_level(cur_level);
     my_objectview = new objectview();
+    my_observationview = new observationview();
     my_personview = new personview();
     my_cutsceneview = new cutsceneview();
 
@@ -172,6 +173,19 @@ var GamePlayScene = function(game, stage)
         my_avatar.tick();
         my_objectview.tick();
         break;
+      case STATE_OBSERVATION:
+        hoverer.filter(my_observationview);
+        if(DEBUG && my_keyable.e) dragger.filter(my_observationview);
+        else
+        {
+          if(
+          !clicker.filter(my_observationview) &&
+          false) ;
+        }
+        my_navigable.tick();
+        my_avatar.tick();
+        my_observationview.tick();
+        break;
       case STATE_WILDCARD:
         my_navigable.tick();
         my_avatar.tick();
@@ -219,6 +233,10 @@ var GamePlayScene = function(game, stage)
       case STATE_OBJECT:
         my_navigable.draw();
         my_objectview.draw(0);
+        break;
+      case STATE_OBSERVATION:
+        my_navigable.draw();
+        my_observationview.draw(0);
         break;
       case STATE_WILDCARD:
         my_navigable.draw();
@@ -276,6 +294,11 @@ var GamePlayScene = function(game, stage)
           state_t += state_t_speed;
           my_objectview.tick();
         }
+        else if(state_to == STATE_OBSERVATION)
+        {
+          state_t += state_t_speed;
+          my_observationview.tick();
+        }
         else if(state_to == STATE_MAP)
         {
           state_t += state_t_speed;
@@ -317,6 +340,11 @@ var GamePlayScene = function(game, stage)
         state_t += state_t_speed;
         break;
       case STATE_OBJECT:
+        my_navigable.tick();
+        my_avatar.tick();
+        state_t += state_t_speed;
+        break;
+      case STATE_OBSERVATION:
         my_navigable.tick();
         my_avatar.tick();
         state_t += state_t_speed;
@@ -383,6 +411,12 @@ var GamePlayScene = function(game, stage)
           my_toolbar.draw(state_t*my_toolbar.h);
           my_objectview.draw((1-state_t)*my_objectview.h);
         }
+        if(state_to == STATE_OBSERVATION)
+        {
+          my_navigable.draw();
+          my_toolbar.draw(state_t*my_toolbar.h);
+          my_observationview.draw((1-state_t)*my_observationview.h);
+        }
         if(state_to == STATE_WILDCARD)
         {
           my_navigable.draw();
@@ -445,6 +479,14 @@ var GamePlayScene = function(game, stage)
           my_navigable.draw();
           my_toolbar.draw((1-state_t)*my_toolbar.h);
           my_objectview.draw(state_t*my_objectview.h);
+        }
+        break;
+      case STATE_OBSERVATION:
+        if(state_to == STATE_NAV)
+        {
+          my_navigable.draw();
+          my_toolbar.draw((1-state_t)*my_toolbar.h);
+          my_observationview.draw(state_t*my_observationview.h);
         }
         break;
       case STATE_WILDCARD:

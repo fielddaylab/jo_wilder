@@ -10,6 +10,7 @@ tmp_level.avatar_ww = 229.3143006650962;
 tmp_level.avatar_wh = 249.788306658845;
 tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
+tmp_level.observation_hover_animcycle_id = "hover_observation";
 tmp_level.porthole_hover_animcycle_id = "hover_porthole";
 tmp_level.zone_hover_animcycle_id = "hover_zone";
 tmp_level.option_hover_animcycle_id = "hover_option";

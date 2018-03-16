@@ -1,7 +1,7 @@
-tmp_person.ww = 200;
-tmp_person.wh = 200;
-tmp_person.wx = 70;
-tmp_person.wy = canv.height/2-100;
+tmp_person.ww = 100;
+tmp_person.wh = 100;
+tmp_person.wx = 100;
+tmp_person.wy = 100;
 tmp_person.wz = 0;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;

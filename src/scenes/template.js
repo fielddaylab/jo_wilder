@@ -29,6 +29,12 @@ var find = function(id)
     if(!zone || ids.length <= ++k) return zone;
     return;
   }
+  var observation; for(var i = 0; i < room.observations.length; i++) if(room.observations[i].id == ids[k]) observation = room.observations[i];
+  if(observation)
+  {
+    if(ids.length <= ++k) return observation;
+    return;
+  }
   var porthole; for(var i = 0; i < room.portholes.length; i++) if(room.portholes[i].id == ids[k]) porthole = room.portholes[i];
   if(porthole)
   {
@@ -109,6 +115,11 @@ var save_slate = function()
               self.insert(zone);
             }
           }
+        }
+        for(var k = 0; k < room.observations.length; k++)
+        {
+          var observation = room.observations[k];
+          self.insert(observation);
         }
         for(var k = 0; k < room.portholes.length; k++)
         {
@@ -219,6 +230,7 @@ var level = function()
   self.avatar_wh = 0;
   self.person_hover_animcycle_id = "hover_person";
   self.object_hover_animcycle_id = "hover_object";
+  self.observation_hover_animcycle_id = "hover_observation";
   self.porthole_hover_animcycle_id = "hover_porthole";
   self.zone_hover_animcycle_id = "hover_zone";
   self.option_hover_animcycle_id = "hover_option";
@@ -295,6 +307,7 @@ var room = function()
   self.target_start_wy = 0; //self-target (room entered "from nowhere")
   self.persons = [];
   self.objects = [];
+  self.observations = [];
   self.portholes = [];
   self.wildcards = [];
   self.inerts = [];
@@ -372,6 +385,48 @@ var object = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+}
+
+var observation = function()
+{
+  var self = this;
+  self.id = "null"
+  self.fqid = "null"
+  self.act = ACT_OBSERVATION;
+  self.ww = 0;
+  self.wh = 0;
+  self.wx = 0;
+  self.wy = 0;
+  self.wz = 0;
+  self.act_wx = 0;
+  self.act_wy = 0;
+  self.act_anim = true;
+  self.animcycle_id = "null";
+  self.animcycle_inst;
+  self.audio_id = "null";
+  self.raw_text = "null";
+  self.text = stextToLines(self.raw_text,self.ww);
+  self.blip_ww = 0;
+  self.blip_wh = 0;
+  self.blip_wx = 0;
+  self.blip_wy = 0;
+  self.noteworthy = false;
+  self.locks = [];
+  self.notlocks = [];
+  //
+  self.locked = true;
+  self.key = false;
+  self.w = 0;
+  self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.z = 0;
+  self.act_x = 0;
+  self.act_y = 0;
+  self.blip_x = 0;
+  self.blip_y = 0;
+  self.blip_w = 0;
+  self.blip_h = 0;
 }
 
 var porthole = function()
@@ -726,6 +781,7 @@ var print_level_meta = function(l)
   "tmp_level.avatar_wh = "+l.avatar_wh+";\n"+
   "tmp_level.person_hover_animcycle_id = \""+l.person_hover_animcycle_id+"\";\n"+
   "tmp_level.object_hover_animcycle_id = \""+l.object_hover_animcycle_id+"\";\n"+
+  "tmp_level.observation_hover_animcycle_id = \""+l.observation_hover_animcycle_id+"\";\n"+
   "tmp_level.porthole_hover_animcycle_id = \""+l.porthole_hover_animcycle_id+"\";\n"+
   "tmp_level.zone_hover_animcycle_id = \""+l.zone_hover_animcycle_id+"\";\n"+
   "tmp_level.option_hover_animcycle_id = \""+l.option_hover_animcycle_id+"\";\n"+
@@ -926,6 +982,38 @@ var print_object_meta = function(l)
   console.log(str);
 }
 
+var print_observation_meta = function(l)
+{
+  var str = "SAVE observation "+l.fqid+"\n"+
+  "tmp_observation.ww = "+l.ww+";\n"+
+  "tmp_observation.wh = "+l.wh+";\n"+
+  "tmp_observation.wx = "+l.wx+";\n"+
+  "tmp_observation.wy = "+l.wy+";\n"+
+  "tmp_observation.wz = "+l.wz+";\n"+
+  "tmp_observation.act_wx = "+l.act_wx+";\n"+
+  "tmp_observation.act_wy = "+l.act_wy+";\n"+
+  "tmp_observation.act_anim = "+l.act_anim+";\n"+
+  "tmp_observation.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_observation.audio_id = \""+l.audio_id+"\";\n"+
+  "tmp_observation.raw_text = \""+l.raw_text+"\";\n"+
+  "tmp_observation.blip_ww = "+l.blip_ww+";\n"+
+  "tmp_observation.blip_wh = "+l.blip_wh+";\n"+
+  "tmp_observation.blip_wx = "+l.blip_wx+";\n"+
+  "tmp_observation.blip_wy = "+l.blip_wy+";\n"+
+  "tmp_observation.noteworthy = "+l.noteworthy+";\n"+
+  "tmp_observation.locks = [\n";
+  for(var i = 0; i < l.locks.length; i++)
+    str += "\""+l.locks[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_observation.notlocks = [\n";
+  for(var i = 0; i < l.notlocks.length; i++)
+    str += "\""+l.notlocks[i]+"\",\n";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
 var print_view_meta = function(l)
 {
   var str = "SAVE view "+l.fqid+"\n"+
@@ -1092,6 +1180,12 @@ var print_whole_level = function(l)
             print_zone_meta(zone);
           }
         }
+      }
+      var observation;
+      for(var k = 0; k < room.observations.length; k++)
+      {
+        observation = room.observations[k];
+        print_observation_meta(observation);
       }
       var porthole;
       for(var k = 0; k < room.portholes.length; k++)

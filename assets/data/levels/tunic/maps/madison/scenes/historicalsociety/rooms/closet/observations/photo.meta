@@ -1,0 +1,21 @@
+tmp_observation.ww = 242.5221929444906;
+tmp_observation.wh = 164.0023109162744;
+tmp_observation.wx = 483.67784643177754;
+tmp_observation.wy = -52.05610462944;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = -108.779743216709;
+tmp_observation.act_wy = -132.105369012786;
+tmp_observation.act_anim = 1;
+tmp_observation.animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "null";
+tmp_observation.blip_ww = 169;
+tmp_observation.blip_wh = 30;
+tmp_observation.blip_wx = 245.59517201023257;
+tmp_observation.blip_wy = -49.88266452525622;
+tmp_observation.noteworthy = false;
+tmp_observation.locks = [
+];
+tmp_observation.notlocks = [
+];
+
