@@ -3579,7 +3579,7 @@ levels.push(tmp_level);
           var id = tmp_scene.fqid+"."+tmp_porthole.target_room;
           var target_room = find(id);
           tmp_porthole.target_room_found = target_room;
-          if(target_room) target_room.entry_doors_found.push(tmp_porthole);
+          if(target_room) target_room.entry_portholes_found.push(tmp_porthole);
         }
       }
     }

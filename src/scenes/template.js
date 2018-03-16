@@ -305,7 +305,7 @@ var room = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
-  self.entry_doors_found = []; //auto precompiled in
+  self.entry_portholes_found = []; //auto precompiled in
 }
 
 var person = function()
