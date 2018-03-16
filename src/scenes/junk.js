@@ -25,6 +25,5 @@ var my_cutsceneview;
 var init_audio = false;
 var canv_clicker;
 
-var my_placer;
 var my_keyable;
 

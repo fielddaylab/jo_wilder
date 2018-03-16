@@ -49,7 +49,6 @@ var GamePlayScene = function(game, stage)
     my_personview = new personview();
     my_cutsceneview = new cutsceneview();
 
-    my_placer = new placer(null, 100,100,100,100, canv);
     my_keyable = new keyable({});
     my_keyable.key = function(evt)
     {
@@ -252,7 +251,16 @@ var GamePlayScene = function(game, stage)
 
     if(DEBUG)
     {
-      //my_placer.draw(ctx);
+      ctx.fillStyle = black;
+      var y = 40;
+      ctx.fillText("DEBUG keys:",10,y); y += 25;
+      ctx.fillText("d: toggle 'debug'",10,y); y += 25;
+      ctx.fillText("u: toggle 'unlock everything' (requires room reload)",10,y); y += 25;
+      ctx.fillText("e: hold + click-drag to move objects, bottom right to scale",10,y); y += 25;
+      ctx.fillText("v: zoom out",10,y); y += 25;
+      ctx.fillText("g: toggle forground/background",10,y); y += 25;
+      ctx.fillText("q: toggle quality",10,y); y += 25;
+      ctx.fillText("(spacebar): print level to javascript console",10,y); y += 25;
     }
 
     my_cursor.draw();
