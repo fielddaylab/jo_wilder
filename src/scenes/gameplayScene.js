@@ -7,6 +7,11 @@ var GamePlayScene = function(game, stage)
     canv = stage.canv;
     canvas = canv.canvas;
     ctx = canv.context;
+
+    if(clicker) { clicker = new Clicker({source:canvas}); }
+    if(dragger) { dragger = new Dragger({source:canvas}); }
+    if(hoverer) { hoverer = new PersistentHoverer({source:canvas}); }
+    if(keyer)   { keyer = new Keyer({source:canvas}); }
   }
   self.resize(stage);
 
@@ -62,7 +67,24 @@ var GamePlayScene = function(game, stage)
         else                            my_camera = my_real_camera;
       }
       if(evt.key == "g") SHOW_GROUNDS = !SHOW_GROUNDS;
-      if(evt.key == "q") QUALITY = !QUALITY;
+      if(evt.key == "q")
+      {
+        QUALITY = !QUALITY;
+        if(QUALITY)
+        {
+          document.getElementById(stage.container).removeChild(stage.canv.canvas);
+          stage = new Stage({width:stage.width,height:stage.height,container:stage.container});
+          self.resize(stage);
+          ctx.font = "20px Helvetica";
+        }
+        else
+        {
+          document.getElementById(stage.container).removeChild(stage.canv.canvas);
+          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:10});
+          self.resize(stage);
+          ctx.font = "20px Helvetica";
+        }
+      }
     }
     my_keyable.key_down = function(evt)
     {

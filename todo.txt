@@ -15,6 +15,5 @@ walk diagonally
 intro screen
 
 (room, cam, jolie) sizing in terms of universal # (jolies? meters?)
-thought objects (click to think)
 conversation animcycles target convo owner
 

@@ -21,6 +21,7 @@ var Stage = function(init)
              tmp_context.oBackingStorePixelRatio ||
              tmp_context.backingStorePixelRatio ||
              1;
+  if(init.bspr) bspr = init.bspr;
 
   self.canv = new Canv({width:self.width,height:self.height,dpr_to_bspr:dpr/bspr});
   self.canv.context.scale(self.canv.dpr_to_bspr, self.canv.dpr_to_bspr);
