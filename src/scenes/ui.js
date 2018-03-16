@@ -520,30 +520,33 @@ var avatar = function()
     shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
     shading_canv.context.restore();
 
-    if(self.shade > 0.01)
+    if(QUALITY)
     {
-      shading_canv.context.globalAlpha = self.shade;
-      shading_canv.context.fillStyle = light_color;
+      if(self.shade > 0.01)
+      {
+        shading_canv.context.globalAlpha = self.shade;
+        shading_canv.context.fillStyle = light_color;
+        shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+        shading_canv.context.globalAlpha = 1-self.shade;
+      }
+      else if(self.shade < -0.01)
+      {
+        shading_canv.context.globalAlpha = -self.shade;
+        shading_canv.context.fillStyle = shadow_color;
+        shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+        shading_canv.context.globalAlpha = 1+self.shade;
+      }
+      shading_canv.context.fillStyle = ambient_color;
       shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
-      shading_canv.context.globalAlpha = 1-self.shade;
-    }
-    else if(self.shade < -0.01)
-    {
-      shading_canv.context.globalAlpha = -self.shade;
-      shading_canv.context.fillStyle = shadow_color;
-      shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
-      shading_canv.context.globalAlpha = 1+self.shade;
-    }
-    shading_canv.context.fillStyle = ambient_color;
-    shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
 
-    shading_canv.context.globalCompositeOperation = "destination-in";
-    shading_canv.context.globalAlpha = 1;
-    shading_canv.context.save();
-    shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
-    if(self.anim.flip) shading_canv.context.scale(-1,1);
-    shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
-    shading_canv.context.restore();
+      shading_canv.context.globalCompositeOperation = "destination-in";
+      shading_canv.context.globalAlpha = 1;
+      shading_canv.context.save();
+      shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
+      if(self.anim.flip) shading_canv.context.scale(-1,1);
+      shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      shading_canv.context.restore();
+    }
 
     ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
 
@@ -997,13 +1000,13 @@ var navigable = function()
 
   self.draw = function()
   {
-    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
+    if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
     drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
     for(var i = 0; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
 
-    if(SHOW_GROUNDS) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
+    if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
 
     if(DEBUG)
     {

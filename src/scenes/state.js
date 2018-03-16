@@ -21,4 +21,5 @@ var cursor_y = 0;
 var DEBUG = 1;
 var UNLOCK = 1;
 var SHOW_GROUNDS = 1;
+var QUALITY = 1;
 

@@ -62,6 +62,7 @@ var GamePlayScene = function(game, stage)
         else                            my_camera = my_real_camera;
       }
       if(evt.key == "g") SHOW_GROUNDS = !SHOW_GROUNDS;
+      if(evt.key == "q") QUALITY = !QUALITY;
     }
     my_keyable.key_down = function(evt)
     {
