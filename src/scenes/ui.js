@@ -519,21 +519,21 @@ var avatar = function()
   var done = 0;
   self.draw = function(shading,light_color,shadow_color,ambient_color)
   {
-    self.shade = lerp(self.shade,shading,0.02);
-
-    shading_canv.context.globalCompositeOperation = "source-over";
-    var b = 10;
-    shading_canv.context.clearRect(self.x-b,self.y-b,self.w+2*b,self.h+2*b);
-
-    var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
-    shading_canv.context.save();
-    shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
-    if(self.anim.flip) shading_canv.context.scale(-1,1);
-    shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
-    shading_canv.context.restore();
-
     if(QUALITY)
     {
+      self.shade = lerp(self.shade,shading,0.02);
+
+      shading_canv.context.globalCompositeOperation = "source-over";
+      var b = 10;
+      shading_canv.context.clearRect(self.x-b,self.y-b,self.w+2*b,self.h+2*b);
+
+      var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
+      shading_canv.context.save();
+      shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
+      if(self.anim.flip) shading_canv.context.scale(-1,1);
+      shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      shading_canv.context.restore();
+
       if(self.shade > 0.01)
       {
         shading_canv.context.globalAlpha = self.shade;
@@ -558,9 +558,18 @@ var avatar = function()
       if(self.anim.flip) shading_canv.context.scale(-1,1);
       shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
       shading_canv.context.restore();
-    }
 
-    ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
+      ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
+    }
+    else
+    {
+      var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
+      ctx.save();
+      ctx.translate(self.x+self.w/2,self.y+self.h/2);
+      if(self.anim.flip) ctx.scale(-1,1);
+      ctx.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      ctx.restore();
+    }
 
     if(DEBUG)
     {
@@ -1126,8 +1135,9 @@ var toolbar = function()
     self.icon_notebook_animcycle_inst.tick();
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h;
     ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
     ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
     if(MAP_ENABLED)
@@ -1273,8 +1283,9 @@ var mapview = function()
     }
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h
     ctx.drawImage(self.map.animcycle_inst.img,self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
@@ -1343,8 +1354,9 @@ var notebook = function()
     self.notebook_animcycle_inst.tick();
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h;
     ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
@@ -1462,7 +1474,7 @@ var objectview = function()
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
-    worldSpace(my_camera,canv,self.edit_o);
+    worldSpace(my_ui_camera,canv,self.edit_o);
 
     self._dirty = true;
   };
@@ -1516,12 +1528,13 @@ var objectview = function()
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
     {
       self.cache_unlocked_zones[i].animcycle_inst.tick();
-      screenSpace(my_camera,canv,self.cache_unlocked_zones[i]);
+      screenSpace(my_ui_camera,canv,self.cache_unlocked_zones[i]);
     }
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h;
     var zone;
     ctx.drawImage(self.cur_view.animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
@@ -1683,8 +1696,9 @@ var observationview = function()
     self.observation.blip_y = screenSpaceY(my_camera,canv,self.observation.blip_wh,self.observation.blip_wy);
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h;
     var b = 10;
     var oyoff = 0;
     ctx.fillStyle = white;
@@ -1978,8 +1992,9 @@ var personview = function()
     self.cur_speak.options_y = screenSpaceY(my_camera,canv,self.cur_speak.options_wh,self.cur_speak.options_wy);
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h;
     var speak = self.cur_speak;
     var oyoff;
     //ctx.drawImage(speak.animcycle_inst.img, 0, yoff, self.w, self.h);
@@ -2227,8 +2242,9 @@ var cutsceneview = function()
     }
   }
 
-  self.draw = function(yoff)
+  self.draw = function(t)
   {
+    var yoff = (1-t)*self.h;
     ctx.fillStyle = "#4c4c4c";
     ctx.font = "20px Helvetica";
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);

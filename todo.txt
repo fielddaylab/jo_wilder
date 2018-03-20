@@ -16,4 +16,6 @@ intro screen
 
 (room, cam, jolie) sizing in terms of universal # (jolies? meters?)
 conversation animcycles target convo owner
+flip imgs if -w or -h
+bilinear vs nn
 

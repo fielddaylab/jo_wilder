@@ -237,34 +237,34 @@ var GamePlayScene = function(game, stage)
     {
       case STATE_NAV:
         my_navigable.draw();
-        my_toolbar.draw(0);
+        my_toolbar.draw(1);
         break;
       case STATE_MAP:
         my_navigable.draw();
-        my_mapview.draw(0);
+        my_mapview.draw(1);
         break;
       case STATE_NOTEBOOK:
         my_navigable.draw();
-        my_notebook.draw(0);
+        my_notebook.draw(1);
         break;
       case STATE_PERSON:
         my_navigable.draw();
-        my_personview.draw(0);
+        my_personview.draw(1);
         break;
       case STATE_OBJECT:
         my_navigable.draw();
-        my_objectview.draw(0);
+        my_objectview.draw(1);
         break;
       case STATE_OBSERVATION:
         my_navigable.draw();
-        my_observationview.draw(0);
+        my_observationview.draw(1);
         break;
       case STATE_WILDCARD:
         my_navigable.draw();
         break;
       case STATE_CUTSCENE:
         my_navigable.draw();
-        my_cutsceneview.draw(0);
+        my_cutsceneview.draw(1);
         break;
       case STATE_TRANSITION:
         transition_draw();
@@ -406,7 +406,7 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_toolbar.draw(0);
+          my_toolbar.draw(1);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
           ctx.fillStyle = "rgba(0,0,0,"+blur+")";
@@ -420,43 +420,43 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_MAP)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
-          my_mapview.draw((1-state_t)*my_mapview.h);
+          my_toolbar.draw(1-state_t);
+          my_mapview.draw(state_t);
         }
         if(state_to == STATE_NOTEBOOK)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
-          my_notebook.draw((1-state_t)*my_notebook.h);
+          my_toolbar.draw(1-state_t);
+          my_notebook.draw(state_t);
         }
         if(state_to == STATE_PERSON)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
-          my_personview.draw((1-state_t)*my_personview.h);
+          my_toolbar.draw(1-state_t);
+          my_personview.draw(state_t);
         }
         if(state_to == STATE_OBJECT)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
-          my_objectview.draw((1-state_t)*my_objectview.h);
+          my_toolbar.draw(1-state_t);
+          my_objectview.draw(state_t);
         }
         if(state_to == STATE_OBSERVATION)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
-          my_observationview.draw((1-state_t)*my_observationview.h);
+          my_toolbar.draw(1-state_t);
+          my_observationview.draw(state_t);
         }
         if(state_to == STATE_WILDCARD)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
+          my_toolbar.draw(1-state_t);
         }
         if(state_to == STATE_CUTSCENE)
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t*my_toolbar.h);
-          my_cutsceneview.draw((1-state_t)*my_cutsceneview.h);
+          my_toolbar.draw(1-state_t);
+          my_cutsceneview.draw(state_t);
         }
         break;
       case STATE_MAP:
@@ -465,18 +465,18 @@ var GamePlayScene = function(game, stage)
           if(my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
           {
             my_navigable.draw();
-            my_toolbar.draw(0);
+            my_toolbar.draw(1);
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
-            my_mapview.draw(0);
+            my_mapview.draw(1);
             ctx.fillStyle = "rgba(0,0,0,"+blur+")";
             ctx.fillRect(0,0,canv.width,canv.height);
           }
           else
           {
             my_navigable.draw();
-            my_toolbar.draw((1-state_t)*my_toolbar.h);
-            my_mapview.draw(state_t*my_mapview.h);
+            my_toolbar.draw(state_t);
+            my_mapview.draw(1-state_t);
             ctx.fillStyle = "rgba(0,0,0,"+blur+")";
             ctx.fillRect(0,0,canv.width,canv.height);
           }
@@ -491,32 +491,32 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_notebook.draw(state_t*my_notebook.h);
+          my_toolbar.draw(state_t);
+          my_notebook.draw(1-state_t);
         }
         break;
       case STATE_PERSON:
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_personview.draw(state_t*my_personview.h);
+          my_toolbar.draw(state_t);
+          my_personview.draw(1-state_t);
         }
         break;
       case STATE_OBJECT:
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_objectview.draw(state_t*my_objectview.h);
+          my_toolbar.draw(state_t);
+          my_objectview.draw(1-state_t);
         }
         break;
       case STATE_OBSERVATION:
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_observationview.draw(state_t*my_observationview.h);
+          my_toolbar.draw(state_t);
+          my_observationview.draw(1-state_t);
         }
         break;
       case STATE_WILDCARD:
@@ -525,8 +525,8 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV)
         {
           my_navigable.draw();
-          my_toolbar.draw((1-state_t)*my_toolbar.h);
-          my_cutsceneview.draw(state_t*my_cutsceneview.h);
+          my_toolbar.draw(state_t);
+          my_cutsceneview.draw(1-state_t);
         }
         break;
     }
