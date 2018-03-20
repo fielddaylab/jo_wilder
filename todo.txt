@@ -18,4 +18,5 @@ intro screen
 conversation animcycles target convo owner
 flip imgs if -w or -h
 bilinear vs nn
+conversation w/h in screenspace
 

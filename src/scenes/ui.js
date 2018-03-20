@@ -1599,10 +1599,8 @@ var observationview = function()
       self.y = self.blip.blip_y;
       self.w = self.blip.blip_w;
       self.h = self.blip.blip_h;
-      self.blip.blip_ww = worldSpaceW(my_camera,canv,self.blip.blip_w);
-      self.blip.blip_wh = worldSpaceH(my_camera,canv,self.blip.blip_h);
-      self.blip.blip_wx = worldSpaceX(my_camera,canv,self.blip.blip_ww,self.blip.blip_x);
-      self.blip.blip_wy = worldSpaceY(my_camera,canv,self.blip.blip_wh,self.blip.blip_y);
+      self.blip.blip_wx = worldSpaceXpt(my_camera,canv,self.blip.blip_x);
+      self.blip.blip_wy = worldSpaceYpt(my_camera,canv,self.blip.blip_y);
     }
     self.edit = function()
     {
@@ -1610,10 +1608,8 @@ var observationview = function()
       self.blip.blip_y = self.y;
       self.blip.blip_w = self.w;
       self.blip.blip_h = self.h;
-      self.blip.blip_ww = worldSpaceW(my_camera,canv,self.blip.blip_w);
-      self.blip.blip_wh = worldSpaceH(my_camera,canv,self.blip.blip_h);
-      self.blip.blip_wx = worldSpaceX(my_camera,canv,self.blip.blip_ww,self.blip.blip_x);
-      self.blip.blip_wy = worldSpaceY(my_camera,canv,self.blip.blip_wh,self.blip.blip_y);
+      self.blip.blip_wx = worldSpaceXpt(my_camera,canv,self.blip.blip_x);
+      self.blip.blip_wy = worldSpaceYpt(my_camera,canv,self.blip.blip_y);
     }
   })();
   self.dragStart = function(evt)
@@ -1690,10 +1686,8 @@ var observationview = function()
 
   self.tick = function()
   {
-    self.observation.blip_w = screenSpaceW(my_camera,canv,self.observation.blip_ww);
-    self.observation.blip_h = screenSpaceH(my_camera,canv,self.observation.blip_wh);
-    self.observation.blip_x = screenSpaceX(my_camera,canv,self.observation.blip_ww,self.observation.blip_wx);
-    self.observation.blip_y = screenSpaceY(my_camera,canv,self.observation.blip_wh,self.observation.blip_wy);
+    self.observation.blip_x = screenSpaceXpt(my_camera,canv,self.observation.blip_wx);
+    self.observation.blip_y = screenSpaceYpt(my_camera,canv,self.observation.blip_wy);
   }
 
   self.draw = function(t)
@@ -1799,6 +1793,34 @@ var personview = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
+  self.speak_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.cur_speak;
+    self.consume_speak = function(s)
+    {
+      self.cur_speak = s;
+      self.x = self.cur_speak.x;
+      self.y = self.cur_speak.y;
+      self.w = self.cur_speak.w;
+      self.h = self.cur_speak.h;
+      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
+      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
+    }
+    self.edit = function()
+    {
+      self.cur_speak.x = self.x;
+      self.cur_speak.y = self.y;
+      self.cur_speak.w = self.w;
+      self.cur_speak.h = self.h;
+      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
+      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
+    }
+  })();
   self.options_editor = new (function()
   {
     var self = this;
@@ -1814,10 +1836,8 @@ var personview = function()
       self.y = self.cur_speak.options_y;
       self.w = self.cur_speak.options_w;
       self.h = self.cur_speak.options_h;
-      self.cur_speak.options_ww = worldSpaceW(my_camera,canv,self.cur_speak.options_w);
-      self.cur_speak.options_wh = worldSpaceH(my_camera,canv,self.cur_speak.options_h);
-      self.cur_speak.options_wx = worldSpaceX(my_camera,canv,self.cur_speak.options_ww,self.cur_speak.options_x);
-      self.cur_speak.options_wy = worldSpaceY(my_camera,canv,self.cur_speak.options_wh,self.cur_speak.options_y);
+      self.cur_speak.options_wx = worldSpaceXpt(my_camera,canv,self.cur_speak.options_x);
+      self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,self.cur_speak.options_y);
     }
     self.edit = function()
     {
@@ -1825,17 +1845,14 @@ var personview = function()
       self.cur_speak.options_y = self.y;
       self.cur_speak.options_w = self.w;
       self.cur_speak.options_h = self.h;
-      self.cur_speak.options_ww = worldSpaceW(my_camera,canv,self.cur_speak.options_w);
-      self.cur_speak.options_wh = worldSpaceH(my_camera,canv,self.cur_speak.options_h);
-      self.cur_speak.options_wx = worldSpaceX(my_camera,canv,self.cur_speak.options_ww,self.cur_speak.options_x);
-      self.cur_speak.options_wy = worldSpaceY(my_camera,canv,self.cur_speak.options_wh,self.cur_speak.options_y);
-      console.log(self.cur_speak.options_wh);
+      self.cur_speak.options_wx = worldSpaceXpt(my_camera,canv,self.cur_speak.options_x);
+      self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,self.cur_speak.options_y);
     }
   })();
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY)) self.edit_o = self.cur_speak;
+    if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY))                                                                                   { self.edit_o = self.speak_editor; self.speak_editor.consume_speak(self.cur_speak); }
     if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); }
 
     if(!self.edit_o) return;
@@ -1871,6 +1888,7 @@ var personview = function()
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
 
     if(self.edit_o == self.options_editor) self.options_editor.edit();
+    if(self.edit_o == self.speak_editor)   self.speak_editor.edit();
     else worldSpace(my_camera,canv,self.edit_o);
 
     //recalc text
@@ -1882,7 +1900,7 @@ var personview = function()
     }
     else //its the speak
     {
-      var s = self.edit_o;
+      var s = self.edit_o.cur_speak;
       s.atext = stextToLines(s.raw_atext, s.w);
     }
 
@@ -1985,11 +2003,10 @@ var personview = function()
   self.tick = function()
   {
     self.cur_speak.animcycle_inst.tick();
-    screenSpace(my_camera,canv,self.cur_speak);
-    self.cur_speak.options_w = screenSpaceW(my_camera,canv,self.cur_speak.options_ww);
-    self.cur_speak.options_h = screenSpaceH(my_camera,canv,self.cur_speak.options_wh);
-    self.cur_speak.options_x = screenSpaceX(my_camera,canv,self.cur_speak.options_ww,self.cur_speak.options_wx);
-    self.cur_speak.options_y = screenSpaceY(my_camera,canv,self.cur_speak.options_wh,self.cur_speak.options_wy);
+    self.cur_speak.x = screenSpaceXpt(my_camera,canv,self.cur_speak.wx);
+    self.cur_speak.y = screenSpaceYpt(my_camera,canv,self.cur_speak.wy);
+    self.cur_speak.options_x = screenSpaceXpt(my_camera,canv,self.cur_speak.options_wx);
+    self.cur_speak.options_y = screenSpaceYpt(my_camera,canv,self.cur_speak.options_wy);
   }
 
   self.draw = function(t)

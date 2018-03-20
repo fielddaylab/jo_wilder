@@ -9,10 +9,10 @@ tmp_observation.act_anim = 1;
 tmp_observation.animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "null";
-tmp_observation.blip_ww = 100;
-tmp_observation.blip_wh = 30; //h of a single line
 tmp_observation.blip_wx = 100;
 tmp_observation.blip_wy = 100;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30; //h of a single line
 tmp_observation.noteworthy = false;
 tmp_observation.locks = [
 ];

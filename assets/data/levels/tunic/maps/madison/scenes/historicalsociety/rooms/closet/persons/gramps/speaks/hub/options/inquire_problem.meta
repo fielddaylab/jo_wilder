@@ -1,7 +1,7 @@
-tmp_option.ww = 440;
-tmp_option.wh = 30;
 tmp_option.wx = -120;
 tmp_option.wy = 215.00000000000003;
+tmp_option.w = 440;
+tmp_option.h = 30;
 tmp_option.static = false;
 tmp_option.index = 0;
 tmp_option.raw_qtext = "What's the matter gramps?";

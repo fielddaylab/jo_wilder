@@ -405,11 +405,11 @@ var observation = function()
   self.animcycle_inst;
   self.audio_id = "null";
   self.raw_text = "null";
-  self.text = stextToLines(self.raw_text,self.ww);
-  self.blip_ww = 0;
-  self.blip_wh = 0;
+  self.text = stextToLines(self.raw_text,self.blip_w);
   self.blip_wx = 0;
   self.blip_wy = 0;
+  self.blip_w = 0;
+  self.blip_h = 0;
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
@@ -425,8 +425,6 @@ var observation = function()
   self.act_y = 0;
   self.blip_x = 0;
   self.blip_y = 0;
-  self.blip_w = 0;
-  self.blip_h = 0;
 }
 
 var porthole = function()
@@ -584,29 +582,25 @@ var speak = function()
   self.animcycle_id = "null";
   self.animcycle_inst;
   self.audio_id = "null";
-  self.wx = 0;
-  self.wy = 0;
-  self.ww = canv.width/2;
-  self.wh = 0;
+  self.wx = 0; //defines top-left
+  self.wy = 0; //defines top-left
+  self.w = 0;
+  self.h = 0;
   self.raw_atext = "null";
   self.atext_hard_coded = false;
-  self.atext = stextToLines(self.raw_atext,self.ww);
+  self.atext = stextToLines(self.raw_atext,self.w);
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
   self.options_wx = 0;
   self.options_wy = 0;
-  self.options_ww = canv.width/2;
-  self.options_wh = 0;
+  self.options_w = 0;
+  self.options_h = 0;
   self.options = [];
   self.noteworthy = false;
   self.key = false;
   self.x = 0;
   self.y = 0;
-  self.w = 0;
-  self.h = 0;
   self.options_x = 0;
   self.options_y = 0;
-  self.options_w = 0;
-  self.options_h = 0;
 }
 
 var option = function()
@@ -616,13 +610,13 @@ var option = function()
   self.fqid = "null"
   self.wx = 0;
   self.wy = 0;
-  self.ww = canv.width/2;
-  self.wh = 0;
+  self.w = 0;
+  self.h = 0;
   self.static = false;
   self.index = 0;
   self.raw_qtext = "null";
   self.qtext_hard_coded = false;
-  self.qtext = stextToLines(self.raw_qtext,self.ww);
+  self.qtext = stextToLines(self.raw_qtext,self.w);
   self.target_speak = "null";
   self.noteworthy = false;
   self.locks = [];
@@ -632,8 +626,6 @@ var option = function()
   self.key = false;
   self.x = 0;
   self.y = 0;
-  self.w = 0;
-  self.h = 0;
 }
 
 var entry = function()
@@ -697,11 +689,13 @@ var cutscene_command = function()
   self.wz = CUTSCENE_COMMAND_IGNORE;
   self.ww = CUTSCENE_COMMAND_IGNORE;
   self.wh = CUTSCENE_COMMAND_IGNORE;
+  self.w = CUTSCENE_COMMAND_IGNORE;
+  self.h = CUTSCENE_COMMAND_IGNORE;
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.animcycle_offset_t = 0;
   self.raw_text = "null";
-  self.text = stextToLines(self.raw_text,self.ww);
+  self.text = stextToLines(self.raw_text,self.w);
 
   //ephemeral
   self.from_wx;
@@ -717,8 +711,6 @@ var cutscene_command = function()
   self.x;
   self.y;
   self.z;
-  self.w;
-  self.h;
 }
 
 /*
@@ -914,18 +906,18 @@ var print_speak_meta = function(l)
 {
   var str = "SAVE speak "+l.fqid+"\n"+
   "tmp_speak.primary = "+l.primary+";\n"+
-  "tmp_speak.ww = "+l.ww+";\n"+
-  "tmp_speak.wh = "+l.wh+";\n"+
   "tmp_speak.wx = "+l.wx+";\n"+
   "tmp_speak.wy = "+l.wy+";\n"+
+  "tmp_speak.w = "+l.w+";\n"+
+  "tmp_speak.h = "+l.h+";\n"+
   "tmp_speak.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_speak.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_speak.raw_atext = \""+l.raw_atext+"\";\n"+
   "tmp_speak.speaker = "+l.speaker+";\n"+
-  "tmp_speak.options_ww = "+l.options_ww+";\n"+
-  "tmp_speak.options_wh = "+l.options_wh+";\n"+
   "tmp_speak.options_wx = "+l.options_wx+";\n"+
   "tmp_speak.options_wy = "+l.options_wy+";\n"+
+  "tmp_speak.options_w = "+l.options_w+";\n"+
+  "tmp_speak.options_h = "+l.options_h+";\n"+
   "tmp_speak.noteworthy = "+l.noteworthy+";\n";
   console.log(str);
 }
@@ -933,10 +925,10 @@ var print_speak_meta = function(l)
 var print_option_meta = function(l)
 {
   var str = "SAVE option "+l.fqid+"\n"+
-  "tmp_option.ww = "+l.ww+";\n"+
-  "tmp_option.wh = "+l.wh+";\n"+
   "tmp_option.wx = "+l.wx+";\n"+
   "tmp_option.wy = "+l.wy+";\n"+
+  "tmp_option.w = "+l.w+";\n"+
+  "tmp_option.h = "+l.h+";\n"+
   "tmp_option.static = "+l.static+";\n"+
   "tmp_option.index = "+l.index+";\n"+
   "tmp_option.raw_qtext = \""+l.raw_qtext+"\";\n"+
@@ -996,10 +988,10 @@ var print_observation_meta = function(l)
   "tmp_observation.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_observation.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_observation.raw_text = \""+l.raw_text+"\";\n"+
-  "tmp_observation.blip_ww = "+l.blip_ww+";\n"+
-  "tmp_observation.blip_wh = "+l.blip_wh+";\n"+
   "tmp_observation.blip_wx = "+l.blip_wx+";\n"+
   "tmp_observation.blip_wy = "+l.blip_wy+";\n"+
+  "tmp_observation.blip_w = "+l.blip_w+";\n"+
+  "tmp_observation.blip_h = "+l.blip_h+";\n"+
   "tmp_observation.noteworthy = "+l.noteworthy+";\n"+
   "tmp_observation.locks = [\n";
   for(var i = 0; i < l.locks.length; i++)
