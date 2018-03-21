@@ -2102,7 +2102,7 @@ var personview = function()
   {
     if(self.ui_state == UI_STATE_NULL) return;
 
-    var yoff = 0;//(1-t)*self.h;
+    var yoff = 0;
     var speak = self.cur_speak;
     var oyoff;
 
@@ -2131,6 +2131,18 @@ var personview = function()
     }
     else
       fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
+
+    //tail
+    var y = speak.y-b+5+yoff+speak.h*speak.atext.length+b*2+5;
+    var x;
+    var w = 20;
+    var h = 20;
+    if(speak.speaker == SPEAKER_PERSON)
+      x = clamp(speak.x, speak.x+speak.w-w, self.person.x + self.person.w/2-w/2);
+    else
+      x = clamp(speak.x, speak.x+speak.w-w, my_avatar.x + my_avatar.w/2-w/2);
+
+    ctx.fillRect(x,y,w,h);
     ctx.fillStyle = self.text_color;
     ctx.font = option_font;
     oyoff = 0;
@@ -2160,6 +2172,14 @@ var personview = function()
         option = self.cache_unlocked_options_static[i];
         ctx.fillStyle = self.bubble_color;
         fillRRect(option.x-b-5,option.y-b+5+yoff,option.w+b*2+10,option.h*option.qtext.length+b*2+5,b,ctx);
+
+        //tail
+        var y = option.y-b+5+yoff+option.h*option.qtext.length+b*2+5;
+        var x = clamp(option.x, option.x+option.w-w, my_avatar.x + my_avatar.w/2-w/2);
+        var w = 20;
+        var h = 20;
+        ctx.fillRect(x,y,w,h);
+
         ctx.fillStyle = self.text_color;
         for(var j = 0; j < option.qtext.length; j++)
         {
@@ -2167,6 +2187,7 @@ var personview = function()
           oyoff += option.h;
         }
       }
+
       //dynamic
       oyoff = speak.options_y;
       if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
@@ -2174,6 +2195,14 @@ var personview = function()
       for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++) h += self.cache_unlocked_options_dynamic[i].qtext.length*speak.options_h;
       ctx.fillStyle = self.bubble_color;
       fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
+
+      //tail
+      var y = speak.options_y-b+5+yoff+h+b*2+5;
+      var x = clamp(speak.options_x, speak.options_x+speak.options_w-w, my_avatar.x + my_avatar.w/2-w/2);
+      var w = 20;
+      var h = 20;
+      ctx.fillRect(x,y,w,h);
+
       ctx.fillStyle = self.text_color;
       for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
       {
