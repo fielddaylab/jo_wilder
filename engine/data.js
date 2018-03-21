@@ -1679,8 +1679,52 @@ tmp_speak.noteworthy = false;
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
+tmp_option.id = "ct";
+tmp_option.fqid = "tunic.madison.historicalsociety.closet.gramps.help.ct";
+{
+tmp_option.wx = -120;
+tmp_option.wy = 215.00000000000003;
+tmp_option.w = 440;
+tmp_option.h = 30;
+tmp_option.static = false;
+tmp_option.index = 999;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "help_ctd";
+tmp_option.noteworthy = false;
+tmp_option.locks = [
+];
+tmp_option.notlocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "help_ctd";
+tmp_speak.fqid = "tunic.madison.historicalsociety.closet.gramps.help_ctd";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = -599.2876063735368;
+tmp_speak.wy = 101.7265613492438;
+tmp_speak.w = 317;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "gramps";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Hey! You should help me!";
+tmp_speak.speaker = 2;
+tmp_speak.options_wx = -469.46993924665844;
+tmp_speak.options_wy = -81.74337788578364;
+tmp_speak.options_w = 212;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
 tmp_option.id = "return";
-tmp_option.fqid = "tunic.madison.historicalsociety.closet.gramps.help.return";
+tmp_option.fqid = "tunic.madison.historicalsociety.closet.gramps.help_ctd.return";
 {
 tmp_option.wx = -120;
 tmp_option.wy = 215.00000000000003;

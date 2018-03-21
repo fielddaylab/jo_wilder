@@ -1952,28 +1952,40 @@ var personview = function()
   {
     my_cursor.mode = CURSOR_NORMAL;
     var speak = self.cur_speak;
-    var oyoff;
-    for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
+    if(!self.inline_option)
     {
-      oyoff = 0;
-      option = self.cache_unlocked_options_static[i];
-      for(var j = 0; j < option.qtext.length; j++)
+      var oyoff;
+      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
       {
-        if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
-          my_cursor.mode = CURSOR_OPTION;
-        oyoff += option.h;
+        oyoff = 0;
+        option = self.cache_unlocked_options_static[i];
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
+            my_cursor.mode = CURSOR_OPTION;
+          oyoff += option.h;
+        }
+      }
+      oyoff = speak.options_y;
+      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+      {
+        option = self.cache_unlocked_options_dynamic[i];
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+            my_cursor.mode = CURSOR_OPTION;
+          oyoff += speak.options_h;
+        }
       }
     }
-    oyoff = speak.options_y;
-    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+    else //inline_option
     {
-      option = self.cache_unlocked_options_dynamic[i];
-      for(var j = 0; j < option.qtext.length; j++)
-      {
-        if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
-          my_cursor.mode = CURSOR_OPTION;
-        oyoff += speak.options_h;
-      }
+      var x = speak.x+speak.w;
+      var y = speak.y;
+      var w = 40;
+      var h = speak.h*speak.atext.length;
+      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_OPTION;
     }
   }
   self.unhover = function(evt)
@@ -1983,35 +1995,53 @@ var personview = function()
   self.click = function(evt)
   {
     if(self.ui_state != UI_STATE_SELECT) return;
+
     var speak = self.cur_speak;
     var option;
     var clicked_option;
-    var oyoff;
-    //static
-    for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
+
+    if(!self.inline_option)
     {
-      oyoff = 0;
-      option = self.cache_unlocked_options_static[i];
-      for(var j = 0; j < option.qtext.length; j++)
+      var oyoff;
+      //static
+      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
       {
-        if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
-          clicked_option = option;
-        oyoff += option.h;
+        oyoff = 0;
+        option = self.cache_unlocked_options_static[i];
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
+            clicked_option = option;
+          oyoff += option.h;
+        }
+      }
+      //dynamic
+      oyoff = speak.options_y;
+      if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
+      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+      {
+        option = self.cache_unlocked_options_dynamic[i];
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+            clicked_option = option;
+          oyoff += speak.options_h;
+        }
       }
     }
-    //dynamic
-    oyoff = speak.options_y;
-    if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
-    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+    else //inline_option
     {
-      option = self.cache_unlocked_options_dynamic[i];
-      for(var j = 0; j < option.qtext.length; j++)
-      {
-        if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
-          clicked_option = option;
-        oyoff += speak.options_h;
-      }
+      var o;
+      if(self.cache_unlocked_options_dynamic.length) o = self.cache_unlocked_options_dynamic[0];
+      if(self.cache_unlocked_options_static.length)  o = self.cache_unlocked_options_static[0];
+      var x = speak.x+speak.w;
+      var y = speak.y;
+      var w = 40;
+      var h = speak.h*speak.atext.length;
+      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
+        clicked_option = o;
     }
+
     if(clicked_option)
     {
       self.clicked_option = clicked_option;
@@ -2079,18 +2109,28 @@ var personview = function()
     var a = 1;
     switch(self.ui_state)
     {
-      case UI_STATE_NULL:      break;
       case UI_STATE_IN_SPEAK:  a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
       case UI_STATE_IN_OPTION: break;
       case UI_STATE_SELECT:    break;
       case UI_STATE_OUT:       a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
-      case UI_STATE_COUNT:     break;
     }
     ctx.globalAlpha = a;
 
     var b = 10;
     ctx.fillStyle = self.bubble_color;
-    fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
+    if(self.inline_option)
+    {
+      var ow = 0;
+      switch(self.ui_state)
+      {
+        case UI_STATE_IN_OPTION: ow = self.ui_state_p*20; break;
+        case UI_STATE_SELECT:    ow = 20; break;
+        case UI_STATE_OUT:       a = (1-self.ui_state_p)*20; break;
+      }
+      fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10+ow,speak.h*speak.atext.length+b*2+5,b,ctx);
+    }
+    else
+      fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
     ctx.fillStyle = self.text_color;
     ctx.font = option_font;
     oyoff = 0;
@@ -2101,49 +2141,51 @@ var personview = function()
     }
 
 
-    switch(self.ui_state)
+    if(!self.inline_option)
     {
-      case UI_STATE_NULL:      break;
-      case UI_STATE_IN_SPEAK:  a = 0; yoff = 100000; break;
-      case UI_STATE_IN_OPTION: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
-      case UI_STATE_SELECT:    break;
-      case UI_STATE_OUT:       a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
-      case UI_STATE_COUNT:     break;
-    }
-    ctx.globalAlpha = a;
+      switch(self.ui_state)
+      {
+        case UI_STATE_IN_SPEAK:  a = 0; yoff = 100000; break;
+        case UI_STATE_IN_OPTION: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+        case UI_STATE_SELECT:    break;
+        case UI_STATE_OUT:       a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+      }
+      ctx.globalAlpha = a;
 
-    var option;
-    //static
-    for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
-    {
-      oyoff = 0;
-      option = self.cache_unlocked_options_static[i];
+      var option;
+      //static
+      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
+      {
+        oyoff = 0;
+        option = self.cache_unlocked_options_static[i];
+        ctx.fillStyle = self.bubble_color;
+        fillRRect(option.x-b-5,option.y-b+5+yoff,option.w+b*2+10,option.h*option.qtext.length+b*2+5,b,ctx);
+        ctx.fillStyle = self.text_color;
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          ctx.fillText(option.qtext[j],option.x,option.y+yoff+oyoff+option.h);
+          oyoff += option.h;
+        }
+      }
+      //dynamic
+      oyoff = speak.options_y;
+      if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
+      var h = 0;
+      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++) h += self.cache_unlocked_options_dynamic[i].qtext.length*speak.options_h;
       ctx.fillStyle = self.bubble_color;
-      fillRRect(option.x-b-5,option.y-b+5+yoff,option.w+b*2+10,option.h*option.qtext.length+b*2+5,b,ctx);
+      fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
       ctx.fillStyle = self.text_color;
-      for(var j = 0; j < option.qtext.length; j++)
+      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
       {
-        ctx.fillText(option.qtext[j],option.x,option.y+yoff+oyoff+option.h);
-        oyoff += option.h;
+        option = self.cache_unlocked_options_dynamic[i];
+        for(var j = 0; j < option.qtext.length; j++)
+        {
+          ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
+          oyoff += speak.options_h;
+        }
       }
     }
-    //dynamic
-    oyoff = speak.options_y;
-    if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
-    var h = 0;
-    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++) h += self.cache_unlocked_options_dynamic[i].qtext.length*speak.options_h;
-    ctx.fillStyle = self.bubble_color;
-    fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
-    ctx.fillStyle = self.text_color;
-    for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
-    {
-      option = self.cache_unlocked_options_dynamic[i];
-      for(var j = 0; j < option.qtext.length; j++)
-      {
-        ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
-        oyoff += speak.options_h;
-      }
-    }
+
 
     ctx.globalAlpha = 1;
 
