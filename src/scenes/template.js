@@ -626,6 +626,7 @@ var option = function()
   self.key = false;
   self.x = 0;
   self.y = 0;
+  self.target_speak_found; //auto pre-compiled in
 }
 
 var entry = function()

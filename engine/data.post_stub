@@ -18,6 +18,21 @@
           tmp_porthole.target_room_found = target_room;
           if(target_room) target_room.entry_portholes_found.push(tmp_porthole);
         }
+        for(var l = 0; l < tmp_room.persons.length; l++)
+        {
+          tmp_person = tmp_room.persons[l];
+          for(var m = 0; m < tmp_person.speaks.length; m++)
+          {
+            tmp_speak = tmp_person.speaks[m];
+            for(var n = 0; n < tmp_speak.options.length; n++)
+            {
+              tmp_option = tmp_speak.options[n];
+              var id = tmp_person.fqid+"."+tmp_option.target_speak;
+              var target_speak = find(id);
+              tmp_option.target_speak_found = target_speak;
+            }
+          }
+        }
       }
     }
   }
