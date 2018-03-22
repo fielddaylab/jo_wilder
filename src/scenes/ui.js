@@ -1732,6 +1732,7 @@ var personview = function()
 
   self.bubble_color = "#242224";
   self.text_color = white;
+  self.hover_color = blue;
 
   var ENUM = 0;
   UI_STATE_NULL      = ENUM; ENUM++;
@@ -2104,7 +2105,7 @@ var personview = function()
     fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
 
     //tail
-    var y = speak.y-b+5+yoff+speak.h*speak.atext.length+b*2+5-1;
+    var y = speak.y-b+5+yoff+speak.h*speak.atext.length+b*2+5-0.5;
     var x;
     var w = 20;
     var h = 20;
@@ -2144,7 +2145,7 @@ var personview = function()
       fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
 
       //tail
-      var y = speak.options_y-b+5+yoff+h+b*2+5-1;
+      var y = speak.options_y-b+5+yoff+h+b*2+5-0.5;
       var x = clamp(speak.options_x, speak.options_x+speak.options_w-w, my_avatar.x + my_avatar.w/2-w/2);
       var w = 20;
       var h = 20;
@@ -2154,6 +2155,12 @@ var personview = function()
       for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
         option = self.cache_unlocked_options[i];
+        if(option == self.hovered_option)
+        {
+          ctx.fillStyle = self.hover_color;
+          ctx.fillRect(speak.options_x-5,yoff+oyoff+5,speak.options_w+5,speak.options_h*option.qtext.length);
+          ctx.fillStyle = self.text_color;
+        }
         for(var j = 0; j < option.qtext.length; j++)
         {
           ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
