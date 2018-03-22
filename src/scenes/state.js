@@ -9,7 +9,7 @@ var state_t; //0-1
 var state_t_speed = 0.08;
 var state_from;
 var state_to;
-var walk_speed = 4;
+var walk_speed = 6;
 var option_h = 20;
 var option_font = option_h+"px Helvetica";
 

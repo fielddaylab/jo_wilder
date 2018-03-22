@@ -24,3 +24,9 @@ bilinear vs nn
 - create list- vertical
 - implement vertical
 
+- level requirements for notebook
+
+check noteworthiness on key
+implement noteworthy notif
+re-eval locks on key
+

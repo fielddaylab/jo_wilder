@@ -1570,12 +1570,32 @@ var observationview = function()
   self.h = canv.height;
 
   self.observation;
-  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+
+  self.bubble_color = "#242224";
+  self.text_color = white;
+
+  var ENUM = 0;
+  var UI_STATE_NULL           = ENUM; ENUM++;
+  var UI_STATE_IN_OBSERVATION = ENUM; ENUM++;
+  var UI_STATE_SELECT         = ENUM; ENUM++;
+  var UI_STATE_OUT            = ENUM; ENUM++;
+  var UI_STATE_COUNT          = ENUM; ENUM++;
+
+  self.ui_state = UI_STATE_NULL;
+  self.ui_state_t = 0;
+  self.ui_state_t_max = [];
+  self.ui_state_t_max[UI_STATE_IN_OBSERVATION] = 60;
+  self.ui_state_t_max[UI_STATE_SELECT]         = 0;
+  self.ui_state_t_max[UI_STATE_OUT]            = 10;
+  self.ui_state_p = 0;
 
   self.consume_observation = function(observation)
   {
     self.observation = observation;
     self.observation.key = true;
+    self.ui_state = UI_STATE_IN_OBSERVATION;
+    self.ui_state_t = 0;
+    self.ui_state_p = 0;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1674,45 +1694,72 @@ var observationview = function()
 
   self.click = function(evt)
   {
-    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
-    {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
-      state_t = 0;
-      my_navigable.unlock_content();
-    }
+    if(self.ui_state != UI_STATE_SELECT) return;
+    self.ui_state_t = 0;
+    self.ui_state_p = 0;
+    self.ui_state = UI_STATE_OUT;
   }
 
   self.tick = function()
   {
     self.observation.blip_x = screenSpaceXpt(my_camera,canv,self.observation.blip_wx);
     self.observation.blip_y = screenSpaceYpt(my_camera,canv,self.observation.blip_wy);
+
+    self.ui_state_t++;
+    self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
+    switch(self.ui_state)
+    {
+      case UI_STATE_IN_OBSERVATION: if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT; self.ui_state_t = 0; self.ui_state_p = 0; } break;
+      case UI_STATE_SELECT: break;
+      case UI_STATE_OUT:
+        if(self.ui_state_p >= 1)
+        {
+          self.ui_state = UI_STATE_NULL;
+          self.ui_state_t = 0;
+          self.ui_state_p = 0;
+          state_from = cur_state;
+          state_to = STATE_NAV;
+          cur_state = STATE_TRANSITION;
+          state_t = 0;
+          my_navigable.unlock_content();
+        }
+        break;
+    }
   }
 
   self.draw = function(t)
   {
-    var yoff = (1-t)*self.h;
-    var b = 10;
+    if(self.ui_state == UI_STATE_NULL) return;
+
+    var yoff = 0;
     var oyoff = 0;
-    ctx.fillStyle = white;
+
+    var a = 1;
+    switch(self.ui_state)
+    {
+      case UI_STATE_IN_OBSERVATION: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+      case UI_STATE_SELECT:         break;
+      case UI_STATE_OUT:            a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+    }
+    ctx.globalAlpha = a;
+
+    var b = 10;
+    ctx.fillStyle = self.bubble_color;
     fillRRect(self.observation.blip_x-b-5,self.observation.blip_y-b+5+yoff,self.observation.blip_w+b*2+10,self.observation.blip_h*self.observation.text.length+b*2+5,b,ctx);
-    ctx.fillStyle = "#4c4c4c";
+    ctx.fillStyle = self.text_color;
     for(var j = 0; j < self.observation.text.length; j++)
     {
       ctx.fillText(self.observation.text[j],self.observation.blip_x,self.observation.blip_y+yoff+oyoff+self.observation.blip_h);
       oyoff += self.observation.blip_h;
     }
-
-    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    ctx.globalAlpha = 1;
 
     if(DEBUG)
     {
-      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
       ctx.strokeRect(self.observation.blip_x,self.observation.blip_y+yoff,self.observation.blip_w,self.observation.blip_h);
-      ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
+
 }
 
 var personview = function()
@@ -1735,12 +1782,12 @@ var personview = function()
   self.hover_color = blue;
 
   var ENUM = 0;
-  UI_STATE_NULL      = ENUM; ENUM++;
-  UI_STATE_IN_SPEAK  = ENUM; ENUM++;
-  UI_STATE_IN_OPTION = ENUM; ENUM++;
-  UI_STATE_SELECT    = ENUM; ENUM++;
-  UI_STATE_OUT       = ENUM; ENUM++;
-  UI_STATE_COUNT     = ENUM; ENUM++;
+  var UI_STATE_NULL      = ENUM; ENUM++;
+  var UI_STATE_IN_SPEAK  = ENUM; ENUM++;
+  var UI_STATE_IN_OPTION = ENUM; ENUM++;
+  var UI_STATE_SELECT    = ENUM; ENUM++;
+  var UI_STATE_OUT       = ENUM; ENUM++;
+  var UI_STATE_COUNT     = ENUM; ENUM++;
 
   self.inline_option = 0;
   self.hovered_option = 0;
@@ -1990,7 +2037,7 @@ var personview = function()
 
   self.click = function(evt)
   {
-    if(self.ui_state != UI_STATE_SELECT) return;
+    if(self.ui_state != UI_STATE_SELECT && self.ui_state != UI_STATE_IN_OPTION) return;
 
     var speak = self.cur_speak;
     var option;
