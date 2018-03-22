@@ -538,7 +538,7 @@ if [ $NOGEN == "0" ]; then
                 echo "tmp_option.fqid = \"$level_id.$map_id.$scene_id.$room_id.$person_id.$speak_id.$option_id\";" >> $OUT
                 echo "{" >> $OUT
                 cat $option >> $OUT
-                echo "if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);" >> $OUT
+                echo "if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);" >> $OUT
 
                 echo "}" >> $OUT
                 echo "tmp_speak.options.push(tmp_option);" >> $OUT

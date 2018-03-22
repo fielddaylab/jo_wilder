@@ -1215,7 +1215,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1440,7 +1440,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1456,7 +1456,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1495,7 +1495,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1671,7 +1671,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1710,7 +1710,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -1749,7 +1749,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -1765,7 +1765,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2255,7 +2255,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -2272,7 +2272,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -2289,7 +2289,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -2306,7 +2306,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2345,7 +2345,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2384,7 +2384,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2423,7 +2423,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2768,7 +2768,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -2784,7 +2784,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -2823,7 +2823,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -3329,7 +3329,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
@@ -3345,7 +3345,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
@@ -3384,7 +3384,7 @@ tmp_option.locks = [
 tmp_option.notlocks = [
 ];
 
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_option.static ? tmp_option.w : tmp_speak.options_w);
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
 }
 tmp_speak.options.push(tmp_option);
 }
