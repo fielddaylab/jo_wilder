@@ -1728,8 +1728,7 @@ var personview = function()
   self.cur_speak = 0;
   self.cur_speak_i = 0;
   self.cache_unlocked_speaks = [];
-  self.cache_unlocked_options_static = [];
-  self.cache_unlocked_options_dynamic = [];
+  self.cache_unlocked_options = [];
 
   self.bubble_color = "#242224";
   self.text_color = white;
@@ -1743,6 +1742,7 @@ var personview = function()
   UI_STATE_COUNT     = ENUM; ENUM++;
 
   self.inline_option = 0;
+  self.hovered_option = 0;
   self.clicked_option = 0;
   self.ui_state = UI_STATE_NULL;
   self.ui_state_t = 0;
@@ -1783,41 +1783,35 @@ var personview = function()
   }
   self.unlock_options = function()
   {
-    self.cache_unlocked_options_static = [];
-    self.cache_unlocked_options_dynamic = [];
+    self.cache_unlocked_options = [];
     for(var i = 0; i < self.cur_speak.options.length; i++)
     {
       if(!querylocked(self.cur_speak.options[i]))
-      {
-        if(self.cur_speak.options[i].static) self.cache_unlocked_options_static.push( self.cur_speak.options[i]);
-        else                                 self.cache_unlocked_options_dynamic.push(self.cur_speak.options[i]);
-      }
+        self.cache_unlocked_options.push(self.cur_speak.options[i]);
     }
-    //bubble sort dynamic on index
+    //bubble sort on index
     var sorted = false;
     while(!sorted)
     {
       sorted = true;
-      for(var i = 0; i < self.cache_unlocked_options_dynamic.length-1; i++)
+      for(var i = 0; i < self.cache_unlocked_options.length-1; i++)
       {
-        var option = self.cache_unlocked_options_dynamic[i];
-        var noption = self.cache_unlocked_options_dynamic[i+1];
+        var option = self.cache_unlocked_options[i];
+        var noption = self.cache_unlocked_options[i+1];
         if(option.index > noption.index)
         {
-          self.cache_unlocked_options_dynamic[i] = noption;
-          self.cache_unlocked_options_dynamic[i+1] = option;
+          self.cache_unlocked_options[i] = noption;
+          self.cache_unlocked_options[i+1] = option;
           sorted = false;
         }
       }
     }
 
     self.inline_option = 0;
-    if(self.cache_unlocked_options_dynamic.length + self.cache_unlocked_options_static.length == 1)
+    if(self.cache_unlocked_options.length == 1)
     {
-      var o;
-      if(self.cache_unlocked_options_dynamic.length > 0) o = self.cache_unlocked_options_dynamic[0];
-      if(self.cache_unlocked_options_static.length  > 0) o = self.cache_unlocked_options_static[0];
-      if(o.target_speak_found.speaker == self.cur_speak.speaker && o.raw_qtext == ">") self.inline_option = 1;
+      var option = self.cache_unlocked_options[0];
+      if(option.target_speak_found.speaker == self.cur_speak.speaker && option.raw_qtext == ">") self.inline_option = 1;
     }
   }
 
@@ -1951,45 +1945,46 @@ var personview = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
+
     var speak = self.cur_speak;
+    var option;
+    self.hovered_option = 0;
+
     if(!self.inline_option)
     {
       var oyoff;
-      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
+      oyoff = speak.options_y+5;
+      for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
-        oyoff = 0;
-        option = self.cache_unlocked_options_static[i];
-        for(var j = 0; j < option.qtext.length; j++)
-        {
-          if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
-            my_cursor.mode = CURSOR_OPTION;
-          oyoff += option.h;
-        }
-      }
-      oyoff = speak.options_y;
-      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
-      {
-        option = self.cache_unlocked_options_dynamic[i];
+        option = self.cache_unlocked_options[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
           if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+          {
+            self.hovered_option = option;
             my_cursor.mode = CURSOR_OPTION;
+          }
           oyoff += speak.options_h;
         }
       }
     }
     else //inline_option
     {
-      var x = speak.x+speak.w;
-      var y = speak.y;
-      var w = 40;
+      option = self.cache_unlocked_options[0];
+      var x = speak.x;
+      var y = speak.y+5;
+      var w = speak.w;
       var h = speak.h*speak.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
+      {
         my_cursor.mode = CURSOR_OPTION;
+        self.hovered_option = option;
+      }
     }
   }
   self.unhover = function(evt)
   {
+    self.hovered_option = 0;
   }
 
   self.click = function(evt)
@@ -1998,54 +1993,39 @@ var personview = function()
 
     var speak = self.cur_speak;
     var option;
-    var clicked_option;
+    self.clicked_option = 0;
 
     if(!self.inline_option)
     {
       var oyoff;
-      //static
-      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
-      {
-        oyoff = 0;
-        option = self.cache_unlocked_options_static[i];
-        for(var j = 0; j < option.qtext.length; j++)
-        {
-          if(ptWithin(option.x,option.y+oyoff,option.w,option.h,evt.doX,evt.doY))
-            clicked_option = option;
-          oyoff += option.h;
-        }
-      }
-      //dynamic
-      oyoff = speak.options_y;
+
+      oyoff = speak.options_y+5;
       if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
-      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+      for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
-        option = self.cache_unlocked_options_dynamic[i];
+        option = self.cache_unlocked_options[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
           if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
-            clicked_option = option;
+            self.clicked_option = option;
           oyoff += speak.options_h;
         }
       }
     }
     else //inline_option
     {
-      var o;
-      if(self.cache_unlocked_options_dynamic.length) o = self.cache_unlocked_options_dynamic[0];
-      if(self.cache_unlocked_options_static.length)  o = self.cache_unlocked_options_static[0];
-      var x = speak.x+speak.w;
-      var y = speak.y;
-      var w = 40;
+      option = self.cache_unlocked_options[0];
+      var x = speak.x;
+      var y = speak.y+5;
+      var w = speak.w;
       var h = speak.h*speak.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
-        clicked_option = o;
+        self.clicked_option = option;
     }
 
-    if(clicked_option)
+    if(self.clicked_option)
     {
-      self.clicked_option = clicked_option;
-      option = clicked_option;
+      option = self.clicked_option;
       option.key = true;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -2065,8 +2045,11 @@ var personview = function()
     self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
     switch(self.ui_state)
     {
-      case UI_STATE_IN_SPEAK:  if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_IN_OPTION; self.ui_state_t = 0; self.ui_state_p = 0; } break;
-      case UI_STATE_IN_OPTION: if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT;    self.ui_state_t = 0; self.ui_state_p = 0; } break;
+      case UI_STATE_IN_SPEAK:
+        if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_IN_OPTION; self.ui_state_t = 0; self.ui_state_p = 0; } break;
+      case UI_STATE_IN_OPTION:
+        if(self.inline_option) self.ui_state_p = 1;
+        if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT;    self.ui_state_t = 0; self.ui_state_p = 0; } break;
       case UI_STATE_SELECT:    break;
       case UI_STATE_OUT:
         if(self.ui_state_p >= 1)
@@ -2118,22 +2101,10 @@ var personview = function()
 
     var b = 10;
     ctx.fillStyle = self.bubble_color;
-    if(self.inline_option)
-    {
-      var ow = 0;
-      switch(self.ui_state)
-      {
-        case UI_STATE_IN_OPTION: ow = self.ui_state_p*20; break;
-        case UI_STATE_SELECT:    ow = 20; break;
-        case UI_STATE_OUT:       a = (1-self.ui_state_p)*20; break;
-      }
-      fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10+ow,speak.h*speak.atext.length+b*2+5,b,ctx);
-    }
-    else
-      fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
+    fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
 
     //tail
-    var y = speak.y-b+5+yoff+speak.h*speak.atext.length+b*2+5;
+    var y = speak.y-b+5+yoff+speak.h*speak.atext.length+b*2+5-1;
     var x;
     var w = 20;
     var h = 20;
@@ -2152,7 +2123,6 @@ var personview = function()
       oyoff += speak.h;
     }
 
-
     if(!self.inline_option)
     {
       switch(self.ui_state)
@@ -2165,48 +2135,25 @@ var personview = function()
       ctx.globalAlpha = a;
 
       var option;
-      //static
-      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
-      {
-        oyoff = 0;
-        option = self.cache_unlocked_options_static[i];
-        ctx.fillStyle = self.bubble_color;
-        fillRRect(option.x-b-5,option.y-b+5+yoff,option.w+b*2+10,option.h*option.qtext.length+b*2+5,b,ctx);
 
-        //tail
-        var y = option.y-b+5+yoff+option.h*option.qtext.length+b*2+5;
-        var x = clamp(option.x, option.x+option.w-w, my_avatar.x + my_avatar.w/2-w/2);
-        var w = 20;
-        var h = 20;
-        ctx.fillRect(x,y,w,h);
-
-        ctx.fillStyle = self.text_color;
-        for(var j = 0; j < option.qtext.length; j++)
-        {
-          ctx.fillText(option.qtext[j],option.x,option.y+yoff+oyoff+option.h);
-          oyoff += option.h;
-        }
-      }
-
-      //dynamic
       oyoff = speak.options_y;
       if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
       var h = 0;
-      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++) h += self.cache_unlocked_options_dynamic[i].qtext.length*speak.options_h;
+      for(var i = 0; i < self.cache_unlocked_options.length; i++) h += self.cache_unlocked_options[i].qtext.length*speak.options_h;
       ctx.fillStyle = self.bubble_color;
       fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
 
       //tail
-      var y = speak.options_y-b+5+yoff+h+b*2+5;
+      var y = speak.options_y-b+5+yoff+h+b*2+5-1;
       var x = clamp(speak.options_x, speak.options_x+speak.options_w-w, my_avatar.x + my_avatar.w/2-w/2);
       var w = 20;
       var h = 20;
       ctx.fillRect(x,y,w,h);
 
       ctx.fillStyle = self.text_color;
-      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+      for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
-        option = self.cache_unlocked_options_dynamic[i];
+        option = self.cache_unlocked_options[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
           ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
@@ -2214,7 +2161,6 @@ var personview = function()
         }
       }
     }
-
 
     ctx.globalAlpha = 1;
 
@@ -2229,23 +2175,12 @@ var personview = function()
         ctx.strokeRect(speak.x,speak.y+yoff,speak.w,speak.h);
         oyoff += speak.h;
       }
-      //static
-      for(var i = 0; i < self.cache_unlocked_options_static.length; i++)
-      {
-        oyoff = 0;
-        option = self.cache_unlocked_options_static[i];
-        for(var j = 0; j < option.qtext.length; j++)
-        {
-          ctx.strokeRect(option.x,option.y+yoff+oyoff,option.w,option.h);
-          oyoff += option.h;
-        }
-      }
-      //dynamic
+
       oyoff = speak.options_y;
       if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
-      for(var i = 0; i < self.cache_unlocked_options_dynamic.length; i++)
+      for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
-        option = self.cache_unlocked_options_dynamic[i];
+        option = self.cache_unlocked_options[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
           ctx.strokeRect(speak.options_x,yoff+oyoff,speak.options_w,speak.options_h);

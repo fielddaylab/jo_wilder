@@ -1,8 +1,3 @@
-tmp_option.wx = 100;
-tmp_option.wy = 100;
-tmp_option.w = 100;
-tmp_option.h = 30; //h of single line
-tmp_option.static = false; //static = use xyw
 tmp_option.index = 0;
 tmp_option.raw_qtext = "null";
 tmp_option.target_speak = "null";

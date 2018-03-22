@@ -608,11 +608,6 @@ var option = function()
   var self = this;
   self.id = "null";
   self.fqid = "null"
-  self.wx = 0;
-  self.wy = 0;
-  self.w = 0;
-  self.h = 0;
-  self.static = false;
   self.index = 0;
   self.raw_qtext = "null";
   self.qtext_hard_coded = false;
@@ -624,6 +619,8 @@ var option = function()
   //
   self.locked = true;
   self.key = false;
+  self.w = 0;
+  self.h = 0;
   self.x = 0;
   self.y = 0;
   self.target_speak_found; //auto pre-compiled in
@@ -926,11 +923,6 @@ var print_speak_meta = function(l)
 var print_option_meta = function(l)
 {
   var str = "SAVE option "+l.fqid+"\n"+
-  "tmp_option.wx = "+l.wx+";\n"+
-  "tmp_option.wy = "+l.wy+";\n"+
-  "tmp_option.w = "+l.w+";\n"+
-  "tmp_option.h = "+l.h+";\n"+
-  "tmp_option.static = "+l.static+";\n"+
   "tmp_option.index = "+l.index+";\n"+
   "tmp_option.raw_qtext = \""+l.raw_qtext+"\";\n"+
   "tmp_option.target_speak = \""+l.target_speak+"\";\n"+

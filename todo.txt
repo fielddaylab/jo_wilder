@@ -19,3 +19,8 @@ conversation animcycles target convo owner
 flip imgs if -w or -h
 bilinear vs nn
 
+- finish ui
+- implement content- horizontal
+- create list- vertical
+- implement vertical
+
