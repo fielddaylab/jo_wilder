@@ -28,6 +28,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
+tmp_level.intro_room_id = "tunic.madison.historicalsociety.closet";
 tmp_level.toolbar_animcycle_id = "toolbar";
 tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";

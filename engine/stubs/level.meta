@@ -1,4 +1,5 @@
 tmp_level.primary = false;
+tmp_level.intro_room_id = "null";
 tmp_level.toolbar_animcycle_id = "null";
 tmp_level.icon_map_animcycle_id = "null";
 tmp_level.icon_notebook_animcycle_id = "null";
@@ -6,8 +7,8 @@ tmp_level.notebook_animcycle_id = "null";
 tmp_level.avatar_walk_animcycle_id = "null";
 tmp_level.avatar_idle_animcycle_id = "null";
 tmp_level.avatar_act_animcycle_id = "null";
-tmp_level.avatar_ww = 10;
-tmp_level.avatar_wh = 10;
+tmp_level.avatar_ww = 1;
+tmp_level.avatar_wh = 1;
 tmp_level.person_hover_animcycle_id = "null";
 tmp_level.object_hover_animcycle_id = "null";
 tmp_level.observation_hover_animcycle_id = "null";
@@ -16,8 +17,8 @@ tmp_level.zone_hover_animcycle_id = "null";
 tmp_level.option_hover_animcycle_id = "null";
 tmp_level.map_hover_animcycle_id = "null";
 tmp_level.ripple_click_animcycle_id = "null";
-tmp_level.cursor_w = 10;
-tmp_level.cursor_h = 10;
+tmp_level.cursor_w = 40;
+tmp_level.cursor_h = 40;
 tmp_level.noteworthy = false;
 tmp_level.locks = [
 ];

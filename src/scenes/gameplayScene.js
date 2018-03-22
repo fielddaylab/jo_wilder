@@ -20,8 +20,16 @@ var GamePlayScene = function(game, stage)
     init_levels();
     cur_level = levels[0];         for(var i = 1; i < levels.length;          i++) if(levels[i].primary)          cur_level = levels[i];
     cur_map = cur_level.map;
-    cur_scene = cur_map.scenes[0]; for(var i = 1; i < cur_map.scenes.length;  i++) if(cur_map.scenes[i].primary)  cur_scene = cur_map.scenes[i];
-    cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room  = cur_scene.rooms[i];
+    cur_room = find(cur_level.intro_room_id);
+    if(cur_room)
+    {
+      cur_scene = find(cur_room.fqid.substring(0,cur_room.fqid.indexOf(cur_room.id)));
+    }
+    else
+    {
+      cur_scene = cur_map.scenes[0]; for(var i = 1; i < cur_map.scenes.length;  i++) if(cur_map.scenes[i].primary)  cur_scene = cur_map.scenes[i];
+      cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room  = cur_scene.rooms[i];
+    }
 
     clicker = new Clicker({source:canvas});
     dragger = new Dragger({source:canvas});
