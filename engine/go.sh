@@ -1,4 +1,4 @@
 #!/bin/bash
 
-./gen_data.sh autofix nostub list
+./gen_data.sh autofix list
 

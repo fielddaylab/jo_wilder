@@ -4,10 +4,10 @@ var levels = [];
 var tmp_animcycle;
 var tmp_audio;
 var tmp_entry;
-var tmp_cutscene;
 var tmp_level;
 var tmp_scene;
 var tmp_room;
+var tmp_cutscene;
 var tmp_person;
 var tmp_speak;
 var tmp_option;
@@ -964,130 +964,6 @@ tmp_entry.notlocks = [
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 }
 tmp_level.entrys.push(tmp_entry);
-tmp_cutscene = new cutscene();
-tmp_cutscene.id = "intro";
-tmp_cutscene.fqid = "tunic.intro";
-{
-tmp_cutscene.noteworthy = false;
-tmp_cutscene.locks = [
-];
-tmp_cutscene.notlocks = [
-];
-
-tmp_cutscene.commands = [];
-
-/*
-Possible Commands:
-CUTSCENE_COMMAND_CREATE
-CUTSCENE_COMMAND_DESTROY
-CUTSCENE_COMMAND_ANIMATE
-CUTSCENE_COMMAND_SPEAK
-CUTSCENE_COMMAND_AUDIO
-CUTSCENE_COMMAND_TWEEN
-CUTSCENE_COMMAND_WAIT
-CUTSCENE_COMMAND_END
-CUTSCENE_COMMAND_IGNORE
-
-Possible Entity Types:
-CUTSCENE_ENTITY_CAM
-CUTSCENE_ENTITY_AVATAR
-CUTSCENE_ENTITY_SCENE
-CUTSCENE_ENTITY_CUTSCENE
-*/
-
-/*
-//skeleton command addition
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = COMMAND_NULL;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.t = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.end_t = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.animcycle_offset_t = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.audio_id = "null";
-tmp_cutscene_command.raw_text = "null";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
-tmp_cutscene.commands.push(tmp_cutscene_command);
-*/
-
-//setup cam
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
-tmp_cutscene_command.wx = 50;
-tmp_cutscene_command.wy = 50;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
-tmp_cutscene_command.wx = 20;
-tmp_cutscene_command.wy = 20;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Only two days left...";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
-tmp_cutscene_command.wx = 20;
-tmp_cutscene_command.wy = 20;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Unless I can convince the boss to keep me around.";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
-tmp_cutscene_command.wx = 20;
-tmp_cutscene_command.wy = 20;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "How can I tell Jo? I don't want her to worry...";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//move to jo
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
-tmp_cutscene_command.t = 2;
-tmp_cutscene_command.end_t = 5;
-tmp_cutscene_command.wx = 100;
-tmp_cutscene_command.wy = 50;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//Leave this at the end- remember to set tmp_cutscene_command.t!
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-}
-tmp_level.cutscenes.push(tmp_cutscene);
 tmp_scene = new scene();
 tmp_scene.id = "capitol";
 tmp_scene.fqid = "tunic.capitol";
@@ -1676,6 +1552,130 @@ tmp_room.noteworthy = false;
 //SUGGEST_H:1.2
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
+tmp_cutscene = new cutscene();
+tmp_cutscene.id = "intro";
+tmp_cutscene.fqid = "tunic.historicalsociety.closet.intro";
+{
+tmp_cutscene.noteworthy = false;
+tmp_cutscene.locks = [
+];
+tmp_cutscene.notlocks = [
+];
+
+tmp_cutscene.commands = [];
+
+/*
+Possible Commands:
+CUTSCENE_COMMAND_CREATE
+CUTSCENE_COMMAND_DESTROY
+CUTSCENE_COMMAND_ANIMATE
+CUTSCENE_COMMAND_SPEAK
+CUTSCENE_COMMAND_AUDIO
+CUTSCENE_COMMAND_TWEEN
+CUTSCENE_COMMAND_WAIT
+CUTSCENE_COMMAND_END
+CUTSCENE_COMMAND_IGNORE
+
+Possible Entity Types:
+CUTSCENE_ENTITY_CAM
+CUTSCENE_ENTITY_AVATAR
+CUTSCENE_ENTITY_SCENE
+CUTSCENE_ENTITY_CUTSCENE
+*/
+
+/*
+//skeleton command addition
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = COMMAND_NULL;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
+tmp_cutscene_command.t = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.end_t = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.animcycle_id = "null";
+tmp_cutscene_command.animcycle_offset_t = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.audio_id = "null";
+tmp_cutscene_command.raw_text = "null";
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene.commands.push(tmp_cutscene_command);
+*/
+
+//setup cam
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
+tmp_cutscene_command.wx = 50;
+tmp_cutscene_command.wy = 50;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//gramps talk
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 1;
+tmp_cutscene_command.wx = 20;
+tmp_cutscene_command.wy = 20;
+tmp_cutscene_command.w = 100;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Only two days left...";
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//gramps talk
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 1;
+tmp_cutscene_command.wx = 20;
+tmp_cutscene_command.wy = 20;
+tmp_cutscene_command.w = 100;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Unless I can convince the boss to keep me around.";
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//gramps talk
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 1;
+tmp_cutscene_command.wx = 20;
+tmp_cutscene_command.wy = 20;
+tmp_cutscene_command.w = 100;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "How can I tell Jo? I don't want her to worry...";
+tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//move to jo
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
+tmp_cutscene_command.t = 2;
+tmp_cutscene_command.end_t = 5;
+tmp_cutscene_command.wx = 100;
+tmp_cutscene_command.wy = 50;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//Leave this at the end- remember to set tmp_cutscene_command.t!
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+}
+tmp_room.cutscenes.push(tmp_cutscene);
 tmp_person = new person();
 tmp_person.id = "gramps";
 tmp_person.fqid = "tunic.historicalsociety.closet.gramps";

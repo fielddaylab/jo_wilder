@@ -7,7 +7,6 @@ OUT=data.js
 FINAL=../src/scenes
 TTY=`tty`
 AUTOFIX="0"
-NOSTUB="0"
 LIST="0"
 NOGEN="0"
 GENCMD=""
@@ -77,17 +76,6 @@ forcestub() #type dir
   fi
 }
 
-trystub() #type dir
-{
-  echo "Warning: No ${1}s found in $2" >>$TTY
-  if querystub; then
-    stubfull $1 $2 `getname $1`
-    return 0
-  else
-    return 1
-  fi
-}
-
 fixifdne() #type dir name
 {
   #dir
@@ -110,15 +98,6 @@ queryfix()
   else return 0; #default success
   fi
 }
-querystub()
-{
-  if [ $NOSTUB == "1" ]; then echo "(nostub)" > $TTY; return 1; fi #no
-  echo -n "Stub? y/(n):" > $TTY
-  read x
-  if [ "@"$x == "@y" ]; then return 0; #0 = success
-  else return 1; #default fail
-  fi
-}
 getname()
 {
   echo -n "Name ($@):" > $TTY
@@ -130,7 +109,6 @@ getname()
 
 while [ $# -gt 0 ]; do
   if [ "@"$1 == "@autofix" ]; then AUTOFIX="1"; fi
-  if [ "@"$1 == "@nostub" ];  then NOSTUB="1";  fi
   if [ "@"$1 == "@list" ];    then LIST="1";    fi
   if [ "@"$1 == "@nogen" ];   then NOGEN="1";   fi
   if [ "@"$1 == "@search" ]; then shift; SEARCHTERM=$1; if [ "@"$SEARCHTERM == "@" ]; then echo "usage: $0 list search searchterm"; fi fi
@@ -139,9 +117,9 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@genanimcycle" ];   then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genanimcycle level.animcycle";                    fi fi
   if [ "@"$1 == "@genaudio" ];       then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genaudio level.audio";                            fi fi
   if [ "@"$1 == "@genentry" ];       then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genentry level.entry";                            fi fi
-  if [ "@"$1 == "@gencutscene" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 gencutscene level.cutscene";                      fi fi
   if [ "@"$1 == "@genscene" ];       then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genscene level.scene";                            fi fi
   if [ "@"$1 == "@genroom" ];        then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genroom level.scene.room";                        fi fi
+  if [ "@"$1 == "@gencutscene" ];    then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 gencutscene level.scene.room.cutscene";           fi fi
   if [ "@"$1 == "@genperson" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genperson level.scene.room.person";               fi fi
   if [ "@"$1 == "@genspeak" ];       then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genspeak level.scene.room.person.speak";          fi fi
   if [ "@"$1 == "@genoption" ];      then GENCMD=$1; shift; GENFQID=$1; if [ "@"$GENFQID == "@" ]; then echo "usage: $0 genoption level.scene.room.person.speak.option";  fi fi
@@ -156,9 +134,9 @@ while [ $# -gt 0 ]; do
   if [ "@"$1 == "@rmanimcycle" ];   then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmanimcycle level.animcycle";                    fi fi
   if [ "@"$1 == "@rmaudio" ];       then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmaudio level.audio";                            fi fi
   if [ "@"$1 == "@rmentry" ];       then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmentry level.entry";                            fi fi
-  if [ "@"$1 == "@rmcutscene" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmcutscene level.cutscene";                      fi fi
   if [ "@"$1 == "@rmscene" ];       then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmscene level.scene";                            fi fi
   if [ "@"$1 == "@rmroom" ];        then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmroom level.scene.room";                        fi fi
+  if [ "@"$1 == "@rmcutscene" ];    then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmcutscene level.scene.room.cutscene";           fi fi
   if [ "@"$1 == "@rmperson" ];      then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmperson level.scene.room.person";               fi fi
   if [ "@"$1 == "@rmspeak" ];       then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmspeak level.scene.room.person.speak";          fi fi
   if [ "@"$1 == "@rmoption" ];      then RMCMD=$1; shift; RMFQID=$1; if [ "@"$RMFQID == "@" ]; then echo "usage: $0 rmoption level.scene.room.person.speak.option";  fi fi
@@ -182,12 +160,12 @@ elif [ "@"$GENCMD == "@genaudio" ]; then
 GENAUDIO=`      echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 elif [ "@"$GENCMD == "@genentry" ]; then
 GENENTRY=`      echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-elif [ "@"$GENCMD == "@gencutscene" ]; then
-GENCUTSCENE=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 else
 GENSCENE=`      echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENROOM=`       echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
-if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
+if [ "@"$GENCMD == "@gencutscene" ]; then
+GENCUTSCENE=`   echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
+elif [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
 GENPERSON=`     echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENSPEAK=`      echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
 GENOPTION=`     echo $GENBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $GENBREAKDOWN | grep '\.'` != "@" ]; then GENBREAKDOWN=`echo $GENBREAKDOWN | sed 's/^[^.]*\.//g'`; else GENBREAKDOWN=""; fi
@@ -213,13 +191,15 @@ GENDIR=$ENGINE_DD/levels; if [ "@"$GENLEVEL != "@" ]; then stubfullifdne level $
     GENDIR=$GENDIR/$GENLEVEL/audios; if [ "@"$GENAUDIO != "@" ]; then stubfullifdne audio $GENDIR $GENAUDIO; fi #audio
   elif [ "@"$GENCMD == "@genentry" ]; then
     GENDIR=$GENDIR/$GENLEVEL/entrys; if [ "@"$GENENTRY != "@" ]; then stubfullifdne entry $GENDIR $GENENTRY; fi #entry
-  elif [ "@"$GENCMD == "@gencutscene" ]; then
-    GENDIR=$GENDIR/$GENLEVEL/cutscenes; if [ "@"$GENCUTSCENE != "@" ]; then stubfullifdne cutscene $GENDIR $GENCUTSCENE; fi #cutscene
   else
     GENDIR=$GENDIR/$GENLEVEL/scenes; if [ "@"$GENSCENE != "@" ]; then stubfullifdne scene $GENDIR $GENSCENE;
       GENDIR=$GENDIR/$GENSCENE/rooms; if [ "@"$GENROOM != "@" ]; then stubfullifdne room $GENDIR $GENROOM;
 
-        if [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
+        if [ "@"$GENCMD == "@gencutscene" ]; then
+
+          GENDIR=$GENDIR/$GENROOM/cutscenes; if [ "@"$GENCUTSCENE != "@" ]; then stubfullifdne cutscene $GENDIR $GENCUTSCENE; fi #cutscene
+
+        elif [ "@"$GENCMD == "@genperson" ] || [ "@"$GENCMD == "@genspeak" ] || [ "@"$GENCMD == "@genoption" ]; then
 
           GENDIR=$GENDIR/$GENROOM/persons; if [ "@"$GENPERSON != "@" ]; then stubfullifdne person $GENDIR $GENPERSON;
             GENDIR=$GENDIR/$GENPERSON/speaks; if [ "@"$GENSPEAK != "@" ]; then stubfullifdne speak $GENDIR $GENSPEAK;
@@ -268,12 +248,12 @@ elif [ "@"$RMCMD == "@rmaudio" ]; then
 RMAUDIO=`      echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 elif [ "@"$RMCMD == "@rmentry" ]; then
 RMENTRY=`      echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-elif [ "@"$RMCMD == "@rmcutscene" ]; then
-RMCUTSCENE=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 else
 RMSCENE=`      echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMROOM=`       echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
-if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmspeak" ] || [ "@"$RMCMD == "@rmoption" ]; then
+if [ "@"$RMCMD == "@rmcutscene" ]; then
+RMCUTSCENE=`   echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
+elif [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmspeak" ] || [ "@"$RMCMD == "@rmoption" ]; then
 RMPERSON=`     echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMSPEAK=`      echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
 RMOPTION=`     echo $RMBREAKDOWN | sed 's/\..*//g'`; if [ "@"`echo $RMBREAKDOWN | grep '\.'` != "@" ]; then RMBREAKDOWN=`echo $RMBREAKDOWN | sed 's/^[^.]*\.//g'`; else RMBREAKDOWN=""; fi
@@ -300,12 +280,12 @@ elif [ "@"$RMCMD == "@rmaudio" ]; then
 RMDIR=$RMDIR/$RMLEVEL/audios;if [ "@"$RMCMD == "@rmaudio" ] && [ "@"$RMAUDIO != "@" ] && [ -d $RMDIR/$RMAUDIO ]; then rmfull audio  $RMDIR $RMAUDIO; fi
 elif [ "@"$RMCMD == "@rmentry" ]; then
 RMDIR=$RMDIR/$RMLEVEL/entrys;   if [ "@"$RMCMD == "@rmentry" ]    && [ "@"$RMENTRY != "@" ]    && [ -d $RMDIR/$RMENTRY ];    then rmfull entry     $RMDIR $RMENTRY;    fi
-elif [ "@"$RMCMD == "@rmcutscene" ]; then
-RMDIR=$RMDIR/$RMLEVEL/cutscenes;if [ "@"$RMCMD == "@rmcutscene" ] && [ "@"$RMCUTSCENE != "@" ] && [ -d $RMDIR/$RMCUTSCENE ]; then rmfull cutscene  $RMDIR $RMCUTSCENE; fi
 else
 RMDIR=$RMDIR/$RMLEVEL/scenes;   if [ "@"$RMCMD == "@rmscene" ]    && [ "@"$RMSCENE != "@" ]    && [ -d $RMDIR/$RMSCENE ];    then rmfull scene     $RMDIR $RMSCENE;    fi
 RMDIR=$RMDIR/$RMSCENE/rooms;    if [ "@"$RMCMD == "@rmroom" ]     && [ "@"$RMROOM != "@" ]     && [ -d $RMDIR/$RMROOM ];     then rmfull room      $RMDIR $RMROOM;     fi
-if [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmspeak" ] || [ "@"$RMCMD == "@rmoption" ]; then
+if [ "@"$RMCMD == "@rmcutscene" ]; then
+RMDIR=$RMDIR/$RMROOM/cutscenes;if [ "@"$RMCMD == "@rmcutscene" ] && [ "@"$RMCUTSCENE != "@" ] && [ -d $RMDIR/$RMCUTSCENE ]; then rmfull cutscene  $RMDIR $RMCUTSCENE;  fi
+elif [ "@"$RMCMD == "@rmperson" ] || [ "@"$RMCMD == "@rmspeak" ] || [ "@"$RMCMD == "@rmoption" ]; then
 RMDIR=$RMDIR/$RMROOM/persons;   if [ "@"$RMCMD == "@rmperson" ]   && [ "@"$RMPERSON != "@" ]   && [ -d $RMDIR/$RMPERSON ];   then rmfull person    $RMDIR $RMPERSON;   fi
 RMDIR=$RMDIR/$RMPERSON/speaks;  if [ "@"$RMCMD == "@rmspeak" ]    && [ "@"$RMSPEAK != "@" ]    && [ -d $RMDIR/$RMSPEAK ];    then rmfull speak     $RMDIR $RMSPEAK;    fi
 RMDIR=$RMDIR/$RMSPEAK/option;   if [ "@"$RMCMD == "@rmoption" ]   && [ "@"$RMOPTION != "@" ]   && [ -d $RMDIR/$RMOPTION ];   then rmfull option    $RMDIR $RMOPTION;   fi
@@ -350,7 +330,7 @@ if [ $NOGEN == "0" ]; then
     animcycles_dir=$level_dir/animcycles
     for animcycle in $animcycles_dir/*.meta; do #animcycles
 
-      if [ ! -f $animcycle ]; then if forcestub animcycle $animcycles_dir; then animcycle=$animcycles_dir/*.meta; else exit; fi fi
+      if [ ! -f $animcycle ]; then continue; fi
       animcycle_id=`id $animcycle`
       animcycle_dir=`dir $animcycle`
       fixifdne animcycle $animcycles_dir $animcycle_id
@@ -400,7 +380,7 @@ if [ $NOGEN == "0" ]; then
     entrys_dir=$level_dir/entrys
     for entry in $entrys_dir/*.meta; do #entrys
 
-      if [ ! -f $entry ]; then if forcestub entry $entrys_dir; then entry=$entrys_dir/*.meta; else exit; fi fi
+      if [ ! -f $entry ]; then continue; fi
       entry_id=`id $entry`
       entry_dir=`dir $entry`
       fixifdne entry $entrys_dir $entry_id
@@ -413,26 +393,6 @@ if [ $NOGEN == "0" ]; then
       echo "tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);" >> $OUT
       echo "}" >> $OUT
       echo "tmp_level.entrys.push(tmp_entry);" >> $OUT
-
-    done
-
-    if ensuredelimeter cutscene $level_dir; then :; else continue; fi
-    cutscenes_dir=$level_dir/cutscenes
-    for cutscene in $cutscenes_dir/*.meta; do #cutscenes
-
-      if [ ! -f $cutscene ]; then if forcestub cutscene $cutscenes_dir; then cutscene=$cutscenes_dir/*.meta; else exit; fi fi
-      cutscene_id=`id $cutscene`
-      cutscene_dir=`dir $cutscene`
-      fixifdne cutscene $cutscenes_dir $cutscene_id
-      echo - Note: Genning $cutscene_id #debug
-      echo "tmp_cutscene = new cutscene();" >> $OUT
-      echo "tmp_cutscene.id = \"$cutscene_id\";" >> $OUT
-      echo "tmp_cutscene.fqid = \"$level_id.$cutscene_id\";" >> $OUT
-      echo "{" >> $OUT
-      cat $cutscene >> $OUT
-
-      echo "}" >> $OUT
-      echo "tmp_level.cutscenes.push(tmp_cutscene);" >> $OUT
 
     done
 
@@ -468,11 +428,31 @@ if [ $NOGEN == "0" ]; then
         cat $room >> $OUT
         echo "tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);" >> $OUT
 
+        if ensuredelimeter cutscene $room_dir; then :; else continue; fi
+        cutscenes_dir=$room_dir/cutscenes
+        for cutscene in $cutscenes_dir/*.meta; do #cutscenes
+
+          if [ ! -f $cutscene ]; then continue; fi
+          cutscene_id=`id $cutscene`
+          cutscene_dir=`dir $cutscene`
+          fixifdne cutscene $cutscenes_dir $cutscene_id
+          echo - Note: Genning $cutscene_id #debug
+          echo "tmp_cutscene = new cutscene();" >> $OUT
+          echo "tmp_cutscene.id = \"$cutscene_id\";" >> $OUT
+          echo "tmp_cutscene.fqid = \"$level_id.$scene_id.$room_id.$cutscene_id\";" >> $OUT
+          echo "{" >> $OUT
+          cat $cutscene >> $OUT
+
+          echo "}" >> $OUT
+          echo "tmp_room.cutscenes.push(tmp_cutscene);" >> $OUT
+
+        done
+
         if ensuredelimeter person $room_dir; then :; else continue; fi
         persons_dir=$room_dir/persons
         for person in $persons_dir/*.meta; do #persons
 
-          if [ ! -f $person ]; then if trystub person $persons_dir; then person=$persons_dir/*.meta; else continue; fi fi
+          if [ ! -f $person ]; then continue; fi
           person_id=`id $person`
           person_dir=`dir $person`
           fixifdne person $persons_dir $person_id
@@ -536,7 +516,7 @@ if [ $NOGEN == "0" ]; then
         objects_dir=$room_dir/objects
         for object in $objects_dir/*.meta; do #objects
 
-          if [ ! -f $object ]; then if trystub object $objects_dir; then object=$objects_dir/*.meta; else continue; fi fi
+          if [ ! -f $object ]; then continue; fi
           object_id=`id $object`
           object_dir=`dir $object`
           fixifdne object $objects_dir $object_id
@@ -568,7 +548,7 @@ if [ $NOGEN == "0" ]; then
             zones_dir=$view_dir/zones
             for zone in $zones_dir/*.meta; do #zones
 
-              if [ ! -f $zone ]; then if trystub zone $zones_dir; then zone=$zones_dir/*.meta; else continue; fi fi
+              if [ ! -f $zone ]; then continue; fi
               zone_id=`id $zone`
               zone_dir=`dir $zone`
               fixifdne zone $zones_dir $zone_id
@@ -599,7 +579,7 @@ if [ $NOGEN == "0" ]; then
         observations_dir=$room_dir/observations
         for observation in $observations_dir/*.meta; do #observations
 
-          if [ ! -f $observation ]; then if trystub observation $observations_dir; then observation=$observations_dir/*.meta; else continue; fi fi
+          if [ ! -f $observation ]; then continue; fi
           observation_id=`id $observation`
           observation_dir=`dir $observation`
           fixifdne observation $observations_dir $observation_id
@@ -621,7 +601,7 @@ if [ $NOGEN == "0" ]; then
         portholes_dir=$room_dir/portholes
         for porthole in $portholes_dir/*.meta; do #portholes
 
-          if [ ! -f $porthole ]; then if trystub porthole $portholes_dir; then porthole=$portholes_dir/*.meta; else continue; fi fi
+          if [ ! -f $porthole ]; then continue; fi
           porthole_id=`id $porthole`
           porthole_dir=`dir $porthole`
           fixifdne porthole $portholes_dir $porthole_id
@@ -642,7 +622,7 @@ if [ $NOGEN == "0" ]; then
         wildcards_dir=$room_dir/wildcards
         for wildcard in $wildcards_dir/*.meta; do #wildcards
 
-          if [ ! -f $wildcard ]; then if trystub wildcard $wildcards_dir; then wildcard=$wildcards_dir/*.meta; else continue; fi fi
+          if [ ! -f $wildcard ]; then continue; fi
           wildcard_id=`id $wildcard`
           wildcard_dir=`dir $wildcard`
           fixifdne wildcard $wildcards_dir $wildcard_id
@@ -663,7 +643,7 @@ if [ $NOGEN == "0" ]; then
         inerts_dir=$room_dir/inerts
         for inert in $inerts_dir/*.meta; do #inerts
 
-          if [ ! -f $inert ]; then if trystub inert $inerts_dir; then inert=$inerts_dir/*.meta; else continue; fi fi
+          if [ ! -f $inert ]; then continue; fi
           inert_id=`id $inert`
           inert_dir=`dir $inert`
           fixifdne inert $inerts_dir $inert_id
@@ -734,14 +714,6 @@ echo Listing:
       if [ @`echo $entry_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo entry | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[32mentry\e[39m) $entry_id [\e[2m$level_id.$entry_id\e[22m]\n"; fi
     done
 
-    cutscenes_dir=$level_dir/cutscenes
-    for cutscene in $cutscenes_dir/*.meta; do #cutscenes
-      if [ ! -f $cutscene ]; then continue; fi
-      cutscene_dir=`dir $cutscene`
-      cutscene_id=`id $cutscene`
-      if [ @`echo $cutscene_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo cutscene | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[34mcutscene\e[39m) $cutscene_id [\e[2m$level_id.$cutscene_id\e[22m]\n"; fi
-    done
-
     scenes_dir=$level_dir/scenes
     for scene in $scenes_dir/*.meta; do #scenes
       if [ ! -f $scene ]; then continue; fi
@@ -755,6 +727,14 @@ echo Listing:
         room_dir=`dir $room`
         room_id=`id $room`
         if [ @`echo $room_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo room | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[31mroom\e[39m) $room_id [\e[2m$level_id.$scene_id.$room_id\e[22m]\n"; fi
+
+        cutscenes_dir=$room_dir/cutscenes
+        for cutscene in $cutscenes_dir/*.meta; do #cutscenes
+          if [ ! -f $cutscene ]; then continue; fi
+          cutscene_dir=`dir $cutscene`
+          cutscene_id=`id $cutscene`
+          if [ @`echo $cutscene_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo cutscene | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[34mcutscene\e[39m) $cutscene_id [\e[2m$level_id.$scene_id.$room_id.$cutscene_id\e[22m]\n"; fi
+        done
 
         persons_dir=$room_dir/persons
         for person in $persons_dir/*.meta; do #persons

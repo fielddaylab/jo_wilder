@@ -139,9 +139,9 @@ var GamePlayScene = function(game, stage)
         if(cur_state == STATE_NAV) //_still_ must be NAV...
         {
         /*
-          for(var i = 0; i < cur_level.cutscenes.length; i++)
+          for(var i = 0; i < cur_room.cutscenes.length; i++)
           {
-            var cutscene = cur_level.cutscenes[i];
+            var cutscene = cur_room.cutscenes[i];
             var found = 0;
             if(!found && !cutscene.key && !querylocked(cutscene)) found = cutscene;
             if(found)
