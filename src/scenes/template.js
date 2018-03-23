@@ -697,6 +697,7 @@ var cutscene_command = function()
   self.animcycle_offset_t = 0;
 
   //ephemeral
+  self.cutscene_entity;
   self.from_wx;
   self.from_wy;
   self.from_wz;

@@ -138,15 +138,12 @@ var GamePlayScene = function(game, stage)
         //trigger cutscenes only from within nav
         if(cur_state == STATE_NAV) //_still_ must be NAV...
         {
-        /*
           for(var i = 0; i < cur_room.cutscenes.length; i++)
           {
             var cutscene = cur_room.cutscenes[i];
-            var found = 0;
-            if(!found && !cutscene.key && !querylocked(cutscene)) found = cutscene;
-            if(found)
+            if(!cutscene.key && !querylocked(cutscene))
             {
-              cur_act = found;
+              cur_act = cutscene;
               state_from = cur_state;
               cur_state = STATE_TRANSITION;
               state_to = STATE_CUTSCENE;
@@ -154,7 +151,6 @@ var GamePlayScene = function(game, stage)
               state_t = 0;
             }
           }
-        */
         }
         break;
       case STATE_MAP:
