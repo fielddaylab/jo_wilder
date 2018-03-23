@@ -761,7 +761,7 @@ var print_level_meta = function(l)
 {
   var str = "SAVE level "+l.fqid+"\n"+
   "tmp_level.primary = "+l.primary+";\n"+
-  "tmp_level.intro_room_id = "+l.intro_room_id+";\n"+
+  "tmp_level.intro_room_id = \""+l.intro_room_id+"\";\n"+
   "tmp_level.toolbar_animcycle_id = \""+l.toolbar_animcycle_id+"\";\n"+
   "tmp_level.icon_map_animcycle_id = \""+l.icon_map_animcycle_id+"\";\n"+
   "tmp_level.icon_notebook_animcycle_id = \""+l.icon_notebook_animcycle_id+"\";\n"+

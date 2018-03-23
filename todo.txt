@@ -30,3 +30,5 @@ check noteworthiness on key
 implement noteworthy notif
 re-eval locks on key
 
+collapse map structure
+

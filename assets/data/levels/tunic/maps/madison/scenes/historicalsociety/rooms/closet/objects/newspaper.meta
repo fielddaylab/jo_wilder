@@ -1,0 +1,16 @@
+tmp_object.ww = 99.99999999999999;
+tmp_object.wh = 99.99999999999999;
+tmp_object.wx = -650.9398784933172;
+tmp_object.wy = -83.36904009720536;
+tmp_object.wz = 0;
+tmp_object.act_wx = -58.21239368165249;
+tmp_object.act_wy = -49.480534629404616;
+tmp_object.act_anim = 1;
+tmp_object.animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.locks = [
+];
+tmp_object.notlocks = [
+];
+

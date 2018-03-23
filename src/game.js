@@ -23,7 +23,9 @@ var Game = function(init)
   self.resize = function(args)
   {
     document.getElementById(init.container).removeChild(stage.canv.canvas);
-    stage = new Stage({width:args.width,height:args.height,container:init.container});
+    if(args.stage)
+      stage = args.stage;
+    else stage = new Stage({width:args.width,height:args.height,container:init.container});
     for(var i = 0; i < scenes.length; i++)
       scenes[i].resize(stage);
   }
@@ -37,7 +39,6 @@ var Game = function(init)
   var tick = function()
   {
     requestAnimFrame(tick,stage.canv.canvas);
-    stage.clear();
     scenes[cur_scene].tick();
     if(old_cur_scene == cur_scene) //still in same scene- draw
     {

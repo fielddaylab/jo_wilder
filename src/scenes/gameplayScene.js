@@ -80,16 +80,14 @@ var GamePlayScene = function(game, stage)
         QUALITY = !QUALITY;
         if(QUALITY)
         {
-          document.getElementById(stage.container).removeChild(stage.canv.canvas);
           stage = new Stage({width:stage.width,height:stage.height,container:stage.container});
-          self.resize(stage);
+          g.resize({stage:stage});
           ctx.font = "20px Helvetica";
         }
         else
         {
-          document.getElementById(stage.container).removeChild(stage.canv.canvas);
           stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:10});
-          self.resize(stage);
+          g.resize({stage:stage});
           ctx.font = "20px Helvetica";
         }
       }

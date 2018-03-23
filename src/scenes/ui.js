@@ -497,7 +497,7 @@ var avatar = function()
         {
           my_avatar.state = AVATAR_ACT;
           my_avatar.anim.injectAnim(ANIM_ACT);
-          var dir = (my_navigable.selected_act.wx+my_navigable.selected_act.ww/2) - (self.wx+self.ww/2);
+          var dir = my_navigable.selected_act.wx - self.wx;
                if(dir >  2) self.anim.flip = 0;
           else if(dir < -2) self.anim.flip = 1;
 
