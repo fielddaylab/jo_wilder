@@ -1,7 +1,7 @@
 tmp_cutscene.noteworthy = false;
-tmp_cutscene.locks = [
+tmp_cutscene.unlocks = [
 ];
-tmp_cutscene.notlocks = [
+tmp_cutscene.relocks = [
 ];
 
 tmp_cutscene.commands = [];
@@ -11,7 +11,7 @@ Possible Commands:
 CUTSCENE_COMMAND_CREATE
 CUTSCENE_COMMAND_DESTROY
 CUTSCENE_COMMAND_ANIMATE
-CUTSCENE_COMMAND_SPEAK
+CUTSCENE_COMMAND_ACT
 CUTSCENE_COMMAND_AUDIO
 CUTSCENE_COMMAND_TWEEN
 CUTSCENE_COMMAND_WAIT
@@ -38,13 +38,9 @@ tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.animcycle_offset_t = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.audio_id = "null";
-tmp_cutscene_command.raw_text = "null";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
@@ -60,44 +56,10 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //gramps talk
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = 1;
-tmp_cutscene_command.wx = 20;
-tmp_cutscene_command.wy = 20;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Only two days left...";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
-tmp_cutscene_command.wx = 20;
-tmp_cutscene_command.wy = 20;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Unless I can convince the boss to keep me around.";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
-tmp_cutscene_command.wx = 20;
-tmp_cutscene_command.wy = 20;
-tmp_cutscene_command.w = 100;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "How can I tell Jo? I don't want her to worry...";
-tmp_cutscene_command.text = stextToLines(tmp_cutscene_command.raw_text,tmp_cutscene_command.w);
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //move to jo

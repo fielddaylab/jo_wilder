@@ -2,8 +2,8 @@ tmp_option.index = 999;
 tmp_option.raw_qtext = "Ok I will!";
 tmp_option.target_speak = "hub";
 tmp_option.noteworthy = false;
-tmp_option.locks = [
+tmp_option.unlocks = [
 ];
-tmp_option.notlocks = [
+tmp_option.relocks = [
 ];
 

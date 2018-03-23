@@ -1405,7 +1405,6 @@ var objectview = function()
 
   self.object;
   self.cur_view = 0;
-  self.cur_view_i = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_zones = [];
 
@@ -1413,9 +1412,8 @@ var objectview = function()
   {
     self.object = object;
     self.object.key = true;
-    self.cur_view_i = 0;
-    for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary) self.cur_view_i = i;
-    self.cur_view = self.object.views[self.cur_view_i];
+    self.cur_view = self.object.views[0];
+    for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
     self.cur_view.key = true;
     self.unlock_content();
   }
@@ -1774,7 +1772,6 @@ var personview = function()
 
   self.person;
   self.cur_speak = 0;
-  self.cur_speak_i = 0;
   self.cache_unlocked_speaks = [];
   self.cache_unlocked_options = [];
 
@@ -1807,11 +1804,6 @@ var personview = function()
     self.person = person;
     self.person.key = true;
     self.unlock_content();
-    self.cur_speak_i = 0;
-    for(var i = 1; i < self.cache_unlocked_speaks.length; i++) if(self.cache_unlocked_speaks[i].primary) self.cur_speak_i = i;
-    self.cur_speak = self.cache_unlocked_speaks[self.cur_speak_i];
-    self.cur_speak.key = true;
-    self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
     self.ui_state_t = 0;
     self.ui_state_p = 0;
@@ -1823,10 +1815,14 @@ var personview = function()
     for(var i = 0; i < self.person.speaks.length; i++)
       if(!querylocked(self.person.speaks[i])) self.cache_unlocked_speaks.push(self.person.speaks[i]);
 
-    //re-set self.cur_speak_i, ensures cur_speak unlocked
-    self.cur_speak_i = 0;
-    for(var i = 1; i < self.cache_unlocked_speaks.length; i++) if(self.cur_speak == self.cache_unlocked_speaks[i]) self.cur_speak_i = i;
-    self.cur_speak = self.cache_unlocked_speaks[self.cur_speak_i];
+    if(!self.cur_speak)
+    {
+      self.cur_speak = self.cache_unlocked_speaks[0];
+      for(var i = 1; i < self.cache_unlocked_speaks.length; i++)
+        if(self.cache_unlocked_speaks[i].primary > self.cur_speak.primary)
+          self.cur_speak = self.cache_unlocked_speaks[i];
+      self.cur_speak.key = true;
+    }
 
     self.unlock_options();
   }
@@ -1860,7 +1856,7 @@ var personview = function()
     if(self.cache_unlocked_options.length == 1)
     {
       var option = self.cache_unlocked_options[0];
-      if(option.target_speak_found.speaker == self.cur_speak.speaker && option.raw_qtext == ">") self.inline_option = 1;
+      if((!option.target_speak_found || option.target_speak_found.speaker == self.cur_speak.speaker) && option.raw_qtext == ">") self.inline_option = 1;
     }
   }
 
@@ -2110,6 +2106,7 @@ var personview = function()
             self.ui_state = UI_STATE_NULL;
             self.ui_state_t = 0;
             self.ui_state_p = 0;
+            self.cur_speak = 0;
             state_from = cur_state;
             state_to = STATE_NAV;
             cur_state = STATE_TRANSITION;

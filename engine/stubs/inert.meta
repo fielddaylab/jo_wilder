@@ -5,9 +5,8 @@ tmp_inert.wy = 100;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "null";
-tmp_inert.noteworthy = false;
-tmp_inert.locks = [
+tmp_inert.unlocks = [
 ];
-tmp_inert.notlocks = [
+tmp_inert.relocks = [
 ];
 

@@ -23,8 +23,8 @@ tmp_level.ripple_click_animcycle_id = "null";
 tmp_level.cursor_w = 40;
 tmp_level.cursor_h = 40;
 tmp_level.noteworthy = false;
-tmp_level.locks = [
+tmp_level.unlocks = [
 ];
-tmp_level.notlocks = [
+tmp_level.relocks = [
 ];
 

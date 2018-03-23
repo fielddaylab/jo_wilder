@@ -6,9 +6,9 @@ tmp_scene.wy = -123.99999999999996;
 tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
-tmp_scene.locks = [
+tmp_scene.unlocks = [
 "tunic.humanecology.frontdesk.worker.slip",
 ];
-tmp_scene.notlocks = [
+tmp_scene.relocks = [
 ];
 

@@ -9,8 +9,8 @@ tmp_person.act_anim = true;
 tmp_person.animcycle_id = "gramps";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
-tmp_person.locks = [
+tmp_person.unlocks = [
 ];
-tmp_person.notlocks = [
+tmp_person.relocks = [
 ];
 

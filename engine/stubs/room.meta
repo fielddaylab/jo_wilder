@@ -21,5 +21,9 @@ tmp_room.ambient_color = "rgba(0,0,0,0);";
 tmp_room.start_wx = canv.width/2;
 tmp_room.start_wy = canv.height/2;
 tmp_room.noteworthy = false;
+tmp_room.unlocks = [
+];
+tmp_room.relocks = [
+];
 //SUGGEST_H:1.5
 

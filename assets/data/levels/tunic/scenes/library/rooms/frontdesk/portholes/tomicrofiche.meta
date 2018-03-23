@@ -12,9 +12,9 @@ tmp_porthole.target_room = "microfiche";
 tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = -330;
 tmp_porthole.noteworthy = false;
-tmp_porthole.locks = [
+tmp_porthole.unlocks = [
 "tunic.library.frontdesk.worker.log",
 ];
-tmp_porthole.notlocks = [
+tmp_porthole.relocks = [
 ];
 

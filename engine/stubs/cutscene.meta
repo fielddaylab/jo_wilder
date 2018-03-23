@@ -1,7 +1,7 @@
 tmp_cutscene.noteworthy = false;
-tmp_cutscene.locks = [
+tmp_cutscene.unlocks = [
 ];
-tmp_cutscene.notlocks = [
+tmp_cutscene.relocks = [
 ];
 
 tmp_cutscene.commands = [];

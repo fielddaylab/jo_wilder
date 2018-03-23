@@ -6,9 +6,9 @@ tmp_scene.wy = 55.000000000000014;
 tmp_scene.animcycle_id = "scene_library";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
-tmp_scene.locks = [
+tmp_scene.unlocks = [
 "tunic.historicalsociety.frontdesk.archivist.log",
 ];
-tmp_scene.notlocks = [
+tmp_scene.relocks = [
 ];
 

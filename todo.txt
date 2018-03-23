@@ -32,3 +32,6 @@ re-eval locks on key
 
 collapse map structure
 
+filter clicks by z order
+click to skip text transitions
+

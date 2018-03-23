@@ -6,8 +6,8 @@ tmp_scene.wy = 100;
 tmp_scene.animcycle_id = "null";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
-tmp_scene.locks = [
+tmp_scene.unlocks = [
 ];
-tmp_scene.notlocks = [
+tmp_scene.relocks = [
 ];
 

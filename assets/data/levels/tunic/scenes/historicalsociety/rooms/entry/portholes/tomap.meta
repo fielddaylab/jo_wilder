@@ -12,8 +12,8 @@ tmp_porthole.target_room = "map";
 tmp_porthole.target_start_wx = -440;
 tmp_porthole.target_start_wy = 330;
 tmp_porthole.noteworthy = false;
-tmp_porthole.locks = [
+tmp_porthole.unlocks = [
 ];
-tmp_porthole.notlocks = [
+tmp_porthole.relocks = [
 ];
 

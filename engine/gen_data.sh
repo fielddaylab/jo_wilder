@@ -719,21 +719,21 @@ echo Listing:
       if [ ! -f $scene ]; then continue; fi
       scene_dir=`dir $scene`
       scene_id=`id $scene`
-      if [ @`echo $scene_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo scene | grep "$SEARCHTYPE"` != "@" ]; then printf "		(\e[36mscene\e[39m) $scene_id [\e[2m$level_id.$scene_id\e[22m]\n"; fi
+      if [ @`echo $scene_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo scene | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[36mscene\e[39m) $scene_id [\e[2m$level_id.$scene_id\e[22m]\n"; fi
 
       rooms_dir=$scene_dir/rooms
       for room in $rooms_dir/*.meta; do #rooms
         if [ ! -f $room ]; then continue; fi
         room_dir=`dir $room`
         room_id=`id $room`
-        if [ @`echo $room_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo room | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[31mroom\e[39m) $room_id [\e[2m$level_id.$scene_id.$room_id\e[22m]\n"; fi
+        if [ @`echo $room_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo room | grep "$SEARCHTYPE"` != "@" ]; then printf "		(\e[31mroom\e[39m) $room_id [\e[2m$level_id.$scene_id.$room_id\e[22m]\n"; fi
 
         cutscenes_dir=$room_dir/cutscenes
         for cutscene in $cutscenes_dir/*.meta; do #cutscenes
           if [ ! -f $cutscene ]; then continue; fi
           cutscene_dir=`dir $cutscene`
           cutscene_id=`id $cutscene`
-          if [ @`echo $cutscene_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo cutscene | grep "$SEARCHTYPE"` != "@" ]; then printf "	(\e[34mcutscene\e[39m) $cutscene_id [\e[2m$level_id.$scene_id.$room_id.$cutscene_id\e[22m]\n"; fi
+          if [ @`echo $cutscene_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo cutscene | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[34mcutscene\e[39m) $cutscene_id [\e[2m$level_id.$scene_id.$room_id.$cutscene_id\e[22m]\n"; fi
         done
 
         persons_dir=$room_dir/persons
@@ -741,21 +741,21 @@ echo Listing:
           if [ ! -f $person ]; then continue; fi
           person_dir=`dir $person`
           person_id=`id $person`
-          if [ @`echo $person_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo person | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[36mperson\e[39m) $person_id [\e[2m$level_id.$scene_id.$room_id.$person_id\e[22m]\n"; fi
+          if [ @`echo $person_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo person | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[36mperson\e[39m) $person_id [\e[2m$level_id.$scene_id.$room_id.$person_id\e[22m]\n"; fi
 
           speaks_dir=$person_dir/speaks
           for speak in $speaks_dir/*.meta; do #speaks
             if [ ! -f $speak ]; then continue; fi
             speak_dir=`dir $speak`
             speak_id=`id $speak`
-            if [ @`echo $speak_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo speak | grep "$SEARCHTYPE"` != "@" ]; then printf "					(\e[32mspeak\e[39m) $speak_id [\e[2m$level_id.$scene_id.$room_id.$person_id.$speak_id\e[22m]\n"; fi
+            if [ @`echo $speak_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo speak | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[32mspeak\e[39m) $speak_id [\e[2m$level_id.$scene_id.$room_id.$person_id.$speak_id\e[22m]\n"; fi
 
             options_dir=$speak_dir/options
             for option in $options_dir/*.meta; do #options
               if [ ! -f $option ]; then continue; fi
               option_dir=`dir $option`
               option_id=`id $option`
-              if [ @`echo $option_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo option | grep "$SEARCHTYPE"` != "@" ]; then printf "						(\e[34moption\e[39m) $option_id [\e[2m$level_id.$scene_id.$room_id.$person_id.$speak_id.$option_id\e[22m]\n"; fi
+              if [ @`echo $option_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo option | grep "$SEARCHTYPE"` != "@" ]; then printf "					(\e[34moption\e[39m) $option_id [\e[2m$level_id.$scene_id.$room_id.$person_id.$speak_id.$option_id\e[22m]\n"; fi
 
             done
 
@@ -768,21 +768,21 @@ echo Listing:
           if [ ! -f $object ]; then continue; fi
           object_dir=`dir $object`
           object_id=`id $object`
-          if [ @`echo $object_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo object | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[35mobject\e[39m) $object_id [\e[2m$level_id.$scene_id.$room_id.$object_id\e[22m]\n"; fi
+          if [ @`echo $object_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo object | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[35mobject\e[39m) $object_id [\e[2m$level_id.$scene_id.$room_id.$object_id\e[22m]\n"; fi
 
           views_dir=$object_dir/views
           for view in $views_dir/*.meta; do #views
             if [ ! -f $view ]; then continue; fi
             view_dir=`dir $view`
             view_id=`id $view`
-            if [ @`echo $view_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo view | grep "$SEARCHTYPE"` != "@" ]; then printf "					(\e[36mview\e[39m) $view_id [\e[2m$level_id.$scene_id.$room_id.$object_id.$view_id\e[22m]\n"; fi
+            if [ @`echo $view_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo view | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[36mview\e[39m) $view_id [\e[2m$level_id.$scene_id.$room_id.$object_id.$view_id\e[22m]\n"; fi
 
             zones_dir=$view_dir/zones
             for zone in $zones_dir/*.meta; do #zones
               if [ ! -f $zone ]; then continue; fi
               zone_dir=`dir $zone`
               zone_id=`id $zone`
-              if [ @`echo $zone_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo zone | grep "$SEARCHTYPE"` != "@" ]; then printf "						(\e[31mzone\e[39m) $zone_id [\e[2m$level_id.$scene_id.$room_id.$object_id.$view_id.$zone_id\e[22m]\n"; fi
+              if [ @`echo $zone_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo zone | grep "$SEARCHTYPE"` != "@" ]; then printf "					(\e[31mzone\e[39m) $zone_id [\e[2m$level_id.$scene_id.$room_id.$object_id.$view_id.$zone_id\e[22m]\n"; fi
 
             done
 
@@ -795,7 +795,7 @@ echo Listing:
           if [ ! -f $observation ]; then continue; fi
           observation_dir=`dir $observation`
           observation_id=`id $observation`
-          if [ @`echo $observation_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo observation | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[34mobservation\e[39m) $observation_id [\e[2m$level_id.$scene_id.$room_id.$observation_id\e[22m]\n"; fi
+          if [ @`echo $observation_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo observation | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[34mobservation\e[39m) $observation_id [\e[2m$level_id.$scene_id.$room_id.$observation_id\e[22m]\n"; fi
 
         done
 
@@ -804,7 +804,7 @@ echo Listing:
           if [ ! -f $porthole ]; then continue; fi
           porthole_dir=`dir $porthole`
           porthole_id=`id $porthole`
-          if [ @`echo $porthole_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo porthole | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[33mporthole\e[39m) $porthole_id [\e[2m$level_id.$scene_id.$room_id.$porthole_id\e[22m]\n"; fi
+          if [ @`echo $porthole_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo porthole | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[33mporthole\e[39m) $porthole_id [\e[2m$level_id.$scene_id.$room_id.$porthole_id\e[22m]\n"; fi
 
         done
 
@@ -813,7 +813,7 @@ echo Listing:
           if [ ! -f $wildcard ]; then continue; fi
           wildcard_dir=`dir $wildcard`
           wildcard_id=`id $wildcard`
-          if [ @`echo $wildcard_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo wildcard | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[32mwildcard\e[39m) $wildcard_id [\e[2m$level_id.$scene_id.$room_id.$wildcard_id\e[22m]\n"; fi
+          if [ @`echo $wildcard_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo wildcard | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[32mwildcard\e[39m) $wildcard_id [\e[2m$level_id.$scene_id.$room_id.$wildcard_id\e[22m]\n"; fi
 
         done
 
@@ -822,7 +822,7 @@ echo Listing:
           if [ ! -f $inert ]; then continue; fi
           inert_dir=`dir $inert`
           inert_id=`id $inert`
-          if [ @`echo $inert_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo inert | grep "$SEARCHTYPE"` != "@" ]; then printf "				(\e[32minert\e[39m) $inert_id [\e[2m$level_id.$scene_id.$room_id.$inert_id\e[22m]\n"; fi
+          if [ @`echo $inert_id | grep "$SEARCHTERM"` != "@" ] && [ @`echo inert | grep "$SEARCHTYPE"` != "@" ]; then printf "			(\e[32minert\e[39m) $inert_id [\e[2m$level_id.$scene_id.$room_id.$inert_id\e[22m]\n"; fi
 
         done
 

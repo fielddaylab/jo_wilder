@@ -21,5 +21,8 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.target_start_wx = 0;
 tmp_room.target_start_wy = 0;
 tmp_room.noteworthy = false;
-//SUGGEST_H:1
+tmp_room.unlocks = [
+];
+tmp_room.relocks = [
+];
 

@@ -1,17 +1,18 @@
 tmp_level.primary = true;
 tmp_level.intro_room_id = "tunic.historicalsociety.closet";
-tmp_level.toolbar_animcycle_id = "toolbar";
-tmp_level.toolbar_audio_id = "null";
-tmp_level.map_animcycle_id = "map";
-tmp_level.map_audio_id = "null";
-tmp_level.icon_map_animcycle_id = "icon_map";
-tmp_level.icon_notebook_animcycle_id = "icon_notebook";
-tmp_level.notebook_animcycle_id = "notebook";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 229.3143006650962;
 tmp_level.avatar_wh = 249.788306658845;
+tmp_level.map_animcycle_id = "map";
+tmp_level.map_audio_id = "null";
+tmp_level.notebook_animcycle_id = "notebook";
+tmp_level.notebook_audio_id = "null";
+tmp_level.toolbar_animcycle_id = "toolbar";
+tmp_level.toolbar_audio_id = "null";
+tmp_level.icon_map_animcycle_id = "icon_map";
+tmp_level.icon_notebook_animcycle_id = "icon_notebook";
 tmp_level.person_hover_animcycle_id = "hover_person";
 tmp_level.object_hover_animcycle_id = "hover_object";
 tmp_level.observation_hover_animcycle_id = "hover_observation";
@@ -23,8 +24,8 @@ tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.cursor_w = 40;
 tmp_level.cursor_h = 40;
 tmp_level.noteworthy = false;
-tmp_level.locks = [
+tmp_level.unlocks = [
 ];
-tmp_level.notlocks = [
+tmp_level.relocks = [
 ];
 

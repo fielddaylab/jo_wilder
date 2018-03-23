@@ -6,8 +6,8 @@ tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "slip";
 tmp_zone.noteworthy = false;
-tmp_zone.locks = [
+tmp_zone.unlocks = [
 ];
-tmp_zone.notlocks = [
+tmp_zone.relocks = [
 ];
 

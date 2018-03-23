@@ -12,4 +12,8 @@ tmp_speak.options_wy = 78.00000000000001;
 tmp_speak.options_w = 359;
 tmp_speak.options_h = 30;
 tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
 

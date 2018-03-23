@@ -4,8 +4,8 @@ tmp_entry.wy = 0;
 tmp_entry.ww = canv.width/2;
 tmp_entry.wh = 100;
 tmp_entry.animcycle_id = "null";
-tmp_entry.locks = [
+tmp_entry.unlocks = [
 ];
-tmp_entry.notlocks = [
+tmp_entry.relocks = [
 ];
 

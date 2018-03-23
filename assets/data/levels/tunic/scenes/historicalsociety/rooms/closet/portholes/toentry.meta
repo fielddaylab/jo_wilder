@@ -12,8 +12,8 @@ tmp_porthole.target_room = "entry";
 tmp_porthole.target_start_wx = 484.56744939271255;
 tmp_porthole.target_start_wy = -132.23999999999992;
 tmp_porthole.noteworthy = false;
-tmp_porthole.locks = [
+tmp_porthole.unlocks = [
 ];
-tmp_porthole.notlocks = [
+tmp_porthole.relocks = [
 ];
 

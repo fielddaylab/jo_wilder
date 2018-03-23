@@ -12,8 +12,8 @@ tmp_porthole.target_room = "halloffame";
 tmp_porthole.target_start_wx = -13.902307137707268;
 tmp_porthole.target_start_wy = -127.20000000000003;
 tmp_porthole.noteworthy = false;
-tmp_porthole.locks = [
+tmp_porthole.unlocks = [
 ];
-tmp_porthole.notlocks = [
+tmp_porthole.relocks = [
 ];
 
