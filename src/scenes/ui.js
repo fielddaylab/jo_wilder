@@ -1693,10 +1693,13 @@ var observationview = function()
 
   self.click = function(evt)
   {
-    if(self.ui_state != UI_STATE_SELECT) return;
-    self.ui_state_t = 0;
-    self.ui_state_p = 0;
-    self.ui_state = UI_STATE_OUT;
+    self.ui_state_t = self.ui_state_t_max[self.ui_state];
+    if(self.ui_state != UI_STATE_OUT)
+    {
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.ui_state = UI_STATE_OUT;
+    }
   }
 
   self.tick = function()
@@ -2034,7 +2037,7 @@ var personview = function()
 
   self.click = function(evt)
   {
-    if(self.ui_state != UI_STATE_SELECT && self.ui_state != UI_STATE_IN_OPTION) return;
+    self.ui_state_t = self.ui_state_t_max[self.ui_state];
 
     var speak = self.cur_speak;
     var option;
@@ -2058,15 +2061,7 @@ var personview = function()
       }
     }
     else //inline_option
-    {
-      option = self.cache_unlocked_options[0];
-      var x = speak.x;
-      var y = speak.y+5;
-      var w = speak.w;
-      var h = speak.h*speak.atext.length;
-      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
-        self.clicked_option = option;
-    }
+      self.clicked_option = self.cache_unlocked_options[0];
 
     if(self.clicked_option)
     {
