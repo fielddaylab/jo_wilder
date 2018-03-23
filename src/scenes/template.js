@@ -5,9 +5,7 @@ var find = function(id)
   if(ids.length <= k) return;
   var level; for(var i = 0; i < levels.length; i++) if(levels[i].id == ids[k]) level = levels[i];
   if(!level || ids.length <= ++k) return level;
-  var map; if(level.map.id == ids[k]) map = level.map;
-  if(!map || ids.length <= ++k) return map;
-  var scene; for(var i = 0; i < map.scenes.length; i++) if(map.scenes[i].id == ids[k]) scene = map.scenes[i];
+  var scene; for(var i = 0; i < level.scenes.length; i++) if(level.scenes[i].id == ids[k]) scene = level.scenes[i];
   if(!scene || ids.length <= ++k) return scene;
   var room; for(var i = 0; i < scene.rooms.length; i++) if(scene.rooms[i].id == ids[k]) room = scene.rooms[i];
   if(!room || ids.length <= ++k) return room;
@@ -76,11 +74,9 @@ var save_slate = function()
   self.gen_slate = function(level)
   {
     self.insert(level);
-    var map = cur_level.map;
-    self.insert(map);
-    for(var i = 0; i < map.scenes.length; i++)
+    for(var i = 0; i < level.scenes.length; i++)
     {
-      var scene = map.scenes[i];
+      var scene = level.scenes[i];
       self.insert(scene);
       for(var j = 0; j < scene.rooms.length; j++)
       {
@@ -220,15 +216,19 @@ var level = function()
   self.audios = [];
   self.entrys = [];
   self.cutscenes = [];
-  self.toolbar_animcycle_id = "null";
-  self.icon_map_animcycle_id = "null";
-  self.icon_notebook_animcycle_id = "null";
-  self.notebook_animcycle_id = "null";
   self.avatar_walk_animcycle_id = "null";
   self.avatar_idle_animcycle_id = "null";
   self.avatar_act_animcycle_id = "null";
   self.avatar_ww = 0;
   self.avatar_wh = 0;
+  self.map_animcycle_id = "null";
+  self.map_audio_id = "null";
+  self.notebook_animcycle_id = "null";
+  self.notebook_audio_id = "null";
+  self.toolbar_animcycle_id = "null";
+  self.toolbar_audio_id = "null";
+  self.icon_map_animcycle_id = "null";
+  self.icon_notebook_animcycle_id = "null";
   self.person_hover_animcycle_id = "hover_person";
   self.object_hover_animcycle_id = "hover_object";
   self.observation_hover_animcycle_id = "hover_observation";
@@ -239,21 +239,9 @@ var level = function()
   self.ripple_click_animcycle_id = "click_ripple";
   self.cursor_w = 0;
   self.cursor_h = 0;
-  self.map;
-  self.noteworthy = false;
-  self.key = false;
-}
-
-var map = function()
-{
-  var self = this;
-  self.id = "null"
-  self.fqid = "null"
-  self.animcycle_id = "null";
-  self.animcycle_inst;
-  self.audio_id = "null";
   self.scenes = [];
   self.noteworthy = false;
+  //
   self.key = false;
 }
 
@@ -269,7 +257,6 @@ var scene = function()
   self.ww = 0;
   self.wh = 0;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.rooms = [];
   self.noteworthy = false;
@@ -278,6 +265,7 @@ var scene = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -295,7 +283,6 @@ var room = function()
   self.ww = 0;
   self.wh = 0;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.cam_wh = 660;
   self.navs = [];
@@ -315,6 +302,7 @@ var room = function()
   self.noteworthy = false;
   //
   self.key = false;
+  self.animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -337,7 +325,6 @@ var person = function()
   self.act_wy = 0;
   self.act_anim = true;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.speaks = [];
   self.noteworthy = false;
@@ -346,6 +333,7 @@ var person = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -370,7 +358,6 @@ var object = function()
   self.act_wy = 0;
   self.act_anim = true;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.views = [];
   self.noteworthy = false;
@@ -379,6 +366,7 @@ var object = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -403,7 +391,6 @@ var observation = function()
   self.act_wy = 0;
   self.act_anim = true;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.raw_text = "null";
   self.text = stextToLines(self.raw_text,self.blip_w);
@@ -417,6 +404,7 @@ var observation = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -443,7 +431,6 @@ var porthole = function()
   self.act_wy = 0;
   self.act_anim = true;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.target_room = "null";
   self.target_start_wx = 0;
@@ -454,6 +441,7 @@ var porthole = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -481,7 +469,6 @@ var wildcard = function()
   self.act_wy = 0;
   self.act_anim = true;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.noteworthy = false;
   self.locks = [];
@@ -489,6 +476,7 @@ var wildcard = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -511,13 +499,13 @@ var inert = function()
   self.wz = 0;
   self.g = 0; //"ground", as in "foreground", "background", etc... (bg < 0 < fg)
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.noteworthy = false;
   self.locks = [];
   self.notlocks = [];
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -537,11 +525,12 @@ var view = function()
   self.fqid = "null"
   self.primary = false;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.zones = [];
   self.noteworthy = false;
+  //
   self.key = false;
+  self.animcycle_inst;
 }
 
 var zone = function()
@@ -554,7 +543,6 @@ var zone = function()
   self.ww = 0;
   self.wh = 0;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.target_view = "null";
   self.noteworthy = false;
@@ -563,6 +551,7 @@ var zone = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -581,7 +570,6 @@ var speak = function()
   self.fqid = "null"
   self.primary = false;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.wx = 0; //defines top-left
   self.wy = 0; //defines top-left
@@ -597,7 +585,9 @@ var speak = function()
   self.options_h = 0;
   self.options = [];
   self.noteworthy = false;
+  //
   self.key = false;
+  self.animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.options_x = 0;
@@ -637,7 +627,6 @@ var entry = function()
   self.ww = canv.width/2;
   self.wh = 100;
   self.animcycle_id = "null";
-  self.animcycle_inst;
   self.audio_id = "null";
   self.index = 0;
   self.noteworthy = false;
@@ -646,6 +635,7 @@ var entry = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -673,14 +663,13 @@ var audio = function()
   self.aud;
 }
 
-var CUTSCENE_COMMAND_IGNORE = -927345892; //lolololol type system
 var cutscene_command = function()
 {
   var self = this;
 
-  self.command = COMMAND_NULL;
+  self.command = CUTSCENE_COMMAND_NULL;
   self.cutscene_entity_id = "null";
-  self.cutscene_entity_type = ENTITY_NULL;
+  self.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
   self.t = 0;
   self.end_t = 0;
   self.wx = CUTSCENE_COMMAND_IGNORE;
@@ -712,36 +701,6 @@ var cutscene_command = function()
   self.z;
 }
 
-/*
-//example create
-c.command = COMMAND_CREATE;
-c.t = 4.5;
-c.cutscene_entity_id = "penny"; //this is time-of-creation. defines entity
-c.animation_id = "penny"; //picks out animation
-c.animation_anim = 1;
-c.wx = 10;
-c.wy = 10;
-c.ww = 10;
-c.wh = 10;
-
-//example set animation
-c.command = COMMAND_ANIMATE;
-c.t = 4.5;
-c.cutscene_entity_id = "penny"; //this is time-of-creation. picks out entity
-c.animation_anim = 1;
-
-//example move
-c.command = COMMAND_MOVE;
-c.t = 8.5;
-c.end_t = 12.5;
-c.cutscene_entity_id = "penny"; //this is time-of-creation. picks out entity
-c.wx = 20;
-c.wy = 20;
-c.ww = 0; //optional- 0 means stay the same
-c.wh = 0; //optional- 0 means stay the same
-
-*/
-
 var cutscene = function()
 {
   var self = this;
@@ -762,15 +721,19 @@ var print_level_meta = function(l)
   var str = "SAVE level "+l.fqid+"\n"+
   "tmp_level.primary = "+l.primary+";\n"+
   "tmp_level.intro_room_id = \""+l.intro_room_id+"\";\n"+
-  "tmp_level.toolbar_animcycle_id = \""+l.toolbar_animcycle_id+"\";\n"+
-  "tmp_level.icon_map_animcycle_id = \""+l.icon_map_animcycle_id+"\";\n"+
-  "tmp_level.icon_notebook_animcycle_id = \""+l.icon_notebook_animcycle_id+"\";\n"+
-  "tmp_level.notebook_animcycle_id = \""+l.notebook_animcycle_id+"\";\n"+
   "tmp_level.avatar_walk_animcycle_id = \""+l.avatar_walk_animcycle_id+"\";\n"+
   "tmp_level.avatar_idle_animcycle_id = \""+l.avatar_idle_animcycle_id+"\";\n"+
   "tmp_level.avatar_act_animcycle_id = \""+l.avatar_act_animcycle_id+"\";\n"+
   "tmp_level.avatar_ww = "+l.avatar_ww+";\n"+
   "tmp_level.avatar_wh = "+l.avatar_wh+";\n"+
+  "tmp_level.map_animcycle_id = \""+l.map_animcycle_id+"\";\n"+
+  "tmp_level.map_audio_id = \""+l.map_audio_id+"\";\n"+
+  "tmp_level.notebook_animcycle_id = \""+l.notebook_animcycle_id+"\";\n"+
+  "tmp_level.notebook_audio_id = \""+l.notebook_audio_id+"\";\n"+
+  "tmp_level.toolbar_animcycle_id = \""+l.toolbar_animcycle_id+"\";\n"+
+  "tmp_level.toolbar_audio_id = \""+l.toolbar_audio_id+"\";\n"+
+  "tmp_level.icon_map_animcycle_id = \""+l.icon_map_animcycle_id+"\";\n"+
+  "tmp_level.icon_notebook_animcycle_id = \""+l.icon_notebook_animcycle_id+"\";\n"+
   "tmp_level.person_hover_animcycle_id = \""+l.person_hover_animcycle_id+"\";\n"+
   "tmp_level.object_hover_animcycle_id = \""+l.object_hover_animcycle_id+"\";\n"+
   "tmp_level.observation_hover_animcycle_id = \""+l.observation_hover_animcycle_id+"\";\n"+
@@ -788,25 +751,6 @@ var print_level_meta = function(l)
   str +=
   "];\n"+
   "tmp_level.notlocks = [\n";
-  for(var i = 0; i < l.notlocks.length; i++)
-    str += "\""+l.notlocks[i]+"\",\n";
-  str +=
-  "];\n"
-  console.log(str);
-}
-
-var print_map_meta = function(l)
-{
-  var str = "SAVE map "+l.fqid+"\n"+
-  "tmp_map.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_map.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_map.noteworthy = "+l.noteworthy+";\n"+
-  "tmp_map.locks = [\n";
-  for(var i = 0; i < l.locks.length; i++)
-    str += "\""+l.locks[i]+"\",\n";
-  str +=
-  "];\n"+
-  "tmp_map.notlocks = [\n";
   for(var i = 0; i < l.notlocks.length; i++)
     str += "\""+l.notlocks[i]+"\",\n";
   str +=
@@ -1120,12 +1064,10 @@ var print_whole_level = function(l)
 {
   console.log("===BEGIN_IMPORT===");
   print_level_meta(l);
-  var map = l.map;
-  print_map_meta(map);
   var scene;
-  for(var i = 0; i < map.scenes.length; i++)
+  for(var i = 0; i < level.scenes.length; i++)
   {
-    scene = map.scenes[i];
+    scene = level.scenes[i];
     print_scene_meta(scene);
     var room;
     for(var j = 0; j < scene.rooms.length; j++)

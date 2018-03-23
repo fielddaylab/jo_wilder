@@ -13,7 +13,7 @@ tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = -330;
 tmp_porthole.noteworthy = false;
 tmp_porthole.locks = [
-"tunic.madison.library.frontdesk.worker.log",
+"tunic.library.frontdesk.worker.log",
 ];
 tmp_porthole.notlocks = [
 ];

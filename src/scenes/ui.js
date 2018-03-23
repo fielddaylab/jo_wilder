@@ -43,13 +43,14 @@ var loader = function()
 
   self.consume_level = function(level)
   {
-    self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.icon_map_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.noebook_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_walk_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_idle_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.map_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.notebook_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.icon_map_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.person_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.object_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.observation_hover_animcycle_id,level.animcycles));
@@ -59,9 +60,8 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.map_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
 
-    self.load_animcycle_inst(level.map.animcycle_inst);
-    for(var i = 0; i < level.map.scenes.length; i++)
-      self.load_animcycle_inst(level.map.scenes[i].animcycle_inst);
+    for(var i = 0; i < level.scenes.length; i++)
+      self.load_animcycle_inst(level.scenes[i].animcycle_inst);
   }
 
   self.consume_room = function(room)
@@ -154,7 +154,7 @@ var cursor = function()
   self.object_animcycle_inst;
   self.observation_animcycle_inst;
   self.porthole_animcycle_inst;
-  self.view_animcycle_inst;
+  self.zone_animcycle_inst;
   self.option_animcycle_inst;
   self.map_animcycle_inst;
   self.ripple_animcycle_inst;
@@ -165,7 +165,7 @@ var cursor = function()
     self.object_animcycle_inst      = gen_animcycle_inst(level.object_hover_animcycle_id,      level.animcycles);
     self.observation_animcycle_inst = gen_animcycle_inst(level.observation_hover_animcycle_id, level.animcycles);
     self.porthole_animcycle_inst    = gen_animcycle_inst(level.porthole_hover_animcycle_id,    level.animcycles);
-    self.view_animcycle_inst        = gen_animcycle_inst(level.zone_hover_animcycle_id,        level.animcycles);
+    self.zone_animcycle_inst        = gen_animcycle_inst(level.zone_hover_animcycle_id,        level.animcycles);
     self.option_animcycle_inst      = gen_animcycle_inst(level.option_hover_animcycle_id,      level.animcycles);
     self.map_animcycle_inst         = gen_animcycle_inst(level.map_hover_animcycle_id,         level.animcycles);
     self.ripple_animcycle_inst      = gen_animcycle_inst(level.ripple_click_animcycle_id,      level.animcycles);
@@ -205,7 +205,7 @@ var cursor = function()
       case CURSOR_OBJECT:      self.object_animcycle_inst.tick();      break;
       case CURSOR_OBSERVATION: self.observation_animcycle_inst.tick(); break;
       case CURSOR_PORTHOLE:    self.porthole_animcycle_inst.tick();    break;
-      case CURSOR_VIEW:        self.view_animcycle_inst.tick();        break;
+      case CURSOR_ZONE:        self.zone_animcycle_inst.tick();        break;
       case CURSOR_OPTION:      self.option_animcycle_inst.tick();      break;
       case CURSOR_MAP:         self.map_animcycle_inst.tick();         break;
     }
@@ -233,7 +233,7 @@ var cursor = function()
       case CURSOR_OBJECT:      ctx.drawImage(self.object_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_OBSERVATION: ctx.drawImage(self.observation_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_PORTHOLE:    ctx.drawImage(self.porthole_animcycle_inst.img,    self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_VIEW:        ctx.drawImage(self.view_animcycle_inst.img,        self.known_x-hw,self.known_y-hh,w,h); break;
+      case CURSOR_ZONE:        ctx.drawImage(self.zone_animcycle_inst.img,        self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_OPTION:      ctx.drawImage(self.option_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_MAP:         ctx.drawImage(self.map_animcycle_inst.img,         self.known_x-hw,self.known_y-hh,w,h); break;
     }
@@ -295,7 +295,7 @@ var avatar = function()
               my_navigable.selected_act = 0;
               state_to = STATE_MAP;
               my_mapview.unlock_content();
-              get_audio(my_mapview.map.audio_id,cur_level.audios).aud.play();
+              get_audio(cur_level.map_audio_id,cur_level.audios).aud.play();
             }
           }
           break;
@@ -1096,7 +1096,8 @@ var toolbar = function()
   self.toolbar_animcycle_inst;
   self.icon_map_instanimcycle_inst;
   self.icon_notebook_animcycle_inst;
-  self.notebook = {x:20, y:self.y+15, w:self.h-40, h:self.h-40};
+  self.notebook = {x:20,  y:self.y+15, w:self.h-40, h:self.h-40};
+  self.map      = {x:100, y:self.y+15, w:self.h-40, h:self.h-40};
 
   var MAP_ENABLED = 0;
 
@@ -1163,15 +1164,15 @@ var mapview = function()
   self.w = canv.width;
   self.h = canv.height;
 
-  self.map;
+  self.level;
   self.selected_scene = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_scenes = [];
 
-  self.consume_map = function(map)
+  self.consume_level = function(level)
   {
-    self.map = map;
-    self.map.key = true;
+    self.level = level;
+    self.level.key = true;
     self.unlock_content();
     self.selected_scene = 0;
   }
@@ -1179,8 +1180,8 @@ var mapview = function()
   self.unlock_content = function()
   {
     self.cache_unlocked_scenes = [];
-    for(var i = 0; i < self.map.scenes.length; i++)
-      if(!querylocked(self.map.scenes[i])) self.cache_unlocked_scenes.push(self.map.scenes[i]);
+    for(var i = 0; i < self.level.scenes.length; i++)
+      if(!querylocked(self.level.scenes[i])) self.cache_unlocked_scenes.push(self.level.scenes[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1275,7 +1276,7 @@ var mapview = function()
 
   self.tick = function()
   {
-    self.map.animcycle_inst.tick();
+    self.level.map_animcycle_inst.tick();
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
     {
       self.cache_unlocked_scenes[i].animcycle_inst.tick();
@@ -1286,7 +1287,7 @@ var mapview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h
-    ctx.drawImage(self.map.animcycle_inst.img,self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.level.map_animcycle_inst.img,self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
@@ -1491,7 +1492,7 @@ var objectview = function()
     my_cursor.mode = CURSOR_NORMAL;
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
       if(ptWithinBox(self.cache_unlocked_zones[i],evt.doX,evt.doY))
-        my_cursor.mode = CURSOR_VIEW;
+        my_cursor.mode = CURSOR_ZONE;
   }
   self.unhover = function(evt)
   {
@@ -2254,7 +2255,7 @@ var cutscene_entity = function()
   self.z = 0;
   self.w = 0;
   self.h = 0;
-  self.entity_type = ENTITY_NULL;
+  self.entity_type = CUTSCENE_ENTITY_NULL;
   self.animcycle_inst;
   self.text = ["null"];
 }
@@ -2279,6 +2280,7 @@ var cutsceneview = function()
 
   self.consume_cutscene = function(cutscene)
   {
+    return;
     self.cutscene = cutscene;
     self.cutscene.key = true;
 
@@ -2299,16 +2301,17 @@ var cutsceneview = function()
 
   self.execute_next_command = function()
   {
+    return;
     var c = self.cutscene.commands[self.command_i];
     switch(c.command)
     {
-      case COMMAND_NULL:
+      case CUTSCENE_COMMAND_NULL:
         break;
-      case COMMAND_CREATE:
+      case CUTSCENE_COMMAND_CREATE:
         var e = new cutscene_entity();
         e.id = c.cutscene_entity_id;
         e.entity_type = c.cutscene_entity_type;
-        if(c.cutscene_entity_type == ENTITY_ANIM)
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)
         {
           e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
           e.animcycle_inst.frame_t += c.animcycle_offset_t;
@@ -2324,16 +2327,16 @@ var cutsceneview = function()
         e.h = c.h;
         self.cutscene_entitys.push(e);
         break;
-      case COMMAND_DESTROY:
+      case CUTSCENE_COMMAND_DESTROY:
         for(var i = 0; i < self.cutscene_entitys.length; i++)
           if(self.cutscene_entitys[i].id == c.cutscene_entity_id) self.cutscene_entitys.splice(i,1);
         break;
-      case COMMAND_ANIMATE:
+      case CUTSCENE_COMMAND_ANIMATE:
         var e = self.find_entity(c.cutscene_entity_id);
         e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
         e.animcycle_inst.frame_t += c.animcycle_offset_t;
         break;
-      case COMMAND_TWEEN:
+      case CUTSCENE_COMMAND_TWEEN:
         var e = self.find_entity(c.cutscene_entity_id);
         c.from_x = e.x;
         c.from_y = e.y;
@@ -2342,10 +2345,10 @@ var cutsceneview = function()
         c.from_h = e.h;
         self.running_commands.push(c);
         break;
-      case COMMAND_WAIT:
+      case CUTSCENE_COMMAND_WAIT:
         self.waiting = 1;
         break;
-      case COMMAND_END:
+      case CUTSCENE_COMMAND_END:
         self.end = 1;
         break;
     }
@@ -2371,13 +2374,18 @@ var cutsceneview = function()
 
   self.tick = function()
   {
+      state_from = cur_state;
+      state_to = STATE_NAV;
+      cur_state = STATE_TRANSITION;
+      state_t = 0;
+    return;
     while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t)
       self.execute_next_command();
 
     for(var i = 0; !self.end && i < self.running_commands.length; i++)
     {
       var c = self.running_commands[i];
-      if(c.command != COMMAND_TWEEN) continue;
+      if(c.command != CUTSCENE_COMMAND_TWEEN) continue;
       var e = self.find_entity(c.cutscene_entity_id);
       var t = invlerp(c.t,c.end_t,self.t)
       if(c.x != CUTSCENE_COMMAND_IGNORE) e.x = lerp(c.from_x,c.x,t);
@@ -2393,7 +2401,7 @@ var cutsceneview = function()
     }
 
     for(var i = 0; i < self.cutscene_entitys.length; i++)
-      if(self.cutscene_entitys[i].entity_type == ENTITY_ANIM)
+      if(self.cutscene_entitys[i].entity_type == CUTSCENE_ENTITY_SCENE)
         self.cutscene_entitys[i].animcycle_inst.tick();
 
     if(!self.waiting) self.t++;
@@ -2435,7 +2443,7 @@ var cutsceneview = function()
     for(var i = 0; i < self.cutscene_entitys.length; i++)
     {
       var entity = self.cutscene_entitys[i];
-      if(entity.entity_type == ENTITY_ANIM)
+      if(entity.entity_type == CUTSCENE_ENTITY_SCENE)
       {
         //ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
         ctx.save();

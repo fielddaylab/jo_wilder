@@ -3,7 +3,7 @@ tmp_option.raw_qtext = "I found a newspaper!";
 tmp_option.target_speak = "newspaper";
 tmp_option.noteworthy = false;
 tmp_option.locks = [
-"tunic.madison.library.microfiche.newspaper.hub",
+"tunic.library.microfiche.newspaper.hub",
 ];
 tmp_option.notlocks = [
 ];

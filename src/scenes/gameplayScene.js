@@ -19,7 +19,6 @@ var GamePlayScene = function(game, stage)
   {
     init_levels();
     cur_level = levels[0];         for(var i = 1; i < levels.length;          i++) if(levels[i].primary)          cur_level = levels[i];
-    cur_map = cur_level.map;
     cur_room = find(cur_level.intro_room_id);
     if(cur_room)
     {
@@ -27,7 +26,7 @@ var GamePlayScene = function(game, stage)
     }
     else
     {
-      cur_scene = cur_map.scenes[0]; for(var i = 1; i < cur_map.scenes.length;  i++) if(cur_map.scenes[i].primary)  cur_scene = cur_map.scenes[i];
+      cur_scene = cur_level.scenes[0]; for(var i = 1; i < cur_level.scenes.length;  i++) if(cur_level.scenes[i].primary)  cur_scene = cur_level.scenes[i];
       cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room  = cur_scene.rooms[i];
     }
 
@@ -54,7 +53,7 @@ var GamePlayScene = function(game, stage)
     my_toolbar = new toolbar();
     my_toolbar.consume_level(cur_level);
     my_mapview = new mapview();
-    my_mapview.consume_map(cur_map);
+    my_mapview.consume_level(cur_level);
     my_notebook = new notebook();
     my_notebook.consume_level(cur_level);
     my_objectview = new objectview();
@@ -139,6 +138,7 @@ var GamePlayScene = function(game, stage)
         //trigger cutscenes only from within nav
         if(cur_state == STATE_NAV) //_still_ must be NAV...
         {
+        /*
           for(var i = 0; i < cur_level.cutscenes.length; i++)
           {
             var cutscene = cur_level.cutscenes[i];
@@ -154,6 +154,7 @@ var GamePlayScene = function(game, stage)
               state_t = 0;
             }
           }
+        */
         }
         break;
       case STATE_MAP:

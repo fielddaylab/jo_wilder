@@ -5,7 +5,6 @@ var tmp_audio;
 var tmp_entry;
 var tmp_cutscene;
 var tmp_level;
-var tmp_map;
 var tmp_scene;
 var tmp_room;
 var tmp_person;

@@ -1,12 +1,10 @@
 
-  //precompile in any .find's
   for(var i = 0; i < levels.length; i++)
   {
     tmp_level = levels[i];
-    tmp_map = tmp_level.map;
-    for(var j = 0; j < tmp_map.scenes.length; j++)
+    for(var j = 0; j < tmp_level.scenes.length; j++)
     {
-      tmp_scene = tmp_map.scenes[j];
+      tmp_scene = tmp_level.scenes[j];
       for(var k = 0; k < tmp_scene.rooms.length; k++)
       {
         tmp_room = tmp_scene.rooms[k];

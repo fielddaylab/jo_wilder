@@ -1,6 +1,9 @@
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.madison.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.toolbar_animcycle_id = "toolbar";
+tmp_level.toolbar_audio_id = "null";
+tmp_level.map_animcycle_id = "map";
+tmp_level.map_audio_id = "null";
 tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";
 tmp_level.notebook_animcycle_id = "notebook";

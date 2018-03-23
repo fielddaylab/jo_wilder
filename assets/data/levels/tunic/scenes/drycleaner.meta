@@ -1,13 +1,13 @@
 tmp_scene.primary = false;
 tmp_scene.ww = 100;
 tmp_scene.wh = 100;
-tmp_scene.wx = 238.99999999999997;
-tmp_scene.wy = 55.000000000000014;
-tmp_scene.animcycle_id = "scene_library";
+tmp_scene.wx = 211.00000000000003;
+tmp_scene.wy = -123.99999999999996;
+tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.noteworthy = false;
 tmp_scene.locks = [
-"tunic.madison.historicalsociety.frontdesk.archivist.log",
+"tunic.humanecology.frontdesk.worker.slip",
 ];
 tmp_scene.notlocks = [
 ];
