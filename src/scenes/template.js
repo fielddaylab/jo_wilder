@@ -39,13 +39,13 @@ var find = function(id)
     if(ids.length <= ++k) return porthole;
     return;
   }
-  var wildcard; for(var i = 0; i < room.wildcards.length; i++) if(room.wildcards[i].id == keys[k]) wildcard = room.wildcards[i];
+  var wildcard; for(var i = 0; i < room.wildcards.length; i++) if(room.wildcards[i].id == ids[k]) wildcard = room.wildcards[i];
   if(wildcard)
   {
     if(ids.length <= ++k) return wildcard;
     return;
   }
-  var inert; for(var i = 0; i < room.inerts.length; i++) if(room.inerts[i].id == keys[k]) inert = room.inerts[i];
+  var inert; for(var i = 0; i < room.inerts.length; i++) if(room.inerts[i].id == ids[k]) inert = room.inerts[i];
   if(inert)
   {
     if(ids.length <= ++k) return inert;
