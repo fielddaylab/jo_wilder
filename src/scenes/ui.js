@@ -982,7 +982,7 @@ var navigable = function()
 
   self.tick = function()
   {
-    if(my_camera == my_real_camera)
+    if(my_camera == my_real_camera && state_stack != STATE_CUTSCENE)
     {
       //move camera
       var lerp_s = 0.03;
@@ -1169,12 +1169,15 @@ var mapview = function()
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_scenes = [];
 
+  self.map_animcycle_inst;
+
   self.consume_level = function(level)
   {
     self.level = level;
     self.level.key = true;
     self.unlock_content();
     self.selected_scene = 0;
+    self.map_animcycle_inst = gen_animcycle_inst(level.map_animcycle_id,level.animcycles);
   }
 
   self.unlock_content = function()
@@ -1275,7 +1278,7 @@ var mapview = function()
 
   self.tick = function()
   {
-    self.level.map_animcycle_inst.tick();
+    self.map_animcycle_inst.tick();
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
     {
       self.cache_unlocked_scenes[i].animcycle_inst.tick();
@@ -1286,7 +1289,7 @@ var mapview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h
-    ctx.drawImage(self.level.map_animcycle_inst.img,self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.map_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
@@ -2337,6 +2340,18 @@ var cutsceneview = function()
         if(c.animcycle_offset_t != CUTSCENE_COMMAND_IGNORE) e.animcycle_inst.frame_t += c.animcycle_offset_t;
         break;
       case CUTSCENE_COMMAND_ACT:
+        if(c.cutscene_entity_type != CUTSCENE_ENTITY_SCENE) break;
+        var e = self.find_cutscene_entity(c);
+        cur_act = e;
+        state_from = state_cur;
+        state_cur = STATE_TRANSITION;
+        state_t = 0;
+        switch(e.act)
+        {
+          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+        }
         break;
       case CUTSCENE_COMMAND_AUDIO:
         break;
@@ -2401,6 +2416,7 @@ var cutsceneview = function()
     {
       state_from = state_cur;
       state_stack = STATE_NAV;
+      act_stack = 0;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
       state_t = 0;

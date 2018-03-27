@@ -44,6 +44,13 @@ tmp_cutscene_command.audio_id = "null";
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
+//get click
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
 //setup cam
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;

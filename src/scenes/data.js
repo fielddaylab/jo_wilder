@@ -1075,13 +1075,13 @@ tmp_room.id = "hall";
 tmp_room.fqid = "tunic.capitol.hall";
 {
 tmp_room.primary = false;
-tmp_room.ww = 918.3282980866062;
-tmp_room.wh = 660;
+tmp_room.ww = 918.3282980866062*2;
+tmp_room.wh = 660*2;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
+tmp_room.cam_wh = 660*1.5;
 tmp_room.navs = [
 {wx:20.5, wy:-150.5, ww:831, wh:351 },
 ];
@@ -1633,6 +1633,13 @@ tmp_cutscene_command.animcycle_offset_t = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.audio_id = "null";
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
+
+//get click
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //setup cam
 tmp_cutscene_command = new cutscene_command();

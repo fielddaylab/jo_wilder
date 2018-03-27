@@ -104,6 +104,7 @@ var GamePlayScene = function(game, stage)
 
     state_cur = STATE_TRANSITION;
     state_stack = STATE_NAV;
+    act_stack = 0;
     state_from = STATE_NAV;
     state_to = state_stack;
     state_t = 0.5;
@@ -148,6 +149,7 @@ var GamePlayScene = function(game, stage)
               state_from = state_cur;
               state_cur = STATE_TRANSITION;
               state_stack = STATE_CUTSCENE;
+              state_act = cur_act;
               state_to = state_stack;
               my_cutsceneview.consume_cutscene(cur_act);
               state_t = 0;
