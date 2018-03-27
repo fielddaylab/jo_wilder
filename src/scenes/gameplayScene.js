@@ -224,12 +224,15 @@ var GamePlayScene = function(game, stage)
         false) ;
         my_navigable.tick();
         my_avatar.tick();
-        my_cutsceneview.tick();
+        //my_cutsceneview.tick(); //will tick because of stack
         break;
       case STATE_TRANSITION:
         transition_tick();
         break;
     }
+
+    if(state_stack == STATE_CUTSCENE) my_cutsceneview.tick();
+
     clicker.flush();
     dragger.flush();
     hoverer.flush();
@@ -256,14 +259,17 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_PERSON:
         my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
         my_personview.draw(1);
         break;
       case STATE_OBJECT:
         my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
         my_objectview.draw(1);
         break;
       case STATE_OBSERVATION:
         my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
         my_observationview.draw(1);
         break;
       case STATE_WILDCARD:
@@ -301,9 +307,10 @@ var GamePlayScene = function(game, stage)
     switch(state_from)
     {
       case STATE_NAV:
+      case STATE_CUTSCENE:
         my_navigable.tick();
         my_avatar.tick();
-        if(state_to == STATE_NAV)
+        if(state_from == STATE_NAV && state_to == STATE_NAV)
         {
           state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5)
@@ -391,11 +398,6 @@ var GamePlayScene = function(game, stage)
         my_avatar.tick();
         state_t += state_t_speed;
         break;
-      case STATE_CUTSCENE:
-        my_navigable.tick();
-        my_avatar.tick();
-        state_t += state_t_speed;
-        break;
     }
 
     if(state_t >= 1)
@@ -410,7 +412,8 @@ var GamePlayScene = function(game, stage)
     switch(state_from)
     {
       case STATE_NAV:
-        if(state_to == STATE_NAV)
+      case STATE_CUTSCENE:
+        if(state_from == STATE_NAV && state_to == STATE_NAV)
         {
           my_navigable.draw();
           my_toolbar.draw(1);
@@ -424,42 +427,52 @@ var GamePlayScene = function(game, stage)
             ctx.fillText("loading...",canv.width-100,canv.height-20);
           }
         }
-        if(state_to == STATE_MAP)
+        else if(state_to == STATE_MAP)
         {
           my_navigable.draw();
           my_toolbar.draw(1-state_t);
           my_mapview.draw(state_t);
         }
-        if(state_to == STATE_NOTEBOOK)
+        else if(state_to == STATE_NOTEBOOK)
         {
           my_navigable.draw();
           my_toolbar.draw(1-state_t);
           my_notebook.draw(state_t);
         }
-        if(state_to == STATE_PERSON)
+        else if(state_to == STATE_PERSON)
         {
           my_navigable.draw();
-          my_toolbar.draw(1-state_t);
+          if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+          else                              my_toolbar.draw(1-state_t);
           my_personview.draw(state_t);
         }
-        if(state_to == STATE_OBJECT)
+        else if(state_to == STATE_OBJECT)
         {
           my_navigable.draw();
-          my_toolbar.draw(1-state_t);
+          if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+          else                              my_toolbar.draw(1-state_t);
           my_objectview.draw(state_t);
         }
-        if(state_to == STATE_OBSERVATION)
+        else if(state_to == STATE_OBSERVATION)
         {
           my_navigable.draw();
-          my_toolbar.draw(1-state_t);
+          if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+          else                              my_toolbar.draw(1-state_t);
           my_observationview.draw(state_t);
         }
-        if(state_to == STATE_WILDCARD)
+        else if(state_to == STATE_WILDCARD)
         {
           my_navigable.draw();
-          my_toolbar.draw(1-state_t);
+          if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+          else                              my_toolbar.draw(1-state_t);
         }
-        if(state_to == STATE_CUTSCENE)
+        else if(state_to == STATE_NAV) //guaranteed cutscene->nav by initial if
+        {
+          my_navigable.draw();
+          my_toolbar.draw(state_t);
+          my_cutsceneview.draw(1-state_t);
+        }
+        else if(state_to == STATE_CUTSCENE) //guaranteed nav->cutscene, because no cutscene->cutscene
         {
           my_navigable.draw();
           my_toolbar.draw(1-state_t);
@@ -503,38 +516,24 @@ var GamePlayScene = function(game, stage)
         }
         break;
       case STATE_PERSON:
-        if(state_to == STATE_NAV)
-        {
-          my_navigable.draw();
-          my_toolbar.draw(state_t);
-          my_personview.draw(1-state_t);
-        }
+        my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+        else                              my_toolbar.draw(state_t);
+        my_personview.draw(1-state_t);
         break;
       case STATE_OBJECT:
-        if(state_to == STATE_NAV)
-        {
-          my_navigable.draw();
-          my_toolbar.draw(state_t);
-          my_objectview.draw(1-state_t);
-        }
+        my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+        else                              my_toolbar.draw(state_t);
+        my_objectview.draw(1-state_t);
         break;
       case STATE_OBSERVATION:
-        if(state_to == STATE_NAV)
-        {
-          my_navigable.draw();
-          my_toolbar.draw(state_t);
-          my_observationview.draw(1-state_t);
-        }
+        my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+        else                              my_toolbar.draw(state_t);
+        my_observationview.draw(1-state_t);
         break;
       case STATE_WILDCARD:
-        break;
-      case STATE_CUTSCENE:
-        if(state_to == STATE_NAV)
-        {
-          my_navigable.draw();
-          my_toolbar.draw(state_t);
-          my_cutsceneview.draw(1-state_t);
-        }
         break;
     }
   };

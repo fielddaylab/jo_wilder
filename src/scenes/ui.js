@@ -985,16 +985,15 @@ var navigable = function()
     if(my_camera == my_real_camera && state_stack != STATE_CUTSCENE)
     {
       //move camera
-      var lerp_s = 0.03;
       var xp = smooth(invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, my_avatar.wx));
       var camwd = self.room.ww-my_real_camera.ww;
       var target_cam_wx = self.room.wx-camwd/2+xp*camwd;
-      my_real_camera.wx = lerp(my_real_camera.wx,target_cam_wx,lerp_s);
+      my_real_camera.wx = lerp(my_real_camera.wx,target_cam_wx,cur_level.target_lerp_s);
 
       var yp = smooth(invlerp(self.room.wy-self.room.wh/2, self.room.wy+self.room.wh/2, my_avatar.wy));
       var camhd = self.room.wh-my_real_camera.wh;
       var target_cam_wy = self.room.wy-camhd/2+yp*camhd;
-      my_real_camera.wy = lerp(my_real_camera.wy,target_cam_wy,lerp_s);
+      my_real_camera.wy = lerp(my_real_camera.wy,target_cam_wy,cur_level.target_lerp_s);
     }
 
     self.room.animcycle_inst.tick();
@@ -2283,8 +2282,7 @@ var cutsceneview = function()
     self.end = false;
     self.command_i = 0;
 
-    while(self.command_i < cutscene.commands.length && cutscene.commands[self.command_i].t < self.t)
-      self.execute_next_command();
+    self.tick();
   }
 
   self.find_cutscene_entity = function(command)
@@ -2362,6 +2360,12 @@ var cutsceneview = function()
         c.from_wz = e.wz;
         c.from_ww = e.ww;
         c.from_wh = e.wh;
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
+        c.cutscene_entity = e;
+        self.running_commands.push(c);
+        break;
+      case CUTSCENE_COMMAND_TARGET:
+        var e = self.find_cutscene_entity(c);
         c.cutscene_entity = e;
         self.running_commands.push(c);
         break;
@@ -2383,34 +2387,44 @@ var cutsceneview = function()
 
   self.tick = function()
   {
-    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t)
+    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t && !self.waiting)
       self.execute_next_command();
 
     for(var i = 0; !self.end && i < self.running_commands.length; i++)
     {
       var c = self.running_commands[i];
-      if(c.command != CUTSCENE_COMMAND_TWEEN) continue;
-      var e = c.cutscene_entity;
-      var t = min(1,invlerp(c.t,c.end_t,self.t));
-      if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = lerp(c.from_wx,c.wx,t);
-      if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = lerp(c.from_wy,c.wy,t);
-      if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = lerp(c.from_wz,c.wz,t);
-      if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = lerp(c.from_ww,c.ww,t);
-      if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
-      if(t == 1)
+      if(c.command == CUTSCENE_COMMAND_TWEEN)
       {
-        self.running_commands.splice(i,1);
-        i--;
+        var e = c.cutscene_entity;
+        var t = min(1,invlerp(c.t,c.end_t,self.t));
+        if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = lerp(c.from_wx,c.wx,t);
+        if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = lerp(c.from_wy,c.wy,t);
+        if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = lerp(c.from_wz,c.wz,t);
+        if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = lerp(c.from_ww,c.ww,t);
+        if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
+        if(t == 1)
+        {
+          self.running_commands.splice(i,1);
+          i--;
+        }
+      }
+      else if(c.command == CUTSCENE_COMMAND_TARGET)
+      {
+        var e = c.cutscene_entity;
+        e.wx = lerp(e.wx,c.wx,cur_level.target_lerp_s);
+        e.wy = lerp(e.wy,c.wy,cur_level.target_lerp_s);
+        if(distsqr(e.wx,e.wy,c.wx,c.wy) < 0.0001)
+        {
+          self.running_commands.splice(i,1);
+          i--;
+        }
       }
     }
 
     for(var i = 0; i < self.cutscene_entitys.length; i++)
       self.cutscene_entitys[i].animcycle_inst.tick();
-    //tick scene too!
 
-    //camera correct scene+cutscene!
-
-    if(!self.waiting) self.t++;
+    if(state_cur == STATE_CUTSCENE && !self.waiting) self.t++;
 
     if(self.end)
     {

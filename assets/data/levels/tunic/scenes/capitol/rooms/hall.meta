@@ -1,11 +1,11 @@
 tmp_room.primary = false;
-tmp_room.ww = 918.3282980866062*2;
-tmp_room.wh = 660*2;
+tmp_room.ww = 1836.6565961732124;
+tmp_room.wh = 1320;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660*1.5;
+tmp_room.cam_wh = 990;
 tmp_room.navs = [
 {wx:20.5, wy:-150.5, ww:831, wh:351 },
 ];

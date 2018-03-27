@@ -1075,13 +1075,13 @@ tmp_room.id = "hall";
 tmp_room.fqid = "tunic.capitol.hall";
 {
 tmp_room.primary = false;
-tmp_room.ww = 918.3282980866062*2;
-tmp_room.wh = 660*2;
+tmp_room.ww = 1836.6565961732124;
+tmp_room.wh = 1320;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660*1.5;
+tmp_room.cam_wh = 990;
 tmp_room.navs = [
 {wx:20.5, wy:-150.5, ww:831, wh:351 },
 ];
@@ -1634,11 +1634,14 @@ tmp_cutscene_command.audio_id = "null";
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
-//get click
+//setup jolie
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
+tmp_cutscene_command.wx = 400;
+tmp_cutscene_command.wy = -100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //setup cam
@@ -1647,8 +1650,15 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
-tmp_cutscene_command.wx = 50;
-tmp_cutscene_command.wy = 50;
+tmp_cutscene_command.wx = -50;
+tmp_cutscene_command.wy = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//get click
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //gramps talk
@@ -1659,20 +1669,25 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
-//move to jo
+//cam move to jo
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
 tmp_cutscene_command.t = 2;
-tmp_cutscene_command.end_t = 5;
-tmp_cutscene_command.wx = 100;
-tmp_cutscene_command.wy = 50;
+tmp_cutscene_command.wx = 400;
+tmp_cutscene_command.wy = 10;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//get click
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
+tmp_cutscene_command.t = 10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //Leave this at the end- remember to set tmp_cutscene_command.t!
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 }
@@ -1848,23 +1863,23 @@ tmp_speak.id = "intro_cs_0";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_cs_0";
 {
 tmp_speak.primary = 2;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
+tmp_speak.wx = -144.00000000000006;
+tmp_speak.wy = 130;
+tmp_speak.w = 177;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Only two days left...";
 tmp_speak.speaker = 2;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.options_wx = -47.00000000000006;
+tmp_speak.options_wy = 18.000000000000014;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.noteworthy = false;
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
-  "tunic.historicalsociety.closet.gramps.intro_cs_0"
+"tunic.historicalsociety.closet.gramps.intro_cs_0",
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -1892,16 +1907,16 @@ tmp_speak.id = "intro_cs_1";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_cs_1";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
+tmp_speak.wx = -162.00000000000006;
+tmp_speak.wy = 164;
+tmp_speak.w = 226;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "unless I can convince the boss to keep me around.";
 tmp_speak.speaker = 2;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.options_wx = -89.00000000000006;
+tmp_speak.options_wy = 52.000000000000014;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.noteworthy = false;
@@ -1935,16 +1950,16 @@ tmp_speak.id = "intro_cs_2";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_cs_2";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
+tmp_speak.wx = -153.00000000000009;
+tmp_speak.wy = 165;
+tmp_speak.w = 221;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "How can I tell Jo? I don't want her to worry...";
 tmp_speak.speaker = 2;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.options_wx = -67.00000000000003;
+tmp_speak.options_wy = 42.00000000000002;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.noteworthy = false;
