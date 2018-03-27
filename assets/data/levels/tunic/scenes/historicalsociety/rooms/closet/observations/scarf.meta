@@ -1,0 +1,21 @@
+tmp_observation.ww = 152.39115431348714;
+tmp_observation.wh = 99.9999999999999;
+tmp_observation.wx = 59.2513244228428;
+tmp_observation.wy = -281.2911786148236;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 81.12909904618942;
+tmp_observation.act_wy = 40.02207172547418;
+tmp_observation.act_anim = 0;
+tmp_observation.animcycle_id = "scarf";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "null";
+tmp_observation.blip_wx = -18.045621681053206;
+tmp_observation.blip_wy = -95.24304189262328;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.noteworthy = false;
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+];
+

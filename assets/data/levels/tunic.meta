@@ -23,6 +23,7 @@ tmp_level.map_hover_animcycle_id = "hover_map";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.cursor_w = 40;
 tmp_level.cursor_h = 40;
+tmp_level.target_lerp_s = 0.03;
 tmp_level.noteworthy = false;
 tmp_level.unlocks = [
 ];
