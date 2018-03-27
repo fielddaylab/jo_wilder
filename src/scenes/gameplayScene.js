@@ -102,9 +102,10 @@ var GamePlayScene = function(game, stage)
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
 
-    cur_state = STATE_TRANSITION;
+    state_cur = STATE_TRANSITION;
+    state_stack = STATE_NAV;
     state_from = STATE_NAV;
-    state_to = STATE_NAV;
+    state_to = state_stack;
     state_t = 0.5;
   };
 
@@ -114,7 +115,7 @@ var GamePlayScene = function(game, stage)
     if(!init_audio) clicker.filter(canv_clicker);
     hoverer.filter(my_cursor);
 
-    switch(cur_state)
+    switch(state_cur)
     {
       case STATE_NAV:
         hoverer.filter(my_navigable);
@@ -136,7 +137,7 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         my_avatar.tick();
         //trigger cutscenes only from within nav
-        if(cur_state == STATE_NAV) //_still_ must be NAV...
+        if(state_cur == STATE_NAV) //_still_ must be NAV...
         {
           for(var i = 0; i < cur_room.cutscenes.length; i++)
           {
@@ -144,9 +145,10 @@ var GamePlayScene = function(game, stage)
             if(!cutscene.key && !querylocked(cutscene))
             {
               cur_act = cutscene;
-              state_from = cur_state;
-              cur_state = STATE_TRANSITION;
-              state_to = STATE_CUTSCENE;
+              state_from = state_cur;
+              state_cur = STATE_TRANSITION;
+              state_stack = STATE_CUTSCENE;
+              state_to = state_stack;
               my_cutsceneview.consume_cutscene(cur_act);
               state_t = 0;
             }
@@ -236,7 +238,7 @@ var GamePlayScene = function(game, stage)
 
   self.draw = function()
   {
-    switch(cur_state)
+    switch(state_cur)
     {
       case STATE_NAV:
         my_navigable.draw();
@@ -397,7 +399,7 @@ var GamePlayScene = function(game, stage)
     if(state_t >= 1)
     {
       state_t = 0;
-      cur_state = state_to;
+      state_cur = state_to;
     }
   };
 

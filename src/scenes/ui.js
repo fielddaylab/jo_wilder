@@ -276,8 +276,8 @@ var avatar = function()
       case ANIM_ACT:
       {
         cur_act = my_navigable.selected_act;
-        state_from = cur_state;
-        cur_state = STATE_TRANSITION;
+        state_from = state_cur;
+        state_cur = STATE_TRANSITION;
         switch(cur_act.act)
         {
           case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
@@ -287,7 +287,7 @@ var avatar = function()
           {
             if(cur_act.target_room_found)
             {
-              state_to = STATE_NAV;
+              state_to = state_stack;
               get_audio(cur_act.audio_id,cur_level.audios).aud.play();
             }
             else //go to map
@@ -1113,18 +1113,18 @@ var toolbar = function()
     if(MAP_ENABLED && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
-      state_from = cur_state;
+      state_from = state_cur;
       state_to = STATE_MAP;
-      cur_state = STATE_TRANSITION;
+      state_cur = STATE_TRANSITION;
       state_t = 0;
       my_mapview.unlock_content();
     }
     if(ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
-      state_from = cur_state;
+      state_from = state_cur;
       state_to = STATE_NOTEBOOK;
-      cur_state = STATE_TRANSITION;
+      state_cur = STATE_TRANSITION;
       state_t = 0;
     }
   }
@@ -1255,9 +1255,9 @@ var mapview = function()
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
+      state_from = state_cur;
+      state_to = state_stack;
+      state_cur = STATE_TRANSITION;
       state_t = 0;
     }
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
@@ -1265,9 +1265,9 @@ var mapview = function()
       if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY))
       {
         self.selected_scene = self.cache_unlocked_scenes[i];
-        state_from = cur_state;
-        state_to = STATE_NAV;
-        cur_state = STATE_TRANSITION;
+        state_from = state_cur;
+        state_to = state_stack;
+        state_cur = STATE_TRANSITION;
         state_t = 0;
       }
     }
@@ -1340,9 +1340,9 @@ var notebook = function()
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
+      state_from = state_cur;
+      state_to = state_stack;
+      state_cur = STATE_TRANSITION;
       state_t = 0;
     }
   }
@@ -1499,9 +1499,9 @@ var objectview = function()
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
+      state_from = state_cur;
+      state_to = state_stack;
+      state_cur = STATE_TRANSITION;
       state_t = 0;
       my_navigable.unlock_content();
     }
@@ -1718,9 +1718,9 @@ var observationview = function()
           self.ui_state = UI_STATE_NULL;
           self.ui_state_t = 0;
           self.ui_state_p = 0;
-          state_from = cur_state;
-          state_to = STATE_NAV;
-          cur_state = STATE_TRANSITION;
+          state_from = state_cur;
+          state_to = state_stack;
+          state_cur = STATE_TRANSITION;
           state_t = 0;
           my_navigable.unlock_content();
         }
@@ -2101,9 +2101,9 @@ var personview = function()
             self.ui_state_t = 0;
             self.ui_state_p = 0;
             self.cur_speak = 0;
-            state_from = cur_state;
-            state_to = STATE_NAV;
-            cur_state = STATE_TRANSITION;
+            state_from = state_cur;
+            state_to = state_stack;
+            state_cur = STATE_TRANSITION;
             state_t = 0;
             my_navigable.unlock_content();
           }
@@ -2399,9 +2399,10 @@ var cutsceneview = function()
 
     if(self.end)
     {
-      state_from = cur_state;
-      state_to = STATE_NAV;
-      cur_state = STATE_TRANSITION;
+      state_from = state_cur;
+      state_stack = STATE_NAV;
+      state_to = state_stack;
+      state_cur = STATE_TRANSITION;
       state_t = 0;
     }
   }
