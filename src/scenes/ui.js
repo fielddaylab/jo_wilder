@@ -953,19 +953,19 @@ var navigable = function()
 
       self.selected_act = 0;
       for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-        if(ptWithinBox(self.cache_unlocked_persons[i],self.last_click.x,self.last_click.y))
+        if(ptWithinBox(self.cache_unlocked_persons[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_persons[i].z))
           self.selected_act = self.cache_unlocked_persons[i];
       for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-        if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y))
+        if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_objects[i].z))
           self.selected_act = self.cache_unlocked_objects[i];
       for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-        if(ptWithinBox(self.cache_unlocked_observations[i],self.last_click.x,self.last_click.y))
+        if(ptWithinBox(self.cache_unlocked_observations[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_observations[i].z))
           self.selected_act = self.cache_unlocked_observations[i];
       for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-        if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y))
+        if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_portholes[i].z))
           self.selected_act = self.cache_unlocked_portholes[i];
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-        if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y))
+        if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_wildcards[i].z))
           self.selected_act = self.cache_unlocked_wildcards[i];
 
       if(self.selected_act)
