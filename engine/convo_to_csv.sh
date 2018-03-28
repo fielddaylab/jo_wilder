@@ -1,7 +1,7 @@
 #!/bin/bash
 
-outf="../../convo.csv"
-echo $1 > $outf
+outf=$2 #"../../convo.csv"
+echo \"$1\" > $outf
 speaks_folder=`./filefrom.sh person $1 | sed 's@.meta@/speaks@'`
 
 for i in $speaks_folder/*.meta; do
