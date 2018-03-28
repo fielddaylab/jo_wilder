@@ -2218,7 +2218,7 @@ tmp_inert.ww = 288.7991253327396;
 tmp_inert.wh = 291.62036450312695;
 tmp_inert.wx = -196.01916720368874;
 tmp_inert.wy = -35.07498882454156;
-tmp_inert.wz = 0;
+tmp_inert.wz = 0.5;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_chair";
 tmp_inert.unlocks = [
@@ -4083,13 +4083,13 @@ levels.push(tmp_level);
       for(var k = 0; k < tmp_scene.rooms.length; k++)
       {
         tmp_room = tmp_scene.rooms[k];
-        tmp_room.nav_min_z_wy = -99999;
-        tmp_room.nav_max_z_wy =  99999;
+        tmp_room.nav_min_wz_wy = -99999;
+        tmp_room.nav_max_wz_wy =  99999;
         for(var l = 0; l < tmp_room.navs.length; l++)
         {
           var tmp_nav = tmp_room.navs[l]
-          if(tmp_nav.wy+tmp_nav.wh/2 > tmp_room.nav_min_z_wy) tmp_room.nav_min_z_wy = tmp_nav.wy+tmp_nav.wh/2;
-          if(tmp_nav.wy-tmp_nav.wh/2 < tmp_room.nav_max_z_wy) tmp_room.nav_max_z_wy = tmp_nav.wy-tmp_nav.wh/2;
+          if(tmp_nav.wy+tmp_nav.wh/2 > tmp_room.nav_min_wz_wy) tmp_room.nav_min_wz_wy = tmp_nav.wy+tmp_nav.wh/2;
+          if(tmp_nav.wy-tmp_nav.wh/2 < tmp_room.nav_max_wz_wy) tmp_room.nav_max_wz_wy = tmp_nav.wy-tmp_nav.wh/2;
         }
         for(var l = 0; l < tmp_room.portholes.length; l++)
         {
