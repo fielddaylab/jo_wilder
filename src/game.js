@@ -42,6 +42,7 @@ var Game = function(init)
     scenes[cur_scene].tick();
     if(old_cur_scene == cur_scene) //still in same scene- draw
     {
+      stage.clear();
       scenes[cur_scene].draw();
       stage.draw(); //blits from offscreen canvas to on screen one
     }
