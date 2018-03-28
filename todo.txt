@@ -28,8 +28,6 @@ check noteworthiness on key
 implement noteworthy notif
 re-eval locks on key
 
-filter clicks by z order
-click to skip text transitions
 lerp z vertically
-define content in terms of z
+implement content in terms of z
 

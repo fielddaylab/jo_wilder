@@ -763,6 +763,7 @@ var navigable = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
+    self.z = 999999;
     self.act = 0;
     self.consume_act = function(a)
     {
@@ -789,6 +790,7 @@ var navigable = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
+    self.z = 999999;
     self.target_start = 0;
     self.consume_target_start = function(a)
     {
@@ -851,18 +853,18 @@ var navigable = function()
     for(var i = 0; i < self.room.entry_portholes_found.length;  i++) { var o = self.room.entry_portholes_found[i];  if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
                                                                      { var o = self.room;                           if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
 
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_persons.length; i++)
-      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_persons[i]; }
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_objects.length; i++)
-      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_objects[i]; }
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_observations.length; i++)
-      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_observations[i]; }
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_portholes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_portholes[i]; }
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_wildcards.length; i++)
-      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_inerts.length; i++)
-      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; }
+    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
+      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_persons[i].z)) { self.edit_o = self.cache_unlocked_persons[i]; }
+    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
+      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_objects[i].z)) { self.edit_o = self.cache_unlocked_objects[i]; }
+    for(var i = 0; i < self.cache_unlocked_observations.length; i++)
+      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_observations[i].z)) { self.edit_o = self.cache_unlocked_observations[i]; }
+    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
+      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_portholes[i].z)) { self.edit_o = self.cache_unlocked_portholes[i]; }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
+      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_wildcards[i].z)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
+    for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
+      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_inerts[i].z)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; }
     for(var i = 0; !self.edit_o && i < self.room.shadows.length; i++)
       if(ptWithinBox(self.room.shadows[i],evt.doX,evt.doY)) { self.edit_o = self.room.shadows[i]; }
     for(var i = 0; !self.edit_o && i < self.room.lights.length; i++)
