@@ -1920,7 +1920,7 @@ tmp_option.fqid = "tunic.historicalsociety.closet.gramps.hub.goodbye";
 {
 tmp_option.index = 999;
 tmp_option.raw_qtext = "Nevermind!";
-tmp_option.target_speak = "";
+tmp_option.target_speak = "null";
 tmp_option.noteworthy = false;
 tmp_option.unlocks = [
 ];
