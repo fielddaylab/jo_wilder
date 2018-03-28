@@ -1,10 +1,10 @@
 tmp_observation.ww = 242.5221929444906;
 tmp_observation.wh = 164.0023109162744;
-tmp_observation.wx = 483.67784643177754;
-tmp_observation.wy = -52.05610462944;
+tmp_observation.wx = 465.67784975346535;
+tmp_observation.wy = -49.05610468928902;
 tmp_observation.wz = 0;
-tmp_observation.act_wx = -108.779743216709;
-tmp_observation.act_wy = -132.105369012786;
+tmp_observation.act_wx = -107.51714131069957;
+tmp_observation.act_wy = -129.10494391114588;
 tmp_observation.act_anim = 0;
 tmp_observation.animcycle_id = "null";
 tmp_observation.audio_id = "null";

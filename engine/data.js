@@ -1649,13 +1649,18 @@ tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
 tmp_room.navs = [
-{wx:-7.119460531939694, wy:-213.42727272727282, ww:2158.2567325748373, wh:380.94909090909096 },
+{wx:-374.79431084122393, wy:-113.2998170346518, ww:211.86808265684846, wh:240.3455245259692 },
+{wx:-118.55473324394916, wy:-223.7356130025576, ww:2033.1000861592847, wh:226.6862476527108 },
 ];
 tmp_room.lights = [
+{wx:522.4986865359258, wy:-105.99060828993512, ww:347.770278611425, wh:411.47272797892475 },
+{wx:-394.0363142292491, wy:223.8727272727272, ww:61.77025691699601, wh:56.472727272727056 },
 {wx:-394.0363142292491, wy:223.8727272727272, ww:61.77025691699601, wh:56.472727272727056 },
 ];
 tmp_room.shadows = [
-{wx:-306.03223814229244, wy:225.2, ww:59.994318181818386, wh:62.872727272727595 },
+{wx:943.0457915933541, wy:-146.67414349544742, ww:198.0771365697986, wh:459.98419283740435 },
+{wx:-948.0429452590882, wy:-70.49091146868366, ww:149.78539483522562, wh:427.22621485165007 },
+{wx:72.03004853348523, wy:-151.83534632269135, ww:200.31107256569817, wh:430.8939187065737 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -1783,8 +1788,8 @@ tmp_person.fqid = "tunic.historicalsociety.closet.gramps";
 {
 tmp_person.ww = 176.99999935560783;
 tmp_person.wh = 343.9999890712546;
-tmp_person.wx = -204.82473587498393;
-tmp_person.wy = -83.2447210990628;
+tmp_person.wx = -423.82473587498396;
+tmp_person.wy = 18.755278900937242;
 tmp_person.wz = 0;
 tmp_person.act_wx = 137.58904854645314;
 tmp_person.act_wy = -113.1608805092052;
@@ -1948,9 +1953,9 @@ tmp_speak.id = "intro_cs_0";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_cs_0";
 {
 tmp_speak.primary = 2;
-tmp_speak.wx = -144.00000000000006;
-tmp_speak.wy = 130;
-tmp_speak.w = 177;
+tmp_speak.wx = -98.00268844527831;
+tmp_speak.wy = 150.99985065472515;
+tmp_speak.w = 237;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
@@ -2081,8 +2086,8 @@ tmp_object.fqid = "tunic.historicalsociety.closet.newspaper";
 {
 tmp_object.ww = 114.55309842041304;
 tmp_object.wh = 76.71504252733904;
-tmp_object.wx = -587.326832149779;
-tmp_object.wy = -131.73850062843815;
+tmp_object.wx = -629.3983715585547;
+tmp_object.wy = -70.80189845650153;
 tmp_object.wz = 0;
 tmp_object.act_wx = -61.12301336573512;
 tmp_object.act_wy = -32.01681652490887;
@@ -2120,11 +2125,11 @@ tmp_observation.fqid = "tunic.historicalsociety.closet.photo";
 {
 tmp_observation.ww = 242.5221929444906;
 tmp_observation.wh = 164.0023109162744;
-tmp_observation.wx = 483.67784643177754;
-tmp_observation.wy = -52.05610462944;
+tmp_observation.wx = 465.67784975346535;
+tmp_observation.wy = -49.05610468928902;
 tmp_observation.wz = 0;
-tmp_observation.act_wx = -108.779743216709;
-tmp_observation.act_wy = -132.105369012786;
+tmp_observation.act_wx = -107.51714131069957;
+tmp_observation.act_wy = -129.10494391114588;
 tmp_observation.act_anim = 0;
 tmp_observation.animcycle_id = "null";
 tmp_observation.audio_id = "null";
@@ -2147,10 +2152,10 @@ tmp_observation = new observation();
 tmp_observation.id = "scarf";
 tmp_observation.fqid = "tunic.historicalsociety.closet.scarf";
 {
-tmp_observation.ww = 152.39115431348714;
-tmp_observation.wh = 99.9999999999999;
-tmp_observation.wx = 59.2513244228428;
-tmp_observation.wy = -281.2911786148236;
+tmp_observation.ww = 120.37433778857825;
+tmp_observation.wh = 73.80442284325629;
+tmp_observation.wx = 43.24291616038822;
+tmp_observation.wy = -268.1933900364518;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 81.12909904618942;
 tmp_observation.act_wy = 40.02207172547418;
@@ -2178,8 +2183,8 @@ tmp_porthole.fqid = "tunic.historicalsociety.closet.toentry";
 {
 tmp_porthole.ww = 290.45606097426264;
 tmp_porthole.wh = 284.3818181818179;
-tmp_porthole.wx = -327.6752767038546;
-tmp_porthole.wy = 137.8927272727274;
+tmp_porthole.wx = -353.187543120779;
+tmp_porthole.wy = 120.83666185083999;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 5.416817557475431;
 tmp_porthole.act_wy = -87.38181818181819;
@@ -2204,8 +2209,8 @@ tmp_inert.fqid = "tunic.historicalsociety.closet.chair";
 {
 tmp_inert.ww = 288.7991253327396;
 tmp_inert.wh = 291.62036450312695;
-tmp_inert.wx = -200.08189122433478;
-tmp_inert.wy = -1.6261235363677713;
+tmp_inert.wx = -196.01916720368874;
+tmp_inert.wy = -35.07498882454156;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_chair";
@@ -2221,10 +2226,10 @@ tmp_inert = new inert();
 tmp_inert.id = "desk";
 tmp_inert.fqid = "tunic.historicalsociety.closet.desk";
 {
-tmp_inert.ww = 373.59825030376663;
-tmp_inert.wh = 245.5309842041312;
-tmp_inert.wx = -698.165493490495;
-tmp_inert.wy = -127.35363659310975;
+tmp_inert.ww = 397.1093170356074;
+tmp_inert.wh = 309.30835246805276;
+tmp_inert.wx = -716.9152300534219;
+tmp_inert.wy = -59.238045156760066;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_desk";
@@ -2259,10 +2264,10 @@ tmp_inert = new inert();
 tmp_inert.id = "fgpipes";
 tmp_inert.fqid = "tunic.historicalsociety.closet.fgpipes";
 {
-tmp_inert.ww = 909.1522721749702;
-tmp_inert.wh = 874.2248359659783;
-tmp_inert.wx = 611.2012517753561;
-tmp_inert.wy = 34.138570084331434;
+tmp_inert.ww = 917.8841312272183;
+tmp_inert.wh = 853.8504981773996;
+tmp_inert.wx = 589.5612401567035;
+tmp_inert.wy = 42.448985204123744;
 tmp_inert.wz = 0;
 tmp_inert.g = 0.2;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_fgpipes";
