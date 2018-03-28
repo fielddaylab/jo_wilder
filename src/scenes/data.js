@@ -83,9 +83,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_act/0.jpg");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_act/1.jpg");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_act/2.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_act/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -99,7 +97,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_idle/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_idle/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -226,8 +224,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/gramps/0.jpg");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/gramps/1.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/gramps/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
