@@ -6,8 +6,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_z = 0;
-tmp_room.nav_max_z = 1;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
 {wx:-12.000000000000057, wy:-246, ww:866, wh:173.99999999999997 },
 ];
