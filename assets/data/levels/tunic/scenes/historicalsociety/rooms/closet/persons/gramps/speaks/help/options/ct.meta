@@ -1,4 +1,4 @@
-tmp_option.index = 999;
+tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "help_ctd";
 tmp_option.noteworthy = false;

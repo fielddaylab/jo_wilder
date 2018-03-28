@@ -1,10 +1,7 @@
-room navs topz bottomz
-camera lerp from top-possible-y to bottom-possible-y, ditto for x
 exit cursor
 entrys
 sounds for everything
 sounds in cutscene
-commands-for-scene-actors in a cutscene
 noteworthy entry notifications
 "picture taking"
 speech bubble pointer arrows
@@ -28,6 +25,5 @@ check noteworthiness on key
 implement noteworthy notif
 re-eval locks on key
 
-lerp z vertically
 implement content in terms of z
 
