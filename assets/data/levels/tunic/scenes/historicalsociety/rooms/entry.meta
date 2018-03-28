@@ -6,6 +6,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 1074.7199999999993;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:45.736444608023135, wy:-370.3218181818179, ww:2068.426705925653, wh:466.38909090909084 },
 ];

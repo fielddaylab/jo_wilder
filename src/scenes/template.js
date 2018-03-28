@@ -294,6 +294,8 @@ var room = function()
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.cam_wh = 660;
+  self.nav_min_z = 0;
+  self.nav_max_z = 1;
   self.navs = [];
   self.lights = [];
   self.shadows = [];
@@ -319,6 +321,8 @@ var room = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.nav_min_z_wy = 0;
+  self.nav_max_z_wy = 1;
   self.entry_portholes_found = []; //auto precompiled in
 }
 
@@ -810,6 +814,8 @@ var print_room_meta = function(l)
   "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_room.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_room.cam_wh = "+l.cam_wh+";\n"+
+  "tmp_room.nav_min_z = "+l.nav_min_z+";\n"+
+  "tmp_room.nav_max_z = "+l.nav_max_z+";\n"+
   "tmp_room.navs = [\n";
   for(var i = 0; i < l.navs.length; i++)
     str += "{wx:"+l.navs[i].wx+", wy:"+l.navs[i].wy+", ww:"+l.navs[i].ww+", wh:"+l.navs[i].wh+" },\n";

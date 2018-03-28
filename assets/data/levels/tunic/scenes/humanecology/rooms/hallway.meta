@@ -6,6 +6,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_hallway";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:50, wy:-154, ww:780, wh:308 },
 ];

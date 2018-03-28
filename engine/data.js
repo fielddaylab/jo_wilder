@@ -1077,6 +1077,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-9, wy:-179.49999999999997, ww:876, wh:275 },
 ];
@@ -1164,6 +1166,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_capitol_hall";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 990;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:20.5, wy:-150.5, ww:831, wh:351 },
 ];
@@ -1312,6 +1316,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-12.000000000000057, wy:-246, ww:866, wh:173.99999999999997 },
 ];
@@ -1399,6 +1405,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-2, wy:-197.99999999999997, ww:868, wh:244 },
 ];
@@ -1645,6 +1653,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_closet";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-374.79431084122393, wy:-113.2998170346518, ww:211.86808265684846, wh:240.3455245259692 },
 {wx:-118.55473324394916, wy:-223.7356130025576, ww:2033.1000861592847, wh:226.6862476527108 },
@@ -2290,6 +2300,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_collection";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 950;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:126.58633540372637, wy:-267.9000000000001, ww:1440.6267080745342, wh:470.59999999999985 },
 ];
@@ -2446,6 +2458,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 1074.7199999999993;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:45.736444608023135, wy:-370.3218181818179, ww:2068.426705925653, wh:466.38909090909084 },
 ];
@@ -2604,6 +2618,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:1, wy:-163.5, ww:868, wh:327 },
 ];
@@ -2911,6 +2927,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:66.34433113377327, wy:-117.40000000000003, ww:572.6886622675465, wh:487.6 },
 ];
@@ -3059,6 +3077,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:1, wy:-258, ww:870, wh:142 },
 ];
@@ -3146,6 +3166,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
 ];
@@ -3332,6 +3354,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_hallway";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:50, wy:-154, ww:780, wh:308 },
 ];
@@ -3439,6 +3463,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-10.5, wy:-250.5, ww:793, wh:147 },
 ];
@@ -3526,6 +3552,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_kohlcenter_halloffame";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:-5.560922855082936, wy:-136.49999999999994, ww:2072.720259552992, wh:270.99999999999983 },
 ];
@@ -3647,6 +3675,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_entry";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:4.5, wy:-206, ww:855, wh:236.00000000000003 },
 ];
@@ -3734,6 +3764,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:69.08352365415988, wy:-104.99999999999996, ww:1278.9911908646006, wh:430.0000000000001 },
 ];
@@ -3947,6 +3979,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_microfiche";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
+tmp_room.nav_min_z = 0;
+tmp_room.nav_max_z = 1;
 tmp_room.navs = [
 {wx:11, wy:-194.49999999999997, ww:744, wh:261 },
 ];
@@ -4049,6 +4083,14 @@ levels.push(tmp_level);
       for(var k = 0; k < tmp_scene.rooms.length; k++)
       {
         tmp_room = tmp_scene.rooms[k];
+        tmp_room.nav_min_z_wy = -99999;
+        tmp_room.nav_max_z_wy =  99999;
+        for(var l = 0; l < tmp_room.navs.length; l++)
+        {
+          var tmp_nav = tmp_room.navs[l]
+          if(tmp_nav.wy+tmp_nav.wh/2 > tmp_room.nav_min_z_wy) tmp_room.nav_min_z_wy = tmp_nav.wy+tmp_nav.wh/2;
+          if(tmp_nav.wy-tmp_nav.wh/2 < tmp_room.nav_max_z_wy) tmp_room.nav_max_z_wy = tmp_nav.wy-tmp_nav.wh/2;
+        }
         for(var l = 0; l < tmp_room.portholes.length; l++)
         {
           tmp_porthole = tmp_room.portholes[l];
