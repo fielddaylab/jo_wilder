@@ -2086,8 +2086,8 @@ tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "jolie_worry_cs_0";
-tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_0";
+tmp_speak.id = "jolie_worry_0_cs_0";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_0_cs_0";
 {
 tmp_speak.primary = 9;
 tmp_speak.wx = -241.507607501721;
@@ -2106,18 +2106,18 @@ tmp_speak.noteworthy = false;
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
-"tunic.historicalsociety.closet.gramps.jolie_worry_cs_0",
+"tunic.historicalsociety.closet.gramps.jolie_worry_0_cs_0",
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_0.next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_0_cs_0.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "jolie_worry_cs_1";
+tmp_option.target_speak = "jolie_worry_0_cs_1";
 tmp_option.noteworthy = false;
 tmp_option.unlocks = [
 ];
@@ -2130,8 +2130,8 @@ tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "jolie_worry_cs_1";
-tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_1";
+tmp_speak.id = "jolie_worry_0_cs_1";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_0_cs_1";
 {
 tmp_speak.primary = false;
 tmp_speak.wx = -374.00000000000006;
@@ -2156,7 +2156,7 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_1.next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_0_cs_1.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
@@ -2173,8 +2173,8 @@ tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "jolie_worry_cs_2";
-tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_2";
+tmp_speak.id = "jolie_worry_1_cs_0";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_0";
 {
 tmp_speak.primary = 8;
 tmp_speak.wx = -236.39388934660315;
@@ -2193,18 +2193,18 @@ tmp_speak.noteworthy = false;
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
-"tunic.historicalsociety.closet.gramps.jolie_worry_cs_2",
+"tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_0",
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_2.next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_0.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "jolie_worry_cs_5";
+tmp_option.target_speak = "jolie_worry_1_cs_1";
 tmp_option.noteworthy = false;
 tmp_option.unlocks = [
 ];
@@ -2217,8 +2217,8 @@ tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "jolie_worry_cs_3";
-tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_3";
+tmp_speak.id = "jolie_worry_1_cs_1";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_1";
 {
 tmp_speak.primary = false;
 tmp_speak.wx = -371.00000000363616;
@@ -2243,11 +2243,11 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_3.next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_1.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "jolie_worry_cs_6";
+tmp_option.target_speak = "jolie_worry_1_cs_2";
 tmp_option.noteworthy = false;
 tmp_option.unlocks = [
 ];
@@ -2260,8 +2260,8 @@ tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "jolie_worry_cs_4";
-tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_4";
+tmp_speak.id = "jolie_worry_1_cs_2";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_2";
 {
 tmp_speak.primary = false;
 tmp_speak.wx = -240.00000000000003;
@@ -2286,11 +2286,11 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_4.next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_2.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "jolie_worry_cs_7";
+tmp_option.target_speak = "jolie_worry_1_cs_3";
 tmp_option.noteworthy = false;
 tmp_option.unlocks = [
 ];
@@ -2303,8 +2303,8 @@ tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "jolie_worry_cs_5";
-tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_5";
+tmp_speak.id = "jolie_worry_1_cs_3";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_3";
 {
 tmp_speak.primary = false;
 tmp_speak.wx = -240.00000000000003;
@@ -2329,7 +2329,7 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 tmp_option = new option();
 tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_cs_5.next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_3.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";

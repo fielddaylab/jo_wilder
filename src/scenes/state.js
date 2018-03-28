@@ -19,8 +19,8 @@ var cursor;
 var cursor_x = 0;
 var cursor_y = 0;
 
-var DEBUG = 1;
-var UNLOCK = 1;
+var DEBUG = 0;
+var UNLOCK = 0;
 var SHOW_GROUNDS = 1;
 var QUALITY = 1;
 
