@@ -15,14 +15,12 @@ walk diagonally
 intro screen
 
 (room, cam, jolie) sizing in terms of universal # (jolies? meters?)
+z ordering as universal spec (-1 = paralax bg, 0 = bg, 1 = jolie furthest back, 2 = jolie furthest forward, 3 = fg, 4 = paralax fg)
 conversation animcycles target convo owner
 flip imgs if -w or -h
 bilinear vs nn
 
 - finish ui
-- implement content- horizontal
-- create list- vertical
-- implement vertical
 
 - level requirements for notebook
 
@@ -30,8 +28,8 @@ check noteworthiness on key
 implement noteworthy notif
 re-eval locks on key
 
-collapse map structure
-
 filter clicks by z order
 click to skip text transitions
+lerp z vertically
+define content in terms of z
 
