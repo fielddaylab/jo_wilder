@@ -695,23 +695,23 @@ var navigable = function()
 
     //insertion sort on each list
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_persons[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_persons[i]); }
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_persons[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_persons[i]); }
     for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_objects[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_objects[i]); }
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_objects[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_objects[i]); }
     for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_observations[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_observations[i]); }
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_observations[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_observations[i]); }
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_portholes[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_portholes[i]); }
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_portholes[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_portholes[i]); }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_wildcards[i].z >= self.cache_unlocked_drawables[j]) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_wildcards[i]); }
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_wildcards[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_wildcards[i]); }
     for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
     {
     if(self.cache_unlocked_inerts[i].g < 0)
-    { var j = 0; while(j < self.cache_unlocked_bg_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_bg_drawables[j]) j++; self.cache_unlocked_bg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    { var j = 0; while(j < self.cache_unlocked_bg_drawables.length && self.cache_unlocked_inerts[i].wz >= self.cache_unlocked_bg_drawables[j].wz) j++; self.cache_unlocked_bg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
     else if(self.cache_unlocked_inerts[i].g > 0)
-    { var j = 0; while(j < self.cache_unlocked_fg_drawables.length && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_fg_drawables[j]) j++; self.cache_unlocked_fg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    { var j = 0; while(j < self.cache_unlocked_fg_drawables.length && self.cache_unlocked_inerts[i].wz >= self.cache_unlocked_fg_drawables[j].wz) j++; self.cache_unlocked_fg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
     else
-    { var j = 0; while(j < self.cache_unlocked_drawables.length    && self.cache_unlocked_inerts[i].z >= self.cache_unlocked_drawables[j])    j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    { var j = 0; while(j < self.cache_unlocked_drawables.length    && self.cache_unlocked_inerts[i].wz >= self.cache_unlocked_drawables[j].wz)    j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
     }
   }
 
@@ -786,7 +786,7 @@ var navigable = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
-    self.z = 999999;
+    self.wz = 999999;
     self.act = 0;
     self.consume_act = function(a)
     {
@@ -813,7 +813,7 @@ var navigable = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
-    self.z = 999999;
+    self.wz = 999999;
     self.hover = 0;
     self.consume_hover = function(a)
     {
@@ -840,7 +840,7 @@ var navigable = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
-    self.z = 999999;
+    self.wz = 999999;
     self.target_start = 0;
     self.consume_target_start = function(a)
     {
@@ -867,6 +867,7 @@ var navigable = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
+    self.wz = -99999;
     self.consume_camera = function()
     {
       self.x = my_real_camera.x;
@@ -894,7 +895,10 @@ var navigable = function()
   {
     self.edit_o = 0;
 
-    if(my_camera == my_debug_camera && ptWithinBox(my_real_camera,evt.doX,evt.doY)) { self.edit_o = self.camera_editor; self.camera_editor.consume_camera(); }
+    for(var i = 0; !self.edit_o && i < self.room.shadows.length; i++) if(ptWithinBox(self.room.shadows[i],evt.doX,evt.doY)) { self.edit_o = self.room.shadows[i]; self.edit_o.wz = -1; }
+    for(var i = 0; !self.edit_o && i < self.room.lights.length;  i++) if(ptWithinBox(self.room.lights[i], evt.doX,evt.doY)) { self.edit_o = self.room.lights[i];  self.edit_o.wz = -1; }
+    for(var i = 0; !self.edit_o && i < self.room.navs.length;    i++) if(ptWithinBox(self.room.navs[i],   evt.doX,evt.doY)) { self.edit_o = self.room.navs[i];    self.edit_o.wz = -1; }
+    if(!self.edit_o && my_camera == my_debug_camera && ptWithinBox(my_real_camera,evt.doX,evt.doY)) { self.edit_o = self.camera_editor; self.camera_editor.consume_camera(); }
     for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
@@ -909,23 +913,17 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
 
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_persons[i].z)) { self.edit_o = self.cache_unlocked_persons[i]; }
+      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_persons[i].wz)) { self.edit_o = self.cache_unlocked_persons[i]; }
     for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_objects[i].z)) { self.edit_o = self.cache_unlocked_objects[i]; }
+      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_objects[i].wz)) { self.edit_o = self.cache_unlocked_objects[i]; }
     for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_observations[i].z)) { self.edit_o = self.cache_unlocked_observations[i]; }
+      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_observations[i].wz)) { self.edit_o = self.cache_unlocked_observations[i]; }
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_portholes[i].z)) { self.edit_o = self.cache_unlocked_portholes[i]; }
+      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_portholes[i].wz)) { self.edit_o = self.cache_unlocked_portholes[i]; }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_wildcards[i].z)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
+      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_wildcards[i].wz)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
     for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
-      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.z < self.cache_unlocked_inerts[i].z)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; }
-    for(var i = 0; !self.edit_o && i < self.room.shadows.length; i++)
-      if(ptWithinBox(self.room.shadows[i],evt.doX,evt.doY)) { self.edit_o = self.room.shadows[i]; }
-    for(var i = 0; !self.edit_o && i < self.room.lights.length; i++)
-      if(ptWithinBox(self.room.lights[i],evt.doX,evt.doY)) { self.edit_o = self.room.lights[i]; }
-    for(var i = 0; !self.edit_o && i < self.room.navs.length; i++)
-      if(ptWithinBox(self.room.navs[i],evt.doX,evt.doY)) { self.edit_o = self.room.navs[i]; }
+      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_inerts[i].wz)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; }
 
     if(!self.edit_o) return;
 
@@ -1012,19 +1010,19 @@ var navigable = function()
 
       self.selected_act = 0;
       for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-        if(ptWithinBox(self.cache_unlocked_persons[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_persons[i].z))
+        if(ptWithinBox(self.cache_unlocked_persons[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_persons[i].wz))
           self.selected_act = self.cache_unlocked_persons[i];
       for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-        if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_objects[i].z))
+        if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_objects[i].wz))
           self.selected_act = self.cache_unlocked_objects[i];
       for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-        if(ptWithinBox(self.cache_unlocked_observations[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_observations[i].z))
+        if(ptWithinBox(self.cache_unlocked_observations[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_observations[i].wz))
           self.selected_act = self.cache_unlocked_observations[i];
       for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-        if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_portholes[i].z))
+        if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_portholes[i].wz))
           self.selected_act = self.cache_unlocked_portholes[i];
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-        if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.z < self.cache_unlocked_wildcards[i].z))
+        if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_wildcards[i].wz))
           self.selected_act = self.cache_unlocked_wildcards[i];
 
       if(self.selected_act)
@@ -1095,8 +1093,9 @@ var navigable = function()
     drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
 
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
+    console.log(avi_wz);
     var i = 0;
-    for(; i < self.cache_unlocked_drawables.length && self.cache_unlocked_drawables[i].z < avi_wz; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
+    for(; i < self.cache_unlocked_drawables.length && self.cache_unlocked_drawables[i].wz < avi_wz; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     for(; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
 
@@ -2387,7 +2386,6 @@ var cutsceneview = function()
         e.animcycle_inst.frame_t += c.animcycle_offset_t;
         e.x = c.wx;
         e.y = c.wy;
-        e.z = c.wz;
         e.w = c.ww;
         e.h = c.wh;
         self.cutscene_entitys.push(e);
@@ -2539,7 +2537,7 @@ var cutsceneview = function()
       {
         var entity = self.cutscene_entitys[i];
         var nentity = self.cutscene_entitys[i+1];
-        if(entity.z > nentity.z)
+        if(entity.wz > nentity.wz)
         {
           self.cutscene_entitys[i] = nentity;
           self.cutscene_entitys[i+1] = entity;

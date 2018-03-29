@@ -2,7 +2,7 @@ tmp_observation.ww = 161.99999999923818;
 tmp_observation.wh = 293.9999999999717;
 tmp_observation.wx = -357.58622595388425;
 tmp_observation.wy = 139.7229316072807;
-tmp_observation.wz = 0;
+tmp_observation.wz = 0.1;
 tmp_observation.act_wx = -13.999999999999998;
 tmp_observation.act_wy = -71;
 tmp_observation.act_anim = 0;
@@ -20,6 +20,6 @@ tmp_observation.noteworthy = false;
 tmp_observation.unlocks = [
 ];
 tmp_observation.relocks = [
-"tunic.historicalsociety.closet.notebook"
+"tunic.historicalsociety.closet.notebook",
 ];
 

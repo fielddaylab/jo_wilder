@@ -360,7 +360,6 @@ var person = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
-  self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
   self.hover_icon_x = 0;
@@ -399,7 +398,6 @@ var object = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
-  self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
   self.hover_icon_x = 0;
@@ -443,7 +441,6 @@ var observation = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
-  self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
   self.hover_icon_x = 0;
@@ -486,7 +483,6 @@ var porthole = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
-  self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
   self.hover_icon_x = 0;
@@ -526,7 +522,6 @@ var wildcard = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
-  self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
   self.hover_icon_x = 0;
@@ -557,7 +552,6 @@ var inert = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
-  self.z = 0;
   self.dw = 0;
   self.dh = 0;
   self.dx = 0;
@@ -752,7 +746,6 @@ var cutscene_command = function()
   self.h;
   self.x;
   self.y;
-  self.z;
 }
 
 var cutscene = function()
