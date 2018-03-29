@@ -7,6 +7,7 @@ tmp_person.act_wx = 82.50390303146884;
 tmp_person.act_wy = -20;
 tmp_person.act_anim = true;
 tmp_person.animcycle_id = "youngboy";
+tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.unlocks = [

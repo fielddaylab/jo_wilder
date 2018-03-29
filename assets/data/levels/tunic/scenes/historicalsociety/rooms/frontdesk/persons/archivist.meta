@@ -7,6 +7,7 @@ tmp_person.act_wx = 98.57342676974002;
 tmp_person.act_wy = -50;
 tmp_person.act_anim = true;
 tmp_person.animcycle_id = "archivist";
+tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.unlocks = [

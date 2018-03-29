@@ -7,6 +7,7 @@ tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
 tmp_porthole.act_anim = true;
 tmp_porthole.animcycle_id = "door";
+tmp_porthole.hover_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "map";
 tmp_porthole.target_start_wx = -440;

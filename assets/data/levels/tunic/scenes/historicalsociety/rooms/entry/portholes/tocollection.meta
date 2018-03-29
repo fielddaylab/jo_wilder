@@ -7,6 +7,7 @@ tmp_porthole.act_wx = -3.449878542510121;
 tmp_porthole.act_wy = -131.76;
 tmp_porthole.act_anim = 1;
 tmp_porthole.animcycle_id = "null";
+tmp_porthole.hover_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "collection";
 tmp_porthole.target_start_wx = 744.2767080745341;

@@ -7,6 +7,7 @@ tmp_object.act_wx = 0;
 tmp_object.act_wy = 0;
 tmp_object.act_anim = true;
 tmp_object.animcycle_id = "oldpictures";
+tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.unlocks = [

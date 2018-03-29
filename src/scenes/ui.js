@@ -72,6 +72,7 @@ var loader = function()
     {
       person = room.persons[k];
       self.load_animcycle_inst(person.animcycle_inst);
+      self.load_animcycle_inst(person.hover_icon_animcycle_inst);
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
@@ -92,6 +93,7 @@ var loader = function()
     {
       object = room.objects[k];
       self.load_animcycle_inst(object.animcycle_inst);
+      self.load_animcycle_inst(object.hover_icon_animcycle_inst);
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
@@ -110,18 +112,21 @@ var loader = function()
     {
       observation = room.observations[k];
       self.load_animcycle_inst(observation.animcycle_inst);
+      self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
     }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
     {
       porthole = room.portholes[k];
       self.load_animcycle_inst(porthole.animcycle_inst);
+      self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
     }
     var wildcard;
     for(var k = 0; k < room.wildcards.length; k++)
     {
       wildcard = room.wildcards[k];
       self.load_animcycle_inst(wildcard.animcycle_inst);
+      self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)

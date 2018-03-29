@@ -7,6 +7,7 @@ tmp_object.act_wx = -61.12301336573512;
 tmp_object.act_wy = -32.01681652490887;
 tmp_object.act_anim = 1;
 tmp_object.animcycle_id = "newspaper";
+tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.unlocks = [

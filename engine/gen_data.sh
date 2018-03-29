@@ -463,6 +463,7 @@ if [ $NOGEN == "0" ]; then
           echo "{" >> $OUT
           cat $person >> $OUT
           echo "tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
 
           if ensuredelimeter speak $person_dir; then :; else continue; fi
           speaks_dir=$person_dir/speaks
@@ -527,6 +528,7 @@ if [ $NOGEN == "0" ]; then
           echo "{" >> $OUT
           cat $object >> $OUT
           echo "tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
 
           if ensuredelimeter view $object_dir; then :; else continue; fi
           views_dir=$object_dir/views
@@ -590,6 +592,7 @@ if [ $NOGEN == "0" ]; then
           echo "{" >> $OUT
           cat $observation >> $OUT
           echo "tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.w);" >> $OUT
 
           echo "}" >> $OUT
@@ -612,6 +615,7 @@ if [ $NOGEN == "0" ]; then
           echo "{" >> $OUT
           cat $porthole >> $OUT
           echo "tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.portholes.push(tmp_porthole);" >> $OUT
@@ -633,6 +637,7 @@ if [ $NOGEN == "0" ]; then
           echo "{" >> $OUT
           cat $wildcard >> $OUT
           echo "tmp_wildcard.animcycle_inst = gen_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_wildcard.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.wildcards.push(tmp_wildcard);" >> $OUT
