@@ -1,6 +1,6 @@
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "intro_2_cs_2";
+tmp_option.target_speak = "intro_0_cs_4";
 tmp_option.noteworthy = false;
 tmp_option.unlocks = [
 ];

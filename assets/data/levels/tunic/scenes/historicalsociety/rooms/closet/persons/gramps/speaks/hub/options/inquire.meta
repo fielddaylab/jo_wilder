@@ -1,9 +1,0 @@
-tmp_option.index = 0;
-tmp_option.raw_qtext = "What's the matter gramps?";
-tmp_option.target_speak = "help";
-tmp_option.noteworthy = false;
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-

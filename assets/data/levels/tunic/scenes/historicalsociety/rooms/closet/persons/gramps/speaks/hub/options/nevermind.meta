@@ -1,9 +1,0 @@
-tmp_option.index = 1;
-tmp_option.raw_qtext = "Nevermind!";
-tmp_option.target_speak = "null";
-tmp_option.noteworthy = false;
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
