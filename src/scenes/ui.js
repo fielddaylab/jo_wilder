@@ -1512,7 +1512,6 @@ var objectview = function()
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
       state_t = 0;
-      my_navigable.unlock_content();
     }
     var zone;
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
@@ -1731,7 +1730,6 @@ var observationview = function()
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
-          my_navigable.unlock_content();
         }
         break;
     }
@@ -1867,7 +1865,7 @@ var personview = function()
     if(self.cache_unlocked_options.length == 1)
     {
       var option = self.cache_unlocked_options[0];
-      if((!option.target_speak_found || option.target_speak_found.speaker == self.cur_speak.speaker) && option.raw_qtext == ">") self.inline_option = 1;
+      if(option.raw_qtext == ">") self.inline_option = 1;
     }
   }
 
@@ -2114,7 +2112,6 @@ var personview = function()
             state_to = state_stack;
             state_cur = STATE_TRANSITION;
             state_t = 0;
-            my_navigable.unlock_content();
           }
           else
           {

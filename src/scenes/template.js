@@ -892,7 +892,7 @@ var print_speak_meta = function(l)
   "tmp_speak.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_speak.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_speak.raw_atext = \""+l.raw_atext+"\";\n"+
-  "tmp_speak.speaker = "+l.speaker+";\n"+
+  "tmp_speak.speaker = "+(l.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
   "tmp_speak.options_wx = "+l.options_wx+";\n"+
   "tmp_speak.options_wy = "+l.options_wy+";\n"+
   "tmp_speak.options_w = "+l.options_w+";\n"+

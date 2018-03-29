@@ -404,6 +404,8 @@ var GamePlayScene = function(game, stage)
     {
       state_t = 0;
       state_cur = state_to;
+      if(state_cur == STATE_NAV)
+        my_navigable.unlock_content();
     }
   };
 
