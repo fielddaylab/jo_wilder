@@ -1876,6 +1876,32 @@ var personview = function()
     self.ui_state_p = 0;
   }
 
+  self.dismiss = function()
+  {
+    var speak = self.clicked_option.target_speak_found;
+    self.clicked_option = 0;
+    if(!speak)
+    {
+      self.ui_state = UI_STATE_NULL;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.cur_speak = 0;
+      state_from = state_cur;
+      state_to = state_stack;
+      state_cur = STATE_TRANSITION;
+      state_t = 0;
+    }
+    else
+    {
+      self.ui_state = UI_STATE_IN_SPEAK;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.cur_speak = speak;
+      self.cur_speak.key = true;
+      self.unlock_content();
+    }
+  }
+
   self.unlock_content = function()
   {
     self.cache_unlocked_speaks = [];
@@ -2130,11 +2156,15 @@ var personview = function()
 
     if(self.clicked_option)
     {
-      option = self.clicked_option;
-      option.key = true;
-      self.ui_state_t = 0;
-      self.ui_state_p = 0;
-      self.ui_state = UI_STATE_OUT;
+      self.clicked_option.key = true;
+      if(self.ui_state == UI_STATE_OUT)
+        self.dismiss();
+      else
+      {
+        self.ui_state_t = 0;
+        self.ui_state_p = 0;
+        self.ui_state = UI_STATE_OUT;
+      }
     }
   }
 
@@ -2157,31 +2187,7 @@ var personview = function()
         if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT;    self.ui_state_t = 0; self.ui_state_p = 0; } break;
       case UI_STATE_SELECT:    break;
       case UI_STATE_OUT:
-        if(self.ui_state_p >= 1)
-        {
-          speak = self.clicked_option.target_speak_found;
-          self.clicked_option = 0;
-          if(!speak)
-          {
-            self.ui_state = UI_STATE_NULL;
-            self.ui_state_t = 0;
-            self.ui_state_p = 0;
-            self.cur_speak = 0;
-            state_from = state_cur;
-            state_to = state_stack;
-            state_cur = STATE_TRANSITION;
-            state_t = 0;
-          }
-          else
-          {
-            self.ui_state = UI_STATE_IN_SPEAK;
-            self.ui_state_t = 0;
-            self.ui_state_p = 0;
-            self.cur_speak = speak;
-            self.cur_speak.key = true;
-            self.unlock_content();
-          }
-        }
+        if(self.ui_state_p >= 1) self.dismiss();
         break;
     }
   }
