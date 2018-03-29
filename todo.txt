@@ -34,3 +34,5 @@ cutscene avatar target location
 cutscene lerp alpha
 cutscene text instead of image
 
+intro cutscene has "flashcut" of wrong position to start- fix
+

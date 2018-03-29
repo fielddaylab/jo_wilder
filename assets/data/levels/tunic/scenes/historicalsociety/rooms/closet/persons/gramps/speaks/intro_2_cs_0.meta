@@ -15,6 +15,6 @@ tmp_speak.noteworthy = false;
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
-"tunic.historicalsociety.closet.gramps.jolie_worry_1_cs_0",
+"tunic.historicalsociety.closet.gramps.intro_2_cs_0",
 ];
 
