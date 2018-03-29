@@ -374,12 +374,8 @@ var avatar = function()
     self.to_wx = self.wx;
     self.to_wy = self.wy;
 
-    var xp = smooth(invlerp(room.wx-room.ww/2, room.wx+room.ww/2, self.wx));
-    var camwd = room.ww-my_real_camera.ww;
-    my_real_camera.wx = room.wx-camwd/2+xp*camwd;
-    var yp = smooth(invlerp(room.wy-room.wh/2, room.wy+room.wh/2, self.wy));
-    var camhd = room.wh-my_real_camera.wh;
-    my_real_camera.wy = room.wy-camhd/2+yp*camhd;
+    my_real_camera.wx = my_navigable.cam_target_wx(self.wx);
+    my_real_camera.wy = my_navigable.cam_target_wy(self.wy);
   }
 
   self.from_porthole = function(porthole)
@@ -388,12 +384,8 @@ var avatar = function()
     self.to_wx = self.wx;
     self.to_wy = self.wy;
 
-    var xp = smooth(invlerp(my_navigable.room.wx-my_navigable.room.ww/2, my_navigable.room.wx+my_navigable.room.ww/2, self.wx));
-    var camwd = my_navigable.room.ww-my_real_camera.ww;
-    my_real_camera.wx = my_navigable.room.wx-camwd/2+xp*camwd;
-    var yp = smooth(invlerp(my_navigable.room.wy-my_navigable.room.wh/2, my_navigable.room.wy+my_navigable.room.wh/2, self.wy));
-    var camhd = my_navigable.room.wh-my_real_camera.wh;
-    my_real_camera.wy = my_navigable.room.wy-camhd/2+yp*camhd;
+    my_real_camera.wx = my_navigable.cam_target_wx(self.wx);
+    my_real_camera.wy = my_navigable.cam_target_wy(self.wy);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -750,6 +742,20 @@ var navigable = function()
     return 0;
   }
 
+  self.cam_target_wx = function(wx)
+  {
+    var xp = smooth(invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, wx));
+    var camwd = self.room.ww-my_real_camera.ww;
+    return self.room.wx-camwd/2+xp*camwd;
+  }
+
+  self.cam_target_wy = function(wy)
+  {
+    var yp = smooth(invlerp(self.room.wy-self.room.wh/2, self.room.wy+self.room.wh/2, wy));
+    var camwd = self.room.wh-my_real_camera.wh;
+    return self.room.wy-camwd/2+yp*camwd;
+  }
+
   //DRAG DEBUG EDIT STUFF
   self.edit_cur_dragging = false;
   self.edit_cur_resizing = false;
@@ -987,14 +993,10 @@ var navigable = function()
     if(my_camera == my_real_camera && state_stack != STATE_CUTSCENE)
     {
       //move camera
-      var xp = smooth(invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, my_avatar.wx));
-      var camwd = self.room.ww-my_real_camera.ww;
-      var target_cam_wx = self.room.wx-camwd/2+xp*camwd;
+      var target_cam_wx = self.cam_target_wx(my_avatar.wx);
       my_real_camera.wx = lerp(my_real_camera.wx,target_cam_wx,cur_level.target_lerp_s);
 
-      var yp = smooth(invlerp(self.room.wy-self.room.wh/2, self.room.wy+self.room.wh/2, my_avatar.wy));
-      var camhd = self.room.wh-my_real_camera.wh;
-      var target_cam_wy = self.room.wy-camhd/2+yp*camhd;
+      var target_cam_wy = self.cam_target_wy(my_avatar.wy);
       my_real_camera.wy = lerp(my_real_camera.wy,target_cam_wy,cur_level.target_lerp_s);
     }
 
@@ -2290,27 +2292,27 @@ var cutsceneview = function()
     self.tick();
   }
 
-  self.find_cutscene_entity = function(command)
+  self.find_cutscene_entity = function(type, id)
   {
-    switch(command.cutscene_entity_type)
+    switch(type)
     {
-      case CUTSCENE_ENTITY_CAM:
+      case CUTSCENE_ENTITY_CAMERA:
         return my_camera;
       case CUTSCENE_ENTITY_AVATAR:
         return my_avatar;
       case CUTSCENE_ENTITY_SCENE:
         for(var i = 0; i < cur_room.persons.length; i++)
-          if(cur_room.persons[i].id == command.cutscene_entity_id) return cur_room.persons[i];
+          if(cur_room.persons[i].id == id) return cur_room.persons[i];
         for(var i = 0; i < cur_room.objects.length; i++)
-          if(cur_room.objects[i].id == command.cutscene_entity_id) return cur_room.objects[i];
+          if(cur_room.objects[i].id == id) return cur_room.objects[i];
         for(var i = 0; i < cur_room.wildcards.length; i++)
-          if(cur_room.wildcards[i].id == command.cutscene_entity_id) return cur_room.wildcards[i];
+          if(cur_room.wildcards[i].id == id) return cur_room.wildcards[i];
         for(var i = 0; i < cur_room.inerts.length; i++)
-          if(cur_room.inerts[i].id == command.cutscene_entity_id) return cur_room.inerts[i];
+          if(cur_room.inerts[i].id == id) return cur_room.inerts[i];
         break;
       case CUTSCENE_ENTITY_CUTSCENE:
         for(var i = 0; i < self.cutscene_entitys.length; i++)
-          if(self.cutscene_entitys[i].id == command.cutscene_entity_id) return self.cutscene_entitys[i];
+          if(self.cutscene_entitys[i].id == id) return self.cutscene_entitys[i];
         break;
     }
   }
@@ -2338,13 +2340,13 @@ var cutsceneview = function()
           if(self.cutscene_entitys[i].id == c.cutscene_entity_id) self.cutscene_entitys.splice(i,1);
         break;
       case CUTSCENE_COMMAND_ANIMATE:
-        var e = self.find_cutscene_entity(c);
+        var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
         e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
         if(c.animcycle_offset_t != CUTSCENE_COMMAND_IGNORE) e.animcycle_inst.frame_t += c.animcycle_offset_t;
         break;
       case CUTSCENE_COMMAND_ACT:
         if(c.cutscene_entity_type != CUTSCENE_ENTITY_SCENE) break;
-        var e = self.find_cutscene_entity(c);
+        var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
         cur_act = e;
         state_from = state_cur;
         state_cur = STATE_TRANSITION;
@@ -2359,19 +2361,43 @@ var cutsceneview = function()
       case CUTSCENE_COMMAND_AUDIO:
         break;
       case CUTSCENE_COMMAND_TWEEN:
-        var e = self.find_cutscene_entity(c);
+        var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
+        c.cutscene_entity = e;
+        var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+        c.cutscene_target_entity = te;
+        if(te)
+        {
+          c.wx = te.wx;
+          c.wy = te.wy;
+          if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
+          {
+            c.wx = my_navigable.cam_target_wx(te.wx);
+            c.wy = my_navigable.cam_target_wy(te.wy);
+          }
+        }
         c.from_wx = e.wx;
         c.from_wy = e.wy;
         c.from_wz = e.wz;
         c.from_ww = e.ww;
         c.from_wh = e.wh;
         if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
-        c.cutscene_entity = e;
         self.running_commands.push(c);
         break;
       case CUTSCENE_COMMAND_TARGET:
-        var e = self.find_cutscene_entity(c);
+        var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
         c.cutscene_entity = e;
+        var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+        c.cutscene_target_entity = te;
+        if(te)
+        {
+          c.wx = te.wx;
+          c.wy = te.wy;
+          if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
+          {
+            c.wx = my_navigable.cam_target_wx(te.wx);
+            c.wy = my_navigable.cam_target_wy(te.wy);
+          }
+        }
         self.running_commands.push(c);
         break;
       case CUTSCENE_COMMAND_WAIT:

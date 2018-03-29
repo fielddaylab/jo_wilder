@@ -19,7 +19,7 @@ CUTSCENE_COMMAND_END
 CUTSCENE_COMMAND_IGNORE
 
 Possible Entity Types:
-CUTSCENE_ENTITY_CAM
+CUTSCENE_ENTITY_CAMERA
 CUTSCENE_ENTITY_AVATAR
 CUTSCENE_ENTITY_SCENE
 CUTSCENE_ENTITY_CUTSCENE
@@ -28,19 +28,21 @@ CUTSCENE_ENTITY_CUTSCENE
 /*
 //skeleton command addition
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = COMMAND_NULL;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_NULL;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.t = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.end_t = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.cutscene_target_entity_id = "null";
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
+tmp_cutscene_command.t = 0;
+tmp_cutscene_command.end_t = 0;
 tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.animcycle_offset_t = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.audio_id = "null";
+tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
@@ -57,11 +59,11 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 //setup cam
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.cutscene_target_entity_id = "gramps";
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
-tmp_cutscene_command.wx = -50;
-tmp_cutscene_command.wy = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //get click
@@ -82,10 +84,9 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 //cam move to jo
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAM;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.t = 2;
-tmp_cutscene_command.wx = 400;
-tmp_cutscene_command.wy = 10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //get click

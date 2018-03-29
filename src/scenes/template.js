@@ -690,6 +690,8 @@ var cutscene_command = function()
   self.command = CUTSCENE_COMMAND_NULL;
   self.cutscene_entity_id = "null";
   self.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
+  self.cutscene_target_entity_id = "null";
+  self.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
   self.t = 0;
   self.end_t = 0;
   self.wx = CUTSCENE_COMMAND_IGNORE;
@@ -703,6 +705,7 @@ var cutscene_command = function()
 
   //ephemeral
   self.cutscene_entity;
+  self.cutscene_target_entity;
   self.from_wx;
   self.from_wy;
   self.from_wz;
