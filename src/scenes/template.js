@@ -244,6 +244,8 @@ var level = function()
   self.ripple_click_animcycle_id = "click_ripple";
   self.cursor_w = 0;
   self.cursor_h = 0;
+  self.hover_w = 0;
+  self.hover_h = 0;
   self.target_lerp_s = 0.03;
   self.scenes = [];
   self.noteworthy = false;
@@ -361,6 +363,8 @@ var person = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
 }
 
 var object = function()
@@ -398,6 +402,8 @@ var object = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
 }
 
 var observation = function()
@@ -440,6 +446,8 @@ var observation = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
   self.blip_x = 0;
   self.blip_y = 0;
 }
@@ -481,6 +489,8 @@ var porthole = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
   self.target_start_x = 0;
   self.target_start_y = 0;
   self.target_room_found; //auto precompiled in
@@ -519,6 +529,8 @@ var wildcard = function()
   self.z = 0;
   self.act_x = 0;
   self.act_y = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
 }
 
 var inert = function()
@@ -786,6 +798,8 @@ var print_level_meta = function(l)
   "tmp_level.ripple_click_animcycle_id = \""+l.ripple_click_animcycle_id+"\";\n"+
   "tmp_level.cursor_w = "+l.cursor_w+";\n"+
   "tmp_level.cursor_h = "+l.cursor_h+";\n"+
+  "tmp_level.hover_w = "+l.hover_w+";\n"+
+  "tmp_level.hover_h = "+l.hover_h+";\n"+
   "tmp_level.target_lerp_s = "+l.target_lerp_s+";\n"+
   "tmp_level.noteworthy = "+l.noteworthy+";\n"+
   "tmp_level.unlocks = [\n";
