@@ -1544,13 +1544,13 @@ var notificationview = function()
     var b = 10;
     ctx.fillStyle = self.bubble_color;
     var w = ctx.measureText(self.note).width;
-    var h = 30;
+    var h = 20;
     var x = self.x+self.w/2-w/2;
+    var y = self.y+self.h-h-30;
     fillRRect(x-b-5,y-b+5+yoff,w+b*2+10,h+b*2+5,b,ctx);
     ctx.fillStyle = self.text_color;
     ctx.fillText(self.note,x,y+yoff+h);
     ctx.globalAlpha = 1;
-
   }
 
 }
