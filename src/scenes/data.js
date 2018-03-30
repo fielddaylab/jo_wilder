@@ -2915,7 +2915,7 @@ tmp_speak = new speak();
 tmp_speak.id = "intro_0_cs_0";
 tmp_speak.fqid = "tunic.historicalsociety.closet.teddy.intro_0_cs_0";
 {
-tmp_speak.primary = 1;
+tmp_speak.primary = 10;
 tmp_speak.wx = 132.13159507828425;
 tmp_speak.wy = -43.99510699953347;
 tmp_speak.w = 239;
@@ -2932,6 +2932,7 @@ tmp_speak.noteworthy = false;
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
+"tunic.historicalsociety.closet.teddy.intro_0_cs_0"
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -3130,7 +3131,7 @@ tmp_speak = new speak();
 tmp_speak.id = "intro_0_cs_5";
 tmp_speak.fqid = "tunic.historicalsociety.closet.teddy.intro_0_cs_5";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 1;
 tmp_speak.wx = 572.9947023086266;
 tmp_speak.wy = -36.625662211421655;
 tmp_speak.w = 117;
