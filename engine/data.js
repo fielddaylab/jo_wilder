@@ -31,8 +31,8 @@ tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
-tmp_level.avatar_ww = 124.2914274419755;
-tmp_level.avatar_wh = 227.18935293838598;
+tmp_level.avatar_ww = 124.29142744197549;
+tmp_level.avatar_wh = 227.189352938386;
 tmp_level.map_animcycle_id = "map";
 tmp_level.map_audio_id = "null";
 tmp_level.notebook_animcycle_id = "notebook";
@@ -2391,10 +2391,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tocloset";
 tmp_porthole.fqid = "tunic.historicalsociety.basement.tocloset";
 {
-tmp_porthole.ww = 103.00000000000001;
-tmp_porthole.wh = 194.99999999999997;
-tmp_porthole.wx = 113.5;
-tmp_porthole.wy = 107.50000000000001;
+tmp_porthole.ww = 116.00000000000009;
+tmp_porthole.wh = 214.00000000000006;
+tmp_porthole.wx = 111;
+tmp_porthole.wy = 113;
 tmp_porthole.wz = 0;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -3263,10 +3263,10 @@ tmp_observation = new observation();
 tmp_observation.id = "doorblock";
 tmp_observation.fqid = "tunic.historicalsociety.closet.doorblock";
 {
-tmp_observation.ww = 161.99999999923818;
-tmp_observation.wh = 293.9999999999717;
-tmp_observation.wx = -357.58622595388425;
-tmp_observation.wy = 139.7229316072807;
+tmp_observation.ww = 192.99999999922755;
+tmp_observation.wh = 312.99999999997175;
+tmp_observation.wx = -353.5349141682593;
+tmp_observation.wy = 147.05942951322734;
 tmp_observation.wz = 0.1;
 tmp_observation.act_wx = -13.999999999999998;
 tmp_observation.act_wy = -71;
@@ -3363,10 +3363,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tobasement";
 tmp_porthole.fqid = "tunic.historicalsociety.closet.tobasement";
 {
-tmp_porthole.ww = 171.00247192993098;
-tmp_porthole.wh = 272.9987670683056;
-tmp_porthole.wx = -354.2589869235273;
-tmp_porthole.wy = 155.62021079441672;
+tmp_porthole.ww = 183.0013270648818;
+tmp_porthole.wh = 304.9987868792919;
+tmp_porthole.wx = -354.2595672433551;
+tmp_porthole.wy = 146.62020075243996;
 tmp_porthole.wz = 0;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -3395,8 +3395,8 @@ tmp_inert.fqid = "tunic.historicalsociety.closet.chair";
 {
 tmp_inert.ww = 288.7991253327396;
 tmp_inert.wh = 291.62036450312695;
-tmp_inert.wx = -196.01916720368874;
-tmp_inert.wy = -35.07498882454156;
+tmp_inert.wx = -154.6498065812714;
+tmp_inert.wy = -40.670959022911916;
 tmp_inert.wz = 0.1;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_chair";
@@ -3482,7 +3482,7 @@ tmp_room.cam_wh = 950;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:126.58633540372637, wy:-267.9000000000001, ww:1440.6267080745342, wh:470.59999999999985 },
+{wx:71.12826086956488, wy:-241.2801242236024, ww:1187.7378881987577, wh:470.5999999999999 },
 ];
 tmp_room.lights = [
 {wx:643.3423913043476, wy:341.0999999999999, ww:58.32826086956502, wh:55.39999999999993 },
@@ -3605,13 +3605,13 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.historicalsociety.collection.toentry";
 {
-tmp_porthole.ww = 155.09472049689438;
-tmp_porthole.wh = 357.4;
-tmp_porthole.wx = 748.4041925465838;
-tmp_porthole.wy = 18.29999999999987;
+tmp_porthole.ww = 153.87679637483404;
+tmp_porthole.wh = 572.4719217920203;
+tmp_porthole.wx = 687.3406850310062;
+tmp_porthole.wy = -17.26626392631357;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = 10.8;
-tmp_porthole.act_wy = -62.4;
+tmp_porthole.act_wx = -21.65419677812778;
+tmp_porthole.act_wy = -114.22244306336432;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 0;
 tmp_porthole.hover_icon_wy = 0;
@@ -3619,8 +3619,8 @@ tmp_porthole.animcycle_id = "null";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = -893.5185425101214;
-tmp_porthole.target_start_wy = -300.24000000000007;
+tmp_porthole.target_start_wx = -903.2438530313667;
+tmp_porthole.target_start_wy = -94.39707135640175;
 tmp_porthole.noteworthy = false;
 tmp_porthole.unlocks = [
 ];
@@ -3648,13 +3648,13 @@ tmp_room.cam_wh = 1074.7199999999993;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-63.337118375222985, wy:-205.94221730193706, ww:1723.988840633051, wh:407.5748487302173 },
+{wx:-40.55681984783996, wy:-292.244205426332, ww:1769.5494376878196, wh:580.1788249790067 },
 ];
 tmp_room.lights = [
 {wx:606.2655502392346, wy:297.6909090909091, ww:63.28443135811556, wh:38.25454545454535 },
 ];
 tmp_room.shadows = [
-{wx:772.739677816294, wy:-261.4596761324111, ww:827.579765922105, wh:498.9098181819126 },
+{wx:823.8303840997834, wy:-94.66594879303324, ww:827.579765922105, wh:498.90981818191256 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -3672,10 +3672,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tobasement";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tobasement";
 {
-tmp_porthole.ww = 327.86451747317545;
-tmp_porthole.wh = 549.5992145549841;
-tmp_porthole.wx = 603.0109795602543;
-tmp_porthole.wy = 230.95642621776722;
+tmp_porthole.ww = 355.54669929135713;
+tmp_porthole.wh = 590.3083054640749;
+tmp_porthole.wx = 603.8251613784361;
+tmp_porthole.wy = 248.0542443995854;
 tmp_porthole.wz = 0;
 tmp_porthole.act_wx = -48.29829959514169;
 tmp_porthole.act_wy = -200.092955465587;
@@ -3707,8 +3707,8 @@ tmp_porthole.wh = 370.959272152761;
 tmp_porthole.wx = -921.9432388906349;
 tmp_porthole.wy = 21.407521837651274;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = -3.449878542510121;
-tmp_porthole.act_wy = -131.76;
+tmp_porthole.act_wx = 7.948666912035332;
+tmp_porthole.act_wy = -130.13163636363635;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 0;
 tmp_porthole.hover_icon_wy = 0;
@@ -3716,8 +3716,8 @@ tmp_porthole.animcycle_id = "null";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "collection";
-tmp_porthole.target_start_wx = 744.2767080745341;
-tmp_porthole.target_start_wy = -57.59999999999997;
+tmp_porthole.target_start_wx = 621.9243073212195;
+tmp_porthole.target_start_wy = -136.7670926438998;
 tmp_porthole.noteworthy = false;
 tmp_porthole.unlocks = [
 ];
@@ -3762,10 +3762,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tostacks";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tostacks";
 {
-tmp_porthole.ww = 463.23687163807244;
-tmp_porthole.wh = 688.0952727413944;
-tmp_porthole.wx = 221.12109012856456;
-tmp_porthole.wy = 299.7875025349824;
+tmp_porthole.ww = 437.1830534562542;
+tmp_porthole.wh = 691.3520000141216;
+tmp_porthole.wx = 208.0941810376555;
+tmp_porthole.wy = 298.15913889861883;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 2.374022819286067;
 tmp_porthole.act_wy = -335.06909090909085;
