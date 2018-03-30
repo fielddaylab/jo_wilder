@@ -658,10 +658,10 @@ var navigable = function()
     self.room.key = true;
     self.unlock_content();
     self.selected_act = 0;
-    my_camera.wx = 0;
-    my_camera.wy = 0;
-    my_camera.wh = room.cam_wh;
-    my_camera.ww = canv.width*room.cam_wh/canv.height;
+    my_real_camera.wx = 0;
+    my_real_camera.wy = 0;
+    my_real_camera.wh = room.cam_wh;
+    my_real_camera.ww = canv.width*room.cam_wh/canv.height;
     my_debug_camera.ww = room.ww*1.2;
     my_debug_camera.wh = room.wh*1.2;
     if(my_debug_camera.ww/my_debug_camera.wh > canv.width/canv.height)
