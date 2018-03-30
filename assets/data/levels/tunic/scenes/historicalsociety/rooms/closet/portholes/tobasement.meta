@@ -1,7 +1,7 @@
-tmp_porthole.ww = 100;
-tmp_porthole.wh = 100;
-tmp_porthole.wx = 100;
-tmp_porthole.wy = 100;
+tmp_porthole.ww = 171.00247192993098;
+tmp_porthole.wh = 272.9987670683056;
+tmp_porthole.wx = -354.2589869235273;
+tmp_porthole.wy = 155.62021079441672;
 tmp_porthole.wz = 0;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
