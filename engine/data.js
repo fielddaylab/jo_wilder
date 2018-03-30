@@ -3789,25 +3789,6 @@ tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_i
 }
 tmp_room.portholes.push(tmp_porthole);
 tmp_inert = new inert();
-tmp_inert.id = "fg";
-tmp_inert.fqid = "tunic.historicalsociety.entry.fg";
-{
-tmp_inert.ww = 2158.818866396762;
-tmp_inert.wh = 1014.8170334928224;
-tmp_inert.wx = -1.4029068825914237;
-tmp_inert.wy = -4.163976444608807;
-tmp_inert.wz = 0;
-tmp_inert.g = 1;
-tmp_inert.animcycle_id = "fg";
-tmp_inert.unlocks = [
-];
-tmp_inert.relocks = [
-];
-
-tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
-}
-tmp_room.inerts.push(tmp_inert);
-tmp_inert = new inert();
 tmp_inert.id = "fgdust";
 tmp_inert.fqid = "tunic.historicalsociety.entry.fgdust";
 {
