@@ -53,7 +53,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
 tmp_cutscene_command.wx = 400;
-tmp_cutscene_command.wy = -100;
+tmp_cutscene_command.wy = -200;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //setup cam
@@ -89,10 +89,12 @@ tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.t = 2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
-//get click
+//teddy talk
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
-tmp_cutscene_command.t = 10;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene_command.cutscene_entity_id = "teddy";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 8;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //Leave this at the end- remember to set tmp_cutscene_command.t!
