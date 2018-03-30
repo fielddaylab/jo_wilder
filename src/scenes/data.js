@@ -1302,8 +1302,8 @@ tmp_speak.id = "boss_chain_1";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_1";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 26.101421064480768;
-tmp_speak.wy = 304.2000014870105;
+tmp_speak.wx = -14.565378662189346;
+tmp_speak.wy = 314.7000014870106;
 tmp_speak.w = 228.69814225923326;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -1325,6 +1325,135 @@ if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_ate
 tmp_option = new option();
 tmp_option.id = "next";
 tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_1.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "boss_chain_2";
+tmp_option.noteworthy = false;
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "boss_chain_2";
+tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_2";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = -129.90090138980202;
+tmp_speak.wy = 374.70000148702;
+tmp_speak.w = 323.69814225923324;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "He’s meeting me here. Said he had to take care of something first.";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 239.216253647685;
+tmp_speak.options_wy = 100.71702878373762;
+tmp_speak.options_w = 146.9697885196375;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_2.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "boss_chain_3";
+tmp_option.noteworthy = false;
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "boss_chain_3";
+tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_3";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = -156.49999999999991;
+tmp_speak.wy = 436.0000000000001;
+tmp_speak.w = 305;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "I checked the old jerseys at the basketball Center! The tunic looks totally different. And the women’s team didn’t even start until 1974.";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_3.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "boss_chain_4";
+tmp_option.noteworthy = false;
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "boss_chain_4";
+tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_4";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = 158.5;
+tmp_speak.wy = 362.5;
+tmp_speak.w = 176;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Do you have any other leads?";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_4.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
@@ -2018,7 +2147,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
 tmp_cutscene_command.wx = 400;
-tmp_cutscene_command.wy = -100;
+tmp_cutscene_command.wy = -200;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //setup cam
@@ -2054,10 +2183,12 @@ tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.t = 2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
-//get click
+//teddy talk
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
-tmp_cutscene_command.t = 10;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene_command.cutscene_entity_id = "teddy";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 8;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //Leave this at the end- remember to set tmp_cutscene_command.t!
