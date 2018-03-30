@@ -1,0 +1,19 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -156.49999999999991;
+tmp_speak.wy = 436.0000000000001;
+tmp_speak.w = 305;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "I checked the old jerseys at the basketball Center! The tunic looks totally different. And the women’s team didn’t even start until 1974.";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
