@@ -593,7 +593,7 @@ if [ $NOGEN == "0" ]; then
           cat $observation >> $OUT
           echo "tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
-          echo "tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.w);" >> $OUT
+          echo "tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.observations.push(tmp_observation);" >> $OUT

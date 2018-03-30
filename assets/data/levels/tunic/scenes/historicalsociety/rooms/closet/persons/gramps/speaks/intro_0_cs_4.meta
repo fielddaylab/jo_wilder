@@ -1,11 +1,11 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -363.8442770352371;
-tmp_speak.wy = 222.45842041312287;
-tmp_speak.w = 176;
+tmp_speak.wx = -355.8442770352371;
+tmp_speak.wy = 248.45842041312287;
+tmp_speak.w = 286;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I'll tell the rest later-";
+tmp_speak.raw_atext = "I'll have to tell you the rest later- or I'll be late to my meeting!";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = -304.576136087485;
 tmp_speak.options_wy = -68.81594167679211;

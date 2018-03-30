@@ -1,0 +1,20 @@
+tmp_object.ww = 99.99999999999999;
+tmp_object.wh = 99.99999999999999;
+tmp_object.wx = -648.2464271144283;
+tmp_object.wy = -231.28498112045608;
+tmp_object.wz = 0.12;
+tmp_object.act_wx = 63;
+tmp_object.act_wy = 7;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = 35.84897967830983;
+tmp_object.hover_icon_wy = 43.00093435578584;
+tmp_object.animcycle_id = "notebook_object";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = "Here's my notebook!";
+tmp_object.unlocks = [
+];
+tmp_object.relocks = [
+"tunic.historicalsociety.closet.notebook",
+];
+
