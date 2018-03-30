@@ -2412,8 +2412,14 @@ var personview = function()
       x = clamp(speak.x, speak.x+speak.w-w, self.person.x + self.person.w/2-w/2);
     else
       x = clamp(speak.x, speak.x+speak.w-w, my_avatar.x + my_avatar.w/2-w/2);
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+    ctx.lineTo(x+w/2-2,y+h-2);
+    ctx.quadraticCurveTo(x+w/2,y+h,x+w/2+2,y+h-2);
+    ctx.lineTo(x+w,y);
+    ctx.closePath();
+    ctx.fill();
 
-    ctx.fillRect(x,y,w,h);
     ctx.fillStyle = self.text_color;
     ctx.font = option_font;
     oyoff = 0;
@@ -2448,7 +2454,13 @@ var personview = function()
       var x = clamp(speak.options_x, speak.options_x+speak.options_w-w, my_avatar.x + my_avatar.w/2-w/2);
       var w = 20;
       var h = 20;
-      ctx.fillRect(x,y,w,h);
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(x+w/2-2,y+h-2);
+      ctx.quadraticCurveTo(x+w/2,y+h,x+w/2+2,y+h-2);
+      ctx.lineTo(x+w,y);
+      ctx.closePath();
+      ctx.fill();
 
       ctx.fillStyle = self.text_color;
       for(var i = 0; i < self.cache_unlocked_options.length; i++)
