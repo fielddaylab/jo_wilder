@@ -86,7 +86,7 @@ var GamePlayScene = function(game, stage)
         }
         else
         {
-          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:10});
+          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:4});
           g.resize({stage:stage});
           ctx.font = "20px Helvetica";
         }
