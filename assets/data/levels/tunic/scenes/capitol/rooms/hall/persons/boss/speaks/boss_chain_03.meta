@@ -1,0 +1,19 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -10.999999999910159;
+tmp_speak.wy = 344.5000000003081;
+tmp_speak.w = 224;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Wells was wrong. It’s not a basketball jersey!";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
