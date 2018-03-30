@@ -1517,10 +1517,6 @@ var notificationview = function()
           self.ui_state = UI_STATE_NULL;
           self.ui_state_t = 0;
           self.ui_state_p = 0;
-          state_from = state_cur;
-          state_to = state_stack;
-          state_cur = STATE_TRANSITION;
-          state_t = 0;
         }
         break;
     }
