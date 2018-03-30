@@ -245,7 +245,7 @@ var cursor = function()
       case CURSOR_OPTION:      ctx.drawImage(self.option_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
       case CURSOR_MAP:         ctx.drawImage(self.map_animcycle_inst.img,         self.known_x-hw,self.known_y-hh,w,h); break;
     }
-    if(self.o)
+    if(self.o && (!DEBUG || !my_keyable.e))
     {
       w = cur_level.hover_w;
       h = cur_level.hover_h;

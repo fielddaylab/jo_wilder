@@ -1,11 +1,7 @@
 exit cursor
-entrys
 sounds for everything
 sounds in cutscene
-noteworthy entry notifications
-"picture taking"
 speech bubble pointer arrows
-notebook sections
 
 walk diagonally
 
@@ -14,22 +10,17 @@ intro screen
 (room, cam, jolie) sizing in terms of universal # (jolies? meters?)
 z ordering as universal spec (-1 = paralax bg, 0 = bg, 1 = jolie furthest back, 2 = jolie furthest forward, 3 = fg, 4 = paralax fg)
 conversation animcycles target convo owner
+conversation tween events (shake, etc...)
 flip imgs if -w or -h
 bilinear vs nn
 
-- finish ui
-
-- level requirements for notebook
-
-check noteworthiness on key
-implement notebook
-implement noteworthy notif
-re-eval locks on key- realtime
-
+bounce text is nauseating
+animate hover icons
 implement content in terms of z
 implement correct "who is speaking"
 options visible pre-hover/select (to say "you need to click here")
 cutscene lerp alpha
+cutscene tween events (shake, etc...)
 cutscene text instead of image
 
 intro cutscene has "flashcut" of wrong position to start- fix
