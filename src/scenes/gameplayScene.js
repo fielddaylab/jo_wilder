@@ -98,7 +98,7 @@ var GamePlayScene = function(game, stage)
     }
     my_keyable.key_up = function(evt)
     {
-      if(evt.key == "e") my_keyable.e = 0;
+      if(evt.key == "e") { my_keyable.eup = 1; dragger.force_end(); }
     }
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
@@ -306,6 +306,8 @@ var GamePlayScene = function(game, stage)
     keyer.flush();
 
     my_cursor.tick();
+    if(my_keyable.eup) my_keyable.e = 0;
+    my_keyable.eup = 0;
   };
 
   self.draw = function()

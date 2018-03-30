@@ -80,6 +80,10 @@ var Dragger = function(init)
     if(evt.clientX < r.left || evt.clientY < r.top || evt.clientX > r.right || evt.clientY > r.bottom)
       end(evt);
   }
+  self.force_end = function()
+  {
+    end({});
+  }
   self.filter = function(draggable)
   {
     var hit = false;
