@@ -1,13 +1,13 @@
-tmp_porthole.ww = 356.2906368202588;
+tmp_porthole.ww = 463.23687163807244;
 tmp_porthole.wh = 688.0952727413944;
-tmp_porthole.wx = 253.89493628241075;
-tmp_porthole.wy = 306.6872596200026;
+tmp_porthole.wx = 221.12109012856456;
+tmp_porthole.wy = 299.7875025349824;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 2.374022819286067;
 tmp_porthole.act_wy = -335.06909090909085;
 tmp_porthole.act_anim = true;
 tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
+tmp_porthole.hover_icon_wy = -165.5941700404858;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.audio_id = "door";
