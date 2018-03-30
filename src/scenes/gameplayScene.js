@@ -125,9 +125,9 @@ var GamePlayScene = function(game, stage)
     {
       case STATE_NAV:
         if(
-          !my_notificationview.note &&
-          !hoverer.filter(my_navigable) &&
-          false) ;
+        !my_notificationview.note &&
+        !hoverer.filter(my_navigable) &&
+        false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
@@ -169,9 +169,9 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_MAP:
         if(
-          !my_notificationview.note &&
-          !hoverer.filter(my_mapview) &&
-          false) ;
+        !my_notificationview.note &&
+        !hoverer.filter(my_mapview) &&
+        false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
@@ -193,8 +193,22 @@ var GamePlayScene = function(game, stage)
       case STATE_NOTEBOOK:
         if(
         !my_notificationview.note &&
-        !clicker.filter(my_notebookview) &&
+        !hoverer.filter(my_notebookview) &&
         false) ;
+        if(DEBUG && my_keyable.e)
+        {
+          if(
+          !my_notificationview.note &&
+          !dragger.filter(my_notebookview) &&
+          false) ;
+        }
+        else
+        {
+          if(
+          !my_notificationview.note &&
+          !clicker.filter(my_notebookview) &&
+          false) ;
+        }
         my_navigable.tick();
         my_avatar.tick();
         my_notebookview.tick();
@@ -247,9 +261,9 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_OBSERVATION:
         if(
-          !my_notificationview.note &&
-          !hoverer.filter(my_observationview) &&
-          false) ;
+        !my_notificationview.note &&
+        !hoverer.filter(my_observationview) &&
+        false) ;
         if(DEBUG && my_keyable.e)
         {
           if(

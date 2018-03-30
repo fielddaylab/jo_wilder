@@ -1077,11 +1077,13 @@ tmp_entry = new entry();
 tmp_entry.id = "null";
 tmp_entry.fqid = "tunic.null";
 {
-tmp_entry.ww = canv.width/2;
-tmp_entry.wh = 100;
-tmp_entry.wx = 0;
-tmp_entry.wy = 0;
+tmp_entry.primary = undefined;
+tmp_entry.ww = 116.99999999999996;
+tmp_entry.wh = 244.9999999999999;
+tmp_entry.wx = -260.50000000000006;
+tmp_entry.wy = 79.49999999999997;
 tmp_entry.wz = 0;
+tmp_entry.page = 0;
 tmp_entry.animcycle_id = "null";
 tmp_entry.audio_id = "null";
 tmp_entry.noteworthy = false;

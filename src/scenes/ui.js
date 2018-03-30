@@ -1383,6 +1383,8 @@ var notebookview = function()
   self.entrys;
   self.notebook_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  self.prev_box = {x:10,             y:100, w:90, h:90};
+  self.next_box = {x:canv.width-100, y:100, w:90, h:90};
   self.cache_unlocked_entrys = [];
 
   self.page = 0;
@@ -1403,9 +1405,76 @@ var notebookview = function()
       if(!querylocked(self.entrys[i]))
       {
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
-        self.cache_unlocked_entrys.push(self.entrys[i]);
+        //sort by page->z
+        var j = 0;
+        for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[i].page || (self.entrys[i].page == self.cache_unlocked_entrys[i].page && self.entrys[i].wz < self.cache_unlocked_entrys[i].wz)) break;
+        self.cache_unlocked_entrys.splice(j,0,self.entrys[i]);
       }
   }
+
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+    for(var i = 0; !self.edit_o && i < self.cache_unlocked_entrys.length; i++)
+      if(ptWithinBox(self.cache_unlocked_entrys[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_entrys[i]; }
+
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+      self.edit_o.h += self.deltaY;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+    worldSpace(my_ui_camera,canv,self.edit_o);
+
+    self._dirty = true;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
+
 
   self.click = function(evt)
   {
@@ -1416,6 +1485,10 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       state_t = 0;
     }
+    else if(self.page > 0                && ptWithinBox(self.prev_box,evt.doX,evt.doY))
+      self.page--;
+    else if(self.page < self.last_page-1 && ptWithinBox(self.next_box,evt.doX,evt.doY))
+      self.page++;
   }
 
   self.tick = function()
@@ -1432,24 +1505,29 @@ var notebookview = function()
   {
     var yoff = (1-t)*self.h;
     ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
+    ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
     ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     var entry;
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
     {
       entry = self.cache_unlocked_entrys[i];
-      ctx.drawImage(entry.animcycle_inst.img,self.x,self.y+yoff+entry.y,entry.w,entry.h);
+      if(entry.page == self.page || entry.page == self.page+1)
+        ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
 
     if(DEBUG)
     {
-      ctx.strokeStyle = white;
+      ctx.strokeStyle = black;
       var entry;
       for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
       {
         entry = self.cache_unlocked_entrys[i];
-        ctx.strokeRect(self.x,self.y+yoff+entry.y,entry.w,entry.h);
+        ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
       }
+      ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
+      ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
