@@ -16,7 +16,7 @@ var my_loader;
 var my_avatar;
 var my_navigable;
 var my_mapview;
-var my_notebook;
+var my_notebookview;
 var my_objectview;
 var my_observationview;
 var my_personview;

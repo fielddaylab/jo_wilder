@@ -54,8 +54,8 @@ var GamePlayScene = function(game, stage)
     my_toolbar.consume_level(cur_level);
     my_mapview = new mapview();
     my_mapview.consume_level(cur_level);
-    my_notebook = new notebook();
-    my_notebook.consume_level(cur_level);
+    my_notebookview = new notebookview();
+    my_notebookview.consume_level(cur_level);
     my_objectview = new objectview();
     my_observationview = new observationview();
     my_personview = new personview();
@@ -193,11 +193,11 @@ var GamePlayScene = function(game, stage)
       case STATE_NOTEBOOK:
         if(
         !my_notificationview.note &&
-        !clicker.filter(my_notebook) &&
+        !clicker.filter(my_notebookview) &&
         false) ;
         my_navigable.tick();
         my_avatar.tick();
-        my_notebook.tick();
+        my_notebookview.tick();
         break;
       case STATE_PERSON:
         if(
@@ -308,7 +308,7 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_NOTEBOOK:
         my_navigable.draw();
-        my_notebook.draw(1);
+        my_notebookview.draw(1);
         break;
       case STATE_PERSON:
         my_navigable.draw();
@@ -493,7 +493,7 @@ var GamePlayScene = function(game, stage)
         {
           my_navigable.draw();
           my_toolbar.draw(1-state_t);
-          my_notebook.draw(state_t);
+          my_notebookview.draw(state_t);
         }
         else if(state_to == STATE_PERSON)
         {
@@ -568,7 +568,7 @@ var GamePlayScene = function(game, stage)
         {
           my_navigable.draw();
           my_toolbar.draw(state_t);
-          my_notebook.draw(1-state_t);
+          my_notebookview.draw(1-state_t);
         }
         break;
       case STATE_PERSON:

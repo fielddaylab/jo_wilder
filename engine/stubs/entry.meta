@@ -3,8 +3,11 @@ tmp_entry.ww = 100;
 tmp_entry.wh = 100;
 tmp_entry.wx = 100;
 tmp_entry.wy = 100;
+tmp_entry.wz = 100;
+tmp_entry.page = 0;
 tmp_entry.animcycle_id = "null";
 tmp_entry.audio_id = "null";
+tmp_entry.noteworthy = "null";
 tmp_entry.unlocks = [
 ];
 tmp_entry.relocks = [

@@ -668,13 +668,14 @@ var entry = function()
   var self = this;
   self.id = "null";
   self.fqid = "null";
-  self.wx = 0;
-  self.wy = 0;
   self.ww = canv.width/2;
   self.wh = 100;
+  self.wx = 0;
+  self.wy = 0;
+  self.wz = 0;
+  self.page = 0;
   self.animcycle_id = "null";
   self.audio_id = "null";
-  self.index = 0;
   self.noteworthy = false;
   self.unlocks = [];
   self.relocks = [];
@@ -801,6 +802,32 @@ var print_level_meta = function(l)
   str +=
   "];\n"+
   "tmp_level.relocks = [\n";
+  for(var i = 0; i < l.relocks.length; i++)
+    str += "\""+l.relocks[i]+"\",\n";
+  str +=
+  "];\n"
+  console.log(str);
+}
+
+var print_entry_meta = function(l)
+{
+  var str = "SAVE entry "+l.fqid+"\n"+
+  "tmp_entry.primary = "+l.primary+";\n"+
+  "tmp_entry.ww = "+l.ww+";\n"+
+  "tmp_entry.wh = "+l.wh+";\n"+
+  "tmp_entry.wx = "+l.wx+";\n"+
+  "tmp_entry.wy = "+l.wy+";\n"+
+  "tmp_entry.wz = "+l.wz+";\n"+
+  "tmp_entry.page = "+l.page+";\n"+
+  "tmp_entry.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_entry.audio_id = \""+l.audio_id+"\";\n"+
+  "tmp_entry.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_entry.unlocks = [\n";
+  for(var i = 0; i < l.unlocks.length; i++)
+    str += "\""+l.unlocks[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_entry.relocks = [\n";
   for(var i = 0; i < l.relocks.length; i++)
     str += "\""+l.relocks[i]+"\",\n";
   str +=
@@ -1160,6 +1187,12 @@ var print_whole_level = function(level)
 {
   console.log("===BEGIN_IMPORT===");
   print_level_meta(level);
+  var entry;
+  for(var i = 0; i < level.entrys.length; i++)
+  {
+    entry = level.entrys[i];
+    print_entry_meta(entry);
+  }
   var scene;
   for(var i = 0; i < level.scenes.length; i++)
   {

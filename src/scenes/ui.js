@@ -62,6 +62,8 @@ var loader = function()
 
     for(var i = 0; i < level.scenes.length; i++)
       self.load_animcycle_inst(level.scenes[i].animcycle_inst);
+    for(var i = 0; i < level.entrys.length; i++)
+      self.load_animcycle_inst(level.entrys[i].animcycle_inst);
   }
 
   self.consume_room = function(room)
@@ -1369,7 +1371,7 @@ var mapview = function()
   }
 }
 
-var notebook = function()
+var notebookview = function()
 {
   var self = this;
 
@@ -1383,6 +1385,9 @@ var notebook = function()
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_entrys = [];
 
+  self.page = 0;
+  self.last_page = 0;
+
   self.consume_level = function(level)
   {
     self.entrys = level.entrys;
@@ -1393,13 +1398,12 @@ var notebook = function()
   self.unlock_content = function()
   {
     self.cache_unlocked_entrys = [];
-    self.cur_y = 0;
+    self.last_page = 0;
     for(var i = 0; i < self.entrys.length; i++)
       if(!querylocked(self.entrys[i]))
       {
-        self.entrys[i].y = self.cur_y;
+        if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         self.cache_unlocked_entrys.push(self.entrys[i]);
-        self.cur_y += self.entrys[i].h;
       }
   }
 
@@ -1417,7 +1421,10 @@ var notebook = function()
   self.tick = function()
   {
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+    {
       self.cache_unlocked_entrys[i].animcycle_inst.tick();
+      screenSpace(my_ui_camera,canv,self.cache_unlocked_entrys[i]);
+    }
     self.notebook_animcycle_inst.tick();
   }
 
@@ -1437,7 +1444,12 @@ var notebook = function()
     if(DEBUG)
     {
       ctx.strokeStyle = white;
-      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      var entry;
+      for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+      {
+        entry = self.cache_unlocked_entrys[i];
+        ctx.strokeRect(self.x,self.y+yoff+entry.y,entry.w,entry.h);
+      }
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
@@ -2258,9 +2270,7 @@ var personview = function()
     {
       if(!self.clicked_option.key && self.clicked_option.noteworthy) my_notificationview.consume_notification(self.clicked_option.noteworthy);
       self.clicked_option.key = true;
-      if(self.ui_state == UI_STATE_OUT)
-        self.dismiss();
-      else
+      if(self.ui_state != UI_STATE_OUT)
       {
         self.ui_state_t = 0;
         self.ui_state_p = 0;
