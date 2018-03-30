@@ -1,0 +1,19 @@
+tmp_speak.primary = false;
+tmp_speak.wx = 26.101421064480768;
+tmp_speak.wy = 304.2000014870105;
+tmp_speak.w = 228.69814225923326;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Where's Wells?";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 239.216253647685;
+tmp_speak.options_wy = 100.71702878373762;
+tmp_speak.options_w = 146.9697885196375;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

@@ -142,6 +142,20 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/bg/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "boss";
+tmp_animcycle.fqid = "tunic.boss";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "cleaner";
 tmp_animcycle.fqid = "tunic.cleaner";
 {
@@ -1245,6 +1259,76 @@ tmp_room.relocks = [
 ];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
+tmp_person = new person();
+tmp_person.id = "boss";
+tmp_person.fqid = "tunic.capitol.hall.boss";
+{
+tmp_person.ww = 150.0737668615271;
+tmp_person.wh = 313.3287704263341;
+tmp_person.wx = 299.70453437843406;
+tmp_person.wy = 40.98731418180236;
+tmp_person.wz = 0;
+tmp_person.act_wx = -140.83388568593585;
+tmp_person.act_wy = 5.555867533397077;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 48.53549656579855;
+tmp_person.hover_icon_wy = 136.49783377739953;
+tmp_person.animcycle_id = "boss";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.unlocks = [
+];
+tmp_person.relocks = [
+];
+
+tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
+tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_speak = new speak();
+tmp_speak.id = "boss_chain_1";
+tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_1";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = 26.101421064480768;
+tmp_speak.wy = 304.2000014870105;
+tmp_speak.w = 228.69814225923326;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Where's Wells?";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 239.216253647685;
+tmp_speak.options_wy = 100.71702878373762;
+tmp_speak.options_w = 146.9697885196375;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_1.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "null";
+tmp_option.noteworthy = false;
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+}
+tmp_room.persons.push(tmp_person);
 tmp_person = new person();
 tmp_person.id = "youngboy";
 tmp_person.fqid = "tunic.capitol.hall.youngboy";

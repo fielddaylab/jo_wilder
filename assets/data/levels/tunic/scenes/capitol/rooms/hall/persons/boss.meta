@@ -1,0 +1,19 @@
+tmp_person.ww = 150.0737668615271;
+tmp_person.wh = 313.3287704263341;
+tmp_person.wx = 299.70453437843406;
+tmp_person.wy = 40.98731418180236;
+tmp_person.wz = 0;
+tmp_person.act_wx = -140.83388568593585;
+tmp_person.act_wy = 5.555867533397077;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 48.53549656579855;
+tmp_person.hover_icon_wy = 136.49783377739953;
+tmp_person.animcycle_id = "boss";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.audio_id = "null";
+tmp_person.noteworthy = false;
+tmp_person.unlocks = [
+];
+tmp_person.relocks = [
+];
+
