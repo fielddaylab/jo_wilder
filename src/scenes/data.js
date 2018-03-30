@@ -2555,13 +2555,13 @@ tmp_room.cam_wh = 1074.7199999999993;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:45.736444608023135, wy:-370.3218181818179, ww:2068.426705925653, wh:466.38909090909084 },
+{wx:-15.563273693588371, wy:-334.48636893977323, ww:2068.426705925653, wh:466.38909090909084 },
 ];
 tmp_room.lights = [
 {wx:606.2655502392346, wy:297.6909090909091, ww:63.28443135811556, wh:38.25454545454535 },
 ];
 tmp_room.shadows = [
-{wx:522.0309900625689, wy:296.790909090909, ww:68.76231137283743, wh:36.45454545454559 },
+{wx:623.0212383610126, wy:-292.6775105085614, ww:827.5797659221049, wh:498.90981818191267 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -2579,10 +2579,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tocloset";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tocloset";
 {
-tmp_porthole.ww = 316.86505704821485;
-tmp_porthole.wh = 298.5345454545453;
-tmp_porthole.wx = 492.4726021347075;
-tmp_porthole.wy = -1.7618181818184553;
+tmp_porthole.ww = 261.5010285004335;
+tmp_porthole.wh = 288.764417060611;
+tmp_porthole.wx = 616.4580775618733;
+tmp_porthole.wy = 100.78844693001369;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 15.05436142804566;
 tmp_porthole.act_wy = -48.218181818181826;
@@ -2609,10 +2609,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tocollection";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tocollection";
 {
-tmp_porthole.ww = 258.6944129554656;
-tmp_porthole.wh = 499.6000000000001;
-tmp_porthole.wx = -936.5015384615382;
-tmp_porthole.wy = -195.96000000000015;
+tmp_porthole.ww = 125.42880725150671;
+tmp_porthole.wh = 370.959272152761;
+tmp_porthole.wx = -921.9432388906349;
+tmp_porthole.wy = 21.407521837651274;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = -3.449878542510121;
 tmp_porthole.act_wy = -131.76;
@@ -2669,10 +2669,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tostacks";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tostacks";
 {
-tmp_porthole.ww = 502.8433640044164;
-tmp_porthole.wh = 714.1490909090909;
-tmp_porthole.wx = 55.74922708870059;
-tmp_porthole.wy = 215.4854545454545;
+tmp_porthole.ww = 356.2906368202588;
+tmp_porthole.wh = 688.0952727413944;
+tmp_porthole.wx = 182.76160361500496;
+tmp_porthole.wy = 301.78872521764254;
 tmp_porthole.wz = 999;
 tmp_porthole.act_wx = 2.374022819286067;
 tmp_porthole.act_wy = -335.06909090909085;
