@@ -652,6 +652,7 @@ var navigable = function()
   self.consume_room = function(room)
   {
     self.room = room;
+    if(!self.room.key && self.room.noteworthy) my_notificationview.consume_notification(self.room.noteworthy);
     self.room.key = true;
     self.unlock_content();
     self.selected_act = 0;
@@ -1093,7 +1094,6 @@ var navigable = function()
     drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
 
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
-    console.log(avi_wz);
     var i = 0;
     for(; i < self.cache_unlocked_drawables.length && self.cache_unlocked_drawables[i].wz < avi_wz; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
@@ -1236,6 +1236,7 @@ var mapview = function()
   self.consume_level = function(level)
   {
     self.level = level;
+    if(!self.level.key && self.level.noteworthy) my_notificationview.consume_notification(self.level.noteworthy);
     self.level.key = true;
     self.unlock_content();
     self.selected_scene = 0;
@@ -1446,17 +1447,112 @@ var notificationview = function()
 {
   var self = this;
 
-  self.q = [];
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
 
-  self.enqueue = function(txt)
+  self.q = [];
+  self.note = 0;
+
+  self.bubble_color = "#242224";
+  self.text_color = white;
+
+  var ENUM = 0;
+  var UI_STATE_NULL    = ENUM; ENUM++;
+  var UI_STATE_IN_NOTE = ENUM; ENUM++;
+  var UI_STATE_SELECT  = ENUM; ENUM++;
+  var UI_STATE_OUT     = ENUM; ENUM++;
+  var UI_STATE_COUNT   = ENUM; ENUM++;
+
+  self.ui_state = UI_STATE_NULL;
+  self.ui_state_t = 0;
+  self.ui_state_t_max = [];
+  self.ui_state_t_max[UI_STATE_IN_NOTE] = 60;
+  self.ui_state_t_max[UI_STATE_SELECT]  = 0;
+  self.ui_state_t_max[UI_STATE_OUT]     = 10;
+  self.ui_state_p = 0;
+
+  self.consume_notification = function(txt)
   {
     self.q.push(txt);
   }
 
   self.dequeue = function()
   {
+    if(!self.note && self.q.length)
+    {
+      self.note = self.q[0];
+      self.q.splice(0,1);
+      self.ui_state = UI_STATE_IN_NOTE;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+    }
+    return self.note;
+  }
+
+  self.click = function(evt)
+  {
+    self.ui_state_t = self.ui_state_t_max[self.ui_state];
+    if(self.ui_state != UI_STATE_OUT)
+    {
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.ui_state = UI_STATE_OUT;
+    }
+  }
+
+  self.tick = function()
+  {
+    self.ui_state_t++;
+    self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
+    switch(self.ui_state)
+    {
+      case UI_STATE_IN_NOTE: if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT; self.ui_state_t = 0; self.ui_state_p = 0; } break;
+      case UI_STATE_SELECT: break;
+      case UI_STATE_OUT:
+        if(self.ui_state_p >= 1)
+        {
+          self.note = 0;
+          self.ui_state = UI_STATE_NULL;
+          self.ui_state_t = 0;
+          self.ui_state_p = 0;
+          state_from = state_cur;
+          state_to = state_stack;
+          state_cur = STATE_TRANSITION;
+          state_t = 0;
+        }
+        break;
+    }
+  }
+
+  self.draw = function(t)
+  {
+    if(self.ui_state == UI_STATE_NULL) return;
+
+    var yoff = 0;
+
+    var a = 1;
+    switch(self.ui_state)
+    {
+      case UI_STATE_IN_NOTE: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+      case UI_STATE_SELECT:  break;
+      case UI_STATE_OUT:     a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+    }
+    ctx.globalAlpha = a;
+
+    var b = 10;
+    ctx.fillStyle = self.bubble_color;
+    var w = ctx.measureText(self.note).width;
+    var h = 30;
+    var x = self.x+self.w/2-w/2;
+    fillRRect(x-b-5,y-b+5+yoff,w+b*2+10,h+b*2+5,b,ctx);
+    ctx.fillStyle = self.text_color;
+    ctx.fillText(self.note,x,y+yoff+h);
+    ctx.globalAlpha = 1;
 
   }
+
 }
 
 var objectview = function()
@@ -1476,9 +1572,11 @@ var objectview = function()
   self.consume_object = function(object)
   {
     self.object = object;
+    if(!self.object.key && self.object.noteworthy) my_notificationview.consume_notification(self.object.noteworthy);
     self.object.key = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
+    if(!self.cur_view.key && self.cur_view.noteworthy) my_notificationview.consume_notification(self.cur_view.noteworthy);
     self.cur_view.key = true;
     self.unlock_content();
   }
@@ -1577,8 +1675,10 @@ var objectview = function()
       zone = self.cache_unlocked_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
+        if(!zone.key && zone.noteworthy) my_notificationview.consume_notification(zone.noteworthy);
         zone.key = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
+        if(!self.cur_view.key && self.cur_view.noteworthy) my_notificationview.consume_notification(self.cur_view.noteworthy);
         self.cur_view.key = true;
         self.unlock_content();
         return;
@@ -1656,6 +1756,7 @@ var observationview = function()
   self.consume_observation = function(observation)
   {
     self.observation = observation;
+    if(!self.observation.key && self.observation.noteworthy) my_notificationview.consume_notification(self.observation.noteworthy);
     self.observation.key = true;
     self.ui_state = UI_STATE_IN_OBSERVATION;
     self.ui_state_t = 0;
@@ -1869,6 +1970,7 @@ var personview = function()
   self.consume_person = function(person)
   {
     self.person = person;
+    if(!self.person.key && self.person.noteworthy) my_notificationview.consume_notification(self.person.noteworthy);
     self.person.key = true;
     self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
@@ -1897,6 +1999,7 @@ var personview = function()
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak = speak;
+      if(!self.cur_speak.key && self.cur_speak.noteworthy) my_notificationview.consume_notification(self.cur_speak.noteworthy);
       self.cur_speak.key = true;
       self.unlock_content();
     }
@@ -1914,6 +2017,7 @@ var personview = function()
       for(var i = 1; i < self.cache_unlocked_speaks.length; i++)
         if(self.cache_unlocked_speaks[i].primary > self.cur_speak.primary)
           self.cur_speak = self.cache_unlocked_speaks[i];
+      if(!self.cur_speak.key && self.cur_speak.noteworthy) my_notificationview.consume_notification(self.cur_speak.noteworthy);
       self.cur_speak.key = true;
     }
 
@@ -2156,6 +2260,7 @@ var personview = function()
 
     if(self.clicked_option)
     {
+      if(!self.clicked_option.key && self.clicked_option.noteworthy) my_notificationview.consume_notification(self.clicked_option.noteworthy);
       self.clicked_option.key = true;
       if(self.ui_state == UI_STATE_OUT)
         self.dismiss();
@@ -2344,6 +2449,7 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
+    if(!self.cutscene.key && self.cutscene.noteworthy) my_notificationview.consume_notification(self.cutscene.noteworthy);
     self.cutscene.key = true;
 
     self.cutscene_entitys = [];

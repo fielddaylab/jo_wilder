@@ -29,8 +29,6 @@ re-eval locks on key- realtime
 implement content in terms of z
 implement correct "who is speaking"
 options visible pre-hover/select (to say "you need to click here")
-cutscene camera target avatar/objects
-cutscene avatar target location
 cutscene lerp alpha
 cutscene text instead of image
 

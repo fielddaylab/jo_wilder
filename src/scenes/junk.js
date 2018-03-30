@@ -21,6 +21,7 @@ var my_objectview;
 var my_observationview;
 var my_personview;
 var my_cutsceneview;
+var my_noteificationview;;
 
 var init_audio = false;
 var canv_clicker;
