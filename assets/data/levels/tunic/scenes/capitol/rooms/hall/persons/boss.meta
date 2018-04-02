@@ -13,6 +13,8 @@ tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures.hub",
+"tunic.kohlcenter.halloffame.jersey.hub",
 ];
 tmp_person.relocks = [
 ];

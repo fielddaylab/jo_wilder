@@ -426,6 +426,34 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/icon_noteboo
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "jersey";
+tmp_animcycle.fqid = "tunic.jersey";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/jersey/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "jersey_front";
+tmp_animcycle.fqid = "tunic.jersey_front";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/jersey_front/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "journalsaz";
 tmp_animcycle.fqid = "tunic.journalsaz";
 {
@@ -1305,6 +1333,8 @@ tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.noteworthy = false;
 tmp_person.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures.hub",
+"tunic.kohlcenter.halloffame.jersey.hub",
 ];
 tmp_person.relocks = [
 ];
@@ -4919,13 +4949,56 @@ tmp_room.relocks = [
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_object = new object();
+tmp_object.id = "jersey";
+tmp_object.fqid = "tunic.kohlcenter.halloffame.jersey";
+{
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 523.0000038416794;
+tmp_object.wy = 88;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.hover_icon_wx = 0;
+tmp_object.hover_icon_wy = 0;
+tmp_object.animcycle_id = "jersey";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.audio_id = "null";
+tmp_object.noteworthy = false;
+tmp_object.unlocks = [
+];
+tmp_object.relocks = [
+];
+
+tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
+tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_view = new view();
+tmp_view.id = "hub";
+tmp_view.fqid = "tunic.kohlcenter.halloffame.jersey.hub";
+{
+tmp_view.primary = true;
+tmp_view.animcycle_id = "jersey_front";
+tmp_view.audio_id = "null";
+tmp_view.noteworthy = "This doesn't look anything like the tunic!";
+tmp_view.unlocks = [
+];
+tmp_view.relocks = [
+];
+
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+}
+tmp_object.views.push(tmp_view);
+}
+tmp_room.objects.push(tmp_object);
+tmp_object = new object();
 tmp_object.id = "oldpictures";
 tmp_object.fqid = "tunic.kohlcenter.halloffame.oldpictures";
 {
 tmp_object.ww = 100;
 tmp_object.wh = 100;
-tmp_object.wx = 105.99999999999997;
-tmp_object.wy = 55.000000000000014;
+tmp_object.wx = 415.0004004745276;
+tmp_object.wy = 89.00000000000003;
 tmp_object.wz = 0;
 tmp_object.act_wx = 0;
 tmp_object.act_wy = 0;
@@ -4950,7 +5023,7 @@ tmp_view.fqid = "tunic.kohlcenter.halloffame.oldpictures.hub";
 tmp_view.primary = true;
 tmp_view.animcycle_id = "oldpictures_front";
 tmp_view.audio_id = "null";
-tmp_view.noteworthy = false;
+tmp_view.noteworthy = "The slip I found is from wayyy back in 1916. But the women's team didn't even start until 1974!";
 tmp_view.unlocks = [
 ];
 tmp_view.relocks = [
