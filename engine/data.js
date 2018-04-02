@@ -2490,8 +2490,8 @@ tmp_room.id = "basement";
 tmp_room.fqid = "tunic.historicalsociety.basement";
 {
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1000;
+tmp_room.wh = 680;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
@@ -2518,7 +2518,6 @@ tmp_room.unlocks = [
 ];
 tmp_room.relocks = [
 ];
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_porthole = new porthole();
 tmp_porthole.id = "tocloset";
@@ -4261,8 +4260,8 @@ tmp_room.id = "stacks";
 tmp_room.fqid = "tunic.historicalsociety.stacks";
 {
 tmp_room.primary = false;
-tmp_room.ww = 956.9406118776245;
-tmp_room.wh = 660;
+tmp_room.ww = 1100;
+tmp_room.wh = 695;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_stacks";
@@ -4289,7 +4288,6 @@ tmp_room.unlocks = [
 ];
 tmp_room.relocks = [
 ];
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_object = new object();
 tmp_object.id = "journalsaz";

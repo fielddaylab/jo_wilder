@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1000;
+tmp_room.wh = 680;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
@@ -27,4 +27,3 @@ tmp_room.unlocks = [
 ];
 tmp_room.relocks = [
 ];
-
