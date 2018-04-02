@@ -1,7 +1,7 @@
-tmp_observation.ww = 161.99999999923818;
-tmp_observation.wh = 293.9999999999717;
-tmp_observation.wx = -357.58622595388425;
-tmp_observation.wy = 139.7229316072807;
+tmp_observation.ww = 192.99999999922755;
+tmp_observation.wh = 312.99999999997175;
+tmp_observation.wx = -353.5349141682593;
+tmp_observation.wy = 147.05942951322734;
 tmp_observation.wz = 0.1;
 tmp_observation.act_wx = -13.999999999999998;
 tmp_observation.act_wy = -71;

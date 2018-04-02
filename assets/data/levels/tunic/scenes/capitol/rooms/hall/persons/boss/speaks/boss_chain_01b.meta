@@ -1,12 +1,12 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -14.565378662189346;
-tmp_speak.wy = 314.7000014870106;
-tmp_speak.w = 228.69814225923326;
+tmp_speak.wx = 76.9346213378118;
+tmp_speak.wy = 367.20000148701513;
+tmp_speak.w = 270.69814225923324;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Where's Wells?";
-tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.raw_atext = "Hmmm. Wells sure is taking his time with that plaque…";
+tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 239.216253647685;
 tmp_speak.options_wy = 100.71702878373762;
 tmp_speak.options_w = 146.9697885196375;
@@ -15,5 +15,6 @@ tmp_speak.noteworthy = false;
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
+"tunic.capitol.hall.boss.boss_chain_01b",
 ];
 

@@ -1,10 +1,10 @@
-tmp_porthole.ww = 155.09472049689438;
-tmp_porthole.wh = 357.4;
-tmp_porthole.wx = 748.4041925465838;
-tmp_porthole.wy = 18.29999999999987;
+tmp_porthole.ww = 153.87679637483404;
+tmp_porthole.wh = 572.4719217920203;
+tmp_porthole.wx = 687.3406850310062;
+tmp_porthole.wy = -17.26626392631357;
 tmp_porthole.wz = 999;
-tmp_porthole.act_wx = 10.8;
-tmp_porthole.act_wy = -62.4;
+tmp_porthole.act_wx = -21.65419677812778;
+tmp_porthole.act_wy = -114.22244306336432;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 0;
 tmp_porthole.hover_icon_wy = 0;
@@ -12,8 +12,8 @@ tmp_porthole.animcycle_id = "null";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = -893.5185425101214;
-tmp_porthole.target_start_wy = -300.24000000000007;
+tmp_porthole.target_start_wx = -903.2438530313667;
+tmp_porthole.target_start_wy = -94.39707135640175;
 tmp_porthole.noteworthy = false;
 tmp_porthole.unlocks = [
 ];
