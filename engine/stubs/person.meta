@@ -11,7 +11,7 @@ tmp_person.hover_icon_wy = 0;
 tmp_person.animcycle_id = "null";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
-tmp_person.notifications_raw = [
+tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
 ];

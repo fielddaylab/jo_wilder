@@ -11,7 +11,7 @@ tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30; //h of a single line
-tmp_speak.notifications_raw = [
+tmp_speak.raw_notifications = [
 ];
 tmp_speak.unlocks = [
 ];
