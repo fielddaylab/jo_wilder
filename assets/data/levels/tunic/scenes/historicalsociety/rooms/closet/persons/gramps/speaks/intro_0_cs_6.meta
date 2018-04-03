@@ -1,11 +1,11 @@
-tmp_speak.primary = 1;
-tmp_speak.wx = -359;
-tmp_speak.wy = 249;
-tmp_speak.w = 283;
+tmp_speak.primary = false;
+tmp_speak.wx = -360.7265613608749;
+tmp_speak.wy = 249.2628432563792;
+tmp_speak.w = 172;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "...and then, the Eagle Company marched off to battle,";
+tmp_speak.raw_atext = "Grab your stuff and meet me upstairs!";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;

@@ -3528,13 +3528,13 @@ tmp_speak.id = "intro_0_cs_0";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_0";
 {
 tmp_speak.primary = 1;
-tmp_speak.wx = -361;
-tmp_speak.wy = 273;
-tmp_speak.w = 259;
+tmp_speak.wx = -359;
+tmp_speak.wy = 249;
+tmp_speak.w = 283;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "...and then, they found boxes of counterfeit Mexican pesos that were used as payment!";
+tmp_speak.raw_atext = "...and then, the Eagle Company marched off to battle,";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -3575,14 +3575,14 @@ tmp_speak.id = "intro_0_cs_1";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_1";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -158.00000000000009;
-tmp_speak.wy = -34.000000000000036;
-tmp_speak.w = 221;
+tmp_speak.wx = -362.00000000000006;
+tmp_speak.wy = 296;
+tmp_speak.w = 213;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Wow! Like, fake money?";
-tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.raw_atext = "...and Old Abe became the most famous soldier in the Union!";
+tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -3628,7 +3628,7 @@ tmp_speak.w = 205;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "What happened next?!";
+tmp_speak.raw_atext = "Wow! An eagle in the army?";
 tmp_speak.speaker = SPEAKER_PLAYER;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -3669,14 +3669,14 @@ tmp_speak.id = "intro_0_cs_3";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_3";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -357.6655164034023;
-tmp_speak.wy = 213.01151883353597;
-tmp_speak.w = 40;
+tmp_speak.wx = -149.6655164034023;
+tmp_speak.wy = -31.98848116646402;
+tmp_speak.w = 203;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "...";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.raw_atext = "What happened next?!";
+tmp_speak.speaker = SPEAKER_PLAYER;
 tmp_speak.options_wx = -285.0787849331714;
 tmp_speak.options_wy = 71.91061968408266;
 tmp_speak.options_w = 100;
@@ -3716,13 +3716,13 @@ tmp_speak.id = "intro_0_cs_4";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_4";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -355.8442770352371;
-tmp_speak.wy = 248.45842041312287;
-tmp_speak.w = 286;
+tmp_speak.wx = -359.8442770352371;
+tmp_speak.wy = 221.45842041312287;
+tmp_speak.w = 20;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I'll have to tell you the rest later- or I'll be late to my meeting!";
+tmp_speak.raw_atext = "...";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = -304.576136087485;
 tmp_speak.options_wy = -68.81594167679211;
@@ -3764,12 +3764,12 @@ tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_5";
 {
 tmp_speak.primary = false;
 tmp_speak.wx = -356.9504738760633;
-tmp_speak.wy = 250.8885054678008;
-tmp_speak.w = 173;
+tmp_speak.wy = 249.88850546780083;
+tmp_speak.w = 282;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Grab your stuff and meet me upstairs!";
+tmp_speak.raw_atext = "I'll have to tell you the rest later- or I'll be late to my meeting!";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = -330.7717132442285;
 tmp_speak.options_wy = 1.0389307411907944;
@@ -3788,6 +3788,53 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 tmp_option = new option();
 tmp_option.id = "next";
 tmp_option.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_5.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "intro_0_cs_6";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "intro_0_cs_6";
+tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_6";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = -360.7265613608749;
+tmp_speak.wy = 249.2628432563792;
+tmp_speak.w = 172;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Grab your stuff and meet me upstairs!";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_6.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
