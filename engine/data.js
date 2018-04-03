@@ -4153,7 +4153,7 @@ tmp_view.id = "hub";
 tmp_view.fqid = "tunic.historicalsociety.closet.notebook.hub";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "null";
+tmp_view.animcycle_id = "notebook";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];

@@ -1516,7 +1516,7 @@ var notebookview = function()
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
     {
       entry = self.cache_unlocked_entrys[i];
-      if(entry.page == self.page || entry.page == self.page+1)
+      if(entry.page == self.page)
         ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
 
