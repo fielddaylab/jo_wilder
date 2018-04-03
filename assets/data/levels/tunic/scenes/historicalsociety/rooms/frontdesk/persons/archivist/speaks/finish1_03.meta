@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -36.00000000000003;
+tmp_speak.wy = 112.99999999999996;
+tmp_speak.w = 277;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "No way! Not while I'm around.";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

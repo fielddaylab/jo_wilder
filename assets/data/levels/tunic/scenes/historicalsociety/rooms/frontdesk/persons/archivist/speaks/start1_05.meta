@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -34.00000000013807;
+tmp_speak.wy = 133;
+tmp_speak.w = 185;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Whatever. Can you help me or not?";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
