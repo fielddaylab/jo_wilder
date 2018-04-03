@@ -119,19 +119,19 @@ var GamePlayScene = function(game, stage)
 
     my_notificationview.dequeue();
     my_notificationview.tick();
-    if(my_notificationview.note) clicker.filter(my_notificationview);
+    if(my_notificationview.note.length) clicker.filter(my_notificationview);
 
     switch(state_cur)
     {
       case STATE_NAV:
         if(
-        !my_notificationview.note &&
+        !my_notificationview.note.length &&
         !hoverer.filter(my_navigable) &&
         false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !dragger.filter(my_avatar) &&
           !dragger.filter(my_navigable) &&
           false) ;
@@ -139,7 +139,7 @@ var GamePlayScene = function(game, stage)
         else
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !clicker.filter(my_toolbar) &&
           !clicker.filter(my_navigable) &&
           !clicker.filter(canv_clicker) &&
@@ -169,20 +169,20 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_MAP:
         if(
-        !my_notificationview.note &&
+        !my_notificationview.note.length &&
         !hoverer.filter(my_mapview) &&
         false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !dragger.filter(my_mapview) &&
           false) ;
         }
         else
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !clicker.filter(my_mapview) &&
           false) ;
         }
@@ -192,20 +192,20 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_NOTEBOOK:
         if(
-        !my_notificationview.note &&
+        !my_notificationview.note.length &&
         !hoverer.filter(my_notebookview) &&
         false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !dragger.filter(my_notebookview) &&
           false) ;
         }
         else
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !clicker.filter(my_notebookview) &&
           false) ;
         }
@@ -215,20 +215,20 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_PERSON:
         if(
-        !my_notificationview.note &&
+        !my_notificationview.note.length &&
         !hoverer.filter(my_personview) &&
         false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !dragger.filter(my_personview) &&
           false) ;
         }
         else
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !clicker.filter(my_personview) &&
           false) ;
         }
@@ -238,20 +238,20 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_OBJECT:
         if(
-        !my_notificationview.note &&
+        !my_notificationview.note.length &&
         !hoverer.filter(my_objectview) &&
         false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !dragger.filter(my_objectview) &&
           false) ;
         }
         else
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !clicker.filter(my_objectview) &&
           false) ;
         }
@@ -261,13 +261,13 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_OBSERVATION:
         if(
-        !my_notificationview.note &&
+        !my_notificationview.note.length &&
         !hoverer.filter(my_observationview) &&
         false) ;
         if(DEBUG && my_keyable.e)
         {
           if(
-          !my_notificationview.note &&
+          !my_notificationview.note.length &&
           !dragger.filter(my_observationview) &&
           false) ;
         }

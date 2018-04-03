@@ -1543,7 +1543,8 @@ var notificationview = function()
   self.h = canv.height;
 
   self.q = [];
-  self.note = 0;
+  self.note = [];
+  self.note_i = 0;
 
   self.bubble_color = "#242224";
   self.text_color = white;
@@ -1552,6 +1553,7 @@ var notificationview = function()
   var UI_STATE_NULL    = ENUM; ENUM++;
   var UI_STATE_IN_NOTE = ENUM; ENUM++;
   var UI_STATE_SELECT  = ENUM; ENUM++;
+  var UI_STATE_NEXT    = ENUM; ENUM++;
   var UI_STATE_OUT     = ENUM; ENUM++;
   var UI_STATE_COUNT   = ENUM; ENUM++;
 
@@ -1560,19 +1562,21 @@ var notificationview = function()
   self.ui_state_t_max = [];
   self.ui_state_t_max[UI_STATE_IN_NOTE] = 60;
   self.ui_state_t_max[UI_STATE_SELECT]  = 0;
+  self.ui_state_t_max[UI_STATE_NEXT]    = 1;
   self.ui_state_t_max[UI_STATE_OUT]     = 10;
   self.ui_state_p = 0;
 
-  self.consume_notification = function(txt)
+  self.consume_notification = function(notification)
   {
-    self.q.push(txt[0][0]);
+    self.q.push(notification);
   }
 
   self.dequeue = function()
   {
-    if(!self.note && self.q.length)
+    if(!self.note.length && self.q.length)
     {
       self.note = self.q[0];
+      self.note_i = 0;
       self.q.splice(0,1);
       self.ui_state = UI_STATE_IN_NOTE;
       self.ui_state_t = 0;
@@ -1583,12 +1587,16 @@ var notificationview = function()
 
   self.click = function(evt)
   {
+    if(self.ui_state == UI_STATE_NULL) return;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
     {
       self.ui_state_t = 0;
       self.ui_state_p = 0;
-      self.ui_state = UI_STATE_OUT;
+      if(self.note[self.note_i+1])
+        self.ui_state = UI_STATE_NEXT;
+      else
+        self.ui_state = UI_STATE_OUT;
     }
   }
 
@@ -1600,6 +1608,15 @@ var notificationview = function()
     {
       case UI_STATE_IN_NOTE: if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT; self.ui_state_t = 0; self.ui_state_p = 0; } break;
       case UI_STATE_SELECT: break;
+      case UI_STATE_NEXT:
+        if(self.ui_state_p >= 1)
+        {
+          self.note_i++;
+          self.ui_state = UI_STATE_SELECT;
+          self.ui_state_t = 0;
+          self.ui_state_p = 0;
+        }
+        break;
       case UI_STATE_OUT:
         if(self.ui_state_p >= 1)
         {
@@ -1623,19 +1640,25 @@ var notificationview = function()
     {
       case UI_STATE_IN_NOTE: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
       case UI_STATE_SELECT:  break;
+      case UI_STATE_NEXT:    break;
       case UI_STATE_OUT:     a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
     }
     ctx.globalAlpha = a;
 
     var b = 10;
-    ctx.fillStyle = self.bubble_color;
-    var w = ctx.measureText(self.note).width;
-    var h = 20;
+    var h = cur_level.notifications_h*self.note[self.note_i].length;
+    var w = cur_level.notifications_w;
     var x = self.x+self.w/2-w/2;
-    var y = self.y+self.h-h-30;
+    var y = self.y+self.h-30-h;
+    ctx.fillStyle = self.bubble_color;
     fillRRect(x-b-5,y-b+5+yoff,w+b*2+10,h+b*2+5,b,ctx);
     ctx.fillStyle = self.text_color;
-    ctx.fillText(self.note,x,y+yoff+h);
+    var oyoff = 0;
+    for(var i = 0; i < self.note[self.note_i].length; i++)
+    {
+      ctx.fillText(self.note[self.note_i][i],x,y+yoff+cur_level.notifications_h+oyoff);
+      oyoff += cur_level.notifications_h;
+    }
     ctx.globalAlpha = 1;
   }
 

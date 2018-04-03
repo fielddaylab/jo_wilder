@@ -54,6 +54,7 @@ tmp_level.cursor_h = 40;
 tmp_level.hover_w = 40;
 tmp_level.hover_h = 40;
 tmp_level.notifications_w = 200;
+tmp_level.notifications_h = 30;
 tmp_level.target_lerp_s = 0.03;
 tmp_level.raw_notifications = [
 
@@ -4253,7 +4254,7 @@ tmp_object.animcycle_id = "notebook_object";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-"Here's my notebook!"
+"Here's my notebook!",
 ];
 tmp_object.unlocks = [
 ];
