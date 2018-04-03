@@ -57,7 +57,6 @@ tmp_level.notifications_w = 200;
 tmp_level.notifications_h = 30;
 tmp_level.target_lerp_s = 0.03;
 tmp_level.raw_notifications = [
-
 ];
 tmp_level.unlocks = [
 ];
@@ -637,6 +636,34 @@ tmp_animcycle.offset_t = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/oldpictures_front/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "retirement_letter";
+tmp_animcycle.fqid = "tunic.retirement_letter";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/retirement_letter/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "retirement_letter_closeup";
+tmp_animcycle.fqid = "tunic.retirement_letter_closeup";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/retirement_letter_closeup/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -3258,7 +3285,6 @@ tmp_porthole.target_room = "closet_dirty";
 tmp_porthole.target_start_wx = -374.75951624996645;
 tmp_porthole.target_start_wy = -34.4078948742569;
 tmp_porthole.raw_notifications = [
-
 ];
 tmp_porthole.unlocks = [
 ];
@@ -3628,8 +3654,8 @@ tmp_speak.id = "intro_0_cs_3";
 tmp_speak.fqid = "tunic.historicalsociety.closet.gramps.intro_0_cs_3";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -356.6655164034023;
-tmp_speak.wy = 237.011518833536;
+tmp_speak.wx = -357.6655164034023;
+tmp_speak.wy = 213.01151883353597;
 tmp_speak.w = 40;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -3846,8 +3872,8 @@ tmp_speak.id = "intro_0_cs_1";
 tmp_speak.fqid = "tunic.historicalsociety.closet.teddy.intro_0_cs_1";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 238.1640049963171;
-tmp_speak.wy = 2.0442158156241845;
+tmp_speak.wx = 186.48008999415615;
+tmp_speak.wy = -9.978884071925954;
 tmp_speak.w = 183;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -3893,8 +3919,8 @@ tmp_speak.id = "intro_0_cs_2";
 tmp_speak.fqid = "tunic.historicalsociety.closet.teddy.intro_0_cs_2";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 268.87791314612576;
-tmp_speak.wy = -4.301774166566503;
+tmp_speak.wx = 213.87791314612574;
+tmp_speak.wy = -7.30177416656651;
 tmp_speak.w = 152;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -3987,8 +4013,8 @@ tmp_speak.id = "intro_0_cs_4";
 tmp_speak.fqid = "tunic.historicalsociety.closet.teddy.intro_0_cs_4";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 242.60354799515318;
-tmp_speak.wy = -5.502648845687119;
+tmp_speak.wx = 191.60354799515318;
+tmp_speak.wy = -9.50264884568709;
 tmp_speak.w = 176;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -4034,8 +4060,8 @@ tmp_speak.id = "intro_0_cs_5";
 tmp_speak.fqid = "tunic.historicalsociety.closet.teddy.intro_0_cs_5";
 {
 tmp_speak.primary = 1;
-tmp_speak.wx = 572.9947023086266;
-tmp_speak.wy = -36.625662211421655;
+tmp_speak.wx = 503.99470230862664;
+tmp_speak.wy = -54.625662211421684;
 tmp_speak.w = 117;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -4079,20 +4105,20 @@ tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
 tmp_object = new object();
-tmp_object.id = "newspaper";
-tmp_object.fqid = "tunic.historicalsociety.closet.newspaper";
+tmp_object.id = "flyer";
+tmp_object.fqid = "tunic.historicalsociety.closet.flyer";
 {
-tmp_object.ww = 114.55309842041304;
-tmp_object.wh = 76.71504252733904;
-tmp_object.wx = -629.3983715585547;
-tmp_object.wy = -70.80189845650153;
+tmp_object.ww = 75.96120312606216;
+tmp_object.wh = 43.70875183001083;
+tmp_object.wx = -602.2304427458864;
+tmp_object.wy = -32.13363429074393;
 tmp_object.wz = 0.11;
 tmp_object.act_wx = -61.12301336573512;
 tmp_object.act_wy = -32.01681652490887;
 tmp_object.act_anim = 1;
 tmp_object.hover_icon_wx = 33.63053029083767;
 tmp_object.hover_icon_wy = 26.87826993962551;
-tmp_object.animcycle_id = "newspaper";
+tmp_object.animcycle_id = "retirement_letter";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
@@ -4107,10 +4133,10 @@ tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_
 for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_level.notifications_w);
 tmp_view = new view();
 tmp_view.id = "hub";
-tmp_view.fqid = "tunic.historicalsociety.closet.newspaper.hub";
+tmp_view.fqid = "tunic.historicalsociety.closet.flyer.hub";
 {
 tmp_view.primary = true;
-tmp_view.animcycle_id = "null";
+tmp_view.animcycle_id = "retirement_letter_closeup";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
@@ -4131,8 +4157,8 @@ tmp_object.fqid = "tunic.historicalsociety.closet.notebook";
 {
 tmp_object.ww = 99.99999999999999;
 tmp_object.wh = 99.99999999999999;
-tmp_object.wx = -648.2464271144283;
-tmp_object.wy = -231.28498112045608;
+tmp_object.wx = -906.1699383473281;
+tmp_object.wy = -261.8594471586292;
 tmp_object.wz = 0.12;
 tmp_object.act_wx = 63;
 tmp_object.act_wy = 7;
@@ -4385,7 +4411,6 @@ tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.target_start_wx = -279.4194896719319;
 tmp_room.target_start_wy = -143.99999999999997;
 tmp_room.raw_notifications = [
-
 ];
 tmp_room.unlocks = [
 ];
@@ -4525,7 +4550,6 @@ tmp_person.animcycle_id = "gramps";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
-
 ];
 tmp_person.unlocks = [
 ];
@@ -4554,7 +4578,6 @@ tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4572,7 +4595,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_1";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4603,7 +4625,6 @@ tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4621,7 +4642,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_2";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4652,7 +4672,6 @@ tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4670,7 +4689,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_3";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4701,7 +4719,6 @@ tmp_speak.options_wy = 71.91061968408266;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4719,7 +4736,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_4";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4750,7 +4766,6 @@ tmp_speak.options_wy = -68.81594167679211;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4768,7 +4783,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_5";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4799,7 +4813,6 @@ tmp_speak.options_wy = 1.0389307411907944;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4817,7 +4830,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4850,7 +4862,6 @@ tmp_person.animcycle_id = "teddy";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
-
 ];
 tmp_person.unlocks = [
 ];
@@ -4878,7 +4889,6 @@ tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4897,7 +4907,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_1";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4928,7 +4937,6 @@ tmp_speak.options_wy = -126.99999911049399;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4946,7 +4954,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_2";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -4977,7 +4984,6 @@ tmp_speak.options_wy = -161.95577156743605;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -4995,7 +5001,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_3";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -5026,7 +5031,6 @@ tmp_speak.options_wy = 71.91061968408266;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -5044,7 +5048,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_4";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -5075,7 +5078,6 @@ tmp_speak.options_wy = -68.81594167679211;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -5093,7 +5095,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "intro_0_cs_5";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -5124,7 +5125,6 @@ tmp_speak.options_wy = 1.0389307411907944;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];
@@ -5142,7 +5142,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
@@ -5175,7 +5174,6 @@ tmp_object.animcycle_id = "newspaper";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-
 ];
 tmp_object.unlocks = [
 ];
@@ -5193,7 +5191,6 @@ tmp_view.primary = true;
 tmp_view.animcycle_id = "null";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
-
 ];
 tmp_view.unlocks = [
 ];
@@ -5224,7 +5221,7 @@ tmp_object.animcycle_id = "notebook_object";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-"Here's my notebook!"
+"Here's my notebook!",
 ];
 tmp_object.unlocks = [
 ];
@@ -5243,7 +5240,6 @@ tmp_view.primary = false;
 tmp_view.animcycle_id = "null";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
-
 ];
 tmp_view.unlocks = [
 ];
@@ -5279,7 +5275,6 @@ tmp_observation.blip_wy = 164.00019803198495;
 tmp_observation.blip_w = 316;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
-
 ];
 tmp_observation.unlocks = [
 ];
@@ -5316,7 +5311,6 @@ tmp_observation.blip_wy = 62.37115888408396;
 tmp_observation.blip_w = 175;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
-
 ];
 tmp_observation.unlocks = [
 ];
@@ -5352,7 +5346,6 @@ tmp_observation.blip_wy = -55.31645986077656;
 tmp_observation.blip_w = 139;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
-
 ];
 tmp_observation.unlocks = [
 ];
@@ -5386,7 +5379,6 @@ tmp_porthole.target_room = "basement";
 tmp_porthole.target_start_wx = 107.99999999999996;
 tmp_porthole.target_start_wy = 31.000000000000018;
 tmp_porthole.raw_notifications = [
-
 ];
 tmp_porthole.unlocks = [
 ];

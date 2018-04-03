@@ -12,7 +12,7 @@ tmp_object.animcycle_id = "notebook_object";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-"Here's my notebook!"
+"Here's my notebook!",
 ];
 tmp_object.unlocks = [
 ];
