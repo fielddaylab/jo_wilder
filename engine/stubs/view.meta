@@ -1,7 +1,8 @@
 tmp_view.primary = false;
 tmp_view.animcycle_id = "null";
 tmp_view.audio_id = "null";
-tmp_view.noteworthy = false;
+tmp_view.notifications_raw = [
+];
 tmp_view.unlocks = [
 ];
 tmp_view.relocks = [

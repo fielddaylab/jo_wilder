@@ -654,7 +654,7 @@ var navigable = function()
   self.consume_room = function(room)
   {
     self.room = room;
-    if(!self.room.key && self.room.noteworthy) my_notificationview.consume_notification(self.room.noteworthy);
+    if(!self.room.key && self.room.notifications.length) my_notificationview.consume_notification(self.room.notifications);
     self.room.key = true;
     self.unlock_content();
     self.selected_act = 0;
@@ -1238,7 +1238,7 @@ var mapview = function()
   self.consume_level = function(level)
   {
     self.level = level;
-    if(!self.level.key && self.level.noteworthy) my_notificationview.consume_notification(self.level.noteworthy);
+    if(!self.level.key && self.level.notifications.length) my_notificationview.consume_notification(self.level.notifications);
     self.level.key = true;
     self.unlock_content();
     self.selected_scene = 0;
@@ -1565,7 +1565,7 @@ var notificationview = function()
 
   self.consume_notification = function(txt)
   {
-    self.q.push(txt);
+    self.q.push(txt[0][0]);
   }
 
   self.dequeue = function()
@@ -1658,11 +1658,11 @@ var objectview = function()
   self.consume_object = function(object)
   {
     self.object = object;
-    if(!self.object.key && self.object.noteworthy) my_notificationview.consume_notification(self.object.noteworthy);
+    if(!self.object.key && self.object.notifications.length) my_notificationview.consume_notification(self.object.notifications);
     self.object.key = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
-    if(!self.cur_view.key && self.cur_view.noteworthy) my_notificationview.consume_notification(self.cur_view.noteworthy);
+    if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
     self.cur_view.key = true;
     self.unlock_content();
   }
@@ -1761,10 +1761,10 @@ var objectview = function()
       zone = self.cache_unlocked_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
-        if(!zone.key && zone.noteworthy) my_notificationview.consume_notification(zone.noteworthy);
+        if(!zone.key && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
         zone.key = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
-        if(!self.cur_view.key && self.cur_view.noteworthy) my_notificationview.consume_notification(self.cur_view.noteworthy);
+        if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
         self.cur_view.key = true;
         self.unlock_content();
         return;
@@ -1842,7 +1842,7 @@ var observationview = function()
   self.consume_observation = function(observation)
   {
     self.observation = observation;
-    if(!self.observation.key && self.observation.noteworthy) my_notificationview.consume_notification(self.observation.noteworthy);
+    if(!self.observation.key && self.observation.notifications.length) my_notificationview.consume_notification(self.observation.notifications);
     self.observation.key = true;
     self.ui_state = UI_STATE_IN_OBSERVATION;
     self.ui_state_t = 0;
@@ -2056,7 +2056,7 @@ var personview = function()
   self.consume_person = function(person)
   {
     self.person = person;
-    if(!self.person.key && self.person.noteworthy) my_notificationview.consume_notification(self.person.noteworthy);
+    if(!self.person.key && self.person.notifications.length) my_notificationview.consume_notification(self.person.notifications);
     self.person.key = true;
     self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
@@ -2085,7 +2085,7 @@ var personview = function()
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak = speak;
-      if(!self.cur_speak.key && self.cur_speak.noteworthy) my_notificationview.consume_notification(self.cur_speak.noteworthy);
+      if(!self.cur_speak.key && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
       self.cur_speak.key = true;
       self.unlock_content();
     }
@@ -2103,7 +2103,7 @@ var personview = function()
       for(var i = 1; i < self.cache_unlocked_speaks.length; i++)
         if(self.cache_unlocked_speaks[i].primary > self.cur_speak.primary)
           self.cur_speak = self.cache_unlocked_speaks[i];
-      if(!self.cur_speak.key && self.cur_speak.noteworthy) my_notificationview.consume_notification(self.cur_speak.noteworthy);
+      if(!self.cur_speak.key && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
       self.cur_speak.key = true;
     }
 
@@ -2346,7 +2346,7 @@ var personview = function()
 
     if(self.clicked_option)
     {
-      if(!self.clicked_option.key && self.clicked_option.noteworthy) my_notificationview.consume_notification(self.clicked_option.noteworthy);
+      if(!self.clicked_option.key && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
       self.clicked_option.key = true;
       if(self.ui_state != UI_STATE_OUT)
       {
@@ -2545,7 +2545,7 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
-    if(!self.cutscene.key && self.cutscene.noteworthy) my_notificationview.consume_notification(self.cutscene.noteworthy);
+    if(!self.cutscene.key && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene.notifications);
     self.cutscene.key = true;
 
     self.cutscene_entitys = [];

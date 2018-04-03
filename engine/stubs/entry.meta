@@ -7,7 +7,8 @@ tmp_entry.wz = 100;
 tmp_entry.page = 0;
 tmp_entry.animcycle_id = "null";
 tmp_entry.audio_id = "null";
-tmp_entry.noteworthy = "null";
+tmp_entry.notifications_raw = [
+];
 tmp_entry.unlocks = [
 ];
 tmp_entry.relocks = [

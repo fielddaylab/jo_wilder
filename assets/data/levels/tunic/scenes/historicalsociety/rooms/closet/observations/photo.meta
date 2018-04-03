@@ -16,7 +16,9 @@ tmp_observation.blip_wx = 236.38354274260067;
 tmp_observation.blip_wy = 62.37115888408396;
 tmp_observation.blip_w = 175;
 tmp_observation.blip_h = 30;
-tmp_observation.noteworthy = false;
+tmp_observation.raw_notifications = [
+
+];
 tmp_observation.unlocks = [
 ];
 tmp_observation.relocks = [

@@ -14,7 +14,9 @@ tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "closet";
 tmp_porthole.target_start_wx = -374.75951624996645;
 tmp_porthole.target_start_wy = -34.4078948742569;
-tmp_porthole.noteworthy = false;
+tmp_porthole.raw_notifications = [
+
+];
 tmp_porthole.unlocks = [
 ];
 tmp_porthole.relocks = [

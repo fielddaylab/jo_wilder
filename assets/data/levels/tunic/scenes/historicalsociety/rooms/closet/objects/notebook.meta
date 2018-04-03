@@ -11,7 +11,9 @@ tmp_object.hover_icon_wy = 43.00093435578584;
 tmp_object.animcycle_id = "notebook_object";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
-tmp_object.noteworthy = "Here's my notebook!";
+tmp_object.raw_notifications = [
+"Here's my notebook!"
+];
 tmp_object.unlocks = [
 ];
 tmp_object.relocks = [

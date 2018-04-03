@@ -246,14 +246,16 @@ var level = function()
   self.cursor_h = 0;
   self.hover_w = 0;
   self.hover_h = 0;
+  self.notifications_w = 0;
   self.target_lerp_s = 0.03;
   self.scenes = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
   self.locked = true;
   self.key = false;
+  self.notifications = [];
 }
 
 var scene = function()
@@ -270,7 +272,7 @@ var scene = function()
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.rooms = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -281,6 +283,7 @@ var scene = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.notifications = [];
 }
 
 var room = function()
@@ -313,7 +316,7 @@ var room = function()
   self.portholes = [];
   self.wildcards = [];
   self.inerts = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -326,6 +329,7 @@ var room = function()
   self.nav_min_wz_wy = 0;
   self.nav_max_wz_wy = 1;
   self.entry_portholes_found = []; //auto precompiled in
+  self.notifications = [];
 }
 
 var person = function()
@@ -348,7 +352,7 @@ var person = function()
   self.hover_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.speaks = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -364,6 +368,7 @@ var person = function()
   self.act_y = 0;
   self.hover_icon_x = 0;
   self.hover_icon_y = 0;
+  self.notifications = [];
 }
 
 var object = function()
@@ -386,7 +391,7 @@ var object = function()
   self.hover_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.views = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -402,6 +407,7 @@ var object = function()
   self.act_y = 0;
   self.hover_icon_x = 0;
   self.hover_icon_y = 0;
+  self.notifications = [];
 }
 
 var observation = function()
@@ -429,7 +435,7 @@ var observation = function()
   self.blip_wy = 0;
   self.blip_w = 0;
   self.blip_h = 0;
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -447,6 +453,7 @@ var observation = function()
   self.hover_icon_y = 0;
   self.blip_x = 0;
   self.blip_y = 0;
+  self.notifications = [];
 }
 
 var porthole = function()
@@ -471,7 +478,7 @@ var porthole = function()
   self.target_room = "null";
   self.target_start_wx = 0;
   self.target_start_wy = 0;
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -490,6 +497,7 @@ var porthole = function()
   self.target_start_x = 0;
   self.target_start_y = 0;
   self.target_room_found; //auto precompiled in
+  self.notifications = [];
 }
 
 var wildcard = function()
@@ -511,7 +519,7 @@ var wildcard = function()
   self.animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
   self.audio_id = "null";
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -526,6 +534,7 @@ var wildcard = function()
   self.act_y = 0;
   self.hover_icon_x = 0;
   self.hover_icon_y = 0;
+  self.notifications = [];
 }
 
 var inert = function()
@@ -568,12 +577,13 @@ var view = function()
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.zones = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
   self.key = false;
   self.animcycle_inst;
+  self.notifications = [];
 }
 
 var zone = function()
@@ -588,7 +598,7 @@ var zone = function()
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.target_view = "null";
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -599,6 +609,7 @@ var zone = function()
   self.h = 0;
   self.x = 0;
   self.y = 0;
+  self.notifications = [];
 }
 
 var stextToLines = function(text,w)
@@ -627,7 +638,7 @@ var speak = function()
   self.options_w = 0;
   self.options_h = 0;
   self.options = [];
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -638,6 +649,7 @@ var speak = function()
   self.y = 0;
   self.options_x = 0;
   self.options_y = 0;
+  self.notifications = [];
 }
 
 var option = function()
@@ -650,7 +662,7 @@ var option = function()
   self.qtext_hard_coded = false;
   self.qtext = stextToLines(self.raw_qtext,self.w);
   self.target_speak = "null";
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -661,6 +673,7 @@ var option = function()
   self.x = 0;
   self.y = 0;
   self.target_speak_found; //auto pre-compiled in
+  self.notifications = [];
 }
 
 var entry = function()
@@ -676,7 +689,7 @@ var entry = function()
   self.page = 0;
   self.animcycle_id = "null";
   self.audio_id = "null";
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
   //
@@ -687,6 +700,7 @@ var entry = function()
   self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.notifications = [];
 }
 
 var animcycle = function()
@@ -757,11 +771,14 @@ var cutscene = function()
 
   self.commands = [];
 
-  self.noteworthy = false;
+  self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
+
+  //
   self.locked = true;
   self.key = false;
+  self.notifications = [];
 }
 
 var print_level_meta = function(l)
@@ -794,8 +811,13 @@ var print_level_meta = function(l)
   "tmp_level.cursor_h = "+l.cursor_h+";\n"+
   "tmp_level.hover_w = "+l.hover_w+";\n"+
   "tmp_level.hover_h = "+l.hover_h+";\n"+
+  "tmp_level.notifications_w = "+l.notifications_w+";\n"+
   "tmp_level.target_lerp_s = "+l.target_lerp_s+";\n"+
-  "tmp_level.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_level.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_level.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -821,7 +843,11 @@ var print_entry_meta = function(l)
   "tmp_entry.page = "+l.page+";\n"+
   "tmp_entry.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_entry.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_entry.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_entry.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_entry.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -845,7 +871,11 @@ var print_scene_meta = function(l)
   "tmp_scene.wy = "+l.wy+";\n"+
   "tmp_scene.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_scene.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_scene.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_scene.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_scene.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -893,7 +923,11 @@ var print_room_meta = function(l)
   "tmp_room.ambient_color = \""+l.ambient_color+"\";\n"+
   "tmp_room.target_start_wx = "+l.target_start_wx+";\n"+
   "tmp_room.target_start_wy = "+l.target_start_wy+";\n"+
-  "tmp_room.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_room.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_room.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -924,7 +958,11 @@ var print_person_meta = function(l)
   "tmp_person.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_person.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_person.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_person.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_person.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -954,7 +992,11 @@ var print_speak_meta = function(l)
   "tmp_speak.options_wy = "+l.options_wy+";\n"+
   "tmp_speak.options_w = "+l.options_w+";\n"+
   "tmp_speak.options_h = "+l.options_h+";\n"+
-  "tmp_speak.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_speak.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_speak.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -974,7 +1016,11 @@ var print_option_meta = function(l)
   "tmp_option.index = "+l.index+";\n"+
   "tmp_option.raw_qtext = \""+l.raw_qtext+"\";\n"+
   "tmp_option.target_speak = \""+l.target_speak+"\";\n"+
-  "tmp_option.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_option.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_option.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -1004,7 +1050,11 @@ var print_object_meta = function(l)
   "tmp_object.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_object.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_object.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_object.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_object.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -1039,7 +1089,11 @@ var print_observation_meta = function(l)
   "tmp_observation.blip_wy = "+l.blip_wy+";\n"+
   "tmp_observation.blip_w = "+l.blip_w+";\n"+
   "tmp_observation.blip_h = "+l.blip_h+";\n"+
-  "tmp_observation.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_observation.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_observation.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -1059,7 +1113,11 @@ var print_view_meta = function(l)
   "tmp_view.primary = "+l.primary+";\n"+
   "tmp_view.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_view.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_view.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_view.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_view.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -1083,7 +1141,11 @@ var print_zone_meta = function(l)
   "tmp_zone.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_zone.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_zone.target_view = \""+l.target_view+"\";\n"+
-  "tmp_zone.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_zone.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_zone.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -1116,7 +1178,11 @@ var print_porthole_meta = function(l)
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
   "tmp_porthole.target_start_wx = "+l.target_start_wx+";\n"+
   "tmp_porthole.target_start_wy = "+l.target_start_wy+";\n"+
-  "tmp_porthole.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_porthole.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_porthole.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";
@@ -1146,7 +1212,11 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_wildcard.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_wildcard.noteworthy = "+(l.noteworthy ? "\""+l.noteworthy+"\"" : l.noteworthy)+";\n"+
+  "tmp_wildcard.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
   "tmp_wildcard.unlocks = [\n";
   for(var i = 0; i < l.unlocks.length; i++)
     str += "\""+l.unlocks[i]+"\",\n";

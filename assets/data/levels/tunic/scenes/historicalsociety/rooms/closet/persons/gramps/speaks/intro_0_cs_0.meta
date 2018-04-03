@@ -11,7 +11,9 @@ tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
-tmp_speak.noteworthy = false;
+tmp_speak.raw_notifications = [
+
+];
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [

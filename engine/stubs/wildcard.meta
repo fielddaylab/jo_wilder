@@ -11,7 +11,8 @@ tmp_wildcard.hover_icon_wy = 0;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.hover_icon_animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
-tmp_wildcard.noteworthy = false;
+tmp_wildcard.notifications_raw = [
+];
 tmp_wildcard.unlocks = [
 ];
 tmp_wildcard.relocks = [

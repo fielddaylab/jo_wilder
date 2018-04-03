@@ -25,8 +25,11 @@ tmp_level.cursor_w = 40;
 tmp_level.cursor_h = 40;
 tmp_level.hover_w = 40;
 tmp_level.hover_h = 40;
+tmp_level.notifications_w = 200;
 tmp_level.target_lerp_s = 0.03;
-tmp_level.noteworthy = false;
+tmp_level.raw_notifications = [
+
+];
 tmp_level.unlocks = [
 ];
 tmp_level.relocks = [

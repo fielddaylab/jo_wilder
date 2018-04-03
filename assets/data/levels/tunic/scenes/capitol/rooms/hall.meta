@@ -22,7 +22,9 @@ tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.target_start_wx = 0;
 tmp_room.target_start_wy = 0;
-tmp_room.noteworthy = false;
+tmp_room.raw_notifications = [
+
+];
 tmp_room.unlocks = [
 ];
 tmp_room.relocks = [

@@ -14,7 +14,9 @@ tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "basement";
 tmp_porthole.target_start_wx = 107.99999999999996;
 tmp_porthole.target_start_wy = 31.000000000000018;
-tmp_porthole.noteworthy = false;
+tmp_porthole.raw_notifications = [
+
+];
 tmp_porthole.unlocks = [
 ];
 tmp_porthole.relocks = [

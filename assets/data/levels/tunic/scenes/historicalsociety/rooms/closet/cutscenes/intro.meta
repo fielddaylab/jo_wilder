@@ -1,4 +1,6 @@
-tmp_cutscene.noteworthy = false;
+tmp_cutscene.raw_notifications = [
+
+];
 tmp_cutscene.unlocks = [
 ];
 tmp_cutscene.relocks = [

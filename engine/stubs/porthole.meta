@@ -14,7 +14,8 @@ tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "null";
 tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = 0;
-tmp_porthole.noteworthy = false;
+tmp_porthole.notifications_raw = [
+];
 tmp_porthole.unlocks = [
 ];
 tmp_porthole.relocks = [

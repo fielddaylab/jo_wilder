@@ -5,7 +5,9 @@ tmp_scene.wx = -126.99999999999997;
 tmp_scene.wy = -62;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.audio_id = "null";
-tmp_scene.noteworthy = false;
+tmp_scene.raw_notifications = [
+
+];
 tmp_scene.unlocks = [
 ];
 tmp_scene.relocks = [

@@ -11,7 +11,9 @@ tmp_object.hover_icon_wy = 0;
 tmp_object.animcycle_id = "logbook";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
-tmp_object.noteworthy = false;
+tmp_object.raw_notifications = [
+
+];
 tmp_object.unlocks = [
 "tunic.drycleaner.frontdesk.worker.slip13",
 ];
