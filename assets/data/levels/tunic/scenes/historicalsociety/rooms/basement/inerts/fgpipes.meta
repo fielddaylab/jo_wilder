@@ -1,7 +1,7 @@
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 892.9999999999997;
+tmp_inert.wh = 817.9999999999999;
+tmp_inert.wx = -94.38684959683172;
+tmp_inert.wy = 74.10707374618949;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "fgpipes";
@@ -9,3 +9,4 @@ tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
 ];
+

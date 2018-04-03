@@ -1,7 +1,7 @@
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 870.0000000000002;
+tmp_inert.wh = 214;
+tmp_inert.wx = 2.483609070950479;
+tmp_inert.wy = -272.9478270719087;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "fgcarts";
@@ -9,3 +9,4 @@ tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
 ];
+
