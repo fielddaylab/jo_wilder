@@ -649,6 +649,7 @@ var navigable = function()
   self.cache_unlocked_observations = [];
   self.cache_unlocked_portholes    = [];
   self.cache_unlocked_wildcards    = [];
+  self.cache_unlocked_cutscenes    = [];
   self.cache_unlocked_inerts       = [];
   self.cache_unlocked_drawables    = [];
 
@@ -678,6 +679,7 @@ var navigable = function()
     self.cache_unlocked_observations = [];
     self.cache_unlocked_portholes    = [];
     self.cache_unlocked_wildcards    = [];
+    self.cache_unlocked_cutscenes    = [];
     self.cache_unlocked_inerts       = [];
 
     self.cache_unlocked_drawables    = [];
@@ -694,6 +696,8 @@ var navigable = function()
       if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
     for(var i = 0; i < self.room.wildcards.length; i++)
       if(!querylocked(self.room.wildcards[i])) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
+    for(var i = 0; i < self.room.cutscenes.length; i++)
+      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && !querylocked(self.room.cutscenes[i])) self.cache_unlocked_cutscenes.push(self.room.cutscenes[i]);
     for(var i = 0; i < self.room.inerts.length; i++)
       if(!querylocked(self.room.inerts[i])) self.cache_unlocked_inerts.push(self.room.inerts[i]);
 
@@ -708,6 +712,8 @@ var navigable = function()
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_portholes[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_portholes[i]); }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
     { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_wildcards[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_wildcards[i]); }
+    for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
+    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_cutscenes[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_cutscenes[i]); }
     for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
     {
     if(self.cache_unlocked_inerts[i].g < 0)
@@ -908,6 +914,7 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.room.entry_portholes_found.length;  i++) { var o = self.room.entry_portholes_found[i];  if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
                                                                      { var o = self.room;                           if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
     for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
@@ -915,6 +922,7 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
     for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
     for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
 
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
       if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_persons[i].wz)) { self.edit_o = self.cache_unlocked_persons[i]; }
@@ -926,6 +934,8 @@ var navigable = function()
       if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_portholes[i].wz)) { self.edit_o = self.cache_unlocked_portholes[i]; }
     for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
       if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_wildcards[i].wz)) { self.edit_o = self.cache_unlocked_wildcards[i]; }
+    for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
+      if(ptWithinBox(self.cache_unlocked_cutscenes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_cutscenes[i].wz)) { self.edit_o = self.cache_unlocked_cutscenes[i]; }
     for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
       if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_inerts[i].wz)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; }
 
@@ -1028,6 +1038,9 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
         if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_wildcards[i].wz))
           self.selected_act = self.cache_unlocked_wildcards[i];
+      for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
+        if(ptWithinBox(self.cache_unlocked_cutscenes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_cutscenes[i].wz))
+          self.selected_act = self.cache_unlocked_cutscenes[i];
 
       if(self.selected_act)
       {
@@ -1063,6 +1076,7 @@ var navigable = function()
     for(var i = 0; i < self.cache_unlocked_observations.length; i++) { self.cache_unlocked_observations[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_observations[i]); }
     for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { self.cache_unlocked_portholes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_portholes[i]); }
     for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { self.cache_unlocked_wildcards[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_wildcards[i]); }
+    for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { self.cache_unlocked_cutscenes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_cutscenes[i]); }
     for(var i = 0; i < self.cache_unlocked_inerts.length;       i++) { self.cache_unlocked_inerts[i].animcycle_inst.tick();       screenSpace(my_camera, canv, self.cache_unlocked_inerts[i]); }
 
     for(var i = 0; i < self.cache_unlocked_bg_drawables.length;    i++)
@@ -1122,6 +1136,7 @@ var navigable = function()
       ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_unlocked_observations.length; i++) strokeBox(self.cache_unlocked_observations[i],ctx);
       ctx.strokeStyle = green;   for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
       ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
+      ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) strokeBox(self.cache_unlocked_cutscenes[i],ctx);
       ctx.strokeStyle = cyan;    for(var i = 0; i < self.cache_unlocked_inerts.length;       i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
 
       ctx.strokeStyle = cyan;
@@ -1130,12 +1145,14 @@ var navigable = function()
       for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
       ctx.strokeStyle = black;
       for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
       for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
 
       if(my_camera == my_debug_camera)
       {

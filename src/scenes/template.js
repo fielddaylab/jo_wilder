@@ -737,11 +737,11 @@ var cutscene_command = function()
   self.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
   self.t = 0;
   self.end_t = 0;
+  self.ww = CUTSCENE_COMMAND_IGNORE;
+  self.wh = CUTSCENE_COMMAND_IGNORE;
   self.wx = CUTSCENE_COMMAND_IGNORE;
   self.wy = CUTSCENE_COMMAND_IGNORE;
   self.wz = CUTSCENE_COMMAND_IGNORE;
-  self.ww = CUTSCENE_COMMAND_IGNORE;
-  self.wh = CUTSCENE_COMMAND_IGNORE;
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.animcycle_offset_t = 0;
@@ -770,9 +770,23 @@ var cutscene = function()
   var self = this;
   self.id = "null";
   self.fqid = "null";
+  self.act = ACT_CUTSCENE;
 
   self.commands = [];
 
+  self.trigger = CUTSCENE_TRIGGER_AUTO;
+  self.ww = 10;
+  self.wh = 10;
+  self.wx = 10;
+  self.wy = 10;
+  self.wz = 10;
+  self.act_wx = 0;
+  self.act_wy = 0;
+  self.act_anim = false;
+  self.hover_icon_wx = 0;
+  self.hover_icon_wy = 0;
+  self.animcycle_id = "null";
+  self.hover_icon_animcycle_id = "null";
   self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
@@ -780,6 +794,16 @@ var cutscene = function()
   //
   self.locked = true;
   self.key = false;
+  self.animcycle_inst;
+  self.hover_icon_animcycle_inst;
+  self.w = 0;
+  self.h = 0;
+  self.x = 0;
+  self.y = 0;
+  self.act_x = 0;
+  self.act_y = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
   self.notifications = [];
 }
 
@@ -1234,6 +1258,171 @@ var print_wildcard_meta = function(l)
   console.log(str);
 }
 
+var print_cutscene_meta = function(l)
+{
+  var str = "SAVE cutscene "+l.fqid+"\n"+
+  "tmp_cutscene.trigger = "+(l.trigger == CUTSCENE_TRIGGER_AUTO ? "CUTSCENE_TRIGGER_AUTO" : "CUTSCENE_TRIGGER_ACT" )+";\n"+
+  "tmp_cutscene.ww = "+l.ww+";\n"+
+  "tmp_cutscene.wh = "+l.wh+";\n"+
+  "tmp_cutscene.wx = "+l.wx+";\n"+
+  "tmp_cutscene.wy = "+l.wy+";\n"+
+  "tmp_cutscene.wz = "+l.wz+";\n"+
+  "tmp_cutscene.act_wx = "+l.act_wx+";\n"+
+  "tmp_cutscene.act_wy = "+l.act_wy+";\n"+
+  "tmp_cutscene.act_anim = "+l.act_anim+";\n"+
+  "tmp_cutscene.hover_icon_wx = "+l.hover_icon_wx+";\n"+
+  "tmp_cutscene.hover_icon_wy = "+l.hover_icon_wy+";\n"+
+  "tmp_cutscene.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_cutscene.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_cutscene.raw_notifications = [\n";
+  for(var i = 0; i < l.raw_notifications.length; i++)
+    str += "\""+l.raw_notifications[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_cutscene.unlocks = [\n";
+  for(var i = 0; i < l.unlocks.length; i++)
+    str += "\""+l.unlocks[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_cutscene.relocks = [\n";
+  for(var i = 0; i < l.relocks.length; i++)
+    str += "\""+l.relocks[i]+"\",\n";
+  str +=
+  "];\n"
+
+  str += "tmp_cutscene.commands = [];\n"
+
+  "tmp_cutscene.trigger = "+(l.trigger == CUTSCENE_TRIGGER_AUTO ? "CUTSCENE_TRIGGER_AUTO" : "CUTSCENE_TRIGGER_ACT" )+";\n"+
+  for(var i = 0; i < tmp_cutscene.commands.length; i++)
+  {
+    str += "tmp_cutscene_command = new cutscene_command();\n";
+    switch(tmp_cutscene.command)
+    {
+      case CUTSCENE_COMMAND_CREATE:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_CREATE;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
+        "tmp_cutscene.t = "+l.t+";\n"+
+        "tmp_cutscene.ww = "+l.ww+";\n"+
+        "tmp_cutscene.wh = "+l.wh+";\n"+
+        "tmp_cutscene.wx = "+l.wx+";\n"+
+        "tmp_cutscene.wy = "+l.wy+";\n"+
+        "tmp_cutscene.wz = "+l.wz+";\n"+
+        "tmp_cutscene.animcycle_id = \""+l.animcycle_id+"\";\n"+
+        "tmp_cutscene.animcycle_offset_t = "+l.animcycle_offset_t+";\n";
+        break;
+      case CUTSCENE_COMMAND_DESTROY:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_DESTROY;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
+        "tmp_cutscene.t = "+l.t+";\n";
+        break;
+      case CUTSCENE_COMMAND_ANIMATE:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_ANIMATE;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = ";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        str +=
+        "tmp_cutscene.t = 0;\n"+
+        "tmp_cutscene.ww = "+l.ww+";\n"+
+        "tmp_cutscene.wh = "+l.wh+";\n"+
+        "tmp_cutscene.wx = "+l.wx+";\n"+
+        "tmp_cutscene.wy = "+l.wy+";\n"+
+        "tmp_cutscene.wz = "+l.wz+";\n"+
+        "tmp_cutscene.animcycle_id = \""+l.animcycle_id+"\";\n"+
+        "tmp_cutscene.animcycle_offset_t = "+l.animcycle_offset_t+";\n";
+        break;
+      case CUTSCENE_COMMAND_SPEAK:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_SPEAK;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = ";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        str +=
+        "tmp_cutscene.t = "+l.t+";\n"+
+        "tmp_cutscene.ww = "+l.ww+";\n"+
+        "tmp_cutscene.wh = "+l.wh+";\n"+
+        "tmp_cutscene.wx = "+l.wx+";\n"+
+        "tmp_cutscene.wy = "+l.wy+";\n";
+        break;
+      case CUTSCENE_COMMAND_ACT:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_ACT;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
+        "tmp_cutscene.t = "+l.t+";\n";
+        break;
+      case CUTSCENE_COMMAND_AUDIO:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_AUDIO;\n"+
+        "tmp_cutscene.t = "+l.t+";\n"+
+        "tmp_cutscene.audio_id = \""+l.audio_id+"\";\n";
+        break;
+      case CUTSCENE_COMMAND_TWEEN:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_TWEEN;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = ";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        str +=
+        "tmp_cutscene.cutscene_target_entity_id = \""+l.cutscene_target_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_target_entity_type = ";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        str +=
+        "tmp_cutscene.t = "+l.t+";\n"+
+        "tmp_cutscene.end_t = "+l.end_t+";\n"+
+        "tmp_cutscene.ww = "+l.ww+";\n"+
+        "tmp_cutscene.wh = "+l.wh+";\n"+
+        "tmp_cutscene.wx = "+l.wx+";\n"+
+        "tmp_cutscene.wy = "+l.wy+";\n"+
+        "tmp_cutscene.wz = "+l.wz+";\n";
+        break;
+      case CUTSCENE_COMMAND_TARGET:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_TARGET;\n"+
+        "tmp_cutscene.cutscene_entity_id = \""+l.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_entity_type = ";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
+        if(tmp_cutscene.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        str +=
+        "tmp_cutscene.cutscene_target_entity_id = \""+l.cutscene_target_entity_id+"\";\n"+
+        "tmp_cutscene.cutscene_target_entity_type = ";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
+        if(tmp_cutscene.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        str +=
+        "tmp_cutscene.t = "+l.t+";\n"+
+        "tmp_cutscene.end_t = "+l.end_t+";\n"+
+        "tmp_cutscene.ww = "+l.ww+";\n"+
+        "tmp_cutscene.wh = "+l.wh+";\n"+
+        "tmp_cutscene.wx = "+l.wx+";\n"+
+        "tmp_cutscene.wy = "+l.wy+";\n"+
+        "tmp_cutscene.wz = "+l.wz+";\n";
+        break;
+      case CUTSCENE_COMMAND_WAIT:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_WAIT;\n"+
+        "tmp_cutscene.t = "+l.t+";\n";
+        break;
+      case CUTSCENE_COMMAND_END:
+        str += "tmp_cutscene.command = CUTSCENE_COMMAND_END;\n"+
+        "tmp_cutscene.t = "+l.t+";\n";
+        break;
+    }
+    str += "tmp_cutscene.commands.push(tmp_cutscene_command);\n"+
+  }
+  console.log(str);
+}
+
 var print_inert_meta = function(l)
 {
   var str = "SAVE inert "+l.fqid+"\n"+
@@ -1330,6 +1519,12 @@ var print_whole_level = function(level)
       {
         wildcard = room.wildcards[k];
         print_wildcard_meta(wildcard);
+      }
+      var cutscene;
+      for(var k = 0; k < room.cutscenes.length; k++)
+      {
+        cutscene = room.cutscenes[k];
+        print_cutscene_meta(cutscene);
       }
       var inert;
       for(var k = 0; k < room.inerts.length; k++)

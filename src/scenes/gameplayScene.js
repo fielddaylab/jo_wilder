@@ -153,7 +153,7 @@ var GamePlayScene = function(game, stage)
           for(var i = 0; i < cur_room.cutscenes.length; i++)
           {
             var cutscene = cur_room.cutscenes[i];
-            if(!cutscene.key && !querylocked(cutscene))
+            if(!cutscene.key && cutscene.trigger = CUTSCENE_TRIGGER_AUTO && !querylocked(cutscene))
             {
               cur_act = cutscene;
               state_from = state_cur;
