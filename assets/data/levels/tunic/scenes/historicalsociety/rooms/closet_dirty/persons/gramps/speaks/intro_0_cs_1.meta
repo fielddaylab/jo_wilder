@@ -1,0 +1,21 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -158.00000000000009;
+tmp_speak.wy = -34.000000000000036;
+tmp_speak.w = 221;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Wow! Like, fake money?";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

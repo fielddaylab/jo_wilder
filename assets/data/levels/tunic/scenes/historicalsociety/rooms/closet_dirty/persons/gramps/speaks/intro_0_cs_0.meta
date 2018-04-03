@@ -1,0 +1,21 @@
+tmp_speak.primary = 1;
+tmp_speak.wx = -361;
+tmp_speak.wy = 273;
+tmp_speak.w = 259;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "...and then, they found boxes of counterfeit Mexican pesos that were used as payment!";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

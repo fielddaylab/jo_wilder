@@ -1,0 +1,22 @@
+tmp_person.ww = 176.99999935560783;
+tmp_person.wh = 343.9999890712546;
+tmp_person.wx = -423.82473587498396;
+tmp_person.wy = 18.755278900937242;
+tmp_person.wz = 1;
+tmp_person.act_wx = 137.58904854645314;
+tmp_person.act_wy = -113.1608805092052;
+tmp_person.act_anim = true;
+tmp_person.hover_icon_wx = 0;
+tmp_person.hover_icon_wy = 0;
+tmp_person.animcycle_id = "gramps";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.audio_id = "null";
+tmp_person.raw_notifications = [
+
+];
+tmp_person.unlocks = [
+];
+tmp_person.relocks = [
+"tunic.historicalsociety.closet.gramps.intro_0_cs_5",
+];
+

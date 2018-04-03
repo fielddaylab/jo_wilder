@@ -1,0 +1,21 @@
+tmp_speak.primary = false;
+tmp_speak.wx = 242.60354799515318;
+tmp_speak.wy = -5.502648845687119;
+tmp_speak.w = 176;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Now where did I put my notebook...?";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = -304.576136087485;
+tmp_speak.options_wy = -68.81594167679211;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

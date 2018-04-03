@@ -1,0 +1,12 @@
+tmp_inert.ww = 397.1093170356074;
+tmp_inert.wh = 309.30835246805276;
+tmp_inert.wx = -716.9152300534219;
+tmp_inert.wy = -59.238045156760066;
+tmp_inert.wz = 0.1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "room_historicalsociety_closet_desk";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];
+

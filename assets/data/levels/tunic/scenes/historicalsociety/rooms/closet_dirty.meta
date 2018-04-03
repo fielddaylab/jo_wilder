@@ -1,0 +1,34 @@
+tmp_room.primary = false;
+tmp_room.ww = 2134.4544349939247;
+tmp_room.wh = 792;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "room_historicalsociety_closet";
+tmp_room.audio_id = "null";
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:-374.79431084122393, wy:-113.2998170346518, ww:211.86808265684846, wh:240.3455245259692 },
+{wx:-118.55473324394916, wy:-223.7356130025576, ww:2033.1000861592847, wh:226.6862476527108 },
+];
+tmp_room.lights = [
+];
+tmp_room.shadows = [
+{wx:943.0457915933541, wy:-146.67414349544742, ww:198.0771365697986, wh:459.98419283740435 },
+{wx:-948.0429452590882, wy:-70.49091146868366, ww:149.78539483522562, wh:427.22621485165007 },
+{wx:72.03004853348523, wy:-151.83534632269135, ww:200.31107256569817, wh:430.8939187065737 },
+];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
+tmp_room.target_start_wx = -279.4194896719319;
+tmp_room.target_start_wy = -143.99999999999997;
+tmp_room.raw_notifications = [
+
+];
+tmp_room.unlocks = [
+];
+tmp_room.relocks = [
+];
+

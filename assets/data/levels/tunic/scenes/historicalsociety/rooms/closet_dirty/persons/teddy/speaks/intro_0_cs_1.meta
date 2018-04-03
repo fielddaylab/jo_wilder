@@ -1,0 +1,21 @@
+tmp_speak.primary = false;
+tmp_speak.wx = 238.1640049963171;
+tmp_speak.wy = 2.0442158156241845;
+tmp_speak.w = 183;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "You're not supposed to be here-";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 166.00000170519166;
+tmp_speak.options_wy = -126.99999911049399;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
