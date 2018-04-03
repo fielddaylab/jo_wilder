@@ -3387,12 +3387,12 @@ tmp_inert = new inert();
 tmp_inert.id = "fgpipes";
 tmp_inert.fqid = "tunic.historicalsociety.basement.fgpipes";
 {
-tmp_inert.ww = 892.9999999999997;
-tmp_inert.wh = 817.9999999999999;
-tmp_inert.wx = -94.38684959683172;
-tmp_inert.wy = 74.10707374618949;
-tmp_inert.wz = 0;
-tmp_inert.g = 0;
+tmp_inert.ww = 1008.9370390464723;
+tmp_inert.wh = 914.0043171567542;
+tmp_inert.wx = -32.18309946356959;
+tmp_inert.wy = 42.28041040300866;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.4;
 tmp_inert.animcycle_id = "fgpipes";
 tmp_inert.unlocks = [
 ];
@@ -7072,8 +7072,8 @@ tmp_inert.ww = 837;
 tmp_inert.wh = 135;
 tmp_inert.wx = 25.499999999999886;
 tmp_inert.wy = -288.5;
-tmp_inert.wz = 0;
-tmp_inert.g = 0;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.1;
 tmp_inert.animcycle_id = "fgoffice";
 tmp_inert.unlocks = [
 ];
@@ -7239,8 +7239,8 @@ tmp_inert.ww = 870.0000000000002;
 tmp_inert.wh = 214;
 tmp_inert.wx = 2.483609070950479;
 tmp_inert.wy = -272.9478270719087;
-tmp_inert.wz = 0;
-tmp_inert.g = 0;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.1;
 tmp_inert.animcycle_id = "fgcarts";
 tmp_inert.unlocks = [
 ];
