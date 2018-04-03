@@ -3403,110 +3403,62 @@ tmp_cutscene.unlocks = [
 ];
 tmp_cutscene.relocks = [
 ];
-tmp_cutscene.raw_notifications = [
-];
-
 tmp_cutscene.commands = [];
-
-/*
-Possible Commands:
-
-CUTSCENE_COMMAND_CREATE
-CUTSCENE_COMMAND_DESTROY
-CUTSCENE_COMMAND_ANIMATE
-CUTSCENE_COMMAND_SPEAK
-CUTSCENE_COMMAND_ACT
-CUTSCENE_COMMAND_AUDIO
-CUTSCENE_COMMAND_TWEEN
-CUTSCENE_COMMAND_TARGET
-CUTSCENE_COMMAND_WAIT
-CUTSCENE_COMMAND_END
-CUTSCENE_COMMAND_IGNORE
-
-
-Possible Entity Types:
-CUTSCENE_ENTITY_CAMERA
-CUTSCENE_ENTITY_AVATAR
-CUTSCENE_ENTITY_SCENE
-CUTSCENE_ENTITY_CUTSCENE
-*/
-
-/*
-//skeleton command addition
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_NULL;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.t = 0;
-tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.audio_id = "null";
-tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene.cutscene_entity_id = "null";
+tmp_cutscene.cutscene_entity_type = tmp_cutscene.cutscene_target_entity_id = "null";
+tmp_cutscene.cutscene_target_entity_type = tmp_cutscene.t = -1;
+tmp_cutscene.end_t = -1;
+tmp_cutscene.ww = -927345892;
+tmp_cutscene.wh = -927345892;
+tmp_cutscene.wx = 400;
+tmp_cutscene.wy = -200;
+tmp_cutscene.wz = -927345892;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-*/
-
-//setup jolie
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
-tmp_cutscene_command.wx = 400;
-tmp_cutscene_command.wy = -200;
+tmp_cutscene.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene.cutscene_entity_id = "null";
+tmp_cutscene.cutscene_entity_type = tmp_cutscene.cutscene_target_entity_id = "gramps";
+tmp_cutscene.cutscene_target_entity_type = tmp_cutscene.t = -1;
+tmp_cutscene.end_t = -1;
+tmp_cutscene.ww = -927345892;
+tmp_cutscene.wh = -927345892;
+tmp_cutscene.wx = -927345892;
+tmp_cutscene.wy = -927345892;
+tmp_cutscene.wz = -927345892;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//setup cam
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.cutscene_target_entity_id = "gramps";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
+tmp_cutscene.command = CUTSCENE_COMMAND_WAIT;
+tmp_cutscene.t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//get click
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
+tmp_cutscene.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene.cutscene_entity_id = "gramps";
+tmp_cutscene.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
+tmp_cutscene.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene.cutscene_entity_id = "null";
+tmp_cutscene.cutscene_entity_type = tmp_cutscene.cutscene_target_entity_id = "null";
+tmp_cutscene.cutscene_target_entity_type = tmp_cutscene.t = 2;
+tmp_cutscene.end_t = 0;
+tmp_cutscene.ww = -927345892;
+tmp_cutscene.wh = -927345892;
+tmp_cutscene.wx = -927345892;
+tmp_cutscene.wy = -927345892;
+tmp_cutscene.wz = -927345892;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//cam move to jo
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.t = 2;
+tmp_cutscene.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene.cutscene_entity_id = "teddy";
+tmp_cutscene.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene.t = 8;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//teddy talk
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
-tmp_cutscene_command.cutscene_entity_id = "teddy";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 8;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//Leave this at the end- remember to set tmp_cutscene_command.t!
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 10;
+tmp_cutscene.command = CUTSCENE_COMMAND_END;
+tmp_cutscene.t = 10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_level.notifications_w);
@@ -4499,120 +4451,6 @@ tmp_room.relocks = [
 ];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_cutscene = new cutscene();
-tmp_cutscene.id = "intro";
-tmp_cutscene.fqid = "tunic.historicalsociety.closet_dirty.intro";
-{
-tmp_cutscene.raw_notifications = [
-
-];
-tmp_cutscene.unlocks = [
-];
-tmp_cutscene.relocks = [
-];
-
-tmp_cutscene.commands = [];
-
-/*
-Possible Commands:
-CUTSCENE_COMMAND_CREATE
-CUTSCENE_COMMAND_DESTROY
-CUTSCENE_COMMAND_ANIMATE
-CUTSCENE_COMMAND_ACT
-CUTSCENE_COMMAND_AUDIO
-CUTSCENE_COMMAND_TWEEN
-CUTSCENE_COMMAND_WAIT
-CUTSCENE_COMMAND_END
-CUTSCENE_COMMAND_IGNORE
-
-Possible Entity Types:
-CUTSCENE_ENTITY_CAMERA
-CUTSCENE_ENTITY_AVATAR
-CUTSCENE_ENTITY_SCENE
-CUTSCENE_ENTITY_CUTSCENE
-*/
-
-/*
-//skeleton command addition
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_NULL;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.t = 0;
-tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.audio_id = "null";
-tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-*/
-
-//setup jolie
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
-tmp_cutscene_command.wx = 400;
-tmp_cutscene_command.wy = -200;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//setup cam
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.cutscene_target_entity_id = "gramps";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//get click
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
-tmp_cutscene_command.t = -1;
-tmp_cutscene_command.end_t = -1;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//gramps talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 1;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//cam move to jo
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.t = 2;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//teddy talk
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
-tmp_cutscene_command.cutscene_entity_id = "teddy";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 8;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-//Leave this at the end- remember to set tmp_cutscene_command.t!
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 10;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_room.cutscenes.push(tmp_cutscene);
 tmp_person = new person();
 tmp_person.id = "gramps";
 tmp_person.fqid = "tunic.historicalsociety.closet_dirty.gramps";
@@ -5739,6 +5577,7 @@ tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
 ];
+
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
@@ -5757,6 +5596,7 @@ tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
 ];
+
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
