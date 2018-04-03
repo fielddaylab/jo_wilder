@@ -18,6 +18,7 @@ tmp_cutscene.unlocks = [
 tmp_cutscene.relocks = [
 ];
 tmp_cutscene.raw_notifications = [
+];
 
 tmp_cutscene.commands = [];
 

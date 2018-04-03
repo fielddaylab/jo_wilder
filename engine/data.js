@@ -3384,27 +3384,45 @@ tmp_cutscene = new cutscene();
 tmp_cutscene.id = "intro";
 tmp_cutscene.fqid = "tunic.historicalsociety.closet.intro";
 {
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_AUTO;
+tmp_cutscene.ww = 10;
+tmp_cutscene.wh = 10;
+tmp_cutscene.wx = 10;
+tmp_cutscene.wy = 10;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = 0;
+tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 0;
+tmp_cutscene.hover_icon_wy = 0;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
-
 ];
 tmp_cutscene.unlocks = [
 ];
 tmp_cutscene.relocks = [
+];
+tmp_cutscene.raw_notifications = [
 ];
 
 tmp_cutscene.commands = [];
 
 /*
 Possible Commands:
+
 CUTSCENE_COMMAND_CREATE
 CUTSCENE_COMMAND_DESTROY
 CUTSCENE_COMMAND_ANIMATE
+CUTSCENE_COMMAND_SPEAK
 CUTSCENE_COMMAND_ACT
 CUTSCENE_COMMAND_AUDIO
 CUTSCENE_COMMAND_TWEEN
+CUTSCENE_COMMAND_TARGET
 CUTSCENE_COMMAND_WAIT
 CUTSCENE_COMMAND_END
 CUTSCENE_COMMAND_IGNORE
+
 
 Possible Entity Types:
 CUTSCENE_ENTITY_CAMERA
@@ -3423,11 +3441,11 @@ tmp_cutscene_command.cutscene_target_entity_id = "null";
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
 tmp_cutscene_command.t = 0;
 tmp_cutscene_command.end_t = 0;
+tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.audio_id = "null";
 tmp_cutscene_command.animcycle_offset_t = 0;
