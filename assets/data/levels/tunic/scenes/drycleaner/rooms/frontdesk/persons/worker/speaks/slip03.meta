@@ -1,0 +1,19 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -158.00000000000006;
+tmp_speak.wy = 264;
+tmp_speak.w = 256;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Oh… well… I can't show our log books to just anybody.";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 27.00000000000002;
+tmp_speak.options_wy = 171.99999999999997;
+tmp_speak.options_w = 312;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

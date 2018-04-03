@@ -1,0 +1,19 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -199;
+tmp_speak.wy = 267.99999999999994;
+tmp_speak.w = 353;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Your gramps is my favorite customer! Always full of stories. Poor guy…";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.noteworthy = false;
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

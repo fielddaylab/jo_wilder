@@ -1,7 +1,7 @@
 tmp_object.ww = 100;
 tmp_object.wh = 100;
-tmp_object.wx = 85.00000000000001;
-tmp_object.wy = 89.00000000000003;
+tmp_object.wx = 66.00000000000001;
+tmp_object.wy = 100;
 tmp_object.wz = 0;
 tmp_object.act_wx = 0;
 tmp_object.act_wy = 0;
@@ -13,7 +13,7 @@ tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.noteworthy = false;
 tmp_object.unlocks = [
-"tunic.drycleaner.frontdesk.worker.slip",
+"tunic.drycleaner.frontdesk.worker.slip13",
 ];
 tmp_object.relocks = [
 ];
