@@ -12,7 +12,6 @@ tmp_person.animcycle_id = "boss";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
-
 ];
 tmp_person.unlocks = [
 "tunic.kohlcenter.halloffame.oldpictures.hub",

@@ -15,7 +15,6 @@ tmp_porthole.target_room = "frontdesk";
 tmp_porthole.target_start_wx = 490.0019898988605;
 tmp_porthole.target_start_wy = 82.00000000000004;
 tmp_porthole.raw_notifications = [
-
 ];
 tmp_porthole.unlocks = [
 ];

@@ -12,7 +12,6 @@ tmp_speak.options_wy = -126.99999911049399;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
-
 ];
 tmp_speak.unlocks = [
 ];

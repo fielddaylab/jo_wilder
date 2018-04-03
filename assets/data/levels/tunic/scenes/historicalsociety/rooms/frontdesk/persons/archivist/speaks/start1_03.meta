@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -238.00000000000009;
+tmp_speak.wy = 258.99999999999994;
+tmp_speak.w = 236;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Wait a minute… you're that troublemaker Wells was talking about.";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

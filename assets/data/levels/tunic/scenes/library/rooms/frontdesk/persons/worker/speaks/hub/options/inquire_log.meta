@@ -2,7 +2,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = "What can you tell me about [historical lady's name]?";
 tmp_option.target_speak = "log";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];

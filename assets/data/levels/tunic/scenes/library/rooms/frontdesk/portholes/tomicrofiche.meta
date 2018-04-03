@@ -15,7 +15,6 @@ tmp_porthole.target_room = "microfiche";
 tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = -330;
 tmp_porthole.raw_notifications = [
-
 ];
 tmp_porthole.unlocks = [
 "tunic.library.frontdesk.worker.log",

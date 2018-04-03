@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -40.000000499429945;
+tmp_speak.wy = 129.99999999999997;
+tmp_speak.w = 218;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "I'm not a troublemaker. My friend is missing!";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

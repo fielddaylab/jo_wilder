@@ -1,8 +1,7 @@
 tmp_option.index = 999;
 tmp_option.raw_qtext = "Ok I will!";
-tmp_option.target_speak = "hub";
+tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];

@@ -6,7 +6,6 @@ tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "slip";
 tmp_zone.raw_notifications = [
-
 ];
 tmp_zone.unlocks = [
 ];

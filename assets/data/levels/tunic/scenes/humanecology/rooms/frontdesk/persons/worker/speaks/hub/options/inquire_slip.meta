@@ -2,7 +2,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = "I was told you might know something about this slip...";
 tmp_option.target_speak = "slip";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];
