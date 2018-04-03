@@ -1292,7 +1292,7 @@ var print_cutscene_meta = function(l)
 
   str += "tmp_cutscene.commands = [];\n"
 
-  "tmp_cutscene.trigger = "+(l.trigger == CUTSCENE_TRIGGER_AUTO ? "CUTSCENE_TRIGGER_AUTO" : "CUTSCENE_TRIGGER_ACT" )+";\n"+
+  "tmp_cutscene.trigger = "+(l.trigger == CUTSCENE_TRIGGER_AUTO ? "CUTSCENE_TRIGGER_AUTO" : "CUTSCENE_TRIGGER_ACT" )+";\n";
   for(var i = 0; i < tmp_cutscene.commands.length; i++)
   {
     str += "tmp_cutscene_command = new cutscene_command();\n";
@@ -1418,7 +1418,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene.t = "+l.t+";\n";
         break;
     }
-    str += "tmp_cutscene.commands.push(tmp_cutscene_command);\n"+
+    str += "tmp_cutscene.commands.push(tmp_cutscene_command);\n";
   }
   console.log(str);
 }
