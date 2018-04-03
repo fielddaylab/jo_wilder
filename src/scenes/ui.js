@@ -46,9 +46,10 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.avatar_walk_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_idle_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.exit_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.map_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.notebook_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.icon_map_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.person_hover_animcycle_id,level.animcycles));
@@ -1242,7 +1243,8 @@ var mapview = function()
     self.level.key = true;
     self.unlock_content();
     self.selected_scene = 0;
-    self.map_animcycle_inst = gen_animcycle_inst(level.map_animcycle_id,level.animcycles);
+    self.map_animcycle_inst = gen_animcycle_inst(level.map_animcycle_id, level.animcycles);
+    self.exit_animcycle_inst = gen_animcycle_inst(level.exit_animcycle_id, level.animcycles);
   }
 
   self.unlock_content = function()
@@ -1357,7 +1359,7 @@ var mapview = function()
     var yoff = (1-t)*self.h
     ctx.drawImage(self.map_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
-    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
     {
@@ -1395,6 +1397,7 @@ var notebookview = function()
     self.entrys = level.entrys;
     self.unlock_content();
     self.notebook_animcycle_inst = gen_animcycle_inst(level.notebook_animcycle_id,level.animcycles);
+    self.exit_animcycle_inst = gen_animcycle_inst(level.exit_animcycle_id, level.animcycles);
   }
 
   self.unlock_content = function()
@@ -1507,13 +1510,13 @@ var notebookview = function()
     ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
     ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
-    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     var entry;
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
     {
       entry = self.cache_unlocked_entrys[i];
-      if(entry.page == self.page || entry.page == self.page+1)
+      if(entry.page == self.page)
         ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
 
@@ -1688,6 +1691,7 @@ var objectview = function()
     if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
     self.cur_view.key = true;
     self.unlock_content();
+    self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
   }
 
   self.unlock_content = function()
@@ -1817,7 +1821,7 @@ var objectview = function()
       ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       ctx.drawImage(zone.animcycle_inst.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
-    ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
     {
