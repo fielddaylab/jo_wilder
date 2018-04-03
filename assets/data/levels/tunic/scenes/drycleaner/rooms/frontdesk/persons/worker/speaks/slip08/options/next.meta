@@ -2,7 +2,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "slip09";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 ];

@@ -2,7 +2,6 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = "I found a newspaper!";
 tmp_option.target_speak = "newspaper";
 tmp_option.raw_notifications = [
-
 ];
 tmp_option.unlocks = [
 "tunic.library.microfiche.newspaper.hub",

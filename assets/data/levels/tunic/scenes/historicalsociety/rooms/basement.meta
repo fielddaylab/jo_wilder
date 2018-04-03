@@ -23,7 +23,6 @@ tmp_room.ambient_color = "rgba(0,0,0,0);";
 tmp_room.target_start_wx = -300;
 tmp_room.target_start_wy = -77.00000000000001;
 tmp_room.raw_notifications = [
-
 ];
 tmp_room.unlocks = [
 ];

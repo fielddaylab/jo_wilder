@@ -1,18 +1,17 @@
-tmp_object.ww = 114.55309842041304;
-tmp_object.wh = 76.71504252733904;
-tmp_object.wx = -629.3983715585547;
-tmp_object.wy = -70.80189845650153;
+tmp_object.ww = 75.96120312606216;
+tmp_object.wh = 43.70875183001083;
+tmp_object.wx = -602.2304427458864;
+tmp_object.wy = -32.13363429074393;
 tmp_object.wz = 0.11;
 tmp_object.act_wx = -61.12301336573512;
 tmp_object.act_wy = -32.01681652490887;
 tmp_object.act_anim = 1;
 tmp_object.hover_icon_wx = 33.63053029083767;
 tmp_object.hover_icon_wy = 26.87826993962551;
-tmp_object.animcycle_id = "newspaper";
+tmp_object.animcycle_id = "retirement_letter";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-
 ];
 tmp_object.unlocks = [
 ];
