@@ -1,0 +1,12 @@
+tmp_inert.ww = 837;
+tmp_inert.wh = 135;
+tmp_inert.wx = 25.499999999999886;
+tmp_inert.wy = -288.5;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.1;
+tmp_inert.animcycle_id = "fgoffice";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];
+
