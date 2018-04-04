@@ -31,8 +31,8 @@ tmp_level.intro_room_id = "tunic.historicalsociety.entry";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
-tmp_level.avatar_ww = 124.29142744197549;
-tmp_level.avatar_wh = 227.189352938386;
+tmp_level.avatar_ww = 124.2914274419755;
+tmp_level.avatar_wh = 227.18935293838604;
 tmp_level.exit_animcycle_id = "exit";
 tmp_level.toolbar_animcycle_id = "toolbar";
 tmp_level.toolbar_audio_id = "null";
@@ -63,6 +63,7 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
+
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivist";
 tmp_animcycle.fqid = "tunic.archivist";
@@ -6090,15 +6091,15 @@ tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.nav_max_wz = 10;
 tmp_room.navs = [
-{wx:1, wy:-163.5, ww:868, wh:327 },
+{wx:-38.3504355536046, wy:-202, ww:821.0001785495492, wh:223.99999999999997 },
 ];
 tmp_room.lights = [
-{wx:1, wy:-163.5, ww:868, wh:327 },
+{wx:-451.0000000019295, wy:238.50000000000006, ww:158, wh:58.999999999999986 },
 ];
 tmp_room.shadows = [
-{wx:32.00000000002677, wy:-145.5, ww:868, wh:327 },
+{wx:-432.5234022248209, wy:288.5, ww:96.9999978953515, wh:67 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -7194,10 +7195,10 @@ tmp_inert = new inert();
 tmp_inert.id = "chair";
 tmp_inert.fqid = "tunic.historicalsociety.frontdesk.chair";
 {
-tmp_inert.ww = 272;
-tmp_inert.wh = 261;
-tmp_inert.wx = -372.9421881407284;
-tmp_inert.wy = -25.2233449477352;
+tmp_inert.ww = 244.99997814818758;
+tmp_inert.wh = 235;
+tmp_inert.wx = -364.28238232986445;
+tmp_inert.wy = -29.2233449477352;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "frontdesk_chair";
@@ -7215,8 +7216,8 @@ tmp_inert.fqid = "tunic.historicalsociety.frontdesk.desk";
 {
 tmp_inert.ww = 423.94524295076604;
 tmp_inert.wh = 241.7588850174216;
-tmp_inert.wx = -16.656463590611963;
-tmp_inert.wy = -64.87944250871081;
+tmp_inert.wx = -17.657155158539638;
+tmp_inert.wy = -51.879442508710795;
 tmp_inert.wz = 4;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "frontdesk";
@@ -7253,8 +7254,8 @@ tmp_inert.fqid = "tunic.historicalsociety.frontdesk.fgoffice";
 {
 tmp_inert.ww = 996.8776306620208;
 tmp_inert.wh = 130.055331010453;
-tmp_inert.wx = -37.06711555418457;
-tmp_inert.wy = -265.4347735191638;
+tmp_inert.wx = -37.96991189093427;
+tmp_inert.wy = -264.43477351916385;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.1;
 tmp_inert.animcycle_id = "fgoffice";
