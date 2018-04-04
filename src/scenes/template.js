@@ -1294,9 +1294,9 @@ var print_cutscene_meta = function(l)
 
   "tmp_cutscene.trigger = "+(l.trigger == CUTSCENE_TRIGGER_AUTO ? "CUTSCENE_TRIGGER_AUTO" : "CUTSCENE_TRIGGER_ACT" )+";\n";
   var c;
-  for(var i = 0; i < tmp_cutscene.commands.length; i++)
+  for(var i = 0; i < l.commands.length; i++)
   {
-    c = tmp_cutscene.commands[i];
+    c = l.commands[i];
     str += "tmp_cutscene_command = new cutscene_command();\n";
     switch(c.command)
     {

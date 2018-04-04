@@ -30,4 +30,5 @@ consistent scripts for edit/goto/find/etc.. by search/type/fqid/etc..
 set hover cursor on objects instead of level (like hover icons)
 update speaks to be sequences -> options (no option = exit)
 animate notification transitions
+z-sort hover icons
 
