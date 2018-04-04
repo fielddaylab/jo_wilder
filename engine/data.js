@@ -32,7 +32,7 @@ tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 124.29142744197549;
-tmp_level.avatar_wh = 227.18935293838604;
+tmp_level.avatar_wh = 227.189352938386;
 tmp_level.exit_animcycle_id = "exit";
 tmp_level.toolbar_animcycle_id = "toolbar";
 tmp_level.toolbar_audio_id = "null";
@@ -3249,13 +3249,13 @@ tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-49.499999999999886, wy:-136.49999999999977, ww:707.0000000000001, wh:395.0000000000001 },
+{wx:-15.409090909090821, wy:-146.7272727272725, ww:794.2727272727274, wh:410.00000000000017 },
 ];
 tmp_room.lights = [
 {wx:340, wy:242.5, ww:51.99999999999998, wh:24.999999999999993 },
 ];
 tmp_room.shadows = [
-{wx:-14.500000000000057, wy:-262.3999999999999, ww:871, wh:161.99999999999997 },
+{wx:5.954545454545325, wy:-277.3999999999997, ww:871, wh:161.99999999999997 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2);";
 tmp_room.shadow_color = "rgba(0,0,0,0.5);";
@@ -3274,11 +3274,11 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tocloset";
 tmp_porthole.fqid = "tunic.historicalsociety.basement.tocloset";
 {
-tmp_porthole.ww = 116.00000000000009;
-tmp_porthole.wh = 214.00000000000006;
-tmp_porthole.wx = -68.02931928260352;
-tmp_porthole.wy = 119.9988152229082;
-tmp_porthole.wz = -1;
+tmp_porthole.ww = 140.54545454545473;
+tmp_porthole.wh = 222.18181818181822;
+tmp_porthole.wx = 129.69795344466908;
+tmp_porthole.wy = 117.2715424956355;
+tmp_porthole.wz = -0.9;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
 tmp_porthole.act_anim = 1;
@@ -3305,10 +3305,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tocloset_dirty";
 tmp_porthole.fqid = "tunic.historicalsociety.basement.tocloset_dirty";
 {
-tmp_porthole.ww = 116.00000000000009;
-tmp_porthole.wh = 214.00000000000006;
-tmp_porthole.wx = 154.9999999731874;
-tmp_porthole.wy = 113.99999999891651;
+tmp_porthole.ww = 140.5454545454546;
+tmp_porthole.wh = 222.18181818181822;
+tmp_porthole.wx = 127.7272727004599;
+tmp_porthole.wy = 118.09090908982567;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -3336,10 +3336,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.historicalsociety.basement.toentry";
 {
-tmp_porthole.ww = 102;
-tmp_porthole.wh = 489.0000000000001;
-tmp_porthole.wx = -398.0000000000026;
-tmp_porthole.wy = 85.49999999999989;
+tmp_porthole.ww = 126.54545454545456;
+tmp_porthole.wh = 554.4545454545454;
+tmp_porthole.wx = -455.27272727272987;
+tmp_porthole.wy = 71.86363636363643;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 32;
 tmp_porthole.act_wy = -130;
@@ -6158,6 +6158,7 @@ tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
 ];
+
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
 tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_person.raw_notifications.length; i++) tmp_person.notifications[i] = stextToLines(tmp_person.raw_notifications[i], tmp_level.notifications_w);
@@ -7206,6 +7207,7 @@ tmp_porthole.unlocks = [
 ];
 tmp_porthole.relocks = [
 ];
+
 tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
 tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
 }
@@ -7244,6 +7246,7 @@ tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
 ];
+
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
@@ -7262,6 +7265,7 @@ tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
 ];
+
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
