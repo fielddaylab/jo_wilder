@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -39.00000000000007;
+tmp_speak.wy = 211;
+tmp_speak.w = 247;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "I need to find all the dry cleaners that were around in 1916! Can you help me?";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

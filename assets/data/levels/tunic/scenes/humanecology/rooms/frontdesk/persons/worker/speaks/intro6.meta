@@ -1,0 +1,21 @@
+tmp_speak.primary = 99;
+tmp_speak.wx = -231;
+tmp_speak.wy = 309;
+tmp_speak.w = 246;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Oh, I don't know… it's so hard to think on an empty stomach…";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+"tunic.humanecology.frontdesk.cookies",
+];
+
