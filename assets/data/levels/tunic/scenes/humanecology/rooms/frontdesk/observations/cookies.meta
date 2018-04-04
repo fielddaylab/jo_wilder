@@ -1,0 +1,26 @@
+tmp_observation.ww = 100;
+tmp_observation.wh = 100;
+tmp_observation.wx = -377;
+tmp_observation.wy = 31.000000000000014;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I bet the Curator could use these!";
+tmp_observation.blip_wx = -506.7235116729863;
+tmp_observation.blip_wy = 179.99999999999991;
+tmp_observation.blip_w = 165;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+"tunic.humanecology.frontdesk.worker.intro6",
+];
+tmp_observation.relocks = [
+];
+
