@@ -2888,7 +2888,7 @@ var cutsceneview = function()
 
   self.tick = function()
   {
-    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t && !self.waiting)
+    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t <= self.t && !self.waiting && state_cur == STATE_CUTSCENE)
       self.execute_next_command();
     for(var i = 0; i < self.editable_frame_commands.length; i++)
     {
