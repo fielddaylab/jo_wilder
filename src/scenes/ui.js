@@ -2629,6 +2629,8 @@ var cutsceneview = function()
           if(cur_room.persons[i].id == id) return cur_room.persons[i];
         for(var i = 0; i < cur_room.objects.length; i++)
           if(cur_room.objects[i].id == id) return cur_room.objects[i];
+        for(var i = 0; i < cur_room.portholes.length; i++)
+          if(cur_room.portholes[i].id == id) return cur_room.portholes[i];
         for(var i = 0; i < cur_room.wildcards.length; i++)
           if(cur_room.wildcards[i].id == id) return cur_room.wildcards[i];
         for(var i = 0; i < cur_room.inerts.length; i++)
