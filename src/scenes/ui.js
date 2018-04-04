@@ -1009,18 +1009,25 @@ var navigable = function()
   {
     my_cursor.mode = CURSOR_NORMAL;
     my_cursor.o = 0;
+    var z = -9999999999999;
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_PERSON; my_cursor.o = self.cache_unlocked_persons[i]; }
+      if(self.cache_unlocked_persons[i].wz > z && ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY))
+        { my_cursor.mode = CURSOR_PERSON; my_cursor.o = self.cache_unlocked_persons[i]; z = self.cache_unlocked_persons[i].wz; }
     for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_OBJECT; my_cursor.o = self.cache_unlocked_objects[i]; }
+      if(self.cache_unlocked_objects[i].wz > z && ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY))
+        { my_cursor.mode = CURSOR_OBJECT; my_cursor.o = self.cache_unlocked_objects[i]; z = self.cache_unlocked_objects[i].wz; }
     for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_OBSERVATION; my_cursor.o = self.cache_unlocked_observations[i]; }
+      if(self.cache_unlocked_observations[i].wz > z && ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY))
+        { my_cursor.mode = CURSOR_OBSERVATION; my_cursor.o = self.cache_unlocked_observations[i]; z = self.cache_unlocked_observations[i].wz; }
+    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
+      if(self.cache_unlocked_wildcards[i].wz > z && ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY))
+        { my_cursor.mode = CURSOR_WILDCARD; my_cursor.o = self.cache_unlocked_wildcards[i]; z = self.cache_unlocked_wildcards[i].wz; }
+    //for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
+      //if(self.cache_unlocked_cutscenes[i].wz > z && ptWithinBox(self.cache_unlocked_cutscenes[i],evt.doX,evt.doY))
+        //{ my_cursor.mode = CURSOR_CUTSCENE; my_cursor.o = self.cache_unlocked_cutscenes[i]; z = self.cache_unlocked_cutscenes[i].wz; }
     for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_PORTHOLE; my_cursor.o = self.cache_unlocked_portholes[i]; }
+      if(self.cache_unlocked_portholes[i].wz > z && ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY))
+        { my_cursor.mode = CURSOR_PORTHOLE; my_cursor.o = self.cache_unlocked_portholes[i]; z = self.cache_unlocked_portholes[i].wz; }
   }
   self.unhover = function(evt)
   {

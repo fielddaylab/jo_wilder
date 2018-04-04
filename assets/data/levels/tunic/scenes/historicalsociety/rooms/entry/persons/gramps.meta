@@ -1,15 +1,15 @@
 tmp_person.ww = 176.53309090909076;
 tmp_person.wh = 337.7410909090905;
 tmp_person.wx = -57.16530107597346;
-tmp_person.wy = -33.52817409153707
+tmp_person.wy = -33.52817409153707;
 tmp_person.wz = 0.1;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 0;
-tmp_person.hover_icon_wy = 0;
+tmp_person.hover_icon_wx = 70.01963636363632;
+tmp_person.hover_icon_wy = 149.80945454545446;
 tmp_person.animcycle_id = "gramps";
-tmp_person.hover_icon_animcycle_id = "null";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
