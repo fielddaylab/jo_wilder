@@ -2585,6 +2585,8 @@ var cutsceneview = function()
   self.waiting = 0;
   self.command_i = 0;
   self.running_commands = [];
+  self.frame_commands = [];
+  self.editable_frame_commands = [];
 
   self.consume_cutscene = function(cutscene)
   {
@@ -2628,6 +2630,26 @@ var cutsceneview = function()
   self.execute_next_command = function()
   {
     var c = self.cutscene.commands[self.command_i];
+    self.frame_commands.push(c);
+    switch(c.command)
+    {
+      case CUTSCENE_COMMAND_DESTROY:
+      case CUTSCENE_COMMAND_ACT:
+      case CUTSCENE_COMMAND_WAIT:
+      case CUTSCENE_COMMAND_END:
+      case CUTSCENE_COMMAND_AUDIO:
+        break;
+      case CUTSCENE_COMMAND_TWEEN:
+      case CUTSCENE_COMMAND_TARGET:
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL) break;
+      case CUTSCENE_COMMAND_ANIMATE:
+      case CUTSCENE_COMMAND_CREATE:
+      case CUTSCENE_COMMAND_SPEAK:
+        self.editable_frame_commands.push(c);
+        break;
+    }
+
+
     switch(c.command)
     {
       case CUTSCENE_COMMAND_NULL: break;
@@ -2718,6 +2740,65 @@ var cutsceneview = function()
     if(self.command_i >= self.cutscene.commands.length) self.end = 1;
   }
 
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+
+    for(var i = 0; i < self.editable_frame_commands.length; i++)
+      if(ptWithinBox(c,evt.doX,evt.doY)) self.edit_o = self.editable_frame_commands[i];
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+      self.edit_o.h += self.deltaY;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    worldSpace(my_camera,canv,self.edit_o);
+    //propagate to level
+    cur_level.avatar_ww = self.edit_o.ww;
+    cur_level.avatar_wh = self.edit_o.wh;
+
+    self._dirty = true;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
   self.click = function(evt)
   {
     self.waiting = 0;
@@ -2725,8 +2806,12 @@ var cutsceneview = function()
 
   self.tick = function()
   {
+    self.frame_commands = [];
+    self.editable_frame_commands = [];
     while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t < self.t && !self.waiting)
       self.execute_next_command();
+    for(var i = 0; i < self.editable_frame_commands.length; i++)
+      screenSpace(my_camera, canv, self.editable_frame_commands[i]);
 
     for(var i = 0; !self.end && i < self.running_commands.length; i++)
     {
@@ -2762,7 +2847,8 @@ var cutsceneview = function()
     for(var i = 0; i < self.cutscene_entitys.length; i++)
       self.cutscene_entitys[i].animcycle_inst.tick();
 
-    if(state_cur == STATE_CUTSCENE && !self.waiting) self.t++;
+    if((!DEBUG || CUTSCENE_ADVANCE) && state_cur == STATE_CUTSCENE && !self.waiting) self.t++;
+    CUTSCENE_ADVANCE = 0;
 
     if(self.end)
     {
@@ -2807,6 +2893,12 @@ var cutsceneview = function()
       if(entity.w < 0) ctx.scale(-1,1);
       ctx.drawImage(entity.animcycle_inst.img,0,0,entity.w,entity.h);
       ctx.restore();
+    }
+
+    if(DEBUG)
+    {
+      for(var i = 0; i < self.editable_frame_commands.length; i++)
+        strokeBox(self.editable_frame_commands[i],ctx);
     }
   }
 

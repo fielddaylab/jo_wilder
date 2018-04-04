@@ -95,6 +95,7 @@ var GamePlayScene = function(game, stage)
     my_keyable.key_down = function(evt)
     {
       if(evt.key == "e") my_keyable.e = 1;
+      if(evt.key == "ArrowRight") CUTSCENE_ADVANCE = 1;
     }
     my_keyable.key_up = function(evt)
     {
