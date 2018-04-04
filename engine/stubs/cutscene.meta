@@ -1,6 +1,6 @@
 tmp_cutscene.trigger = CUTSCENE_TRIGGER_AUTO;
-tmp_cutscene.ww = 10;
-tmp_cutscene.wh = 10;
+tmp_cutscene.ww = 100;
+tmp_cutscene.wh = 100;
 tmp_cutscene.wx = 10;
 tmp_cutscene.wy = 10;
 tmp_cutscene.wz = 0;

@@ -131,6 +131,13 @@ var loader = function()
       self.load_animcycle_inst(wildcard.animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
     }
+    var cutscene;
+    for(var k = 0; k < room.cutscenes.length; k++)
+    {
+      cutscene = room.cutscenes[k];
+      self.load_animcycle_inst(cutscene.animcycle_inst);
+      self.load_animcycle_inst(cutscene.hover_icon_animcycle_inst);
+    }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
     {
