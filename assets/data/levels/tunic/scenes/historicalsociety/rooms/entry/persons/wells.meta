@@ -1,13 +1,13 @@
-tmp_person.ww = 257.9466452208867;
-tmp_person.wh = 380.07886515192297;
-tmp_person.wx = 105.20668734536048;
-tmp_person.wy = 84.64947342213475;
+tmp_person.ww = 168.38664563697884;
+tmp_person.wh = 358.9101377802236;
+tmp_person.wx = 88.10886937368008;
+tmp_person.wy = 109.88910983575497;
 tmp_person.wz = 0;
-tmp_person.act_wx = 0;
-tmp_person.act_wy = 0;
+tmp_person.act_wx = 87.93042270960882;
+tmp_person.act_wy = -86.30340465538065;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 0;
-tmp_person.hover_icon_wy = 0;
+tmp_person.hover_icon_wx = -52.54998079545407;
+tmp_person.hover_icon_wy = 145.61960110415959;
 tmp_person.animcycle_id = "youngboy";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
@@ -16,5 +16,6 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.collection",
 ];
 

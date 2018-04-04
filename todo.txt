@@ -31,4 +31,6 @@ set hover cursor on objects instead of level (like hover icons)
 update speaks to be sequences -> options (no option = exit)
 animate notification transitions
 z-sort hover icons
+dirty export (vastly speed up cycle)
+cutscenes revert everything on completion
 

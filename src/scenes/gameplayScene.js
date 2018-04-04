@@ -288,8 +288,22 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_CUTSCENE:
         if(
-        !clicker.filter(my_cutsceneview) &&
+        !my_notificationview.note.length &&
+        !hoverer.filter(my_cutsceneview) &&
         false) ;
+        if(DEBUG && my_keyable.e)
+        {
+          if(
+          !my_notificationview.note.length &&
+          !dragger.filter(my_cutsceneview) &&
+          false) ;
+        }
+        else
+        {
+          if(
+          !clicker.filter(my_cutsceneview) &&
+          false) ;
+        }
         my_navigable.tick();
         my_avatar.tick();
         //my_cutsceneview.tick(); //will tick because of stack

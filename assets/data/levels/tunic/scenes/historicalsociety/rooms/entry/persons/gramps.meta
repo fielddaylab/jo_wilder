@@ -1,7 +1,7 @@
 tmp_person.ww = 176.53309090909076;
 tmp_person.wh = 337.7410909090905;
 tmp_person.wx = -57.16530107597346;
-tmp_person.wy = -33.52817409153707;
+tmp_person.wy = -33.52817409153707
 tmp_person.wz = 0.1;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
@@ -16,5 +16,6 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 
