@@ -1,8 +1,8 @@
-tmp_person.ww = 141;
-tmp_person.wh = 293;
-tmp_person.wx = -131.99393728222998;
-tmp_person.wy = -47.299999999999926;
-tmp_person.wz = 0;
+tmp_person.ww = 97.00000021581084;
+tmp_person.wh = 239.99999999999997;
+tmp_person.wx = -40.503201494310744;
+tmp_person.wy = 8.848222996515759;
+tmp_person.wz = 3;
 tmp_person.act_wx = 142.59470153053064;
 tmp_person.act_wy = -49.00000000000001;
 tmp_person.act_anim = true;
@@ -17,4 +17,3 @@ tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
 ];
-

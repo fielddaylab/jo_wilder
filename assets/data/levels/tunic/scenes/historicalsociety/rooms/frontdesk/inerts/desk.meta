@@ -1,0 +1,11 @@
+tmp_inert.ww = 423.94524295076604;
+tmp_inert.wh = 241.7588850174216;
+tmp_inert.wx = -16.656463590611963;
+tmp_inert.wy = -64.87944250871081;
+tmp_inert.wz = 4;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "frontdesk";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];
