@@ -742,6 +742,9 @@ var cutscene_command = function()
   self.wx = CUTSCENE_COMMAND_IGNORE;
   self.wy = CUTSCENE_COMMAND_IGNORE;
   self.wz = CUTSCENE_COMMAND_IGNORE;
+  self.w;
+  self.h;
+  self.raw_text = "null";
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.animcycle_offset_t = 0;
@@ -759,10 +762,9 @@ var cutscene_command = function()
   self.from_z;
   self.from_w;
   self.from_h;
-  self.w;
-  self.h;
   self.x;
   self.y;
+  self.text = stextToLines(self.raw_text,self.w);
 }
 
 var cutscene = function()
@@ -1349,10 +1351,11 @@ var print_cutscene_meta = function(l)
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
         str +=
         "tmp_cutscene_command.t = "+c.t+";\n"+
-        "tmp_cutscene_command.ww = "+c.ww+";\n"+
-        "tmp_cutscene_command.wh = "+c.wh+";\n"+
         "tmp_cutscene_command.wx = "+c.wx+";\n"+
         "tmp_cutscene_command.wy = "+c.wy+";\n";
+        "tmp_cutscene_command.w = "+c.w+";\n"+
+        "tmp_cutscene_command.h = "+c.h+";\n"+
+        "tmp_cutscene_command.raw_text = \""+c.raw_text+"\";\n"+
         break;
       case CUTSCENE_COMMAND_ACT:
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;\n"+
