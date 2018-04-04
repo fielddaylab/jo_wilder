@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -75.99999999999996;
+tmp_speak.wy = 209.99999999999997;
+tmp_speak.w = 115;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Don't care.";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 98.00000000000006;
+tmp_speak.options_wy = 155.99999999999997;
+tmp_speak.options_w = 212;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
