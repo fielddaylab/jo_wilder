@@ -765,6 +765,8 @@ var cutscene_command = function()
   self.x;
   self.y;
   self.text = stextToLines(self.raw_text,self.w);
+  self.command_state = 0;
+  self.command_t = 0;
 }
 
 var cutscene = function()
