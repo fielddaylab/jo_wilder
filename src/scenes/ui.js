@@ -2933,6 +2933,9 @@ var cutsceneview = function()
         if(c.command_state == 3)
         {
           self.running_commands.splice(i,1)
+          for(var j = 0; j < self.editable_frame_commands.length; j++)
+            if(c == self.editable_frame_commands[j])
+              self.editable_frame_commands.splice(j,1);
           i--;
         }
       }
