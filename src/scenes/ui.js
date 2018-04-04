@@ -2704,6 +2704,8 @@ var cutsceneview = function()
         var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
         c.cutscene_entity = e;
         c.text = stextToLines(c.raw_text, c.w);
+        c.command_state = 0;
+        c.command_state_t = 0;
         self.waiting = 1;
         self.running_commands.push(c);
         break;
