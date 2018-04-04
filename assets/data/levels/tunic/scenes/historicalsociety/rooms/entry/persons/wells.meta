@@ -6,10 +6,10 @@ tmp_person.wz = 0;
 tmp_person.act_wx = 87.93042270960882;
 tmp_person.act_wy = -86.30340465538065;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = -52.54998079545407;
-tmp_person.hover_icon_wy = 145.61960110415959;
+tmp_person.hover_icon_wx = 79.3474737500003;
+tmp_person.hover_icon_wy = 166.78832837688685;
 tmp_person.animcycle_id = "youngboy";
-tmp_person.hover_icon_animcycle_id = "null";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
