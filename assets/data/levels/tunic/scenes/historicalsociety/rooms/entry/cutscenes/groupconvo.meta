@@ -18,11 +18,10 @@ tmp_cutscene.unlocks = [
 tmp_cutscene.relocks = [
 ];
 tmp_cutscene.commands = [];
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_type == CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_entity_id == "wells";
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 10;
 tmp_cutscene_command.wy = 10;
 tmp_cutscene_command.w = 100;
@@ -30,11 +29,10 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Ugh. Is this a museum or a daycare?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_type == CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_entity_id == "boss";
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 10;
 tmp_cutscene_command.wy = 10;
 tmp_cutscene_command.w = 100;
@@ -42,7 +40,6 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Jolie, you can stay. As I was saying...";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 1;
