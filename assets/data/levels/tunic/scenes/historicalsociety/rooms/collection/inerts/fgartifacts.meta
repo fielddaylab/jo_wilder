@@ -1,7 +1,7 @@
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 1032.727272727273;
+tmp_inert.wh = 180.60606060606062;
+tmp_inert.wx = 115.83333333333354;
+tmp_inert.wy = -409.54545454545456;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.1;
 tmp_inert.animcycle_id = "fgartifacts";
