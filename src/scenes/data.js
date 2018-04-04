@@ -5660,8 +5660,8 @@ tmp_porthole.animcycle_id = "null";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.audio_id = "null";
 tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = -903.2438530313667;
-tmp_porthole.target_start_wy = -94.39707135640175;
+tmp_porthole.target_start_wx = -903.2438530313668;
+tmp_porthole.target_start_wy = -94.39707135640161;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
@@ -5731,7 +5731,7 @@ tmp_room.navs = [
 {wx:-58.46881985379787, wy:-285.73075088101905, ww:1769.5494376878196, wh:580.1788249790067 },
 ];
 tmp_room.lights = [
-{wx:606.2655502392346, wy:297.6909090909091, ww:63.28443135811556, wh:38.25454545454535 },
+{wx:-904.7812513801985, wy:-112.84463746779527, ww:180.58030180345966, wh:176.24968715495018 },
 ];
 tmp_room.shadows = [
 {wx:739.604087455775, wy:-235.36991876942966, ww:534.5070793466381, wh:679.6472630265524 },

@@ -263,6 +263,7 @@ var level = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.notifications = [];
 }
 
@@ -286,6 +287,7 @@ var scene = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
   self.y = 0;
@@ -329,6 +331,7 @@ var room = function()
   self.relocks = [];
   //
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
   self.y = 0;
@@ -366,6 +369,7 @@ var person = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.w = 0;
@@ -405,6 +409,7 @@ var object = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.w = 0;
@@ -449,6 +454,7 @@ var observation = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.w = 0;
@@ -492,6 +498,7 @@ var porthole = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.w = 0;
@@ -533,6 +540,7 @@ var wildcard = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.w = 0;
   self.h = 0;
@@ -564,6 +572,7 @@ var inert = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.w = 0;
   self.h = 0;
@@ -590,6 +599,7 @@ var view = function()
   self.relocks = [];
   //
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.notifications = [];
 }
@@ -612,6 +622,7 @@ var zone = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.w = 0;
   self.h = 0;
@@ -652,6 +663,7 @@ var speak = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
   self.y = 0;
@@ -676,6 +688,7 @@ var option = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -703,6 +716,7 @@ var entry = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
   self.y = 0;
@@ -804,6 +818,7 @@ var cutscene = function()
   //
   self.locked = true;
   self.key = false;
+  self.dirty = false;
   self.animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.w = 0;
@@ -1468,38 +1483,38 @@ var print_inert_meta = function(l)
 var print_whole_level = function(level)
 {
   console.log("===BEGIN_IMPORT===");
-  print_level_meta(level);
+  if(level.dirty) print_level_meta(level);
   var entry;
   for(var i = 0; i < level.entrys.length; i++)
   {
     entry = level.entrys[i];
-    print_entry_meta(entry);
+    if(entry.dirty) print_entry_meta(entry);
   }
   var scene;
   for(var i = 0; i < level.scenes.length; i++)
   {
     scene = level.scenes[i];
-    print_scene_meta(scene);
+    if(scene.dirty) print_scene_meta(scene);
     var room;
     for(var j = 0; j < scene.rooms.length; j++)
     {
       room = scene.rooms[j];
-      print_room_meta(room);
+      if(room.dirty) print_room_meta(room);
       var person;
       for(var k = 0; k < room.persons.length; k++)
       {
         person = room.persons[k];
-        print_person_meta(person);
+        if(person.dirty) print_person_meta(person);
         var speak;
         for(var l = 0; l < person.speaks.length; l++)
         {
           speak = person.speaks[l];
-          print_speak_meta(speak);
+          if(speak.dirty) print_speak_meta(speak);
           var option;
           for(var m = 0; m < speak.options.length; m++)
           {
             option = speak.options[m];
-            print_option_meta(option);
+            if(option.dirty) print_option_meta(option);
           }
         }
       }
@@ -1507,17 +1522,17 @@ var print_whole_level = function(level)
       for(var k = 0; k < room.objects.length; k++)
       {
         object = room.objects[k];
-        print_object_meta(object);
+        if(object.dirty) print_object_meta(object);
         var view;
         for(var l = 0; l < object.views.length; l++)
         {
           view = object.views[l];
-          print_view_meta(view);
+          if(view.dirty) print_view_meta(view);
           var zone;
           for(var m = 0; m < view.zones.length; m++)
           {
             zone = view.zones[m];
-            print_zone_meta(zone);
+            if(zone.dirty) print_zone_meta(zone);
           }
         }
       }
@@ -1525,31 +1540,31 @@ var print_whole_level = function(level)
       for(var k = 0; k < room.observations.length; k++)
       {
         observation = room.observations[k];
-        print_observation_meta(observation);
+        if(observation.dirty) print_observation_meta(observation);
       }
       var porthole;
       for(var k = 0; k < room.portholes.length; k++)
       {
         porthole = room.portholes[k];
-        print_porthole_meta(porthole);
+        if(porthole.dirty) print_porthole_meta(porthole);
       }
       var wildcard;
       for(var k = 0; k < room.wildcards.length; k++)
       {
         wildcard = room.wildcards[k];
-        print_wildcard_meta(wildcard);
+        if(wildcard.dirty) print_wildcard_meta(wildcard);
       }
       var cutscene;
       for(var k = 0; k < room.cutscenes.length; k++)
       {
         cutscene = room.cutscenes[k];
-        print_cutscene_meta(cutscene);
+        if(cutscene.dirty) print_cutscene_meta(cutscene);
       }
       var inert;
       for(var k = 0; k < room.inerts.length; k++)
       {
         inert = room.inerts[k];
-        print_inert_meta(inert);
+        if(inert.dirty) print_inert_meta(inert);
       }
     }
   }
