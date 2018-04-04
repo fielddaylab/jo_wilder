@@ -6046,6 +6046,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.collection",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -6199,6 +6200,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.collection",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -6419,6 +6421,7 @@ tmp_porthole.target_start_wy = -330;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
+"tunic.historicalsociety.collection",
 ];
 tmp_porthole.relocks = [
 ];
