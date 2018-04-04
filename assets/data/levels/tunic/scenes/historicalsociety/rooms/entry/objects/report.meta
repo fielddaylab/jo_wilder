@@ -16,5 +16,6 @@ tmp_object.raw_notifications = [
 tmp_object.unlocks = [
 ];
 tmp_object.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 

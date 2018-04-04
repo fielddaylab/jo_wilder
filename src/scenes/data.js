@@ -5771,6 +5771,7 @@ tmp_cutscene.raw_notifications = [
 tmp_cutscene.unlocks = [
 ];
 tmp_cutscene.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
@@ -5916,24 +5917,26 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "What?! He'll just slow me down! I already figured out the first artifact.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "report";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.cutscene_target_entity_id = "tocollection";
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.ww = -927345892;
+tmp_cutscene_command.wh = -927345892;
+tmp_cutscene_command.wx = -921.9432388906349;
+tmp_cutscene_command.wy = 21.407521837651274;
+tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.t = 1;
 tmp_cutscene_command.end_t = 300;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 300;
@@ -5953,11 +5956,11 @@ tmp_person.wh = 345.88290909851037;
 tmp_person.wx = 317.3865236070164;
 tmp_person.wy = 95.92908700775376;
 tmp_person.wz = 0;
-tmp_person.act_wx = 0;
-tmp_person.act_wy = 0;
+tmp_person.act_wx = -99.3301816625064;
+tmp_person.act_wy = -105.8436363572376;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 0;
-tmp_person.hover_icon_wy = 0;
+tmp_person.hover_icon_wx = 63.50620081069918;
+tmp_person.hover_icon_wy = 157.95127350791628;
 tmp_person.animcycle_id = "boss";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
@@ -5976,13 +5979,13 @@ tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.historicalsociety.entry.boss.hub";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
+tmp_speak.wx = 350.8951714962277;
+tmp_speak.wy = 419.15019736085225;
+tmp_speak.w = 293;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "null";
+tmp_speak.raw_atext = "I believe your grandpa is waiting for you in the collection room.";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -6003,7 +6006,7 @@ tmp_option.id = "hub";
 tmp_option.fqid = "tunic.historicalsociety.entry.boss.hub.hub";
 {
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
+tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
 ];
@@ -6027,7 +6030,7 @@ tmp_person.fqid = "tunic.historicalsociety.entry.gramps";
 tmp_person.ww = 176.53309090909076;
 tmp_person.wh = 337.7410909090905;
 tmp_person.wx = -57.16530107597346;
-tmp_person.wy = -33.52817409153707;
+tmp_person.wy = -33.52817409153707
 tmp_person.wz = 0.1;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
@@ -6042,6 +6045,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -6105,11 +6109,11 @@ tmp_person.wh = 358.9101377802236;
 tmp_person.wx = 88.10886937368008;
 tmp_person.wy = 109.88910983575497;
 tmp_person.wz = 0;
-tmp_person.act_wx = 0;
-tmp_person.act_wy = 0;
+tmp_person.act_wx = 87.93042270960882;
+tmp_person.act_wy = -86.30340465538065;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 0;
-tmp_person.hover_icon_wy = 0;
+tmp_person.hover_icon_wx = -52.54998079545407;
+tmp_person.hover_icon_wy = 145.61960110415959;
 tmp_person.animcycle_id = "youngboy";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
@@ -6128,13 +6132,13 @@ tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.historicalsociety.entry.wells.hub";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
+tmp_speak.wx = -272.9491931680918;
+tmp_speak.wy = 425.67371677073874;
+tmp_speak.w = 201;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "null";
+tmp_speak.raw_atext = "Why don't you go play with your Grandpa...";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -6155,7 +6159,7 @@ tmp_option.id = "hub";
 tmp_option.fqid = "tunic.historicalsociety.entry.wells.hub.hub";
 {
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
+tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
 ];
@@ -6194,6 +6198,7 @@ tmp_object.raw_notifications = [
 tmp_object.unlocks = [
 ];
 tmp_object.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
@@ -6273,6 +6278,7 @@ tmp_porthole.target_start_wy = -136.7670926438998;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 tmp_porthole.relocks = [
 ];
@@ -6304,6 +6310,7 @@ tmp_porthole.target_start_wy = 330;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 tmp_porthole.relocks = [
 ];

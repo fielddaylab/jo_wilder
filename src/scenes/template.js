@@ -45,6 +45,12 @@ var find = function(id)
     if(ids.length <= ++k) return wildcard;
     return;
   }
+  var cutscene; for(var i = 0; i < room.cutscenes.length; i++) if(room.cutscenes[i].id == ids[k]) cutscene = room.cutscenes[i];
+  if(cutscene)
+  {
+    if(ids.length <= ++k) return cutscene;
+    return;
+  }
   var inert; for(var i = 0; i < room.inerts.length; i++) if(room.inerts[i].id == ids[k]) inert = room.inerts[i];
   if(inert)
   {

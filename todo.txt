@@ -32,4 +32,5 @@ update speaks to be sequences -> options (no option = exit)
 animate notification transitions
 z-sort hover icons
 dirty export (vastly speed up cycle)
+cutscenes revert everything on completion
 

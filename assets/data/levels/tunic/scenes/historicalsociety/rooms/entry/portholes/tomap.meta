@@ -17,6 +17,7 @@ tmp_porthole.target_start_wy = 330;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
+"tunic.historicalsociety.entry.groupconvo",
 ];
 tmp_porthole.relocks = [
 ];
