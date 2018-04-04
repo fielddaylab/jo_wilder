@@ -444,6 +444,8 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_cutscene.fqid = \"$level_id.$scene_id.$room_id.$cutscene_id\";" >> $OUT
           echo "{" >> $OUT
           cat $cutscene >> $OUT
+          echo "tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);" >> $OUT
+          echo "tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
 
           echo "}" >> $OUT
