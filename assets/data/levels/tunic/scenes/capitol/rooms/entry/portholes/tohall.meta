@@ -12,8 +12,8 @@ tmp_porthole.animcycle_id = "null";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "hall";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = -330;
+tmp_porthole.target_start_wx = 640.909090909091;
+tmp_porthole.target_start_wy = -248.18181818181827;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
