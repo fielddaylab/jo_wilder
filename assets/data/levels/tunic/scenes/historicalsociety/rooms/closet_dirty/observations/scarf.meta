@@ -11,10 +11,10 @@ tmp_observation.hover_icon_wy = 23.98785932808255;
 tmp_observation.animcycle_id = "scarf";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.audio_id = "null";
-tmp_observation.raw_text = "Hmmm. This is Teddy's scarf...";
-tmp_observation.blip_wx = -81.62296005362904;
-tmp_observation.blip_wy = -55.31645986077656;
-tmp_observation.blip_w = 139;
+tmp_observation.raw_text = "Oh no… Teddy's scarf!";
+tmp_observation.blip_wx = 495.58271142232536;
+tmp_observation.blip_wy = 68.67927468268624;
+tmp_observation.blip_w = 240;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
