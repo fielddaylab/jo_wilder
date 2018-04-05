@@ -2091,7 +2091,7 @@ var personview = function()
 
   self.bubble_color = "#242224";
   self.text_color = white;
-  self.hover_color = blue;
+  self.hover_color = "#4EBBC5";
 
   var ENUM = 0;
   var UI_STATE_NULL      = ENUM; ENUM++;
@@ -2529,6 +2529,11 @@ var personview = function()
         {
           ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
           oyoff += speak.options_h;
+        }
+        if(i+1 < self.cache_unlocked_options.length)
+        {
+          ctx.strokeStyle = gray;
+          drawLine(speak.options_x,yoff+oyoff+5,speak.options_x+speak.options_w,yoff+oyoff+5,ctx);
         }
       }
     }
