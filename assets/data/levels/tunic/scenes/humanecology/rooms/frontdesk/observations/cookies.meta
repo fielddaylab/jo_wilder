@@ -22,5 +22,6 @@ tmp_observation.unlocks = [
 "tunic.humanecology.frontdesk.worker.intro6",
 ];
 tmp_observation.relocks = [
+"tunic.humanecology.frontdesk.cookies",
 ];
 
