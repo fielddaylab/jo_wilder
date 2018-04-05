@@ -1387,106 +1387,6 @@ tmp_scene.relocks = [
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
-tmp_room.id = "entry";
-tmp_room.fqid = "tunic.capitol.entry";
-{
-tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_capitol_entry";
-tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
-tmp_room.navs = [
-{wx:-9, wy:-179.49999999999997, ww:876, wh:275 },
-];
-tmp_room.lights = [
-{wx:-9, wy:-179.49999999999997, ww:876, wh:275 },
-];
-tmp_room.shadows = [
-{wx:-9, wy:-179.49999999999997, ww:876, wh:275 },
-];
-tmp_room.light_color = "rgba(255,255,255,0.2)";
-tmp_room.shadow_color = "rgba(0,0,0,0.2)";
-tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
-tmp_room.raw_notifications = [
-];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
-
-tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tohall";
-tmp_porthole.fqid = "tunic.capitol.entry.tohall";
-{
-tmp_porthole.ww = 264;
-tmp_porthole.wh = 229;
-tmp_porthole.wx = 20.999999999999986;
-tmp_porthole.wy = 78.5;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "null";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "hall";
-tmp_porthole.target_start_wx = 640.909090909091;
-tmp_porthole.target_start_wy = -248.18181818181827;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tomap";
-tmp_porthole.fqid = "tunic.capitol.entry.tomap";
-{
-tmp_porthole.ww = 760;
-tmp_porthole.wh = 98.00000000000001;
-tmp_porthole.wx = 56;
-tmp_porthole.wy = -287;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "null";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "";
-tmp_porthole.target_start_wx = -440;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-}
-tmp_scene.rooms.push(tmp_room);
-tmp_room = new room();
 tmp_room.id = "hall";
 tmp_room.fqid = "tunic.capitol.hall";
 {
@@ -2335,106 +2235,6 @@ tmp_scene.relocks = [
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
-tmp_room.id = "entry";
-tmp_room.fqid = "tunic.drycleaner.entry";
-{
-tmp_room.primary = true;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_drycleaner_entry";
-tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
-tmp_room.navs = [
-{wx:-12.000000000000057, wy:-246, ww:866, wh:173.99999999999997 },
-];
-tmp_room.lights = [
-{wx:-12.000000000000057, wy:-246, ww:866, wh:173.99999999999997 },
-];
-tmp_room.shadows = [
-{wx:-12.000000000000057, wy:-246, ww:866, wh:173.99999999999997 },
-];
-tmp_room.light_color = "rgba(255,255,255,0.2)";
-tmp_room.shadow_color = "rgba(0,0,0,0.2)";
-tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
-tmp_room.raw_notifications = [
-];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
-
-tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tofrontdesk";
-tmp_porthole.fqid = "tunic.drycleaner.entry.tofrontdesk";
-{
-tmp_porthole.ww = 138;
-tmp_porthole.wh = 194;
-tmp_porthole.wx = 18.999999999999993;
-tmp_porthole.wy = -65.00000000000001;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = -330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tomap";
-tmp_porthole.fqid = "tunic.drycleaner.entry.tomap";
-{
-tmp_porthole.ww = 715;
-tmp_porthole.wh = 91;
-tmp_porthole.wx = 49.5;
-tmp_porthole.wy = -296.5;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "";
-tmp_porthole.target_start_wx = -440;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-}
-tmp_scene.rooms.push(tmp_room);
-tmp_room = new room();
 tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.drycleaner.frontdesk";
 {
@@ -2498,10 +2298,58 @@ tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level
 tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_person.raw_notifications.length; i++) tmp_person.notifications[i] = stextToLines(tmp_person.raw_notifications[i], tmp_level.notifications_w);
 tmp_speak = new speak();
+tmp_speak.id = "done";
+tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.done";
+{
+tmp_speak.primary = 1;
+tmp_speak.wx = -176.00002379661728;
+tmp_speak.wy = 228.99999999999997;
+tmp_speak.w = 100;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Good luck!";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.done.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "null";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.hub";
 {
-tmp_speak.primary = true;
+tmp_speak.primary = 2;
 tmp_speak.wx = -113.86646775955367;
 tmp_speak.wy = 261;
 tmp_speak.w = 300.9942688897165;
@@ -2519,6 +2367,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
+"tunic.drycleaner.frontdesk.worker.slip13",
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -3177,7 +3026,7 @@ tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.slip13.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = ">";
+tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
@@ -3229,6 +3078,7 @@ tmp_view.primary = true;
 tmp_view.animcycle_id = "logbook_front";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
+"Aha! It was owned by Theodora Youmans. I should ask the archivist about this!",
 ];
 tmp_view.unlocks = [
 ];
@@ -8663,106 +8513,6 @@ tmp_scene.relocks = [
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
-tmp_room.id = "entry";
-tmp_room.fqid = "tunic.humanecology.entry";
-{
-tmp_room.primary = true;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_humanecology_entry";
-tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
-tmp_room.navs = [
-{wx:1, wy:-258, ww:870, wh:142 },
-];
-tmp_room.lights = [
-{wx:1, wy:-258, ww:870, wh:142 },
-];
-tmp_room.shadows = [
-{wx:1, wy:-258, ww:870, wh:142 },
-];
-tmp_room.light_color = "rgba(255,255,255,0.2)";
-tmp_room.shadow_color = "rgba(0,0,0,0.2)";
-tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
-tmp_room.raw_notifications = [
-];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
-
-tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tohallway";
-tmp_porthole.fqid = "tunic.humanecology.entry.tohallway";
-{
-tmp_porthole.ww = 114;
-tmp_porthole.wh = 175;
-tmp_porthole.wx = 0.9999999999999787;
-tmp_porthole.wy = -95.49999999999997;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "hallway";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = -330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tomap";
-tmp_porthole.fqid = "tunic.humanecology.entry.tomap";
-{
-tmp_porthole.ww = 862;
-tmp_porthole.wh = 60;
-tmp_porthole.wx = 6;
-tmp_porthole.wy = -302;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "";
-tmp_porthole.target_start_wx = -440;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-}
-tmp_scene.rooms.push(tmp_room);
-tmp_room = new room();
 tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.humanecology.frontdesk";
 {
@@ -9424,106 +9174,6 @@ tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_i
 tmp_room.portholes.push(tmp_porthole);
 }
 tmp_scene.rooms.push(tmp_room);
-tmp_room = new room();
-tmp_room.id = "hallway";
-tmp_room.fqid = "tunic.humanecology.hallway";
-{
-tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_humanecology_hallway";
-tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
-tmp_room.navs = [
-{wx:50, wy:-154, ww:780, wh:308 },
-];
-tmp_room.lights = [
-{wx:50, wy:-154, ww:780, wh:308 },
-];
-tmp_room.shadows = [
-{wx:50, wy:-154, ww:780, wh:308 },
-];
-tmp_room.light_color = "rgba(255,255,255,0.2)";
-tmp_room.shadow_color = "rgba(0,0,0,0.2)";
-tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
-tmp_room.raw_notifications = [
-];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
-
-tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_porthole = new porthole();
-tmp_porthole.id = "toentry";
-tmp_porthole.fqid = "tunic.humanecology.hallway.toentry";
-{
-tmp_porthole.ww = 794;
-tmp_porthole.wh = 80;
-tmp_porthole.wx = 41;
-tmp_porthole.wy = -283;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "entry";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tofrontdesk";
-tmp_porthole.fqid = "tunic.humanecology.hallway.tofrontdesk";
-{
-tmp_porthole.ww = 77;
-tmp_porthole.wh = 395;
-tmp_porthole.wx = 395.49999999999994;
-tmp_porthole.wy = -128.5;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_wx = 519.4415384615384;
-tmp_porthole.target_start_wy = -13.200000000000042;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-}
-tmp_scene.rooms.push(tmp_room);
 }
 tmp_level.scenes.push(tmp_scene);
 tmp_scene = new scene();
@@ -9545,106 +9195,6 @@ tmp_scene.relocks = [
 ];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
-tmp_room = new room();
-tmp_room.id = "entry";
-tmp_room.fqid = "tunic.kohlcenter.entry";
-{
-tmp_room.primary = true;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_kohlcenter_entry";
-tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
-tmp_room.navs = [
-{wx:-10.5, wy:-250.5, ww:793, wh:147 },
-];
-tmp_room.lights = [
-{wx:-10.5, wy:-250.5, ww:793, wh:147 },
-];
-tmp_room.shadows = [
-{wx:-10.5, wy:-250.5, ww:793, wh:147 },
-];
-tmp_room.light_color = "rgba(255,255,255,0.2)";
-tmp_room.shadow_color = "rgba(0,0,0,0.2)";
-tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
-tmp_room.raw_notifications = [
-];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
-
-tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tohalloffame";
-tmp_porthole.fqid = "tunic.kohlcenter.entry.tohalloffame";
-{
-tmp_porthole.ww = 244;
-tmp_porthole.wh = 179.00000000000003;
-tmp_porthole.wx = -7.999999999999972;
-tmp_porthole.wy = -70.5;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "halloffame";
-tmp_porthole.target_start_wx = -13.902307137707268;
-tmp_porthole.target_start_wy = -127.20000000000003;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tomap";
-tmp_porthole.fqid = "tunic.kohlcenter.entry.tomap";
-{
-tmp_porthole.ww = 689;
-tmp_porthole.wh = 57;
-tmp_porthole.wx = 47.5;
-tmp_porthole.wy = -298.5;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "";
-tmp_porthole.target_start_wx = -440;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-}
-tmp_scene.rooms.push(tmp_room);
 tmp_room = new room();
 tmp_room.id = "halloffame";
 tmp_room.fqid = "tunic.kohlcenter.halloffame";
@@ -9832,106 +9382,6 @@ tmp_scene.relocks = [
 ];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
-tmp_room = new room();
-tmp_room.id = "entry";
-tmp_room.fqid = "tunic.library.entry";
-{
-tmp_room.primary = true;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
-tmp_room.wx = 0;
-tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_library_entry";
-tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
-tmp_room.navs = [
-{wx:4.5, wy:-206, ww:855, wh:236.00000000000003 },
-];
-tmp_room.lights = [
-{wx:4.5, wy:-206, ww:855, wh:236.00000000000003 },
-];
-tmp_room.shadows = [
-{wx:4.5, wy:-206, ww:855, wh:236.00000000000003 },
-];
-tmp_room.light_color = "rgba(255,255,255,0.2)";
-tmp_room.shadow_color = "rgba(0,0,0,0.2)";
-tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
-tmp_room.raw_notifications = [
-];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
-
-tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tofrontdesk";
-tmp_porthole.fqid = "tunic.library.entry.tofrontdesk";
-{
-tmp_porthole.ww = 271;
-tmp_porthole.wh = 173.99999999999997;
-tmp_porthole.wx = 29.49999999999997;
-tmp_porthole.wy = -15.999999999999972;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "frontdesk";
-tmp_porthole.target_start_wx = -434.2153261842602;
-tmp_porthole.target_start_wy = -71.00000000000006;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tomap";
-tmp_porthole.fqid = "tunic.library.entry.tomap";
-{
-tmp_porthole.ww = 738;
-tmp_porthole.wh = 73;
-tmp_porthole.wx = 50;
-tmp_porthole.wy = -293.5;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = true;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "door";
-tmp_porthole.hover_icon_animcycle_id = "hblip_door";
-tmp_porthole.audio_id = "door";
-tmp_porthole.target_room = "";
-tmp_porthole.target_start_wx = -440;
-tmp_porthole.target_start_wy = 330;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
-}
-tmp_scene.rooms.push(tmp_room);
 tmp_room = new room();
 tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.library.frontdesk";
