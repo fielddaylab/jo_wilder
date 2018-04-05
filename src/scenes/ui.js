@@ -50,6 +50,8 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.map_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.notebook_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.notebook_next_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.notebook_prev_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.icon_map_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.person_hover_animcycle_id,level.animcycles));
@@ -1423,6 +1425,9 @@ var notebookview = function()
 
   self.entrys;
   self.notebook_animcycle_inst;
+  self.exit_animcycle_inst;
+  self.notebook_next_animcycle_inst;
+  self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.prev_box = {x:10,             y:100, w:90, h:90};
   self.next_box = {x:canv.width-100, y:100, w:90, h:90};
@@ -1437,6 +1442,8 @@ var notebookview = function()
     self.unlock_content();
     self.notebook_animcycle_inst = gen_animcycle_inst(level.notebook_animcycle_id,level.animcycles);
     self.exit_animcycle_inst = gen_animcycle_inst(level.exit_animcycle_id, level.animcycles);
+    self.notebook_next_animcycle_inst = gen_animcycle_inst(level.notebook_next_animcycle_id, level.animcycles);
+    self.notebook_prev_animcycle_inst = gen_animcycle_inst(level.notebook_prev_animcycle_id, level.animcycles);
   }
 
   self.unlock_content = function()
@@ -1545,9 +1552,9 @@ var notebookview = function()
   {
     var yoff = (1-t)*self.h;
     ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
-    ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
-    ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    ctx.drawImage(self.notebook_next_animcycle_inst.img, self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
+    ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
 
     var entry;
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
@@ -1853,7 +1860,6 @@ var objectview = function()
     {
       zone = self.cache_unlocked_zones[i];
       ctx.strokeStyle = white;
-      ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       ctx.drawImage(zone.animcycle_inst.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
