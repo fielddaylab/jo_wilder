@@ -16,5 +16,6 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.frontdesk.archivist",
 ];
 

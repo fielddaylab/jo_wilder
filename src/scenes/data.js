@@ -34,7 +34,7 @@ tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 124.2914274419755;
 tmp_level.avatar_wh = 227.18935293838604;
 tmp_level.exit_animcycle_id = "exit";
-tmp_level.toolbar_animcycle_id = "toolbar";
+tmp_level.toolbar_animcycle_id = "null";
 tmp_level.toolbar_audio_id = "null";
 tmp_level.map_animcycle_id = "map";
 tmp_level.map_audio_id = "null";
@@ -3892,6 +3892,7 @@ tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "null";
@@ -3906,16 +3907,19 @@ tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.t = -1;
 tmp_cutscene_command.end_t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;
 tmp_cutscene_command.t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
 tmp_cutscene_command.cutscene_entity_id = "null";
@@ -3930,15 +3934,17 @@ tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.t = 2;
 tmp_cutscene_command.end_t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "teddy";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = 8;
+tmp_cutscene_command.t = 80;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 10;
+tmp_cutscene_command.t = 81;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
@@ -5619,6 +5625,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
+"tunic.historicalsociety.frontdesk.archivist",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -6757,6 +6764,8 @@ tmp_view.primary = false;
 tmp_view.animcycle_id = "tunic_slip";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
+"Huh? What's this?",
+"I'll make a note of it...",
 ];
 tmp_view.unlocks = [
 ];
@@ -6922,7 +6931,17 @@ tmp_cutscene.unlocks = [
 tmp_cutscene.relocks = [
 "tunic.historicalsociety.entry.groupconvo",
 ];
+
 tmp_cutscene.commands = [];
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.cutscene_target_entity_id = "boss";
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "wells";
@@ -7218,7 +7237,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
-"tunic.historicalsociety.collection",
+"tunic.historicalsociety.collection.tunic.slip",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -7372,7 +7391,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
-"tunic.historicalsociety.collection",
+"tunic.historicalsociety.collection.tunic.slip",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
