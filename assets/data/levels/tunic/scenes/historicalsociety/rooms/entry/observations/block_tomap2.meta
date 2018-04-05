@@ -1,0 +1,26 @@
+tmp_observation.ww = 211.2842557213455;
+tmp_observation.wh = 608.0459522137528;
+tmp_observation.wx = 933.0382886267373;
+tmp_observation.wy = 82.74899867824627;
+tmp_observation.wz = 1;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should go meet Grampa in the collection!";
+tmp_observation.blip_wx = 543.0660865704943;
+tmp_observation.blip_wy = 254.73248300464027;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+"tunic.historicalsociety.collection",
+];
+

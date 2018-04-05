@@ -6626,6 +6626,114 @@ for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notification
 tmp_object.views.push(tmp_view);
 }
 tmp_room.objects.push(tmp_object);
+tmp_observation = new observation();
+tmp_observation.id = "block_tocollection";
+tmp_observation.fqid = "tunic.historicalsociety.entry.block_tocollection";
+{
+tmp_observation.ww = 140.70831587224598;
+tmp_observation.wh = 384.9636155470158;
+tmp_observation.wx = -922.4110174303418;
+tmp_observation.wy = 20.993361072063976;
+tmp_observation.wz = 1;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should see what Grampa is up to!";
+tmp_observation.blip_wx = -779.3447514512408;
+tmp_observation.blip_wy = 292.1489077359225;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
+];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
+tmp_observation = new observation();
+tmp_observation.id = "block_tomap1";
+tmp_observation.fqid = "tunic.historicalsociety.entry.block_tomap1";
+{
+tmp_observation.ww = 224.87620708397372;
+tmp_observation.wh = 623.2132295249676;
+tmp_observation.wx = 932.2124428494194;
+tmp_observation.wy = 82.61398091566662;
+tmp_observation.wz = 2;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should see what Grampa is up to!";
+tmp_observation.blip_wx = 541.9307841688642;
+tmp_observation.blip_wy = 303.1715289017357;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
+];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
+tmp_observation = new observation();
+tmp_observation.id = "block_tomap2";
+tmp_observation.fqid = "tunic.historicalsociety.entry.block_tomap2";
+{
+tmp_observation.ww = 211.2842557213455;
+tmp_observation.wh = 608.0459522137528;
+tmp_observation.wx = 933.0382886267373;
+tmp_observation.wy = 82.74899867824627;
+tmp_observation.wz = 1;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should go meet Grampa in the collection!";
+tmp_observation.blip_wx = 543.0660865704943;
+tmp_observation.blip_wy = 254.73248300464027;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+"tunic.historicalsociety.collection",
+];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
 tmp_porthole = new porthole();
 tmp_porthole.id = "tobasement";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tobasement";
@@ -6680,7 +6788,6 @@ tmp_porthole.target_start_wy = -136.7670926438998;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
-"tunic.historicalsociety.entry.groupconvo",
 ];
 tmp_porthole.relocks = [
 ];
@@ -6693,10 +6800,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.historicalsociety.entry.tomap";
 {
-tmp_porthole.ww = 2539.1354508649247;
-tmp_porthole.wh = 160.88000000000005;
-tmp_porthole.wx = -85.96453220463718;
-tmp_porthole.wy = -555.3585454545455;
+tmp_porthole.ww = 200.8052913823572;
+tmp_porthole.wh = 595.6530910614567;
+tmp_porthole.wx = 933.5624009371168;
+tmp_porthole.wy = 82.07800314346377;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -6712,7 +6819,6 @@ tmp_porthole.target_start_wy = 330;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
-"tunic.historicalsociety.collection",
 ];
 tmp_porthole.relocks = [
 ];
