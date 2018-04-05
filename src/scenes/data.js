@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.kohlcenter.halloffame";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -5745,7 +5745,7 @@ tmp_option.fqid = "tunic.historicalsociety.collection.gramps.found_3.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "leads_0";
+tmp_option.target_speak = "lead_0";
 tmp_option.audio_id = "null";
 tmp_option.raw_notifications = [
 ];
@@ -5965,7 +5965,7 @@ tmp_speak.w = 192;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "If I had time, I'd skedaddle over to the Basketball Center.";
+tmp_speak.raw_atext = "If I had time, I'd skedaddle over to the Basketball Center...";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -6013,7 +6013,7 @@ tmp_speak.w = 129;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Check out Well's theory...";
+tmp_speak.raw_atext = "Check out Wells' theory...";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -6109,7 +6109,7 @@ tmp_speak.w = 197;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I see you've already done some work at the Basketball Center,";
+tmp_speak.raw_atext = "You should check out the Basketball Center to test Wells' theory-";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -6157,7 +6157,7 @@ tmp_speak.w = 209;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "So next, I'd ask the archivist about this slip-";
+tmp_speak.raw_atext = "and hopefully rustle up some more clues!";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -6199,16 +6199,16 @@ tmp_speak.id = "lead_2";
 tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.lead_2";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -373.56060606060606;
-tmp_speak.wy = 282.8030303030303;
-tmp_speak.w = 121;
+tmp_speak.wx = 118.7121212117455;
+tmp_speak.wy = 138.8636363634689;
+tmp_speak.w = 148;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "His office is right upstairs!";
-tmp_speak.speaker = SPEAKER_PERSON;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.raw_atext = "Ooh, I like clues!";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 192.12121212121102;
+tmp_speak.options_wy = -32.42424242424292;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
@@ -6224,198 +6224,6 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 tmp_option = new option();
 tmp_option.id = "next";
 tmp_option.fqid = "tunic.historicalsociety.collection.gramps.lead_2.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "null";
-tmp_option.audio_id = "null";
-tmp_option.raw_notifications = [
-];
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
-tmp_speak.id = "leads_0";
-tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.leads_0";
-{
-tmp_speak.primary = false;
-tmp_speak.wx = -346.2121212121212;
-tmp_speak.wy = 284.24242424242425;
-tmp_speak.w = 100;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "We have two leads-";
-tmp_speak.speaker = SPEAKER_PERSON;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.collection.gramps.leads_0.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "leads_1";
-tmp_option.audio_id = "null";
-tmp_option.raw_notifications = [
-];
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
-tmp_speak.id = "leads_1";
-tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.leads_1";
-{
-tmp_speak.primary = false;
-tmp_speak.wx = -480.07575757575756;
-tmp_speak.wy = 324.54545454545456;
-tmp_speak.w = 195;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "You should check out the Basketball Center to test Well's theory,";
-tmp_speak.speaker = SPEAKER_PERSON;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.collection.gramps.leads_1.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "leads_2";
-tmp_option.audio_id = "null";
-tmp_option.raw_notifications = [
-];
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
-tmp_speak.id = "leads_2";
-tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.leads_2";
-{
-tmp_speak.primary = false;
-tmp_speak.wx = -497.3484848484848;
-tmp_speak.wy = 281.3636363636364;
-tmp_speak.w = 209;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "And then I'd ask the archivist about this slip-";
-tmp_speak.speaker = SPEAKER_PERSON;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.collection.gramps.leads_2.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "leads_3";
-tmp_option.audio_id = "null";
-tmp_option.raw_notifications = [
-];
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
-tmp_speak.id = "leads_3";
-tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.leads_3";
-{
-tmp_speak.primary = false;
-tmp_speak.wx = -373.560606060606;
-tmp_speak.wy = 284.24242424242425;
-tmp_speak.w = 121;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "His office is right upstairs!";
-tmp_speak.speaker = SPEAKER_PERSON;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.collection.gramps.leads_3.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
@@ -6586,7 +6394,7 @@ tmp_option.fqid = "tunic.historicalsociety.collection.gramps.lost_0.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "leads_0";
+tmp_option.target_speak = "lead_0";
 tmp_option.audio_id = "null";
 tmp_option.raw_notifications = [
 ];
