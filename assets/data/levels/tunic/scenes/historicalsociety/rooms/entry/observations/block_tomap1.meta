@@ -1,0 +1,26 @@
+tmp_observation.ww = 224.87620708397372;
+tmp_observation.wh = 623.2132295249676;
+tmp_observation.wx = 932.2124428494194;
+tmp_observation.wy = 82.61398091566662;
+tmp_observation.wz = 2;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should see what Grampa is up to!";
+tmp_observation.blip_wx = 541.9307841688642;
+tmp_observation.blip_wy = 303.1715289017357;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+"tunic.historicalsociety.entry.groupconvo",
+];
+

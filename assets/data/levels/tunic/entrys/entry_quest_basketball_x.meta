@@ -1,8 +1,8 @@
-tmp_entry.index = 0;
-tmp_entry.ww = 100;
-tmp_entry.wh = 100;
-tmp_entry.wx = 100;
-tmp_entry.wy = 100;
+tmp_entry.primary = undefined;
+tmp_entry.ww = 353.0000000000001;
+tmp_entry.wh = 55.999999999999986;
+tmp_entry.wx = -183.5;
+tmp_entry.wy = -61.99999999999999;
 tmp_entry.wz = 100;
 tmp_entry.page = 0;
 tmp_entry.animcycle_id = "entry_x_img";

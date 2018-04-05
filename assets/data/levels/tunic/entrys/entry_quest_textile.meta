@@ -1,8 +1,8 @@
-tmp_entry.index = 0;
-tmp_entry.ww = 100;
-tmp_entry.wh = 100;
-tmp_entry.wx = 100;
-tmp_entry.wy = 100;
+tmp_entry.primary = undefined;
+tmp_entry.ww = 357;
+tmp_entry.wh = 57.999999999999986;
+tmp_entry.wx = 188.5;
+tmp_entry.wy = -57.99999999999985;
 tmp_entry.wz = 100;
 tmp_entry.page = 0;
 tmp_entry.animcycle_id = "entry_quest_textile_img";
