@@ -1449,7 +1449,7 @@ var notebookview = function()
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         //sort by page->z
         var j = 0;
-        for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[i].page || (self.entrys[i].page == self.cache_unlocked_entrys[i].page && self.entrys[i].wz < self.cache_unlocked_entrys[i].wz)) break;
+        for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[j].page || (self.entrys[i].page == self.cache_unlocked_entrys[j].page && self.entrys[i].wz < self.cache_unlocked_entrys[j].wz)) break;
         self.cache_unlocked_entrys.splice(j,0,self.entrys[i]);
       }
   }
