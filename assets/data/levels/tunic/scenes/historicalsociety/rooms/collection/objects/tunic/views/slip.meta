@@ -2,6 +2,8 @@ tmp_view.primary = false;
 tmp_view.animcycle_id = "tunic_slip";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
+"Huh? What's this?",
+"I'll make a note of it...",
 ];
 tmp_view.unlocks = [
 ];
