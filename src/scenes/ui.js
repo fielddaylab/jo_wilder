@@ -1,3 +1,8 @@
+var bubble_in_a = function(t) { return t; }
+var bubble_out_a = function(t) { return 1-t; }
+var bubble_in_y = function(t) { return sin(t*twopi*2)*(1-t)*5 }
+var bubble_out_y = function(t) { return -t*10; }
+
 var loader = function()
 {
   var self = this;
@@ -1613,7 +1618,7 @@ var notificationview = function()
   self.ui_state = UI_STATE_NULL;
   self.ui_state_t = 0;
   self.ui_state_t_max = [];
-  self.ui_state_t_max[UI_STATE_IN_NOTE] = 60;
+  self.ui_state_t_max[UI_STATE_IN_NOTE] = 30;
   self.ui_state_t_max[UI_STATE_SELECT]  = 0;
   self.ui_state_t_max[UI_STATE_NEXT]    = 1;
   self.ui_state_t_max[UI_STATE_OUT]     = 10;
@@ -1691,10 +1696,10 @@ var notificationview = function()
     var a = 1;
     switch(self.ui_state)
     {
-      case UI_STATE_IN_NOTE: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+      case UI_STATE_IN_NOTE: a = bubble_in_a(self.ui_state_p); yoff = bubble_in_y(self.ui_state_p); break;
       case UI_STATE_SELECT:  break;
       case UI_STATE_NEXT:    break;
-      case UI_STATE_OUT:     a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+      case UI_STATE_OUT:     a = bubble_out_a(self.ui_state_p); yoff = bubble_out_y(self.ui_state_p); break;
     }
     ctx.globalAlpha = a;
 
@@ -1908,7 +1913,7 @@ var observationview = function()
   self.ui_state = UI_STATE_NULL;
   self.ui_state_t = 0;
   self.ui_state_t_max = [];
-  self.ui_state_t_max[UI_STATE_IN_OBSERVATION] = 60;
+  self.ui_state_t_max[UI_STATE_IN_OBSERVATION] = 40;
   self.ui_state_t_max[UI_STATE_SELECT]         = 0;
   self.ui_state_t_max[UI_STATE_OUT]            = 10;
   self.ui_state_p = 0;
@@ -2062,9 +2067,9 @@ var observationview = function()
     var a = 1;
     switch(self.ui_state)
     {
-      case UI_STATE_IN_OBSERVATION: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+      case UI_STATE_IN_OBSERVATION: a = bubble_in_a(self.ui_state_p); yoff = bubble_in_y(self.ui_state_p); break;
       case UI_STATE_SELECT:         break;
-      case UI_STATE_OUT:            a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+      case UI_STATE_OUT:            a = bubble_out_a(self.ui_state_p); yoff = bubble_out_y(self.ui_state_p); break;
     }
     ctx.globalAlpha = a;
 
@@ -2119,8 +2124,8 @@ var personview = function()
   self.ui_state = UI_STATE_NULL;
   self.ui_state_t = 0;
   self.ui_state_t_max = [];
-  self.ui_state_t_max[UI_STATE_IN_SPEAK]  = 60;
-  self.ui_state_t_max[UI_STATE_IN_OPTION] = 60;
+  self.ui_state_t_max[UI_STATE_IN_SPEAK]  = 30;
+  self.ui_state_t_max[UI_STATE_IN_OPTION] = 30;
   self.ui_state_t_max[UI_STATE_SELECT]    = 0;
   self.ui_state_t_max[UI_STATE_OUT]       = 10;
   self.ui_state_p = 0;
@@ -2457,10 +2462,10 @@ var personview = function()
     var a = 1;
     switch(self.ui_state)
     {
-      case UI_STATE_IN_SPEAK:  a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+      case UI_STATE_IN_SPEAK:  a = bubble_in_a(self.ui_state_p); yoff = bubble_in_y(self.ui_state_p); break;
       case UI_STATE_IN_OPTION: break;
       case UI_STATE_SELECT:    break;
-      case UI_STATE_OUT:       a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+      case UI_STATE_OUT:       a = bubble_out_a(self.ui_state_p); yoff = bubble_out_y(self.ui_state_p); break;
     }
     ctx.globalAlpha = a;
 
@@ -2499,9 +2504,9 @@ var personview = function()
       switch(self.ui_state)
       {
         case UI_STATE_IN_SPEAK:  a = 0; yoff = 100000; break;
-        case UI_STATE_IN_OPTION: a = self.ui_state_p; yoff = sin(self.ui_state_p*twopi*5)*(1-self.ui_state_p)*5; break;
+        case UI_STATE_IN_OPTION: a = bubble_in_a(self.ui_state_p); yoff = bubble_in_y(self.ui_state_p); break;
         case UI_STATE_SELECT:    break;
-        case UI_STATE_OUT:       a = 1-self.ui_state_p; yoff = -self.ui_state_p*10; break;
+        case UI_STATE_OUT:       a = bubble_out_a(self.ui_state_p); yoff = bubble_out_y(self.ui_state_p); break;
       }
       ctx.globalAlpha = a;
 
