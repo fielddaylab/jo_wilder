@@ -831,7 +831,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/map/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/map/map.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1363,7 +1363,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_capitol/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_capitol/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1391,7 +1391,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_historicalsociety/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_historicalsociety/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1405,7 +1405,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_humanecology/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_humanecology/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1419,7 +1419,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_kohlcenter/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_kohlcenter/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1433,7 +1433,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_library/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_library/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1893,10 +1893,10 @@ tmp_scene.id = "capitol";
 tmp_scene.fqid = "tunic.capitol";
 {
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = -7.105427357601002e-15;
-tmp_scene.wy = -10;
+tmp_scene.ww = 213;
+tmp_scene.wh = 211.99999999999997;
+tmp_scene.wx = 2.500000000000014;
+tmp_scene.wy = 13.000000000000014;
 tmp_scene.animcycle_id = "scene_capitol";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
@@ -2740,10 +2740,10 @@ tmp_scene.id = "drycleaner";
 tmp_scene.fqid = "tunic.drycleaner";
 {
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = 211.00000000000003;
-tmp_scene.wy = -123.99999999999996;
+tmp_scene.ww = 193.99999999999997;
+tmp_scene.wh = 138;
+tmp_scene.wx = 135.99999999999997;
+tmp_scene.wy = 217.00000000000006;
 tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
@@ -3652,10 +3652,10 @@ tmp_scene.id = "historicalsociety";
 tmp_scene.fqid = "tunic.historicalsociety";
 {
 tmp_scene.primary = true;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = -126.99999999999997;
-tmp_scene.wy = -62;
+tmp_scene.ww = 238.99999999999997;
+tmp_scene.wh = 144.00000000000003;
+tmp_scene.wx = -190.5000000000001;
+tmp_scene.wy = 220.99999999999994;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
@@ -9632,10 +9632,10 @@ tmp_scene.id = "humanecology";
 tmp_scene.fqid = "tunic.humanecology";
 {
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = 4.999999999999993;
-tmp_scene.wy = 170.00000000000003;
+tmp_scene.ww = 216;
+tmp_scene.wh = 132.00000000000003;
+tmp_scene.wx = -238;
+tmp_scene.wy = 79.00000000000001;
 tmp_scene.animcycle_id = "scene_humanecology";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
@@ -10316,10 +10316,10 @@ tmp_scene.id = "kohlcenter";
 tmp_scene.fqid = "tunic.kohlcenter";
 {
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = -89;
-tmp_scene.wy = -232;
+tmp_scene.ww = 270;
+tmp_scene.wh = 167.99999999999997;
+tmp_scene.wx = -177.99999999999994;
+tmp_scene.wy = -181;
 tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
@@ -10502,10 +10502,10 @@ tmp_scene.id = "library";
 tmp_scene.fqid = "tunic.library";
 {
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = 238.99999999999997;
-tmp_scene.wy = 55.000000000000014;
+tmp_scene.ww = 177;
+tmp_scene.wh = 172.00000000000006;
+tmp_scene.wx = 280.5;
+tmp_scene.wy = -122.00000000000004;
 tmp_scene.animcycle_id = "scene_library";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
