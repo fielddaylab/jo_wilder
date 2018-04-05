@@ -1,0 +1,17 @@
+tmp_zone.ww = 679;
+tmp_zone.wh = 51.99999999999996;
+tmp_zone.wx = 40.50000000000006;
+tmp_zone.wy = 13.000000000000014;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "hub";
+tmp_zone.raw_notifications = [
+"The number matches the slip-",
+"She must be the owner!",
+"I'll make a note of this...",
+];
+tmp_zone.unlocks = [
+];
+tmp_zone.relocks = [
+];
+

@@ -1,7 +1,7 @@
 tmp_speak.primary = false;
-tmp_speak.wx = 14.000000000000007;
-tmp_speak.wy = 136.99999999999997;
-tmp_speak.w = 159;
+tmp_speak.wx = -237;
+tmp_speak.wy = 90.99999999999996;
+tmp_speak.w = 141;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
