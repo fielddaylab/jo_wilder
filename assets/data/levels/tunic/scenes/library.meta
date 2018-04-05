@@ -8,7 +8,7 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.unlocks = [
-"tunic.historicalsociety.frontdesk.archivist.library11",
+"tunic.historicalsociety.frontdesk.archivist.library09",
 ];
 tmp_scene.relocks = [
 ];

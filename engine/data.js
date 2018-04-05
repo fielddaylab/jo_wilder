@@ -7927,100 +7927,6 @@ tmp_option.fqid = "tunic.historicalsociety.frontdesk.archivist.library09.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "library10";
-tmp_option.raw_notifications = [
-];
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
-tmp_speak.id = "library10";
-tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.library10";
-{
-tmp_speak.primary = false;
-tmp_speak.wx = 56.000000000000064;
-tmp_speak.wy = 163.99999999999994;
-tmp_speak.w = 196;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Where's the library?";
-tmp_speak.speaker = SPEAKER_PLAYER;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.frontdesk.archivist.library10.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "library11";
-tmp_option.raw_notifications = [
-];
-tmp_option.unlocks = [
-];
-tmp_option.relocks = [
-];
-
-if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
-tmp_speak.id = "library11";
-tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.library11";
-{
-tmp_speak.primary = false;
-tmp_speak.wx = -112;
-tmp_speak.wy = 216.99999999999997;
-tmp_speak.w = 178;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Here, I'll show ya.";
-tmp_speak.speaker = SPEAKER_PERSON;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.frontdesk.archivist.library11.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
 ];
@@ -9756,7 +9662,7 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.unlocks = [
-"tunic.historicalsociety.frontdesk.archivist.library11",
+"tunic.historicalsociety.frontdesk.archivist.library09",
 ];
 tmp_scene.relocks = [
 ];
