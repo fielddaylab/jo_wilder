@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -344.784167801256;
+tmp_speak.wy = 239.63478424138918;
+tmp_speak.w = 100;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "null";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 125.90909058342677;
+tmp_speak.options_wy = 134.5454549317962;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
