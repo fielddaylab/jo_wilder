@@ -37,3 +37,6 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
+tmp_level.notebook_unlocks = [
+"tunic.historicalsociety.closet.notebook",
+];

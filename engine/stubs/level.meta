@@ -37,4 +37,13 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
+tmp_level.notebook_unlocks = [
+];
+tmp_level.notebook_relocks = [
+];
+tmp_level.map_unlocks = [
+];
+tmp_level.map_relocks = [
+];
+
 

@@ -1214,11 +1214,17 @@ var toolbar = function()
     self.toolbar_animcycle_inst       = gen_animcycle_inst(level.toolbar_animcycle_id,level.animcycles);
     self.icon_map_animcycle_inst      = gen_animcycle_inst(level.icon_map_animcycle_id,level.animcycles);
     self.icon_notebook_animcycle_inst = gen_animcycle_inst(level.icon_notebook_animcycle_id,level.animcycles);
+    self.notebook.unlocks = level.notebook_unlocks;
+    self.notebook.relocks = level.notebook_relocks;
+    self.notebook.locked = true;
+    self.map.unlocks = level.map_unlocks;
+    self.map.relocks = level.map_relocks;
+    self.map.locked = true;
   }
 
   self.click = function(evt)
   {
-    if(MAP_ENABLED && ptWithinBox(self.map,evt.doX,evt.doY))
+    if(MAP_ENABLED && !self.map.locked && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
       state_from = state_cur;
@@ -1227,7 +1233,7 @@ var toolbar = function()
       state_t = 0;
       my_mapview.unlock_content();
     }
-    if(ptWithinBox(self.notebook,evt.doX,evt.doY))
+    if(!self.notebook.locked && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
       my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
@@ -1249,9 +1255,8 @@ var toolbar = function()
   {
     var yoff = (1-t)*self.h;
     ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
-    ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
-    if(MAP_ENABLED)
-    ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    if(!self.notebook.locked) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
+    if(MAP_ENABLED && !self.map.locked) ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
 
     if(DEBUG)
     {

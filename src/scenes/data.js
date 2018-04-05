@@ -65,6 +65,9 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
+tmp_level.notebook_unlocks = [
+"tunic.historicalsociety.closet.notebook",
+];
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivist";
 tmp_animcycle.fqid = "tunic.archivist";

@@ -262,6 +262,10 @@ var level = function()
   self.raw_notifications = [];
   self.unlocks = [];
   self.relocks = [];
+  self.notebook_unlocks = [];
+  self.notebook_relocks = [];
+  self.map_unlocks = [];
+  self.map_relocks = [];
   //
   self.locked = true;
   self.key = false;
@@ -884,7 +888,27 @@ var print_level_meta = function(l)
   for(var i = 0; i < l.relocks.length; i++)
     str += "\""+l.relocks[i]+"\",\n";
   str +=
-  "];\n"
+  "];\n"+
+  "tmp_level.notebook_unlocks = [\n";
+  for(var i = 0; i < l.notebook_unlocks.length; i++)
+    str += "\""+l.notebook_unlocks[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_level.notebook_relocks = [\n";
+  for(var i = 0; i < l.notebook_relocks.length; i++)
+    str += "\""+l.notebook_relocks[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_level.map_unlocks = [\n";
+  for(var i = 0; i < l.map_unlocks.length; i++)
+    str += "\""+l.map_unlocks[i]+"\",\n";
+  str +=
+  "];\n"+
+  "tmp_level.map_relocks = [\n";
+  for(var i = 0; i < l.map_relocks.length; i++)
+    str += "\""+l.map_relocks[i]+"\",\n";
+  str +=
+  "];\n";
   console.log(str);
 }
 
