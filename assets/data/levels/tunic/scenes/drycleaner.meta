@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = 211.00000000000003;
-tmp_scene.wy = -123.99999999999996;
+tmp_scene.ww = 193.99999999999997;
+tmp_scene.wh = 138;
+tmp_scene.wx = 135.99999999999997;
+tmp_scene.wy = 217.00000000000006;
 tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [

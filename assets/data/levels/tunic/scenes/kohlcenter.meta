@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = -89;
-tmp_scene.wy = -232;
+tmp_scene.ww = 270;
+tmp_scene.wh = 167.99999999999997;
+tmp_scene.wx = -177.99999999999994;
+tmp_scene.wy = -181;
 tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [

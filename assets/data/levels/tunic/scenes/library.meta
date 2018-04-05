@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 100;
-tmp_scene.wh = 100;
-tmp_scene.wx = 238.99999999999997;
-tmp_scene.wy = 55.000000000000014;
+tmp_scene.ww = 177;
+tmp_scene.wh = 172.00000000000006;
+tmp_scene.wx = 280.5;
+tmp_scene.wy = -122.00000000000004;
 tmp_scene.animcycle_id = "scene_library";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
