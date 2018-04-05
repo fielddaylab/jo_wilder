@@ -10,6 +10,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures",
 ];
 tmp_entry.relocks = [
 ];

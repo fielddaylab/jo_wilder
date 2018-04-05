@@ -10,6 +10,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.frontdesk.archivist.slip",
 ];
 tmp_entry.relocks = [
 ];

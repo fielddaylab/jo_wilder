@@ -1,5 +1,5 @@
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.humanecology.frontdesk";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -37,4 +37,10 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
+<<<<<<< HEAD
 
+=======
+tmp_level.notebook_unlocks = [
+"tunic.historicalsociety.closet.notebook",
+];
+>>>>>>> 8bdd743091c4298b4edac630fdb5a365323d18a3
