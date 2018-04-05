@@ -14,7 +14,7 @@ tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
-"tunic.historicalsociety.collection.tunic.slip",
+"tunic.kohlcenter.halloffame.oldpictures.hub",
 ];
 tmp_person.relocks = [
 ];

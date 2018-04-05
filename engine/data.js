@@ -2010,7 +2010,6 @@ tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
 "tunic.kohlcenter.halloffame.oldpictures.hub",
-"tunic.kohlcenter.halloffame.jersey.hub",
 ];
 tmp_person.relocks = [
 ];
@@ -2022,9 +2021,9 @@ tmp_speak = new speak();
 tmp_speak.id = "boss_chain_01a";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_01a";
 {
-tmp_speak.primary = false;
-tmp_speak.wx = -14.565378662189346;
-tmp_speak.wy = 314.7000014870106;
+tmp_speak.primary = 3;
+tmp_speak.wx = -158.93668769695626;
+tmp_speak.wy = 204.16170577358344;
 tmp_speak.w = 228.69814225923326;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -2070,7 +2069,7 @@ tmp_speak = new speak();
 tmp_speak.id = "boss_chain_01b";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_01b";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 3;
 tmp_speak.wx = 76.9346213378118;
 tmp_speak.wy = 367.20000148701513;
 tmp_speak.w = 270.69814225923324;
@@ -2118,7 +2117,7 @@ tmp_speak = new speak();
 tmp_speak.id = "boss_chain_01c";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_01c";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 3;
 tmp_speak.wx = 174.43462133781077;
 tmp_speak.wy = 322.2000014870106;
 tmp_speak.w = 152.69814225923326;
@@ -2172,7 +2171,7 @@ tmp_speak.w = 323.69814225923324;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "He’s meeting me here. Said he had to take care of something first.";
+tmp_speak.raw_atext = "He's meeting me here. Said he had to take care of something first.";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 239.216253647685;
 tmp_speak.options_wy = 100.71702878373762;
@@ -2213,13 +2212,13 @@ tmp_speak.id = "boss_chain_03";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_03";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -10.999999999910159;
-tmp_speak.wy = 344.5000000003081;
+tmp_speak.wx = -173.1245694780485;
+tmp_speak.wy = 249.0455713938101;
 tmp_speak.w = 224;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Wells was wrong. It’s not a basketball jersey!";
+tmp_speak.raw_atext = "Wells was wrong. It's not a basketball jersey!";
 tmp_speak.speaker = SPEAKER_PLAYER;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -2307,13 +2306,13 @@ tmp_speak.id = "boss_chain_05";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_05";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = -79.9999999999952;
-tmp_speak.wy = 439.0000000000173;
+tmp_speak.wx = -326.969708089491;
+tmp_speak.wy = 304.15151553854133;
 tmp_speak.w = 336;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I checked the old jerseys at the basketball Center! The tunic looks totally different. And the women’s team didn’t even start until 1974.";
+tmp_speak.raw_atext = "I checked the old jerseys at the basketball Center! The tunic looks totally different. And the women's team didn't even start until 1974.";
 tmp_speak.speaker = SPEAKER_PLAYER;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -2401,9 +2400,9 @@ tmp_speak.id = "boss_chain_07";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_07";
 {
 tmp_speak.primary = false;
-tmp_speak.wx = 28.00000000000007;
-tmp_speak.wy = 341.5;
-tmp_speak.w = 210;
+tmp_speak.wx = -61.39393943001585;
+tmp_speak.wy = 220.28787878913445;
+tmp_speak.w = 154;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
@@ -2471,6 +2470,26 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
 tmp_option = new option();
+tmp_option.id = "bad";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_08.bad";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "no_drycleaner_01";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+"tunic.humanecology.frontdesk.worker.intro4",
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
 tmp_option.id = "next";
 tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_08.next";
 {
@@ -2480,6 +2499,7 @@ tmp_option.target_speak = "boss_chain_09";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
+"tunic.humanecology.frontdesk.worker.intro4",
 ];
 tmp_option.relocks = [
 ];
@@ -2494,9 +2514,9 @@ tmp_speak = new speak();
 tmp_speak.id = "boss_chain_09";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_09";
 {
-tmp_speak.primary = false;
-tmp_speak.wx = 2.5000000000000355;
-tmp_speak.wy = 308.5;
+tmp_speak.primary = 1;
+tmp_speak.wx = -167.20220038970342;
+tmp_speak.wy = 196.37943202192537;
 tmp_speak.w = 229;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
@@ -2565,6 +2585,26 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
 tmp_option = new option();
+tmp_option.id = "bad";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_10.bad";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "no_theodora_01";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+"tunic.drycleaner.frontdesk.logbook.hub",
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
 tmp_option.id = "next";
 tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_10.next";
 {
@@ -2574,6 +2614,7 @@ tmp_option.target_speak = "boss_chain_11";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
+"tunic.drycleaner.frontdesk.logbook.hub",
 ];
 tmp_option.relocks = [
 ];
@@ -2588,7 +2629,7 @@ tmp_speak = new speak();
 tmp_speak.id = "boss_chain_11";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_11";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 1;
 tmp_speak.wx = 26.50000000000012;
 tmp_speak.wy = 313;
 tmp_speak.w = 182;
@@ -2659,6 +2700,26 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
 tmp_option = new option();
+tmp_option.id = "bad";
+tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_12.bad";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "no_suffragist_01";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+"tunic.library.microfiche.newspaper.hub",
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+tmp_option = new option();
 tmp_option.id = "next";
 tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_12.next";
 {
@@ -2668,6 +2729,7 @@ tmp_option.target_speak = "boss_chain_13";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
+"tunic.library.microfiche.newspaper.hub",
 ];
 tmp_option.relocks = [
 ];
@@ -2682,7 +2744,7 @@ tmp_speak = new speak();
 tmp_speak.id = "boss_chain_13";
 tmp_speak.fqid = "tunic.capitol.hall.boss.boss_chain_13";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 1;
 tmp_speak.wx = 58.00000000000012;
 tmp_speak.wy = 296.4999999999999;
 tmp_speak.w = 132;
@@ -2712,6 +2774,294 @@ tmp_option.fqid = "tunic.capitol.hall.boss.boss_chain_13.next";
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "no_drycleaner_01";
+tmp_speak.fqid = "tunic.capitol.hall.boss.no_drycleaner_01";
+{
+tmp_speak.primary = 2;
+tmp_speak.wx = -92.4242424242442;
+tmp_speak.wy = 242.42424242424255;
+tmp_speak.w = 179;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Um… still working on that part.";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.no_drycleaner_01.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "no_drycleaner_02";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "no_drycleaner_02";
+tmp_speak.fqid = "tunic.capitol.hall.boss.no_drycleaner_02";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = 24.242424242424427;
+tmp_speak.wy = 439.39393939393943;
+tmp_speak.w = 290;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "It's not enough to tell me what the tunic is NOT. Come back when you figure out what it is.";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.no_drycleaner_02.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "null";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "no_suffragist_01";
+tmp_speak.fqid = "tunic.capitol.hall.boss.no_suffragist_01";
+{
+tmp_speak.primary = 2;
+tmp_speak.wx = 100;
+tmp_speak.wy = 100;
+tmp_speak.w = 100;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Um… a lady who liked tunics?";
+tmp_speak.speaker = SPEAKER_PLAYER; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.no_suffragist_01.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "no_suffragist_02";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "no_suffragist_02";
+tmp_speak.fqid = "tunic.capitol.hall.boss.no_suffragist_02";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = 100;
+tmp_speak.wy = 100;
+tmp_speak.w = 100;
+tmp_speak.h = 30; //h of a single line
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "You're close, Jolie. But not quite there yet. What else was going on back then?";
+tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.no_suffragist_02.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "null";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "no_theodora_01";
+tmp_speak.fqid = "tunic.capitol.hall.boss.no_theodora_01";
+{
+tmp_speak.primary = 2;
+tmp_speak.wx = -137.8787974671168;
+tmp_speak.wy = 200.00000118077222;
+tmp_speak.w = 200;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Um… not sure yet.";
+tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.no_theodora_01.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "no_theodora_02";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "no_theodora_02";
+tmp_speak.fqid = "tunic.capitol.hall.boss.no_theodora_02";
+{
+tmp_speak.primary = false;
+tmp_speak.wx = 115.15151515048684;
+tmp_speak.wy = 400.0000000001267;
+tmp_speak.w = 208;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Well, come back if you figure it out.";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.capitol.hall.boss.no_theodora_02.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "null";
+tmp_option.audio_id = "null";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
@@ -7680,7 +8030,7 @@ tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
-"tunic.historicalsociety.collection.tunic.slip",
+"tunic.kohlcenter.halloffame.oldpictures.hub",
 ];
 tmp_person.relocks = [
 ];
@@ -10291,8 +10641,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 205.00000000000003;
-tmp_cutscene_command.wy = 122.99999999999999;
+tmp_cutscene_command.wx = 451;
+tmp_cutscene_command.wy = 145.00000000000003;
 tmp_cutscene_command.w = 166;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Gramps was right!";
@@ -10302,8 +10652,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 138;
-tmp_cutscene_command.wy = 159.99999999999997;
+tmp_cutscene_command.wx = 413;
+tmp_cutscene_command.wy = 168.99999999999994;
 tmp_cutscene_command.w = 223;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "That old tunic can't have been a basketball jersey-";
@@ -10313,8 +10663,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 168;
-tmp_cutscene_command.wy = 126.99999999999997;
+tmp_cutscene_command.wx = 453;
+tmp_cutscene_command.wy = 171.99999999999997;
 tmp_cutscene_command.w = 175;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I should tell gramps the good news!";
