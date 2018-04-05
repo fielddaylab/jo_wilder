@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.drycleaner.frontdesk";
+tmp_level.intro_room_id = "tunic.humanecology.frontdesk";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -65,6 +65,7 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
+
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivist";
 tmp_animcycle.fqid = "tunic.archivist";
@@ -161,6 +162,20 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/0.png")
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "businesscards";
+tmp_animcycle.fqid = "tunic.businesscards";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/businesscards/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "capitol_rotunda";
 tmp_animcycle.fqid = "tunic.capitol_rotunda";
 {
@@ -221,6 +236,20 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/coffeecup/0.
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "cookie";
+tmp_animcycle.fqid = "tunic.cookie";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cookie/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "door";
 tmp_animcycle.fqid = "tunic.door";
 {
@@ -232,6 +261,48 @@ tmp_animcycle.offset_t = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/door/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "drycleanercard1";
+tmp_animcycle.fqid = "tunic.drycleanercard1";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/drycleanercard1/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "drycleanercard2";
+tmp_animcycle.fqid = "tunic.drycleanercard2";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/drycleanercard2/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "drycleanercard3";
+tmp_animcycle.fqid = "tunic.drycleanercard3";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/drycleanercard3/0.jpg");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -862,6 +933,20 @@ tmp_animcycle.offset_t = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/newspaper_front/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "nextarrow";
+tmp_animcycle.fqid = "tunic.nextarrow";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/nextarrow/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -9544,10 +9629,10 @@ tmp_room.navs = [
 {wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
 ];
 tmp_room.lights = [
-{wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
+{wx:265.8006328841143, wy:280.5, ww:118.99694458696656, wh:41.000000000000036 },
 ];
 tmp_room.shadows = [
-{wx:2.331816958475656, wy:-203.50000000000003, ww:873, wh:253.00000000000003 },
+{wx:407.65378462802823, wy:276, ww:102.10704193407042, wh:55.999999999999964 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -9568,14 +9653,14 @@ tmp_person.fqid = "tunic.humanecology.frontdesk.worker";
 {
 tmp_person.ww = 158.1362046610845;
 tmp_person.wh = 286.00000000000006;
-tmp_person.wx = -234.91668000401788;
-tmp_person.wy = -88.1999999999999;
+tmp_person.wx = -243.38601940974914;
+tmp_person.wy = -73.19999999999995;
 tmp_person.wz = 0;
-tmp_person.act_wx = 670.952012450868;
-tmp_person.act_wy = -128;
+tmp_person.act_wx = 201.17807825439044;
+tmp_person.act_wy = -83.99999999999999;
 tmp_person.act_anim = true;
-tmp_person.hover_icon_wx = 27.999999999999996;
-tmp_person.hover_icon_wy = 28;
+tmp_person.hover_icon_wx = -4.617857888907764;
+tmp_person.hover_icon_wy = 154;
 tmp_person.animcycle_id = "ecologist";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
@@ -10082,21 +10167,168 @@ tmp_speak.options.push(tmp_option);
 tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
+tmp_object = new object();
+tmp_object.id = "businesscards";
+tmp_object.fqid = "tunic.humanecology.frontdesk.businesscards";
+{
+tmp_object.ww = 55.06871334921671;
+tmp_object.wh = 35.000000000000036;
+tmp_object.wx = 317.2191683281635;
+tmp_object.wy = 29.499999999999883;
+tmp_object.wz = 0;
+tmp_object.act_wx = -112.2398460734563;
+tmp_object.act_wy = -82;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = -0.29508815856570436;
+tmp_object.hover_icon_wy = 36;
+tmp_object.animcycle_id = "businesscards";
+tmp_object.hover_icon_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.raw_notifications = [
+];
+tmp_object.unlocks = [
+];
+tmp_object.relocks = [
+];
+
+tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
+tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_level.notifications_w);
+tmp_view = new view();
+tmp_view.id = "card2";
+tmp_view.fqid = "tunic.humanecology.frontdesk.businesscards.card2";
+{
+tmp_view.primary = true;
+tmp_view.animcycle_id = "drycleanercard2";
+tmp_view.audio_id = "null";
+tmp_view.raw_notifications = [
+];
+tmp_view.unlocks = [
+];
+tmp_view.relocks = [
+];
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "card3";
+tmp_zone.fqid = "tunic.humanecology.frontdesk.businesscards.card2.card3";
+{
+tmp_zone.ww = 41.99999999999998;
+tmp_zone.wh = 43.000000000000014;
+tmp_zone.wx = 335.99999999999994;
+tmp_zone.wy = 3.499999999999897;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "card3";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.unlocks = [
+];
+tmp_zone.relocks = [
+];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
+tmp_view.id = "card3";
+tmp_view.fqid = "tunic.humanecology.frontdesk.businesscards.card3";
+{
+tmp_view.primary = true;
+tmp_view.animcycle_id = "drycleanercard3";
+tmp_view.audio_id = "null";
+tmp_view.raw_notifications = [
+"Whoah this is the only dry cleaner old enough to be around in 1916!"
+];
+tmp_view.unlocks = [
+];
+tmp_view.relocks = [
+];
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "return";
+tmp_zone.fqid = "tunic.humanecology.frontdesk.businesscards.card3.return";
+{
+tmp_zone.ww = 42.99999999999998;
+tmp_zone.wh = 43;
+tmp_zone.wx = 336.49999999999994;
+tmp_zone.wy = 4.499999999999876;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "hub";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.unlocks = [
+];
+tmp_zone.relocks = [
+];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
+tmp_view.id = "hub";
+tmp_view.fqid = "tunic.humanecology.frontdesk.businesscards.hub";
+{
+tmp_view.primary = true;
+tmp_view.animcycle_id = "drycleanercard1";
+tmp_view.audio_id = "null";
+tmp_view.raw_notifications = [
+];
+tmp_view.unlocks = [
+];
+tmp_view.relocks = [
+];
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "card2";
+tmp_zone.fqid = "tunic.humanecology.frontdesk.businesscards.hub.card2";
+{
+tmp_zone.ww = 39.99999999999998;
+tmp_zone.wh = 42.99999999999999;
+tmp_zone.wx = 336.00000000000006;
+tmp_zone.wy = 3.4999999999999076;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "card2";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.unlocks = [
+];
+tmp_zone.relocks = [
+];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+}
+tmp_room.objects.push(tmp_object);
 tmp_observation = new observation();
 tmp_observation.id = "cookies";
 tmp_observation.fqid = "tunic.humanecology.frontdesk.cookies";
 {
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = -377;
-tmp_observation.wy = 31.000000000000014;
+tmp_observation.ww = 48.83049558594934;
+tmp_observation.wh = 29.99999999999997;
+tmp_observation.wx = -467.8687297944439;
+tmp_observation.wy = -104.00000000000001;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
 tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = 0;
 tmp_observation.hover_icon_wy = 0;
-tmp_observation.animcycle_id = "null";
+tmp_observation.animcycle_id = "cookie";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I bet the Curator could use these!";
