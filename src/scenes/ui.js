@@ -2758,6 +2758,7 @@ var cutsceneview = function()
             c.wy = my_navigable.cam_target_wy(te.wy);
           }
         }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
         self.running_commands.push(c);
         break;
       case CUTSCENE_COMMAND_WAIT:
@@ -2794,7 +2795,6 @@ var cutsceneview = function()
       self.h = self.cur_speak.h;
       self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
       self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
-      self.cutscene.dirty = true;
     }
     self.edit = function()
     {
@@ -2820,6 +2820,7 @@ var cutsceneview = function()
         {
           self.edit_o = self.speak_editor;
           self.speak_editor.consume_speak(c);
+          self.cutscene.dirty = true;
         }
         else
         {
