@@ -1,11 +1,11 @@
-tmp_speak.primary = false;
-tmp_speak.wx = -326.969708089491;
-tmp_speak.wy = 304.15151553854133;
-tmp_speak.w = 336;
+tmp_speak.primary = 2;
+tmp_speak.wx = -92.4242424242442;
+tmp_speak.wy = 242.42424242424255;
+tmp_speak.w = 179;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I checked the old jerseys at the basketball Center! The tunic looks totally different. And the women's team didn't even start until 1974.";
+tmp_speak.raw_atext = "Um… still working on that part.";
 tmp_speak.speaker = SPEAKER_PLAYER;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
