@@ -6935,6 +6935,7 @@ tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
+"tunic.historicalsociety.collection.tunic.slip",
 ];
 tmp_person.relocks = [
 ];
@@ -8581,6 +8582,7 @@ tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
 tmp_observation.unlocks = [
+"tunic.historicalsociety.collection.tunic.slip",
 ];
 tmp_observation.relocks = [
 "tunic.historicalsociety.frontdesk.magnify",
