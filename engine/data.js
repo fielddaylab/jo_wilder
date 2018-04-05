@@ -8113,7 +8113,7 @@ tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
-"tunic.kohlcenter.halloffame.oldpictures.hub",
+"tunic.historicalsociety.closet_dirty",
 ];
 tmp_person.relocks = [
 ];
