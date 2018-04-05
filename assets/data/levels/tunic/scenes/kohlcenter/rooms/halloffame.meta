@@ -9,7 +9,7 @@ tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-5.560922855082936, wy:-136.49999999999994, ww:2072.720259552992, wh:270.99999999999983 },
+{wx:-61.170151405912065, wy:-137.89023071377088, ww:1755.747656813266, wh:240.41492429704388 },
 ];
 tmp_room.lights = [
 {wx:955.08850036049, wy:236.7, ww:84.69033886085087, wh:43 },
@@ -20,8 +20,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = -16.682768565248775;
-tmp_room.target_start_wy = -128.39999999999998;
+tmp_room.target_start_wx = -850.6470185633716;
+tmp_room.target_start_wy = -92.52184571016575;
 tmp_room.raw_notifications = [
 ];
 tmp_room.unlocks = [

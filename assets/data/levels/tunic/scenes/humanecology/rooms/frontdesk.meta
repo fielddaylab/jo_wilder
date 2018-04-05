@@ -15,13 +15,13 @@ tmp_room.lights = [
 {wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
 ];
 tmp_room.shadows = [
-{wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
+{wx:2.331816958475656, wy:-203.50000000000003, ww:873, wh:253.00000000000003 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 0;
-tmp_room.target_start_wy = 0;
+tmp_room.target_start_wx = 443.3278918589005;
+tmp_room.target_start_wy = -177.99999999999997;
 tmp_room.raw_notifications = [
 ];
 tmp_room.unlocks = [
