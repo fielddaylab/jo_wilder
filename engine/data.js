@@ -1594,6 +1594,30 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
+tmp_entry.id = "entry_quest_archivist_x";
+tmp_entry.fqid = "tunic.entry_quest_archivist_x";
+{
+tmp_entry.index = 0;
+tmp_entry.ww = 100;
+tmp_entry.wh = 100;
+tmp_entry.wx = 100;
+tmp_entry.wy = 100;
+tmp_entry.wz = 100;
+tmp_entry.page = 0;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.unlocks = [
+];
+tmp_entry.relocks = [
+];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
 tmp_entry.id = "entry_quest_basketball";
 tmp_entry.fqid = "tunic.entry_quest_basketball";
 {
@@ -1605,6 +1629,30 @@ tmp_entry.wy = 100;
 tmp_entry.wz = 100;
 tmp_entry.page = 0;
 tmp_entry.animcycle_id = "entry_quest_basketball_img";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.unlocks = [
+];
+tmp_entry.relocks = [
+];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_basketball_x";
+tmp_entry.fqid = "tunic.entry_quest_basketball_x";
+{
+tmp_entry.index = 0;
+tmp_entry.ww = 100;
+tmp_entry.wh = 100;
+tmp_entry.wx = 100;
+tmp_entry.wy = 100;
+tmp_entry.wz = 100;
+tmp_entry.page = 0;
+tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
@@ -1642,6 +1690,30 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
+tmp_entry.id = "entry_quest_museum_x";
+tmp_entry.fqid = "tunic.entry_quest_museum_x";
+{
+tmp_entry.index = 0;
+tmp_entry.ww = 100;
+tmp_entry.wh = 100;
+tmp_entry.wx = 100;
+tmp_entry.wy = 100;
+tmp_entry.wz = 100;
+tmp_entry.page = 0;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.unlocks = [
+];
+tmp_entry.relocks = [
+];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
 tmp_entry.id = "entry_quest_textile";
 tmp_entry.fqid = "tunic.entry_quest_textile";
 {
@@ -1653,6 +1725,30 @@ tmp_entry.wy = 100;
 tmp_entry.wz = 100;
 tmp_entry.page = 0;
 tmp_entry.animcycle_id = "entry_quest_textile_img";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.unlocks = [
+];
+tmp_entry.relocks = [
+];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_textile_x";
+tmp_entry.fqid = "tunic.entry_quest_textile_x";
+{
+tmp_entry.index = 0;
+tmp_entry.ww = 100;
+tmp_entry.wh = 100;
+tmp_entry.wx = 100;
+tmp_entry.wy = 100;
+tmp_entry.wz = 100;
+tmp_entry.page = 0;
+tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
@@ -1701,30 +1797,6 @@ tmp_entry.wy = 100;
 tmp_entry.wz = 100;
 tmp_entry.page = 0;
 tmp_entry.animcycle_id = "entry_tunic_img";
-tmp_entry.audio_id = "null";
-tmp_entry.raw_notifications = [
-];
-tmp_entry.unlocks = [
-];
-tmp_entry.relocks = [
-];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_x";
-tmp_entry.fqid = "tunic.entry_x";
-{
-tmp_entry.index = 0;
-tmp_entry.ww = 100;
-tmp_entry.wh = 100;
-tmp_entry.wx = 100;
-tmp_entry.wy = 100;
-tmp_entry.wz = 100;
-tmp_entry.page = 0;
-tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
