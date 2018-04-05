@@ -1,0 +1,59 @@
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_AUTO;
+tmp_cutscene.ww = 100;
+tmp_cutscene.wh = 100;
+tmp_cutscene.wx = 10;
+tmp_cutscene.wy = 10;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = 0;
+tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 0;
+tmp_cutscene.hover_icon_wy = 0;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures",
+];
+tmp_cutscene.relocks = [
+];
+tmp_cutscene.commands = [];
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 205.00000000000003;
+tmp_cutscene_command.wy = 122.99999999999999;
+tmp_cutscene_command.w = 166;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Gramps was right!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 138;
+tmp_cutscene_command.wy = 159.99999999999997;
+tmp_cutscene_command.w = 223;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "That old tunic can't have been a basketball jersey-";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 168;
+tmp_cutscene_command.wy = 126.99999999999997;
+tmp_cutscene_command.w = 175;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I should tell gramps the good news!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+

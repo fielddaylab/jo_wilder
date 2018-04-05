@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.kohlcenter.halloffame";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -10300,6 +10300,74 @@ tmp_room.relocks = [
 ];
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
+tmp_cutscene = new cutscene();
+tmp_cutscene.id = "togrampa";
+tmp_cutscene.fqid = "tunic.kohlcenter.halloffame.togrampa";
+{
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_AUTO;
+tmp_cutscene.ww = 100;
+tmp_cutscene.wh = 100;
+tmp_cutscene.wx = 10;
+tmp_cutscene.wy = 10;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = 0;
+tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 0;
+tmp_cutscene.hover_icon_wy = 0;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures",
+];
+tmp_cutscene.relocks = [
+];
+tmp_cutscene.commands = [];
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 205.00000000000003;
+tmp_cutscene_command.wy = 122.99999999999999;
+tmp_cutscene_command.w = 166;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Gramps was right!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 138;
+tmp_cutscene_command.wy = 159.99999999999997;
+tmp_cutscene_command.w = 223;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "That old tunic can't have been a basketball jersey-";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 168;
+tmp_cutscene_command.wy = 126.99999999999997;
+tmp_cutscene_command.w = 175;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I should tell gramps the good news!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.cutscenes.push(tmp_cutscene);
 tmp_object = new object();
 tmp_object.id = "jersey";
 tmp_object.fqid = "tunic.kohlcenter.halloffame.jersey";
