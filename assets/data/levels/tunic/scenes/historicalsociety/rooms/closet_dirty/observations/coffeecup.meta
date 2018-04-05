@@ -11,10 +11,10 @@ tmp_observation.hover_icon_wy = -27.10215975707908;
 tmp_observation.animcycle_id = "coffeecup";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
-tmp_observation.raw_text = "null";
-tmp_observation.blip_wx = 100;
-tmp_observation.blip_wy = 100;
-tmp_observation.blip_w = 100;
+tmp_observation.raw_text = "Is this yours, Grampa?";
+tmp_observation.blip_wx = -101.4934715985558;
+tmp_observation.blip_wy = 6.0266875311798245;
+tmp_observation.blip_w = 227;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
