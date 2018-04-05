@@ -4944,75 +4944,47 @@ tmp_cutscene.id = "trigger_coffee";
 tmp_cutscene.fqid = "tunic.historicalsociety.closet_dirty.trigger_coffee";
 {
 tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
-tmp_cutscene.ww = 100;
-tmp_cutscene.wh = 100;
-tmp_cutscene.wx = 10;
-tmp_cutscene.wy = 10;
+tmp_cutscene.ww = 80.99342279216228;
+tmp_cutscene.wh = 71.00029447787803;
+tmp_cutscene.wx = -0.6663785670119751;
+tmp_cutscene.wy = -202.77993103529144;
 tmp_cutscene.wz = 0;
-tmp_cutscene.act_wx = 0;
-tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_wx = -118.83786278383491;
+tmp_cutscene.act_wy = 11.127464041278927;
 tmp_cutscene.act_anim = 0;
-tmp_cutscene.hover_icon_wx = 0;
-tmp_cutscene.hover_icon_wy = 0;
-tmp_cutscene.animcycle_id = "null";
-tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.hover_icon_wx = -23.281753587978585;
+tmp_cutscene.hover_icon_wy = -27.10215975707908;
+tmp_cutscene.animcycle_id = "coffeecup";
+tmp_cutscene.hover_icon_animcycle_id = "hblip_interact";
 tmp_cutscene.raw_notifications = [
 ];
 tmp_cutscene.unlocks = [
 ];
 tmp_cutscene.relocks = [
 ];
-
 tmp_cutscene.commands = [];
-
-/*
-Possible Commands:
-
-CUTSCENE_COMMAND_CREATE
-CUTSCENE_COMMAND_DESTROY
-CUTSCENE_COMMAND_ANIMATE
-CUTSCENE_COMMAND_SPEAK
-CUTSCENE_COMMAND_ACT
-CUTSCENE_COMMAND_AUDIO
-CUTSCENE_COMMAND_TWEEN
-CUTSCENE_COMMAND_TARGET
-CUTSCENE_COMMAND_WAIT
-CUTSCENE_COMMAND_END
-CUTSCENE_COMMAND_IGNORE
-
-
-Possible Entity Types:
-CUTSCENE_ENTITY_CAMERA
-CUTSCENE_ENTITY_AVATAR
-CUTSCENE_ENTITY_SCENE
-CUTSCENE_ENTITY_CUTSCENE
-*/
-
-/*
-//skeleton command addition
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_NULL;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -108.70690909090911;
+tmp_cutscene_command.wy = 10.421475312051037;
+tmp_cutscene_command.w = 229;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Is this yours, Grampa?";
 tmp_cutscene_command.t = 0;
-tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "";
-tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.audio_id = "null";
-tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-*/
-
-//Leave this at the end- remember to set tmp_cutscene_command.t!
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -506.95293582237923;
+tmp_cutscene_command.wy = 127.72324930962097;
+tmp_cutscene_command.w = 288;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Nope, I only drink Holdgers!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 0;
@@ -5028,75 +5000,58 @@ tmp_cutscene.id = "trigger_scarf";
 tmp_cutscene.fqid = "tunic.historicalsociety.closet_dirty.trigger_scarf";
 {
 tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
-tmp_cutscene.ww = 100;
-tmp_cutscene.wh = 100;
-tmp_cutscene.wx = 10;
-tmp_cutscene.wy = 10;
+tmp_cutscene.ww = 101.42205127979476;
+tmp_cutscene.wh = 63.803494135112985;
+tmp_cutscene.wx = 526.6710542594461;
+tmp_cutscene.wy = -165.13131865706274;
 tmp_cutscene.wz = 0;
-tmp_cutscene.act_wx = 0;
-tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_wx = 81.12909904618942;
+tmp_cutscene.act_wy = 40.02207172547418;
 tmp_cutscene.act_anim = 0;
-tmp_cutscene.hover_icon_wx = 0;
-tmp_cutscene.hover_icon_wy = 0;
-tmp_cutscene.animcycle_id = "null";
-tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.hover_icon_wx = -10.417556825988527;
+tmp_cutscene.hover_icon_wy = 23.98785932808255;
+tmp_cutscene.animcycle_id = "scarf";
+tmp_cutscene.hover_icon_animcycle_id = "hblip_interact";
 tmp_cutscene.raw_notifications = [
 ];
 tmp_cutscene.unlocks = [
 ];
 tmp_cutscene.relocks = [
 ];
-
 tmp_cutscene.commands = [];
-
-/*
-Possible Commands:
-
-CUTSCENE_COMMAND_CREATE
-CUTSCENE_COMMAND_DESTROY
-CUTSCENE_COMMAND_ANIMATE
-CUTSCENE_COMMAND_SPEAK
-CUTSCENE_COMMAND_ACT
-CUTSCENE_COMMAND_AUDIO
-CUTSCENE_COMMAND_TWEEN
-CUTSCENE_COMMAND_TARGET
-CUTSCENE_COMMAND_WAIT
-CUTSCENE_COMMAND_END
-CUTSCENE_COMMAND_IGNORE
-
-
-Possible Entity Types:
-CUTSCENE_ENTITY_CAMERA
-CUTSCENE_ENTITY_AVATAR
-CUTSCENE_ENTITY_SCENE
-CUTSCENE_ENTITY_CUTSCENE
-*/
-
-/*
-//skeleton command addition
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_NULL;
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 484.77984668065847;
+tmp_cutscene_command.wy = 84.91882646636448;
+tmp_cutscene_command.w = 256;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Oh no… Teddy's scarf!";
 tmp_cutscene_command.t = 0;
-tmp_cutscene_command.end_t = 0;
-tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "";
-tmp_cutscene_command.animcycle_id = "null";
-tmp_cutscene_command.audio_id = "null";
-tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-*/
-
-//Leave this at the end- remember to set tmp_cutscene_command.t!
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 93.23204595161826;
+tmp_cutscene_command.wy = 136.84626267535603;
+tmp_cutscene_command.w = 238;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I'm sure he's okay, Jo. He's a scrappy little fella.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 462.7188017231857;
+tmp_cutscene_command.wy = 139.95775720755532;
+tmp_cutscene_command.w = 270;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "But he never goes anywhere without his scarf. I think someone took him!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 0;
@@ -5234,41 +5189,6 @@ tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
 tmp_observation = new observation();
-tmp_observation.id = "coffeecup";
-tmp_observation.fqid = "tunic.historicalsociety.closet_dirty.coffeecup";
-{
-tmp_observation.ww = 80.99342279216228;
-tmp_observation.wh = 71.00029447787803;
-tmp_observation.wx = -0.6663785670119751;
-tmp_observation.wy = -202.77993103529144;
-tmp_observation.wz = 0;
-tmp_observation.act_wx = 0;
-tmp_observation.act_wy = 0;
-tmp_observation.act_anim = 0;
-tmp_observation.hover_icon_wx = -23.281753587978585;
-tmp_observation.hover_icon_wy = -27.10215975707908;
-tmp_observation.animcycle_id = "coffeecup";
-tmp_observation.hover_icon_animcycle_id = "null";
-tmp_observation.audio_id = "null";
-tmp_observation.raw_text = "Is this yours, Grampa?";
-tmp_observation.blip_wx = -101.4934715985558;
-tmp_observation.blip_wy = 6.0266875311798245;
-tmp_observation.blip_w = 227;
-tmp_observation.blip_h = 30;
-tmp_observation.raw_notifications = [
-];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-];
-
-tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
-tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
-tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
-for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_room.observations.push(tmp_observation);
-tmp_observation = new observation();
 tmp_observation.id = "doorblock";
 tmp_observation.fqid = "tunic.historicalsociety.closet_dirty.doorblock";
 {
@@ -5325,41 +5245,6 @@ tmp_observation.raw_text = "I love these photos of me and Teddy.";
 tmp_observation.blip_wx = 236.38354274260067;
 tmp_observation.blip_wy = 62.37115888408396;
 tmp_observation.blip_w = 175;
-tmp_observation.blip_h = 30;
-tmp_observation.raw_notifications = [
-];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-];
-
-tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
-tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
-tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
-for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_room.observations.push(tmp_observation);
-tmp_observation = new observation();
-tmp_observation.id = "scarf";
-tmp_observation.fqid = "tunic.historicalsociety.closet_dirty.scarf";
-{
-tmp_observation.ww = 101.42205127979476;
-tmp_observation.wh = 63.803494135112985;
-tmp_observation.wx = 526.6710542594461;
-tmp_observation.wy = -165.13131865706274;
-tmp_observation.wz = 0;
-tmp_observation.act_wx = 81.12909904618942;
-tmp_observation.act_wy = 40.02207172547418;
-tmp_observation.act_anim = 0;
-tmp_observation.hover_icon_wx = -10.417556825988527;
-tmp_observation.hover_icon_wy = 23.98785932808255;
-tmp_observation.animcycle_id = "scarf";
-tmp_observation.hover_icon_animcycle_id = "hblip_interact";
-tmp_observation.audio_id = "null";
-tmp_observation.raw_text = "Oh no… Teddy's scarf!";
-tmp_observation.blip_wx = 495.58271142232536;
-tmp_observation.blip_wy = 68.67927468268624;
-tmp_observation.blip_w = 240;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
