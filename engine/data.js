@@ -654,6 +654,20 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/logbook_fron
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "magnifyingglass";
+tmp_animcycle.fqid = "tunic.magnifyingglass";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/magnifyingglass/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "map";
 tmp_animcycle.fqid = "tunic.map";
 {
@@ -6313,7 +6327,7 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
+tmp_room.nav_min_wz = 5;
 tmp_room.nav_max_wz = 10;
 tmp_room.navs = [
 {wx:-38.3504355536046, wy:-202, ww:821.0001785495492, wh:223.99999999999997 },
@@ -6335,7 +6349,6 @@ tmp_room.unlocks = [
 ];
 tmp_room.relocks = [
 ];
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "archivist";
@@ -6349,8 +6362,8 @@ tmp_person.wz = 3;
 tmp_person.act_wx = 142.59470153053064;
 tmp_person.act_wy = -49.00000000000001;
 tmp_person.act_anim = true;
-tmp_person.hover_icon_wx = 0;
-tmp_person.hover_icon_wy = 0;
+tmp_person.hover_icon_wx = 18.99999921833438;
+tmp_person.hover_icon_wy = 145;
 tmp_person.animcycle_id = "archivist";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
@@ -7982,17 +7995,17 @@ tmp_observation = new observation();
 tmp_observation.id = "magnify";
 tmp_observation.fqid = "tunic.historicalsociety.frontdesk.magnify";
 {
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = 224.00592609018736;
-tmp_observation.wy = 172;
+tmp_observation.ww = 50.146372131457355;
+tmp_observation.wh = 35.99999999999997;
+tmp_observation.wx = 213.07926091128468;
+tmp_observation.wy = 174;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
 tmp_observation.act_anim = 0;
-tmp_observation.hover_icon_wx = 0;
-tmp_observation.hover_icon_wy = 0;
-tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_wx = -0.19702019410135563;
+tmp_observation.hover_icon_wy = 32;
+tmp_observation.animcycle_id = "magnifyingglass";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I bet the Archivist could use this!";

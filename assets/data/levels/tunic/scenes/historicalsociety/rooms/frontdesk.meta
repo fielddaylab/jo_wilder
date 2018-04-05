@@ -6,7 +6,7 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
+tmp_room.nav_min_wz = 5;
 tmp_room.nav_max_wz = 10;
 tmp_room.navs = [
 {wx:-38.3504355536046, wy:-202, ww:821.0001785495492, wh:223.99999999999997 },
@@ -28,4 +28,3 @@ tmp_room.unlocks = [
 ];
 tmp_room.relocks = [
 ];
-
