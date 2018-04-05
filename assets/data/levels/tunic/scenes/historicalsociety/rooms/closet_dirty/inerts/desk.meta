@@ -1,10 +1,10 @@
-tmp_inert.ww = 397.1093170356074;
-tmp_inert.wh = 309.30835246805276;
-tmp_inert.wx = -716.9152300534219;
-tmp_inert.wy = -59.238045156760066;
+tmp_inert.ww = 372.77620325031677;
+tmp_inert.wh = 306.648311065679;
+tmp_inert.wx = -729.0817869460672;
+tmp_inert.wy = -57.90802445557321;
 tmp_inert.wz = 0.1;
 tmp_inert.g = 0;
-tmp_inert.animcycle_id = "room_historicalsociety_closet_desk";
+tmp_inert.animcycle_id = "room_historicalsociety_closet_dirty_desk";
 tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [

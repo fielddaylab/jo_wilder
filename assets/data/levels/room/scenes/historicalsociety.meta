@@ -1,0 +1,14 @@
+tmp_scene.primary = false;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
+tmp_scene.wx = 100;
+tmp_scene.wy = 100;
+tmp_scene.animcycle_id = "null";
+tmp_scene.audio_id = "null";
+tmp_scene.raw_notifications = [
+];
+tmp_scene.unlocks = [
+];
+tmp_scene.relocks = [
+];
+
