@@ -1229,6 +1229,7 @@ var toolbar = function()
     }
     if(ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
+      my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
       state_from = state_cur;
       state_to = STATE_NOTEBOOK;

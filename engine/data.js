@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.drycleaner.frontdesk";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -1598,6 +1598,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures"
 ];
 tmp_entry.relocks = [
 ];
@@ -1622,6 +1623,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.humanecology.frontdesk.drycleaners"
 ];
 tmp_entry.relocks = [
 ];
@@ -1646,6 +1648,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.collection.tunic.slip",
 ];
 tmp_entry.relocks = [
 ];
@@ -1670,6 +1673,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.closet_dirty.gramps"
 ];
 tmp_entry.relocks = [
 ];
@@ -1694,6 +1698,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.frontdesk.archivist.slip",
 ];
 tmp_entry.relocks = [
 ];
@@ -1718,6 +1723,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.collection.gramps.found_0",
 ];
 tmp_entry.relocks = [
 ];
@@ -1742,6 +1748,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures",
 ];
 tmp_entry.relocks = [
 ];
@@ -1766,6 +1773,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.kohlcenter.halloffame.oldpictures"
 ];
 tmp_entry.relocks = [
 ];
@@ -1790,6 +1798,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.closet_dirty.gramps"
 ];
 tmp_entry.relocks = [
 ];
@@ -1814,6 +1823,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.frontdesk.archivist.slip"
 ];
 tmp_entry.relocks = [
 ];
@@ -1838,6 +1848,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.humanecology.frontdesk.drycleaners"
 ];
 tmp_entry.relocks = [
 ];
@@ -1862,6 +1873,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.closet_dirty.trigger_scarf"
 ];
 tmp_entry.relocks = [
 ];
@@ -1886,6 +1898,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
+"tunic.historicalsociety.collection.tunic",
 ];
 tmp_entry.relocks = [
 ];
