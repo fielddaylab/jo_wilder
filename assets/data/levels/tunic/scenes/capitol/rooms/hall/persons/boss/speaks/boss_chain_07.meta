@@ -1,6 +1,6 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -61.39393943001585;
-tmp_speak.wy = 220.28787878913445;
+tmp_speak.wx = -106.84848488456134;
+tmp_speak.wy = 124.833333334589;
 tmp_speak.w = 154;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";

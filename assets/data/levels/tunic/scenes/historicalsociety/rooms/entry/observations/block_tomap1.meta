@@ -12,9 +12,9 @@ tmp_observation.animcycle_id = "null";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I should see what Grampa is up to!";
-tmp_observation.blip_wx = 541.9307841688642;
-tmp_observation.blip_wy = 303.1715289017357;
-tmp_observation.blip_w = 100;
+tmp_observation.blip_wx = 514.2486023506824;
+tmp_observation.blip_wy = 241.29371071991753;
+tmp_observation.blip_w = 160;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
