@@ -1717,7 +1717,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
-"tunic.humanecology.frontdesk.drycleaners"
+"tunic.humanecology.frontdesk.businesscards"
 ];
 tmp_entry.relocks = [
 ];
@@ -1942,7 +1942,7 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.unlocks = [
-"tunic.humanecology.frontdesk.drycleaners"
+"tunic.humanecology.frontdesk.businesscards"
 ];
 tmp_entry.relocks = [
 ];
@@ -3236,7 +3236,7 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.unlocks = [
-"tunic.humanecology.frontdesk.drycleaners",
+"tunic.humanecology.frontdesk.businesscards",
 ];
 tmp_scene.relocks = [
 ];
@@ -10198,7 +10198,7 @@ tmp_speak.w = 267;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Ahhhh. Much better. Come to think of it, I've got a file of dry cleaners here. Take a look!";
+tmp_speak.raw_atext = "Ahhhh. Much better. Come to think of it, I've got a file of dry cleaners on the table. Take a look!";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -10559,6 +10559,7 @@ tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
 tmp_object.unlocks = [
+"tunic.humanecology.frontdesk.worker.better",
 ];
 tmp_object.relocks = [
 ];
@@ -10715,42 +10716,6 @@ tmp_observation.unlocks = [
 ];
 tmp_observation.relocks = [
 "tunic.humanecology.frontdesk.cookies",
-];
-
-tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
-tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
-tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
-for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_room.observations.push(tmp_observation);
-tmp_observation = new observation();
-tmp_observation.id = "drycleaners";
-tmp_observation.fqid = "tunic.humanecology.frontdesk.drycleaners";
-{
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = 318.00000000657826;
-tmp_observation.wy = 30;
-tmp_observation.wz = 0;
-tmp_observation.act_wx = 0;
-tmp_observation.act_wy = 0;
-tmp_observation.act_anim = 0;
-tmp_observation.hover_icon_wx = -8.999997844033715;
-tmp_observation.hover_icon_wy = 3;
-tmp_observation.animcycle_id = "null";
-tmp_observation.hover_icon_animcycle_id = "hblip_interact";
-tmp_observation.audio_id = "null";
-tmp_observation.raw_text = "This one was established in 1910!";
-tmp_observation.blip_wx = 66.90242468076315;
-tmp_observation.blip_wy = 150;
-tmp_observation.blip_w = 183;
-tmp_observation.blip_h = 30;
-tmp_observation.raw_notifications = [
-];
-tmp_observation.unlocks = [
-"tunic.humanecology.frontdesk.worker.better",
-];
-tmp_observation.relocks = [
 ];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);

@@ -8,7 +8,7 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.unlocks = [
-"tunic.humanecology.frontdesk.drycleaners",
+"tunic.humanecology.frontdesk.businesscards",
 ];
 tmp_scene.relocks = [
 ];
