@@ -8090,7 +8090,7 @@ tmp_speak.w = 238;
 tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Hmmph. Wells was right. Kids these days.";
+tmp_speak.raw_atext = "I'm busy. Now if only I could read this thing… blasted tiny letters…";
 tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -8155,6 +8155,7 @@ tmp_observation.raw_notifications = [
 tmp_observation.unlocks = [
 ];
 tmp_observation.relocks = [
+"tunic.historicalsociety.frontdesk.magnify",
 ];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
@@ -9145,6 +9146,7 @@ tmp_observation.unlocks = [
 "tunic.humanecology.frontdesk.worker.intro6",
 ];
 tmp_observation.relocks = [
+"tunic.humanecology.frontdesk.cookies",
 ];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
