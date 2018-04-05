@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.drycleaner.frontdesk";
+tmp_level.intro_room_id = "tunic.historicalsociety_closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -65,7 +65,6 @@ tmp_level.unlocks = [
 ];
 tmp_level.relocks = [
 ];
-
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivist";
 tmp_animcycle.fqid = "tunic.archivist";
@@ -5541,7 +5540,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
-"tunic.historicalsociety.frontdesk.archivist",
+"tunic.kohlcenter.halloffame.oldpictures",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
