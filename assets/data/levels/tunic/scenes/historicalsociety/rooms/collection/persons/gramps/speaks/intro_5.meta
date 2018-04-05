@@ -1,16 +1,16 @@
 tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
-tmp_speak.h = 30; //h of a single line
+tmp_speak.wx = -387.9545454545455;
+tmp_speak.wy = 281.3636363636364;
+tmp_speak.w = 129;
+tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "Check out Well's theory...";
-tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.unlocks = [

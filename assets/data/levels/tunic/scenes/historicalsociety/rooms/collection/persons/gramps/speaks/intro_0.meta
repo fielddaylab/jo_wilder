@@ -1,20 +1,21 @@
-tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
-tmp_speak.h = 30; //h of a single line
+tmp_speak.primary = 10;
+tmp_speak.wx = -423.9704776141978;
+tmp_speak.wy = 281.3670931295611;
+tmp_speak.w = 157;
+tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "I read that report- hogwash.";
-tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.speaker = SPEAKER_PERSON;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
+"tunic.historicalsociety.collection.gramps.intro_0",
 ];
 

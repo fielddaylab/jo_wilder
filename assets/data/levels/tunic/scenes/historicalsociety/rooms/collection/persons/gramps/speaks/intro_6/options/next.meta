@@ -1,5 +1,5 @@
 tmp_option.index = 0;
-tmp_option.raw_qtext = "null";
+tmp_option.raw_qtext = ">";
 tmp_option.target_speak = "null";
 tmp_option.audio_id = "null";
 tmp_option.raw_notifications = [

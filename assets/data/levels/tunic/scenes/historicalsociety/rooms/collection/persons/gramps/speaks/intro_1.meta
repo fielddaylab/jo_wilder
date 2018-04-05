@@ -1,16 +1,16 @@
 tmp_speak.primary = false;
-tmp_speak.wx = 100;
-tmp_speak.wy = 100;
-tmp_speak.w = 100;
-tmp_speak.h = 30; //h of a single line
+tmp_speak.wx = -409.5454545469995;
+tmp_speak.wy = 282.803030303202;
+tmp_speak.w = 147;
+tmp_speak.h = 30;
 tmp_speak.animcycle_id = "null";
 tmp_speak.audio_id = "null";
 tmp_speak.raw_atext = "If only I had time to investigate...";
-tmp_speak.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 125.90909090909102;
+tmp_speak.options_wy = 134.54545454545456;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.unlocks = [

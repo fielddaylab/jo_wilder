@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = 5;
 tmp_speak.wx = -402.3484848484849;
 tmp_speak.wy = 284.24242424242425;
 tmp_speak.w = 141;
@@ -14,7 +14,9 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.unlocks = [
+"tunic.historicalsociety.collection.tunic.slip",
 ];
 tmp_speak.relocks = [
+"tunic.historicalsociety.collection.gramps.found_0",
 ];
 
