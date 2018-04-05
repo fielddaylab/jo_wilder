@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -501.6666666666666;
+tmp_speak.wy = 281.3636363636364;
+tmp_speak.w = 209;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "So next, I'd ask the archivist about this slip-";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

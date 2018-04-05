@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = 121.5909090909092;
+tmp_speak.wy = 138.86363636363637;
+tmp_speak.w = 143;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "So... now what?";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 245.37878787878805;
+tmp_speak.options_wy = -104.39393939393936;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

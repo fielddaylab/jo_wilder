@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -484.39393939393943;
+tmp_speak.wy = 282.8030303030303;
+tmp_speak.w = 198;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Hot Dog! That's a clue if I've ever seen one!";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+

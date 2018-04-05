@@ -1,0 +1,20 @@
+tmp_speak.primary = false;
+tmp_speak.wx = -402.3484848484849;
+tmp_speak.wy = 284.24242424242425;
+tmp_speak.w = 141;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Hey, what'd you find there, Jo?";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
