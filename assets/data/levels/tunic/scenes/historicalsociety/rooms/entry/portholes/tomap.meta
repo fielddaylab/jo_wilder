@@ -1,7 +1,7 @@
-tmp_porthole.ww = 2539.1354508649247;
-tmp_porthole.wh = 160.88000000000005;
-tmp_porthole.wx = -85.96453220463718;
-tmp_porthole.wy = -555.3585454545455;
+tmp_porthole.ww = 200.8052913823572;
+tmp_porthole.wh = 595.6530910614567;
+tmp_porthole.wx = 933.5624009371168;
+tmp_porthole.wy = 82.07800314346377;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -17,7 +17,6 @@ tmp_porthole.target_start_wy = 330;
 tmp_porthole.raw_notifications = [
 ];
 tmp_porthole.unlocks = [
-"tunic.historicalsociety.collection",
 ];
 tmp_porthole.relocks = [
 ];
