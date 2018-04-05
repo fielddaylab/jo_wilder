@@ -2298,10 +2298,58 @@ tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level
 tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_person.raw_notifications.length; i++) tmp_person.notifications[i] = stextToLines(tmp_person.raw_notifications[i], tmp_level.notifications_w);
 tmp_speak = new speak();
+tmp_speak.id = "done";
+tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.done";
+{
+tmp_speak.primary = 1;
+tmp_speak.wx = -176.00002379661728;
+tmp_speak.wy = 228.99999999999997;
+tmp_speak.w = 100;
+tmp_speak.h = 30;
+tmp_speak.animcycle_id = "null";
+tmp_speak.audio_id = "null";
+tmp_speak.raw_atext = "Good luck!";
+tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+];
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+if(!tmp_speak.atext_hard_coded) tmp_speak.atext = stextToLines(tmp_speak.raw_atext, tmp_speak.w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
+tmp_option = new option();
+tmp_option.id = "next";
+tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.done.next";
+{
+tmp_option.index = 0;
+tmp_option.raw_qtext = ">";
+tmp_option.target_speak = "null";
+tmp_option.audio_id = "null";
+tmp_option.raw_notifications = [
+];
+tmp_option.unlocks = [
+];
+tmp_option.relocks = [
+];
+
+if(!tmp_option.qtext_hard_coded) tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
+for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_speak.options.push(tmp_option);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
 tmp_speak.id = "hub";
 tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.hub";
 {
-tmp_speak.primary = true;
+tmp_speak.primary = 2;
 tmp_speak.wx = -113.86646775955367;
 tmp_speak.wy = 261;
 tmp_speak.w = 300.9942688897165;
@@ -2319,6 +2367,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
+"tunic.drycleaner.frontdesk.worker.slip13",
 ];
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -2977,7 +3026,7 @@ tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.slip13.next";
 {
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = ">";
+tmp_option.target_speak = "null";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
@@ -3029,6 +3078,7 @@ tmp_view.primary = true;
 tmp_view.animcycle_id = "logbook_front";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
+"Aha! It was owned by Theodora Youmans. I should ask the archivist about this!",
 ];
 tmp_view.unlocks = [
 ];
