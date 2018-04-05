@@ -3798,6 +3798,7 @@ tmp_porthole.raw_notifications = [
 tmp_porthole.unlocks = [
 ];
 tmp_porthole.relocks = [
+"tunic.kohlcenter.halloffame.oldpictures"
 ];
 
 tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
