@@ -21,5 +21,6 @@ tmp_observation.raw_notifications = [
 tmp_observation.unlocks = [
 ];
 tmp_observation.relocks = [
+"tunic.historicalsociety.frontdesk.magnify",
 ];
 
