@@ -184,7 +184,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -230,7 +230,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/ecologist/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/ecologist/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -622,7 +622,7 @@ tmp_animcycle.offset_t = 0;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/librarian/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/librarian/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
