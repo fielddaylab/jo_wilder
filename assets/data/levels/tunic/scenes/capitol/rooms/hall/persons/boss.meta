@@ -15,7 +15,6 @@ tmp_person.raw_notifications = [
 ];
 tmp_person.unlocks = [
 "tunic.kohlcenter.halloffame.oldpictures.hub",
-"tunic.kohlcenter.halloffame.jersey.hub",
 ];
 tmp_person.relocks = [
 ];
