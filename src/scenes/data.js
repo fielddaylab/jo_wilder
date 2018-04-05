@@ -27,11 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-<<<<<<< HEAD
-tmp_level.intro_room_id = "tunic.historicalsociety_closet";
-=======
 tmp_level.intro_room_id = "tunic.historicalsociety.closet";
->>>>>>> fcd53f5eae4cbe9c7dcb273abd709f700947e0c6
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
