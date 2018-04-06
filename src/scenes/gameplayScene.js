@@ -136,7 +136,8 @@ var GamePlayScene = function(game, stage)
     {
       if(evt.key == " ") print_whole_level(cur_level);
       if(evt.key == "c") get_save_code();
-      if(evt.key == "l") load_save_code("000000100000005242820206420742014400124673301465600000000000368");
+      if(evt.key == "l") load_save_code("000000100000005242820206420742014400124673301465600000000000368"); //first archivist
+      if(evt.key == "l") load_save_code("000000100000005242820206420742014407995137311910783843040000371"); //pre drycleans
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "v")

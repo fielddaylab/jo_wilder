@@ -3456,7 +3456,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
-"tunic.drycleaner.frontdesk.worker.slip13",
+"tunic.drycleaner.frontdesk.worker.slip01"
 ];
 
 tmp_speak_command = new speak_command();
@@ -4214,7 +4214,7 @@ tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
 tmp_object.unlocks = [
-"tunic.drycleaner.frontdesk.worker.slip13",
+"tunic.drycleaner.frontdesk.worker.slip01"
 ];
 tmp_object.relocks = [
 ];

@@ -2301,7 +2301,7 @@ var personview = function()
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY))                                                                                   { self.edit_o = self.speak_editor; self.speak_editor.consume_speak(self.cur_speak); self.cur_speak.dirty = true; }
+    if(!self.edit_o && ptWithinBox(self.cur_speak.commands[self.cur_speak_command_i],evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(self.cur_speak.commands[self.cur_speak_command_i]); self.cur_speak.dirty = true; }
     if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); self.cur_speak.dirty = true; }
 
     if(!self.edit_o) return;
@@ -2517,7 +2517,7 @@ var personview = function()
       oyoff += speak_command.h;
     }
 
-    if(!self.inline_option && self.cur_speak_command_i < self.cur_speak.commands.length-1)
+    if(!self.inline_option && self.cur_speak_command_i == self.cur_speak.commands.length-1)
     {
       switch(self.ui_state)
       {

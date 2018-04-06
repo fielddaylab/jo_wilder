@@ -14,7 +14,7 @@ tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
 tmp_object.unlocks = [
-"tunic.drycleaner.frontdesk.worker.slip13",
+"tunic.drycleaner.frontdesk.worker.slip01"
 ];
 tmp_object.relocks = [
 ];

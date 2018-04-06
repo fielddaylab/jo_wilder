@@ -34,3 +34,8 @@ z-sort hover icons
 dirty export (vastly speed up cycle)
 cutscenes revert everything on completion
 
+options should be optional (no option = exit)
+consolidate observations into speaks
+speak bubble types (thought, talk, etc...)
+anything trigger type auto, act, both
+
