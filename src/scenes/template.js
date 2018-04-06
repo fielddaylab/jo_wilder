@@ -1107,7 +1107,6 @@ var print_speak_meta = function(l)
     "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
     "tmp_speak.commands.push(tmp_speak_command);\n";
   }
-  str += "//TAGGED\n";
   console.log(str);
 }
 
@@ -1132,7 +1131,6 @@ var print_option_meta = function(l)
     str += "\""+l.relocks[i]+"\",\n";
   str +=
   "];\n"
-  str += "//TAGGED\n";
   console.log(str);
 }
 

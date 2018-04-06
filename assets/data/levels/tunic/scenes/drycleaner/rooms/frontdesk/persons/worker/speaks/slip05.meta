@@ -100,5 +100,4 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Here's the log book. Go ahead, take a peek.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//TAGGED
 

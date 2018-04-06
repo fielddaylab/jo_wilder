@@ -30,5 +30,4 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "You're close, Jolie. But not quite there yet. What else was going on back then?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//TAGGED
 

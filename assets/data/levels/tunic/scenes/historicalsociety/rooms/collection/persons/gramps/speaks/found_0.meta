@@ -42,5 +42,4 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Hot Dog! That's a clue if I've ever seen one!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//TAGGED
 

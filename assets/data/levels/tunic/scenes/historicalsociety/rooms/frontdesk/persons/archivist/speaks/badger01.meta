@@ -40,5 +40,4 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "I think I'd notice a badger, kid.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//TAGGED
 

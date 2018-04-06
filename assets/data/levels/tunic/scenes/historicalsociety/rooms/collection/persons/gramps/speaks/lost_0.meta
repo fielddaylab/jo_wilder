@@ -21,5 +21,4 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "What should I do?";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-//TAGGED
 

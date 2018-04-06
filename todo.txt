@@ -40,3 +40,9 @@ speak bubble types (thought, talk, etc...)
 anything trigger type auto, act, both
 save/load gen_slate should iterate through all reqs, finding noteworthy, only saving those (and caching noteworthy for print/read)
 
+ensure cam continuity between cutscene transition, etc...
+cam position more "s" like
+cam target player on room enter from map
+
+white flash instead of loading screen?
+
