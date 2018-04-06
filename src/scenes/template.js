@@ -1524,41 +1524,41 @@ var print_inert_meta = function(l)
   console.log(str);
 }
 
-var print_whole_level = function(level)
+var print_whole_level = function(level, full)
 {
   console.log("===BEGIN_IMPORT===");
-  if(level.dirty) print_level_meta(level);
+  if(full || level.dirty) print_level_meta(level);
   var entry;
   for(var i = 0; i < level.entrys.length; i++)
   {
     entry = level.entrys[i];
-    if(entry.dirty) print_entry_meta(entry);
+    if(full || entry.dirty) print_entry_meta(entry);
   }
   var scene;
   for(var i = 0; i < level.scenes.length; i++)
   {
     scene = level.scenes[i];
-    if(scene.dirty) print_scene_meta(scene);
+    if(full || scene.dirty) print_scene_meta(scene);
     var room;
     for(var j = 0; j < scene.rooms.length; j++)
     {
       room = scene.rooms[j];
-      if(room.dirty) print_room_meta(room);
+      if(full || room.dirty) print_room_meta(room);
       var person;
       for(var k = 0; k < room.persons.length; k++)
       {
         person = room.persons[k];
-        if(person.dirty) print_person_meta(person);
+        if(full || person.dirty) print_person_meta(person);
         var speak;
         for(var l = 0; l < person.speaks.length; l++)
         {
           speak = person.speaks[l];
-          if(speak.dirty) print_speak_meta(speak);
+          if(full || speak.dirty) print_speak_meta(speak);
           var option;
           for(var m = 0; m < speak.options.length; m++)
           {
             option = speak.options[m];
-            if(option.dirty) print_option_meta(option);
+            if(full || option.dirty) print_option_meta(option);
           }
         }
       }
@@ -1566,17 +1566,17 @@ var print_whole_level = function(level)
       for(var k = 0; k < room.objects.length; k++)
       {
         object = room.objects[k];
-        if(object.dirty) print_object_meta(object);
+        if(full || object.dirty) print_object_meta(object);
         var view;
         for(var l = 0; l < object.views.length; l++)
         {
           view = object.views[l];
-          if(view.dirty) print_view_meta(view);
+          if(full || view.dirty) print_view_meta(view);
           var zone;
           for(var m = 0; m < view.zones.length; m++)
           {
             zone = view.zones[m];
-            if(zone.dirty) print_zone_meta(zone);
+            if(full || zone.dirty) print_zone_meta(zone);
           }
         }
       }
@@ -1584,31 +1584,31 @@ var print_whole_level = function(level)
       for(var k = 0; k < room.observations.length; k++)
       {
         observation = room.observations[k];
-        if(observation.dirty) print_observation_meta(observation);
+        if(full || observation.dirty) print_observation_meta(observation);
       }
       var porthole;
       for(var k = 0; k < room.portholes.length; k++)
       {
         porthole = room.portholes[k];
-        if(porthole.dirty) print_porthole_meta(porthole);
+        if(full || porthole.dirty) print_porthole_meta(porthole);
       }
       var wildcard;
       for(var k = 0; k < room.wildcards.length; k++)
       {
         wildcard = room.wildcards[k];
-        if(wildcard.dirty) print_wildcard_meta(wildcard);
+        if(full || wildcard.dirty) print_wildcard_meta(wildcard);
       }
       var cutscene;
       for(var k = 0; k < room.cutscenes.length; k++)
       {
         cutscene = room.cutscenes[k];
-        if(cutscene.dirty) print_cutscene_meta(cutscene);
+        if(full || cutscene.dirty) print_cutscene_meta(cutscene);
       }
       var inert;
       for(var k = 0; k < room.inerts.length; k++)
       {
         inert = room.inerts[k];
-        if(inert.dirty) print_inert_meta(inert);
+        if(full || inert.dirty) print_inert_meta(inert);
       }
     }
   }
