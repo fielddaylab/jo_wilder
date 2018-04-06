@@ -1105,8 +1105,9 @@ var print_speak_meta = function(l)
     "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
     "tmp_speak_command.raw_atext = \""+c.raw_atext+"\";\n"+
     "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
-    "tmp_speak_command.commands.push(tmp_speak_command);\n";
+    "tmp_speak.commands.push(tmp_speak_command);\n";
   }
+  str += "//TAGGED\n";
   console.log(str);
 }
 
@@ -1131,6 +1132,7 @@ var print_option_meta = function(l)
     str += "\""+l.relocks[i]+"\",\n";
   str +=
   "];\n"
+  str += "//TAGGED\n";
   console.log(str);
 }
 

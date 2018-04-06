@@ -56,6 +56,8 @@ var GamePlayScene = function(game, stage)
                     for(var m = 0; m < consumed_speak.commands.length; m++)
                       speak.commands.push(consumed_speak.commands[m]);
                     speak.options = consumed_speak.options;
+                    for(var m = 0; m < speak.options.length; m++)
+                      speak.options[m].fqid = speak.fqid+"."+speak.options[m].id;
                     l--;
                   }
                 }
