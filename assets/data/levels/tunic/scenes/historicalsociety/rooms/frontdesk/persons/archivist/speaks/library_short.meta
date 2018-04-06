@@ -1,5 +1,4 @@
 tmp_speak.primary = 94;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.library.microfiche.newspaper.hub",
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -164.99999999999994;
 tmp_speak_command.wy = 300.99999999999994;
@@ -22,4 +21,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "You'll want to try the library… They'll have all sorts of info on Youmans. I'll dig up some stuff around here.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

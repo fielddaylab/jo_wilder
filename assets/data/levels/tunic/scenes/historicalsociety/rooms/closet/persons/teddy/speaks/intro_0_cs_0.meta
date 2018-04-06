@@ -1,7 +1,6 @@
 tmp_speak.primary = 10;
-tmp_speak.commands = [];
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.options_wx = -304.576136087485;
+tmp_speak.options_wy = -68.81594167679211;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.historicalsociety.closet.teddy.intro_0_cs_0",
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 132.13159507828425;
 tmp_speak_command.wy = -43.99510699953347;
@@ -22,4 +21,45 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Teddy, please stay hidden!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 186.48008999415615;
+tmp_speak_command.wy = -9.978884071925954;
+tmp_speak_command.w = 183;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "You're not supposed to be here-";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 213.87791314612574;
+tmp_speak_command.wy = -7.30177416656651;
+tmp_speak_command.w = 152;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "But don't worry, I'll be back soon.";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 503.8053463021331;
+tmp_speak_command.wy = -48.413268530215525;
+tmp_speak_command.w = 40;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 191.60354799515318;
+tmp_speak_command.wy = -9.50264884568709;
+tmp_speak_command.w = 176;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Now where did I put my notebook...?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

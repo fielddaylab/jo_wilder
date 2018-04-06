@@ -1,7 +1,6 @@
 tmp_speak.primary = false;
-tmp_speak.commands = [];
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
+tmp_speak.options_wx = 192.12121212121102;
+tmp_speak.options_wy = -32.42424242424292;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
@@ -10,7 +9,7 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -482.95454545454544;
 tmp_speak_command.wy = 324.54545454545456;
@@ -21,4 +20,25 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "You should check out the Basketball Center to test Wells' theory-";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -501.6666666666666;
+tmp_speak_command.wy = 281.3636363636364;
+tmp_speak_command.w = 209;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "and hopefully rustle up some more clues!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 118.7121212117455;
+tmp_speak_command.wy = 138.8636363634689;
+tmp_speak_command.w = 148;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Ooh, I like clues!";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

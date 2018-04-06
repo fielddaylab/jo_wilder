@@ -1,5 +1,4 @@
 tmp_speak.primary = 99;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.historicalsociety.frontdesk.archivist.busy1",
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -320.93676496422404;
 tmp_speak_command.wy = 245;
@@ -22,4 +21,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Didn't you hear me? I'm busy. Now if only I could read this thing… blasted tiny letters…";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

@@ -1,5 +1,4 @@
 tmp_speak.primary = 100;
-tmp_speak.commands = [];
 tmp_speak.options_wx = -3.1041490835105012;
 tmp_speak.options_wy = 58.00000000000001;
 tmp_speak.options_w = 295;
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.humanecology.frontdesk.worker.intro1",
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -196.00331858813087;
 tmp_speak_command.wy = 175;
@@ -22,4 +21,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "How lovely, a visitor! Take a look around. Would you care for some tea?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

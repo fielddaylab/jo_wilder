@@ -1,5 +1,4 @@
 tmp_speak.primary = false;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 98.00000000000006;
 tmp_speak.options_wy = 155.99999999999997;
 tmp_speak.options_w = 212;
@@ -10,7 +9,7 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -75.99999999999996;
 tmp_speak_command.wy = 209.99999999999997;
@@ -21,4 +20,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Don't care.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

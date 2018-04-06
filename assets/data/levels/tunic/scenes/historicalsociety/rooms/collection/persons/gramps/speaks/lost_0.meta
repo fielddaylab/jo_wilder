@@ -1,5 +1,4 @@
 tmp_speak.primary = 3;
-tmp_speak.commands = [];
 tmp_speak.options_wx = -396.59090920705773;
 tmp_speak.options_wy = 30.909090911870123;
 tmp_speak.options_w = 100;
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 115.61603186688953;
 tmp_speak_command.wy = 141.74762384153541;
@@ -22,4 +21,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "What should I do?";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

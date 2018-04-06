@@ -1,5 +1,4 @@
 tmp_speak.primary = 5;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.historicalsociety.collection.gramps.look_0",
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -438.3333333584987;
 tmp_speak_command.wy = 281.3636363657549;
@@ -22,4 +21,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "You should have a look at the tunic!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

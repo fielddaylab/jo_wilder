@@ -19,6 +19,6 @@ tmp_porthole.raw_notifications = [
 tmp_porthole.unlocks = [
 ];
 tmp_porthole.relocks = [
-"tunic.kohlcenter.halloffame.oldpictures"
+"tunic.kohlcenter.halloffame.oldpictures",
 ];
 

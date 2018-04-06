@@ -1,8 +1,7 @@
 tmp_speak.primary = false;
-tmp_speak.commands = [];
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
+tmp_speak.options_wx = -398;
+tmp_speak.options_wy = 147.99999999999997;
+tmp_speak.options_w = 312;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
@@ -10,7 +9,7 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -86.99999999999999;
 tmp_speak_command.wy = 263.99999999999994;
@@ -21,4 +20,25 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "I see the problem. Dirt, grass stains, ice cream. You need the heavy-duty wash.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -277;
+tmp_speak_command.wy = 145.00000000000003;
+tmp_speak_command.w = 183;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "No thanks. I need to figure out who this slip belonged to.";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -86.00000000000006;
+tmp_speak_command.wy = 240.99999999999997;
+tmp_speak_command.w = 256;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Oh… well… I can't show our log books to just anybody.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

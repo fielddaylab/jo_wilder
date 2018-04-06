@@ -1,5 +1,4 @@
 tmp_speak.primary = 96;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 152.99975974215684;
 tmp_speak.options_wy = 163;
 tmp_speak.options_w = 307;
@@ -11,7 +10,7 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.drycleaner.frontdesk.logbook.hub",
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -231.0000025380345;
 tmp_speak_command.wy = 190.99999999999994;
@@ -22,4 +21,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "What d'you need?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

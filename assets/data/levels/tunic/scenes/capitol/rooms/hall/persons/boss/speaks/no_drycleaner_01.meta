@@ -1,5 +1,4 @@
 tmp_speak.primary = 2;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -10,7 +9,7 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -133.33333333333505;
 tmp_speak_command.wy = 134.848484848485;
@@ -21,4 +20,15 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Um… still working on that part.";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 15.15151515151532;
+tmp_speak_command.wy = 418.1818181818182;
+tmp_speak_command.w = 290;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "It's not enough to tell me what the tunic is NOT. Come back when you figure out what it is.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

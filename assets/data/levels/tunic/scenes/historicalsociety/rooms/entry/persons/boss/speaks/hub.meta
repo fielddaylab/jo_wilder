@@ -1,5 +1,4 @@
 tmp_speak.primary = false;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -10,7 +9,7 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
-
+tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 350.8951714962277;
 tmp_speak_command.wy = 419.15019736085225;
@@ -21,4 +20,5 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "I believe your grandpa is waiting for you in the collection room.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//TAGGED
 

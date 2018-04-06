@@ -1,6 +1,6 @@
 tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "hub1";
+tmp_option.raw_qtext = "Please? I won't tell anybody!";
+tmp_option.target_speak = "slip04";
 tmp_option.raw_notifications = [
 ];
 tmp_option.unlocks = [
