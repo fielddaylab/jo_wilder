@@ -18,7 +18,7 @@ tmp_speak_command.w = 176;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Now where did I put my notebook_command...?";
+tmp_speak_command.raw_atext = "Now where did I put my notebook...?";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PLAYER;
 

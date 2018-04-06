@@ -2144,9 +2144,14 @@ var personview = function()
 
   self.dismiss = function()
   {
-    var speak = self.clicked_option.target_speak_found;
-    self.clicked_option = 0;
-    if(!speak)
+    if(self.clicked_option === 1) //next speak_command
+    {
+      self.ui_state = UI_STATE_IN_SPEAK;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.cur_speak_command_i++;
+    }
+    else if(!self.clicked_option.target_speak_found)
     {
       self.ui_state = UI_STATE_NULL;
       self.ui_state_t = 0;
@@ -2162,11 +2167,12 @@ var personview = function()
       self.ui_state = UI_STATE_IN_SPEAK;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
-      self.cur_speak = speak;
+      self.cur_speak = self.clicked_option.target_speak_found;
       if(!self.cur_speak.key && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
       self.cur_speak.key = true;
       self.unlock_content();
     }
+    self.clicked_option = 0;
   }
 
   self.unlock_content = function()
@@ -2177,6 +2183,7 @@ var personview = function()
 
     if(!self.cur_speak)
     {
+      self.cur_speak_i = 0;
       self.cur_speak = self.cache_unlocked_speaks[0];
       for(var i = 1; i < self.cache_unlocked_speaks.length; i++)
         if(self.cache_unlocked_speaks[i].primary > self.cur_speak.primary)
@@ -2349,7 +2356,20 @@ var personview = function()
     var option;
     self.hovered_option = 0;
 
-    if(!self.inline_option)
+    if(self.cur_speak_command_i < self.cur_speak.commands.length-1 || self.inline_option)
+    {
+      option = self.cache_unlocked_options[0];
+      var x = speak_command.x;
+      var y = speak_command.y+5;
+      var w = speak_command.w;
+      var h = speak_command.h*speak_command.atext.length;
+      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
+      {
+        my_cursor.mode = CURSOR_OPTION;
+        self.hovered_option = option;
+      }
+    }
+    else
     {
       var oyoff;
       oyoff = speak.options_y+5;
@@ -2367,19 +2387,6 @@ var personview = function()
         }
       }
     }
-    else //inline_option
-    {
-      option = self.cache_unlocked_options[0];
-      var x = speak_command.x;
-      var y = speak_command.y+5;
-      var w = speak_command.w;
-      var h = speak_command.h*speak_command.atext.length;
-      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
-      {
-        my_cursor.mode = CURSOR_OPTION;
-        self.hovered_option = option;
-      }
-    }
   }
   self.unhover = function(evt)
   {
@@ -2394,7 +2401,11 @@ var personview = function()
     var option;
     self.clicked_option = 0;
 
-    if(!self.inline_option)
+    if(self.cur_speak_command_i < self.cur_speak.commands.length-1)
+    {
+      self.clicked_option = 1;
+    }
+    else if(self.cache_unlocked_options.length > 1)
     {
       var oyoff;
 
@@ -2415,8 +2426,11 @@ var personview = function()
 
     if(self.clicked_option)
     {
-      if(!self.clicked_option.key && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
-      self.clicked_option.key = true;
+      if(self.clicked_option !== 1) //1 == next speak command
+      {
+        if(!self.clicked_option.key && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
+        self.clicked_option.key = true;
+      }
       if(self.ui_state != UI_STATE_OUT)
       {
         self.ui_state_t = 0;
@@ -2501,7 +2515,7 @@ var personview = function()
       oyoff += speak_command.h;
     }
 
-    if(!self.inline_option)
+    if(!self.inline_option && self.cur_speak_command_i < self.cur_speak.commands.length-1)
     {
       switch(self.ui_state)
       {

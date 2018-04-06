@@ -18,7 +18,7 @@ tmp_speak_command.w = 209;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Here's the log book_command. Go ahead, take a peek.";
+tmp_speak_command.raw_atext = "Here's the log book. Go ahead, take a peek.";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PERSON;
 

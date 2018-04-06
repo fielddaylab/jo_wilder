@@ -18,7 +18,7 @@ tmp_speak_command.w = 179;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "He came in last week_command. I found this in his jacket pocket.";
+tmp_speak_command.raw_atext = "He came in last week. I found this in his jacket pocket.";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PERSON;
 

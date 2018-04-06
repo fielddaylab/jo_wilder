@@ -18,7 +18,7 @@ tmp_speak_command.w = 279;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "… Missing paperwork? This doesn't make sense! Grampa's always so careful with his work_command.";
+tmp_speak_command.raw_atext = "...Missing paperwork? This doesn't make sense! Grampa's always so careful with his work.";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PLAYER;
 

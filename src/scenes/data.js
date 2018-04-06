@@ -3961,7 +3961,7 @@ tmp_speak_command.w = 179;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "He came in last week_command. I found this in his jacket pocket.";
+tmp_speak_command.raw_atext = "He came in last week. I found this in his jacket pocket.";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PERSON;
 
@@ -4012,7 +4012,7 @@ tmp_speak_command.w = 279;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "… Missing paperwork? This doesn't make sense! Grampa's always so careful with his work_command.";
+tmp_speak_command.raw_atext = "...Missing paperwork? This doesn't make sense! Grampa's always so careful with his work.";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PLAYER;
 
@@ -4165,7 +4165,7 @@ tmp_speak_command.w = 209;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Here's the log book_command. Go ahead, take a peek.";
+tmp_speak_command.raw_atext = "Here's the log book. Go ahead, take a peek.";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PERSON;
 
@@ -5252,7 +5252,7 @@ tmp_speak_command.w = 176;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Now where did I put my notebook_command...?";
+tmp_speak_command.raw_atext = "Now where did I put my notebook...?";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PLAYER;
 
@@ -9208,7 +9208,7 @@ tmp_speak_command.w = 225;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Ok_command. Let's see… um… Where do baby cows go to eat lunch?";
+tmp_speak_command.raw_atext = "Ok. Let's see… um… Where do baby cows go to eat lunch?";
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.speaker = SPEAKER_PLAYER;
 
