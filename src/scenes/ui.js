@@ -2103,6 +2103,7 @@ var personview = function()
 
   self.person;
   self.cur_speak = 0;
+  self.cur_speak_command_i = 0;
   self.cache_unlocked_speaks = [];
   self.cache_unlocked_options = [];
 
@@ -2233,28 +2234,27 @@ var personview = function()
     self.y = 0;
     self.w = 0;
     self.h = 0;
-    self.cur_speak;
-    self.consume_speak = function(s)
+    self.cur_speak_command;
+    self.consume_speak_command = function(s)
     {
-      self.cur_speak = s;
-      self.x = self.cur_speak.x;
-      self.y = self.cur_speak.y;
-      self.w = self.cur_speak.w;
-      self.h = self.cur_speak.h;
-      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
-      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
-      self.cur_speak.dirty = true;
+      self.cur_speak_command = s;
+      self.x = self.cur_speak_command.x;
+      self.y = self.cur_speak_command.y;
+      self.w = self.cur_speak_command.w;
+      self.h = self.cur_speak_command.h;
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
     }
     self.edit = function()
     {
-      self.cur_speak.x = self.x;
-      self.cur_speak.y = self.y;
-      self.cur_speak.w = self.w;
-      self.cur_speak.h = self.h;
-      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
-      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
+      self.cur_speak_command.x = self.x;
+      self.cur_speak_command.y = self.y;
+      self.cur_speak_command.w = self.w;
+      self.cur_speak_command.h = self.h;
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
 
-      self.cur_speak.atext = stextToLines(self.cur_speak.raw_atext, self.cur_speak.w);
+      self.cur_speak_command.atext = stextToLines(self.cur_speak_command.raw_atext, self.cur_speak_command.w);
     }
   })();
   self.options_editor = new (function()
@@ -2274,7 +2274,6 @@ var personview = function()
       self.h = self.cur_speak.options_h;
       self.cur_speak.options_wx = worldSpaceXpt(my_camera,canv,self.cur_speak.options_x);
       self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,self.cur_speak.options_y);
-      self.cur_speak.dirty = true;
     }
     self.edit = function()
     {
@@ -2293,8 +2292,8 @@ var personview = function()
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY))                                                                                   { self.edit_o = self.speak_editor; self.speak_editor.consume_speak(self.cur_speak); }
-    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); }
+    if(!self.edit_o && ptWithinBox(self.cur_speak,evt.doX,evt.doY))                                                                                   { self.edit_o = self.speak_editor; self.speak_editor.consume_speak(self.cur_speak); self.cur_speak.dirty = true; }
+    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); self.cur_speak.dirty = true; }
 
     if(!self.edit_o) return;
 
@@ -2346,6 +2345,7 @@ var personview = function()
     my_cursor.o = 0;
 
     var speak = self.cur_speak;
+    var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
     var option;
     self.hovered_option = 0;
 
@@ -2370,10 +2370,10 @@ var personview = function()
     else //inline_option
     {
       option = self.cache_unlocked_options[0];
-      var x = speak.x;
-      var y = speak.y+5;
-      var w = speak.w;
-      var h = speak.h*speak.atext.length;
+      var x = speak_command.x;
+      var y = speak_command.y+5;
+      var w = speak_command.w;
+      var h = speak_command.h*speak_command.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
       {
         my_cursor.mode = CURSOR_OPTION;
@@ -2399,7 +2399,6 @@ var personview = function()
       var oyoff;
 
       oyoff = speak.options_y+5;
-      if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
       for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
         option = self.cache_unlocked_options[i];
@@ -2429,11 +2428,13 @@ var personview = function()
 
   self.tick = function()
   {
-    self.cur_speak.animcycle_inst.tick();
-    self.cur_speak.x = screenSpaceXpt(my_camera,canv,self.cur_speak.wx);
-    self.cur_speak.y = screenSpaceYpt(my_camera,canv,self.cur_speak.wy);
-    self.cur_speak.options_x = screenSpaceXpt(my_camera,canv,self.cur_speak.options_wx);
-    self.cur_speak.options_y = screenSpaceYpt(my_camera,canv,self.cur_speak.options_wy);
+    var speak = self.cur_speak;
+    var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
+    speak.animcycle_inst.tick();
+    speak_command.x = screenSpaceXpt(my_camera,canv,speak_command.wx);
+    speak_command.y = screenSpaceYpt(my_camera,canv,speak_command.wy);
+    speak.options_x = screenSpaceXpt(my_camera,canv,speak.options_wx);
+    speak.options_y = screenSpaceYpt(my_camera,canv,speak.options_wy);
 
     self.ui_state_t++;
     self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
@@ -2457,6 +2458,7 @@ var personview = function()
 
     var yoff = 0;
     var speak = self.cur_speak;
+    var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
     var oyoff;
 
     var a = 1;
@@ -2471,17 +2473,17 @@ var personview = function()
 
     var b = 10;
     ctx.fillStyle = self.bubble_color;
-    fillRRect(speak.x-b-5,speak.y-b+5+yoff,speak.w+b*2+10,speak.h*speak.atext.length+b*2+5,b,ctx);
+    fillRRect(speak_command.x-b-5,speak_command.y-b+5+yoff,speak_command.w+b*2+10,speak_command.h*speak_command.atext.length+b*2+5,b,ctx);
 
     //tail
-    var y = speak.y-b+5+yoff+speak.h*speak.atext.length+b*2+5-0.5;
+    var y = speak_command.y-b+5+yoff+speak_command.h*speak_command.atext.length+b*2+5-0.5;
     var x;
     var w = 20;
     var h = 20;
-    if(speak.speaker == SPEAKER_PERSON)
-      x = clamp(speak.x, speak.x+speak.w-w, self.person.x + self.person.w/2-w/2);
+    if(speak_command.speaker == SPEAKER_PERSON)
+      x = clamp(speak_command.x, speak_command.x+speak_command.w-w, self.person.x + self.person.w/2-w/2);
     else
-      x = clamp(speak.x, speak.x+speak.w-w, my_avatar.x + my_avatar.w/2-w/2);
+      x = clamp(speak_command.x, speak_command.x+speak_command.w-w, my_avatar.x + my_avatar.w/2-w/2);
     ctx.beginPath();
     ctx.moveTo(x,y);
     ctx.lineTo(x+w/2-2,y+h-2);
@@ -2493,10 +2495,10 @@ var personview = function()
     ctx.fillStyle = self.text_color;
     ctx.font = option_font;
     oyoff = 0;
-    for(var j = 0; j < speak.atext.length; j++)
+    for(var j = 0; j < speak_command.atext.length; j++)
     {
-      ctx.fillText(speak.atext[j],speak.x,speak.y+yoff+oyoff+speak.h);
-      oyoff += speak.h;
+      ctx.fillText(speak_command.atext[j],speak_command.x,speak_command.y+yoff+oyoff+speak_command.h);
+      oyoff += speak_command.h;
     }
 
     if(!self.inline_option)
@@ -2513,7 +2515,6 @@ var personview = function()
       var option;
 
       oyoff = speak.options_y;
-      if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
       var h = 0;
       for(var i = 0; i < self.cache_unlocked_options.length; i++) h += self.cache_unlocked_options[i].qtext.length*speak.options_h;
       ctx.fillStyle = self.bubble_color;
@@ -2559,18 +2560,17 @@ var personview = function()
 
     if(DEBUG)
     {
-      yoff = 0;
       ctx.strokeStyle = white;
-      speak = self.cur_speak;
+
+      yoff = 0;
       oyoff = 0;
-      for(var j = 0; j < speak.atext.length; j++)
+      for(var j = 0; j < speak_command.atext.length; j++)
       {
-        ctx.strokeRect(speak.x,speak.y+yoff,speak.w,speak.h);
-        oyoff += speak.h;
+        ctx.strokeRect(speak_command.x,speak_command.y+yoff,speak_command.w,speak_command.h);
+        oyoff += speak_command.h;
       }
 
       oyoff = speak.options_y;
-      if(oyoff < speak.y+speak.h*speak.atext.length) oyoff = speak.y+speak.h*speak.atext.length;
       for(var i = 0; i < self.cache_unlocked_options.length; i++)
       {
         option = self.cache_unlocked_options[i];

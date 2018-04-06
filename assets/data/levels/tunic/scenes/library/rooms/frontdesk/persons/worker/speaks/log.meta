@@ -1,12 +1,5 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -4.499999999999773;
-tmp_speak.wy = 266;
-tmp_speak.w = 394.9999999999999;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "librarian";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I don't know off the top of my head, but you're more than welcome to the microfiche in back; we've got tons of old papers!";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 55.50000000000014;
 tmp_speak.options_wy = 130.99999999999997;
 tmp_speak.options_w = 147;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -4.499999999999773;
+tmp_speak_command.wy = 266;
+tmp_speak_command.w = 394.9999999999999;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "librarian";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I don't know off the top of my head, but you're more than welcome to the microfiche in back; we've got tons of old papers!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

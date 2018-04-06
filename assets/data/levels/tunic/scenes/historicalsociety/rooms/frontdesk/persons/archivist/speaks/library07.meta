@@ -1,12 +1,5 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -117;
-tmp_speak.wy = 264;
-tmp_speak.w = 190;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Ha! That's a knee slapper. How can I help ya, kid?";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -117;
+tmp_speak_command.wy = 264;
+tmp_speak_command.w = 190;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Ha! That's a knee slapper. How can I help ya, kid?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

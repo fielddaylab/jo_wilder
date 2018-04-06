@@ -1,12 +1,5 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -409.5454545469995;
-tmp_speak.wy = 282.803030303202;
-tmp_speak.w = 147;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "If only I had time to investigate...";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 125.90909090909102;
 tmp_speak.options_wy = 134.54545454545456;
 tmp_speak.options_w = 100;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -409.5454545469995;
+tmp_speak_command.wy = 282.803030303202;
+tmp_speak_command.w = 147;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "If only I had time to investigate...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

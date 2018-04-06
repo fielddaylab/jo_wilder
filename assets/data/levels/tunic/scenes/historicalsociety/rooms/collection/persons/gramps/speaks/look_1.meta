@@ -1,12 +1,5 @@
 tmp_speak.primary = 4;
-tmp_speak.wx = -464.2424242424242;
-tmp_speak.wy = 324.54545454545456;
-tmp_speak.w = 184;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "The first step in uncovering history is CLOSE inspection...";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -18,4 +11,15 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.historicalsociety.collection.tunic.slip",
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -464.2424242424242;
+tmp_speak_command.wy = 324.54545454545456;
+tmp_speak_command.w = 184;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "The first step in uncovering history is CLOSE inspection...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

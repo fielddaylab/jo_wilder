@@ -1,12 +1,5 @@
 tmp_speak.primary = 95;
-tmp_speak.wx = -87.99701299333621;
-tmp_speak.wy = 232;
-tmp_speak.w = 133;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "What now?";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 98.00000021053748;
 tmp_speak.options_wy = 176.99999999999997;
 tmp_speak.options_w = 228;
@@ -18,4 +11,15 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.historicalsociety.frontdesk.archivist.library01",
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -87.99701299333621;
+tmp_speak_command.wy = 232;
+tmp_speak_command.w = 133;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "What now?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

@@ -1,12 +1,5 @@
 tmp_speak.primary = true;
-tmp_speak.wx = -85.24061899220952;
-tmp_speak.wy = 251.39999999999998;
-tmp_speak.w = 195.0000018198219;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "librarian";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "How can I help you?";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 138.5000000120854;
 tmp_speak.options_wy = 186.99999999999997;
 tmp_speak.options_w = 257;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -85.24061899220952;
+tmp_speak_command.wy = 251.39999999999998;
+tmp_speak_command.w = 195.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "librarian";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "How can I help you?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

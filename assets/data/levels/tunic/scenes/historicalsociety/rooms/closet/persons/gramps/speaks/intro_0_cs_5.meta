@@ -1,12 +1,5 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -356.9504738760633;
-tmp_speak.wy = 249.88850546780083;
-tmp_speak.w = 282;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "I'll have to tell you the rest later- or I'll be late to my meeting!";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = -330.7717132442285;
 tmp_speak.options_wy = 1.0389307411907944;
 tmp_speak.options_w = 100;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -356.9504738760633;
+tmp_speak_command.wy = 249.88850546780083;
+tmp_speak_command.w = 282;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I'll have to tell you the rest later- or I'll be late to my meeting!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

@@ -1,12 +1,5 @@
 tmp_speak.primary = false;
-tmp_speak.wx = 117.27272727272737;
-tmp_speak.wy = 182.04545454545456;
-tmp_speak.w = 171;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Not sure- looks like it's from 1916...";
-tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 222.34848484848501;
 tmp_speak.options_wy = -105.83333333333326;
 tmp_speak.options_w = 100;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 117.27272727272737;
+tmp_speak_command.wy = 182.04545454545456;
+tmp_speak_command.w = 171;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Not sure- looks like it's from 1916...";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
 

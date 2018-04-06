@@ -1,12 +1,5 @@
 tmp_speak.primary = 3;
-tmp_speak.wx = -101.3661746464911;
-tmp_speak.wy = 85.98010910074687;
-tmp_speak.w = 148.69814225923326;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Where's Wells?";
-tmp_speak.speaker = SPEAKER_PLAYER;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 239.216253647685;
 tmp_speak.options_wy = 100.71702878373762;
 tmp_speak.options_w = 146.9697885196375;
@@ -18,4 +11,15 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.capitol.hall.boss.boss_chain_01a",
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -101.3661746464911;
+tmp_speak_command.wy = 85.98010910074687;
+tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Where's Wells?";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
 

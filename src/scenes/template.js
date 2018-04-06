@@ -642,12 +642,9 @@ var stextToLines = function(text,w)
   return textToLines(option_font, w, text, ctx)
 }
 
-var speak = function()
+var speak_command = function()
 {
   var self = this;
-  self.id = "null"
-  self.fqid = "null"
-  self.primary = false;
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.wx = 0; //defines top-left
@@ -655,9 +652,22 @@ var speak = function()
   self.w = 0;
   self.h = 0;
   self.raw_atext = "null";
-  self.atext_hard_coded = false;
   self.atext = stextToLines(self.raw_atext,self.w);
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+  //
+  self.animcycle_inst;
+  self.x = 0;
+  self.y = 0;
+  self.text;
+}
+
+var speak = function()
+{
+  var self = this;
+  self.id = "null"
+  self.fqid = "null"
+  self.primary = false;
+  self.commands = [];
   self.options_wx = 0;
   self.options_wy = 0;
   self.options_w = 0;
@@ -670,9 +680,6 @@ var speak = function()
   self.locked = true;
   self.key = false;
   self.dirty = false;
-  self.animcycle_inst;
-  self.x = 0;
-  self.y = 0;
   self.options_x = 0;
   self.options_y = 0;
   self.notifications = [];
@@ -685,7 +692,6 @@ var option = function()
   self.fqid = "null"
   self.index = 0;
   self.raw_qtext = "null";
-  self.qtext_hard_coded = false;
   self.qtext = stextToLines(self.raw_qtext,self.w);
   self.target_speak = "null";
   self.raw_notifications = [];
@@ -1061,14 +1067,6 @@ var print_speak_meta = function(l)
 {
   var str = "SAVE speak "+l.fqid+"\n"+
   "tmp_speak.primary = "+l.primary+";\n"+
-  "tmp_speak.wx = "+l.wx+";\n"+
-  "tmp_speak.wy = "+l.wy+";\n"+
-  "tmp_speak.w = "+l.w+";\n"+
-  "tmp_speak.h = "+l.h+";\n"+
-  "tmp_speak.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_speak.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_speak.raw_atext = \""+l.raw_atext+"\";\n"+
-  "tmp_speak.speaker = "+(l.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
   "tmp_speak.options_wx = "+l.options_wx+";\n"+
   "tmp_speak.options_wy = "+l.options_wy+";\n"+
   "tmp_speak.options_w = "+l.options_w+";\n"+
@@ -1087,7 +1085,23 @@ var print_speak_meta = function(l)
   for(var i = 0; i < l.relocks.length; i++)
     str += "\""+l.relocks[i]+"\",\n";
   str +=
-  "];\n"
+  "];\n"+
+  "tmp_speak.commands = [];\n";
+  var c;
+  for(var i = 0; i < l.commands.length; i++)
+  {
+    c = l.commands[i];
+    str += "tmp_speak_command = new speak_command();\n"+
+    "tmp_speak_command.wx = "+c.wx+";\n"+
+    "tmp_speak_command.wy = "+c.wy+";\n"+
+    "tmp_speak_command.w = "+c.w+";\n"+
+    "tmp_speak_command.h = "+c.h+";\n"+
+    "tmp_speak_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
+    "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
+    "tmp_speak_command.raw_atext = \""+c.raw_atext+"\";\n"+
+    "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
+    "tmp_speak_command.commands.push(tmp_speak_command);\n";
+  }
   console.log(str);
 }
 
@@ -1341,11 +1355,8 @@ var print_cutscene_meta = function(l)
   for(var i = 0; i < l.relocks.length; i++)
     str += "\""+l.relocks[i]+"\",\n";
   str +=
-  "];\n"
-
-  str += "tmp_cutscene.commands = [];\n"
-
-  "tmp_cutscene.trigger = "+(l.trigger == CUTSCENE_TRIGGER_AUTO ? "CUTSCENE_TRIGGER_AUTO" : "CUTSCENE_TRIGGER_ACT" )+";\n";
+  "];\n"+
+  "tmp_cutscene.commands = [];\n";
   var c;
   for(var i = 0; i < l.commands.length; i++)
   {

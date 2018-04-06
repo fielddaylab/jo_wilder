@@ -1,12 +1,5 @@
 tmp_speak.primary = false;
-tmp_speak.wx = -61.99999999999996;
-tmp_speak.wy = 258.99999999999994;
-tmp_speak.w = 228;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Your gramps is my favorite customer! Always full of stories. Poor guy…";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = -243.99999999999997;
 tmp_speak.options_wy = -80.99999999999997;
 tmp_speak.options_w = 100;
@@ -17,4 +10,15 @@ tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -61.99999999999996;
+tmp_speak_command.wy = 258.99999999999994;
+tmp_speak_command.w = 228;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Your gramps is my favorite customer! Always full of stories. Poor guy…";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 

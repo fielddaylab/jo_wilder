@@ -1,12 +1,5 @@
 tmp_speak.primary = 98;
-tmp_speak.wx = -194.02957293488913;
-tmp_speak.wy = 181.99999999999991;
-tmp_speak.w = 267;
-tmp_speak.h = 30;
-tmp_speak.animcycle_id = "null";
-tmp_speak.audio_id = "null";
-tmp_speak.raw_atext = "Ahhhh. Much better. Come to think of it, I've got a file of dry cleaners on the table. Take a look!";
-tmp_speak.speaker = SPEAKER_PERSON;
+tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -18,4 +11,15 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 "tunic.humanecology.frontdesk.worker.better",
 ];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -194.02957293488913;
+tmp_speak_command.wy = 181.99999999999991;
+tmp_speak_command.w = 267;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Ahhhh. Much better. Come to think of it, I've got a file of dry cleaners on the table. Take a look!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 
