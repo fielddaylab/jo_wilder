@@ -2157,6 +2157,7 @@ var personview = function()
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak = 0;
+      self.cur_speak_command_i = 0;
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -2168,6 +2169,7 @@ var personview = function()
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak = self.clicked_option.target_speak_found;
+      self.cur_speak_command_i = 0;
       if(!self.cur_speak.key && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
       self.cur_speak.key = true;
       self.unlock_content();

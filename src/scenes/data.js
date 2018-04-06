@@ -4631,7 +4631,7 @@ tmp_person.raw_notifications = [
 tmp_person.unlocks = [
 ];
 tmp_person.relocks = [
-"tunic.historicalsociety.closet.gramps.intro_0_cs_5",
+"tunic.historicalsociety.closet.gramps.intro_0_cs_0",
 ];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -11427,7 +11427,7 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.unlocks = [
-"tunic.historicalsociety.frontdesk.archivist.library09",
+"tunic.historicalsociety.frontdesk.archivist.library02",
 ];
 tmp_scene.relocks = [
 ];

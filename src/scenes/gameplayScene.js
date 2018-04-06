@@ -19,6 +19,75 @@ var GamePlayScene = function(game, stage)
   {
     init_levels();
     cur_level = levels[0];         for(var i = 1; i < levels.length;          i++) if(levels[i].primary)          cur_level = levels[i];
+
+
+
+
+
+
+
+
+    var scene;
+    for(var i = 0; i < cur_level.scenes.length; i++)
+    {
+      scene = cur_level.scenes[i];
+      var room;
+      for(var j = 0; j < scene.rooms.length; j++)
+      {
+        room = scene.rooms[j];
+        var person;
+        for(var k = 0; k < room.persons.length; k++)
+        {
+          person = room.persons[k];
+          var speak;
+          for(var l = 0; l < person.speaks.length; l++)
+          {
+            speak = person.speaks[l];
+            var option;
+            if(speak.options.length == 1)
+            {
+              option = speak.options[0];
+              if(option.unlocks.length == 0 && option.relocks.length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
+              {
+                var consumed_speak = option.target_speak_found;
+                if(consumed_speak && consumed_speak.raw_notifications.length == 0 && !consumed_speak.primary)
+                {
+                  for(var m = 0; m < person.speaks.length; m++)
+                    if(consumed_speak == person.speaks[m]) person.speaks.splice(m,1);
+                  speak.options_wx = consumed_speak.options_wx;
+                  speak.options_wy = consumed_speak.options_wy;
+                  speak.options_w  = consumed_speak.options_w;
+                  speak.options_h  = consumed_speak.options_h;
+                  for(var m = 0; m < consumed_speak.commands.length; m++)
+                    speak.commands.push(consumed_speak.commands[m]);
+                  speak.options = consumed_speak.options;
+                  l--;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     cur_room = find(cur_level.intro_room_id);
     if(cur_room)
     {
@@ -67,6 +136,7 @@ var GamePlayScene = function(game, stage)
     {
       if(evt.key == " ") print_whole_level(cur_level);
       if(evt.key == "c") get_save_code();
+      if(evt.key == "l") load_save_code("000000100000005242820206420742014400124673301465600000000000368");
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "v")

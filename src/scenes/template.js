@@ -133,6 +133,11 @@ var save_slate = function()
           var wildcard = room.wildcards[k];
           self.insert(wildcard);
         }
+        for(var k = 0; k < room.cutscenes.length; k++)
+        {
+          var cutscene = room.cutscenes[k];
+          self.insert(cutscene);
+        }
       }
     }
   }
