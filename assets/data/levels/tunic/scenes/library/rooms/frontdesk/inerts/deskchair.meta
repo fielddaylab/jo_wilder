@@ -1,0 +1,11 @@
+tmp_inert.ww = 158.45454814781772;
+tmp_inert.wh = 150.18181818181802;
+tmp_inert.wx = -388.47543810388385;
+tmp_inert.wy = 118.9921381805895;
+tmp_inert.wz = 8;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "librarydeskchair";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];

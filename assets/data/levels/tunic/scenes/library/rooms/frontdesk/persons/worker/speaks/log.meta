@@ -1,6 +1,6 @@
 tmp_speak.primary = false;
-tmp_speak.options_wx = 55.50000000000014;
-tmp_speak.options_wy = 130.99999999999997;
+tmp_speak.options_wx = -292.4090909090968;
+tmp_speak.options_wy = 223.51515151515167;
 tmp_speak.options_w = 147;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
@@ -11,8 +11,8 @@ tmp_speak.relocks = [
 ];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -4.499999999999773;
-tmp_speak_command.wy = 266;
+tmp_speak_command.wx = -391.5000000694647;
+tmp_speak_command.wy = 411.93939394195337;
 tmp_speak_command.w = 394.9999999999999;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "librarian";

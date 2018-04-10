@@ -1,15 +1,15 @@
 tmp_room.primary = false;
-tmp_room.ww = 1424.078303425775;
-tmp_room.wh = 660;
+tmp_room.ww = 2000;
+tmp_room.wh = 880;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.cam_wh = 860;
+tmp_room.nav_min_wz = 11;
+tmp_room.nav_max_wz = 20;
 tmp_room.navs = [
-{wx:69.08352365415988, wy:-104.99999999999996, ww:1278.9911908646006, wh:430.0000000000001 },
+{wx:-49.471606682383594, wy:-123.60355294095385, ww:1540.8093726827826, wh:244.5454545454547 },
 ];
 tmp_room.lights = [
 {wx:541.0918433931482, wy:259.3000000000001, ww:66.30636215334421, wh:29.000000000000053 },
@@ -20,8 +20,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
-tmp_room.target_start_wx = 73.81875195937431;
-tmp_room.target_start_wy = -268.4000000000001;
+tmp_room.target_start_wx = -747.5492172000397;
+tmp_room.target_start_wy = -11.572982721124806;
 tmp_room.raw_notifications = [
 ];
 tmp_room.unlocks = [
