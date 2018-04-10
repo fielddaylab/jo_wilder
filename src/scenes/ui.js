@@ -1404,6 +1404,8 @@ var mapview = function()
     var yoff = (1-t)*self.h
     ctx.drawImage(self.map_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+
+    if(!my_notificationview.note.length)
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
@@ -1556,9 +1558,6 @@ var notebookview = function()
   {
     var yoff = (1-t)*self.h;
     ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
-    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-    ctx.drawImage(self.notebook_next_animcycle_inst.img, self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
-    ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
 
     var entry;
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
@@ -1567,6 +1566,12 @@ var notebookview = function()
       if(entry.page == self.page)
         ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
+
+    ctx.drawImage(self.notebook_next_animcycle_inst.img, self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
+    ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
+
+    if(!my_notificationview.note.length)
+    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
     {
@@ -1866,6 +1871,8 @@ var objectview = function()
       ctx.strokeStyle = white;
       ctx.drawImage(zone.animcycle_inst.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
+
+    if(!my_notificationview.note.length)
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
@@ -2395,24 +2402,28 @@ var personview = function()
     var option;
     self.clicked_option = 0;
 
-    if(self.cur_speak_command_i == self.cur_speak.commands.length-1 && self.cache_unlocked_options.length > 1)
+    if(self.cur_speak_command_i == self.cur_speak.commands.length-1)
     {
-      var oyoff;
-
-      oyoff = speak.options_y+5;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      if(self.cache_unlocked_options.length > 1) //multiple options- find
       {
-        option = self.cache_unlocked_options[i];
-        for(var j = 0; j < option.qtext.length; j++)
+        var oyoff;
+
+        oyoff = speak.options_y+5;
+        for(var i = 0; i < self.cache_unlocked_options.length; i++)
         {
-          if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
-            self.clicked_option = option;
-          oyoff += speak.options_h;
+          option = self.cache_unlocked_options[i];
+          for(var j = 0; j < option.qtext.length; j++)
+          {
+            if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+              self.clicked_option = option;
+            oyoff += speak.options_h;
+          }
         }
       }
+      else if(self.cache_unlocked_options.length == 1) self.clicked_option = self.cache_unlocked_options[0]; //1 options- pick it
+      else self.clicked_option = 1; //no options- leave
     }
-    else //inline_option
-      self.clicked_option = 1;
+    else self.clicked_option = 1; //still in chain
 
     if(self.clicked_option)
     {
@@ -3004,7 +3015,7 @@ var cutsceneview = function()
   self.draw = function(t)
   {
     ctx.fillStyle = "#4c4c4c";
-    ctx.font = "20px Helvetica";
+    ctx.font = "20px Patrick";
 
     //bubble sort on z
     var sorted = false;

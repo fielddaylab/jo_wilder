@@ -1,18 +1,22 @@
 <html>
 <head>
-<meta charset="utf-8"></meta> <!-- because why not -->
+<meta charset="utf-8"></meta>
 <style>
+@font-face {
+    font-family:"Patrick";
+    src:url("assets/patrick_hand_sc_regular.ttf");
+}
 body,div
 {
   margin:0px;
   padding:0px;
-  font:12px Helvetica;
+  font:"30px Patrick";
 }
 </style>
-<script type='text/javascript' src='src/config.js'></script>
-<script type='text/javascript' src='src/utils/doutils.js'></script>
-<script type='text/javascript' src='src/utils/utils.js'></script>
-<script type='text/javascript' src='src/utils/webgl-utils.js'></script>
+<script type="text/javascript" src="src/config.js"></script>
+<script type="text/javascript" src="src/utils/doutils.js"></script>
+<script type="text/javascript" src="src/utils/utils.js"></script>
+<script type="text/javascript" src="src/utils/webgl-utils.js"></script>
 <script type="text/javascript" src="src/canv.js"></script>
 <script type="text/javascript" src="src/stage.js"></script>
 <script type="text/javascript" src="src/game.js"></script>
@@ -68,7 +72,7 @@ function begin()
   g = new Game({width:w,height:h,container:"stage_container"});
   g.begin();
 }
-window.addEventListener('touchstart', function(e){ e.preventDefault() }); //prevent browser from doing anything funny
+window.addEventListener("touchstart", function(e){ e.preventDefault() }); //prevent browser from doing anything funny
 window.addEventListener("load",begin,false);
 <!-- window.addEventListener("resize",resize,false); -->
 </script>
