@@ -1,0 +1,25 @@
+tmp_observation.ww = 157.00000000000003;
+tmp_observation.wh = 222.99999999999997;
+tmp_observation.wx = -221.49999999999994;
+tmp_observation.wy = 115.50000000000001;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 77.00570027022911;
+tmp_observation.act_wy = -61.0009545064006;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 47.81673205629488;
+tmp_observation.hover_icon_wy = 79.86323876869221;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "Door's locked...";
+tmp_observation.blip_wx = -101.5776837531122;
+tmp_observation.blip_wy = 199.08456116367233;
+tmp_observation.blip_w = 118;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+];
+

@@ -1,0 +1,26 @@
+tmp_observation.ww = 142.9978654532935;
+tmp_observation.wh = 265.00005213259567;
+tmp_observation.wx = -8.17981401021953;
+tmp_observation.wy = 110.48339672352805;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 41.00000000693774;
+tmp_observation.act_wy = -90;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 6.004597013486318;
+tmp_observation.hover_icon_wy = 25;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "\"Out To Lunch\"- better check back later.";
+tmp_observation.blip_wx = 79.8053665534872;
+tmp_observation.blip_wy = 234.9999999987445;
+tmp_observation.blip_w = 123;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+"tunic.historicalsociety.closet_dirty",
+];
+

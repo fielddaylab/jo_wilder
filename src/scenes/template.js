@@ -887,7 +887,7 @@ var print_level_meta = function(l)
   "tmp_level.target_lerp_s = "+l.target_lerp_s+";\n"+
   "tmp_level.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_level.unlocks = [\n";
@@ -937,7 +937,7 @@ var print_entry_meta = function(l)
   "tmp_entry.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_entry.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_entry.unlocks = [\n";
@@ -965,7 +965,7 @@ var print_scene_meta = function(l)
   "tmp_scene.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_scene.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_scene.unlocks = [\n";
@@ -1017,7 +1017,7 @@ var print_room_meta = function(l)
   "tmp_room.target_start_wy = "+l.target_start_wy+";\n"+
   "tmp_room.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_room.unlocks = [\n";
@@ -1052,7 +1052,7 @@ var print_person_meta = function(l)
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_person.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_person.unlocks = [\n";
@@ -1078,7 +1078,7 @@ var print_speak_meta = function(l)
   "tmp_speak.options_h = "+l.options_h+";\n"+
   "tmp_speak.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_speak.unlocks = [\n";
@@ -1103,7 +1103,7 @@ var print_speak_meta = function(l)
     "tmp_speak_command.h = "+c.h+";\n"+
     "tmp_speak_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
     "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
-    "tmp_speak_command.raw_atext = \""+c.raw_atext+"\";\n"+
+    "tmp_speak_command.raw_atext = \""+c.raw_atext.replace("\"","\\\"")+"\";\n"+
     "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
     "tmp_speak.commands.push(tmp_speak_command);\n";
   }
@@ -1114,11 +1114,11 @@ var print_option_meta = function(l)
 {
   var str = "SAVE option "+l.fqid+"\n"+
   "tmp_option.index = "+l.index+";\n"+
-  "tmp_option.raw_qtext = \""+l.raw_qtext+"\";\n"+
+  "tmp_option.raw_qtext = \""+l.raw_qtext.replace("\"","\\\"")+"\";\n"+
   "tmp_option.target_speak = \""+l.target_speak+"\";\n"+
   "tmp_option.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_option.unlocks = [\n";
@@ -1152,7 +1152,7 @@ var print_object_meta = function(l)
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_object.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_object.unlocks = [\n";
@@ -1184,14 +1184,14 @@ var print_observation_meta = function(l)
   "tmp_observation.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_observation.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_observation.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_observation.raw_text = \""+l.raw_text+"\";\n"+
+  "tmp_observation.raw_text = \""+l.raw_text.replace("\"","\\\"")+"\";\n"+
   "tmp_observation.blip_wx = "+l.blip_wx+";\n"+
   "tmp_observation.blip_wy = "+l.blip_wy+";\n"+
   "tmp_observation.blip_w = "+l.blip_w+";\n"+
   "tmp_observation.blip_h = "+l.blip_h+";\n"+
   "tmp_observation.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_observation.unlocks = [\n";
@@ -1215,7 +1215,7 @@ var print_view_meta = function(l)
   "tmp_view.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_view.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_view.unlocks = [\n";
@@ -1243,7 +1243,7 @@ var print_zone_meta = function(l)
   "tmp_zone.target_view = \""+l.target_view+"\";\n"+
   "tmp_zone.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_zone.unlocks = [\n";
@@ -1280,7 +1280,7 @@ var print_porthole_meta = function(l)
   "tmp_porthole.target_start_wy = "+l.target_start_wy+";\n"+
   "tmp_porthole.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_porthole.unlocks = [\n";
@@ -1314,7 +1314,7 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_wildcard.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_wildcard.unlocks = [\n";
@@ -1348,7 +1348,7 @@ var print_cutscene_meta = function(l)
   "tmp_cutscene.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_cutscene.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i]+"\",\n";
+    str += "\""+l.raw_notifications[i].replace("\"","\\\"")+"\",\n";
   str +=
   "];\n"+
   "tmp_cutscene.unlocks = [\n";
@@ -1421,7 +1421,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.wy = "+c.wy+";\n"+
         "tmp_cutscene_command.w = "+c.w+";\n"+
         "tmp_cutscene_command.h = "+c.h+";\n"+
-        "tmp_cutscene_command.raw_text = \""+c.raw_text+"\";\n"+
+        "tmp_cutscene_command.raw_text = \""+c.raw_text.replace("\"","\\\"")+"\";\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ACT:

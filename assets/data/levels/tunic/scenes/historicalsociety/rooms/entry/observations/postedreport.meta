@@ -1,0 +1,25 @@
+tmp_observation.ww = 148.8497921463892;
+tmp_observation.wh = 174.90472351388297;
+tmp_observation.wx = -343.24849379978514;
+tmp_observation.wy = 237.8643938329022;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 87.93163636363631;
+tmp_observation.act_wy = -236.11272727272706;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 50.47927272727269;
+tmp_observation.hover_icon_wy = 63.50618181818178;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "Wells' report- \"Basketball Jersey\"";
+tmp_observation.blip_wx = -233.59715299545897;
+tmp_observation.blip_wy = 297.07346775313846;
+tmp_observation.blip_w = 142;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+];
+
