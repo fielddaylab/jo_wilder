@@ -2220,7 +2220,7 @@ var personview = function()
 
     self.inline_option = 0;
     if(
-       self.cache_unlocked_options.length ||
+       !self.cache_unlocked_options.length ||
       (self.cache_unlocked_options.length == 1 && self.cache_unlocked_options[0].raw_qtext == ">")
     )
       self.inline_option = 1;
