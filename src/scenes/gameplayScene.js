@@ -133,13 +133,13 @@ var GamePlayScene = function(game, stage)
         {
           stage = new Stage({width:stage.width,height:stage.height,container:stage.container});
           g.resize({stage:stage});
-          ctx.font = "20px Helvetica";
+          ctx.font = "20px Patrick";
         }
         else
         {
           stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:4});
           g.resize({stage:stage});
-          ctx.font = "20px Helvetica";
+          ctx.font = "20px Patrick";
         }
       }
     }

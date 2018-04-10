@@ -12,7 +12,7 @@ var state_from;
 var state_to;
 var walk_speed = 6;
 var option_h = 20;
-var option_font = option_h+"px Helvetica";
+var option_font = option_h+"px Patrick";
 
 var cursor_prev;
 var cursor;
