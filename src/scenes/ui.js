@@ -787,6 +787,22 @@ var navigable = function()
   self.cam_target_wx = function(wx)
   {
     var xp = smooth(invlerp(self.room.wx-self.room.ww/2, self.room.wx+self.room.ww/2, wx));
+    xp = (xp-0.5)*2;
+    if(xp > 0)
+    {
+      xp = 1-xp;
+      xp = pow(xp,1.5);
+      xp = 1-xp;
+    }
+    if(xp < 0)
+    {
+      xp *= -1;
+      xp = 1-xp;
+      xp = pow(xp,1.5);
+      xp = 1-xp;
+      xp *= -1;
+    }
+    xp = (xp/2)+0.5;
     var camwd = self.room.ww-my_real_camera.ww;
     return self.room.wx-camwd/2+xp*camwd;
   }
