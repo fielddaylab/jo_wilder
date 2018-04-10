@@ -117,8 +117,9 @@ var GamePlayScene = function(game, stage)
       if(evt.key == " ") print_whole_level(cur_level,false);
       if(evt.key == "f") print_whole_level(cur_level,true);
       if(evt.key == "c") get_save_code();
-      if(evt.key == "l") load_save_code("000000100000005242820206420742014400124673301465600000000000368"); //first archivist
-      if(evt.key == "l") load_save_code("000000100000005242820206420742014407995137311910783843040000371"); //pre drycleans
+      if(evt.key == "l") load_save_code("000000500000001081329000025631475120000065000000000000000000004"); //to kohl center
+      //if(evt.key == "l") load_save_code("000000100000005242820206420742014400124673301465600000000000368"); //first archivist
+      //if(evt.key == "l") load_save_code("000000100000005242820206420742014407995137311910783843040000371"); //pre drycleans
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "v")
@@ -488,7 +489,7 @@ var GamePlayScene = function(game, stage)
         else state_t += state_t_speed;
         break;
       case STATE_MAP:
-        my_navigable.tick;
+        my_navigable.tick();
         my_avatar.tick();
         if(state_to == STATE_NAV && my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
         {
@@ -497,12 +498,10 @@ var GamePlayScene = function(game, stage)
           {
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
-            cur_room = cur_scene.rooms[0];
-            for(var i = 1; i < cur_scene.rooms.length; i++)
-              if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
+            cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
             my_loader.consume_room(cur_room);
-            my_avatar.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
+            my_avatar.consume_room(cur_room);
             cur_act = 0;
             if(my_loader.loading) state_t = 0.5;
           }
@@ -640,6 +639,7 @@ var GamePlayScene = function(game, stage)
             my_navigable.draw();
             my_toolbar.draw(state_t);
             my_mapview.draw(1-state_t);
+            var blur = 1-((state_t*2)-1);
             ctx.fillStyle = "rgba(0,0,0,"+blur+")";
             ctx.fillRect(0,0,canv.width,canv.height);
           }

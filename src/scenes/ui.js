@@ -18,7 +18,8 @@ var loader = function()
   {
     for(var i = 0; i < self.loading_q.length; i++)
       if(self.loading_q[i] == args.target) { self.loading_q.splice(i,1); break; }
-    if(!self.loading_q.length) self.loading = false;
+    if(!self.loading_q.length)
+      self.loading = false;
     //console.log(self.loading_q.length+" "+args.target.src);
   }
   self.load_animcycle_inst = function(inst)
@@ -88,14 +89,6 @@ var loader = function()
       {
         speak = person.speaks[l];
         self.load_animcycle_inst(speak.animcycle_inst);
-        /*
-        var option;
-        for(var m = 0; m < speak.options.length; m++)
-        {
-          option = speak.options[m];
-          print_option_meta(option);
-        }
-        */
       }
     }
     var object;
@@ -3052,7 +3045,22 @@ var cutsceneview = function()
       var c = self.running_commands[i];
       if(c.command == CUTSCENE_COMMAND_SPEAK)
       {
+        var a = 1;
         var yoff = 0;
+        if(c.command_state == 0)
+        {
+          var t = c.command_t/30;
+          a = bubble_in_a(t);
+          yoff = bubble_in_y(t);
+        }
+        if(c.command_state == 2)
+        {
+          var t = c.command_t/30;
+          a = bubble_out_a(t);
+          yoff = bubble_out_y(t);
+        }
+        ctx.globalAlpha = a;
+
         var b = 10;
         ctx.fillStyle = self.bubble_color;
         fillRRect(c.x-b-5,c.y-b+5+yoff,c.w+b*2+10,c.h*c.text.length+b*2+5,b,ctx);
@@ -3081,6 +3089,7 @@ var cutsceneview = function()
           oyoff += c.h;
         }
 
+        ctx.globalAlpha = 1;
       }
     }
 
