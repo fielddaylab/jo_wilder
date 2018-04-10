@@ -493,7 +493,7 @@ if [ $NOGEN == "0" ]; then
             options_dir=$speak_dir/options
             for option in $options_dir/*.meta; do #options
 
-              if [ ! -f $option ]; then if forcestub option $options_dir; then option=$options_dir/*.meta; else exit; fi fi
+              if [ ! -f $option ]; then continue; fi
               option_id=`id $option`
               option_dir=`dir $option`
               fixifdne option $options_dir $option_id

@@ -2137,14 +2137,17 @@ var personview = function()
 
   self.dismiss = function()
   {
-    if(self.clicked_option === 1) //next speak_command
+    if(self.clicked_option === 1 && self.cur_speak_command_i < self.cur_speak.commands.length-1) //next speak_command
     {
       self.ui_state = UI_STATE_IN_SPEAK;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak_command_i++;
     }
-    else if(!self.clicked_option.target_speak_found)
+    else if(
+      (self.clicked_option === 1 && self.cur_speak_command_i === self.cur_speak.commands.length-1) || //no options
+      !self.clicked_option.target_speak_found //option w/ null target
+    )
     {
       self.ui_state = UI_STATE_NULL;
       self.ui_state_t = 0;
@@ -2156,7 +2159,7 @@ var personview = function()
       state_cur = STATE_TRANSITION;
       state_t = 0;
     }
-    else
+    else //option exists w/ valid target
     {
       self.ui_state = UI_STATE_IN_SPEAK;
       self.ui_state_t = 0;
@@ -2216,11 +2219,11 @@ var personview = function()
     }
 
     self.inline_option = 0;
-    if(self.cache_unlocked_options.length == 1)
-    {
-      var option = self.cache_unlocked_options[0];
-      if(option.raw_qtext == ">") self.inline_option = 1;
-    }
+    if(
+       self.cache_unlocked_options.length ||
+      (self.cache_unlocked_options.length == 1 && self.cache_unlocked_options[0].raw_qtext == ">")
+    )
+      self.inline_option = 1;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -2353,16 +2356,12 @@ var personview = function()
 
     if(self.cur_speak_command_i < self.cur_speak.commands.length-1 || self.inline_option)
     {
-      option = self.cache_unlocked_options[0];
       var x = speak_command.x;
       var y = speak_command.y+5;
       var w = speak_command.w;
       var h = speak_command.h*speak_command.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
-      {
         my_cursor.mode = CURSOR_OPTION;
-        self.hovered_option = option;
-      }
     }
     else
     {
@@ -2396,11 +2395,7 @@ var personview = function()
     var option;
     self.clicked_option = 0;
 
-    if(self.cur_speak_command_i < self.cur_speak.commands.length-1)
-    {
-      self.clicked_option = 1;
-    }
-    else if(self.cache_unlocked_options.length > 1)
+    if(self.cur_speak_command_i == self.cur_speak.commands.length-1 && self.cache_unlocked_options.length > 1)
     {
       var oyoff;
 
@@ -2417,7 +2412,7 @@ var personview = function()
       }
     }
     else //inline_option
-      self.clicked_option = self.cache_unlocked_options[0];
+      self.clicked_option = 1;
 
     if(self.clicked_option)
     {
