@@ -2395,24 +2395,28 @@ var personview = function()
     var option;
     self.clicked_option = 0;
 
-    if(self.cur_speak_command_i == self.cur_speak.commands.length-1 && self.cache_unlocked_options.length > 1)
+    if(self.cur_speak_command_i == self.cur_speak.commands.length-1)
     {
-      var oyoff;
-
-      oyoff = speak.options_y+5;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      if(self.cache_unlocked_options.length > 1) //multiple options- find
       {
-        option = self.cache_unlocked_options[i];
-        for(var j = 0; j < option.qtext.length; j++)
+        var oyoff;
+
+        oyoff = speak.options_y+5;
+        for(var i = 0; i < self.cache_unlocked_options.length; i++)
         {
-          if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
-            self.clicked_option = option;
-          oyoff += speak.options_h;
+          option = self.cache_unlocked_options[i];
+          for(var j = 0; j < option.qtext.length; j++)
+          {
+            if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
+              self.clicked_option = option;
+            oyoff += speak.options_h;
+          }
         }
       }
+      else if(self.cache_unlocked_options.length == 1) self.clicked_option = self.cache_unlocked_options[0]; //1 options- pick it
+      else self.clicked_option = 1; //no options- leave
     }
-    else //inline_option
-      self.clicked_option = 1;
+    else self.clicked_option = 1; //still in chain
 
     if(self.clicked_option)
     {
