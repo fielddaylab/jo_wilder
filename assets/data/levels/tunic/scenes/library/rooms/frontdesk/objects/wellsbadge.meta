@@ -1,0 +1,21 @@
+tmp_object.ww = 42.66666666666814;
+tmp_object.wh = 58.303030303030226;
+tmp_object.wx = 234.21485862650576;
+tmp_object.wy = -165.81818316000738;
+tmp_object.wz = 0;
+tmp_object.act_wx = -83.76453090423374;
+tmp_object.act_wy = 16.963975610653243;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = 1.4114559390665895;
+tmp_object.hover_icon_wy = -10.422278413943884;
+tmp_object.animcycle_id = "wellsbadge_small";
+tmp_object.hover_icon_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.raw_notifications = [
+];
+tmp_object.unlocks = [
+"tunic.library.microfiche.newspaper.hub",
+];
+tmp_object.relocks = [
+];
+

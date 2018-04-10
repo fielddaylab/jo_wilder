@@ -1701,6 +1701,34 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/tunic_slip/0
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wellsbadge_big";
+tmp_animcycle.fqid = "tunic.wellsbadge_big";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wellsbadge_big/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wellsbadge_small";
+tmp_animcycle.fqid = "tunic.wellsbadge_small";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wellsbadge_small/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "youngboy";
 tmp_animcycle.fqid = "tunic.youngboy";
 {
@@ -8624,6 +8652,54 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
+tmp_object = new object();
+tmp_object.id = "wellsbadge";
+tmp_object.fqid = "tunic.library.frontdesk.wellsbadge";
+{
+tmp_object.ww = 42.66666666666814;
+tmp_object.wh = 58.303030303030226;
+tmp_object.wx = 234.21485862650576;
+tmp_object.wy = -165.81818316000738;
+tmp_object.wz = 0;
+tmp_object.act_wx = -83.76453090423374;
+tmp_object.act_wy = 16.963975610653243;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = 1.4114559390665895;
+tmp_object.hover_icon_wy = -10.422278413943884;
+tmp_object.animcycle_id = "wellsbadge_small";
+tmp_object.hover_icon_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.raw_notifications = [
+];
+tmp_object.unlocks = [
+"tunic.library.microfiche.newspaper.hub",
+];
+tmp_object.relocks = [
+];
+
+tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
+tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_level.notifications_w);
+tmp_view = new view();
+tmp_view.id = "hub";
+tmp_view.fqid = "tunic.library.frontdesk.wellsbadge.hub";
+{
+tmp_view.primary = false;
+tmp_view.animcycle_id = "wellsbadge_big";
+tmp_view.audio_id = "null";
+tmp_view.raw_notifications = [
+];
+tmp_view.unlocks = [
+];
+tmp_view.relocks = [
+];
+
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_object.views.push(tmp_view);
+}
+tmp_room.objects.push(tmp_object);
 tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.library.frontdesk.toentry";
