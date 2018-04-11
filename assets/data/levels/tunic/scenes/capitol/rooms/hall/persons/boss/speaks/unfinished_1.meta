@@ -8,7 +8,6 @@ tmp_speak.raw_notifications = [
 tmp_speak.unlocks = [
 ];
 tmp_speak.relocks = [
-"tunic.capitol.hall.boss.boss_chain_01a",
 ];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();

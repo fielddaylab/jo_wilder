@@ -1,0 +1,12 @@
+tmp_inert.ww = 47.00130850444964;
+tmp_inert.wh = 119.00001169978962;
+tmp_inert.wx = 708.5007027208226;
+tmp_inert.wy = -147.50000677546035;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "boilerfire";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];
+
