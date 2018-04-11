@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.capitol.hall";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -2782,6 +2782,258 @@ tmp_porthole.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover
 tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
+tmp_wildcard = new wildcard();
+tmp_wildcard.id = "finale";
+tmp_wildcard.fqid = "tunic.capitol.hall.finale";
+{
+tmp_wildcard.ww = 43.99999799052217;
+tmp_wildcard.wh = 41.000000385872205;
+tmp_wildcard.wx = 534.1221646413654;
+tmp_wildcard.wy = 361.21581768187264;
+tmp_wildcard.wz = 0;
+tmp_wildcard.act_wx = 0;
+tmp_wildcard.act_wy = 0;
+tmp_wildcard.act_anim = 1;
+tmp_wildcard.hover_icon_wx = 0;
+tmp_wildcard.hover_icon_wy = 0;
+tmp_wildcard.animcycle_id = "null";
+tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
+tmp_wildcard.hover_icon_animcycle_id = "null";
+tmp_wildcard.audio_id = "null";
+tmp_wildcard.raw_notifications = [
+];
+tmp_wildcard.unlocks = [
+];
+tmp_wildcard.relocks = [
+];
+
+ENUM=0;
+var FINALE_WILDCARD_COMMAND_NULL     = ENUM; ENUM++;
+var FINALE_WILDCARD_COMMAND_SPEAK    = ENUM; ENUM++;
+var FINALE_WILDCARD_COMMAND_NOTEBOOK = ENUM; ENUM++;
+var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
+
+//members are one of the following: (ensure all speak_fqid exist on a person w/in the room)
+//{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" }
+//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] }
+
+tmp_wildcard.commands = [
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.no_theodora_01" }
+];
+
+//view
+{
+  var self = tmp_wildcard;
+
+  self.failed = 0;
+  self.cur_command_i = 0;
+  self.cur_command = 0;
+  self.cur_speak = 0;
+  self.person = 0;
+  self.cur_speak_command_i = 0;
+
+  self.bubble_color = "#242224";
+  self.text_color = white;
+  self.hover_color = "#4EBBC5";
+
+  var ENUM = 0;
+  var UI_STATE_NULL     = ENUM; ENUM++;
+  var UI_STATE_IN_SPEAK = ENUM; ENUM++;
+  var UI_STATE_SELECT   = ENUM; ENUM++;
+  var UI_STATE_OUT      = ENUM; ENUM++;
+  var UI_STATE_COUNT    = ENUM; ENUM++;
+
+  self.ui_state = UI_STATE_NULL;
+  self.ui_state_t = 0;
+  self.ui_state_t_max = [];
+  self.ui_state_t_max[UI_STATE_IN_SPEAK] = 30;
+  self.ui_state_t_max[UI_STATE_SELECT]   = 0;
+  self.ui_state_t_max[UI_STATE_OUT]      = 10;
+  self.ui_state_p = 0;
+
+  self.consume_command = function()
+  {
+    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
+    {
+      self.cur_speak = find(self.cur_command.speak_fqid);
+      self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
+      self.cur_speak_command_i = 0;
+      self.ui_state = UI_STATE_IN_SPEAK;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+    }
+  }
+  self.consume_self = function()
+  {
+    self.failed = 0;
+    self.cur_command_i = 0;
+    self.cur_command = self.commands[self.cur_command_i];
+    self.consume_command();
+  }
+
+  self.dismiss = function()
+  {
+    if(self.cur_speak_command_i < self.cur_speak.commands.length-1)
+    {
+      self.ui_state = UI_STATE_IN_SPEAK;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.cur_speak_command_i++;
+    }
+    else if(self.cur_speak_command_i == self.cur_speak.commands.length-1)
+    {
+      self.ui_state = UI_STATE_NULL;
+      self.ui_state_t = 0;
+      self.ui_state_p = 0;
+      self.cur_speak = 0;
+      self.cur_speak_command_i = 0;
+
+      self.cur_command_i++;
+      if(self.cur_command_i >= self.commands.length)
+      {
+        state_from = state_cur;
+        state_to = state_stack;
+        state_cur = STATE_TRANSITION;
+        state_t = 0;
+      }
+      else
+      {
+        self.cur_command = self.commands[self.cur_command_i];
+        self.consume_command();
+      }
+    }
+  }
+
+  self.hover = function(evt)
+  {
+    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
+    {
+      my_cursor.mode = CURSOR_NORMAL;
+
+      var speak = self.cur_speak;
+      var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
+
+      var x = speak_command.x;
+      var y = speak_command.y+5;
+      var w = speak_command.w;
+      var h = speak_command.h*speak_command.atext.length;
+      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
+        my_cursor.mode = CURSOR_UI;
+    }
+  }
+  self.unhover = function(evt)
+  {
+  }
+
+  self.click = function(evt)
+  {
+    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
+    {
+      self.ui_state_t = self.ui_state_t_max[self.ui_state];
+
+      if(self.ui_state != UI_STATE_OUT)
+      {
+        self.ui_state_t = 0;
+        self.ui_state_p = 0;
+        self.ui_state = UI_STATE_OUT;
+      }
+    }
+  }
+
+  self.tick = function()
+  {
+    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
+    {
+      var speak = self.cur_speak;
+      var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
+      speak.animcycle_inst.tick();
+      speak_command.x = screenSpaceXpt(my_camera,canv,speak_command.wx);
+      speak_command.y = screenSpaceYpt(my_camera,canv,speak_command.wy);
+
+      self.ui_state_t++;
+      self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
+      switch(self.ui_state)
+      {
+        case UI_STATE_IN_SPEAK: if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT; self.ui_state_t = 0; self.ui_state_p = 0; } break;
+        case UI_STATE_SELECT: break;
+        case UI_STATE_OUT: if(self.ui_state_p >= 1) self.dismiss(); break;
+      }
+    }
+  }
+
+  self.draw = function(t)
+  {
+    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
+    {
+      if(self.ui_state == UI_STATE_NULL) return;
+
+      var yoff = 0;
+      var speak = self.cur_speak;
+      var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
+      var oyoff;
+
+      var a = 1;
+      switch(self.ui_state)
+      {
+        case UI_STATE_IN_SPEAK:  a = bubble_in_a(self.ui_state_p); yoff = bubble_in_y(self.ui_state_p); break;
+        case UI_STATE_SELECT:    break;
+        case UI_STATE_OUT:       a = bubble_out_a(self.ui_state_p); yoff = bubble_out_y(self.ui_state_p); break;
+      }
+      ctx.globalAlpha = a;
+
+      var b = 10;
+      ctx.fillStyle = self.bubble_color;
+      fillRRect(speak_command.x-b-5,speak_command.y-b+5+yoff,speak_command.w+b*2+10,speak_command.h*speak_command.atext.length+b*2+5,b,ctx);
+
+      //tail
+      var y = speak_command.y-b+5+yoff+speak_command.h*speak_command.atext.length+b*2+5-0.5;
+      var x;
+      var w = 20;
+      var h = 20;
+      if(speak_command.speaker == SPEAKER_PERSON)
+        x = clamp(speak_command.x, speak_command.x+speak_command.w-w, self.person.x + self.person.w/2-w/2);
+      else
+        x = clamp(speak_command.x, speak_command.x+speak_command.w-w, my_avatar.x + my_avatar.w/2-w/2);
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(x+w/2-2,y+h-2);
+      ctx.quadraticCurveTo(x+w/2,y+h,x+w/2+2,y+h-2);
+      ctx.lineTo(x+w,y);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = self.text_color;
+      ctx.font = text_font;
+      oyoff = 0;
+      for(var j = 0; j < speak_command.atext.length; j++)
+      {
+        ctx.fillText(speak_command.atext[j],speak_command.x,speak_command.y+yoff+oyoff+speak_command.h);
+        oyoff += speak_command.h;
+      }
+
+      ctx.globalAlpha = 1;
+
+      if(DEBUG)
+      {
+        ctx.strokeStyle = white;
+
+        yoff = 0;
+        oyoff = 0;
+        for(var j = 0; j < speak_command.atext.length; j++)
+        {
+          ctx.strokeRect(speak_command.x,speak_command.y+yoff,speak_command.w,speak_command.h);
+          oyoff += speak_command.h;
+        }
+      }
+  }
+  }
+}
+tmp_wildcard.animcycle_inst = gen_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);
+tmp_wildcard.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_wildcard.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_wildcard.raw_notifications.length; i++) tmp_wildcard.notifications[i] = stextToLines(tmp_wildcard.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.wildcards.push(tmp_wildcard);
 tmp_inert = new inert();
 tmp_inert.id = "rotunda";
 tmp_inert.fqid = "tunic.capitol.hall.rotunda";
@@ -3548,258 +3800,6 @@ tmp_porthole.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover
 tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
-tmp_wildcard = new wildcard();
-tmp_wildcard.id = "finale";
-tmp_wildcard.fqid = "tunic.historicalsociety.basement.finale";
-{
-tmp_wildcard.ww = 43.99999799052217;
-tmp_wildcard.wh = 41.000000385872205;
-tmp_wildcard.wx = 534.1221646413654;
-tmp_wildcard.wy = 361.21581768187264;
-tmp_wildcard.wz = 0;
-tmp_wildcard.act_wx = 0;
-tmp_wildcard.act_wy = 0;
-tmp_wildcard.act_anim = 1;
-tmp_wildcard.hover_icon_wx = 0;
-tmp_wildcard.hover_icon_wy = 0;
-tmp_wildcard.animcycle_id = "null";
-tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
-tmp_wildcard.hover_icon_animcycle_id = "null";
-tmp_wildcard.audio_id = "null";
-tmp_wildcard.raw_notifications = [
-];
-tmp_wildcard.unlocks = [
-];
-tmp_wildcard.relocks = [
-];
-
-ENUM=0;
-var FINALE_WILDCARD_COMMAND_NULL     = ENUM; ENUM++;
-var FINALE_WILDCARD_COMMAND_SPEAK    = ENUM; ENUM++;
-var FINALE_WILDCARD_COMMAND_NOTEBOOK = ENUM; ENUM++;
-var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
-
-//members are one of the following: (ensure all speak_fqid exist on a person w/in the room)
-//{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" }
-//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] }
-
-tmp_wildcard.commands = [
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" }
-];
-
-//view
-{
-  var self = tmp_wildcard;
-
-  self.failed = 0;
-  self.cur_command_i = 0;
-  self.cur_command = 0;
-  self.cur_speak = 0;
-  self.person = 0;
-  self.cur_speak_command_i = 0;
-
-  self.bubble_color = "#242224";
-  self.text_color = white;
-  self.hover_color = "#4EBBC5";
-
-  var ENUM = 0;
-  var UI_STATE_NULL     = ENUM; ENUM++;
-  var UI_STATE_IN_SPEAK = ENUM; ENUM++;
-  var UI_STATE_SELECT   = ENUM; ENUM++;
-  var UI_STATE_OUT      = ENUM; ENUM++;
-  var UI_STATE_COUNT    = ENUM; ENUM++;
-
-  self.ui_state = UI_STATE_NULL;
-  self.ui_state_t = 0;
-  self.ui_state_t_max = [];
-  self.ui_state_t_max[UI_STATE_IN_SPEAK] = 30;
-  self.ui_state_t_max[UI_STATE_SELECT]   = 0;
-  self.ui_state_t_max[UI_STATE_OUT]      = 10;
-  self.ui_state_p = 0;
-
-  self.consume_command = function()
-  {
-    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
-    {
-      self.cur_speak = find(self.cur_command.speak_fqid);
-      self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
-      self.cur_speak_command_i = 0;
-      self.ui_state = UI_STATE_IN_SPEAK;
-      self.ui_state_t = 0;
-      self.ui_state_p = 0;
-    }
-  }
-  self.consume_self = function()
-  {
-    self.failed = 0;
-    self.cur_command_i = 0;
-    self.cur_command = self.commands[self.cur_command_i];
-    self.consume_command();
-  }
-
-  self.dismiss = function()
-  {
-    if(self.cur_speak_command_i < self.cur_speak.commands.length-1)
-    {
-      self.ui_state = UI_STATE_IN_SPEAK;
-      self.ui_state_t = 0;
-      self.ui_state_p = 0;
-      self.cur_speak_command_i++;
-    }
-    else if(self.cur_speak_command_i == self.cur_speak.commands.length-1)
-    {
-      self.ui_state = UI_STATE_NULL;
-      self.ui_state_t = 0;
-      self.ui_state_p = 0;
-      self.cur_speak = 0;
-      self.cur_speak_command_i = 0;
-
-      self.cur_command_i++;
-      if(self.cur_command_i >= self.commands.length)
-      {
-        state_from = state_cur;
-        state_to = state_stack;
-        state_cur = STATE_TRANSITION;
-        state_t = 0;
-      }
-      else
-      {
-        self.cur_command = self.commands[self.cur_command_i];
-        self.consume_command();
-      }
-    }
-  }
-
-  self.hover = function(evt)
-  {
-    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
-    {
-      my_cursor.mode = CURSOR_NORMAL;
-
-      var speak = self.cur_speak;
-      var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
-
-      var x = speak_command.x;
-      var y = speak_command.y+5;
-      var w = speak_command.w;
-      var h = speak_command.h*speak_command.atext.length;
-      if(ptWithin(x,y,w,h,evt.doX,evt.doY))
-        my_cursor.mode = CURSOR_UI;
-    }
-  }
-  self.unhover = function(evt)
-  {
-  }
-
-  self.click = function(evt)
-  {
-    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
-    {
-      self.ui_state_t = self.ui_state_t_max[self.ui_state];
-
-      if(self.ui_state != UI_STATE_OUT)
-      {
-        self.ui_state_t = 0;
-        self.ui_state_p = 0;
-        self.ui_state = UI_STATE_OUT;
-      }
-    }
-  }
-
-  self.tick = function()
-  {
-    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
-    {
-      var speak = self.cur_speak;
-      var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
-      speak.animcycle_inst.tick();
-      speak_command.x = screenSpaceXpt(my_camera,canv,speak_command.wx);
-      speak_command.y = screenSpaceYpt(my_camera,canv,speak_command.wy);
-
-      self.ui_state_t++;
-      self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
-      switch(self.ui_state)
-      {
-        case UI_STATE_IN_SPEAK: if(self.ui_state_p >= 1) { self.ui_state = UI_STATE_SELECT; self.ui_state_t = 0; self.ui_state_p = 0; } break;
-        case UI_STATE_SELECT: break;
-        case UI_STATE_OUT: if(self.ui_state_p >= 1) self.dismiss(); break;
-      }
-    }
-  }
-
-  self.draw = function(t)
-  {
-    if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
-    {
-      if(self.ui_state == UI_STATE_NULL) return;
-
-      var yoff = 0;
-      var speak = self.cur_speak;
-      var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
-      var oyoff;
-
-      var a = 1;
-      switch(self.ui_state)
-      {
-        case UI_STATE_IN_SPEAK:  a = bubble_in_a(self.ui_state_p); yoff = bubble_in_y(self.ui_state_p); break;
-        case UI_STATE_SELECT:    break;
-        case UI_STATE_OUT:       a = bubble_out_a(self.ui_state_p); yoff = bubble_out_y(self.ui_state_p); break;
-      }
-      ctx.globalAlpha = a;
-
-      var b = 10;
-      ctx.fillStyle = self.bubble_color;
-      fillRRect(speak_command.x-b-5,speak_command.y-b+5+yoff,speak_command.w+b*2+10,speak_command.h*speak_command.atext.length+b*2+5,b,ctx);
-
-      //tail
-      var y = speak_command.y-b+5+yoff+speak_command.h*speak_command.atext.length+b*2+5-0.5;
-      var x;
-      var w = 20;
-      var h = 20;
-      if(speak_command.speaker == SPEAKER_PERSON)
-        x = clamp(speak_command.x, speak_command.x+speak_command.w-w, self.person.x + self.person.w/2-w/2);
-      else
-        x = clamp(speak_command.x, speak_command.x+speak_command.w-w, my_avatar.x + my_avatar.w/2-w/2);
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      ctx.lineTo(x+w/2-2,y+h-2);
-      ctx.quadraticCurveTo(x+w/2,y+h,x+w/2+2,y+h-2);
-      ctx.lineTo(x+w,y);
-      ctx.closePath();
-      ctx.fill();
-
-      ctx.fillStyle = self.text_color;
-      ctx.font = text_font;
-      oyoff = 0;
-      for(var j = 0; j < speak_command.atext.length; j++)
-      {
-        ctx.fillText(speak_command.atext[j],speak_command.x,speak_command.y+yoff+oyoff+speak_command.h);
-        oyoff += speak_command.h;
-      }
-
-      ctx.globalAlpha = 1;
-
-      if(DEBUG)
-      {
-        ctx.strokeStyle = white;
-
-        yoff = 0;
-        oyoff = 0;
-        for(var j = 0; j < speak_command.atext.length; j++)
-        {
-          ctx.strokeRect(speak_command.x,speak_command.y+yoff,speak_command.w,speak_command.h);
-          oyoff += speak_command.h;
-        }
-      }
-  }
-  }
-}
-tmp_wildcard.animcycle_inst = gen_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);
-tmp_wildcard.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_cursor_animcycle_id,tmp_level.animcycles);
-tmp_wildcard.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_icon_animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_wildcard.raw_notifications.length; i++) tmp_wildcard.notifications[i] = stextToLines(tmp_wildcard.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_room.wildcards.push(tmp_wildcard);
 tmp_inert = new inert();
 tmp_inert.id = "fgpipes";
 tmp_inert.fqid = "tunic.historicalsociety.basement.fgpipes";
