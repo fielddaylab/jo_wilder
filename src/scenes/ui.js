@@ -727,6 +727,41 @@ var navigable = function()
     }
   }
 
+  self.trigger_cutscenes = function()
+  {
+    if(state_cur == STATE_NAV || (state_cur == STATE_TRANSITION && state_to == STATE_NAV)) //can only trigger from w/in nav
+    {
+      for(var i = 0; i < cur_room.cutscenes.length; i++)
+      {
+        var cutscene = cur_room.cutscenes[i];
+        if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !querylocked(cutscene))
+        {
+          if(state_cur == STATE_NAV)
+          {
+            cur_act = cutscene;
+            state_from = state_cur;
+            state_cur = STATE_TRANSITION;
+            state_stack = STATE_CUTSCENE;
+            state_act = cur_act;
+            state_to = state_stack;
+            my_cutsceneview.consume_cutscene(cur_act);
+            state_t = 0;
+          }
+          else if(state_cur == STATE_TRANSITION)
+          {
+            cur_act = cutscene;
+            state_cur = STATE_TRANSITION;
+            state_stack = STATE_CUTSCENE;
+            state_act = cur_act;
+            state_to = state_stack;
+            my_cutsceneview.consume_cutscene(cur_act);
+            state_t = 0.5;
+          }
+        }
+      }
+    }
+  }
+
   self.wpt_in_navigable = function(wx,wy,obj)
   {
     var try_wx;
@@ -2972,7 +3007,7 @@ var cutsceneview = function()
 
   self.tick = function()
   {
-    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t <= self.t && !self.waiting && state_cur == STATE_CUTSCENE)
+    while(!self.end && self.command_i < self.cutscene.commands.length && self.cutscene.commands[self.command_i].t <= self.t && !self.waiting && (self.cutscene.commands[self.command_i].t <= 0 || state_cur == STATE_CUTSCENE))
       self.execute_next_command();
     for(var i = 0; i < self.editable_frame_commands.length; i++)
     {
