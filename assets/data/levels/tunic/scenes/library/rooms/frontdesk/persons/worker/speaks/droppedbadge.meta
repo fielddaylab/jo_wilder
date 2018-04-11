@@ -11,7 +11,6 @@ tmp_speak.relocks = [
 "tunic.library.frontdesk.wellsbadge.hub",
 ];
 tmp_speak.commands = [];
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;

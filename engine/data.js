@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.basement";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -44,7 +44,7 @@ tmp_level.notebook_next_animcycle_id = "notebook_next";
 tmp_level.notebook_prev_animcycle_id = "notebook_prev";
 tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";
-tmp_level.hover_ui_animcycle_id = "undefined";
+tmp_level.ui_hover_animcycle_id = "hover_ui";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.cursor_w = 40;
 tmp_level.cursor_h = 40;
@@ -8645,7 +8645,6 @@ tmp_speak.relocks = [
 "tunic.library.frontdesk.wellsbadge.hub",
 ];
 tmp_speak.commands = [];
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8752,7 +8751,6 @@ tmp_speak.relocks = [
 "tunic.library.microfiche.newspaper.hub",
 ];
 tmp_speak.commands = [];
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8785,7 +8783,6 @@ tmp_speak.unlocks = [
 tmp_speak.relocks = [
 ];
 tmp_speak.commands = [];
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8796,7 +8793,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "What was Wells doing here?";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8807,7 +8803,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "That new historian? I don't like him. He was looking for a number for a taxidermist… When I told him they're closed 'til tomorrow, he just about chewed my ear off.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8818,7 +8813,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "A taxidermist? What's that?";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8829,7 +8823,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Here, look for yourself.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -393.54808939242355;
 tmp_speak_command.wy = 383.008685622624;
@@ -8863,6 +8856,7 @@ tmp_object.act_anim = 1;
 tmp_object.hover_icon_wx = 1.4114559390665895;
 tmp_object.hover_icon_wy = -10.422278413943884;
 tmp_object.animcycle_id = "wellsbadge_small";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
@@ -8874,6 +8868,7 @@ tmp_object.relocks = [
 ];
 
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
+tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_level.notifications_w);
 tmp_view = new view();
