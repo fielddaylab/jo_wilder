@@ -654,7 +654,7 @@ var zone = function()
 
 var stextToLines = function(text,w)
 {
-  return textToLines(option_font, w, text, ctx)
+  return textToLines(text_font, w, text, ctx)
 }
 
 var speak_command = function()

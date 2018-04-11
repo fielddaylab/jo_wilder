@@ -11,8 +11,8 @@ var state_t_speed = 0.08;
 var state_from;
 var state_to;
 var walk_speed = 6;
-var option_h = 24;
-var option_font = option_h+"px Patrick";
+var text_h = 24;
+var text_font = text_h+"px Patrick";
 
 var cursor_prev;
 var cursor;

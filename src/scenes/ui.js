@@ -2516,7 +2516,7 @@ var personview = function()
     ctx.fill();
 
     ctx.fillStyle = self.text_color;
-    ctx.font = option_font;
+    ctx.font = text_font;
     oyoff = 0;
     for(var j = 0; j < speak_command.atext.length; j++)
     {
@@ -3056,7 +3056,7 @@ var cutsceneview = function()
   self.draw = function(t)
   {
     ctx.fillStyle = "#4c4c4c";
-    ctx.font = option_font;
+    ctx.font = text_font;
 
     //bubble sort on z
     var sorted = false;
@@ -3128,7 +3128,7 @@ var cutsceneview = function()
         ctx.fill();
 
         ctx.fillStyle = self.text_color;
-        ctx.font = option_font;
+        ctx.font = text_font;
         var oyoff = 0;
         for(var j = 0; j < c.text.length; j++)
         {
