@@ -1,0 +1,64 @@
+tmp_speak.primary = 100;
+tmp_speak.options_wx = -279.9644806234643;
+tmp_speak.options_wy = 299.0676710642626;
+tmp_speak.options_w = 257;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.unlocks = [
+];
+tmp_speak.relocks = [
+"tunic.library.frontdesk.worker.hello",
+];
+tmp_speak.commands = [];
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -393.54808939242355;
+tmp_speak_command.wy = 383.008685622624;
+tmp_speak_command.w = 195.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Oh! Hello there!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -393.54808939242355;
+tmp_speak_command.wy = 383.008685622624;
+tmp_speak_command.w = 195.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "You look like you're on a mission.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -393.54808939242355;
+tmp_speak_command.wy = 383.008685622624;
+tmp_speak_command.w = 195.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "A quest, actually.";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -393.54808939242355;
+tmp_speak_command.wy = 383.008685622624;
+tmp_speak_command.w = 195.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I'm looking for information on Theodora Youmans.";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -393.54808939242355;
+tmp_speak_command.wy = 383.008685622624;
+tmp_speak_command.w = 195.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Theodora Youmans? Check out our microfiche.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

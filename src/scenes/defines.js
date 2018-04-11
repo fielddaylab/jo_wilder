@@ -3,13 +3,8 @@ var ENUM;
 ENUM = 0;
 var CURSOR_NULL        = ENUM; ENUM++;
 var CURSOR_NORMAL      = ENUM; ENUM++;
-var CURSOR_PERSON      = ENUM; ENUM++;
-var CURSOR_OBJECT      = ENUM; ENUM++;
-var CURSOR_OBSERVATION = ENUM; ENUM++;
-var CURSOR_PORTHOLE    = ENUM; ENUM++;
-var CURSOR_ZONE        = ENUM; ENUM++;
-var CURSOR_OPTION      = ENUM; ENUM++;
-var CURSOR_MAP         = ENUM; ENUM++;
+var CURSOR_O           = ENUM; ENUM++;
+var CURSOR_UI          = ENUM; ENUM++;
 var CURSOR_COUNT       = ENUM; ENUM++;
 
 ENUM = 0;

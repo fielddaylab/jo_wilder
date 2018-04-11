@@ -1,0 +1,26 @@
+tmp_observation.ww = 135.82399999883302;
+tmp_observation.wh = 139.08072727272523;
+tmp_observation.wx = -522.6333672513509;
+tmp_observation.wy = 247.68741118806082;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 68.39127272727269;
+tmp_observation.act_wy = -244.25454545454528;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 56.99272727272724;
+tmp_observation.hover_icon_wy = 63.50618181818178;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "Better keep Teddy hidden...";
+tmp_observation.blip_wx = -401.40026448464477;
+tmp_observation.blip_wy = 287.3710355195466;
+tmp_observation.blip_w = 217;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.unlocks = [
+];
+tmp_observation.relocks = [
+];
+

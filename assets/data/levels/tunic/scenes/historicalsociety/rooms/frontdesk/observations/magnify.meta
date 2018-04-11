@@ -9,6 +9,7 @@ tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = -0.19702019410135563;
 tmp_observation.hover_icon_wy = 32;
 tmp_observation.animcycle_id = "magnifyingglass";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I bet the Archivist could use this!";

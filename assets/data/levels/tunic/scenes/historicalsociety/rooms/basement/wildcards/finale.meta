@@ -1,0 +1,21 @@
+tmp_wildcard.ww = 43.99999799052217;
+tmp_wildcard.wh = 41.000000385872205;
+tmp_wildcard.wx = 534.1221646413654;
+tmp_wildcard.wy = 361.21581768187264;
+tmp_wildcard.wz = 0;
+tmp_wildcard.act_wx = 0;
+tmp_wildcard.act_wy = 0;
+tmp_wildcard.act_anim = 1;
+tmp_wildcard.hover_icon_wx = 0;
+tmp_wildcard.hover_icon_wy = 0;
+tmp_wildcard.animcycle_id = "null";
+tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
+tmp_wildcard.hover_icon_animcycle_id = "null";
+tmp_wildcard.audio_id = "null";
+tmp_wildcard.raw_notifications = [
+];
+tmp_wildcard.unlocks = [
+];
+tmp_wildcard.relocks = [
+];
+

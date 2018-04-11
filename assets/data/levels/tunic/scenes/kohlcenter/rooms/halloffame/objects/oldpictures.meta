@@ -9,6 +9,7 @@ tmp_object.act_anim = true;
 tmp_object.hover_icon_wx = -2.6649661346552875;
 tmp_object.hover_icon_wy = 56.99999999999997;
 tmp_object.animcycle_id = "oldpictures";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [

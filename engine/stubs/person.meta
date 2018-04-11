@@ -9,6 +9,7 @@ tmp_person.act_anim = 1;
 tmp_person.hover_icon_wx = 0;
 tmp_person.hover_icon_wy = 0;
 tmp_person.animcycle_id = "null";
+tmp_person.hover_cursor_animcycle_id = "null";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [

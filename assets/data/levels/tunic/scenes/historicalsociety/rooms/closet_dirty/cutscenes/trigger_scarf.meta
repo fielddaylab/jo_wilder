@@ -10,6 +10,7 @@ tmp_cutscene.act_anim = 0;
 tmp_cutscene.hover_icon_wx = -10.417556825988527;
 tmp_cutscene.hover_icon_wy = 23.98785932808255;
 tmp_cutscene.animcycle_id = "scarf";
+tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
 tmp_cutscene.hover_icon_animcycle_id = "hblip_interact";
 tmp_cutscene.raw_notifications = [
 ];
