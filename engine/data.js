@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.capitol.hall";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -150,6 +150,22 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/bg/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "boilerfire";
+tmp_animcycle.fqid = "tunic.boilerfire";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 14;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boilerfire/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boilerfire/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boilerfire/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boilerfire/3.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "boss";
 tmp_animcycle.fqid = "tunic.boss";
 {
@@ -221,6 +237,20 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple/2.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple/3.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple/4.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "closetshadows";
+tmp_animcycle.fqid = "tunic.closetshadows";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 20;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/1.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -2815,7 +2845,7 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 //members are one of the following: (ensure all speak_fqid exist on a person w/in the room)
 //{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" },
-//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt:stextToLines("I need to show them I know blah blah", cur_level.notifications_w), fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
+//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt:stextToLines("I need to show them I know blah blah", tmp_level.notifications_w), fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.no_theodora_01" },
@@ -3976,7 +4006,7 @@ tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
 {wx:-374.79431084122393, wy:-113.2998170346518, ww:211.86808265684846, wh:240.3455245259692 },
-{wx:-118.55473324394916, wy:-223.7356130025576, ww:2033.1000861592847, wh:226.6862476527108 },
+{wx:-123.55473283839729, wy:-223.73561300618343, ww:2033.1000861592847, wh:226.6862476527108 },
 ];
 tmp_room.lights = [
 ];
@@ -4648,6 +4678,44 @@ tmp_inert.wy = 38.4489603959309;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.2;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_fgpipes";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];
+
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "fire";
+tmp_inert.fqid = "tunic.historicalsociety.closet.fire";
+{
+tmp_inert.ww = 47.00130850444964;
+tmp_inert.wh = 119.00001169978962;
+tmp_inert.wx = 708.5007027208226;
+tmp_inert.wy = -147.50000677546035;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "boilerfire";
+tmp_inert.unlocks = [
+];
+tmp_inert.relocks = [
+];
+
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "shadows";
+tmp_inert.fqid = "tunic.historicalsociety.closet.shadows";
+{
+tmp_inert.ww = 560.0074564785687;
+tmp_inert.wh = 455.00054492879343;
+tmp_inert.wx = 375.0409646498976;
+tmp_inert.wy = -5.502993747924677;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "closetshadows";
 tmp_inert.unlocks = [
 ];
 tmp_inert.relocks = [
