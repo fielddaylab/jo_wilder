@@ -79,7 +79,7 @@ var LoadingScene = function(game, stage)
     audio_srcs = [];
     audios = [];
 
-    ctx.font = "30px Patrick"; //put font that nees loading here
+    ctx.font = option_font; //put font that nees loading here
     ctx.fillStyle = "#000000";
     ctx.fillText(".",0,0);// funky way to encourage any custom font to load
 

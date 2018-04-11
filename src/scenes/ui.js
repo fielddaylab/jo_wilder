@@ -144,9 +144,7 @@ var loader = function()
       inert = room.inerts[k];
       self.load_animcycle_inst(inert.animcycle_inst);
     }
-
   }
-
 }
 
 var cursor = function()
@@ -233,7 +231,7 @@ var cursor = function()
       hh = cur_level.cursor_h/2;
       ctx.drawImage(self.cursor_o.hover_cursor_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h)
     }
-    else if(self.mode == CURSOR_UI)
+    else if(self.mode == CURSOR_UI && (!DEBUG || !my_keyable.e))
     {
       var w = cur_level.cursor_w;
       var h = cur_level.cursor_h;
@@ -241,7 +239,7 @@ var cursor = function()
       var hh = cur_level.cursor_h/2;
       ctx.drawImage(self.ui_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h)
     }
-    if(self.icon_o)
+    if(self.icon_o && (!DEBUG || !my_keyable.e))
     {
       w = cur_level.hover_w;
       h = cur_level.hover_h;
@@ -3058,7 +3056,7 @@ var cutsceneview = function()
   self.draw = function(t)
   {
     ctx.fillStyle = "#4c4c4c";
-    ctx.font = "20px Patrick";
+    ctx.font = option_font;
 
     //bubble sort on z
     var sorted = false;
