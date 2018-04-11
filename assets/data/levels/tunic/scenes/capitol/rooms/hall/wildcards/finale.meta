@@ -27,7 +27,7 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 //members are one of the following: (ensure all speak_fqid exist on a person w/in the room)
 //{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" },
-//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
+//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt:"I need to show them I know blah blah", fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.no_theodora_01" },
@@ -148,6 +148,10 @@ tmp_wildcard.commands = [
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_cursor.mode = CURSOR_NORMAL;
+      for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
+        if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+          my_cursor.mode = CURSOR_UI;
     }
   }
   self.unhover = function(evt)
@@ -198,7 +202,17 @@ tmp_wildcard.commands = [
       else
       {
         //find response
-        //MUST FIND CORRECT/INCORRECT
+        for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
+        {
+          if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+          {
+            if(my_notebookview.cache_unlocked_entrys[i].fqid != self.cur_command.entry_fqid)
+              self.failed = 1;
+            self.ui_state_t = 0;
+            self.ui_state_p = 0;
+            self.ui_state = UI_STATE_OUT;
+          }
+        }
       }
     }
   }

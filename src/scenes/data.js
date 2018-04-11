@@ -2936,6 +2936,10 @@ tmp_wildcard.commands = [
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_cursor.mode = CURSOR_NORMAL;
+      for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
+        if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+          my_cursor.mode = CURSOR_UI;
     }
   }
   self.unhover = function(evt)
@@ -2986,7 +2990,17 @@ tmp_wildcard.commands = [
       else
       {
         //find response
-        //MUST FIND CORRECT/INCORRECT
+        for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
+        {
+          if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+          {
+            if(my_notebookview.cache_unlocked_entrys[i].fqid != self.cur_command.entry_fqid)
+              self.failed = 1;
+            self.ui_state_t = 0;
+            self.ui_state_p = 0;
+            self.ui_state = UI_STATE_OUT;
+          }
+        }
       }
     }
   }
