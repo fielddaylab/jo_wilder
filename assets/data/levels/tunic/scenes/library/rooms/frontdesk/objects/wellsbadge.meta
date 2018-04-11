@@ -18,5 +18,6 @@ tmp_object.unlocks = [
 "tunic.library.microfiche.newspaper.hub",
 ];
 tmp_object.relocks = [
+"tunic.library.frontdesk.wellsbadge.hub",
 ];
 

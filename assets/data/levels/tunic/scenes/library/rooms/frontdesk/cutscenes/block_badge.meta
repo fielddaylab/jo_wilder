@@ -1,0 +1,39 @@
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
+tmp_cutscene.ww = 136.51146018325016;
+tmp_cutscene.wh = 307.1814585388915;
+tmp_cutscene.wx = -817.6726551302843;
+tmp_cutscene.wy = 61.53682925262612;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = 0;
+tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 0;
+tmp_cutscene.hover_icon_wy = 0;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_cursor_animcycle_id = "null";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.unlocks = [
+"tunic.library.microfiche.newspaper.hub",
+];
+tmp_cutscene.relocks = [
+"tunic.library.frontdesk.wellsbadge.hub",
+];
+tmp_cutscene.commands = [];
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "worker";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -482.31296969696956;
+tmp_cutscene_command.wy = 389.0275359181116;
+tmp_cutscene_command.w = 333;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Did you drop something, dear? There's a card on the floor over there.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
