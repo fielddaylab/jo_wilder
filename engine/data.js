@@ -3553,10 +3553,10 @@ tmp_wildcard = new wildcard();
 tmp_wildcard.id = "finale";
 tmp_wildcard.fqid = "tunic.historicalsociety.basement.finale";
 {
-tmp_wildcard.ww = 100;
-tmp_wildcard.wh = 100;
-tmp_wildcard.wx = 100;
-tmp_wildcard.wy = 100;
+tmp_wildcard.ww = 43.99999799052217;
+tmp_wildcard.wh = 41.000000385872205;
+tmp_wildcard.wx = 534.1221646413654;
+tmp_wildcard.wy = 361.21581768187264;
 tmp_wildcard.wz = 0;
 tmp_wildcard.act_wx = 0;
 tmp_wildcard.act_wy = 0;
