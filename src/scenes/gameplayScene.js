@@ -166,6 +166,7 @@ var GamePlayScene = function(game, stage)
     state_from = STATE_NAV;
     state_to = state_stack;
     state_t = 0.5;
+    my_navigable.trigger_cutscenes();
   };
 
   self.tick = function()
@@ -204,25 +205,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
-        //trigger cutscenes only from within nav
-        if(state_cur == STATE_NAV) //_still_ must be NAV...
-        {
-          for(var i = 0; i < cur_room.cutscenes.length; i++)
-          {
-            var cutscene = cur_room.cutscenes[i];
-            if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !querylocked(cutscene))
-            {
-              cur_act = cutscene;
-              state_from = state_cur;
-              state_cur = STATE_TRANSITION;
-              state_stack = STATE_CUTSCENE;
-              state_act = cur_act;
-              state_to = state_stack;
-              my_cutsceneview.consume_cutscene(cur_act);
-              state_t = 0;
-            }
-          }
-        }
+        my_navigable.trigger_cutscenes();
         break;
       case STATE_MAP:
         if(
@@ -485,6 +468,7 @@ var GamePlayScene = function(game, stage)
               my_avatar.from_porthole(cur_act);
               cur_act = 0;
               if(my_loader.loading) state_t = 0.5;
+              else my_navigable.trigger_cutscenes();
             }
           }
           else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
@@ -514,6 +498,11 @@ var GamePlayScene = function(game, stage)
           state_t += state_t_speed;
           my_mapview.tick();
         }
+        else if(state_to == STATE_CUTSCENE)
+        {
+          state_t += state_t_speed;
+          if(my_loader.loading) state_t = 0.5;
+        }
         else state_t += state_t_speed;
         break;
       case STATE_MAP:
@@ -532,6 +521,7 @@ var GamePlayScene = function(game, stage)
             my_avatar.consume_room(cur_room);
             cur_act = 0;
             if(my_loader.loading) state_t = 0.5;
+            else my_navigable.trigger_cutscenes();
           }
         }
         else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
@@ -648,6 +638,15 @@ var GamePlayScene = function(game, stage)
           my_navigable.draw();
           my_toolbar.draw(1-state_t);
           my_cutsceneview.draw(state_t);
+          if(my_loader.loading)
+          {
+            var blur = (state_t*2)-1;
+            blur = 1-(blur*blur);
+            ctx.fillStyle = "rgba(0,0,0,"+blur+")";
+            ctx.fillRect(0,0,canv.width,canv.height);
+            ctx.fillStyle = white;
+            ctx.fillText("loading...",canv.width-100,canv.height-20);
+          }
         }
         break;
       case STATE_MAP:
