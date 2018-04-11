@@ -9,6 +9,7 @@ tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = 63.95945286875973;
 tmp_observation.hover_icon_wy = 41.970690791400216;
 tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I love these photos of me and Teddy.";

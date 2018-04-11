@@ -1,7 +1,6 @@
 exit cursor
 sounds for everything
 sounds in cutscene
-speech bubble pointer arrows
 
 walk diagonally
 
@@ -14,35 +13,24 @@ conversation tween events (shake, etc...)
 flip imgs if -w or -h
 bilinear vs nn
 
-bounce text is nauseating
 animate hover icons
-implement content in terms of z
-implement correct "who is speaking"
 options visible pre-hover/select (to say "you need to click here")
 cutscene lerp alpha
 cutscene tween events (shake, etc...)
-cutscene text instead of image
 
 intro cutscene has "flashcut" of wrong position to start- fix
 
 consistent scripts for edit/goto/find/etc.. by search/type/fqid/etc..
 
 set hover cursor on objects instead of level (like hover icons)
-update speaks to be sequences -> options (no option = exit)
 animate notification transitions
-z-sort hover icons
-dirty export (vastly speed up cycle)
 cutscenes revert everything on completion
 
-options should be optional (no option = exit)
 consolidate observations into speaks
 speak bubble types (thought, talk, etc...)
 anything trigger type auto, act, both
 save/load gen_slate should iterate through all reqs, finding noteworthy, only saving those (and caching noteworthy for print/read)
 
 ensure cam continuity between cutscene transition, etc...
-cam position more "s" like
-cam target player on room enter from map
-
-white flash instead of loading screen?
+cam position more "s" like (find correct "s"ness)
 

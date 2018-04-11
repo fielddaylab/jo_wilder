@@ -10,6 +10,7 @@ tmp_cutscene.act_anim = 0;
 tmp_cutscene.hover_icon_wx = 0;
 tmp_cutscene.hover_icon_wy = 0;
 tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
 tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
 ];

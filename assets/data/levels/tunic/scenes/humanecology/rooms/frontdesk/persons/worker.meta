@@ -9,6 +9,7 @@ tmp_person.act_anim = true;
 tmp_person.hover_icon_wx = 62.245058672949405;
 tmp_person.hover_icon_wy = 132;
 tmp_person.animcycle_id = "ecologist";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [

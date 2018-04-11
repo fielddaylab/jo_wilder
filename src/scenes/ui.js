@@ -60,13 +60,7 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.notebook_prev_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.icon_map_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.person_hover_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.object_hover_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.observation_hover_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.porthole_hover_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.zone_hover_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.option_hover_animcycle_id,level.animcycles));
-    self.load_animcycle(find_animcycle(level.map_hover_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.ui_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
 
     for(var i = 0; i < level.scenes.length; i++)
@@ -83,6 +77,7 @@ var loader = function()
     {
       person = room.persons[k];
       self.load_animcycle_inst(person.animcycle_inst);
+      self.load_animcycle_inst(person.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
@@ -96,6 +91,7 @@ var loader = function()
     {
       object = room.objects[k];
       self.load_animcycle_inst(object.animcycle_inst);
+      self.load_animcycle_inst(object.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
       var view;
       for(var l = 0; l < object.views.length; l++)
@@ -115,6 +111,7 @@ var loader = function()
     {
       observation = room.observations[k];
       self.load_animcycle_inst(observation.animcycle_inst);
+      self.load_animcycle_inst(observation.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
     }
     var porthole;
@@ -122,6 +119,7 @@ var loader = function()
     {
       porthole = room.portholes[k];
       self.load_animcycle_inst(porthole.animcycle_inst);
+      self.load_animcycle_inst(porthole.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
     }
     var wildcard;
@@ -129,6 +127,7 @@ var loader = function()
     {
       wildcard = room.wildcards[k];
       self.load_animcycle_inst(wildcard.animcycle_inst);
+      self.load_animcycle_inst(wildcard.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
     }
     var cutscene;
@@ -136,6 +135,7 @@ var loader = function()
     {
       cutscene = room.cutscenes[k];
       self.load_animcycle_inst(cutscene.animcycle_inst);
+      self.load_animcycle_inst(cutscene.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_icon_animcycle_inst);
     }
     var inert;
@@ -160,31 +160,20 @@ var cursor = function()
   self.known_y = 0;
   self.mode_prev = CURSOR_NULL;
   self.mode = CURSOR_NULL;
-  self.o;
+  self.icon_o;
+  self.cursor_o;
   self.ripple_wx = 0;
   self.ripple_wy = 0;
   self.ripple_x = 0;
   self.ripple_y = 0;
 
-  self.person_animcycle_inst;
-  self.object_animcycle_inst;
-  self.observation_animcycle_inst;
-  self.porthole_animcycle_inst;
-  self.zone_animcycle_inst;
-  self.option_animcycle_inst;
-  self.map_animcycle_inst;
+  self.ui_animcycle_inst;
   self.ripple_animcycle_inst;
 
   self.consume_level = function(level)
   {
-    self.person_animcycle_inst      = gen_animcycle_inst(level.person_hover_animcycle_id,      level.animcycles);
-    self.object_animcycle_inst      = gen_animcycle_inst(level.object_hover_animcycle_id,      level.animcycles);
-    self.observation_animcycle_inst = gen_animcycle_inst(level.observation_hover_animcycle_id, level.animcycles);
-    self.porthole_animcycle_inst    = gen_animcycle_inst(level.porthole_hover_animcycle_id,    level.animcycles);
-    self.zone_animcycle_inst        = gen_animcycle_inst(level.zone_hover_animcycle_id,        level.animcycles);
-    self.option_animcycle_inst      = gen_animcycle_inst(level.option_hover_animcycle_id,      level.animcycles);
-    self.map_animcycle_inst         = gen_animcycle_inst(level.map_hover_animcycle_id,         level.animcycles);
-    self.ripple_animcycle_inst      = gen_animcycle_inst(level.ripple_click_animcycle_id,      level.animcycles);
+    self.ui_animcycle_inst     = gen_animcycle_inst(level.ui_hover_animcycle_id, level.animcycles);
+    self.ripple_animcycle_inst = gen_animcycle_inst(level.ripple_click_animcycle_id, level.animcycles);
   }
 
   self.ripple = function(x,y)
@@ -215,16 +204,9 @@ var cursor = function()
       self.mode_prev = self.mode;
     }
 
-    switch(self.mode)
-    {
-      case CURSOR_PERSON:      self.person_animcycle_inst.tick();      break;
-      case CURSOR_OBJECT:      self.object_animcycle_inst.tick();      break;
-      case CURSOR_OBSERVATION: self.observation_animcycle_inst.tick(); break;
-      case CURSOR_PORTHOLE:    self.porthole_animcycle_inst.tick();    break;
-      case CURSOR_ZONE:        self.zone_animcycle_inst.tick();        break;
-      case CURSOR_OPTION:      self.option_animcycle_inst.tick();      break;
-      case CURSOR_MAP:         self.map_animcycle_inst.tick();         break;
-    }
+         if(self.mode == CURSOR_O && self.cursor_o) self.cursor_o.hover_cursor_animcycle_inst.tick();
+    else if(self.mode == CURSOR_UI) self.ui_animcycle_inst.tick();
+    if(self.icon_o) self.icon_o.hover_icon_animcycle_inst.tick();
 
     if(self.ripple_animcycle_inst.frame_i || self.ripple_animcycle_inst.frame_t > 1)
     {
@@ -239,29 +221,35 @@ var cursor = function()
     if(self.ripple_animcycle_inst.frame_i || self.ripple_animcycle_inst.frame_t > 1)
       ctx.drawImage(self.ripple_animcycle_inst.img, self.ripple_x-100, self.ripple_y-100, 200, 200);
 
-    var w = cur_level.cursor_w;
-    var h = cur_level.cursor_h;
-    var hw = cur_level.cursor_w/2;
-    var hh = cur_level.cursor_h/2;
-    switch(self.mode)
+    var w;
+    var h;
+    var hw;
+    var hh;
+    if(self.mode == CURSOR_O && (!DEBUG || !my_keyable.e))
     {
-      case CURSOR_PERSON:      ctx.drawImage(self.person_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_OBJECT:      ctx.drawImage(self.object_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_OBSERVATION: ctx.drawImage(self.observation_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_PORTHOLE:    ctx.drawImage(self.porthole_animcycle_inst.img,    self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_ZONE:        ctx.drawImage(self.zone_animcycle_inst.img,        self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_OPTION:      ctx.drawImage(self.option_animcycle_inst.img,      self.known_x-hw,self.known_y-hh,w,h); break;
-      case CURSOR_MAP:         ctx.drawImage(self.map_animcycle_inst.img,         self.known_x-hw,self.known_y-hh,w,h); break;
+      w = cur_level.cursor_w;
+      h = cur_level.cursor_h;
+      hw = cur_level.cursor_w/2;
+      hh = cur_level.cursor_h/2;
+      ctx.drawImage(self.cursor_o.hover_cursor_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h)
     }
-    if(self.o && (!DEBUG || !my_keyable.e))
+    else if(self.mode == CURSOR_UI)
+    {
+      var w = cur_level.cursor_w;
+      var h = cur_level.cursor_h;
+      var hw = cur_level.cursor_w/2;
+      var hh = cur_level.cursor_h/2;
+      ctx.drawImage(self.ui_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h)
+    }
+    if(self.icon_o)
     {
       w = cur_level.hover_w;
       h = cur_level.hover_h;
       hw = cur_level.hover_w/2;
       hh = cur_level.hover_h/2;
-      self.o.hover_icon_x =  screenSpaceW(my_camera,canv,self.o.hover_icon_wx);
-      self.o.hover_icon_y = -screenSpaceH(my_camera,canv,self.o.hover_icon_wy);
-      ctx.drawImage(self.o.hover_icon_animcycle_inst.img, self.o.x+self.o.w/2+self.o.hover_icon_x-hw, self.o.y+self.o.h/2+self.o.hover_icon_y-hh, w, h);
+      self.icon_o.hover_icon_x =  screenSpaceW(my_camera,canv,self.icon_o.hover_icon_wx);
+      self.icon_o.hover_icon_y = -screenSpaceH(my_camera,canv,self.icon_o.hover_icon_wy);
+      ctx.drawImage(self.icon_o.hover_icon_animcycle_inst.img, self.icon_o.x+self.icon_o.w/2+self.icon_o.hover_icon_x-hw, self.icon_o.y+self.icon_o.h/2+self.icon_o.hover_icon_y-hh, w, h);
     }
   }
 }
@@ -339,7 +327,8 @@ var avatar = function()
         state_t = 0;
         my_navigable.selected_act = 0;
         my_cursor.mode = CURSOR_NORMAL;
-        my_cursor.o = 0;
+        my_cursor.cursor_o = 0;
+        my_cursor.icon_o = 0;
       }
       break;
       default:
@@ -791,14 +780,14 @@ var navigable = function()
     if(xp > 0)
     {
       xp = 1-xp;
-      xp = pow(xp,1.5);
+      //xp = pow(xp,1.5);
       xp = 1-xp;
     }
     if(xp < 0)
     {
       xp *= -1;
       xp = 1-xp;
-      xp = pow(xp,1.5);
+      //xp = pow(xp,1.5);
       xp = 1-xp;
       xp *= -1;
     }
@@ -1024,26 +1013,34 @@ var navigable = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
-    my_cursor.o = 0;
-    var z = -9999999999999;
-    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-      if(self.cache_unlocked_persons[i].wz > z && ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_PERSON; my_cursor.o = self.cache_unlocked_persons[i]; z = self.cache_unlocked_persons[i].wz; }
-    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-      if(self.cache_unlocked_objects[i].wz > z && ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_OBJECT; my_cursor.o = self.cache_unlocked_objects[i]; z = self.cache_unlocked_objects[i].wz; }
-    for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-      if(self.cache_unlocked_observations[i].wz > z && ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_OBSERVATION; my_cursor.o = self.cache_unlocked_observations[i]; z = self.cache_unlocked_observations[i].wz; }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-      if(self.cache_unlocked_wildcards[i].wz > z && ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_WILDCARD; my_cursor.o = self.cache_unlocked_wildcards[i]; z = self.cache_unlocked_wildcards[i].wz; }
-    //for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
-      //if(self.cache_unlocked_cutscenes[i].wz > z && ptWithinBox(self.cache_unlocked_cutscenes[i],evt.doX,evt.doY))
-        //{ my_cursor.mode = CURSOR_CUTSCENE; my_cursor.o = self.cache_unlocked_cutscenes[i]; z = self.cache_unlocked_cutscenes[i].wz; }
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-      if(self.cache_unlocked_portholes[i].wz > z && ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY))
-        { my_cursor.mode = CURSOR_PORTHOLE; my_cursor.o = self.cache_unlocked_portholes[i]; z = self.cache_unlocked_portholes[i].wz; }
+    my_cursor.cursor_o = 0;
+    my_cursor.icon_o = 0;
+    var cursor_z = -9999999999999;
+    var icon_z = -9999999999999;
+    var o;
+    var l;
+    for(var i = 0; i < 6; i++)
+    {
+      //poor-mans 0-alloc array
+      switch(i)
+      {
+        case 0: l = self.cache_unlocked_persons; break;
+        case 1: l = self.cache_unlocked_objects; break;
+        case 2: l = self.cache_unlocked_observations; break;
+        case 3: l = self.cache_unlocked_wildcards; break;
+        case 4: l = self.cache_unlocked_cutscenes; break;
+        case 5: l = self.cache_unlocked_portholes; break;
+      }
+      for(var j = 0; j < l.length; j++)
+      {
+        o = l[j];
+        if(ptWithinBox(o,evt.doX,evt.doY))
+        {
+          if(o.wz > cursor_z && o.hover_cursor_animcycle_inst.animcycle != null_animcycle) { my_cursor.cursor_o = o; cursor_z = o.wz; my_cursor.mode = CURSOR_O; }
+          if(o.wz > icon_z   && o.hover_icon_animcycle_inst.animcycle   != null_animcycle) { my_cursor.icon_o = o;   icon_z = o.wz; }
+        }
+      }
+    }
   }
   self.unhover = function(evt)
   {
@@ -1374,10 +1371,9 @@ var mapview = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
-    my_cursor.o = 0;
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
       if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY))
-        my_cursor.mode = CURSOR_MAP;
+        my_cursor.mode = CURSOR_UI;
   }
   self.unhover = function(evt)
   {
@@ -1831,10 +1827,9 @@ var objectview = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
-    my_cursor.o = 0;
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
       if(ptWithinBox(self.cache_unlocked_zones[i],evt.doX,evt.doY))
-        my_cursor.mode = CURSOR_ZONE;
+        my_cursor.mode = CURSOR_UI;
   }
   self.unhover = function(evt)
   {
@@ -2370,7 +2365,6 @@ var personview = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
-    my_cursor.o = 0;
 
     var speak = self.cur_speak;
     var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
@@ -2384,7 +2378,7 @@ var personview = function()
       var w = speak_command.w;
       var h = speak_command.h*speak_command.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
-        my_cursor.mode = CURSOR_OPTION;
+        my_cursor.mode = CURSOR_UI;
     }
     else
     {
@@ -2398,7 +2392,7 @@ var personview = function()
           if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
           {
             self.hovered_option = option;
-            my_cursor.mode = CURSOR_OPTION;
+            my_cursor.mode = CURSOR_UI;
           }
           oyoff += speak.options_h;
         }

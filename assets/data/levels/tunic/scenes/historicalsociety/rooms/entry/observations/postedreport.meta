@@ -9,6 +9,7 @@ tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = 50.47927272727269;
 tmp_observation.hover_icon_wy = 63.50618181818178;
 tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "Wells' report- \"Basketball Jersey\"";

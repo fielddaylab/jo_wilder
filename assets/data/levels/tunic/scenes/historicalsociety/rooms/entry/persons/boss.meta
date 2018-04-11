@@ -9,6 +9,7 @@ tmp_person.act_anim = 1;
 tmp_person.hover_icon_wx = 86.30329171979007;
 tmp_person.hover_icon_wy = 182.37672805337078;
 tmp_person.animcycle_id = "boss";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [

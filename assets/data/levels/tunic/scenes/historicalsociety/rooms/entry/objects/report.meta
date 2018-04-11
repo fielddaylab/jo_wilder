@@ -9,6 +9,7 @@ tmp_object.act_anim = 1;
 tmp_object.hover_icon_wx = 37.452363636363614;
 tmp_object.hover_icon_wy = 48.85090909090906;
 tmp_object.animcycle_id = "report_hand";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
