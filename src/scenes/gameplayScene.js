@@ -109,6 +109,7 @@ var GamePlayScene = function(game, stage)
     my_observationview = new observationview();
     my_personview = new personview();
     my_cutsceneview = new cutsceneview();
+    my_wildcardview = new wildcardview();
     my_notificationview = new notificationview();
 
     my_keyable = new keyable({});
@@ -145,7 +146,11 @@ var GamePlayScene = function(game, stage)
     }
     my_keyable.key_down = function(evt)
     {
-      if(evt.key == "e") my_keyable.e = 1;
+      if(evt.key == "e")
+      {
+        canvas.style.cursor = 'auto';
+        my_keyable.e = 1;
+      }
       if(evt.key == "ArrowRight") CUTSCENE_ADVANCE = 1;
     }
     my_keyable.key_up = function(evt)
@@ -334,8 +339,26 @@ var GamePlayScene = function(game, stage)
         my_observationview.tick();
         break;
       case STATE_WILDCARD:
+        if(
+        !my_notificationview.note.length &&
+        !hoverer.filter(my_wildcardview) &&
+        false) ;
+        if(DEBUG && my_keyable.e)
+        {
+          if(
+          !my_notificationview.note.length &&
+          !dragger.filter(my_wildcardview) &&
+          false) ;
+        }
+        else
+        {
+          if(
+          !clicker.filter(my_wildcardview) &&
+          false) ;
+        }
         my_navigable.tick();
         my_avatar.tick();
+        my_wildcardview.tick();
         break;
       case STATE_CUTSCENE:
         if(
@@ -409,6 +432,8 @@ var GamePlayScene = function(game, stage)
         break;
       case STATE_WILDCARD:
         my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+        my_wildcardview.draw(1);
         break;
       case STATE_CUTSCENE:
         my_navigable.draw();
@@ -478,6 +503,11 @@ var GamePlayScene = function(game, stage)
         {
           state_t += state_t_speed;
           my_observationview.tick();
+        }
+        else if(state_to == STATE_WILDCARD)
+        {
+          state_t += state_t_speed;
+          my_wildcardview.tick();
         }
         else if(state_to == STATE_MAP)
         {
@@ -605,6 +635,7 @@ var GamePlayScene = function(game, stage)
           my_navigable.draw();
           if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
           else                              my_toolbar.draw(1-state_t);
+          my_wildcardview.draw(state_t);
         }
         else if(state_to == STATE_NAV) //guaranteed cutscene->nav by initial if
         {
@@ -675,6 +706,10 @@ var GamePlayScene = function(game, stage)
         my_observationview.draw(1-state_t);
         break;
       case STATE_WILDCARD:
+        my_navigable.draw();
+        if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
+        else                              my_toolbar.draw(state_t);
+        my_wildcardview.draw(1-state_t);
         break;
     }
   };

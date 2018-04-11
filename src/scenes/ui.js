@@ -199,8 +199,8 @@ var cursor = function()
   {
     if(self.mode != self.mode_prev)
     {
-      if(self.mode_prev == CURSOR_NORMAL) canvas.style.cursor = 'none';
-      if(self.mode      == CURSOR_NORMAL) canvas.style.cursor = 'auto';
+      if(self.mode_prev == CURSOR_NORMAL && !my_keyable.e) canvas.style.cursor = 'none';
+      if(self.mode      == CURSOR_NORMAL)                  canvas.style.cursor = 'auto';
       self.mode_prev = self.mode;
     }
 
@@ -313,7 +313,7 @@ var avatar = function()
             }
           }
           break;
-          case ACT_WILDCARD: state_to = STATE_WILDCARD; get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_WILDCARD: state_to = STATE_WILDCARD; my_wildcardview.consume_wildcard(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_CUTSCENE:
           {
             state_stack = STATE_CUTSCENE;
@@ -2609,6 +2609,38 @@ var personview = function()
   }
 }
 
+var wildcardview = function()
+{
+  var self = this;
+
+  self.x = 0;
+  self.y = 0;
+  self.w = canv.width;
+  self.h = canv.height;
+
+  self.wildcard;
+
+  self.consume_wildcard = function(wildcard)
+  {
+    self.wildcard = wildcard;
+    if(!self.wildcard.key && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
+    self.wildcard.key = true;
+  }
+
+  //DRAG DEBUG EDIT STUFF
+  self.dragStart  = function(evt) { if(self.wildcard.dragStart)  self.wildcard.dragStart(evt); };
+  self.drag       = function(evt) { if(self.wildcard.drag)       self.wildcard.drag(evt);      };
+  self.dragFinish = function()    { if(self.wildcard.dragFinish) self.wildcard.dragFinish();   };
+  //DRAG DEBUG EDIT STUFF END
+
+  self.hover   = function(evt) { if(self.wildcard.hover)   self.wildcard.hover(evt);   };
+  self.unhover = function(evt) { if(self.wildcard.unhover) self.wildcard.unhover(evt); };
+  self.click   = function(evt) { if(self.wildcard.click)   self.wildcard.click(evt);   };
+  self.tick    = function()    { if(self.wildcard.tick)    self.wildcard.tick();       };
+  self.draw    = function(t)   { if(self.wildcard.draw)    self.wildcard.draw(t);      };
+}
+
+
 var cutscene_entity = function()
 {
   var self = this;
@@ -2749,6 +2781,7 @@ var cutsceneview = function()
           case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_WILDCARD:    state_to = STATE_WILDCARD;    my_wildcardview.consume_wildcard(cur_act);       get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
         }
         break;
       case CUTSCENE_COMMAND_SPEAK:
