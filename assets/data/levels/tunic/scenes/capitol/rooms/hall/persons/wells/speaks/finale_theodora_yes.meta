@@ -1,4 +1,4 @@
-tmp_speak.primary = 2;
+tmp_speak.primary = 6;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -9,9 +9,9 @@ tmp_speak.reqs = [[
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -133.33333333333505;
-tmp_speak_command.wy = 134.848484848485;
-tmp_speak_command.w = 179;
+tmp_speak_command.wx = -63.643136940244474;
+tmp_speak_command.wy = 368.1818752340582;
+tmp_speak_command.w = 157;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -19,13 +19,12 @@ tmp_speak_command.raw_atext = "I checked the cleaner’s old log books. The slip
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 15.15151515151532;
-tmp_speak_command.wy = 418.1818181818182;
-tmp_speak_command.w = 290;
+tmp_speak_command.wx = -343.93939401232774;
+tmp_speak_command.wy = 337.87878787940224;
+tmp_speak_command.w = 329;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Does anybody actually believe this?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
