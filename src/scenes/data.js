@@ -245,12 +245,19 @@ tmp_animcycle.fqid = "tunic.closetshadows";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 20;
+tmp_animcycle.frame_t = 30;
 tmp_animcycle.offset_t = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/0.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/8.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -2955,22 +2962,48 @@ tmp_wildcard.commands = [
         case UI_STATE_SELECT: break;
         case UI_STATE_OUT: if(self.ui_state_p >= 1)
         {
-          if(self.cur_command.fail.length)
+          if(self.failed)
           {
-            var bogus_commands = [];
-            for(var i = 0; i < self.cur_command.fail.length; i++)
-              bogus_commands.push({command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:self.cur_command.fail[i] });
-            self.commands = bogus_commands;
-            self.cur_command_i = 0;
-            self.cur_command = self.commands[self.cur_command_i];
-            self.consume_command();
+            if(self.cur_command.fail.length)
+            {
+              var bogus_commands = [];
+              for(var i = 0; i < self.cur_command.fail.length; i++)
+                bogus_commands.push({command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:self.cur_command.fail[i] });
+              self.commands = bogus_commands;
+              self.cur_command_i = 0;
+              self.cur_command = self.commands[self.cur_command_i];
+              self.consume_command();
+            }
+            else
+            {
+              state_from = state_cur;
+              state_to = state_stack;
+              state_cur = STATE_TRANSITION;
+              state_t = 0;
+            }
           }
           else
           {
-            state_from = state_cur;
-            state_to = state_stack;
-            state_cur = STATE_TRANSITION;
-            state_t = 0;
+            self.ui_state = UI_STATE_NULL;
+            self.ui_state_t = 0;
+            self.ui_state_p = 0;
+            self.cur_speak = 0;
+            self.cur_speak_command_i = 0;
+
+            self.cur_command_i++;
+            if(self.cur_command_i >= self.commands.length)
+            {
+              state_from = state_cur;
+              state_to = state_stack;
+              state_cur = STATE_TRANSITION;
+              state_t = 0;
+              self.commands = self.revert_commands;
+            }
+            else
+            {
+              self.cur_command = self.commands[self.cur_command_i];
+              self.consume_command();
+            }
           }
         }
         break;
