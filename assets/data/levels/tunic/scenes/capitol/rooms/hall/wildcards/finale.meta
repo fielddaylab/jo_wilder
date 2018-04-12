@@ -94,8 +94,9 @@ tmp_wildcard.commands = [
       self.ui_state_p = 0;
     }
   }
-  self.consume_self = function()
+  self.consume_self = function(wildcard)
   {
+    self = wildcard;
     self.revert_commands = self.commands;
     self.failed = 0;
     self.failed_command_i = 0;

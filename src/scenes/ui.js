@@ -2656,7 +2656,7 @@ var wildcardview = function()
     self.wildcard = wildcard;
     if(!self.wildcard.key && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
     self.wildcard.key = true;
-    self.wildcard.consume_self();
+    self.wildcard.consume_self(self.wildcard);
   }
 
   //DRAG DEBUG EDIT STUFF
