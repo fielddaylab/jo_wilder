@@ -27,7 +27,7 @@ tmp_speak_command.w = 323.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "He's meeting me here. Said he had to take care of something first.";
+tmp_speak_command.raw_atext = "He's meeting me here. He said he had to take care of something first.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
