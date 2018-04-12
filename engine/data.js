@@ -3121,6 +3121,7 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
     {
       self.cur_speak = find(self.cur_command.speak_fqid);
+      self.cur_speak.key = true;
       self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
       self.cur_speak_command_i = 0;
       self.ui_state = UI_STATE_IN;
@@ -3167,11 +3168,24 @@ tmp_wildcard.commands = [
       self.cur_command_i++;
       if(self.cur_command_i >= self.commands.length)
       {
-        state_from = state_cur;
-        state_to = state_stack;
-        state_cur = STATE_TRANSITION;
-        state_t = 0;
-        self.commands = self.revert_commands;
+        if(self.commands != self.revert_commands)
+        {
+          self.commands = self.revert_commands;
+          self.failed = 0;
+          self.cur_command_i = self.failed_command_i;
+          self.cur_command = self.commands[self.cur_command_i];
+          self.consume_command();
+          self.ui_state = UI_STATE_IN;
+          self.ui_state_t = 0;
+          self.ui_state_p = 0;
+        }
+        else
+        {
+          state_from = state_cur;
+          state_to = state_stack;
+          state_cur = STATE_TRANSITION;
+          state_t = 0;
+        }
       }
       else
       {
@@ -3239,9 +3253,9 @@ tmp_wildcard.commands = [
         state_to = saved_state_to;
         state_cur = saved_state_cur;
         state_t = saved_state_t;
-        self.failed = 1;
-        self.failed_command_i = 0;
 
+        self.failed = 1;
+        self.failed_command_i = self.cur_command_i;
         self.ui_state_t = 0;
         self.ui_state_p = 0;
         self.ui_state = UI_STATE_OUT;
@@ -3258,7 +3272,10 @@ tmp_wildcard.commands = [
           if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
           {
             if(my_notebookview.cache_unlocked_entrys[i].fqid != self.cur_command.entry_fqid)
+            {
               self.failed = 1;
+              self.failed_command_i = self.cur_command_i;
+            }
             self.ui_state_t = 0;
             self.ui_state_p = 0;
             self.ui_state = UI_STATE_OUT;
@@ -3542,6 +3559,7 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
     {
       self.cur_speak = find(self.cur_command.speak_fqid);
+      self.cur_speak.key = true;
       self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
       self.cur_speak_command_i = 0;
       self.ui_state = UI_STATE_IN;
