@@ -1,4 +1,4 @@
-tmp_speak.primary = 1;
+tmp_speak.primary = 2;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,23 +11,23 @@ tmp_speak.relocks = [
 ];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 58.00000000000012;
-tmp_speak_command.wy = 296.4999999999999;
-tmp_speak_command.w = 132;
+tmp_speak_command.wx = -133.33333333333505;
+tmp_speak_command.wy = 134.848484848485;
+tmp_speak_command.w = 179;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "A suffragist!";
+tmp_speak_command.raw_atext = "I found this slip attached to the tunic. It has the date 1916 on it!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 58.00000000000012;
-tmp_speak_command.wy = 296.4999999999999;
-tmp_speak_command.w = 132;
+tmp_speak_command.wx = 15.15151515151532;
+tmp_speak_command.wy = 418.1818181818182;
+tmp_speak_command.w = 290;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Nice work. But what does women's suffrage have to do with a Wisconsin tunic?";
+tmp_speak_command.raw_atext = "Jolie, you seem to be on to something. Do you know what that slip is?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
