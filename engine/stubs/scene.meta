@@ -7,8 +7,6 @@ tmp_scene.animcycle_id = "null";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_scene.unlocks = [
-];
-tmp_scene.relocks = [
-];
+tmp_room.reqs = [[
+]];
 

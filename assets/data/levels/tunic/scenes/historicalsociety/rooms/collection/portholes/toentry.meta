@@ -17,8 +17,6 @@ tmp_porthole.target_start_wx = -903.2438530313668;
 tmp_porthole.target_start_wy = -94.39707135640161;
 tmp_porthole.raw_notifications = [
 ];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
+tmp_porthole.reqs = [[
+]];
 

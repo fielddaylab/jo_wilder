@@ -14,10 +14,8 @@ tmp_cutscene.hover_cursor_animcycle_id = "null";
 tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
 ];
-tmp_cutscene.unlocks = [
-];
-tmp_cutscene.relocks = [
-];
+tmp_room.reqs = [[
+]];
 
 tmp_cutscene.commands = [];
 

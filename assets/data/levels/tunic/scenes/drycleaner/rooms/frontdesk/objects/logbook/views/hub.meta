@@ -4,8 +4,6 @@ tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 "Aha! It was owned by Theodora Youmans. I should ask the archivist about this!",
 ];
-tmp_view.unlocks = [
-];
-tmp_view.relocks = [
-];
+tmp_view.reqs = [[
+]];
 

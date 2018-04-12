@@ -19,9 +19,7 @@ tmp_observation.blip_w = 316;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-"tunic.historicalsociety.closet.notebook",
-];
+tmp_observation.reqs = [[
+"!tunic.historicalsociety.closet.notebook",
+]];
 

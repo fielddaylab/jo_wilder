@@ -15,9 +15,7 @@ tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 "Here's my notebook!",
 ];
-tmp_object.unlocks = [
-];
-tmp_object.relocks = [
-"tunic.historicalsociety.closet.notebook",
-];
+tmp_object.reqs = [[
+"!tunic.historicalsociety.closet.notebook",
+]];
 

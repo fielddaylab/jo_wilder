@@ -5,11 +5,9 @@ tmp_speak.options_w = 229;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-"tunic.drycleaner.frontdesk.worker.slip01",
-];
+tmp_speak.reqs = [[
+"!tunic.drycleaner.frontdesk.worker.slip01",
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -113.86646775955367;

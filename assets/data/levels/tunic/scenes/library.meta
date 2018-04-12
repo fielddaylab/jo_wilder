@@ -7,9 +7,7 @@ tmp_scene.animcycle_id = "scene_library";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_scene.unlocks = [
+tmp_scene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.library03",
-];
-tmp_scene.relocks = [
-];
+]];
 

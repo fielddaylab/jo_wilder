@@ -14,12 +14,10 @@ tmp_wildcard.hover_icon_animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
-tmp_wildcard.unlocks = [
+tmp_wildcard.reqs = [[
 "tunic.kohlcenter.halloffame.oldpictures.hub",
-];
-tmp_wildcard.relocks = [
-"tunic.historicalsociety.stacks.journalsaz.hub",
-];
+"!tunic.historicalsociety.stacks.journalsaz.hub",
+]];
 
 ENUM=0;
 var FINALE_WILDCARD_COMMAND_NULL     = ENUM; ENUM++;

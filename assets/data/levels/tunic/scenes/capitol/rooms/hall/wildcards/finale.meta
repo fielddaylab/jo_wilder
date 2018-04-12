@@ -14,11 +14,9 @@ tmp_wildcard.hover_icon_animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
-tmp_wildcard.unlocks = [
+tmp_wildcard.reqs = [[
 "tunic.historicalsociety.stacks.journalsaz.hub",
-];
-tmp_wildcard.relocks = [
-];
+]];
 
 ENUM=0;
 var FINALE_WILDCARD_COMMAND_NULL     = ENUM; ENUM++;

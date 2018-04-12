@@ -1258,11 +1258,9 @@ var toolbar = function()
     self.toolbar_animcycle_inst       = gen_animcycle_inst(level.toolbar_animcycle_id,level.animcycles);
     self.icon_map_animcycle_inst      = gen_animcycle_inst(level.icon_map_animcycle_id,level.animcycles);
     self.icon_notebook_animcycle_inst = gen_animcycle_inst(level.icon_notebook_animcycle_id,level.animcycles);
-    self.notebook.unlocks = level.notebook_unlocks;
-    self.notebook.relocks = level.notebook_relocks;
+    self.notebook.reqs = level.notebook_reqs;
     self.notebook.locked = true;
-    self.map.unlocks = level.map_unlocks;
-    self.map.relocks = level.map_relocks;
+    self.map.reqs = level.map_reqs;
     self.map.locked = true;
   }
 
