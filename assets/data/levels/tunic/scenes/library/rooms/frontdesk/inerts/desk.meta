@@ -5,8 +5,6 @@ tmp_inert.wy = 38.34868008200816;
 tmp_inert.wz = 10;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "librarydesk";
-tmp_inert.unlocks = [
-];
-tmp_inert.relocks = [
-];
+tmp_inert.reqs = [[
+]];
 

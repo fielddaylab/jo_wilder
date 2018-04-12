@@ -4,8 +4,6 @@ tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 "Hmm... what was Wells doing here? I should ask the librarian.",
 ];
-tmp_view.unlocks = [
-];
-tmp_view.relocks = [
-];
+tmp_view.reqs = [[
+]];
 

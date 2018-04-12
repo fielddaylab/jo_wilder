@@ -19,8 +19,6 @@ tmp_observation.blip_w = 217;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-];
+tmp_observation.reqs = [[
+]];
 

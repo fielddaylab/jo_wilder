@@ -14,8 +14,6 @@ tmp_wildcard.hover_icon_animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
-tmp_wildcard.unlocks = [
-];
-tmp_wildcard.relocks = [
-];
+tmp_room.reqs = [[
+]];
 

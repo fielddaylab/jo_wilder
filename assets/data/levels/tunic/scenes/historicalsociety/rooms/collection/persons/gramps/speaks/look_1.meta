@@ -5,11 +5,9 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-"tunic.historicalsociety.collection.tunic.slip",
-];
+tmp_speak.reqs = [[
+"!tunic.historicalsociety.collection.tunic.slip",
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -464.2424242424242;

@@ -19,10 +19,8 @@ tmp_observation.blip_w = 165;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
+tmp_observation.reqs = [[
 "tunic.humanecology.frontdesk.worker.intro6",
-];
-tmp_observation.relocks = [
-"tunic.humanecology.frontdesk.cookies",
-];
+"!tunic.humanecology.frontdesk.cookies",
+]];
 

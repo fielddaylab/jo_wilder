@@ -5,11 +5,9 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-"tunic.humanecology.frontdesk.worker.better",
-];
+tmp_speak.reqs = [[
+"!tunic.humanecology.frontdesk.worker.better",
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -194.02957293488913;

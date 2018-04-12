@@ -14,9 +14,7 @@ tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
-tmp_object.unlocks = [
+tmp_object.reqs = [[
 "tunic.humanecology.frontdesk.worker.better",
-];
-tmp_object.relocks = [
-];
+]];
 

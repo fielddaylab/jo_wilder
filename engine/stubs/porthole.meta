@@ -17,8 +17,6 @@ tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = 0;
 tmp_porthole.raw_notifications = [
 ];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
+tmp_room.reqs = [[
+]];
 

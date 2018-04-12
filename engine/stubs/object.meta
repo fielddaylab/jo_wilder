@@ -14,8 +14,6 @@ tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
-tmp_object.unlocks = [
-];
-tmp_object.relocks = [
-];
+tmp_room.reqs = [[
+]];
 

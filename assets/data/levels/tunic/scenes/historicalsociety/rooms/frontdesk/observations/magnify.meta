@@ -19,10 +19,8 @@ tmp_observation.blip_w = 157;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
+tmp_observation.reqs = [[
 "tunic.historicalsociety.collection.tunic.slip",
-];
-tmp_observation.relocks = [
-"tunic.historicalsociety.frontdesk.magnify",
-];
+"!tunic.historicalsociety.frontdesk.magnify",
+]];
 

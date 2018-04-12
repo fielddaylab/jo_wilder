@@ -42,7 +42,7 @@ var GamePlayScene = function(game, stage)
               if(speak.options.length == 1)
               {
                 option = speak.options[0];
-                if(option.unlocks.length == 0 && option.relocks.length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
+                if(option.reqs[0].length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
                 {
                   var consumed_speak = option.target_speak_found;
                   if(consumed_speak && consumed_speak.raw_notifications.length == 0 && !consumed_speak.primary)

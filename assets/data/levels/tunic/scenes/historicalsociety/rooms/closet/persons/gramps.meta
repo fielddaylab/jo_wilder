@@ -14,9 +14,7 @@ tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
-tmp_person.unlocks = [
-];
-tmp_person.relocks = [
-"tunic.historicalsociety.closet.gramps.intro_0_cs_0",
-];
+tmp_person.reqs = [[
+"!tunic.historicalsociety.closet.gramps.intro_0_cs_0",
+]];
 

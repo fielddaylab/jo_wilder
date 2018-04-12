@@ -5,8 +5,6 @@ tmp_view.raw_notifications = [
 "Oh no! Retirement? That's not fair!",
 "Grampa loves this place!",
 ];
-tmp_view.unlocks = [
-];
-tmp_view.relocks = [
-];
+tmp_view.reqs = [[
+]];
 

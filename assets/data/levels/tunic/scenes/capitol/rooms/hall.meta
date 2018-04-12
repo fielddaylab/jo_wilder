@@ -24,8 +24,6 @@ tmp_room.target_start_wx = 648.2945573024847;
 tmp_room.target_start_wy = -253.58367957138657;
 tmp_room.raw_notifications = [
 ];
-tmp_room.unlocks = [
-];
-tmp_room.relocks = [
-];
+tmp_room.reqs = [[
+]];
 

@@ -14,9 +14,7 @@ tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
-tmp_person.unlocks = [
-];
-tmp_person.relocks = [
-"tunic.kohlcenter.halloffame.oldpictures",
-];
+tmp_person.reqs = [[
+"!tunic.kohlcenter.halloffame.oldpictures",
+]];
 

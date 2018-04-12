@@ -9,9 +9,7 @@ tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
-tmp_entry.unlocks = [
+tmp_entry.reqs = [[
 "tunic.historicalsociety.closet_dirty.gramps",
-];
-tmp_entry.relocks = [
-];
+]];
 
