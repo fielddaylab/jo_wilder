@@ -31,6 +31,12 @@ var LoadingScene = function(game, stage)
   var n_imgs_loaded;
   var img_srcs;
   var imgs;
+  var n_fonts_loaded;
+  var font_srcs;
+  var font_loaded;
+  var font_wrongdata;
+  var font_canv;
+  var font_canv_s;
   var n_audios_loaded;
   var audio_srcs;
   var audios;
@@ -43,6 +49,10 @@ var LoadingScene = function(game, stage)
   {
     n_imgs_loaded++;
   };
+  var fontLoaded = function()
+  {
+    n_fonts_loaded++;
+  };
   var audioLoaded = function()
   {
     n_audios_loaded++;
@@ -53,6 +63,14 @@ var LoadingScene = function(game, stage)
     canv = stage.canv;
     canvas = canv.canvas;
     ctx = canv.context;
+  }
+
+  var tryfont = function()
+  {
+    font_canv.context.fillStyle = "#FFFFFF";
+    font_canv.context.fillRect(0,0,font_canv_s,font_canv_s);
+    font_canv.context.fillStyle = "#000000";
+    font_canv.context.fillText("a",12,22);
   }
 
   self.ready = function()
@@ -75,13 +93,12 @@ var LoadingScene = function(game, stage)
     n_imgs_loaded = 0;
     img_srcs = [];
     imgs = [];
+    n_fonts_loaded = 0;
+    font_srcs = [];
+    font_loaded = [];
     n_audios_loaded = 0;
     audio_srcs = [];
     audios = [];
-
-    ctx.font = text_font; //put font that nees loading here
-    ctx.fillStyle = "#000000";
-    ctx.fillText(".",0,0);// funky way to encourage any custom font to load
 
     //put asset paths in loading_img_srcs (for assets used on loading screen itself)
     //loading_img_srcs.push("assets/man.png");
@@ -103,6 +120,24 @@ var LoadingScene = function(game, stage)
     }
     imageLoaded(); //call once to prevent 0/0 != 100% bug
 
+    //put font paths in font_srcs
+    //font_srcs.push("FontName"); //NEEDS DEFINITION IN index.html CSS!!
+    font_srcs.push("Patrick");
+    font_canv_s = 25;
+    font_canv = GenIcon(font_canv_s,font_canv_s);
+    // uncomment below for preview
+    //font_canv.style.position="absolute";
+    //font_canv.style.left="-"+font_canv_s+"px";
+    //document.getElementById("content").appendChild(font_canv);
+    font_canv.context.font = "20px THISFONTDOESNTEXIST";
+    tryfont();
+    font_wrongdata = font_canv.context.getImageData(0,0,font_canv_s,font_canv_s);
+    for(var i = 0; i < font_srcs.length; i++)
+    {
+      font_loaded[i] = 0;
+    }
+    fontLoaded(); //call once to prevent 0/0 != 100% bug
+
     //put asset paths in audio_srcs
     //audio_srcs.push("assets/sound.mp3");
     for(var i = 0; i < audio_srcs.length; i++)
@@ -116,10 +151,31 @@ var LoadingScene = function(game, stage)
 
   self.tick = function()
   {
+    //font main-thread loaded test
+    for(var i = 0; i < font_srcs.length; i++)
+    {
+      var font_data;
+      if(!font_loaded[i])
+      {
+        font_canv.context.font = "20px "+font_srcs[i];
+        tryfont();
+        font_data = font_canv.context.getImageData(0,0,font_canv_s,font_canv_s);
+        var j;
+        for(j = 0; font_data.data[j] == font_wrongdata.data[j] && j < font_data.data.length; j++) ;
+        if(j < font_wrongdata.data.length)
+        {
+          fontLoaded();
+          ctx.font = "20px "+font_srcs[i];
+          ctx.fillText(".",0,0);
+          font_loaded[i] = 1;
+        }
+      }
+    }
+
     //note- assets used on loading screen itself NOT included in wait
     loading_percent_loaded = n_loading_imgs_loaded/(loading_img_srcs.length+1);
     if(loading_percent_loaded >= 1.0) ticks_since_loading_ready++;
-    percent_loaded = (n_imgs_loaded+n_audios_loaded)/((img_srcs.length+1)+(audio_srcs.length+1));
+    percent_loaded = (n_imgs_loaded+n_fonts_loaded+n_audios_loaded)/((img_srcs.length+1)+(font_srcs.length+1)+(audio_srcs.length+1));
     if(chase_percent_loaded <= percent_loaded) chase_percent_loaded += 0.01;
     lerp_percent_loaded = lerp(lerp_percent_loaded,percent_loaded,0.1);
     lerp_chase_percent_loaded = lerp(lerp_chase_percent_loaded,chase_percent_loaded,0.1);
@@ -130,7 +186,6 @@ var LoadingScene = function(game, stage)
       game.nextScene();
     }
   };
-
 
   self.draw = function()
   {
@@ -150,3 +205,4 @@ var LoadingScene = function(game, stage)
     loading_imgs = [];//just used them to cache assets in browser; let garbage collector handle 'em.
   };
 };
+
