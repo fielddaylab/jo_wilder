@@ -14,9 +14,9 @@ tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "Better keep Teddy hidden...";
-tmp_observation.blip_wx = -401.40026448464477;
-tmp_observation.blip_wy = 287.3710355195466;
-tmp_observation.blip_w = 217;
+tmp_observation.blip_wx = -803.4966993830346;
+tmp_observation.blip_wy = 183.15575583186893;
+tmp_observation.blip_w = 163;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];

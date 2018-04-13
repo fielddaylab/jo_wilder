@@ -14,9 +14,9 @@ tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "Door's locked...";
-tmp_observation.blip_wx = -101.5776837531122;
-tmp_observation.blip_wy = 199.08456116367233;
-tmp_observation.blip_w = 118;
+tmp_observation.blip_wx = -101.50489675125361;
+tmp_observation.blip_wy = 199.12874568164509;
+tmp_observation.blip_w = 140;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
