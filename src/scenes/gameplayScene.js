@@ -206,6 +206,7 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         my_avatar.tick();
         my_navigable.trigger_cutscenes();
+        my_toolbar.tick();
         break;
       case STATE_MAP:
         if(
@@ -501,7 +502,7 @@ var GamePlayScene = function(game, stage)
         else if(state_to == STATE_CUTSCENE)
         {
           state_t += state_t_speed;
-          if(my_loader.loading) state_t = 0.5;
+          if(state_t > 0.5 && my_loader.loading) state_t = 0.5;
         }
         else state_t += state_t_speed;
         break;
@@ -561,10 +562,13 @@ var GamePlayScene = function(game, stage)
       if(state_cur == STATE_NAV)
       {
         my_navigable.unlock_content();
-        my_toolbar.notebook.locked = querylocked(my_toolbar.notebook.reqs);
-        my_toolbar.map.locked      = querylocked(my_toolbar.map.reqs);
+        my_notebookview.unlock_content();
+        my_toolbar.notebook_locked = querylocked(cur_level.notebook_reqs);
+        my_toolbar.map_locked      = querylocked(cur_level.map_reqs);
       }
     }
+
+    my_toolbar.tick();
   };
 
   var transition_draw = function()

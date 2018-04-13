@@ -1285,6 +1285,10 @@ var toolbar = function()
   self.icon_notebook_animcycle_inst;
   self.notebook = {x:20,  y:self.y+15, w:self.h-40, h:self.h-40};
   self.map      = {x:100, y:self.y+15, w:self.h-40, h:self.h-40};
+  self.notebook_locked = true;
+  self.map_locked = true;
+  self.notebook_bounce = 0;
+  self.map_bounce = 0;
 
   var MAP_ENABLED = 0;
 
@@ -1293,15 +1297,15 @@ var toolbar = function()
     self.toolbar_animcycle_inst       = gen_animcycle_inst(level.toolbar_animcycle_id,level.animcycles);
     self.icon_map_animcycle_inst      = gen_animcycle_inst(level.icon_map_animcycle_id,level.animcycles);
     self.icon_notebook_animcycle_inst = gen_animcycle_inst(level.icon_notebook_animcycle_id,level.animcycles);
-    self.notebook.reqs = level.notebook_reqs;
-    self.notebook.locked = true;
-    self.map.reqs = level.map_reqs;
-    self.map.locked = true;
+    self.notebook_locked = true;
+    self.map_locked = true;
+    self.notebook_bounce = 0;
+    self.map_bounce = 0;
   }
 
   self.click = function(evt)
   {
-    if(MAP_ENABLED && !self.map.locked && ptWithinBox(self.map,evt.doX,evt.doY))
+    if(MAP_ENABLED && !self.map_locked && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
       state_from = state_cur;
@@ -1310,7 +1314,7 @@ var toolbar = function()
       state_t = 0;
       my_mapview.unlock_content();
     }
-    if(!self.notebook.locked && ptWithinBox(self.notebook,evt.doX,evt.doY))
+    if(!self.notebook_locked && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
       my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
@@ -1326,14 +1330,16 @@ var toolbar = function()
     self.toolbar_animcycle_inst.tick();
     self.icon_map_animcycle_inst.tick();
     self.icon_notebook_animcycle_inst.tick();
+    if(self.notebook_bounce > 0) self.notebook_bounce -= 0.01; else self.notebook_bounce = 0;
+    if(self.map_bounce      > 0) self.map_bounce      -= 0.01; else self.map_bounce      = 0;
   }
 
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
-    ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
-    if(!self.notebook.locked) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
-    if(MAP_ENABLED && !self.map.locked) ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    ctx.drawImage(self.toolbar_animcycle_inst.img, self.x, self.y +yoff, self.w, self.h);
+    if(!self.notebook_locked) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff+sin(self.notebook_bounce*20)*10*self.notebook_bounce, self.notebook.w, self.notebook.h);
+    if(MAP_ENABLED && !self.map_locked) ctx.drawImage(self.icon_map_animcycle_inst.img, self.map.x, self.map.y +yoff, self.map.w, self.map.h);
 
     if(DEBUG)
     {
@@ -1516,6 +1522,7 @@ var notebookview = function()
   self.prev_box = {x:10,             y:100, w:90, h:90};
   self.next_box = {x:canv.width-100, y:100, w:90, h:90};
   self.cache_unlocked_entrys = [];
+  self.n_unlocked_entrys = 0;
 
   self.page = 0;
   self.last_page = 0;
@@ -1528,6 +1535,7 @@ var notebookview = function()
     self.exit_animcycle_inst = gen_animcycle_inst(level.exit_animcycle_id, level.animcycles);
     self.notebook_next_animcycle_inst = gen_animcycle_inst(level.notebook_next_animcycle_id, level.animcycles);
     self.notebook_prev_animcycle_inst = gen_animcycle_inst(level.notebook_prev_animcycle_id, level.animcycles);
+    self.n_unlocked_entrys = 0;
   }
 
   self.unlock_content = function()
@@ -1543,6 +1551,9 @@ var notebookview = function()
         for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[j].page || (self.entrys[i].page == self.cache_unlocked_entrys[j].page && self.entrys[i].wz < self.cache_unlocked_entrys[j].wz)) break;
         self.cache_unlocked_entrys.splice(j,0,self.entrys[i]);
       }
+    if(self.cache_unlocked_entrys.length > self.n_unlocked_entrys)
+      my_toolbar.notebook_bounce = 1;
+    self.n_unlocked_entrys = self.cache_unlocked_entrys.length;
   }
 
   //DRAG DEBUG EDIT STUFF
