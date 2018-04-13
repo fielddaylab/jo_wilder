@@ -1,0 +1,44 @@
+tmp_speak.primary = false;
+tmp_speak.commands = [];
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.raw_notifications = [
+];
+tmp_room.reqs = [[
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 100;
+tmp_speak_command.wy = 100;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Youmans and the other suffragists from Wisconsin wore these tunics to a women’s march in Chicago! They wanted to represent their home state.";
+tmp_speak_command.speaker = SPEAKER_PLAYER; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 100;
+tmp_speak_command.wy = 100;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Just five years later, Wisconsin signed the very first women’s rights bill, right here at the Capitol!";
+tmp_speak_command.speaker = SPEAKER_PLAYER; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 100;
+tmp_speak_command.wy = 100;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Great Scott! You did it, Jo!";
+tmp_speak_command.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+tmp_speak.commands.push(tmp_speak_command);
+
