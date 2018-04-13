@@ -71,6 +71,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -85,6 +86,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -99,6 +101,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -113,6 +116,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 5;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -138,6 +142,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -152,6 +157,8 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 14;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boilerfire/0.png");
@@ -168,6 +175,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -182,6 +190,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -196,6 +205,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -210,6 +220,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -224,6 +235,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 3;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -242,6 +254,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 30;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/0.png");
@@ -263,6 +276,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -277,6 +291,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -291,6 +306,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -305,6 +321,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -319,6 +336,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -333,6 +351,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -347,6 +366,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -361,6 +381,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -375,6 +396,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -389,6 +411,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -403,6 +426,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -417,6 +441,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -431,6 +456,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -445,6 +471,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -459,6 +486,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -473,6 +501,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -487,6 +516,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -501,6 +531,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -515,6 +546,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -529,6 +561,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -543,6 +576,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -557,6 +591,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -571,6 +606,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -585,6 +621,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -599,6 +636,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -613,6 +651,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -627,6 +666,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -641,6 +681,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -655,6 +696,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -669,6 +711,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -683,6 +726,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -697,6 +741,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -711,6 +756,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -725,6 +771,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -739,6 +786,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -753,6 +801,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -767,6 +816,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -781,6 +831,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -795,6 +846,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -809,6 +861,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -823,6 +876,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -837,6 +891,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -851,6 +906,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -865,6 +921,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -879,6 +936,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -893,6 +951,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -907,6 +966,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -921,6 +981,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -935,6 +996,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -949,6 +1011,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -963,6 +1026,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -977,6 +1041,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -991,6 +1056,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1005,6 +1071,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1019,6 +1086,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1033,6 +1101,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1047,6 +1116,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1061,6 +1131,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1075,6 +1146,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1089,6 +1161,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1103,6 +1176,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1117,6 +1191,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1131,6 +1206,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1145,6 +1221,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1159,6 +1236,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1173,6 +1251,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1187,6 +1266,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1201,6 +1281,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1215,6 +1296,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1229,6 +1311,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1243,6 +1326,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1257,6 +1341,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1271,6 +1356,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1285,6 +1371,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1299,6 +1386,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1313,6 +1401,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1327,6 +1416,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1341,6 +1431,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1355,6 +1446,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1369,6 +1461,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1383,6 +1476,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1397,6 +1491,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1411,6 +1506,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1425,6 +1521,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1439,6 +1536,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1453,6 +1551,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1467,6 +1566,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1481,6 +1581,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1495,6 +1596,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1509,6 +1611,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1523,6 +1626,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1537,6 +1641,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1551,6 +1656,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1565,6 +1671,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1579,6 +1686,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1593,6 +1701,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1607,6 +1716,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1621,6 +1731,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1635,6 +1746,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1649,6 +1761,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1663,6 +1776,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1677,6 +1791,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
@@ -1691,6 +1806,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];

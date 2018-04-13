@@ -614,8 +614,7 @@ var gen_animcycle_inst = function(id,animcycles)
   var animcycle = find_animcycle(id,animcycles);
   var inst = new animcycle_inst();
   inst.animcycle = animcycle;
-  inst.frame_t = animcycle.offset_t;
-  inst.frame_i = 0;
+  inst.ready();
   inst.img = animcycle.frames[inst.frame_i];
   return inst;
 }
@@ -633,9 +632,15 @@ var animcycle_inst = function()
     while(self.frame_t > self.animcycle.frame_t)
     {
       self.frame_t -= self.animcycle.frame_t;
-      self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      if(self.animcycle.loop) self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      else                    self.frame_i = min(self.animcycle.frames.length-1,self.frame_i+1);
       self.img = self.animcycle.frames[self.frame_i];
     }
+  }
+  self.ready = function()
+  {
+    self.frame_t = animcycle.offset_t;
+    self.frame_i = 0;
   }
 }
 
@@ -1830,6 +1835,7 @@ var objectview = function()
     self.object.key = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
+    self.cur_view.animcycle_inst.ready();
     if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
     self.cur_view.key = true;
     self.unlock_content();
@@ -1930,6 +1936,7 @@ var objectview = function()
         if(!zone.key && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
         zone.key = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
+        self.cur_view.animcycle_inst.ready();
         if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
         self.cur_view.key = true;
         self.unlock_content();
