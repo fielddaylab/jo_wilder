@@ -683,6 +683,7 @@ var navigable = function()
       my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
     else
       my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
+    ga('send', 'pageview', self.room.fqid);
   }
 
   self.unlock_content = function()
@@ -1548,7 +1549,11 @@ var notebookview = function()
     self.cache_unlocked_entrys = [];
     self.last_page = 0;
     for(var i = 0; i < self.entrys.length; i++)
-      if(!(self.entrys[i].locked = querylocked(self.entrys[i].reqs)))
+    {
+      var l = self.entrys[i].locked;
+      self.entrys[i].locked = querylocked(self.entrys[i].reqs);
+      if(l && !self.entrys[i].locked) ga('send', 'event', 'capitol_entry', 'unlocked', self.entrys[i].fqid, self.n_unlocked_entrys+1);
+      if(!self.entrys[i].locked)
       {
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         //sort by page->z
@@ -1556,6 +1561,7 @@ var notebookview = function()
         for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[j].page || (self.entrys[i].page == self.cache_unlocked_entrys[j].page && self.entrys[i].wz < self.cache_unlocked_entrys[j].wz)) break;
         self.cache_unlocked_entrys.splice(j,0,self.entrys[i]);
       }
+    }
     if(self.cache_unlocked_entrys.length > self.n_unlocked_entrys)
       my_toolbar.notebook_bounce = 1;
     self.n_unlocked_entrys = self.cache_unlocked_entrys.length;
