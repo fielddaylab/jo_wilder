@@ -203,23 +203,23 @@ var load_save_code = function(code)
   s.decode(code);
 }
 
-var querylocked = function(o)
+var querylocked = function(reqs)
 {
   if(UNLOCK) return false;
 
-  o.locked = true;
-  for(var i = 0; o.locked && i < o.reqs.length; i++)
+  var locked = true;
+  for(var i = 0; locked && i < reqs.length; i++)
   {
-    o.locked = false;
-    for(var j = 0; !o.locked && j < o.reqs[i].length; j++)
+    locked = false;
+    for(var j = 0; !locked && j < reqs[i].length; j++)
     {
-      var l = o.reqs[i][j];
-      if(l.charAt(0) == "!") o.locked = find(l.substr(1)).key;
-      else                   o.locked = !find(l).key;
+      var l = reqs[i][j];
+      if(l.charAt(0) == "!") locked = find(l.substr(1)).key;
+      else                   locked = !find(l).key;
     }
   }
 
-  return o.locked;
+  return locked;
 }
 
 var level = function()

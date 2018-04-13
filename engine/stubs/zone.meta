@@ -7,6 +7,6 @@ tmp_zone.audio_id = "null";
 tmp_zone.target_view = "null";
 tmp_zone.raw_notifications = [
 ];
-tmp_room.reqs = [[
+tmp_zone.reqs = [[
 ]];
 

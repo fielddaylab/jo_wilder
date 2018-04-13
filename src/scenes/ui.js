@@ -689,19 +689,19 @@ var navigable = function()
     self.cache_unlocked_fg_drawables = [];
 
     for(var i = 0; i < self.room.persons.length; i++)
-      if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
+      if(!(self.room.persons[i].locked = querylocked(self.room.persons[i].reqs))) self.cache_unlocked_persons.push(self.room.persons[i]);
     for(var i = 0; i < self.room.objects.length; i++)
-      if(!querylocked(self.room.objects[i])) self.cache_unlocked_objects.push(self.room.objects[i]);
+      if(!(self.room.objects[i].locked = querylocked(self.room.objects[i].reqs))) self.cache_unlocked_objects.push(self.room.objects[i]);
     for(var i = 0; i < self.room.observations.length; i++)
-      if(!querylocked(self.room.observations[i])) self.cache_unlocked_observations.push(self.room.observations[i]);
+      if(!(self.room.observations[i].locked = querylocked(self.room.observations[i].reqs))) self.cache_unlocked_observations.push(self.room.observations[i]);
     for(var i = 0; i < self.room.portholes.length; i++)
-      if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
+      if(!(self.room.portholes[i].locked = querylocked(self.room.portholes[i].reqs))) self.cache_unlocked_portholes.push(self.room.portholes[i]);
     for(var i = 0; i < self.room.wildcards.length; i++)
-      if(!querylocked(self.room.wildcards[i])) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
+      if(!(self.room.wildcards[i].locked = querylocked(self.room.wildcards[i].reqs))) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
     for(var i = 0; i < self.room.cutscenes.length; i++)
-      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && !querylocked(self.room.cutscenes[i])) self.cache_unlocked_cutscenes.push(self.room.cutscenes[i]);
+      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && !(self.room.cutscenes[i].locked = querylocked(self.room.cutscenes[i].reqs))) self.cache_unlocked_cutscenes.push(self.room.cutscenes[i]);
     for(var i = 0; i < self.room.inerts.length; i++)
-      if(!querylocked(self.room.inerts[i])) self.cache_unlocked_inerts.push(self.room.inerts[i]);
+      if(!(self.room.inerts[i].locked = querylocked(self.room.inerts[i].reqs))) self.cache_unlocked_inerts.push(self.room.inerts[i]);
 
     //insertion sort on each list
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
@@ -734,7 +734,7 @@ var navigable = function()
       for(var i = 0; i < cur_room.cutscenes.length; i++)
       {
         var cutscene = cur_room.cutscenes[i];
-        if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !querylocked(cutscene))
+        if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !(cutscene.locked = querylocked(cutscene.reqs)))
         {
           if(state_cur == STATE_NAV)
           {
@@ -1342,7 +1342,7 @@ var mapview = function()
   {
     self.cache_unlocked_scenes = [];
     for(var i = 0; i < self.level.scenes.length; i++)
-      if(!querylocked(self.level.scenes[i])) self.cache_unlocked_scenes.push(self.level.scenes[i]);
+      if(!(self.level.scenes[i].locked = querylocked(self.level.scenes[i].reqs))) self.cache_unlocked_scenes.push(self.level.scenes[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1500,7 +1500,7 @@ var notebookview = function()
     self.cache_unlocked_entrys = [];
     self.last_page = 0;
     for(var i = 0; i < self.entrys.length; i++)
-      if(!querylocked(self.entrys[i]))
+      if(!(self.entrys[i].locked = querylocked(self.entrys[i].reqs)))
       {
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         //sort by page->z
@@ -1794,7 +1794,7 @@ var objectview = function()
   {
     self.cache_unlocked_zones = [];
     for(var i = 0; i < self.cur_view.zones.length; i++)
-      if(!querylocked(self.cur_view.zones[i])) self.cache_unlocked_zones.push(self.cur_view.zones[i]);
+      if(!(self.cur_view.zones[i].locked = querylocked(self.cur_view.zones[i].reqs))) self.cache_unlocked_zones.push(self.cur_view.zones[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -2226,7 +2226,7 @@ var personview = function()
   {
     self.cache_unlocked_speaks = [];
     for(var i = 0; i < self.person.speaks.length; i++)
-      if(!querylocked(self.person.speaks[i])) self.cache_unlocked_speaks.push(self.person.speaks[i]);
+      if(!(self.person.speaks[i].locked = querylocked(self.person.speaks[i].reqs))) self.cache_unlocked_speaks.push(self.person.speaks[i]);
 
     if(!self.cur_speak)
     {
@@ -2246,7 +2246,7 @@ var personview = function()
     self.cache_unlocked_options = [];
     for(var i = 0; i < self.cur_speak.options.length; i++)
     {
-      if(!querylocked(self.cur_speak.options[i]))
+      if(!(self.cur_speak.options[i].locked = querylocked(self.cur_speak.options[i].reqs)))
         self.cache_unlocked_options.push(self.cur_speak.options[i]);
     }
     //bubble sort on index

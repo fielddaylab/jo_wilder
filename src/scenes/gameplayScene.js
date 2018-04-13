@@ -561,8 +561,8 @@ var GamePlayScene = function(game, stage)
       if(state_cur == STATE_NAV)
       {
         my_navigable.unlock_content();
-        if(querylocked(my_toolbar.notebook)) ;
-        if(querylocked(my_toolbar.map)) ;
+        my_toolbar.notebook.locked = querylocked(my_toolbar.notebook.reqs);
+        my_toolbar.map.locked      = querylocked(my_toolbar.map.reqs);
       }
     }
   };

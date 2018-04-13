@@ -4,9 +4,12 @@ tmp_scene.wh = 100;
 tmp_scene.wx = 100;
 tmp_scene.wy = 100;
 tmp_scene.animcycle_id = "null";
+tmp_scene.notice_icon_animcycle_id = "null";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_room.reqs = [[
+tmp_scene.notice_reqs = [[
+]];
+tmp_scene.reqs = [[
 ]];
 

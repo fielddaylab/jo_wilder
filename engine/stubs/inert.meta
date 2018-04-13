@@ -5,6 +5,6 @@ tmp_inert.wy = 100;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "null";
-tmp_room.reqs = [[
+tmp_inert.reqs = [[
 ]];
 
