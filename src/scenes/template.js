@@ -362,9 +362,11 @@ var person = function()
   self.animcycle_id = "null";
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.speaks = [];
   self.raw_notifications = [];
+  self.notice_reqs = [];
   self.reqs = [];
   //
   self.locked = true;
@@ -403,9 +405,11 @@ var object = function()
   self.animcycle_id = "null";
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.views = [];
   self.raw_notifications = [];
+  self.notice_reqs = [];
   self.reqs = [];
   //
   self.locked = true;
@@ -444,6 +448,7 @@ var observation = function()
   self.animcycle_id = "null";
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.raw_text = "null";
   self.text = stextToLines(self.raw_text,self.blip_w);
@@ -452,6 +457,7 @@ var observation = function()
   self.blip_w = 0;
   self.blip_h = 0;
   self.raw_notifications = [];
+  self.notice_reqs = [];
   self.reqs = [];
   //
   self.locked = true;
@@ -492,11 +498,13 @@ var porthole = function()
   self.animcycle_id = "null";
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.target_room = "null";
   self.target_start_wx = 0;
   self.target_start_wy = 0;
   self.raw_notifications = [];
+  self.notice_reqs = [];
   self.reqs = [];
   //
   self.locked = true;
@@ -538,8 +546,10 @@ var wildcard = function()
   self.animcycle_id = "null";
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.raw_notifications = [];
+  self.notice_reqs = [];
   self.reqs = [];
   //
   self.locked = true;
@@ -572,16 +582,12 @@ var inert = function()
   self.wz = 0;
   self.g = 0; //"ground", as in "foreground", "background", etc... (bg < 0 < fg)
   self.animcycle_id = "null";
-  self.hover_cursor_animcycle_id = "null";
-  self.hover_icon_animcycle_id = "null";
   self.reqs = [];
   //
   self.locked = true;
   self.key = false;
   self.dirty = false;
   self.animcycle_inst;
-  self.hover_cursor_animcycle_inst;
-  self.hover_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -591,8 +597,6 @@ var inert = function()
   self.dx = 0;
   self.dy = 0;
   self.dz = 0;
-  self.hover_icon_x = 0;
-  self.hover_icon_y = 0;
 }
 
 var view = function()
@@ -823,7 +827,9 @@ var cutscene = function()
   self.animcycle_id = "null";
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.raw_notifications = [];
+  self.notice_reqs = [];
   self.reqs = [];
 
   //
@@ -893,7 +899,7 @@ var print_level_meta = function(l)
   for(var i = 0; i < l.notebook_reqs.length; i++)
   {
     for(var j = 0; j < l.notebook_reqs[i].length; j++)
-      str += "\""+l.notebook_reqs[i]+"\",\n";
+      str += "\""+l.notebook_reqs[i][j]+"\",\n";
     if(i < l.notebook_reqs.length-1)
       str += "],[\n";
   }
@@ -903,7 +909,7 @@ var print_level_meta = function(l)
   for(var i = 0; i < l.map_reqs.length; i++)
   {
     for(var j = 0; j < l.map_reqs[i].length; j++)
-      str += "\""+l.map_reqs[i]+"\",\n";
+      str += "\""+l.map_reqs[i][j]+"\",\n";
     if(i < l.map_reqs.length-1)
       str += "],[\n";
   }
@@ -933,7 +939,7 @@ var print_entry_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -961,7 +967,7 @@ var print_scene_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1013,12 +1019,12 @@ var print_room_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
   str +=
-  "]];\n"
+  "]];\n"+
   "//SUGGEST_H:"+l.wh/660+"\n";
   console.log(str);
 }
@@ -1039,17 +1045,28 @@ var print_person_meta = function(l)
   "tmp_person.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_person.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_person.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_person.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_person.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
     str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
   str +=
   "];\n"+
+  "tmp_person.notice_reqs = [[\n";
+  for(var i = 0; i < l.notice_reqs.length; i++)
+  {
+    for(var j = 0; j < l.notice_reqs[i].length; j++)
+      str += "\""+l.notice_reqs[i][j]+"\",\n";
+    if(i < l.notice_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_person.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1075,7 +1092,7 @@ var print_speak_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1115,7 +1132,7 @@ var print_option_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1140,22 +1157,33 @@ var print_object_meta = function(l)
   "tmp_object.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_object.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_object.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_object.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_object.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
     str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
   str +=
   "];\n"+
+  "tmp_object.notice_reqs = [[\n";
+  for(var i = 0; i < l.notice_reqs.length; i++)
+  {
+    for(var j = 0; j < l.notice_reqs[i].length; j++)
+      str += "\""+l.notice_reqs[i][j]+"\",\n";
+    if(i < l.notice_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_object.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
   str +=
-  "]];\n"
+  "]];\n";
   console.log(str);
 }
 
@@ -1175,6 +1203,7 @@ var print_observation_meta = function(l)
   "tmp_observation.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_observation.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_observation.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_observation.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_observation.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_observation.raw_text = \""+l.raw_text.replace(/"/g,"\\\"")+"\";\n"+
   "tmp_observation.blip_wx = "+l.blip_wx+";\n"+
@@ -1186,16 +1215,26 @@ var print_observation_meta = function(l)
     str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
   str +=
   "];\n"+
+  "tmp_observation.notice_reqs = [[\n";
+  for(var i = 0; i < l.notice_reqs.length; i++)
+  {
+    for(var j = 0; j < l.notice_reqs[i].length; j++)
+      str += "\""+l.notice_reqs[i][j]+"\",\n";
+    if(i < l.notice_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_observation.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
   str +=
-  "]];\n"
+  "]];\n";
   console.log(str);
 }
 
@@ -1214,7 +1253,7 @@ var print_view_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1242,7 +1281,7 @@ var print_zone_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1267,6 +1306,7 @@ var print_porthole_meta = function(l)
   "tmp_porthole.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_porthole.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_porthole.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_porthole.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_porthole.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
   "tmp_porthole.target_start_wx = "+l.target_start_wx+";\n"+
@@ -1276,16 +1316,26 @@ var print_porthole_meta = function(l)
     str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
   str +=
   "];\n"+
+  "tmp_porthole.notice_reqs = [[\n";
+  for(var i = 0; i < l.notice_reqs.length; i++)
+  {
+    for(var j = 0; j < l.notice_reqs[i].length; j++)
+      str += "\""+l.notice_reqs[i][j]+"\",\n";
+    if(i < l.notice_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_porthole.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
   str +=
-  "]];\n"
+  "]];\n";
   console.log(str);
 }
 
@@ -1305,22 +1355,33 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_wildcard.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_wildcard.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_wildcard.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_wildcard.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
     str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
   str +=
   "];\n"+
+  "tmp_wildcard.notice_reqs = [[\n";
+  for(var i = 0; i < l.notice_reqs.length; i++)
+  {
+    for(var j = 0; j < l.notice_reqs[i].length; j++)
+      str += "\""+l.notice_reqs[i][j]+"\",\n";
+    if(i < l.notice_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_wildcard.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
   str +=
-  "]];\n"
+  "]];\n";
   console.log(str);
 }
 
@@ -1341,16 +1402,27 @@ var print_cutscene_meta = function(l)
   "tmp_cutscene.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_cutscene.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_cutscene.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
+  "tmp_cutscene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_cutscene.raw_notifications = [\n";
   for(var i = 0; i < l.raw_notifications.length; i++)
     str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
   str +=
   "];\n"+
+  "tmp_cutscene.notice_reqs = [[\n";
+  for(var i = 0; i < l.notice_reqs.length; i++)
+  {
+    for(var j = 0; j < l.notice_reqs[i].length; j++)
+      str += "\""+l.notice_reqs[i][j]+"\",\n";
+    if(i < l.notice_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_cutscene.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
@@ -1510,7 +1582,7 @@ var print_inert_meta = function(l)
   for(var i = 0; i < l.reqs.length; i++)
   {
     for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i]+"\",\n";
+      str += "\""+l.reqs[i][j]+"\",\n";
     if(i < l.reqs.length-1)
       str += "],[\n";
   }
