@@ -11,9 +11,12 @@ tmp_person.hover_icon_wy = 166.78832837688685;
 tmp_person.animcycle_id = "youngboy";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
+tmp_person.notice_reqs = [[
+]];
 tmp_person.reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
 ]];

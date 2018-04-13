@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 0;
 tmp_observation.animcycle_id = "null";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I should go meet Grampa in the collection!";
 tmp_observation.blip_wx = 543.0660865704943;
@@ -19,6 +20,8 @@ tmp_observation.blip_w = 100;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.notice_reqs = [[
+]];
 tmp_observation.reqs = [[
 "!tunic.historicalsociety.collection",
 ]];

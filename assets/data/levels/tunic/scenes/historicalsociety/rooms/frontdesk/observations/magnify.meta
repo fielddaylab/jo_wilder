@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 32;
 tmp_observation.animcycle_id = "magnifyingglass";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I bet the Archivist could use this!";
 tmp_observation.blip_wx = 263.7462975918986;
@@ -19,6 +20,8 @@ tmp_observation.blip_w = 157;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.notice_reqs = [[
+]];
 tmp_observation.reqs = [[
 "tunic.historicalsociety.collection.tunic.slip",
 "!tunic.historicalsociety.frontdesk.magnify",

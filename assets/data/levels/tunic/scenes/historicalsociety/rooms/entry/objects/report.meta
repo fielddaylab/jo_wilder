@@ -11,9 +11,12 @@ tmp_object.hover_icon_wy = 48.85090909090906;
 tmp_object.animcycle_id = "report_hand";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
+tmp_object.notice_reqs = [[
+]];
 tmp_object.reqs = [[
 "!tunic.historicalsociety.entry.groupconvo",
 ]];

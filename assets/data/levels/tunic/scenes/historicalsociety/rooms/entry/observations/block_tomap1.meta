@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 0;
 tmp_observation.animcycle_id = "null";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I should see what Grampa is up to!";
 tmp_observation.blip_wx = 514.2486023506824;
@@ -19,6 +20,8 @@ tmp_observation.blip_w = 160;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.notice_reqs = [[
+]];
 tmp_observation.reqs = [[
 "!tunic.historicalsociety.entry.groupconvo",
 ]];

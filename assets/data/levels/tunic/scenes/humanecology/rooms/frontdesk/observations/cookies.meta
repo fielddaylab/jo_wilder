@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 25;
 tmp_observation.animcycle_id = "cookie";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I bet the Curator could use these!";
 tmp_observation.blip_wx = -524.7516153454889;
@@ -19,6 +20,8 @@ tmp_observation.blip_w = 165;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.notice_reqs = [[
+]];
 tmp_observation.reqs = [[
 "tunic.humanecology.frontdesk.worker.intro6",
 "!tunic.humanecology.frontdesk.cookies",

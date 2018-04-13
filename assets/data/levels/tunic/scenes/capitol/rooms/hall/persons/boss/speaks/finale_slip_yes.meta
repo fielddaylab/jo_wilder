@@ -28,3 +28,4 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Jolie, you seem to be on to something. Do you know what that slip is?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
