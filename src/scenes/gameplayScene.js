@@ -17,6 +17,8 @@ var GamePlayScene = function(game, stage)
 
   self.ready = function()
   {
+    var url_json = jsonFromURL();
+
     init_levels();
     cur_level = levels[0];         for(var i = 1; i < levels.length;          i++) if(levels[i].primary)          cur_level = levels[i];
 
@@ -166,6 +168,10 @@ var GamePlayScene = function(game, stage)
     state_from = STATE_NAV;
     state_to = state_stack;
     state_t = 0.5;
+
+    if(url_json.save)
+      load_save_code(url_json.save);
+
     my_navigable.trigger_cutscenes();
   };
 
