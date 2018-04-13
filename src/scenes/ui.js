@@ -79,6 +79,7 @@ var loader = function()
       self.load_animcycle_inst(person.animcycle_inst);
       self.load_animcycle_inst(person.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(person.notice_icon_animcycle_inst);
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
@@ -93,6 +94,7 @@ var loader = function()
       self.load_animcycle_inst(object.animcycle_inst);
       self.load_animcycle_inst(object.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(object.notice_icon_animcycle_inst);
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
@@ -113,6 +115,7 @@ var loader = function()
       self.load_animcycle_inst(observation.animcycle_inst);
       self.load_animcycle_inst(observation.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(observation.notice_icon_animcycle_inst);
     }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
@@ -121,6 +124,7 @@ var loader = function()
       self.load_animcycle_inst(porthole.animcycle_inst);
       self.load_animcycle_inst(porthole.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(porthole.notice_icon_animcycle_inst);
     }
     var wildcard;
     for(var k = 0; k < room.wildcards.length; k++)
@@ -129,6 +133,7 @@ var loader = function()
       self.load_animcycle_inst(wildcard.animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(wildcard.notice_icon_animcycle_inst);
     }
     var cutscene;
     for(var k = 0; k < room.cutscenes.length; k++)
@@ -137,6 +142,7 @@ var loader = function()
       self.load_animcycle_inst(cutscene.animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(cutscene.notice_icon_animcycle_inst);
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
@@ -1187,13 +1193,32 @@ var navigable = function()
     {
       d = self.cache_unlocked_drawables[i];
       drawImageBox(d.animcycle_inst.img, d, ctx);
-      //if(d.
+      if(d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && !querylocked(d.notice_reqs))
+      {
+        w = cur_level.hover_w;
+        h = cur_level.hover_h;
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+      }
     }
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     for(; i < self.cache_unlocked_drawables.length; i++)
     {
       d = self.cache_unlocked_drawables[i];
       drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && !querylocked(d.notice_reqs))
+      {
+        w = cur_level.hover_w;
+        h = cur_level.hover_h;
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+      }
     }
 
     if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }

@@ -375,6 +375,7 @@ var person = function()
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -418,6 +419,7 @@ var object = function()
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -466,6 +468,7 @@ var observation = function()
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -513,6 +516,7 @@ var porthole = function()
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -558,6 +562,7 @@ var wildcard = function()
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -839,6 +844,7 @@ var cutscene = function()
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
