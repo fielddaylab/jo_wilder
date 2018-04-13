@@ -62,7 +62,6 @@ tmp_level.notebook_reqs = [[
 ]];
 tmp_level.map_reqs = [[
 ]];
-
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivist";
 tmp_animcycle.fqid = "tunic.archivist";
