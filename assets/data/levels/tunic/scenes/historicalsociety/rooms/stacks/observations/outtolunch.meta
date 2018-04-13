@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 25;
 tmp_observation.animcycle_id = "null";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "\"Out To Lunch\"- better check back later.";
 tmp_observation.blip_wx = 79.8053665534872;
@@ -19,9 +20,9 @@ tmp_observation.blip_w = 123;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-"tunic.historicalsociety.closet_dirty",
-];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.historicalsociety.closet_dirty",
+]];
 

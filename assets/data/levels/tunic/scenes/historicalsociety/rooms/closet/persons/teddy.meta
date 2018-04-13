@@ -6,16 +6,17 @@ tmp_person.wz = 0;
 tmp_person.act_wx = -120.0008846143378;
 tmp_person.act_wy = -63.00001416167618;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 15.698336603845403;
-tmp_person.hover_icon_wy = 38.99514199514027;
+tmp_person.hover_icon_wx = 22.698364775670484;
+tmp_person.hover_icon_wy = 60.9951334748406;
 tmp_person.animcycle_id = "teddy";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
-tmp_person.unlocks = [
-];
-tmp_person.relocks = [
-];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.reqs = [[
+]];
 

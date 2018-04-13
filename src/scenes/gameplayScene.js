@@ -42,7 +42,7 @@ var GamePlayScene = function(game, stage)
               if(speak.options.length == 1)
               {
                 option = speak.options[0];
-                if(option.unlocks.length == 0 && option.relocks.length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
+                if(option.reqs[0].length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
                 {
                   var consumed_speak = option.target_speak_found;
                   if(consumed_speak && consumed_speak.raw_notifications.length == 0 && !consumed_speak.primary)
@@ -118,7 +118,7 @@ var GamePlayScene = function(game, stage)
       if(evt.key == " ") print_whole_level(cur_level,false);
       if(evt.key == "f") print_whole_level(cur_level,true);
       if(evt.key == "c") get_save_code();
-      if(evt.key == "l") load_save_code("00000616389760419852718324310032816209715200000020000092"); //to-archivist load state
+      if(evt.key == "l") load_save_code("000000100000000540641000006442004720000000000000000000000000000");
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "v")
@@ -206,6 +206,7 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         my_avatar.tick();
         my_navigable.trigger_cutscenes();
+        my_toolbar.tick();
         break;
       case STATE_MAP:
         if(
@@ -501,7 +502,7 @@ var GamePlayScene = function(game, stage)
         else if(state_to == STATE_CUTSCENE)
         {
           state_t += state_t_speed;
-          if(my_loader.loading) state_t = 0.5;
+          if(state_t > 0.5 && my_loader.loading) state_t = 0.5;
         }
         else state_t += state_t_speed;
         break;
@@ -561,10 +562,13 @@ var GamePlayScene = function(game, stage)
       if(state_cur == STATE_NAV)
       {
         my_navigable.unlock_content();
-        if(querylocked(my_toolbar.notebook)) ;
-        if(querylocked(my_toolbar.map)) ;
+        my_notebookview.unlock_content();
+        my_toolbar.notebook_locked = querylocked(cur_level.notebook_reqs);
+        my_toolbar.map_locked      = querylocked(cur_level.map_reqs);
       }
     }
+
+    my_toolbar.tick();
   };
 
   var transition_draw = function()

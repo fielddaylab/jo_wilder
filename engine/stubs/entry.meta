@@ -9,8 +9,6 @@ tmp_entry.animcycle_id = "null";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
-tmp_entry.unlocks = [
-];
-tmp_entry.relocks = [
-];
+tmp_entry.reqs = [[
+]];
 

@@ -1,0 +1,31 @@
+tmp_speak.primary = 6;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.reqs = [[
+]];
+tmp_speak.commands = [];
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -29.56140350387859;
+tmp_speak_command.wy = 217.54546140074393;
+tmp_speak_command.w = 120;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "She was a suffragist!";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 27.378787866829576;
+tmp_speak_command.wy = 370.0000000001028;
+tmp_speak_command.w = 293;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "And what does women’s suffrage have to do with our tunic?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

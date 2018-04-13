@@ -11,13 +11,14 @@ tmp_object.hover_icon_wy = -10.422278413943884;
 tmp_object.animcycle_id = "wellsbadge_small";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
+tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
-tmp_object.unlocks = [
+tmp_object.notice_reqs = [[
+]];
+tmp_object.reqs = [[
 "tunic.library.microfiche.newspaper.hub",
-];
-tmp_object.relocks = [
-"tunic.library.frontdesk.wellsbadge.hub",
-];
+"!tunic.library.frontdesk.wellsbadge.hub",
+]];
 

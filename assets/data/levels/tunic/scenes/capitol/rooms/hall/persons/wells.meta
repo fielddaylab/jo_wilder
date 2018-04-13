@@ -1,0 +1,23 @@
+tmp_person.ww = 150.0737668615271;
+tmp_person.wh = 313.3287704263341;
+tmp_person.wx = -185.14394777014013;
+tmp_person.wy = 27.351109752973315;
+tmp_person.wz = -1;
+tmp_person.act_wx = 242.1620760294804;
+tmp_person.act_wy = -2.24670712996709;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 63.687295711584234;
+tmp_person.hover_icon_wy = 148.61899529909056;
+tmp_person.animcycle_id = "youngboy";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.audio_id = "null";
+tmp_person.raw_notifications = [
+];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.reqs = [[
+"tunic.historicalsociety.stacks.journalsaz.hub",
+]];
+

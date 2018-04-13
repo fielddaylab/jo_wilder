@@ -11,14 +11,15 @@ tmp_porthole.hover_icon_wy = 0;
 tmp_porthole.animcycle_id = "door";
 tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
+tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "door";
 tmp_porthole.target_room = "stacks";
 tmp_porthole.target_start_wx = 65.24595080983798;
 tmp_porthole.target_start_wy = 110.4;
 tmp_porthole.raw_notifications = [
 ];
-tmp_porthole.unlocks = [
-];
-tmp_porthole.relocks = [
-];
+tmp_porthole.notice_reqs = [[
+]];
+tmp_porthole.reqs = [[
+]];
 

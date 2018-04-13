@@ -4,8 +4,6 @@ tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 "Whoah this is the only dry cleaner old enough to be around in 1916!",
 ];
-tmp_view.unlocks = [
-];
-tmp_view.relocks = [
-];
+tmp_view.reqs = [[
+]];
 

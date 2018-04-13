@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 55.99791017800129;
 tmp_observation.animcycle_id = "null";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I feel like I'm forgetting something...";
 tmp_observation.blip_wx = -319.39018232082714;
@@ -19,9 +20,9 @@ tmp_observation.blip_w = 316;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-"tunic.historicalsociety.closet.notebook",
-];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.historicalsociety.closet.notebook",
+]];
 

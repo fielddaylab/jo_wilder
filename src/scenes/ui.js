@@ -79,6 +79,7 @@ var loader = function()
       self.load_animcycle_inst(person.animcycle_inst);
       self.load_animcycle_inst(person.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(person.notice_icon_animcycle_inst);
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
@@ -93,6 +94,7 @@ var loader = function()
       self.load_animcycle_inst(object.animcycle_inst);
       self.load_animcycle_inst(object.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(object.notice_icon_animcycle_inst);
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
@@ -113,6 +115,7 @@ var loader = function()
       self.load_animcycle_inst(observation.animcycle_inst);
       self.load_animcycle_inst(observation.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(observation.notice_icon_animcycle_inst);
     }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
@@ -121,6 +124,7 @@ var loader = function()
       self.load_animcycle_inst(porthole.animcycle_inst);
       self.load_animcycle_inst(porthole.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(porthole.notice_icon_animcycle_inst);
     }
     var wildcard;
     for(var k = 0; k < room.wildcards.length; k++)
@@ -129,6 +133,7 @@ var loader = function()
       self.load_animcycle_inst(wildcard.animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(wildcard.notice_icon_animcycle_inst);
     }
     var cutscene;
     for(var k = 0; k < room.cutscenes.length; k++)
@@ -137,6 +142,7 @@ var loader = function()
       self.load_animcycle_inst(cutscene.animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(cutscene.notice_icon_animcycle_inst);
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
@@ -608,8 +614,7 @@ var gen_animcycle_inst = function(id,animcycles)
   var animcycle = find_animcycle(id,animcycles);
   var inst = new animcycle_inst();
   inst.animcycle = animcycle;
-  inst.frame_t = animcycle.offset_t;
-  inst.frame_i = 0;
+  inst.ready();
   inst.img = animcycle.frames[inst.frame_i];
   return inst;
 }
@@ -627,9 +632,15 @@ var animcycle_inst = function()
     while(self.frame_t > self.animcycle.frame_t)
     {
       self.frame_t -= self.animcycle.frame_t;
-      self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      if(self.animcycle.loop) self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      else                    self.frame_i = min(self.animcycle.frames.length-1,self.frame_i+1);
       self.img = self.animcycle.frames[self.frame_i];
     }
+  }
+  self.ready = function()
+  {
+    self.frame_t = animcycle.offset_t;
+    self.frame_i = 0;
   }
 }
 
@@ -672,6 +683,7 @@ var navigable = function()
       my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
     else
       my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
+    ga('send', 'pageview', self.room.fqid);
   }
 
   self.unlock_content = function()
@@ -689,19 +701,19 @@ var navigable = function()
     self.cache_unlocked_fg_drawables = [];
 
     for(var i = 0; i < self.room.persons.length; i++)
-      if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
+      if(!(self.room.persons[i].locked = querylocked(self.room.persons[i].reqs))) self.cache_unlocked_persons.push(self.room.persons[i]);
     for(var i = 0; i < self.room.objects.length; i++)
-      if(!querylocked(self.room.objects[i])) self.cache_unlocked_objects.push(self.room.objects[i]);
+      if(!(self.room.objects[i].locked = querylocked(self.room.objects[i].reqs))) self.cache_unlocked_objects.push(self.room.objects[i]);
     for(var i = 0; i < self.room.observations.length; i++)
-      if(!querylocked(self.room.observations[i])) self.cache_unlocked_observations.push(self.room.observations[i]);
+      if(!(self.room.observations[i].locked = querylocked(self.room.observations[i].reqs))) self.cache_unlocked_observations.push(self.room.observations[i]);
     for(var i = 0; i < self.room.portholes.length; i++)
-      if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
+      if(!(self.room.portholes[i].locked = querylocked(self.room.portholes[i].reqs))) self.cache_unlocked_portholes.push(self.room.portholes[i]);
     for(var i = 0; i < self.room.wildcards.length; i++)
-      if(!querylocked(self.room.wildcards[i])) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
+      if(!(self.room.wildcards[i].locked = querylocked(self.room.wildcards[i].reqs))) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
     for(var i = 0; i < self.room.cutscenes.length; i++)
-      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && !querylocked(self.room.cutscenes[i])) self.cache_unlocked_cutscenes.push(self.room.cutscenes[i]);
+      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && !(self.room.cutscenes[i].locked = querylocked(self.room.cutscenes[i].reqs))) self.cache_unlocked_cutscenes.push(self.room.cutscenes[i]);
     for(var i = 0; i < self.room.inerts.length; i++)
-      if(!querylocked(self.room.inerts[i])) self.cache_unlocked_inerts.push(self.room.inerts[i]);
+      if(!(self.room.inerts[i].locked = querylocked(self.room.inerts[i].reqs))) self.cache_unlocked_inerts.push(self.room.inerts[i]);
 
     //insertion sort on each list
     for(var i = 0; i < self.cache_unlocked_persons.length; i++)
@@ -734,7 +746,7 @@ var navigable = function()
       for(var i = 0; i < cur_room.cutscenes.length; i++)
       {
         var cutscene = cur_room.cutscenes[i];
-        if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !querylocked(cutscene))
+        if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !(cutscene.locked = querylocked(cutscene.reqs)))
         {
           if(state_cur == STATE_NAV)
           {
@@ -1182,9 +1194,38 @@ var navigable = function()
 
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
     var i = 0;
-    for(; i < self.cache_unlocked_drawables.length && self.cache_unlocked_drawables[i].wz < avi_wz; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
+    var d;
+    for(; i < self.cache_unlocked_drawables.length && self.cache_unlocked_drawables[i].wz < avi_wz; i++)
+    {
+      d = self.cache_unlocked_drawables[i];
+      drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && !querylocked(d.notice_reqs))
+      {
+        w = cur_level.hover_w;
+        h = cur_level.hover_h;
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+      }
+    }
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
-    for(; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
+    for(; i < self.cache_unlocked_drawables.length; i++)
+    {
+      d = self.cache_unlocked_drawables[i];
+      drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && !querylocked(d.notice_reqs))
+      {
+        w = cur_level.hover_w;
+        h = cur_level.hover_h;
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+      }
+    }
 
     if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
 
@@ -1250,6 +1291,10 @@ var toolbar = function()
   self.icon_notebook_animcycle_inst;
   self.notebook = {x:20,  y:self.y+15, w:self.h-40, h:self.h-40};
   self.map      = {x:100, y:self.y+15, w:self.h-40, h:self.h-40};
+  self.notebook_locked = true;
+  self.map_locked = true;
+  self.notebook_bounce = 0;
+  self.map_bounce = 0;
 
   var MAP_ENABLED = 0;
 
@@ -1258,17 +1303,15 @@ var toolbar = function()
     self.toolbar_animcycle_inst       = gen_animcycle_inst(level.toolbar_animcycle_id,level.animcycles);
     self.icon_map_animcycle_inst      = gen_animcycle_inst(level.icon_map_animcycle_id,level.animcycles);
     self.icon_notebook_animcycle_inst = gen_animcycle_inst(level.icon_notebook_animcycle_id,level.animcycles);
-    self.notebook.unlocks = level.notebook_unlocks;
-    self.notebook.relocks = level.notebook_relocks;
-    self.notebook.locked = true;
-    self.map.unlocks = level.map_unlocks;
-    self.map.relocks = level.map_relocks;
-    self.map.locked = true;
+    self.notebook_locked = true;
+    self.map_locked = true;
+    self.notebook_bounce = 0;
+    self.map_bounce = 0;
   }
 
   self.click = function(evt)
   {
-    if(MAP_ENABLED && !self.map.locked && ptWithinBox(self.map,evt.doX,evt.doY))
+    if(MAP_ENABLED && !self.map_locked && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
       state_from = state_cur;
@@ -1277,7 +1320,7 @@ var toolbar = function()
       state_t = 0;
       my_mapview.unlock_content();
     }
-    if(!self.notebook.locked && ptWithinBox(self.notebook,evt.doX,evt.doY))
+    if(!self.notebook_locked && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
       my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
@@ -1293,14 +1336,16 @@ var toolbar = function()
     self.toolbar_animcycle_inst.tick();
     self.icon_map_animcycle_inst.tick();
     self.icon_notebook_animcycle_inst.tick();
+    if(self.notebook_bounce > 0) self.notebook_bounce -= 0.01; else self.notebook_bounce = 0;
+    if(self.map_bounce      > 0) self.map_bounce      -= 0.01; else self.map_bounce      = 0;
   }
 
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
-    ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
-    if(!self.notebook.locked) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
-    if(MAP_ENABLED && !self.map.locked) ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    ctx.drawImage(self.toolbar_animcycle_inst.img, self.x, self.y +yoff, self.w, self.h);
+    if(!self.notebook_locked) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff+sin(self.notebook_bounce*20)*10*self.notebook_bounce, self.notebook.w, self.notebook.h);
+    if(MAP_ENABLED && !self.map_locked) ctx.drawImage(self.icon_map_animcycle_inst.img, self.map.x, self.map.y +yoff, self.map.w, self.map.h);
 
     if(DEBUG)
     {
@@ -1327,6 +1372,8 @@ var mapview = function()
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_scenes = [];
 
+  self.map = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.map);
   self.map_animcycle_inst;
 
   self.consume_level = function(level)
@@ -1344,7 +1391,7 @@ var mapview = function()
   {
     self.cache_unlocked_scenes = [];
     for(var i = 0; i < self.level.scenes.length; i++)
-      if(!querylocked(self.level.scenes[i])) self.cache_unlocked_scenes.push(self.level.scenes[i]);
+      if(!(self.level.scenes[i].locked = querylocked(self.level.scenes[i].reqs))) self.cache_unlocked_scenes.push(self.level.scenes[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1447,7 +1494,7 @@ var mapview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h
-    ctx.drawImage(self.map_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.map_animcycle_inst.img, self.map.x, self.map.y+yoff, self.map.w, self.map.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
 
     if(!my_notificationview.note.length)
@@ -1476,6 +1523,8 @@ var notebookview = function()
 
   self.entrys;
   self.notebook_animcycle_inst;
+  self.notebook = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.notebook);
   self.exit_animcycle_inst;
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
@@ -1483,6 +1532,7 @@ var notebookview = function()
   self.prev_box = {x:10,             y:100, w:90, h:90};
   self.next_box = {x:canv.width-100, y:100, w:90, h:90};
   self.cache_unlocked_entrys = [];
+  self.n_unlocked_entrys = 0;
 
   self.page = 0;
   self.last_page = 0;
@@ -1495,6 +1545,7 @@ var notebookview = function()
     self.exit_animcycle_inst = gen_animcycle_inst(level.exit_animcycle_id, level.animcycles);
     self.notebook_next_animcycle_inst = gen_animcycle_inst(level.notebook_next_animcycle_id, level.animcycles);
     self.notebook_prev_animcycle_inst = gen_animcycle_inst(level.notebook_prev_animcycle_id, level.animcycles);
+    self.n_unlocked_entrys = 0;
   }
 
   self.unlock_content = function()
@@ -1502,7 +1553,11 @@ var notebookview = function()
     self.cache_unlocked_entrys = [];
     self.last_page = 0;
     for(var i = 0; i < self.entrys.length; i++)
-      if(!querylocked(self.entrys[i]))
+    {
+      var l = self.entrys[i].locked;
+      self.entrys[i].locked = querylocked(self.entrys[i].reqs);
+      if(l && !self.entrys[i].locked) ga('send', 'event', 'capitol_entry', 'unlocked', self.entrys[i].fqid, self.n_unlocked_entrys+1);
+      if(!self.entrys[i].locked)
       {
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         //sort by page->z
@@ -1510,6 +1565,10 @@ var notebookview = function()
         for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[j].page || (self.entrys[i].page == self.cache_unlocked_entrys[j].page && self.entrys[i].wz < self.cache_unlocked_entrys[j].wz)) break;
         self.cache_unlocked_entrys.splice(j,0,self.entrys[i]);
       }
+    }
+    if(self.cache_unlocked_entrys.length > self.n_unlocked_entrys)
+      my_toolbar.notebook_bounce = 1;
+    self.n_unlocked_entrys = self.cache_unlocked_entrys.length;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1602,7 +1661,7 @@ var notebookview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
-    ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff, self.notebook.w, self.notebook.h);
 
     var entry;
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
@@ -1775,6 +1834,8 @@ var objectview = function()
   self.h = canv.height;
 
   self.object;
+  self.obj = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.obj);
   self.cur_view = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_zones = [];
@@ -1786,6 +1847,7 @@ var objectview = function()
     self.object.key = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
+    self.cur_view.animcycle_inst.ready();
     if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
     self.cur_view.key = true;
     self.unlock_content();
@@ -1796,7 +1858,7 @@ var objectview = function()
   {
     self.cache_unlocked_zones = [];
     for(var i = 0; i < self.cur_view.zones.length; i++)
-      if(!querylocked(self.cur_view.zones[i])) self.cache_unlocked_zones.push(self.cur_view.zones[i]);
+      if(!(self.cur_view.zones[i].locked = querylocked(self.cur_view.zones[i].reqs))) self.cache_unlocked_zones.push(self.cur_view.zones[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1886,6 +1948,7 @@ var objectview = function()
         if(!zone.key && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
         zone.key = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
+        self.cur_view.animcycle_inst.ready();
         if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
         self.cur_view.key = true;
         self.unlock_content();
@@ -1908,7 +1971,7 @@ var objectview = function()
   {
     var yoff = (1-t)*self.h;
     var zone;
-    ctx.drawImage(self.cur_view.animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.cur_view.animcycle_inst.img, self.obj.x, self.obj.y+yoff, self.obj.w, self.obj.h);
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
     {
       zone = self.cache_unlocked_zones[i];
@@ -1931,6 +1994,7 @@ var objectview = function()
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
+
 }
 
 var observationview = function()
@@ -2228,7 +2292,7 @@ var personview = function()
   {
     self.cache_unlocked_speaks = [];
     for(var i = 0; i < self.person.speaks.length; i++)
-      if(!querylocked(self.person.speaks[i])) self.cache_unlocked_speaks.push(self.person.speaks[i]);
+      if(!(self.person.speaks[i].locked = querylocked(self.person.speaks[i].reqs))) self.cache_unlocked_speaks.push(self.person.speaks[i]);
 
     if(!self.cur_speak)
     {
@@ -2248,7 +2312,7 @@ var personview = function()
     self.cache_unlocked_options = [];
     for(var i = 0; i < self.cur_speak.options.length; i++)
     {
-      if(!querylocked(self.cur_speak.options[i]))
+      if(!(self.cur_speak.options[i].locked = querylocked(self.cur_speak.options[i].reqs)))
         self.cache_unlocked_options.push(self.cur_speak.options[i]);
     }
     //bubble sort on index
@@ -2658,7 +2722,7 @@ var wildcardview = function()
     self.wildcard = wildcard;
     if(!self.wildcard.key && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
     self.wildcard.key = true;
-    self.wildcard.consume_self();
+    self.wildcard.consume_self(self.wildcard);
   }
 
   //DRAG DEBUG EDIT STUFF

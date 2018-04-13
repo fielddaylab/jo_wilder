@@ -11,17 +11,18 @@ tmp_observation.hover_icon_wy = 0;
 tmp_observation.animcycle_id = "null";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I should see what Grampa is up to!";
-tmp_observation.blip_wx = -779.3447514512408;
-tmp_observation.blip_wy = 292.1489077359225;
-tmp_observation.blip_w = 100;
+tmp_observation.blip_wx = -854.9690446686695;
+tmp_observation.blip_wy = 228.6486546252998;
+tmp_observation.blip_w = 154;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-"tunic.historicalsociety.entry.groupconvo",
-];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.historicalsociety.entry.groupconvo",
+]];
 

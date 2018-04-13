@@ -10,8 +10,6 @@ tmp_zone.raw_notifications = [
 "She must be the owner!",
 "I'll make a note of this...",
 ];
-tmp_zone.unlocks = [
-];
-tmp_zone.relocks = [
-];
+tmp_zone.reqs = [[
+]];
 

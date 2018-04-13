@@ -11,11 +11,14 @@ tmp_object.hover_icon_wy = 102.1969696969697;
 tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
-tmp_object.unlocks = [
-];
-tmp_object.relocks = [
-];
+tmp_object.notice_reqs = [[
+"tunic.historicalsociety.collection.gramps.intro_0",
+"!tunic.historicalsociety.collection.tunic.slip",
+]];
+tmp_object.reqs = [[
+]];
 
