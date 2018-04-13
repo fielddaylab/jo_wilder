@@ -1,13 +1,13 @@
-tmp_wildcard.ww = 666.3062549493933;
-tmp_wildcard.wh = 347.5251747084096;
-tmp_wildcard.wx = 58.91164665190371;
-tmp_wildcard.wy = 36.74110928072028;
+tmp_wildcard.ww = 746.6092852524237;
+tmp_wildcard.wh = 391.4645686478035;
+tmp_wildcard.wx = 11.184373924631132;
+tmp_wildcard.wy = 14.771412311023369;
 tmp_wildcard.wz = 1;
-tmp_wildcard.act_wx = -1.519352293787747;
-tmp_wildcard.act_wy = -12.121726451437183;
+tmp_wildcard.act_wx = 45.45034468100204;
+tmp_wildcard.act_wy = 12.120698091296784;
 tmp_wildcard.act_anim = 1;
-tmp_wildcard.hover_icon_wx = 1.5151515151515151;
-tmp_wildcard.hover_icon_wy = -51.515151515151516;
+tmp_wildcard.hover_icon_wx = 34.848484848490784;
+tmp_wildcard.hover_icon_wy = -34.8484848481152;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
 tmp_wildcard.hover_icon_animcycle_id = "null";
@@ -42,6 +42,7 @@ tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanercard", prompt:stextToLines("Theodora Youmans was…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_suffragist_no"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.finale_suffragist_yes" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanercard", prompt:stextToLines("This is it! The tunic is connected to women's suffrage because…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_march_no"] },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.ending" },
 ];
 
 //view
