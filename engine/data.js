@@ -6469,11 +6469,17 @@ tmp_person.hover_icon_wy = 155.45454545454547;
 tmp_person.animcycle_id = "gramps";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "null";
-tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "notice";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
 tmp_person.notice_reqs = [[
+"tunic.historicalsociety.collection.cs",
+"!tunic.historicalsociety.collection.gramps.intro_0",
+],
+[
+"tunic.historicalsociety.collection.tunic.slip",
+"!tunic.historicalsociety.collection.gramps.found_0",
 ]];
 tmp_person.reqs = [[
 "!tunic.kohlcenter.halloffame.oldpictures",
@@ -6903,11 +6909,13 @@ tmp_object.hover_icon_wy = 102.1969696969697;
 tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
-tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
 tmp_object.notice_reqs = [[
+"tunic.historicalsociety.collection.gramps.intro_0",
+"!tunic.historicalsociety.collection.tunic.slip",
 ]];
 tmp_object.reqs = [[
 ]];
