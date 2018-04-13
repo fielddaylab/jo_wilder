@@ -1372,6 +1372,8 @@ var mapview = function()
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_scenes = [];
 
+  self.map = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.map);
   self.map_animcycle_inst;
 
   self.consume_level = function(level)
@@ -1492,7 +1494,7 @@ var mapview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h
-    ctx.drawImage(self.map_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.map_animcycle_inst.img, self.map.x, self.map.y+yoff, self.map.w, self.map.h);
     for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
 
     if(!my_notificationview.note.length)
@@ -1521,6 +1523,8 @@ var notebookview = function()
 
   self.entrys;
   self.notebook_animcycle_inst;
+  self.notebook = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.notebook);
   self.exit_animcycle_inst;
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
@@ -1657,7 +1661,7 @@ var notebookview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
-    ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff, self.notebook.w, self.notebook.h);
 
     var entry;
     for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
@@ -1830,6 +1834,8 @@ var objectview = function()
   self.h = canv.height;
 
   self.object;
+  self.obj = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.obj);
   self.cur_view = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_unlocked_zones = [];
@@ -1965,7 +1971,7 @@ var objectview = function()
   {
     var yoff = (1-t)*self.h;
     var zone;
-    ctx.drawImage(self.cur_view.animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.cur_view.animcycle_inst.img, self.obj.x, self.obj.y+yoff, self.obj.w, self.obj.h);
     for(var i = 0; i < self.cache_unlocked_zones.length; i++)
     {
       zone = self.cache_unlocked_zones[i];
@@ -1988,6 +1994,7 @@ var objectview = function()
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
+
 }
 
 var observationview = function()
