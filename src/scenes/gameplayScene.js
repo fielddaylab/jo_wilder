@@ -172,6 +172,9 @@ var GamePlayScene = function(game, stage)
     if(url_json.save)
       load_save_code(url_json.save);
 
+    if(!self.level.pre_met && self.level.notifications.length) my_notificationview.consume_notification(self.level.notifications);
+    cur_level.pre_met = true;
+
     my_navigable.trigger_cutscenes();
   };
 

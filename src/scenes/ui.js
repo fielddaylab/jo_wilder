@@ -670,6 +670,7 @@ var navigable = function()
   {
     self.room = room;
     if(!self.room.met && self.room.notifications.length) my_notificationview.consume_notification(self.room.notifications);
+    self.room.pre_met = true;
     self.room.met = true;
     self.unlock_content();
     self.selected_act = 0;
@@ -746,7 +747,7 @@ var navigable = function()
       for(var i = 0; i < cur_room.cutscenes.length; i++)
       {
         var cutscene = cur_room.cutscenes[i];
-        if(!cutscene.met && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && (cutscene.available = queryavailable(cutscene.reqs)))
+        if(!cutscene.pre_met && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && (cutscene.available = queryavailable(cutscene.reqs)))
         {
           if(state_cur == STATE_NAV)
           {
@@ -1379,8 +1380,6 @@ var mapview = function()
   self.consume_level = function(level)
   {
     self.level = level;
-    if(!self.level.met && self.level.notifications.length) my_notificationview.consume_notification(self.level.notifications);
-    self.level.met = true;
     self.unlock_content();
     self.selected_scene = 0;
     self.map_animcycle_inst = gen_animcycle_inst(level.map_animcycle_id, level.animcycles);
@@ -1843,13 +1842,13 @@ var objectview = function()
   self.consume_object = function(object)
   {
     self.object = object;
-    if(!self.object.met && self.object.notifications.length) my_notificationview.consume_notification(self.object.notifications);
-    self.object.met = true;
+    if(!self.object.pre_met && self.object.notifications.length) my_notificationview.consume_notification(self.object.notifications);
+    self.object.pre_met = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
     self.cur_view.animcycle_inst.ready();
-    if(!self.cur_view.met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
-    self.cur_view.met = true;
+    if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+    self.cur_view.pre_met = true;
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
   }
@@ -1934,6 +1933,8 @@ var objectview = function()
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
+      self.cur_view.met = true;
+      self.object.met = true;
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -1946,10 +1947,13 @@ var objectview = function()
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
         if(!zone.met && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
+        zone.pre_met = true;
         zone.met = true;
+        self.cur_view.met = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
         self.cur_view.animcycle_inst.ready();
-        if(!self.cur_view.met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+        if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+        self.cur_view.pre_met = true;
         self.cur_view.met = true;
         self.unlock_content();
         return;
@@ -2029,8 +2033,8 @@ var observationview = function()
   self.consume_observation = function(observation)
   {
     self.observation = observation;
-    if(!self.observation.met && self.observation.notifications.length) my_notificationview.consume_notification(self.observation.notifications);
-    self.observation.met = true;
+    if(!self.observation.pre_met && self.observation.notifications.length) my_notificationview.consume_notification(self.observation.notifications);
+    self.observation.pre_met = true;
     self.ui_state = UI_STATE_IN_OBSERVATION;
     self.ui_state_t = 0;
     self.ui_state_p = 0;
@@ -2130,6 +2134,7 @@ var observationview = function()
 
   self.click = function(evt)
   {
+    self.observation.met = true;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
     {
@@ -2242,8 +2247,8 @@ var personview = function()
   self.consume_person = function(person)
   {
     self.person = person;
-    if(!self.person.met && self.person.notifications.length) my_notificationview.consume_notification(self.person.notifications);
-    self.person.met = true;
+    if(!self.person.pre_met && self.person.notifications.length) my_notificationview.consume_notification(self.person.notifications);
+    self.person.pre_met = true;
     self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
     self.ui_state_t = 0;
@@ -2264,6 +2269,8 @@ var personview = function()
       !self.clicked_option.target_speak_found //option w/ null target
     )
     {
+      self.cur_speak.met = true;
+      self.person.met = true;
       self.ui_state = UI_STATE_NULL;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -2279,10 +2286,13 @@ var personview = function()
       self.ui_state = UI_STATE_IN_SPEAK;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
+      self.cur_speak.met = true;
+      self.clicked_option.pre_met = true;
+      self.clicked_option.met = true;
       self.cur_speak = self.clicked_option.target_speak_found;
       self.cur_speak_command_i = 0;
-      if(!self.cur_speak.met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
-      self.cur_speak.met = true;
+      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
+      self.cur_speak.pre_met = true;
       self.unlock_content();
     }
     self.clicked_option = 0;
@@ -2301,8 +2311,8 @@ var personview = function()
       for(var i = 1; i < self.cache_available_speaks.length; i++)
         if(self.cache_available_speaks[i].primary > self.cur_speak.primary)
           self.cur_speak = self.cache_available_speaks[i];
-      if(!self.cur_speak.met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
-      self.cur_speak.met = true;
+      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
+      self.cur_speak.pre_met = true;
     }
 
     self.unlock_options();
@@ -2536,7 +2546,8 @@ var personview = function()
     {
       if(self.clicked_option !== 1) //1 == next speak command
       {
-        if(!self.clicked_option.met && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
+        if(!self.clicked_option.pre_met && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
+        self.clicked_option.pre_met = true;
         self.clicked_option.met = true;
       }
       if(self.ui_state != UI_STATE_OUT)
@@ -2720,8 +2731,9 @@ var wildcardview = function()
   self.consume_wildcard = function(wildcard)
   {
     self.wildcard = wildcard;
-    if(!self.wildcard.met && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
-    self.wildcard.met = true;
+    if(!self.wildcard.pre_met && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
+    self.wildcard.pre_met = true;
+    self.wildcard.met = true; //technically should wait for dismiss, but can't guarantee dismiss by custom code. needs solution.
     self.wildcard.consume_self(self.wildcard);
   }
 
@@ -2780,8 +2792,8 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
-    if(!self.cutscene.met && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene.notifications);
-    self.cutscene.met = true;
+    if(!self.cutscene.pre_met && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene.notifications);
+    self.cutscene.pre_met = true;
 
     self.cutscene_entitys = [];
     self.t = 0;
@@ -3139,6 +3151,7 @@ var cutsceneview = function()
 
     if(self.end)
     {
+      self.cutscene.met = true;
       self.cutscene_entitys = [];
       self.frame_commands = [];
       self.editable_frame_commands = [];
