@@ -1200,7 +1200,7 @@ var navigable = function()
     {
       d = self.cache_available_drawables[i];
       drawImageBox(d.animcycle_inst.img, d, ctx);
-      if(d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && queryavailable(d.notice_reqs))
+      if(state_cur == STATE_NAV && d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && queryavailable(d.notice_reqs))
       {
         w = cur_level.hover_w;
         h = cur_level.hover_h;
@@ -1216,7 +1216,7 @@ var navigable = function()
     {
       d = self.cache_available_drawables[i];
       drawImageBox(d.animcycle_inst.img, d, ctx);
-      if(d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && queryavailable(d.notice_reqs))
+      if(state_cur == STATE_NAV && d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && queryavailable(d.notice_reqs))
       {
         w = cur_level.hover_w;
         h = cur_level.hover_h;

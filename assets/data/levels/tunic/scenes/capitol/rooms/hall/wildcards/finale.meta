@@ -82,6 +82,7 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
     {
       self.cur_speak = find(self.cur_command.speak_fqid);
+      self.cur_speak.pre_met = true;
       self.cur_speak.met = true;
       self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
       self.cur_speak_command_i = 0;
