@@ -1,6 +1,6 @@
 tmp_option.index = 0;
 tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "hub1";
+tmp_option.target_speak = "hub";
 tmp_option.raw_notifications = [
 ];
 tmp_option.reqs = [[

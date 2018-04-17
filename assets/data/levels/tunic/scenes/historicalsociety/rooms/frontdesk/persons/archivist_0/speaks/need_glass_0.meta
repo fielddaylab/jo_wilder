@@ -6,7 +6,8 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.historicalsociety.frontdesk.archivist.busy1",
+"!tunic.historicalsociety.frontdesk.magnify",
+"!tunic.historicalsociety.frontdesk.archivist_0.need_glass_0",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();

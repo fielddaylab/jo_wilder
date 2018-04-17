@@ -1,6 +1,6 @@
 tmp_option.index = 0;
 tmp_option.raw_qtext = "Nevermind.";
-tmp_option.target_speak = "finish1_01";
+tmp_option.target_speak = "leave";
 tmp_option.raw_notifications = [
 ];
 tmp_option.reqs = [[

@@ -10,6 +10,6 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist.slip",
+"tunic.historicalsociety.frontdesk.archivist_0.slip",
 ]];
 
