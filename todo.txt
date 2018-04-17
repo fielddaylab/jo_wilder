@@ -36,7 +36,5 @@ grampa should turn around to walk
 convert ' to ^,
 grampa "gives you" map
 archivist notice
-target jolie in dirty cutscene
-observation covering magnifying glass
 
 

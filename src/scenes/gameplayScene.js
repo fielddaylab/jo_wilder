@@ -140,7 +140,7 @@ var GamePlayScene = function(game, stage)
         }
         else
         {
-          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:4});
+          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:2});
           g.resize({stage:stage});
           ctx.font = text_font;
         }
