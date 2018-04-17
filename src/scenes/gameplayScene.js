@@ -175,6 +175,7 @@ var GamePlayScene = function(game, stage)
     if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level.notifications);
     cur_level.pre_met = true;
 
+    my_navigable.unlock_content();
     my_navigable.trigger_cutscenes();
   };
 

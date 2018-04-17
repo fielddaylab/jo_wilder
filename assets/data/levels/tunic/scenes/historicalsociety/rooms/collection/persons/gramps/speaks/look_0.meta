@@ -7,6 +7,7 @@ tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
 "!tunic.historicalsociety.collection.gramps.look_0",
+"!tunic.historicalsociety.collection.tunic.slip",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();

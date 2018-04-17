@@ -180,6 +180,7 @@ var save_slate = function()
         {
           int_c -= p;
           self.slate[slate_i+ac_pow-1-sub_slate_i].met = 1;
+          self.slate[slate_i+ac_pow-1-sub_slate_i].pre_met = 1;
         }
         p /= 2;
       }
@@ -216,12 +217,12 @@ var queryavailable = function(reqs)
     for(var j = 0; available && j < reqs[i].length; j++)
     {
       var l = reqs[i][j];
-      if(l.charAt(0) == "!") { not = true; l = l.substr(1); }
-      if(l.charAt(0) == "_") { pre = true; l = l.substr(1); }
+      if(l.charAt(0) == "!") { invert = true; l = l.substr(1); } else invert = false;
+      if(l.charAt(0) == "_") { pre    = true; l = l.substr(1); } else pre    = false;
 
       if(pre) available = find(l).pre_met;
       else    available = find(l).met;
-      if(not) available = !available;
+      if(invert) available = !available;
     }
   }
 
@@ -269,7 +270,7 @@ var level = function()
   self.notebook_reqs = [];
   self.map_reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -293,7 +294,7 @@ var scene = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -378,7 +379,8 @@ var person = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -423,7 +425,8 @@ var object = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -473,7 +476,8 @@ var observation = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -522,7 +526,8 @@ var porthole = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -569,7 +574,8 @@ var wildcard = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -603,7 +609,7 @@ var inert = function()
   self.animcycle_id = "null";
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -653,7 +659,7 @@ var zone = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -704,7 +710,7 @@ var speak = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -725,7 +731,7 @@ var option = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -753,7 +759,7 @@ var entry = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.available = true;
+  self.available = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
@@ -858,7 +864,8 @@ var cutscene = function()
   self.reqs = [];
 
   //
-  self.available = true;
+  self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;

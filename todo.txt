@@ -18,8 +18,6 @@ options visible pre-hover/select (to say "you need to click here")
 cutscene lerp alpha
 cutscene tween events (shake, etc...)
 
-intro cutscene has "flashcut" of wrong position to start- fix
-
 consistent scripts for edit/goto/find/etc.. by search/type/fqid/etc..
 
 set hover cursor on objects instead of level (like hover icons)
@@ -33,4 +31,10 @@ save/load gen_slate should iterate through all reqs, finding noteworthy, only sa
 
 ensure cam continuity between cutscene transition, etc...
 cam position more "s" like (find correct "s"ness)
+
+grampa should turn around to walk
+convert ' to ^,
+grampa "gives you" map
+archivist notice
+
 

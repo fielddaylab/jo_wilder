@@ -701,20 +701,55 @@ var navigable = function()
     self.cache_available_bg_drawables = [];
     self.cache_available_fg_drawables = [];
 
+    var o;
     for(var i = 0; i < self.room.persons.length; i++)
-      if(self.room.persons[i].available = queryavailable(self.room.persons[i].reqs)) self.cache_available_persons.push(self.room.persons[i]);
+      if(self.room.persons[i].available = queryavailable(self.room.persons[i].reqs))
+      {
+        o = self.room.persons[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_persons.push(o);
+      }
     for(var i = 0; i < self.room.objects.length; i++)
-      if(self.room.objects[i].available = queryavailable(self.room.objects[i].reqs)) self.cache_available_objects.push(self.room.objects[i]);
+      if(self.room.objects[i].available = queryavailable(self.room.objects[i].reqs))
+      {
+        o = self.room.objects[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_objects.push(o);
+      }
     for(var i = 0; i < self.room.observations.length; i++)
-      if(self.room.observations[i].available = queryavailable(self.room.observations[i].reqs)) self.cache_available_observations.push(self.room.observations[i]);
+      if(self.room.observations[i].available = queryavailable(self.room.observations[i].reqs))
+      {
+        o = self.room.observations[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_observations.push(o);
+      }
     for(var i = 0; i < self.room.portholes.length; i++)
-      if(self.room.portholes[i].available = queryavailable(self.room.portholes[i].reqs)) self.cache_available_portholes.push(self.room.portholes[i]);
+      if(self.room.portholes[i].available = queryavailable(self.room.portholes[i].reqs))
+      {
+        o = self.room.portholes[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_portholes.push(o);
+      }
     for(var i = 0; i < self.room.wildcards.length; i++)
-      if(self.room.wildcards[i].available = queryavailable(self.room.wildcards[i].reqs)) self.cache_available_wildcards.push(self.room.wildcards[i]);
+      if(self.room.wildcards[i].available = queryavailable(self.room.wildcards[i].reqs))
+      {
+        o = self.room.wildcards[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_wildcards.push(o);
+      }
     for(var i = 0; i < self.room.cutscenes.length; i++)
-      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && (self.room.cutscenes[i].available = queryavailable(self.room.cutscenes[i].reqs))) self.cache_available_cutscenes.push(self.room.cutscenes[i]);
+      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && (self.room.cutscenes[i].available = queryavailable(self.room.cutscenes[i].reqs)))
+      {
+        o = self.room.cutscenes[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_cutscenes.push(o);
+      }
     for(var i = 0; i < self.room.inerts.length; i++)
-      if(self.room.inerts[i].available = queryavailable(self.room.inerts[i].reqs)) self.cache_available_inerts.push(self.room.inerts[i]);
+      if(self.room.inerts[i].available = queryavailable(self.room.inerts[i].reqs))
+      {
+        o = self.room.inerts[i];
+        self.cache_available_inerts.push(o);
+      }
 
     //insertion sort on each list
     for(var i = 0; i < self.cache_available_persons.length; i++)
@@ -1200,7 +1235,7 @@ var navigable = function()
     {
       d = self.cache_available_drawables[i];
       drawImageBox(d.animcycle_inst.img, d, ctx);
-      if(state_cur == STATE_NAV && d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && queryavailable(d.notice_reqs))
+      if(state_cur == STATE_NAV && d.notice)
       {
         w = cur_level.hover_w;
         h = cur_level.hover_h;
@@ -1216,7 +1251,7 @@ var navigable = function()
     {
       d = self.cache_available_drawables[i];
       drawImageBox(d.animcycle_inst.img, d, ctx);
-      if(state_cur == STATE_NAV && d.notice_icon_animcycle_id && d.notice_icon_animcycle_id != "null" && queryavailable(d.notice_reqs))
+      if(state_cur == STATE_NAV && d.notice)
       {
         w = cur_level.hover_w;
         h = cur_level.hover_h;
