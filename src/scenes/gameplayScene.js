@@ -569,8 +569,8 @@ var GamePlayScene = function(game, stage)
       {
         my_navigable.unlock_content();
         my_notebookview.unlock_content();
-        my_toolbar.notebook_locked = querylocked(cur_level.notebook_reqs);
-        my_toolbar.map_locked      = querylocked(cur_level.map_reqs);
+        my_toolbar.notebook_available = queryavailable(cur_level.notebook_reqs);
+        my_toolbar.map_available      = queryavailable(cur_level.map_reqs);
       }
     }
 

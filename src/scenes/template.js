@@ -152,7 +152,7 @@ var save_slate = function()
     var p = 1;
     for(var i = 0; i < self.slate.length; i++)
     {
-      if(self.slate[i].key) a += p;
+      if(self.slate[i].met) a += p;
       p *= 2;
       if(p == ac_pt || i == self.slate.length-1)
       {
@@ -179,7 +179,7 @@ var save_slate = function()
         if(int_c >= p)
         {
           int_c -= p;
-          self.slate[slate_i+ac_pow-1-sub_slate_i].key = 1;
+          self.slate[slate_i+ac_pow-1-sub_slate_i].met = 1;
         }
         p /= 2;
       }
@@ -203,23 +203,23 @@ var load_save_code = function(code)
   s.decode(code);
 }
 
-var querylocked = function(reqs)
+var queryavailable = function(reqs)
 {
-  if(UNLOCK) return false;
+  if(UNLOCK) return true;
 
-  var locked = true;
-  for(var i = 0; locked && i < reqs.length; i++)
+  var available = false;
+  for(var i = 0; !available && i < reqs.length; i++)
   {
-    locked = false;
-    for(var j = 0; !locked && j < reqs[i].length; j++)
+    available = true;
+    for(var j = 0; available && j < reqs[i].length; j++)
     {
       var l = reqs[i][j];
-      if(l.charAt(0) == "!") locked = find(l.substr(1)).key;
-      else                   locked = !find(l).key;
+      if(l.charAt(0) == "!") available = !find(l.substr(1)).met;
+      else                   available = find(l).met;
     }
   }
 
-  return locked;
+  return available;
 }
 
 var level = function()
@@ -263,8 +263,9 @@ var level = function()
   self.notebook_reqs = [];
   self.map_reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.notifications = [];
 }
@@ -286,8 +287,9 @@ var scene = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
@@ -330,7 +332,8 @@ var room = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.key = false;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
@@ -369,8 +372,9 @@ var person = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
@@ -413,8 +417,9 @@ var object = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
@@ -462,8 +467,9 @@ var observation = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
@@ -510,8 +516,9 @@ var porthole = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
@@ -556,8 +563,9 @@ var wildcard = function()
   self.notice_reqs = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;
@@ -589,8 +597,9 @@ var inert = function()
   self.animcycle_id = "null";
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.w = 0;
@@ -616,7 +625,8 @@ var view = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.key = false;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.notifications = [];
@@ -637,8 +647,9 @@ var zone = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.w = 0;
@@ -687,8 +698,9 @@ var speak = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.options_x = 0;
   self.options_y = 0;
@@ -707,8 +719,9 @@ var option = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.w = 0;
   self.h = 0;
@@ -734,8 +747,9 @@ var entry = function()
   self.raw_notifications = [];
   self.reqs = [];
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.x = 0;
@@ -838,8 +852,9 @@ var cutscene = function()
   self.reqs = [];
 
   //
-  self.locked = true;
-  self.key = false;
+  self.available = true;
+  self.met = false;
+  self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
   self.hover_cursor_animcycle_inst;

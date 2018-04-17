@@ -3514,7 +3514,7 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
     {
       self.cur_speak = find(self.cur_command.speak_fqid);
-      self.cur_speak.key = true;
+      self.cur_speak.met = true;
       self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
       self.cur_speak_command_i = 0;
       self.ui_state = UI_STATE_IN;
@@ -3607,8 +3607,8 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
       my_cursor.mode = CURSOR_NORMAL;
-      for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
-        if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+      for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+        if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           my_cursor.mode = CURSOR_UI;
     }
   }
@@ -3660,11 +3660,11 @@ tmp_wildcard.commands = [
       else
       {
         //find response
-        for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
+        for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
-          if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+          if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
-            if(my_notebookview.cache_unlocked_entrys[i].fqid != self.cur_command.entry_fqid)
+            if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
             {
               self.failed = 1;
               self.failed_command_i = self.cur_command_i;
@@ -3953,7 +3953,7 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
     {
       self.cur_speak = find(self.cur_command.speak_fqid);
-      self.cur_speak.key = true;
+      self.cur_speak.met = true;
       self.person = find(self.cur_speak.fqid.replace("."+self.cur_speak.id,""));
       self.cur_speak_command_i = 0;
       self.ui_state = UI_STATE_IN;
@@ -4033,8 +4033,8 @@ tmp_wildcard.commands = [
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
       my_cursor.mode = CURSOR_NORMAL;
-      for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
-        if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+      for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+        if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           my_cursor.mode = CURSOR_UI;
     }
   }
@@ -4086,11 +4086,11 @@ tmp_wildcard.commands = [
       else
       {
         //find response
-        for(var i = 0; i < my_notebookview.cache_unlocked_entrys.length; i++)
+        for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
-          if(ptWithinBox(my_notebookview.cache_unlocked_entrys[i],evt.doX,evt.doY))
+          if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
-            if(my_notebookview.cache_unlocked_entrys[i].fqid != self.cur_command.entry_fqid)
+            if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
               self.failed = 1;
             self.ui_state_t = 0;
             self.ui_state_p = 0;
