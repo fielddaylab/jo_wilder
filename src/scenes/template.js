@@ -208,14 +208,20 @@ var queryavailable = function(reqs)
   if(UNLOCK) return true;
 
   var available = false;
+  var invert = false;
+  var pre = false;
   for(var i = 0; !available && i < reqs.length; i++)
   {
     available = true;
     for(var j = 0; available && j < reqs[i].length; j++)
     {
       var l = reqs[i][j];
-      if(l.charAt(0) == "!") available = !find(l.substr(1)).met;
-      else                   available = find(l).met;
+      if(l.charAt(0) == "!") { not = true; l = l.substr(1); }
+      if(l.charAt(0) == "_") { pre = true; l = l.substr(1); }
+
+      if(pre) available = find(l).pre_met;
+      else    available = find(l).met;
+      if(not) available = !available;
     }
   }
 
