@@ -35,9 +35,27 @@ cam position more "s" like (find correct "s"ness)
 grampa should turn around to walk
 convert ' to ^,
 grampa "gives you" map
+click on date on kc plaque for trigger
+lock in kohl center ("g said to look for clues" / "I should look at that plaque more closely...")
+dirty basement notice gramps
+would be pretty cool to "clean up" dirty basement inerts
 archivist notice (probably not needed?)
+archivist "searching for mag glass" anim
+some restrictions ensuring all archivist options chosen
+dry cleaner cards should have "answer" as final
+should click on date in card to learn something
+lock self in humec til learned
 logbook notice
 logbook should have no notice until clicked (set reqs appropriately too- also append slip)
 dry cleaner direct "hmm, keep looking in there! I'm sure there's something!"
+lock in dry cleaner
 gramps (or others) should direct "I found a 'theodora youmans'" to "go see the archivist again"
+library id card notice
+librarian notice
+librarian shorten text bubble
+separate to archivist_2
+coffee accusation is weird given we just saw wells went to taxidermist- should be flipped
+archivist_2 convo wobbles between teddy drama and "I like suffragists" weirdly
+need archivist_2 "I found it!" after you've _been_ to the stacks
+literally no direction to capitol when we need it
 
