@@ -120,9 +120,9 @@ var GamePlayScene = function(game, stage)
       if(evt.key == " ") print_whole_level(cur_level,false);
       if(evt.key == "f") print_whole_level(cur_level,true);
       if(evt.key == "c") get_save_code();
-      if(evt.key == "l") load_save_code("000000100000000540641000006442004720000000000000000000000000000");
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
+      if(evt.key == "t") DOUBLETIME = !DOUBLETIME;
       if(evt.key == "v")
       {
         if(my_camera == my_real_camera) my_camera = my_debug_camera;

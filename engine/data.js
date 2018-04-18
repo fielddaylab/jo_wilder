@@ -10310,6 +10310,7 @@ tmp_zone.raw_notifications = [
 "The slip I found is from wayyy back in 1916. But the women's team didn't even start until 1974!",
 ];
 tmp_zone.reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
 ]];
 
 tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);

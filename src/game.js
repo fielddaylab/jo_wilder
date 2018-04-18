@@ -40,6 +40,9 @@ var Game = function(init)
   {
     requestAnimFrame(tick,stage.canv.canvas);
     scenes[cur_scene].tick();
+    var slow = false;
+    if(old_cur_scene == cur_scene && (DOUBLETIME || slow))
+      scenes[cur_scene].tick();
     if(old_cur_scene == cur_scene) //still in same scene- draw
     {
       stage.clear();
