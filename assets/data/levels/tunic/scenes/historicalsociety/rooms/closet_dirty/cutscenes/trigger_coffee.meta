@@ -12,12 +12,13 @@ tmp_cutscene.hover_icon_wy = 32.89586241203352;
 tmp_cutscene.animcycle_id = "coffeecup";
 tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
 tmp_cutscene.hover_icon_animcycle_id = "hblip_interact";
-tmp_cutscene.notice_icon_animcycle_id = "null";
+tmp_cutscene.notice_icon_animcycle_id = "notice";
 tmp_cutscene.raw_notifications = [
 ];
 tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
+"!tunic.historicalsociety.closet_dirty.trigger_coffee",
 ]];
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
