@@ -8,6 +8,6 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_1.library03",
+"tunic.historicalsociety.frontdesk.archivist_1.library",
 ]];
 
