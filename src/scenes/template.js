@@ -70,12 +70,19 @@ var save_slate = function()
 {
   var self = this;
   self.slate = [];
+  self.rooms = [];
 
   self.insert = function(o)
   {
     var i;
     for(i = 0; i < self.slate.length && o.fqid > self.slate[i]; i++) ;
     self.slate.splice(i,0,o);
+  }
+  self.insert_room = function(o)
+  {
+    var i;
+    for(i = 0; i < self.rooms.length && o.fqid > self.rooms[i]; i++) ;
+    self.rooms.splice(i,0,o);
   }
   self.gen_slate = function(level)
   {
@@ -88,6 +95,7 @@ var save_slate = function()
       {
         var room = scene.rooms[j];
         self.insert(room);
+        self.insert_room(room);
         for(var k = 0; k < room.persons.length; k++)
         {
           var person = room.persons[k];
@@ -147,7 +155,14 @@ var save_slate = function()
   //accrue pt = 2 ^ 23 (chosen for high significant digit)
   self.code = function()
   {
-    var c = "";
+    var i;
+    for(i = 0; self.rooms[i].fqid != cur_room.fqid && i < self.rooms.length; i++) ;
+    var room_len = 1;
+    var tmp = self.rooms.length;
+    while(tmp >= 10) { room_len++; tmp /= 10; }
+    var c = ""+i;
+    while(c.length < room_len) c = "0"+c;
+
     var a = 0;
     var p = 1;
     for(var i = 0; i < self.slate.length; i++)
@@ -167,12 +182,26 @@ var save_slate = function()
   }
   self.decode = function(c)
   {
+    var i;
+    for(i = 0; self.rooms[i].fqid != cur_room.fqid && i < self.rooms.length; i++) ;
+    var room_len = 1;
+    var tmp = self.rooms.length;
+    while(tmp >= 10) { room_len++; tmp /= 10; }
+    var sub_c = c.substring(0,room_len);
+    var int_c = parseInt(sub_c);
+    c = c.substring(room_len);
+    cur_room = self.rooms[int_c];
+    cur_scene = find(cur_room.fqid.substring(0,cur_room.fqid.indexOf(cur_room.id)));
+    my_loader.consume_room(cur_room);
+    my_navigable.consume_room(cur_room);
+    my_avatar.consume_room(cur_room);
+
     var slate_i = 0;
     while(c.length > 0)
     {
-      var sub_c = c.substring(0,ac_len);
-      var int_c = parseInt(sub_c);
-      var c = c.substring(ac_len);
+      sub_c = c.substring(0,ac_len);
+      int_c = parseInt(sub_c);
+      c = c.substring(ac_len);
       var p = ac_pt/2;
       for(var sub_slate_i = 0; sub_slate_i < ac_pow; sub_slate_i++)
       {
