@@ -228,6 +228,51 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner/0.pn
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "cleaner_card_0";
+tmp_animcycle.fqid = "tunic.cleaner_card_0";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_0/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "cleaner_card_1";
+tmp_animcycle.fqid = "tunic.cleaner_card_1";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_1/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "cleaner_card_bingo";
+tmp_animcycle.fqid = "tunic.cleaner_card_bingo";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_bingo/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "click_ripple";
 tmp_animcycle.fqid = "tunic.click_ripple";
 {
@@ -311,51 +356,6 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/door/0.png");
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
-tmp_animcycle.id = "drycleanercard1";
-tmp_animcycle.fqid = "tunic.drycleanercard1";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
-tmp_animcycle.frame_files = [];
-tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/drycleanercard1/0.jpg");
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
-tmp_animcycle.id = "drycleanercard2";
-tmp_animcycle.fqid = "tunic.drycleanercard2";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
-tmp_animcycle.frame_files = [];
-tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/drycleanercard2/0.jpg");
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
-tmp_animcycle.id = "drycleanercard3";
-tmp_animcycle.fqid = "tunic.drycleanercard3";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
-tmp_animcycle.frame_files = [];
-tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/drycleanercard3/0.jpg");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -9924,17 +9924,18 @@ tmp_zone = new zone();
 tmp_zone.id = "bingo";
 tmp_zone.fqid = "tunic.humanecology.frontdesk.businesscards.card_bingo.bingo";
 {
-tmp_zone.ww = 42.99999999999998;
-tmp_zone.wh = 43;
-tmp_zone.wx = 300.49999999999994;
-tmp_zone.wy = 4.499999999999876;
-tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.ww = 153.99999999999994;
+tmp_zone.wh = 45;
+tmp_zone.wx = 126.00000000000001;
+tmp_zone.wy = 63.4999999999999;
+tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "card_bingo";
 tmp_zone.raw_notifications = [
 "Whoah this is the only dry cleaner old enough to be around in 1916!",
 ];
 tmp_zone.reqs = [[
+"!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
 
 tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
@@ -10009,10 +10010,10 @@ tmp_observation = new observation();
 tmp_observation.id = "block_1";
 tmp_observation.fqid = "tunic.humanecology.frontdesk.block_1";
 {
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = 100;
-tmp_observation.wy = 100;
+tmp_observation.ww = 120.99999999999996;
+tmp_observation.wh = 338;
+tmp_observation.wx = 528.5000000000001;
+tmp_observation.wy = 2.842170943040401e-14;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
@@ -10025,10 +10026,10 @@ tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I wonder if there's a clue in those business cards...";
-tmp_observation.blip_wx = 100;
-tmp_observation.blip_wy = 100;
-tmp_observation.blip_w = 100;
-tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.blip_wx = 196.99999999999994;
+tmp_observation.blip_wy = 126.99999999999997;
+tmp_observation.blip_w = 219;
+tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
 tmp_observation.notice_reqs = [[
