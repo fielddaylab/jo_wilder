@@ -1,0 +1,28 @@
+tmp_observation.ww = 179.89570795874226;
+tmp_observation.wh = 377.1382369818872;
+tmp_observation.wx = -913.6767947265421;
+tmp_observation.wy = 36.3331077203774;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "Grandpa said to look for clues. Better look around.";
+tmp_observation.blip_wx = -818.3862029221006;
+tmp_observation.blip_wy = 176.3533393169813;
+tmp_observation.blip_w = 181;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face",
+]];
+

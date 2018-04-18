@@ -161,6 +161,7 @@ var GamePlayScene = function(game, stage)
     }
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
+    ctx.font = text_font;
 
     state_cur = STATE_TRANSITION;
     state_stack = STATE_NAV;

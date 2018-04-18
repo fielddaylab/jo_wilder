@@ -4,6 +4,6 @@ tmp_option.target_speak = "lead_0";
 tmp_option.raw_notifications = [
 ];
 tmp_option.reqs = [[
-"tunic.kohlcenter.halloffame.oldpictures",
+"tunic.kohlcenter.halloffame.plaque.face.date",
 ]];
 

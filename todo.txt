@@ -32,13 +32,13 @@ save/load gen_slate should iterate through all reqs, finding noteworthy, only sa
 ensure cam continuity between cutscene transition, etc...
 cam position more "s" like (find correct "s"ness)
 
+indication of "in nav" or not (often is notebook icon- at beginning there is none)
+fix notebook icon pop out/in between quick cutscene transitions
 grampa should turn around to walk
 convert ' to ^,
 grampa "gives you" map
-click on date on kc plaque for trigger
-lock in kohl center ("g said to look for clues" / "I should look at that plaque more closely...")
-dirty basement notice gramps
 would be pretty cool to "clean up" dirty basement inerts
+dirty basement gramps needs more convo
 archivist notice (probably not needed?)
 archivist "searching for mag glass" anim
 some restrictions ensuring all archivist options chosen

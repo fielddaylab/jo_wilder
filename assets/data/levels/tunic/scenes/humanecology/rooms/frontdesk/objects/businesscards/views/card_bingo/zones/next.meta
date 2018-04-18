@@ -1,0 +1,12 @@
+tmp_zone.ww = 42.99999999999998;
+tmp_zone.wh = 43;
+tmp_zone.wx = 336.49999999999994;
+tmp_zone.wy = 4.499999999999876;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "card_0";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.reqs = [[
+]];
+

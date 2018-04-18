@@ -24,6 +24,6 @@ tmp_person.notice_reqs = [[
 "!tunic.historicalsociety.collection.gramps.found_0",
 ]];
 tmp_person.reqs = [[
-"!tunic.kohlcenter.halloffame.oldpictures",
+"!tunic.kohlcenter.halloffame.plaque.face.date",
 ]];
 

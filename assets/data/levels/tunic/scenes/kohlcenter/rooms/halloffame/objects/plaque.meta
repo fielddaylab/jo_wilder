@@ -8,14 +8,15 @@ tmp_object.act_wy = -107.00000000000003;
 tmp_object.act_anim = true;
 tmp_object.hover_icon_wx = 53.33503386534471;
 tmp_object.hover_icon_wy = 41.99999999999997;
-tmp_object.animcycle_id = "oldpictures";
+tmp_object.animcycle_id = "plaque";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
-tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
 tmp_object.notice_reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
 ]];
 tmp_object.reqs = [[
 ]];

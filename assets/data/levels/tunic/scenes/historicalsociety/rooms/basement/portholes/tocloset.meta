@@ -21,6 +21,6 @@ tmp_porthole.raw_notifications = [
 tmp_porthole.notice_reqs = [[
 ]];
 tmp_porthole.reqs = [[
-"!tunic.kohlcenter.halloffame.oldpictures",
+"!tunic.kohlcenter.halloffame.plaque.face.date",
 ]];
 

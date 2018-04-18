@@ -984,7 +984,6 @@ var print_level_meta = function(l)
 var print_entry_meta = function(l)
 {
   var str = "SAVE entry "+l.fqid+"\n"+
-  "tmp_entry.primary = "+l.primary+";\n"+
   "tmp_entry.ww = "+l.ww+";\n"+
   "tmp_entry.wh = "+l.wh+";\n"+
   "tmp_entry.wx = "+l.wx+";\n"+

@@ -8,6 +8,6 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.reqs = [[
-"tunic.humanecology.frontdesk.businesscards",
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
 
