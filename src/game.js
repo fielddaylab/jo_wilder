@@ -30,9 +30,12 @@ var Game = function(init)
       scenes[i].resize(stage);
   }
 
+  var flip;
+  var flop;
   self.begin = function()
   {
     self.nextScene();
+    flip = Date.now();
     tick();
   };
 
@@ -41,6 +44,9 @@ var Game = function(init)
     requestAnimFrame(tick,stage.canv.canvas);
     scenes[cur_scene].tick();
     var slow = false;
+    flop = Date.now();
+    slow = flop-flip > 25;
+    flip = flop;
     if(old_cur_scene == cur_scene && (DOUBLETIME || slow))
       scenes[cur_scene].tick();
     if(old_cur_scene == cur_scene) //still in same scene- draw
