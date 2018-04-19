@@ -1205,8 +1205,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
+tmp_animcycle.loop = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/microficheframe1/0.jpg");
@@ -1224,8 +1223,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
+tmp_animcycle.loop = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/microficheframe2/0.jpg");
@@ -1243,8 +1241,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
+tmp_animcycle.loop = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/microficheframe3/0.jpg");
@@ -5817,13 +5814,23 @@ tmp_speak_command.raw_atext = "Sorry, Jo. Gotta run to my meeting!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -143.66551640340222;
+tmp_speak_command.wy = -42.988481166464055;
+tmp_speak_command.w = 194;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "But what about the story?";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -362.7265613608749;
 tmp_speak_command.wy = 244.2628432563792;
 tmp_speak_command.w = 179;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Grab your notebook and meet me upstairs!";
+tmp_speak_command.raw_atext = "Sorry! Grab your notebook and meet me upstairs!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -11603,19 +11610,105 @@ tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_
 tmp_object.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_object.notice_icon_animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_level.notifications_w);
 tmp_view = new view();
-tmp_view.id = "paper1";
-tmp_view.fqid = "tunic.library.microfiche.reader.paper1";
+tmp_view.id = "paper0";
+tmp_view.fqid = "tunic.library.microfiche.reader.paper0";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "null";
+tmp_view.animcycle_id = "microficheframe1";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
-
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "next";
+tmp_zone.fqid = "tunic.library.microfiche.reader.paper0.next";
+{
+tmp_zone.ww = 41.99999999999998;
+tmp_zone.wh = 43.000000000000014;
+tmp_zone.wx = 335.99999999999994;
+tmp_zone.wy = 3.499999999999897;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper1";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.reqs = [[
+]];
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
+tmp_view.id = "paper1";
+tmp_view.fqid = "tunic.library.microfiche.reader.paper1";
+{
+tmp_view.primary = false;
+tmp_view.animcycle_id = "microficheframe2";
+tmp_view.audio_id = "null";
+tmp_view.raw_notifications = [
+];
+tmp_view.reqs = [[
+]];
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "next";
+tmp_zone.fqid = "tunic.library.microfiche.reader.paper1.next";
+{
+tmp_zone.ww = 41.99999999999998;
+tmp_zone.wh = 43.000000000000014;
+tmp_zone.wx = 335.99999999999994;
+tmp_zone.wy = 3.499999999999897;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper2";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.reqs = [[
+]];
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+}
+tmp_object.views.push(tmp_view);
+tmp_view = new view();
+tmp_view.id = "paper2";
+tmp_view.fqid = "tunic.library.microfiche.reader.paper2";
+{
+tmp_view.primary = false;
+tmp_view.animcycle_id = "microficheframe3";
+tmp_view.audio_id = "null";
+tmp_view.raw_notifications = [
+];
+tmp_view.reqs = [[
+]];
+tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "next";
+tmp_zone.fqid = "tunic.library.microfiche.reader.paper2.next";
+{
+tmp_zone.ww = 41.99999999999998;
+tmp_zone.wh = 43.000000000000014;
+tmp_zone.wx = 335.99999999999994;
+tmp_zone.wy = 3.499999999999897;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper0";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.reqs = [[
+]];
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
