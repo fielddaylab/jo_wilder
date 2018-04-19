@@ -5359,6 +5359,86 @@ tmp_view.zones.push(tmp_zone);
 tmp_object.views.push(tmp_view);
 }
 tmp_room.objects.push(tmp_object);
+tmp_observation = new observation();
+tmp_observation.id = "block_0";
+tmp_observation.fqid = "tunic.drycleaner.frontdesk.block_0";
+{
+tmp_observation.ww = 100;
+tmp_observation.wh = 100;
+tmp_observation.wx = 100;
+tmp_observation.wy = 100;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should find the logbook in here...";
+tmp_observation.blip_wx = 100;
+tmp_observation.blip_wy = 100;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.raw_notifications = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page"
+]];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
+tmp_observation = new observation();
+tmp_observation.id = "block_1";
+tmp_observation.fqid = "tunic.drycleaner.frontdesk.block_1";
+{
+tmp_observation.ww = 100;
+tmp_observation.wh = 100;
+tmp_observation.wx = 100;
+tmp_observation.wy = 100;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I should check that logbook to see who owned this slip...";
+tmp_observation.blip_wx = 100;
+tmp_observation.blip_wy = 100;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.raw_notifications = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page.bingo"
+]];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
 tmp_porthole = new porthole();
 tmp_porthole.id = "toentry";
 tmp_porthole.fqid = "tunic.drycleaner.frontdesk.toentry";
@@ -9088,7 +9168,7 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
-"!tunic.library.microfiche.newspaper",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -9244,7 +9324,7 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.library.microfiche.newspaper.hub",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
@@ -9352,7 +9432,7 @@ tmp_person.raw_notifications = [
 tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
-"tunic.library.microfiche.newspaper",
+"tunic.library.microfiche.reader.paper2",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -11088,7 +11168,7 @@ tmp_cutscene.raw_notifications = [
 tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
-"tunic.library.microfiche.newspaper.hub",
+"tunic.library.microfiche.reader.paper2",
 "!tunic.library.frontdesk.wellsbadge.hub",
 ]];
 tmp_cutscene.commands = [];
@@ -11260,7 +11340,7 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.library.microfiche.newspaper.hub",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
@@ -11375,7 +11455,7 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"tunic.library.microfiche.newspaper.hub",
+"tunic.library.microfiche.reader.paper2",
 "!tunic.library.frontdesk.wellsbadge.hub",
 ]];
 

@@ -6,7 +6,7 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.library.microfiche.newspaper.hub",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
