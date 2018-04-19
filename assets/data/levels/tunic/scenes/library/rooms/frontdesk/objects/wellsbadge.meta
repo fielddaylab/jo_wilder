@@ -18,7 +18,7 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"tunic.library.microfiche.reader.paper2",
+"tunic.library.microfiche.reader.paper2.bingo",
 "!tunic.library.frontdesk.wellsbadge.hub",
 ]];
 

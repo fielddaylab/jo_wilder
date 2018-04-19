@@ -19,6 +19,6 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
-"!tunic.library.microfiche.reader.paper2",
+"!tunic.library.microfiche.reader.paper2.bingo",
 ]];
 
