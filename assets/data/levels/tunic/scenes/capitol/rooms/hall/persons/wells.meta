@@ -18,6 +18,6 @@ tmp_person.raw_notifications = [
 tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
-"tunic.historicalsociety.stacks.journalsaz.hub",
+"tunic.historicalsociety.stacks.journals.hub",
 ]];
 
