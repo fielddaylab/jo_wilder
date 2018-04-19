@@ -5363,10 +5363,10 @@ tmp_observation = new observation();
 tmp_observation.id = "block_0";
 tmp_observation.fqid = "tunic.drycleaner.frontdesk.block_0";
 {
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = 100;
-tmp_observation.wy = 100;
+tmp_observation.ww = 142.1456885723186;
+tmp_observation.wh = 348.99999999999994;
+tmp_observation.wx = 507.11048041255634;
+tmp_observation.wy = 3.5;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
@@ -5379,16 +5379,16 @@ tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I should find the logbook in here...";
-tmp_observation.blip_wx = 100;
-tmp_observation.blip_wy = 100;
-tmp_observation.blip_w = 100;
-tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.blip_wx = 276.0907405569176;
+tmp_observation.blip_wy = 86;
+tmp_observation.blip_w = 148;
+tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
 tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.drycleaner.frontdesk.logbook.page"
+"!tunic.drycleaner.frontdesk.logbook.page",
 ]];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
@@ -5403,10 +5403,10 @@ tmp_observation = new observation();
 tmp_observation.id = "block_1";
 tmp_observation.fqid = "tunic.drycleaner.frontdesk.block_1";
 {
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = 100;
-tmp_observation.wy = 100;
+tmp_observation.ww = 137.99999999981253;
+tmp_observation.wh = 359.9999999999999;
+tmp_observation.wx = 502.9999999647827;
+tmp_observation.wy = 4;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
@@ -5419,16 +5419,16 @@ tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "I should check that logbook to see who owned this slip...";
-tmp_observation.blip_wx = 100;
-tmp_observation.blip_wy = 100;
-tmp_observation.blip_w = 100;
-tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.blip_wx = 245.28716492945168;
+tmp_observation.blip_wy = 95.99999999999996;
+tmp_observation.blip_w = 175;
+tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
 tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.drycleaner.frontdesk.logbook.page.bingo"
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
