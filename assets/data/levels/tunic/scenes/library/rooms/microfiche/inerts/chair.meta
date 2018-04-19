@@ -1,0 +1,9 @@
+tmp_inert.ww = 195.00000001659674;
+tmp_inert.wh = 199.99999999999997;
+tmp_inert.wx = -258.49997849573856;
+tmp_inert.wy = -19.000000000000014;
+tmp_inert.wz = 1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "microfichechair";
+tmp_inert.reqs = [[
+]];

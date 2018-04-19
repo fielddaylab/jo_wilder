@@ -1,0 +1,9 @@
+tmp_inert.ww = 901.0000000000001;
+tmp_inert.wh = 300.00000000000006;
+tmp_inert.wx = -7.892492902978631;
+tmp_inert.wy = -183;
+tmp_inert.wz = 999;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "microfichefg";
+tmp_inert.reqs = [[
+]];
