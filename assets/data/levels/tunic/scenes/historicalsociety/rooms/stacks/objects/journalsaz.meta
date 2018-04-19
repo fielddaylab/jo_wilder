@@ -18,6 +18,6 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_1.newspaper",
+"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
 ]];
 

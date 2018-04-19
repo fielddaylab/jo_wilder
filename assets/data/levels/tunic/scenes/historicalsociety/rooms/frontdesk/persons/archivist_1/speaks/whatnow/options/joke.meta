@@ -1,6 +1,6 @@
 tmp_option.index = 0;
 tmp_option.raw_qtext = "Wanna hear a joke?";
-tmp_option.target_speak = "library03";
+tmp_option.target_speak = "library";
 tmp_option.raw_notifications = [
 ];
 tmp_option.reqs = [[

@@ -35,6 +35,9 @@ cam position more "s" like (find correct "s"ness)
 indication of "in nav" or not (often is notebook icon- at beginning there is none)
 fix notebook icon pop out/in between quick cutscene transitions
 grampa should turn around to walk
+still need gramps convo if you disobey tunic notice
+trigger cutscenes on TO_NAV transitions
+touchable inerts (sets "met", etc...- just doesn't do anything)
 convert ' to ^,
 grampa "gives you" map
 would be pretty cool to "clean up" dirty basement inerts
@@ -42,11 +45,8 @@ dirty basement gramps needs more convo
 archivist notice (probably not needed?)
 archivist "searching for mag glass" anim
 some restrictions ensuring all archivist options chosen
-dry cleaner cards should have "answer" as final
-should click on date in card to learn something
-lock self in humec til learned
-logbook notice
-logbook should have no notice until clicked (set reqs appropriately too- also append slip)
+archivist convo for between humec and dryclean
+logbook append slip
 dry cleaner direct "hmm, keep looking in there! I'm sure there's something!"
 lock in dry cleaner
 gramps (or others) should direct "I found a 'theodora youmans'" to "go see the archivist again"
