@@ -23,6 +23,6 @@ tmp_observation.raw_notifications = [
 tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.historicalsociety.collection",
+"!tunic.historicalsociety.collection.tunic.slip",
 ]];
 
