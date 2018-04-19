@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.library.microfiche";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -9168,7 +9168,7 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
-"!tunic.library.microfiche.newspaper",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -9324,7 +9324,7 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.library.microfiche.newspaper.hub",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
@@ -9432,7 +9432,7 @@ tmp_person.raw_notifications = [
 tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
-"tunic.library.microfiche.newspaper",
+"tunic.library.microfiche.reader.paper2",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -11168,7 +11168,7 @@ tmp_cutscene.raw_notifications = [
 tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
-"tunic.library.microfiche.newspaper.hub",
+"tunic.library.microfiche.reader.paper2",
 "!tunic.library.frontdesk.wellsbadge.hub",
 ]];
 tmp_cutscene.commands = [];
@@ -11340,7 +11340,7 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.library.microfiche.newspaper.hub",
+"!tunic.library.microfiche.reader.paper2",
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
@@ -11455,7 +11455,7 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"tunic.library.microfiche.newspaper.hub",
+"tunic.library.microfiche.reader.paper2",
 "!tunic.library.frontdesk.wellsbadge.hub",
 ]];
 
