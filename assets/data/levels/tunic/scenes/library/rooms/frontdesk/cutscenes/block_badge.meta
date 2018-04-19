@@ -18,7 +18,7 @@ tmp_cutscene.raw_notifications = [
 tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
-"tunic.library.microfiche.reader.paper2",
+"tunic.library.microfiche.reader.paper2.bingo",
 "!tunic.library.frontdesk.wellsbadge.hub",
 ]];
 tmp_cutscene.commands = [];

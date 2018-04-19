@@ -1617,7 +1617,10 @@ var notebookview = function()
   {
     self.edit_o = 0;
     for(var i = 0; !self.edit_o && i < self.cache_available_entrys.length; i++)
-      if(ptWithinBox(self.cache_available_entrys[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_entrys[i]; self.cache_available_entrys[i].dirty = true; }
+    {
+      var entry = self.cache_available_entrys[i];
+      if(entry.page == self.page && ptWithinBox(entry,evt.doX,evt.doY)) { self.edit_o = entry; entry.dirty = true; }
+    }
 
     if(!self.edit_o) return;
 
@@ -1720,7 +1723,8 @@ var notebookview = function()
       for(var i = 0; i < self.cache_available_entrys.length; i++)
       {
         entry = self.cache_available_entrys[i];
-        ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
+        if(entry.page == self.page)
+          ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
       }
       ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
       ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
