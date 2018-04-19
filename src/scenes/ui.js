@@ -1671,7 +1671,6 @@ var notebookview = function()
   {
   }
 
-
   self.click = function(evt)
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
@@ -1681,9 +1680,9 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       state_t = 0;
     }
-    else if(self.page > 0                && ptWithinBox(self.prev_box,evt.doX,evt.doY))
+    else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
       self.page--;
-    else if(self.page < self.last_page-1 && ptWithinBox(self.next_box,evt.doX,evt.doY))
+    else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
       self.page++;
   }
 
@@ -1710,7 +1709,9 @@ var notebookview = function()
         ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
 
+    if(self.page < self.last_page)
     ctx.drawImage(self.notebook_next_animcycle_inst.img, self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
+    if(self.page > 0)
     ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
 
     if(!my_notificationview.note.length)
