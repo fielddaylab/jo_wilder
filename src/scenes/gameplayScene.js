@@ -17,6 +17,8 @@ var GamePlayScene = function(game, stage)
 
   self.ready = function()
   {
+    var url_json = jsonFromURL();
+
     init_levels();
     cur_level = levels[0];         for(var i = 1; i < levels.length;          i++) if(levels[i].primary)          cur_level = levels[i];
 
@@ -42,7 +44,7 @@ var GamePlayScene = function(game, stage)
               if(speak.options.length == 1)
               {
                 option = speak.options[0];
-                if(option.unlocks.length == 0 && option.relocks.length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
+                if(option.reqs[0].length == 0 && option.raw_notifications.length == 0 && option.qtext.length == 1 && option.qtext[0] == ">")
                 {
                   var consumed_speak = option.target_speak_found;
                   if(consumed_speak && consumed_speak.raw_notifications.length == 0 && !consumed_speak.primary)
@@ -118,9 +120,9 @@ var GamePlayScene = function(game, stage)
       if(evt.key == " ") print_whole_level(cur_level,false);
       if(evt.key == "f") print_whole_level(cur_level,true);
       if(evt.key == "c") get_save_code();
-      if(evt.key == "l") load_save_code("00000616389760419852718324310032816209715200000020000092"); //to-archivist load state
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
+      if(evt.key == "t") DOUBLETIME = !DOUBLETIME;
       if(evt.key == "v")
       {
         if(my_camera == my_real_camera) my_camera = my_debug_camera;
@@ -138,7 +140,7 @@ var GamePlayScene = function(game, stage)
         }
         else
         {
-          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:4});
+          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:2});
           g.resize({stage:stage});
           ctx.font = text_font;
         }
@@ -159,6 +161,7 @@ var GamePlayScene = function(game, stage)
     }
 
     canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
+    ctx.font = text_font;
 
     state_cur = STATE_TRANSITION;
     state_stack = STATE_NAV;
@@ -166,6 +169,14 @@ var GamePlayScene = function(game, stage)
     state_from = STATE_NAV;
     state_to = state_stack;
     state_t = 0.5;
+
+    if(url_json.save)
+      load_save_code(url_json.save);
+
+    if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level.notifications);
+    cur_level.pre_met = true;
+
+    my_navigable.unlock_content();
     my_navigable.trigger_cutscenes();
   };
 
@@ -206,6 +217,7 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         my_avatar.tick();
         my_navigable.trigger_cutscenes();
+        my_toolbar.tick();
         break;
       case STATE_MAP:
         if(
@@ -501,7 +513,7 @@ var GamePlayScene = function(game, stage)
         else if(state_to == STATE_CUTSCENE)
         {
           state_t += state_t_speed;
-          if(my_loader.loading) state_t = 0.5;
+          if(state_t > 0.5 && my_loader.loading) state_t = 0.5;
         }
         else state_t += state_t_speed;
         break;
@@ -561,10 +573,13 @@ var GamePlayScene = function(game, stage)
       if(state_cur == STATE_NAV)
       {
         my_navigable.unlock_content();
-        if(querylocked(my_toolbar.notebook)) ;
-        if(querylocked(my_toolbar.map)) ;
+        my_notebookview.unlock_content();
+        my_toolbar.notebook_available = queryavailable(cur_level.notebook_reqs);
+        my_toolbar.map_available      = queryavailable(cur_level.map_reqs);
       }
     }
+
+    my_toolbar.tick();
   };
 
   var transition_draw = function()

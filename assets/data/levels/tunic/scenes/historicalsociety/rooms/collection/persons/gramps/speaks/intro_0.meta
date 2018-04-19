@@ -5,11 +5,9 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-"tunic.historicalsociety.collection.gramps.intro_0",
-];
+tmp_speak.reqs = [[
+"!tunic.historicalsociety.collection.gramps.intro_0",
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -423.9704776141978;
@@ -52,9 +50,9 @@ tmp_speak_command.raw_atext = "History, shmistory... How hard can it be?";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -475.7575757575758;
-tmp_speak_command.wy = 324.54545454545456;
-tmp_speak_command.w = 192;
+tmp_speak_command.wx = -484.3939394360149;
+tmp_speak_command.wy = 321.66666663739716;
+tmp_speak_command.w = 198;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -62,9 +60,9 @@ tmp_speak_command.raw_atext = "If I had time, I'd skedaddle over to the Basketba
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -387.9545454545455;
+tmp_speak_command.wx = -389.39393939393943;
 tmp_speak_command.wy = 281.3636363636364;
-tmp_speak_command.w = 129;
+tmp_speak_command.w = 131;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -72,9 +70,9 @@ tmp_speak_command.raw_atext = "Check out Wells' theory...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -435.45454545454544;
-tmp_speak_command.wy = 282.8030303030303;
-tmp_speak_command.w = 166;
+tmp_speak_command.wx = -449.84848484848476;
+tmp_speak_command.wy = 282.80303030303037;
+tmp_speak_command.w = 175;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

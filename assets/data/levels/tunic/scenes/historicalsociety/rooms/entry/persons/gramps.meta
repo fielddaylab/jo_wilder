@@ -6,17 +6,18 @@ tmp_person.wz = 0.1;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 70.01963636363632;
-tmp_person.hover_icon_wy = 149.80945454545446;
+tmp_person.hover_icon_wx = 87.93163636363631;
+tmp_person.hover_icon_wy = 180.74836363636354;
 tmp_person.animcycle_id = "gramps";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
-tmp_person.unlocks = [
-];
-tmp_person.relocks = [
-"tunic.historicalsociety.entry.groupconvo",
-];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.reqs = [[
+"!tunic.historicalsociety.entry.groupconvo",
+]];
 

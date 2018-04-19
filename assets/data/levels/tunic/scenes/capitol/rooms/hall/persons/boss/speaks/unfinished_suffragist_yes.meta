@@ -5,10 +5,8 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
+tmp_speak.reqs = [[
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 58.00000000000012;
@@ -19,5 +17,15 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "A suffragist!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 58.00000000000012;
+tmp_speak_command.wy = 296.4999999999999;
+tmp_speak_command.w = 132;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Nice work. But what does women's suffrage have to do with a Wisconsin tunic?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

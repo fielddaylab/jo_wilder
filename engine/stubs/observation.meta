@@ -11,6 +11,7 @@ tmp_observation.hover_icon_wy = 0;
 tmp_observation.animcycle_id = "null";
 tmp_observation.hover_cursor_animcycle_id = "null";
 tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "null";
 tmp_observation.blip_wx = 100;
@@ -19,8 +20,8 @@ tmp_observation.blip_w = 100;
 tmp_observation.blip_h = 30; //h of a single line
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.unlocks = [
-];
-tmp_observation.relocks = [
-];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+]];
 

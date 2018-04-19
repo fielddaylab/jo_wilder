@@ -7,9 +7,7 @@ tmp_scene.animcycle_id = "scene_humanecology";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_scene.unlocks = [
-"tunic.historicalsociety.frontdesk.archivist.slip",
-];
-tmp_scene.relocks = [
-];
+tmp_scene.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_0.slip",
+]];
 

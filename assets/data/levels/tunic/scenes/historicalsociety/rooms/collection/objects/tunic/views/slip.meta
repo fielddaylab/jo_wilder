@@ -5,8 +5,6 @@ tmp_view.raw_notifications = [
 "Huh? What's this?",
 "I'll make a note of it...",
 ];
-tmp_view.unlocks = [
-];
-tmp_view.relocks = [
-];
+tmp_view.reqs = [[
+]];
 

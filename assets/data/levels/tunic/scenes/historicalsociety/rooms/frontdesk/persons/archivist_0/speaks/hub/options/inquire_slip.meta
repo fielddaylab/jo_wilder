@@ -1,0 +1,8 @@
+tmp_option.index = 0;
+tmp_option.raw_qtext = "Do you know what this is? It was pinned to an old tunic.";
+tmp_option.target_speak = "slip";
+tmp_option.raw_notifications = [
+];
+tmp_option.reqs = [[
+]];
+

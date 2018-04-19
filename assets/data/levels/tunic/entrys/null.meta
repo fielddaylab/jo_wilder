@@ -1,4 +1,3 @@
-tmp_entry.primary = undefined;
 tmp_entry.ww = 116.99999999999996;
 tmp_entry.wh = 244.9999999999999;
 tmp_entry.wx = -427.50000000000006;
@@ -9,8 +8,6 @@ tmp_entry.animcycle_id = "null";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
-tmp_entry.unlocks = [
-];
-tmp_entry.relocks = [
-];
+tmp_entry.reqs = [[
+]];
 

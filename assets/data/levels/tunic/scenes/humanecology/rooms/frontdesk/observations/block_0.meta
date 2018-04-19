@@ -1,0 +1,28 @@
+tmp_observation.ww = 129.71702233250622;
+tmp_observation.wh = 355.57174051754725;
+tmp_observation.wx = 527.099447020509;
+tmp_observation.wy = 1.3192981212334587;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "I have a feeling there's a clue to be found in here...";
+tmp_observation.blip_wx = 226.82958718105655;
+tmp_observation.blip_wy = 140.99999999999994;
+tmp_observation.blip_w = 160;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!tunic.humanecology.frontdesk.businesscards",
+]];
+

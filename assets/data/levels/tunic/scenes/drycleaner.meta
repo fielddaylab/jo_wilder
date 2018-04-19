@@ -7,9 +7,7 @@ tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_scene.unlocks = [
-"tunic.humanecology.frontdesk.businesscards",
-];
-tmp_scene.relocks = [
-];
+tmp_scene.reqs = [[
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
+]];
 

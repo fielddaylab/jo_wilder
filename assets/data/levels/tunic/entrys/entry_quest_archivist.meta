@@ -1,4 +1,3 @@
-tmp_entry.primary = undefined;
 tmp_entry.ww = 356;
 tmp_entry.wh = 55.00000000000001;
 tmp_entry.wx = 185.99999999999994;
@@ -9,9 +8,7 @@ tmp_entry.animcycle_id = "entry_quest_archivist_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
-tmp_entry.unlocks = [
+tmp_entry.reqs = [[
 "tunic.historicalsociety.closet_dirty.gramps",
-];
-tmp_entry.relocks = [
-];
+]];
 

@@ -79,6 +79,7 @@ var loader = function()
       self.load_animcycle_inst(person.animcycle_inst);
       self.load_animcycle_inst(person.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(person.notice_icon_animcycle_inst);
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
@@ -93,6 +94,7 @@ var loader = function()
       self.load_animcycle_inst(object.animcycle_inst);
       self.load_animcycle_inst(object.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(object.notice_icon_animcycle_inst);
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
@@ -113,6 +115,7 @@ var loader = function()
       self.load_animcycle_inst(observation.animcycle_inst);
       self.load_animcycle_inst(observation.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(observation.notice_icon_animcycle_inst);
     }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
@@ -121,6 +124,7 @@ var loader = function()
       self.load_animcycle_inst(porthole.animcycle_inst);
       self.load_animcycle_inst(porthole.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(porthole.notice_icon_animcycle_inst);
     }
     var wildcard;
     for(var k = 0; k < room.wildcards.length; k++)
@@ -129,6 +133,7 @@ var loader = function()
       self.load_animcycle_inst(wildcard.animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(wildcard.notice_icon_animcycle_inst);
     }
     var cutscene;
     for(var k = 0; k < room.cutscenes.length; k++)
@@ -137,6 +142,7 @@ var loader = function()
       self.load_animcycle_inst(cutscene.animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_icon_animcycle_inst);
+      self.load_animcycle_inst(cutscene.notice_icon_animcycle_inst);
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
@@ -608,8 +614,7 @@ var gen_animcycle_inst = function(id,animcycles)
   var animcycle = find_animcycle(id,animcycles);
   var inst = new animcycle_inst();
   inst.animcycle = animcycle;
-  inst.frame_t = animcycle.offset_t;
-  inst.frame_i = 0;
+  inst.ready();
   inst.img = animcycle.frames[inst.frame_i];
   return inst;
 }
@@ -627,9 +632,15 @@ var animcycle_inst = function()
     while(self.frame_t > self.animcycle.frame_t)
     {
       self.frame_t -= self.animcycle.frame_t;
-      self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      if(self.animcycle.loop) self.frame_i = (self.frame_i+1)%self.animcycle.frames.length;
+      else                    self.frame_i = min(self.animcycle.frames.length-1,self.frame_i+1);
       self.img = self.animcycle.frames[self.frame_i];
     }
+  }
+  self.ready = function()
+  {
+    self.frame_t = animcycle.offset_t;
+    self.frame_i = 0;
   }
 }
 
@@ -646,20 +657,21 @@ var navigable = function()
   self.selected_act = 0;
   self.last_click = {x:0,y:0,wx:0,wy:0};
   self.nav_click = {x:0,y:0,wx:0,wy:0};
-  self.cache_unlocked_persons      = [];
-  self.cache_unlocked_objects      = [];
-  self.cache_unlocked_observations = [];
-  self.cache_unlocked_portholes    = [];
-  self.cache_unlocked_wildcards    = [];
-  self.cache_unlocked_cutscenes    = [];
-  self.cache_unlocked_inerts       = [];
-  self.cache_unlocked_drawables    = [];
+  self.cache_available_persons      = [];
+  self.cache_available_objects      = [];
+  self.cache_available_observations = [];
+  self.cache_available_portholes    = [];
+  self.cache_available_wildcards    = [];
+  self.cache_available_cutscenes    = [];
+  self.cache_available_inerts       = [];
+  self.cache_available_drawables    = [];
 
   self.consume_room = function(room)
   {
     self.room = room;
-    if(!self.room.key && self.room.notifications.length) my_notificationview.consume_notification(self.room.notifications);
-    self.room.key = true;
+    if(!self.room.met && self.room.notifications.length) my_notificationview.consume_notification(self.room.notifications);
+    self.room.pre_met = true;
+    self.room.met = true;
     self.unlock_content();
     self.selected_act = 0;
     my_real_camera.wx = 0;
@@ -672,58 +684,94 @@ var navigable = function()
       my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
     else
       my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
+    ga('send', 'pageview', self.room.fqid);
   }
 
   self.unlock_content = function()
   {
-    self.cache_unlocked_persons      = [];
-    self.cache_unlocked_objects      = [];
-    self.cache_unlocked_observations = [];
-    self.cache_unlocked_portholes    = [];
-    self.cache_unlocked_wildcards    = [];
-    self.cache_unlocked_cutscenes    = [];
-    self.cache_unlocked_inerts       = [];
+    self.cache_available_persons      = [];
+    self.cache_available_objects      = [];
+    self.cache_available_observations = [];
+    self.cache_available_portholes    = [];
+    self.cache_available_wildcards    = [];
+    self.cache_available_cutscenes    = [];
+    self.cache_available_inerts       = [];
 
-    self.cache_unlocked_drawables    = [];
-    self.cache_unlocked_bg_drawables = [];
-    self.cache_unlocked_fg_drawables = [];
+    self.cache_available_drawables    = [];
+    self.cache_available_bg_drawables = [];
+    self.cache_available_fg_drawables = [];
 
+    var o;
     for(var i = 0; i < self.room.persons.length; i++)
-      if(!querylocked(self.room.persons[i])) self.cache_unlocked_persons.push(self.room.persons[i]);
+      if(self.room.persons[i].available = queryavailable(self.room.persons[i].reqs))
+      {
+        o = self.room.persons[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_persons.push(o);
+      }
     for(var i = 0; i < self.room.objects.length; i++)
-      if(!querylocked(self.room.objects[i])) self.cache_unlocked_objects.push(self.room.objects[i]);
+      if(self.room.objects[i].available = queryavailable(self.room.objects[i].reqs))
+      {
+        o = self.room.objects[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_objects.push(o);
+      }
     for(var i = 0; i < self.room.observations.length; i++)
-      if(!querylocked(self.room.observations[i])) self.cache_unlocked_observations.push(self.room.observations[i]);
+      if(self.room.observations[i].available = queryavailable(self.room.observations[i].reqs))
+      {
+        o = self.room.observations[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_observations.push(o);
+      }
     for(var i = 0; i < self.room.portholes.length; i++)
-      if(!querylocked(self.room.portholes[i])) self.cache_unlocked_portholes.push(self.room.portholes[i]);
+      if(self.room.portholes[i].available = queryavailable(self.room.portholes[i].reqs))
+      {
+        o = self.room.portholes[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_portholes.push(o);
+      }
     for(var i = 0; i < self.room.wildcards.length; i++)
-      if(!querylocked(self.room.wildcards[i])) self.cache_unlocked_wildcards.push(self.room.wildcards[i]);
+      if(self.room.wildcards[i].available = queryavailable(self.room.wildcards[i].reqs))
+      {
+        o = self.room.wildcards[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_wildcards.push(o);
+      }
     for(var i = 0; i < self.room.cutscenes.length; i++)
-      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && !querylocked(self.room.cutscenes[i])) self.cache_unlocked_cutscenes.push(self.room.cutscenes[i]);
+      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && (self.room.cutscenes[i].available = queryavailable(self.room.cutscenes[i].reqs)))
+      {
+        o = self.room.cutscenes[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        self.cache_available_cutscenes.push(o);
+      }
     for(var i = 0; i < self.room.inerts.length; i++)
-      if(!querylocked(self.room.inerts[i])) self.cache_unlocked_inerts.push(self.room.inerts[i]);
+      if(self.room.inerts[i].available = queryavailable(self.room.inerts[i].reqs))
+      {
+        o = self.room.inerts[i];
+        self.cache_available_inerts.push(o);
+      }
 
     //insertion sort on each list
-    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_persons[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_persons[i]); }
-    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_objects[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_objects[i]); }
-    for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_observations[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_observations[i]); }
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_portholes[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_portholes[i]); }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_wildcards[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_wildcards[i]); }
-    for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
-    { var j = 0; while(j < self.cache_unlocked_drawables.length && self.cache_unlocked_cutscenes[i].wz >= self.cache_unlocked_drawables[j].wz) j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_cutscenes[i]); }
-    for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
+    for(var i = 0; i < self.cache_available_persons.length; i++)
+    { var j = 0; while(j < self.cache_available_drawables.length && self.cache_available_persons[i].wz >= self.cache_available_drawables[j].wz) j++; self.cache_available_drawables.splice(j,0,self.cache_available_persons[i]); }
+    for(var i = 0; i < self.cache_available_objects.length; i++)
+    { var j = 0; while(j < self.cache_available_drawables.length && self.cache_available_objects[i].wz >= self.cache_available_drawables[j].wz) j++; self.cache_available_drawables.splice(j,0,self.cache_available_objects[i]); }
+    for(var i = 0; i < self.cache_available_observations.length; i++)
+    { var j = 0; while(j < self.cache_available_drawables.length && self.cache_available_observations[i].wz >= self.cache_available_drawables[j].wz) j++; self.cache_available_drawables.splice(j,0,self.cache_available_observations[i]); }
+    for(var i = 0; i < self.cache_available_portholes.length; i++)
+    { var j = 0; while(j < self.cache_available_drawables.length && self.cache_available_portholes[i].wz >= self.cache_available_drawables[j].wz) j++; self.cache_available_drawables.splice(j,0,self.cache_available_portholes[i]); }
+    for(var i = 0; i < self.cache_available_wildcards.length; i++)
+    { var j = 0; while(j < self.cache_available_drawables.length && self.cache_available_wildcards[i].wz >= self.cache_available_drawables[j].wz) j++; self.cache_available_drawables.splice(j,0,self.cache_available_wildcards[i]); }
+    for(var i = 0; i < self.cache_available_cutscenes.length; i++)
+    { var j = 0; while(j < self.cache_available_drawables.length && self.cache_available_cutscenes[i].wz >= self.cache_available_drawables[j].wz) j++; self.cache_available_drawables.splice(j,0,self.cache_available_cutscenes[i]); }
+    for(var i = 0; i < self.cache_available_inerts.length; i++)
     {
-    if(self.cache_unlocked_inerts[i].g < 0)
-    { var j = 0; while(j < self.cache_unlocked_bg_drawables.length && self.cache_unlocked_inerts[i].wz >= self.cache_unlocked_bg_drawables[j].wz) j++; self.cache_unlocked_bg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
-    else if(self.cache_unlocked_inerts[i].g > 0)
-    { var j = 0; while(j < self.cache_unlocked_fg_drawables.length && self.cache_unlocked_inerts[i].wz >= self.cache_unlocked_fg_drawables[j].wz) j++; self.cache_unlocked_fg_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    if(self.cache_available_inerts[i].g < 0)
+    { var j = 0; while(j < self.cache_available_bg_drawables.length && self.cache_available_inerts[i].wz >= self.cache_available_bg_drawables[j].wz) j++; self.cache_available_bg_drawables.splice(j,0,self.cache_available_inerts[i]); }
+    else if(self.cache_available_inerts[i].g > 0)
+    { var j = 0; while(j < self.cache_available_fg_drawables.length && self.cache_available_inerts[i].wz >= self.cache_available_fg_drawables[j].wz) j++; self.cache_available_fg_drawables.splice(j,0,self.cache_available_inerts[i]); }
     else
-    { var j = 0; while(j < self.cache_unlocked_drawables.length    && self.cache_unlocked_inerts[i].wz >= self.cache_unlocked_drawables[j].wz)    j++; self.cache_unlocked_drawables.splice(j,0,self.cache_unlocked_inerts[i]); }
+    { var j = 0; while(j < self.cache_available_drawables.length    && self.cache_available_inerts[i].wz >= self.cache_available_drawables[j].wz)    j++; self.cache_available_drawables.splice(j,0,self.cache_available_inerts[i]); }
     }
   }
 
@@ -734,7 +782,7 @@ var navigable = function()
       for(var i = 0; i < cur_room.cutscenes.length; i++)
       {
         var cutscene = cur_room.cutscenes[i];
-        if(!cutscene.key && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && !querylocked(cutscene))
+        if(!cutscene.pre_met && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && (cutscene.available = queryavailable(cutscene.reqs)))
         {
           if(state_cur == STATE_NAV)
           {
@@ -966,35 +1014,35 @@ var navigable = function()
     for(var i = 0; !self.edit_o && i < self.room.lights.length;  i++) if(ptWithinBox(self.room.lights[i], evt.doX,evt.doY)) { self.edit_o = self.room.lights[i];  self.edit_o.wz = -1; self.room.dirty = true; }
     for(var i = 0; !self.edit_o && i < self.room.navs.length;    i++) if(ptWithinBox(self.room.navs[i],   evt.doX,evt.doY)) { self.edit_o = self.room.navs[i];    self.edit_o.wz = -1; self.room.dirty = true; }
     if(!self.edit_o && my_camera == my_debug_camera && ptWithinBox(my_real_camera,evt.doX,evt.doY)) { self.edit_o = self.camera_editor; self.camera_editor.consume_camera(); }
-    for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
-    for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_available_persons.length;      i++) { var o = self.cache_available_persons[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_available_objects.length;      i++) { var o = self.cache_available_objects[i];      if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_available_observations.length; i++) { var o = self.cache_available_observations[i]; if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_available_portholes.length;    i++) { var o = self.cache_available_portholes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_available_wildcards.length;    i++) { var o = self.cache_available_wildcards[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
+    for(var i = 0; i < self.cache_available_cutscenes.length;    i++) { var o = self.cache_available_cutscenes[i];    if(ptNear(o.x+o.w/2+o.act_x,o.y+o.h/2+o.act_y,10,evt.doX,evt.doY)) { self.edit_o = self.act_editor; self.act_editor.consume_act(o); } }
     for(var i = 0; i < self.room.entry_portholes_found.length;  i++) { var o = self.room.entry_portholes_found[i];  if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
                                                                      { var o = self.room;                           if(ptNear(o.target_start_x,o.target_start_y,  10,evt.doX,evt.doY)) { self.edit_o = self.target_start_editor; self.target_start_editor.consume_target_start(o); } }
-    for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
-    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
-    for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
-    for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
-    for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_available_persons.length;      i++) { var o = self.cache_available_persons[i];      if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_available_objects.length;      i++) { var o = self.cache_available_objects[i];      if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_available_observations.length; i++) { var o = self.cache_available_observations[i]; if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_available_portholes.length;    i++) { var o = self.cache_available_portholes[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_available_wildcards.length;    i++) { var o = self.cache_available_wildcards[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
+    for(var i = 0; i < self.cache_available_cutscenes.length;    i++) { var o = self.cache_available_cutscenes[i];    if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
 
-    for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-      if(ptWithinBox(self.cache_unlocked_persons[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_persons[i].wz)) { self.edit_o = self.cache_unlocked_persons[i]; self.cache_unlocked_persons[i].dirty = true; }
-    for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-      if(ptWithinBox(self.cache_unlocked_objects[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_objects[i].wz)) { self.edit_o = self.cache_unlocked_objects[i]; self.cache_unlocked_objects[i].dirty = true; }
-    for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-      if(ptWithinBox(self.cache_unlocked_observations[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_observations[i].wz)) { self.edit_o = self.cache_unlocked_observations[i]; self.cache_unlocked_observations[i].dirty = true; }
-    for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_portholes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_portholes[i].wz)) { self.edit_o = self.cache_unlocked_portholes[i]; self.cache_unlocked_portholes[i].dirty = true; }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-      if(ptWithinBox(self.cache_unlocked_wildcards[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_wildcards[i].wz)) { self.edit_o = self.cache_unlocked_wildcards[i]; self.cache_unlocked_wildcards[i].dirty = true; }
-    for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_cutscenes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_cutscenes[i].wz)) { self.edit_o = self.cache_unlocked_cutscenes[i]; self.cache_unlocked_cutscenes[i].dirty = true; }
-    for(var i = 0; i < self.cache_unlocked_inerts.length; i++)
-      if(ptWithinBox(self.cache_unlocked_inerts[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_unlocked_inerts[i].wz)) { if(SHOW_GROUNDS || self.cache_unlocked_inerts[i].g == 0) self.edit_o = self.cache_unlocked_inerts[i]; self.cache_unlocked_inerts[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_persons.length; i++)
+      if(ptWithinBox(self.cache_available_persons[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_persons[i].wz)) { self.edit_o = self.cache_available_persons[i]; self.cache_available_persons[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_objects.length; i++)
+      if(ptWithinBox(self.cache_available_objects[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_objects[i].wz)) { self.edit_o = self.cache_available_objects[i]; self.cache_available_objects[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_observations.length; i++)
+      if(ptWithinBox(self.cache_available_observations[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_observations[i].wz)) { self.edit_o = self.cache_available_observations[i]; self.cache_available_observations[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_portholes.length; i++)
+      if(ptWithinBox(self.cache_available_portholes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_portholes[i].wz)) { self.edit_o = self.cache_available_portholes[i]; self.cache_available_portholes[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_wildcards.length; i++)
+      if(ptWithinBox(self.cache_available_wildcards[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_wildcards[i].wz)) { self.edit_o = self.cache_available_wildcards[i]; self.cache_available_wildcards[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_cutscenes.length; i++)
+      if(ptWithinBox(self.cache_available_cutscenes[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_cutscenes[i].wz)) { self.edit_o = self.cache_available_cutscenes[i]; self.cache_available_cutscenes[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_inerts.length; i++)
+      if(ptWithinBox(self.cache_available_inerts[i],evt.doX,evt.doY) && (!self.edit_o || self.edit_o.wz < self.cache_available_inerts[i].wz)) { if(SHOW_GROUNDS || self.cache_available_inerts[i].g == 0) self.edit_o = self.cache_available_inerts[i]; self.cache_available_inerts[i].dirty = true; }
 
     if(!self.edit_o) return;
 
@@ -1057,12 +1105,12 @@ var navigable = function()
       //poor-mans 0-alloc array
       switch(i)
       {
-        case 0: l = self.cache_unlocked_persons; break;
-        case 1: l = self.cache_unlocked_objects; break;
-        case 2: l = self.cache_unlocked_observations; break;
-        case 3: l = self.cache_unlocked_wildcards; break;
-        case 4: l = self.cache_unlocked_cutscenes; break;
-        case 5: l = self.cache_unlocked_portholes; break;
+        case 0: l = self.cache_available_persons; break;
+        case 1: l = self.cache_available_objects; break;
+        case 2: l = self.cache_available_observations; break;
+        case 3: l = self.cache_available_wildcards; break;
+        case 4: l = self.cache_available_cutscenes; break;
+        case 5: l = self.cache_available_portholes; break;
       }
       for(var j = 0; j < l.length; j++)
       {
@@ -1093,24 +1141,24 @@ var navigable = function()
       self.nav_click.wy = self.last_click.wy;
 
       self.selected_act = 0;
-      for(var i = 0; i < self.cache_unlocked_persons.length; i++)
-        if(ptWithinBox(self.cache_unlocked_persons[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_persons[i].wz))
-          self.selected_act = self.cache_unlocked_persons[i];
-      for(var i = 0; i < self.cache_unlocked_objects.length; i++)
-        if(ptWithinBox(self.cache_unlocked_objects[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_objects[i].wz))
-          self.selected_act = self.cache_unlocked_objects[i];
-      for(var i = 0; i < self.cache_unlocked_observations.length; i++)
-        if(ptWithinBox(self.cache_unlocked_observations[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_observations[i].wz))
-          self.selected_act = self.cache_unlocked_observations[i];
-      for(var i = 0; i < self.cache_unlocked_portholes.length; i++)
-        if(ptWithinBox(self.cache_unlocked_portholes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_portholes[i].wz))
-          self.selected_act = self.cache_unlocked_portholes[i];
-      for(var i = 0; i < self.cache_unlocked_wildcards.length; i++)
-        if(ptWithinBox(self.cache_unlocked_wildcards[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_wildcards[i].wz))
-          self.selected_act = self.cache_unlocked_wildcards[i];
-      for(var i = 0; i < self.cache_unlocked_cutscenes.length; i++)
-        if(ptWithinBox(self.cache_unlocked_cutscenes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_unlocked_cutscenes[i].wz))
-          self.selected_act = self.cache_unlocked_cutscenes[i];
+      for(var i = 0; i < self.cache_available_persons.length; i++)
+        if(ptWithinBox(self.cache_available_persons[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_persons[i].wz))
+          self.selected_act = self.cache_available_persons[i];
+      for(var i = 0; i < self.cache_available_objects.length; i++)
+        if(ptWithinBox(self.cache_available_objects[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_objects[i].wz))
+          self.selected_act = self.cache_available_objects[i];
+      for(var i = 0; i < self.cache_available_observations.length; i++)
+        if(ptWithinBox(self.cache_available_observations[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_observations[i].wz))
+          self.selected_act = self.cache_available_observations[i];
+      for(var i = 0; i < self.cache_available_portholes.length; i++)
+        if(ptWithinBox(self.cache_available_portholes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_portholes[i].wz))
+          self.selected_act = self.cache_available_portholes[i];
+      for(var i = 0; i < self.cache_available_wildcards.length; i++)
+        if(ptWithinBox(self.cache_available_wildcards[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_wildcards[i].wz))
+          self.selected_act = self.cache_available_wildcards[i];
+      for(var i = 0; i < self.cache_available_cutscenes.length; i++)
+        if(ptWithinBox(self.cache_available_cutscenes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_cutscenes[i].wz))
+          self.selected_act = self.cache_available_cutscenes[i];
 
       if(self.selected_act)
       {
@@ -1141,26 +1189,26 @@ var navigable = function()
     for(var i = 0; i < self.room.navs.length;    i++) screenSpace(my_camera,canv,self.room.navs[i]);
     for(var i = 0; i < self.room.lights.length;  i++) screenSpace(my_camera,canv,self.room.lights[i]);
     for(var i = 0; i < self.room.shadows.length; i++) screenSpace(my_camera,canv,self.room.shadows[i]);
-    for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { self.cache_unlocked_persons[i].animcycle_inst.tick();      screenSpace(my_camera, canv, self.cache_unlocked_persons[i]); }
-    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { self.cache_unlocked_objects[i].animcycle_inst.tick();      screenSpace(my_camera, canv, self.cache_unlocked_objects[i]); }
-    for(var i = 0; i < self.cache_unlocked_observations.length; i++) { self.cache_unlocked_observations[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_unlocked_observations[i]); }
-    for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { self.cache_unlocked_portholes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_portholes[i]); }
-    for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { self.cache_unlocked_wildcards[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_wildcards[i]); }
-    for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { self.cache_unlocked_cutscenes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_unlocked_cutscenes[i]); }
-    for(var i = 0; i < self.cache_unlocked_inerts.length;       i++) { self.cache_unlocked_inerts[i].animcycle_inst.tick();       screenSpace(my_camera, canv, self.cache_unlocked_inerts[i]); }
+    for(var i = 0; i < self.cache_available_persons.length;      i++) { self.cache_available_persons[i].animcycle_inst.tick();      screenSpace(my_camera, canv, self.cache_available_persons[i]); }
+    for(var i = 0; i < self.cache_available_objects.length;      i++) { self.cache_available_objects[i].animcycle_inst.tick();      screenSpace(my_camera, canv, self.cache_available_objects[i]); }
+    for(var i = 0; i < self.cache_available_observations.length; i++) { self.cache_available_observations[i].animcycle_inst.tick(); screenSpace(my_camera, canv, self.cache_available_observations[i]); }
+    for(var i = 0; i < self.cache_available_portholes.length;    i++) { self.cache_available_portholes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_available_portholes[i]); }
+    for(var i = 0; i < self.cache_available_wildcards.length;    i++) { self.cache_available_wildcards[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_available_wildcards[i]); }
+    for(var i = 0; i < self.cache_available_cutscenes.length;    i++) { self.cache_available_cutscenes[i].animcycle_inst.tick();    screenSpace(my_camera, canv, self.cache_available_cutscenes[i]); }
+    for(var i = 0; i < self.cache_available_inerts.length;       i++) { self.cache_available_inerts[i].animcycle_inst.tick();       screenSpace(my_camera, canv, self.cache_available_inerts[i]); }
 
-    for(var i = 0; i < self.cache_unlocked_bg_drawables.length;    i++)
+    for(var i = 0; i < self.cache_available_bg_drawables.length;    i++)
     {
-      var d = self.cache_unlocked_bg_drawables[i];
+      var d = self.cache_available_bg_drawables[i];
       var m = (d.g*d.g)/5;
       d.dx = d.x + (my_camera.wx-d.wx)*m;
       d.dy = d.y - (my_camera.wy-d.wy)*m;
       d.dw = d.w;
       d.dh = d.h;
     }
-    for(var i = 0; i < self.cache_unlocked_fg_drawables.length;    i++)
+    for(var i = 0; i < self.cache_available_fg_drawables.length;    i++)
     {
-      var d = self.cache_unlocked_fg_drawables[i];
+      var d = self.cache_available_fg_drawables[i];
       var m = (d.g*d.g);
       d.dx = d.x - (my_camera.wx-d.wx)*m;
       d.dy = d.y + (my_camera.wy-d.wy)*m;
@@ -1177,16 +1225,45 @@ var navigable = function()
 
   self.draw = function()
   {
-    if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_unlocked_bg_drawables.length; i++) { var d = self.cache_unlocked_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
+    if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_available_bg_drawables.length; i++) { var d = self.cache_available_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
     drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
 
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
     var i = 0;
-    for(; i < self.cache_unlocked_drawables.length && self.cache_unlocked_drawables[i].wz < avi_wz; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
+    var d;
+    for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
+    {
+      d = self.cache_available_drawables[i];
+      drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(state_cur == STATE_NAV && d.notice)
+      {
+        w = cur_level.hover_w;
+        h = cur_level.hover_h;
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+      }
+    }
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
-    for(; i < self.cache_unlocked_drawables.length; i++) drawImageBox(self.cache_unlocked_drawables[i].animcycle_inst.img, self.cache_unlocked_drawables[i], ctx);
+    for(; i < self.cache_available_drawables.length; i++)
+    {
+      d = self.cache_available_drawables[i];
+      drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(state_cur == STATE_NAV && d.notice)
+      {
+        w = cur_level.hover_w;
+        h = cur_level.hover_h;
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+      }
+    }
 
-    if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_unlocked_fg_drawables.length; i++) { var d = self.cache_unlocked_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
+    if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_available_fg_drawables.length; i++) { var d = self.cache_available_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
 
     if(DEBUG)
     {
@@ -1201,28 +1278,28 @@ var navigable = function()
       ctx.strokeStyle = dark_gray;
                                                                       { var o = self.room;                          o.target_start_x = screenSpaceXpt(my_camera,canv,o.target_start_wx); o.target_start_y = screenSpaceYpt(my_camera,canv,o.target_start_wy); ctx.strokeRect(o.target_start_x-2,o.target_start_y-2,4,4); }
 
-      ctx.strokeStyle = red;     for(var i = 0; i < self.cache_unlocked_persons.length;      i++) strokeBox(self.cache_unlocked_persons[i],ctx);
-      ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_unlocked_objects.length;      i++) strokeBox(self.cache_unlocked_objects[i],ctx);
-      ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_unlocked_observations.length; i++) strokeBox(self.cache_unlocked_observations[i],ctx);
-      ctx.strokeStyle = green;   for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) strokeBox(self.cache_unlocked_portholes[i],ctx);
-      ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) strokeBox(self.cache_unlocked_wildcards[i],ctx);
-      ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) strokeBox(self.cache_unlocked_cutscenes[i],ctx);
-      ctx.strokeStyle = cyan;    for(var i = 0; i < self.cache_unlocked_inerts.length;       i++) strokeBox(self.cache_unlocked_inerts[i],ctx);
+      ctx.strokeStyle = red;     for(var i = 0; i < self.cache_available_persons.length;      i++) strokeBox(self.cache_available_persons[i],ctx);
+      ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_available_objects.length;      i++) strokeBox(self.cache_available_objects[i],ctx);
+      ctx.strokeStyle = blue;    for(var i = 0; i < self.cache_available_observations.length; i++) strokeBox(self.cache_available_observations[i],ctx);
+      ctx.strokeStyle = green;   for(var i = 0; i < self.cache_available_portholes.length;    i++) strokeBox(self.cache_available_portholes[i],ctx);
+      ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_available_wildcards.length;    i++) strokeBox(self.cache_available_wildcards[i],ctx);
+      ctx.strokeStyle = magenta; for(var i = 0; i < self.cache_available_cutscenes.length;    i++) strokeBox(self.cache_available_cutscenes[i],ctx);
+      ctx.strokeStyle = cyan;    for(var i = 0; i < self.cache_available_inerts.length;       i++) strokeBox(self.cache_available_inerts[i],ctx);
 
       ctx.strokeStyle = cyan;
-      for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_persons.length;      i++) { var o = self.cache_available_persons[i];      o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_objects.length;      i++) { var o = self.cache_available_objects[i];      o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_observations.length; i++) { var o = self.cache_available_observations[i]; o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_portholes.length;    i++) { var o = self.cache_available_portholes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_wildcards.length;    i++) { var o = self.cache_available_wildcards[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_cutscenes.length;    i++) { var o = self.cache_available_cutscenes[i];    o.act_x = screenSpaceW(my_camera,canv,o.act_wx); o.act_y = -screenSpaceH(my_camera,canv,o.act_wy); ctx.strokeRect(o.x+o.w/2+o.act_x-2,o.y+o.h/2+o.act_y-2,4,4); }
       ctx.strokeStyle = black;
-      for(var i = 0; i < self.cache_unlocked_persons.length;      i++) { var o = self.cache_unlocked_persons[i];      o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_objects.length;      i++) { var o = self.cache_unlocked_objects[i];      o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_observations.length; i++) { var o = self.cache_unlocked_observations[i]; o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_portholes.length;    i++) { var o = self.cache_unlocked_portholes[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_wildcards.length;    i++) { var o = self.cache_unlocked_wildcards[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
-      for(var i = 0; i < self.cache_unlocked_cutscenes.length;    i++) { var o = self.cache_unlocked_cutscenes[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_persons.length;      i++) { var o = self.cache_available_persons[i];      o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_objects.length;      i++) { var o = self.cache_available_objects[i];      o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_observations.length; i++) { var o = self.cache_available_observations[i]; o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_portholes.length;    i++) { var o = self.cache_available_portholes[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_wildcards.length;    i++) { var o = self.cache_available_wildcards[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
+      for(var i = 0; i < self.cache_available_cutscenes.length;    i++) { var o = self.cache_available_cutscenes[i];    o.hover_icon_x = screenSpaceW(my_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
 
       if(my_camera == my_debug_camera)
       {
@@ -1250,6 +1327,10 @@ var toolbar = function()
   self.icon_notebook_animcycle_inst;
   self.notebook = {x:20,  y:self.y+15, w:self.h-40, h:self.h-40};
   self.map      = {x:100, y:self.y+15, w:self.h-40, h:self.h-40};
+  self.notebook_available = false;
+  self.map_available = false;
+  self.notebook_bounce = 0;
+  self.map_bounce = 0;
 
   var MAP_ENABLED = 0;
 
@@ -1258,17 +1339,15 @@ var toolbar = function()
     self.toolbar_animcycle_inst       = gen_animcycle_inst(level.toolbar_animcycle_id,level.animcycles);
     self.icon_map_animcycle_inst      = gen_animcycle_inst(level.icon_map_animcycle_id,level.animcycles);
     self.icon_notebook_animcycle_inst = gen_animcycle_inst(level.icon_notebook_animcycle_id,level.animcycles);
-    self.notebook.unlocks = level.notebook_unlocks;
-    self.notebook.relocks = level.notebook_relocks;
-    self.notebook.locked = true;
-    self.map.unlocks = level.map_unlocks;
-    self.map.relocks = level.map_relocks;
-    self.map.locked = true;
+    self.notebook_available = false;
+    self.map_available = false;
+    self.notebook_bounce = 0;
+    self.map_bounce = 0;
   }
 
   self.click = function(evt)
   {
-    if(MAP_ENABLED && !self.map.locked && ptWithinBox(self.map,evt.doX,evt.doY))
+    if(MAP_ENABLED && self.map_available && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
       state_from = state_cur;
@@ -1277,7 +1356,7 @@ var toolbar = function()
       state_t = 0;
       my_mapview.unlock_content();
     }
-    if(!self.notebook.locked && ptWithinBox(self.notebook,evt.doX,evt.doY))
+    if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
       my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
@@ -1293,14 +1372,16 @@ var toolbar = function()
     self.toolbar_animcycle_inst.tick();
     self.icon_map_animcycle_inst.tick();
     self.icon_notebook_animcycle_inst.tick();
+    if(self.notebook_bounce > 0) self.notebook_bounce -= 0.01; else self.notebook_bounce = 0;
+    if(self.map_bounce      > 0) self.map_bounce      -= 0.01; else self.map_bounce      = 0;
   }
 
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
-    ctx.drawImage(self.toolbar_animcycle_inst.img,       self.x,         self.y         +yoff, self.w,         self.h);
-    if(!self.notebook.locked) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x,self.notebook.y+yoff, self.notebook.w,self.notebook.h);
-    if(MAP_ENABLED && !self.map.locked) ctx.drawImage(self.icon_map_animcycle_inst.img,      self.map.x,     self.map.y     +yoff, self.map.w,     self.map.h);
+    ctx.drawImage(self.toolbar_animcycle_inst.img, self.x, self.y +yoff, self.w, self.h);
+    if(self.notebook_available) ctx.drawImage(self.icon_notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff+sin(self.notebook_bounce*20)*10*self.notebook_bounce, self.notebook.w, self.notebook.h);
+    if(MAP_ENABLED && self.map_available) ctx.drawImage(self.icon_map_animcycle_inst.img, self.map.x, self.map.y +yoff, self.map.w, self.map.h);
 
     if(DEBUG)
     {
@@ -1325,15 +1406,15 @@ var mapview = function()
   self.level;
   self.selected_scene = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.cache_unlocked_scenes = [];
+  self.cache_available_scenes = [];
 
+  self.map = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.map);
   self.map_animcycle_inst;
 
   self.consume_level = function(level)
   {
     self.level = level;
-    if(!self.level.key && self.level.notifications.length) my_notificationview.consume_notification(self.level.notifications);
-    self.level.key = true;
     self.unlock_content();
     self.selected_scene = 0;
     self.map_animcycle_inst = gen_animcycle_inst(level.map_animcycle_id, level.animcycles);
@@ -1342,9 +1423,9 @@ var mapview = function()
 
   self.unlock_content = function()
   {
-    self.cache_unlocked_scenes = [];
+    self.cache_available_scenes = [];
     for(var i = 0; i < self.level.scenes.length; i++)
-      if(!querylocked(self.level.scenes[i])) self.cache_unlocked_scenes.push(self.level.scenes[i]);
+      if(self.level.scenes[i].available = queryavailable(self.level.scenes[i].reqs)) self.cache_available_scenes.push(self.level.scenes[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1356,8 +1437,8 @@ var mapview = function()
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_scenes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_scenes[i]; self.cache_unlocked_scenes[i].dirty = true; }
+    for(var i = 0; !self.edit_o && i < self.cache_available_scenes.length; i++)
+      if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_scenes[i]; self.cache_available_scenes[i].dirty = true; }
 
     if(!self.edit_o) return;
 
@@ -1404,8 +1485,8 @@ var mapview = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
-      if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY))
+    for(var i = 0; i < self.cache_available_scenes.length; i++)
+      if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY))
         my_cursor.mode = CURSOR_UI;
   }
   self.unhover = function(evt)
@@ -1421,11 +1502,11 @@ var mapview = function()
       state_cur = STATE_TRANSITION;
       state_t = 0;
     }
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
+    for(var i = 0; i < self.cache_available_scenes.length; i++)
     {
-      if(ptWithinBox(self.cache_unlocked_scenes[i],evt.doX,evt.doY))
+      if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY))
       {
-        self.selected_scene = self.cache_unlocked_scenes[i];
+        self.selected_scene = self.cache_available_scenes[i];
         state_from = state_cur;
         state_to = state_stack;
         state_cur = STATE_TRANSITION;
@@ -1437,18 +1518,18 @@ var mapview = function()
   self.tick = function()
   {
     self.map_animcycle_inst.tick();
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++)
+    for(var i = 0; i < self.cache_available_scenes.length; i++)
     {
-      self.cache_unlocked_scenes[i].animcycle_inst.tick();
-      screenSpace(my_ui_camera,canv,self.cache_unlocked_scenes[i]);
+      self.cache_available_scenes[i].animcycle_inst.tick();
+      screenSpace(my_ui_camera,canv,self.cache_available_scenes[i]);
     }
   }
 
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h
-    ctx.drawImage(self.map_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.drawImage(self.cache_unlocked_scenes[i].animcycle_inst.img, self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+    ctx.drawImage(self.map_animcycle_inst.img, self.map.x, self.map.y+yoff, self.map.w, self.map.h);
+    for(var i = 0; i < self.cache_available_scenes.length; i++) ctx.drawImage(self.cache_available_scenes[i].animcycle_inst.img, self.cache_available_scenes[i].x, self.cache_available_scenes[i].y+yoff, self.cache_available_scenes[i].w, self.cache_available_scenes[i].h);
 
     if(!my_notificationview.note.length)
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
@@ -1458,9 +1539,9 @@ var mapview = function()
       ctx.strokeStyle = red;
       ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
-      for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.strokeRect(self.cache_unlocked_scenes[i].x, self.cache_unlocked_scenes[i].y+yoff, self.cache_unlocked_scenes[i].w, self.cache_unlocked_scenes[i].h);
+      for(var i = 0; i < self.cache_available_scenes.length; i++) ctx.strokeRect(self.cache_available_scenes[i].x, self.cache_available_scenes[i].y+yoff, self.cache_available_scenes[i].w, self.cache_available_scenes[i].h);
       ctx.strokeStyle = black;
-      for(var i = 0; i < self.cache_unlocked_scenes.length; i++) ctx.fillText(self.cache_unlocked_scenes[i].fqid, self.cache_unlocked_scenes[i].x+10, self.cache_unlocked_scenes[i].y+yoff+20);
+      for(var i = 0; i < self.cache_available_scenes.length; i++) ctx.fillText(self.cache_available_scenes[i].fqid, self.cache_available_scenes[i].x+10, self.cache_available_scenes[i].y+yoff+20);
     }
   }
 }
@@ -1476,13 +1557,16 @@ var notebookview = function()
 
   self.entrys;
   self.notebook_animcycle_inst;
+  self.notebook = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.notebook);
   self.exit_animcycle_inst;
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.prev_box = {x:10,             y:100, w:90, h:90};
   self.next_box = {x:canv.width-100, y:100, w:90, h:90};
-  self.cache_unlocked_entrys = [];
+  self.cache_available_entrys = [];
+  self.n_available_entrys = 0;
 
   self.page = 0;
   self.last_page = 0;
@@ -1495,21 +1579,30 @@ var notebookview = function()
     self.exit_animcycle_inst = gen_animcycle_inst(level.exit_animcycle_id, level.animcycles);
     self.notebook_next_animcycle_inst = gen_animcycle_inst(level.notebook_next_animcycle_id, level.animcycles);
     self.notebook_prev_animcycle_inst = gen_animcycle_inst(level.notebook_prev_animcycle_id, level.animcycles);
+    self.n_available_entrys = 0;
   }
 
   self.unlock_content = function()
   {
-    self.cache_unlocked_entrys = [];
+    self.cache_available_entrys = [];
     self.last_page = 0;
     for(var i = 0; i < self.entrys.length; i++)
-      if(!querylocked(self.entrys[i]))
+    {
+      var l = self.entrys[i].available;
+      self.entrys[i].available = queryavailable(self.entrys[i].reqs);
+      if(l && self.entrys[i].available) ga('send', 'event', 'capitol_entry', 'available', self.entrys[i].fqid, self.n_available_entrys+1);
+      if(self.entrys[i].available)
       {
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         //sort by page->z
         var j = 0;
-        for(; j < self.cache_unlocked_entrys.length; j++) if(self.entrys[i].page < self.cache_unlocked_entrys[j].page || (self.entrys[i].page == self.cache_unlocked_entrys[j].page && self.entrys[i].wz < self.cache_unlocked_entrys[j].wz)) break;
-        self.cache_unlocked_entrys.splice(j,0,self.entrys[i]);
+        for(; j < self.cache_available_entrys.length; j++) if(self.entrys[i].page < self.cache_available_entrys[j].page || (self.entrys[i].page == self.cache_available_entrys[j].page && self.entrys[i].wz < self.cache_available_entrys[j].wz)) break;
+        self.cache_available_entrys.splice(j,0,self.entrys[i]);
       }
+    }
+    if(self.cache_available_entrys.length > self.n_available_entrys)
+      my_toolbar.notebook_bounce = 1;
+    self.n_available_entrys = self.cache_available_entrys.length;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1521,8 +1614,8 @@ var notebookview = function()
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    for(var i = 0; !self.edit_o && i < self.cache_unlocked_entrys.length; i++)
-      if(ptWithinBox(self.cache_unlocked_entrys[i],evt.doX,evt.doY)) { self.edit_o = self.cache_unlocked_entrys[i]; self.cache_unlocked_entrys[i].dirty = true; }
+    for(var i = 0; !self.edit_o && i < self.cache_available_entrys.length; i++)
+      if(ptWithinBox(self.cache_available_entrys[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_entrys[i]; self.cache_available_entrys[i].dirty = true; }
 
     if(!self.edit_o) return;
 
@@ -1591,10 +1684,10 @@ var notebookview = function()
 
   self.tick = function()
   {
-    for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+    for(var i = 0; i < self.cache_available_entrys.length; i++)
     {
-      self.cache_unlocked_entrys[i].animcycle_inst.tick();
-      screenSpace(my_ui_camera,canv,self.cache_unlocked_entrys[i]);
+      self.cache_available_entrys[i].animcycle_inst.tick();
+      screenSpace(my_ui_camera,canv,self.cache_available_entrys[i]);
     }
     self.notebook_animcycle_inst.tick();
   }
@@ -1602,12 +1695,12 @@ var notebookview = function()
   self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
-    ctx.drawImage(self.notebook_animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
+    ctx.drawImage(self.notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff, self.notebook.w, self.notebook.h);
 
     var entry;
-    for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+    for(var i = 0; i < self.cache_available_entrys.length; i++)
     {
-      entry = self.cache_unlocked_entrys[i];
+      entry = self.cache_available_entrys[i];
       if(entry.page == self.page)
         ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
@@ -1622,9 +1715,9 @@ var notebookview = function()
     {
       ctx.strokeStyle = black;
       var entry;
-      for(var i = 0; i < self.cache_unlocked_entrys.length; i++)
+      for(var i = 0; i < self.cache_available_entrys.length; i++)
       {
-        entry = self.cache_unlocked_entrys[i];
+        entry = self.cache_available_entrys[i];
         ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
       }
       ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
@@ -1775,28 +1868,31 @@ var objectview = function()
   self.h = canv.height;
 
   self.object;
+  self.obj = {wx:0,wy:0,ww:880,wh:660};
+  screenSpace(my_ui_camera,canv,self.obj);
   self.cur_view = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.cache_unlocked_zones = [];
+  self.cache_available_zones = [];
 
   self.consume_object = function(object)
   {
     self.object = object;
-    if(!self.object.key && self.object.notifications.length) my_notificationview.consume_notification(self.object.notifications);
-    self.object.key = true;
+    if(!self.object.pre_met && self.object.notifications.length) my_notificationview.consume_notification(self.object.notifications);
+    self.object.pre_met = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
-    if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
-    self.cur_view.key = true;
+    self.cur_view.animcycle_inst.ready();
+    if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+    self.cur_view.pre_met = true;
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
   }
 
   self.unlock_content = function()
   {
-    self.cache_unlocked_zones = [];
+    self.cache_available_zones = [];
     for(var i = 0; i < self.cur_view.zones.length; i++)
-      if(!querylocked(self.cur_view.zones[i])) self.cache_unlocked_zones.push(self.cur_view.zones[i]);
+      if(self.cur_view.zones[i].available = queryavailable(self.cur_view.zones[i].reqs)) self.cache_available_zones.push(self.cur_view.zones[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1809,9 +1905,9 @@ var objectview = function()
   {
     self.edit_o = 0;
     var zone;
-    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+    for(var i = 0; i < self.cache_available_zones.length; i++)
     {
-      zone = self.cache_unlocked_zones[i];
+      zone = self.cache_available_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY)) { self.edit_o = zone; zone.dirty = true; }
     }
 
@@ -1860,8 +1956,8 @@ var objectview = function()
   self.hover = function(evt)
   {
     my_cursor.mode = CURSOR_NORMAL;
-    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
-      if(ptWithinBox(self.cache_unlocked_zones[i],evt.doX,evt.doY))
+    for(var i = 0; i < self.cache_available_zones.length; i++)
+      if(ptWithinBox(self.cache_available_zones[i],evt.doX,evt.doY))
         my_cursor.mode = CURSOR_UI;
   }
   self.unhover = function(evt)
@@ -1872,22 +1968,28 @@ var objectview = function()
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
+      self.cur_view.met = true;
+      self.object.met = true;
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
       state_t = 0;
     }
     var zone;
-    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+    for(var i = 0; i < self.cache_available_zones.length; i++)
     {
-      zone = self.cache_unlocked_zones[i];
+      zone = self.cache_available_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
-        if(!zone.key && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
-        zone.key = true;
+        if(!zone.met && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
+        zone.pre_met = true;
+        zone.met = true;
+        self.cur_view.met = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
-        if(!self.cur_view.key && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
-        self.cur_view.key = true;
+        self.cur_view.animcycle_inst.ready();
+        if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+        self.cur_view.pre_met = true;
+        self.cur_view.met = true;
         self.unlock_content();
         return;
       }
@@ -1897,10 +1999,10 @@ var objectview = function()
   self.tick = function()
   {
     self.cur_view.animcycle_inst.tick();
-    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+    for(var i = 0; i < self.cache_available_zones.length; i++)
     {
-      self.cache_unlocked_zones[i].animcycle_inst.tick();
-      screenSpace(my_ui_camera,canv,self.cache_unlocked_zones[i]);
+      self.cache_available_zones[i].animcycle_inst.tick();
+      screenSpace(my_ui_camera,canv,self.cache_available_zones[i]);
     }
   }
 
@@ -1908,10 +2010,10 @@ var objectview = function()
   {
     var yoff = (1-t)*self.h;
     var zone;
-    ctx.drawImage(self.cur_view.animcycle_inst.img, self.x, self.y+yoff, self.w, self.h);
-    for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+    ctx.drawImage(self.cur_view.animcycle_inst.img, self.obj.x, self.obj.y+yoff, self.obj.w, self.obj.h);
+    for(var i = 0; i < self.cache_available_zones.length; i++)
     {
-      zone = self.cache_unlocked_zones[i];
+      zone = self.cache_available_zones[i];
       ctx.strokeStyle = white;
       ctx.drawImage(zone.animcycle_inst.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
@@ -1922,15 +2024,16 @@ var objectview = function()
     if(DEBUG)
     {
       ctx.strokeStyle = white;
-      for(var i = 0; i < self.cache_unlocked_zones.length; i++)
+      for(var i = 0; i < self.cache_available_zones.length; i++)
       {
-        zone = self.cache_unlocked_zones[i];
+        zone = self.cache_available_zones[i];
         ctx.strokeRect(zone.x, zone.y+yoff, zone.w, zone.h);
       }
       ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
     }
   }
+
 }
 
 var observationview = function()
@@ -1965,8 +2068,8 @@ var observationview = function()
   self.consume_observation = function(observation)
   {
     self.observation = observation;
-    if(!self.observation.key && self.observation.notifications.length) my_notificationview.consume_notification(self.observation.notifications);
-    self.observation.key = true;
+    if(!self.observation.pre_met && self.observation.notifications.length) my_notificationview.consume_notification(self.observation.notifications);
+    self.observation.pre_met = true;
     self.ui_state = UI_STATE_IN_OBSERVATION;
     self.ui_state_t = 0;
     self.ui_state_p = 0;
@@ -2066,6 +2169,7 @@ var observationview = function()
 
   self.click = function(evt)
   {
+    self.observation.met = true;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
     {
@@ -2148,8 +2252,8 @@ var personview = function()
   self.person;
   self.cur_speak = 0;
   self.cur_speak_command_i = 0;
-  self.cache_unlocked_speaks = [];
-  self.cache_unlocked_options = [];
+  self.cache_available_speaks = [];
+  self.cache_available_options = [];
 
   self.bubble_color = "#242224";
   self.text_color = white;
@@ -2178,8 +2282,8 @@ var personview = function()
   self.consume_person = function(person)
   {
     self.person = person;
-    if(!self.person.key && self.person.notifications.length) my_notificationview.consume_notification(self.person.notifications);
-    self.person.key = true;
+    if(!self.person.pre_met && self.person.notifications.length) my_notificationview.consume_notification(self.person.notifications);
+    self.person.pre_met = true;
     self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
     self.ui_state_t = 0;
@@ -2200,6 +2304,8 @@ var personview = function()
       !self.clicked_option.target_speak_found //option w/ null target
     )
     {
+      self.cur_speak.met = true;
+      self.person.met = true;
       self.ui_state = UI_STATE_NULL;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -2215,10 +2321,13 @@ var personview = function()
       self.ui_state = UI_STATE_IN_SPEAK;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
+      self.cur_speak.met = true;
+      self.clicked_option.pre_met = true;
+      self.clicked_option.met = true;
       self.cur_speak = self.clicked_option.target_speak_found;
       self.cur_speak_command_i = 0;
-      if(!self.cur_speak.key && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
-      self.cur_speak.key = true;
+      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
+      self.cur_speak.pre_met = true;
       self.unlock_content();
     }
     self.clicked_option = 0;
@@ -2226,44 +2335,44 @@ var personview = function()
 
   self.unlock_content = function()
   {
-    self.cache_unlocked_speaks = [];
+    self.cache_available_speaks = [];
     for(var i = 0; i < self.person.speaks.length; i++)
-      if(!querylocked(self.person.speaks[i])) self.cache_unlocked_speaks.push(self.person.speaks[i]);
+      if(self.person.speaks[i].available = queryavailable(self.person.speaks[i].reqs)) self.cache_available_speaks.push(self.person.speaks[i]);
 
     if(!self.cur_speak)
     {
       self.cur_speak_i = 0;
-      self.cur_speak = self.cache_unlocked_speaks[0];
-      for(var i = 1; i < self.cache_unlocked_speaks.length; i++)
-        if(self.cache_unlocked_speaks[i].primary > self.cur_speak.primary)
-          self.cur_speak = self.cache_unlocked_speaks[i];
-      if(!self.cur_speak.key && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
-      self.cur_speak.key = true;
+      self.cur_speak = self.cache_available_speaks[0];
+      for(var i = 1; i < self.cache_available_speaks.length; i++)
+        if(self.cache_available_speaks[i].primary > self.cur_speak.primary)
+          self.cur_speak = self.cache_available_speaks[i];
+      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
+      self.cur_speak.pre_met = true;
     }
 
     self.unlock_options();
   }
   self.unlock_options = function()
   {
-    self.cache_unlocked_options = [];
+    self.cache_available_options = [];
     for(var i = 0; i < self.cur_speak.options.length; i++)
     {
-      if(!querylocked(self.cur_speak.options[i]))
-        self.cache_unlocked_options.push(self.cur_speak.options[i]);
+      if(self.cur_speak.options[i].available = queryavailable(self.cur_speak.options[i].reqs))
+        self.cache_available_options.push(self.cur_speak.options[i]);
     }
     //bubble sort on index
     var sorted = false;
     while(!sorted)
     {
       sorted = true;
-      for(var i = 0; i < self.cache_unlocked_options.length-1; i++)
+      for(var i = 0; i < self.cache_available_options.length-1; i++)
       {
-        var option = self.cache_unlocked_options[i];
-        var noption = self.cache_unlocked_options[i+1];
+        var option = self.cache_available_options[i];
+        var noption = self.cache_available_options[i+1];
         if(option.index > noption.index)
         {
-          self.cache_unlocked_options[i] = noption;
-          self.cache_unlocked_options[i+1] = option;
+          self.cache_available_options[i] = noption;
+          self.cache_available_options[i+1] = option;
           sorted = false;
         }
       }
@@ -2271,8 +2380,8 @@ var personview = function()
 
     self.inline_option = 0;
     if(
-       !self.cache_unlocked_options.length ||
-      (self.cache_unlocked_options.length == 1 && self.cache_unlocked_options[0].raw_qtext == ">")
+       !self.cache_available_options.length ||
+      (self.cache_available_options.length == 1 && self.cache_available_options[0].raw_qtext == ">")
     )
       self.inline_option = 1;
   }
@@ -2417,9 +2526,9 @@ var personview = function()
     {
       var oyoff;
       oyoff = speak.options_y+5;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      for(var i = 0; i < self.cache_available_options.length; i++)
       {
-        option = self.cache_unlocked_options[i];
+        option = self.cache_available_options[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
           if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
@@ -2447,14 +2556,14 @@ var personview = function()
 
     if(self.cur_speak_command_i == self.cur_speak.commands.length-1)
     {
-      if(self.cache_unlocked_options.length > 1) //multiple options- find
+      if(self.cache_available_options.length > 1) //multiple options- find
       {
         var oyoff;
 
         oyoff = speak.options_y+5;
-        for(var i = 0; i < self.cache_unlocked_options.length; i++)
+        for(var i = 0; i < self.cache_available_options.length; i++)
         {
-          option = self.cache_unlocked_options[i];
+          option = self.cache_available_options[i];
           for(var j = 0; j < option.qtext.length; j++)
           {
             if(ptWithin(speak.options_x,oyoff,speak.options_w,speak.options_h,evt.doX,evt.doY))
@@ -2463,7 +2572,7 @@ var personview = function()
           }
         }
       }
-      else if(self.cache_unlocked_options.length == 1) self.clicked_option = self.cache_unlocked_options[0]; //1 options- pick it
+      else if(self.cache_available_options.length == 1) self.clicked_option = self.cache_available_options[0]; //1 options- pick it
       else self.clicked_option = 1; //no options- leave
     }
     else self.clicked_option = 1; //still in chain
@@ -2472,8 +2581,9 @@ var personview = function()
     {
       if(self.clicked_option !== 1) //1 == next speak command
       {
-        if(!self.clicked_option.key && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
-        self.clicked_option.key = true;
+        if(!self.clicked_option.pre_met && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
+        self.clicked_option.pre_met = true;
+        self.clicked_option.met = true;
       }
       if(self.ui_state != UI_STATE_OUT)
       {
@@ -2551,7 +2661,6 @@ var personview = function()
     ctx.fill();
 
     ctx.fillStyle = self.text_color;
-    ctx.font = text_font;
     oyoff = 0;
     for(var j = 0; j < speak_command.atext.length; j++)
     {
@@ -2574,7 +2683,7 @@ var personview = function()
 
       oyoff = speak.options_y;
       var h = 0;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++) h += self.cache_unlocked_options[i].qtext.length*speak.options_h;
+      for(var i = 0; i < self.cache_available_options.length; i++) h += self.cache_available_options[i].qtext.length*speak.options_h;
       ctx.fillStyle = self.bubble_color;
       fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
 
@@ -2592,9 +2701,9 @@ var personview = function()
       ctx.fill();
 
       ctx.fillStyle = self.text_color;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      for(var i = 0; i < self.cache_available_options.length; i++)
       {
-        option = self.cache_unlocked_options[i];
+        option = self.cache_available_options[i];
         if(option == self.hovered_option)
         {
           ctx.fillStyle = self.hover_color;
@@ -2606,7 +2715,7 @@ var personview = function()
           ctx.fillText(option.qtext[j],speak.options_x,yoff+oyoff+speak.options_h);
           oyoff += speak.options_h;
         }
-        if(i+1 < self.cache_unlocked_options.length)
+        if(i+1 < self.cache_available_options.length)
         {
           ctx.strokeStyle = gray;
           drawLine(speak.options_x,yoff+oyoff+5,speak.options_x+speak.options_w,yoff+oyoff+5,ctx);
@@ -2629,9 +2738,9 @@ var personview = function()
       }
 
       oyoff = speak.options_y;
-      for(var i = 0; i < self.cache_unlocked_options.length; i++)
+      for(var i = 0; i < self.cache_available_options.length; i++)
       {
-        option = self.cache_unlocked_options[i];
+        option = self.cache_available_options[i];
         for(var j = 0; j < option.qtext.length; j++)
         {
           ctx.strokeRect(speak.options_x,yoff+oyoff,speak.options_w,speak.options_h);
@@ -2656,9 +2765,10 @@ var wildcardview = function()
   self.consume_wildcard = function(wildcard)
   {
     self.wildcard = wildcard;
-    if(!self.wildcard.key && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
-    self.wildcard.key = true;
-    self.wildcard.consume_self();
+    if(!self.wildcard.pre_met && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
+    self.wildcard.pre_met = true;
+    self.wildcard.met = true; //technically should wait for dismiss, but can't guarantee dismiss by custom code. needs solution.
+    self.wildcard.consume_self(self.wildcard);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -2716,8 +2826,8 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
-    if(!self.cutscene.key && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene.notifications);
-    self.cutscene.key = true;
+    if(!self.cutscene.pre_met && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene.notifications);
+    self.cutscene.pre_met = true;
 
     self.cutscene_entitys = [];
     self.t = 0;
@@ -3075,6 +3185,7 @@ var cutsceneview = function()
 
     if(self.end)
     {
+      self.cutscene.met = true;
       self.cutscene_entitys = [];
       self.frame_commands = [];
       self.editable_frame_commands = [];
@@ -3092,7 +3203,6 @@ var cutsceneview = function()
   self.draw = function(t)
   {
     ctx.fillStyle = "#4c4c4c";
-    ctx.font = text_font;
 
     //bubble sort on z
     var sorted = false;
@@ -3164,7 +3274,6 @@ var cutsceneview = function()
         ctx.fill();
 
         ctx.fillStyle = self.text_color;
-        ctx.font = text_font;
         var oyoff = 0;
         for(var j = 0; j < c.text.length; j++)
         {

@@ -1,20 +1,18 @@
 tmp_speak.primary = 2;
-tmp_speak.options_wx = -318.5256196551244;
-tmp_speak.options_wy = 115.00000000000001;
-tmp_speak.options_w = 229;
+tmp_speak.options_wx = -305.52561965577746;
+tmp_speak.options_wy = 121.00000000000001;
+tmp_speak.options_w = 197;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-"tunic.drycleaner.frontdesk.worker.slip01",
-];
+tmp_speak.reqs = [[
+"!tunic.drycleaner.frontdesk.worker.slip01",
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -113.86646775955367;
+tmp_speak_command.wx = -4.974729340696678;
 tmp_speak_command.wy = 261;
-tmp_speak_command.w = 300.9942688897165;
+tmp_speak_command.w = 169.99426888971652;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "cleaner";
 tmp_speak_command.audio_id = "null";

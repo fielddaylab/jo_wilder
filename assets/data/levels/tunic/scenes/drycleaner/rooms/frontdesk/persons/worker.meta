@@ -1,7 +1,7 @@
-tmp_person.ww = 149.9999999999999;
-tmp_person.wh = 272;
-tmp_person.wx = 226.0995987494197;
-tmp_person.wy = 12;
+tmp_person.ww = 111.99999999999996;
+tmp_person.wh = 270;
+tmp_person.wx = 207.0995987494196;
+tmp_person.wy = 13;
 tmp_person.wz = 0;
 tmp_person.act_wx = -283.32082648203334;
 tmp_person.act_wy = -70;
@@ -11,11 +11,12 @@ tmp_person.hover_icon_wy = 120.99999999999999;
 tmp_person.animcycle_id = "cleaner";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
-tmp_person.unlocks = [
-];
-tmp_person.relocks = [
-];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.reqs = [[
+]];
 

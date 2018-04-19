@@ -3,7 +3,7 @@ tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
-tmp_level.avatar_ww = 124.2914274419755;
+tmp_level.avatar_ww = 124.29142744197549;
 tmp_level.avatar_wh = 227.18935293838604;
 tmp_level.exit_animcycle_id = "exit";
 tmp_level.toolbar_animcycle_id = "null";
@@ -27,16 +27,11 @@ tmp_level.notifications_h = 30;
 tmp_level.target_lerp_s = 0.03;
 tmp_level.raw_notifications = [
 ];
-tmp_level.unlocks = [
-];
-tmp_level.relocks = [
-];
-tmp_level.notebook_unlocks = [
+tmp_level.reqs = [[
+]];
+tmp_level.notebook_reqs = [[
 "tunic.historicalsociety.closet.notebook",
-];
-tmp_level.notebook_relocks = [
-];
-tmp_level.map_unlocks = [
-];
-tmp_level.map_relocks = [
-];
+]];
+tmp_level.map_reqs = [[
+]];
+

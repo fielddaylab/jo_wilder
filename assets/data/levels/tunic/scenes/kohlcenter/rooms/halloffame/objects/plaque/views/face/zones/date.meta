@@ -1,0 +1,14 @@
+tmp_zone.ww = 152;
+tmp_zone.wh = 40.99999999999997;
+tmp_zone.wx = 9.000000000000014;
+tmp_zone.wy = -84.49999999999996;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "face";
+tmp_zone.raw_notifications = [
+"The slip I found is from wayyy back in 1916. But the women's team didn't even start until 1974!",
+];
+tmp_zone.reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+]];
+

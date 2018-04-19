@@ -5,8 +5,6 @@ tmp_inert.wy = 39.64786873874294;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.2;
 tmp_inert.animcycle_id = "room_historicalsociety_closet_fgpipes";
-tmp_inert.unlocks = [
-];
-tmp_inert.relocks = [
-];
+tmp_inert.reqs = [[
+]];
 

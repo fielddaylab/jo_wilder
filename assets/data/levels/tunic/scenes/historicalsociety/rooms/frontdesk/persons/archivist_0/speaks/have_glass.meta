@@ -1,0 +1,23 @@
+tmp_speak.primary = 97;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.reqs = [[
+"tunic.historicalsociety.frontdesk.magnify",
+"!tunic.historicalsociety.frontdesk.archivist_0.have_glass",
+]];
+tmp_speak.commands = [];
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Now that's more like it! Guess I can spare a minute.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

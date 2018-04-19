@@ -5,15 +5,13 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
-tmp_speak.unlocks = [
-];
-tmp_speak.relocks = [
-];
+tmp_speak.reqs = [[
+]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -482.95454545454544;
-tmp_speak_command.wy = 324.54545454545456;
-tmp_speak_command.w = 197;
+tmp_speak_command.wx = -484.3939393939394;
+tmp_speak_command.wy = 321.66666666666674;
+tmp_speak_command.w = 199;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

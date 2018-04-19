@@ -1,4 +1,3 @@
-tmp_entry.primary = undefined;
 tmp_entry.ww = 358.0000000000001;
 tmp_entry.wh = 150.00000000000003;
 tmp_entry.wx = 181.99999999999997;
@@ -9,9 +8,7 @@ tmp_entry.animcycle_id = "entry_cleanercard_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
-tmp_entry.unlocks = [
-"tunic.humanecology.frontdesk.businesscards",
-];
-tmp_entry.relocks = [
-];
+tmp_entry.reqs = [[
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
+]];
 
