@@ -54,6 +54,7 @@ gramps (or others) should direct "I found a 'theodora youmans'" to "go see the a
 library id card notice
 librarian notice
 librarian shorten text bubble
+lock in microfiche
 coffee accusation is weird given we just saw wells went to taxidermist- should be flipped
 archivist_2 convo wobbles between teddy drama and "I like suffragists" weirdly
 need archivist_2 "I found it!" after you've _been_ to the stacks

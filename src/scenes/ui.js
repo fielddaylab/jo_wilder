@@ -639,8 +639,10 @@ var animcycle_inst = function()
   }
   self.ready = function()
   {
-    self.frame_t = animcycle.offset_t;
+    self.frame_t = self.animcycle.offset_t-1;
     self.frame_i = 0;
+    self.tick();
+    self.img = self.animcycle.frames[self.frame_i];
   }
 }
 
@@ -1563,8 +1565,8 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:10,             y:100, w:90, h:90};
-  self.next_box = {x:canv.width-100, y:100, w:90, h:90};
+  self.prev_box = {x:130,            y:canv.height-200, w:160, h:160};
+  self.next_box = {x:canv.width-290, y:canv.height-200, w:160, h:160};
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
 
@@ -1615,7 +1617,10 @@ var notebookview = function()
   {
     self.edit_o = 0;
     for(var i = 0; !self.edit_o && i < self.cache_available_entrys.length; i++)
-      if(ptWithinBox(self.cache_available_entrys[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_entrys[i]; self.cache_available_entrys[i].dirty = true; }
+    {
+      var entry = self.cache_available_entrys[i];
+      if(entry.page == self.page && ptWithinBox(entry,evt.doX,evt.doY)) { self.edit_o = entry; entry.dirty = true; }
+    }
 
     if(!self.edit_o) return;
 
@@ -1666,7 +1671,6 @@ var notebookview = function()
   {
   }
 
-
   self.click = function(evt)
   {
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
@@ -1676,9 +1680,9 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       state_t = 0;
     }
-    else if(self.page > 0                && ptWithinBox(self.prev_box,evt.doX,evt.doY))
+    else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
       self.page--;
-    else if(self.page < self.last_page-1 && ptWithinBox(self.next_box,evt.doX,evt.doY))
+    else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
       self.page++;
   }
 
@@ -1705,7 +1709,9 @@ var notebookview = function()
         ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
     }
 
+    if(self.page < self.last_page)
     ctx.drawImage(self.notebook_next_animcycle_inst.img, self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
+    if(self.page > 0)
     ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
 
     if(!my_notificationview.note.length)
@@ -1718,7 +1724,8 @@ var notebookview = function()
       for(var i = 0; i < self.cache_available_entrys.length; i++)
       {
         entry = self.cache_available_entrys[i];
-        ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
+        if(entry.page == self.page)
+          ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
       }
       ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
       ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
