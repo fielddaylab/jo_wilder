@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.library.microfiche";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -11554,13 +11554,13 @@ tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 4;
 tmp_room.nav_max_wz = 10;
 tmp_room.navs = [
-{wx:11, wy:-194.49999999999997, ww:744, wh:261 },
+{wx:10.504266621348336, wy:-164, ww:566.00666856617, wh:338 },
 ];
 tmp_room.lights = [
-{wx:11, wy:-194.49999999999997, ww:744, wh:261 },
+{wx:-8, wy:-249.5, ww:744, wh:261 },
 ];
 tmp_room.shadows = [
-{wx:11, wy:-194.49999999999997, ww:744, wh:261 },
+{wx:-29, wy:-225.50000000000028, ww:744, wh:261 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
@@ -11624,15 +11624,16 @@ tmp_zone.fqid = "tunic.library.microfiche.reader.paper0.next";
 {
 tmp_zone.ww = 41.99999999999998;
 tmp_zone.wh = 43.000000000000014;
-tmp_zone.wx = 335.99999999999994;
-tmp_zone.wy = 3.499999999999897;
-tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.wx = 28.00000000000007;
+tmp_zone.wy = -223.49999999999997;
+tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper1";
 tmp_zone.raw_notifications = [
 ];
 tmp_zone.reqs = [[
 ]];
+
 tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
 }
@@ -11656,17 +11657,38 @@ tmp_zone = new zone();
 tmp_zone.id = "next";
 tmp_zone.fqid = "tunic.library.microfiche.reader.paper1.next";
 {
-tmp_zone.ww = 41.99999999999998;
-tmp_zone.wh = 43.000000000000014;
-tmp_zone.wx = 335.99999999999994;
-tmp_zone.wy = 3.499999999999897;
-tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.ww = 36.99999999999998;
+tmp_zone.wh = 27.000000000000018;
+tmp_zone.wx = 25.49999999999997;
+tmp_zone.wy = -223.5000000000001;
+tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper2";
 tmp_zone.raw_notifications = [
 ];
 tmp_zone.reqs = [[
 ]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+tmp_zone = new zone();
+tmp_zone.id = "prev";
+tmp_zone.fqid = "tunic.library.microfiche.reader.paper1.prev";
+{
+tmp_zone.ww = 35.99999999999998;
+tmp_zone.wh = 31.000000000000018;
+tmp_zone.wx = -24.00000000000001;
+tmp_zone.wy = -222.49999999999997;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper0";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.reqs = [[
+]];
+
 tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
 }
@@ -11712,17 +11734,38 @@ tmp_zone = new zone();
 tmp_zone.id = "next";
 tmp_zone.fqid = "tunic.library.microfiche.reader.paper2.next";
 {
-tmp_zone.ww = 41.99999999999998;
-tmp_zone.wh = 43.000000000000014;
-tmp_zone.wx = 335.99999999999994;
-tmp_zone.wy = 3.499999999999897;
-tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.ww = 34.99999999999998;
+tmp_zone.wh = 26.00000000000002;
+tmp_zone.wx = 24.50000000000007;
+tmp_zone.wy = -223.0000000000001;
+tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper0";
 tmp_zone.raw_notifications = [
 ];
 tmp_zone.reqs = [[
 ]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+tmp_zone = new zone();
+tmp_zone.id = "prev";
+tmp_zone.fqid = "tunic.library.microfiche.reader.paper2.prev";
+{
+tmp_zone.ww = 33.99999999999998;
+tmp_zone.wh = 28.00000000000002;
+tmp_zone.wx = -23.000000000000025;
+tmp_zone.wy = -225.00000000000014;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper1";
+tmp_zone.raw_notifications = [
+];
+tmp_zone.reqs = [[
+]];
+
 tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
 }
@@ -11812,13 +11855,14 @@ tmp_inert.fqid = "tunic.library.microfiche.chair";
 {
 tmp_inert.ww = 195.00000001659674;
 tmp_inert.wh = 199.99999999999997;
-tmp_inert.wx = -258.49997849573856;
-tmp_inert.wy = -19.000000000000014;
+tmp_inert.wx = -251.2611670970259;
+tmp_inert.wy = -10.000000000000071;
 tmp_inert.wz = 1;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "microfichechair";
 tmp_inert.reqs = [[
 ]];
+
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);

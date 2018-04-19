@@ -1,7 +1,7 @@
-tmp_zone.ww = 34.99999999999998;
-tmp_zone.wh = 26.00000000000002;
-tmp_zone.wx = 24.50000000000007;
-tmp_zone.wy = -223.0000000000001;
+tmp_zone.ww = 35.99999999999998;
+tmp_zone.wh = 31.000000000000018;
+tmp_zone.wx = -24.00000000000001;
+tmp_zone.wy = -222.49999999999997;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper0";
