@@ -639,8 +639,10 @@ var animcycle_inst = function()
   }
   self.ready = function()
   {
-    self.frame_t = animcycle.offset_t;
+    self.frame_t = self.animcycle.offset_t-1;
     self.frame_i = 0;
+    self.tick();
+    self.img = self.animcycle.frames[self.frame_i];
   }
 }
 
