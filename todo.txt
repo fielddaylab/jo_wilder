@@ -45,7 +45,9 @@ dirty basement gramps needs more convo
 archivist notice (probably not needed?)
 archivist "searching for mag glass" anim
 some restrictions ensuring all archivist options chosen
+humec shouldn't go direct to "badgers are good at checkers"
 archivist convo for between humec and dryclean
+gramps convo for between humec and dryclean
 logbook append slip
 dry cleaner direct "hmm, keep looking in there! I'm sure there's something!"
 lock in dry cleaner
