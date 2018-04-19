@@ -7840,7 +7840,7 @@ tmp_cutscene_command.wx = -390.57745454545443;
 tmp_cutscene_command.wy = 273.794909090909;
 tmp_cutscene_command.w = 185;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Come on, Jo! Let's take a peek at the new artifact!";
+tmp_cutscene_command.raw_text = "Jo! Let's go take a gander at the artifact!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
