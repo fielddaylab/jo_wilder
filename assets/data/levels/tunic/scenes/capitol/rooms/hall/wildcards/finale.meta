@@ -15,7 +15,7 @@ tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
 tmp_wildcard.reqs = [[
-"tunic.historicalsociety.stacks.journalsaz.hub",
+"tunic.historicalsociety.stacks.journals.hub",
 ]];
 
 ENUM=0;
