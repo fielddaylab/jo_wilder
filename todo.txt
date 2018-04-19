@@ -50,12 +50,10 @@ archivist convo for between humec and dryclean
 gramps convo for between humec and dryclean
 logbook append slip
 dry cleaner direct "hmm, keep looking in there! I'm sure there's something!"
-lock in dry cleaner
 gramps (or others) should direct "I found a 'theodora youmans'" to "go see the archivist again"
 library id card notice
 librarian notice
 librarian shorten text bubble
-separate to archivist_2
 coffee accusation is weird given we just saw wells went to taxidermist- should be flipped
 archivist_2 convo wobbles between teddy drama and "I like suffragists" weirdly
 need archivist_2 "I found it!" after you've _been_ to the stacks
