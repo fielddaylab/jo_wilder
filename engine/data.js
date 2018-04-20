@@ -7448,58 +7448,6 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "found_0";
-tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.found_0";
-{
-tmp_speak.primary = 5;
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30;
-tmp_speak.raw_notifications = [
-];
-tmp_speak.reqs = [[
-"tunic.historicalsociety.collection.tunic.slip",
-"!tunic.historicalsociety.collection.gramps.found_0",
-]];
-tmp_speak.commands = [];
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -402.3484848484849;
-tmp_speak_command.wy = 284.24242424242425;
-tmp_speak_command.w = 141;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Hey, what'd you find there, Jo?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 117.27272727272737;
-tmp_speak_command.wy = 182.04545454545456;
-tmp_speak_command.w = 171;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Not sure. I found a date on a paper from the year 1916";
-tmp_speak_command.speaker = SPEAKER_PLAYER;
-tmp_speak.commands.push(tmp_speak_command);
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -484.39393939393943;
-tmp_speak_command.wy = 282.8030303030303;
-tmp_speak_command.w = 198;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Hot Dog! That's a clue if I've ever seen one!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
-for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);
-}
-tmp_person.speaks.push(tmp_speak);
-tmp_speak = new speak();
 tmp_speak.id = "look_0";
 tmp_speak.fqid = "tunic.historicalsociety.collection.gramps.look_0";
 {
