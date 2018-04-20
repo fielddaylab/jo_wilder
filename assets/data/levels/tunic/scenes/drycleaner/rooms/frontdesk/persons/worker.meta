@@ -2,7 +2,7 @@ tmp_person.ww = 111.99999999999996;
 tmp_person.wh = 270;
 tmp_person.wx = 207.0995987494196;
 tmp_person.wy = 13;
-tmp_person.wz = 0;
+tmp_person.wz = 1;
 tmp_person.act_wx = -283.32082648203334;
 tmp_person.act_wy = -70;
 tmp_person.act_anim = true;
@@ -19,4 +19,3 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 ]];
-
