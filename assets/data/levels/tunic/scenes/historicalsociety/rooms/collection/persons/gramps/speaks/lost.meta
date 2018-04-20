@@ -1,13 +1,24 @@
-tmp_speak.primary = false;
-tmp_speak.options_wx = 192.12121212121102;
-tmp_speak.options_wy = -32.42424242424292;
+tmp_speak.primary = 3;
+tmp_speak.options_wx = -396.59090920705773;
+tmp_speak.options_wy = 30.909090911870123;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
+"tunic.historicalsociety.collection.gramps.found",
 ]];
 tmp_speak.commands = [];
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 115.61603186688953;
+tmp_speak_command.wy = 141.74762384153541;
+tmp_speak_command.w = 163;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "What should I do?";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -484.3939393939394;
 tmp_speak_command.wy = 321.66666666666674;

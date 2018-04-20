@@ -16,7 +16,6 @@ tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
 tmp_object.notice_reqs = [[
-"tunic.historicalsociety.collection.gramps.intro_0",
 "!tunic.historicalsociety.collection.tunic.slip",
 ]];
 tmp_object.reqs = [[
