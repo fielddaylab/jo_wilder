@@ -6,7 +6,7 @@ tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "face";
 tmp_zone.raw_notifications = [
-"The slip I found is from wayyy back in 1916. But the women's team didn't even start until 1974!",
+"The slip says 1916 but the team didn't start until 1974!",
 ];
 tmp_zone.reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",

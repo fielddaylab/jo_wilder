@@ -43,7 +43,7 @@ tmp_cutscene_command.wx = -80.7069090909091;
 tmp_cutscene_command.wy = -21.578524687948935;
 tmp_cutscene_command.w = 194;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Is this yours, Grampa?";
+tmp_cutscene_command.raw_text = "Is this coffee yours, Grampa?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

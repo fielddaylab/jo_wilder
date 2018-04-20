@@ -27,7 +27,7 @@ tmp_speak_command.w = 171;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Not sure- looks like it's from 1916...";
+tmp_speak_command.raw_atext = "Not sure. I found a date on a paper from the year 1916";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
