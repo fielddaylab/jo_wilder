@@ -47,7 +47,7 @@ tmp_cutscene_command.wx = -698.706909090909;
 tmp_cutscene_command.wy = 189.42147531205103;
 tmp_cutscene_command.w = 279;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Wish I had time to see the archivist upstairs.";
+tmp_cutscene_command.raw_text = "Wish I had time to see the archivist.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

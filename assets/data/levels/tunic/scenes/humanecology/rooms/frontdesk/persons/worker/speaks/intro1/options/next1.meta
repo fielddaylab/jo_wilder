@@ -1,5 +1,5 @@
 tmp_option.index = 0;
-tmp_option.raw_qtext = "Well, maybe one cup… but I need to ask you something first.";
+tmp_option.raw_qtext = "Well, maybe one cup, but I need to ask you something first.";
 tmp_option.target_speak = "intro2";
 tmp_option.raw_notifications = [
 ];

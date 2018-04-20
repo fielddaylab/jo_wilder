@@ -16,7 +16,7 @@ tmp_speak_command.w = 340;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "How lovely, a visitor! Take a look around. Would you care for some tea?";
+tmp_speak_command.raw_atext = "How lovely, a visitor! Would you care for some tea?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

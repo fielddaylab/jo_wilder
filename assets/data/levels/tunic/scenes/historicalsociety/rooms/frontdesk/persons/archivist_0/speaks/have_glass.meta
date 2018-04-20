@@ -17,7 +17,7 @@ tmp_speak_command.w = 236;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Now that's more like it! Guess I can spare a minute.";
+tmp_speak_command.raw_atext = "Now that's more like it! Did you have a question?.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
