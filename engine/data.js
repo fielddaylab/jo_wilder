@@ -10005,6 +10005,29 @@ tmp_view.reqs = [[
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);
 tmp_zone = new zone();
+tmp_zone.id = "bingo";
+tmp_zone.fqid = "tunic.historicalsociety.stacks.journals.pic_2.bingo";
+{
+tmp_zone.ww = 107;
+tmp_zone.wh = 156;
+tmp_zone.wx = -176.4999999999999;
+tmp_zone.wy = -158;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "pic_2";
+tmp_zone.raw_notifications = [
+"Hey, this is Youmans!",
+"And Look! She's wearing the shirt!",
+"I should go to the Capitol and let everyone know!",
+];
+tmp_zone.reqs = [[
+]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
+tmp_zone = new zone();
 tmp_zone.id = "next";
 tmp_zone.fqid = "tunic.historicalsociety.stacks.journals.pic_2.next";
 {
