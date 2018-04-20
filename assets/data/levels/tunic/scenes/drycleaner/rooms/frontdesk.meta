@@ -6,8 +6,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.nav_min_wz = 2;
+tmp_room.nav_max_wz = 3;
 tmp_room.navs = [
 {wx:26.500010478189893, wy:-188.4999999999999, ww:925.0000209563811, wh:224.9999999999998 },
 ];
@@ -27,4 +27,3 @@ tmp_room.raw_notifications = [
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
-
