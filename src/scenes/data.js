@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.humanecology.frontdesk";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -10356,8 +10356,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.nav_min_wz = 1;
+tmp_room.nav_max_wz = 9;
 tmp_room.navs = [
 {wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
 ];
@@ -10377,7 +10377,6 @@ tmp_room.raw_notifications = [
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "worker";
@@ -10387,7 +10386,7 @@ tmp_person.ww = 158.1362046610845;
 tmp_person.wh = 286.00000000000006;
 tmp_person.wx = -243.38601940974914;
 tmp_person.wy = -73.19999999999995;
-tmp_person.wz = 0;
+tmp_person.wz = 3;
 tmp_person.act_wx = 201.17807825439044;
 tmp_person.act_wy = -83.99999999999999;
 tmp_person.act_anim = true;
@@ -10404,7 +10403,6 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 ]];
-
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
 tmp_person.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_person.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);
@@ -10689,7 +10687,6 @@ tmp_object.notice_reqs = [[
 tmp_object.reqs = [[
 "tunic.humanecology.frontdesk.worker.better",
 ]];
-
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
