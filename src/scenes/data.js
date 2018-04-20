@@ -4317,7 +4317,7 @@ tmp_wildcard.commands = [
     {
       my_cursor.mode = CURSOR_NORMAL;
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
-        if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           my_cursor.mode = CURSOR_UI;
     }
   }
@@ -4371,7 +4371,7 @@ tmp_wildcard.commands = [
         //find response
         for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
-          if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
             if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
             {
@@ -4580,8 +4580,8 @@ for(var i = 0; i < tmp_wildcard.raw_notifications.length; i++) tmp_wildcard.noti
 }
 tmp_room.wildcards.push(tmp_wildcard);
 tmp_wildcard = new wildcard();
-tmp_wildcard.id = "unfinished_1";
-tmp_wildcard.fqid = "tunic.capitol.hall.unfinished_1";
+tmp_wildcard.id = "unfinished";
+tmp_wildcard.fqid = "tunic.capitol.hall.unfinished";
 {
 tmp_wildcard.ww = 163.69696768113278;
 tmp_wildcard.wh = 325.84848523435653;
@@ -4744,7 +4744,7 @@ tmp_wildcard.commands = [
     {
       my_cursor.mode = CURSOR_NORMAL;
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
-        if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           my_cursor.mode = CURSOR_UI;
     }
   }
@@ -4798,7 +4798,7 @@ tmp_wildcard.commands = [
         //find response
         for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
-          if(ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
             if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
               self.failed = 1;
