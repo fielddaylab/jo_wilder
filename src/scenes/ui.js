@@ -1565,8 +1565,8 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:130,            y:canv.height-200, w:160, h:160};
-  self.next_box = {x:canv.width-290, y:canv.height-200, w:160, h:160};
+  self.prev_box = {x:75,             y:canv.height-120, w:80, h:80 };
+  self.next_box = {x:canv.width-145, y:canv.height-120, w:80, h:80 };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
 

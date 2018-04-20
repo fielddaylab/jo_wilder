@@ -9,6 +9,6 @@ tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.paperwork",
 ]];
 
