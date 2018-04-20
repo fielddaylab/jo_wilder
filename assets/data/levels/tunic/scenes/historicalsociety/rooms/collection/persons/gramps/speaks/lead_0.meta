@@ -19,9 +19,9 @@ tmp_speak_command.raw_atext = "You should check out the Basketball Center to tes
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -501.6666666666666;
+tmp_speak_command.wx = -454.1666666666666;
 tmp_speak_command.wy = 281.3636363636364;
-tmp_speak_command.w = 209;
+tmp_speak_command.w = 181;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

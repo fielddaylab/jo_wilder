@@ -1,0 +1,14 @@
+tmp_entry.ww = 360;
+tmp_entry.wh = 182.00000000000009;
+tmp_entry.wx = -176;
+tmp_entry.wy = -168;
+tmp_entry.wz = 100;
+tmp_entry.page = 1;
+tmp_entry.animcycle_id = "entry_javajacket";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.closet_dirty.trigger_coffee",
+]];
+

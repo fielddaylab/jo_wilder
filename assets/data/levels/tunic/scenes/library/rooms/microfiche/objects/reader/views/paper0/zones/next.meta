@@ -1,11 +1,12 @@
 tmp_zone.ww = 41.99999999999998;
 tmp_zone.wh = 43.000000000000014;
-tmp_zone.wx = 335.99999999999994;
-tmp_zone.wy = 3.499999999999897;
-tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.wx = 28.00000000000007;
+tmp_zone.wy = -223.49999999999997;
+tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper1";
 tmp_zone.raw_notifications = [
 ];
 tmp_zone.reqs = [[
 ]];
+

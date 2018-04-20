@@ -1,12 +1,11 @@
-tmp_zone.ww = 100;
-tmp_zone.wh = 100;
-tmp_zone.wx = 100;
-tmp_zone.wy = 100;
-tmp_zone.animcycle_id = "null";
+tmp_zone.ww = 32.99999999999998;
+tmp_zone.wh = 33.99999999999999;
+tmp_zone.wx = 361.50000000000006;
+tmp_zone.wy = -75.99999999999997;
+tmp_zone.animcycle_id = "nextarrow";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "pic_0";
 tmp_zone.raw_notifications = [
 ];
 tmp_zone.reqs = [[
 ]];
-

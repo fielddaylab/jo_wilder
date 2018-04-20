@@ -1,14 +1,14 @@
-tmp_entry.ww = 356;
-tmp_entry.wh = 55.00000000000001;
-tmp_entry.wx = 185.99999999999994;
-tmp_entry.wy = 10.499999999999982;
+tmp_entry.ww = 357;
+tmp_entry.wh = 127;
+tmp_entry.wx = -186.5;
+tmp_entry.wy = 216.5;
 tmp_entry.wz = 100;
-tmp_entry.page = 0;
+tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_quest_archivist_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.door_archivist",
 ]];
 

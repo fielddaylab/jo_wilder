@@ -1,14 +1,14 @@
-tmp_entry.ww = 348;
-tmp_entry.wh = 182.00000000000003;
-tmp_entry.wx = -197;
-tmp_entry.wy = 196;
+tmp_entry.ww = 351;
+tmp_entry.wh = 131;
+tmp_entry.wx = 186.49999999999977;
+tmp_entry.wy = -18.499999999999993;
 tmp_entry.wz = 100;
-tmp_entry.page = 0;
+tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_quest_squeakycleaners_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.collection.tunic",
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
 

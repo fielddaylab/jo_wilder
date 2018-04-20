@@ -1,7 +1,7 @@
-tmp_zone.ww = 100;
-tmp_zone.wh = 100;
-tmp_zone.wx = 100;
-tmp_zone.wy = 100;
+tmp_zone.ww = 36;
+tmp_zone.wh = 283;
+tmp_zone.wx = 141.99999999999997;
+tmp_zone.wy = -6.500000000000057;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "pic_0";
