@@ -2250,8 +2250,8 @@ tmp_entry.fqid = "tunic.entry_archivistcoffee";
 {
 tmp_entry.ww = 348;
 tmp_entry.wh = 182.00000000000003;
-tmp_entry.wx = -191;
-tmp_entry.wy = 50.000000000000014;
+tmp_entry.wx = -190;
+tmp_entry.wy = -85.00000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_archivistcoffee_img";
@@ -2272,8 +2272,8 @@ tmp_entry.fqid = "tunic.entry_basketballplaque";
 {
 tmp_entry.ww = 314;
 tmp_entry.wh = 162.99999999999997;
-tmp_entry.wx = -182.0000000000001;
-tmp_entry.wy = 205.5;
+tmp_entry.wx = -184.0000000000001;
+tmp_entry.wy = 210.5;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_basketballplaque_img";
@@ -2295,7 +2295,7 @@ tmp_entry.fqid = "tunic.entry_cleanercard";
 tmp_entry.ww = 366.0000000000001;
 tmp_entry.wh = 148.00000000000003;
 tmp_entry.wx = 183;
-tmp_entry.wy = 104.00000000000007;
+tmp_entry.wy = -61.9999999999999;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_cleanercard_img";
@@ -2360,8 +2360,8 @@ tmp_entry.fqid = "tunic.entry_javajacket";
 {
 tmp_entry.ww = 360;
 tmp_entry.wh = 182.00000000000009;
-tmp_entry.wx = -176;
-tmp_entry.wy = -168;
+tmp_entry.wx = -180;
+tmp_entry.wy = -158;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_javajacket";
@@ -2382,10 +2382,10 @@ tmp_entry.fqid = "tunic.entry_logbook";
 {
 tmp_entry.ww = 348;
 tmp_entry.wh = 182.00000000000003;
-tmp_entry.wx = 180.9999999999998;
-tmp_entry.wy = -163.99999999999994;
+tmp_entry.wx = -192.00000000000023;
+tmp_entry.wy = 197.00000000000017;
 tmp_entry.wz = 100;
-tmp_entry.page = 1;
+tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_logbook_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
@@ -2443,13 +2443,35 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
-tmp_entry.id = "entry_quest_archivist";
-tmp_entry.fqid = "tunic.entry_quest_archivist";
+tmp_entry.id = "entry_quest_archivist_0";
+tmp_entry.fqid = "tunic.entry_quest_archivist_0";
 {
 tmp_entry.ww = 357;
 tmp_entry.wh = 127;
-tmp_entry.wx = -186.5;
-tmp_entry.wy = 216.5;
+tmp_entry.wx = 189.49999999999997;
+tmp_entry.wy = 204.5;
+tmp_entry.wz = 100;
+tmp_entry.page = 1;
+tmp_entry.animcycle_id = "entry_quest_archivist_img";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.closet_dirty.door_archivist",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_archivist_1";
+tmp_entry.fqid = "tunic.entry_quest_archivist_1";
+{
+tmp_entry.ww = 357;
+tmp_entry.wh = 127;
+tmp_entry.wx = -184.5;
+tmp_entry.wy = 58.500000000000014;
 tmp_entry.wz = 100;
 tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_quest_archivist_img";
@@ -2465,13 +2487,35 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
-tmp_entry.id = "entry_quest_archivist_x";
-tmp_entry.fqid = "tunic.entry_quest_archivist_x";
+tmp_entry.id = "entry_quest_archivist_x_0";
+tmp_entry.fqid = "tunic.entry_quest_archivist_x_0";
 {
 tmp_entry.ww = 363;
 tmp_entry.wh = 93;
-tmp_entry.wx = -194.5;
-tmp_entry.wy = 212.5000000000001;
+tmp_entry.wx = 192.49999999999997;
+tmp_entry.wy = 204.5000000000001;
+tmp_entry.wz = 100;
+tmp_entry.page = 1;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.raw_notifications = [
+];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_0.slip",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_archivist_x_1";
+tmp_entry.fqid = "tunic.entry_quest_archivist_x_1";
+{
+tmp_entry.ww = 363;
+tmp_entry.wh = 93;
+tmp_entry.wx = -193.5;
+tmp_entry.wy = 50.500000000000114;
 tmp_entry.wz = 100;
 tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -2492,7 +2536,7 @@ tmp_entry.fqid = "tunic.entry_quest_basketball";
 {
 tmp_entry.ww = 358.00000000000006;
 tmp_entry.wh = 132.00000000000003;
-tmp_entry.wx = 187.0000000000001;
+tmp_entry.wx = 185.00000000000023;
 tmp_entry.wy = -103.00000000000007;
 tmp_entry.wz = 100;
 tmp_entry.page = 0;
@@ -2559,7 +2603,7 @@ tmp_entry.fqid = "tunic.entry_quest_library";
 tmp_entry.ww = 368;
 tmp_entry.wh = 122.99999999999999;
 tmp_entry.wx = -185;
-tmp_entry.wy = -91.49999999999982;
+tmp_entry.wy = -208.49999999999974;
 tmp_entry.wz = 100;
 tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_quest_library_img";
@@ -2580,8 +2624,8 @@ tmp_entry.fqid = "tunic.entry_quest_museum";
 {
 tmp_entry.ww = 364.99999999999994;
 tmp_entry.wh = 127.00000000000003;
-tmp_entry.wx = -187.49999999999997;
-tmp_entry.wy = 81.49999999999993;
+tmp_entry.wx = -184.49999999999997;
+tmp_entry.wy = 91.49999999999999;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_quest_museum_img";
@@ -2602,8 +2646,8 @@ tmp_entry.fqid = "tunic.entry_quest_museum_x";
 {
 tmp_entry.ww = 367.00000000000006;
 tmp_entry.wh = 85.99999999999986;
-tmp_entry.wx = -191.50000000000003;
-tmp_entry.wy = 77.9999999999999;
+tmp_entry.wx = -190.50000000000003;
+tmp_entry.wy = 86.99999999999984;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -2624,8 +2668,8 @@ tmp_entry.fqid = "tunic.entry_quest_squeakycleaners";
 {
 tmp_entry.ww = 351;
 tmp_entry.wh = 131;
-tmp_entry.wx = 186.49999999999977;
-tmp_entry.wy = -18.499999999999993;
+tmp_entry.wx = 192.49999999999977;
+tmp_entry.wy = -183.4999999999998;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_quest_squeakycleaners_img";
@@ -2646,8 +2690,8 @@ tmp_entry.fqid = "tunic.entry_quest_squeakycleaners_x";
 {
 tmp_entry.ww = 348;
 tmp_entry.wh = 102.00000000000001;
-tmp_entry.wx = 189.00000000000003;
-tmp_entry.wy = -20.99999999999996;
+tmp_entry.wx = 190;
+tmp_entry.wy = -187;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -2667,9 +2711,9 @@ tmp_entry.id = "entry_quest_textile";
 tmp_entry.fqid = "tunic.entry_quest_textile";
 {
 tmp_entry.ww = 366;
-tmp_entry.wh = 110;
-tmp_entry.wx = 187.99999999999994;
-tmp_entry.wy = 233.00000000000006;
+tmp_entry.wh = 125.00000000000003;
+tmp_entry.wx = 183.99999999999997;
+tmp_entry.wy = 73.5000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_quest_textile_img";
@@ -2690,8 +2734,8 @@ tmp_entry.fqid = "tunic.entry_quest_textile_x";
 {
 tmp_entry.ww = 353;
 tmp_entry.wh = 86.99999999999997;
-tmp_entry.wx = 178.50000000000003;
-tmp_entry.wy = 225.49999999999994;
+tmp_entry.wx = 180.49999999999997;
+tmp_entry.wy = 70.49999999999999;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -2734,8 +2778,8 @@ tmp_entry.fqid = "tunic.entry_teddytaken";
 {
 tmp_entry.ww = 359;
 tmp_entry.wh = 166.99999999999997;
-tmp_entry.wx = -191.50000000000006;
-tmp_entry.wy = -55.499999999999986;
+tmp_entry.wx = -192.50000000000006;
+tmp_entry.wy = -48.49999999999998;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_teddytaken_img";
@@ -5054,8 +5098,8 @@ tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_drycleaner_frontdesk";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.nav_min_wz = 2;
+tmp_room.nav_max_wz = 3;
 tmp_room.navs = [
 {wx:26.500010478189893, wy:-188.4999999999999, ww:925.0000209563811, wh:224.9999999999998 },
 ];
@@ -5075,7 +5119,6 @@ tmp_room.raw_notifications = [
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "worker";
@@ -5085,7 +5128,7 @@ tmp_person.ww = 111.99999999999996;
 tmp_person.wh = 270;
 tmp_person.wx = 207.0995987494196;
 tmp_person.wy = 13;
-tmp_person.wz = 0;
+tmp_person.wz = 1;
 tmp_person.act_wx = -283.32082648203334;
 tmp_person.act_wy = -70;
 tmp_person.act_anim = true;
@@ -5102,7 +5145,6 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 ]];
-
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
 tmp_person.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_person.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);
