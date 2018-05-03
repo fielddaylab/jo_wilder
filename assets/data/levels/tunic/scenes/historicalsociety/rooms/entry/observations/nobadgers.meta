@@ -14,9 +14,9 @@ tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.raw_text = "Somebody hates badgers!";
-tmp_observation.blip_wx = -803.4966993830346;
-tmp_observation.blip_wy = 183.15575583186893;
-tmp_observation.blip_w = 163;
+tmp_observation.blip_wx = -884.9597157392723;
+tmp_observation.blip_wy = 176.6423549696973;
+tmp_observation.blip_w = 222;
 tmp_observation.blip_h = 30;
 tmp_observation.raw_notifications = [
 ];
