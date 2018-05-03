@@ -26,7 +26,7 @@ tmp_cutscene_command.wx = -53.91712301631122;
 tmp_cutscene_command.wy = 327.7067052542433;
 tmp_cutscene_command.w = 148;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Couldn’t have done it without you, Grampa.";
+tmp_cutscene_command.raw_text = "Couldn’t have done it without you, Gramps.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

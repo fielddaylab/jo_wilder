@@ -14,7 +14,7 @@ tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-"Here's my notebook!",
+"My notebook!",
 ];
 tmp_object.notice_reqs = [[
 ]];
