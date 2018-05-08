@@ -62,6 +62,7 @@ tmp_level.notebook_reqs = [[
 ]];
 tmp_level.map_reqs = [[
 ]];
+
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivephotos1";
 tmp_animcycle.fqid = "tunic.archivephotos1";
@@ -10079,6 +10080,47 @@ tmp_object.views.push(tmp_view);
 }
 tmp_room.objects.push(tmp_object);
 tmp_observation = new observation();
+tmp_observation.id = "block";
+tmp_observation.fqid = "tunic.historicalsociety.stacks.block";
+{
+tmp_observation.ww = 854.2781582558621;
+tmp_observation.wh = 120.40190566783012;
+tmp_observation.wx = 7.039776538646265;
+tmp_observation.wy = -291.28650670282127;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.raw_text = "The archivist said I should look in the stacks.";
+tmp_observation.blip_wx = 58.46382852368461;
+tmp_observation.blip_wy = -56.114534801898216;
+tmp_observation.blip_w = 229;
+tmp_observation.blip_h = 30;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
+"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
+]];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
+tmp_observation = new observation();
 tmp_observation.id = "outtolunch";
 tmp_observation.fqid = "tunic.historicalsociety.stacks.outtolunch";
 {
@@ -10954,18 +10996,7 @@ tmp_cutscene_command.wx = 362;
 tmp_cutscene_command.wy = 200.99999999999994;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "The Basketball team started after the date on the slip.";
-tmp_cutscene_command.t = 0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 386;
-tmp_cutscene_command.wy = 139.00000000000003;
-tmp_cutscene_command.w = 161;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Gramps was right!";
+tmp_cutscene_command.raw_text = "This team started after the date on the slip.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
@@ -10976,10 +11007,9 @@ tmp_cutscene_command.wx = 362;
 tmp_cutscene_command.wy = 200.99999999999994;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "The tunic can't be a basketball jersey.";
+tmp_cutscene_command.raw_text = "Our shirt can't be a basketball jersey.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
@@ -10988,7 +11018,7 @@ tmp_cutscene_command.wx = 373;
 tmp_cutscene_command.wy = 169.99999999999991;
 tmp_cutscene_command.w = 175;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I should tell gramps the news!";
+tmp_cutscene_command.raw_text = "I should tell Gramps the news!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
