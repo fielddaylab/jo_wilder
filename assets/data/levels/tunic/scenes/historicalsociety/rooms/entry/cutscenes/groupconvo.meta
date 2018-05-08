@@ -54,7 +54,7 @@ tmp_cutscene_command.wx = 364.9832727272726;
 tmp_cutscene_command.wy = 415.4625454545452;
 tmp_cutscene_command.w = 165;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Who is in charge of the first artifact?";
+tmp_cutscene_command.raw_text = "Who is working to identity the shirt artifact?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

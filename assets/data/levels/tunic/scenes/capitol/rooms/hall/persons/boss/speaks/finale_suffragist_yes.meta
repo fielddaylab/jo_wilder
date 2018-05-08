@@ -25,7 +25,7 @@ tmp_speak_command.w = 293;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "And what does women’s suffrage have to do with our tunic?";
+tmp_speak_command.raw_atext = "And what does women’s suffrage have to do with our shirt?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
