@@ -2024,6 +2024,14 @@ var objectview = function()
       ctx.strokeStyle = white;
       ctx.drawImage(zone.animcycle_inst.img, zone.x, zone.y+yoff, zone.w, zone.h);
     }
+    if(self.cur_view.magnify)
+    {
+      var fs = 300;
+      var frw = self.cur_view.animcycle_inst.img.width/self.obj.w;
+      var frh = self.cur_view.animcycle_inst.img.height/self.obj.h;
+      var ts = 400;
+      ctx.drawImage(self.cur_view.animcycle_inst.img,((my_cursor.known_x-self.obj.x)-fs/2)*frw,((my_cursor.known_y-self.obj.y)-fs/2)*frh,fs*frw,fs*frh,my_cursor.known_x-ts/2,my_cursor.known_y-ts/2+yoff,ts,ts);
+    }
 
     if(!my_notificationview.note.length)
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
