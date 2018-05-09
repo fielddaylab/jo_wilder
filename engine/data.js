@@ -3324,9 +3324,9 @@ tmp_speak_command.raw_atext = "The shirt is not a basketball jersey!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 158.50000001387514;
-tmp_speak_command.wy = 370.000000047556;
-tmp_speak_command.w = 176;
+tmp_speak_command.wx = 5.443985921034923;
+tmp_speak_command.wy = 294.24301887634556;
+tmp_speak_command.w = 163;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -3334,9 +3334,9 @@ tmp_speak_command.raw_atext = "How do you know?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -337.57576869555163;
-tmp_speak_command.wy = 225.36363675066252;
-tmp_speak_command.w = 302;
+tmp_speak_command.wx = -284.54546567405936;
+tmp_speak_command.wy = 140.51515190238143;
+tmp_speak_command.w = 207;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -3344,9 +3344,9 @@ tmp_speak_command.raw_atext = "The women's team didn't even start until 1974.";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 167.50000000000006;
-tmp_speak_command.wy = 367;
-tmp_speak_command.w = 161;
+tmp_speak_command.wx = 334.16666666666663;
+tmp_speak_command.wy = 344.27272727272725;
+tmp_speak_command.w = 141;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -3354,9 +3354,9 @@ tmp_speak_command.raw_atext = "Do you have any other leads?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -106.84848488456134;
-tmp_speak_command.wy = 124.833333334589;
-tmp_speak_command.w = 154;
+tmp_speak_command.wx = -187.1515151875915;
+tmp_speak_command.wy = 149.07575757701323;
+tmp_speak_command.w = 143;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -3364,9 +3364,9 @@ tmp_speak_command.raw_atext = "Yes! I found this on the shirt.";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 215.50000000000006;
-tmp_speak_command.wy = 367;
-tmp_speak_command.w = 106;
+tmp_speak_command.wx = 333.6818181818182;
+tmp_speak_command.wy = 341.24242424242425;
+tmp_speak_command.w = 94;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -3574,9 +3574,9 @@ tmp_speak.reqs = [[
 ]];
 tmp_speak.commands = [];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -133.33333333333505;
-tmp_speak_command.wy = 134.848484848485;
-tmp_speak_command.w = 179;
+tmp_speak_command.wx = -215.15151515151686;
+tmp_speak_command.wy = 140.90909090909105;
+tmp_speak_command.w = 159;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -3584,9 +3584,9 @@ tmp_speak_command.raw_atext = "Um… still working on that part.";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 15.15151515151532;
-tmp_speak_command.wy = 418.1818181818182;
-tmp_speak_command.w = 290;
+tmp_speak_command.wx = -159.0909090909091;
+tmp_speak_command.wy = 378.7878787878788;
+tmp_speak_command.w = 273;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -4782,6 +4782,91 @@ tmp_wildcard.commands = [
       }
     }
   }
+
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.speak_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.cur_speak_command;
+    self.consume_speak_command = function(s)
+    {
+      self.cur_speak_command = s;
+      self.x = self.cur_speak_command.x;
+      self.y = self.cur_speak_command.y;
+      self.w = self.cur_speak_command.w;
+      self.h = self.cur_speak_command.h;
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
+    }
+    self.edit = function()
+    {
+      self.cur_speak_command.x = self.x;
+      self.cur_speak_command.y = self.y;
+      self.cur_speak_command.w = self.w;
+      self.cur_speak_command.h = self.h;
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
+
+      self.cur_speak_command.atext = stextToLines(self.cur_speak_command.raw_atext, self.cur_speak_command.w);
+    }
+  })();
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+    if(self.cur_command.command != FINALE_WILDCARD_COMMAND_SPEAK) return;
+    if(!self.edit_o && ptWithinBox(self.cur_speak.commands[self.cur_speak_command_i],evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(self.cur_speak.commands[self.cur_speak_command_i]); self.cur_speak.dirty = true; }
+
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w)//right 10%
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_o == self.speak_editor)   self.speak_editor.edit();
+    else worldSpace(my_camera,canv,self.edit_o);
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
 
   self.hover = function(evt)
   {

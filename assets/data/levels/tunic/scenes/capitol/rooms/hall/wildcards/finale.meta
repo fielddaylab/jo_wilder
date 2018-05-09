@@ -157,6 +157,91 @@ tmp_wildcard.commands = [
     }
   }
 
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.speak_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.cur_speak_command;
+    self.consume_speak_command = function(s)
+    {
+      self.cur_speak_command = s;
+      self.x = self.cur_speak_command.x;
+      self.y = self.cur_speak_command.y;
+      self.w = self.cur_speak_command.w;
+      self.h = self.cur_speak_command.h;
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
+    }
+    self.edit = function()
+    {
+      self.cur_speak_command.x = self.x;
+      self.cur_speak_command.y = self.y;
+      self.cur_speak_command.w = self.w;
+      self.cur_speak_command.h = self.h;
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
+
+      self.cur_speak_command.atext = stextToLines(self.cur_speak_command.raw_atext, self.cur_speak_command.w);
+    }
+  })();
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+    if(self.cur_command.command != FINALE_WILDCARD_COMMAND_SPEAK) return;
+    if(!self.edit_o && ptWithinBox(self.cur_speak.commands[self.cur_speak_command_i],evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(self.cur_speak.commands[self.cur_speak_command_i]); self.cur_speak.dirty = true; }
+
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w)//right 10%
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_o == self.speak_editor)   self.speak_editor.edit();
+    else worldSpace(my_camera,canv,self.edit_o);
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
   self.hover = function(evt)
   {
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
