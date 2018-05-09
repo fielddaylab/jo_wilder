@@ -671,7 +671,7 @@ var navigable = function()
   self.consume_room = function(room)
   {
     self.room = room;
-    if(!self.room.met && self.room.notifications.length) my_notificationview.consume_notification(self.room.notifications);
+    if(!self.room.met && self.room.notifications.length) my_notificationview.consume_notification(self.room);
     self.room.pre_met = true;
     self.room.met = true;
     self.unlock_content();
@@ -1744,6 +1744,7 @@ var notificationview = function()
   self.h = canv.height;
 
   self.q = [];
+  self.c;
   self.note = [];
   self.note_i = 0;
 
@@ -1767,16 +1768,17 @@ var notificationview = function()
   self.ui_state_t_max[UI_STATE_OUT]     = 10;
   self.ui_state_p = 0;
 
-  self.consume_notification = function(notification)
+  self.consume_notification = function(c)
   {
-    self.q.push(notification);
+    self.q.push(c);
   }
 
   self.dequeue = function()
   {
     if(!self.note.length && self.q.length)
     {
-      self.note = self.q[0];
+      self.c = self.q[0];
+      self.note = self.c.notifications;
       self.note_i = 0;
       self.q.splice(0,1);
       self.ui_state = UI_STATE_IN_NOTE;
@@ -1785,6 +1787,86 @@ var notificationview = function()
     }
     return self.note;
   }
+
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.nv_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.nv;
+    self.consume_nv = function(nv,x,y,w,h)
+    {
+      self.nv = nv;
+      self.x = x;
+      self.y = y;
+      self.w = w;
+      self.h = h;
+      self.nv.c.dirty = true;
+    }
+    self.edit = function()
+    {
+      if(!self.nv.c.raw_notification_ws) self.nv.c.raw_notification_ws = [];
+      self.nv.c.raw_notification_ws[self.nv.note_i] = self.w;
+      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.note_i], self.w);
+    }
+  })();
+  self.dragStart = function(evt)
+  {
+    self.edit_o = 0;
+
+    //copied from draw
+    var b = 10;
+    var h = cur_level.notifications_h*self.note[self.note_i].length;
+    var w = cur_level.notifications_w;
+    if(self.c.raw_notification_ws && self.c.raw_notification_ws[self.note_i]) w = self.c.raw_notification_ws[self.note_i];
+    var x = self.x+self.w/2-w/2;
+    var y = self.y+self.h-30-h;
+
+    if(!self.edit_o && ptWithin(x,y,w,h,evt.doX,evt.doY)) { self.edit_o = self.nv_editor; self.nv_editor.consume_nv(self,x,y,w,h); }
+    if(!self.edit_o) return;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_o == self.nv_editor) self.nv_editor.edit();
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
 
   self.click = function(evt)
   {
@@ -1849,6 +1931,7 @@ var notificationview = function()
     var b = 10;
     var h = cur_level.notifications_h*self.note[self.note_i].length;
     var w = cur_level.notifications_w;
+    if(self.c.raw_notification_ws && self.c.raw_notification_ws[self.note_i]) w = self.c.raw_notification_ws[self.note_i];
     var x = self.x+self.w/2-w/2;
     var y = self.y+self.h-30-h;
     ctx.fillStyle = self.bubble_color;
@@ -1861,6 +1944,13 @@ var notificationview = function()
       oyoff += cur_level.notifications_h;
     }
     ctx.globalAlpha = 1;
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = white;
+      ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
+      ctx.strokeRect(x, y+yoff, w, h);
+    }
   }
 
 }
@@ -1884,12 +1974,12 @@ var objectview = function()
   self.consume_object = function(object)
   {
     self.object = object;
-    if(!self.object.pre_met && self.object.notifications.length) my_notificationview.consume_notification(self.object.notifications);
+    if(!self.object.pre_met && self.object.notifications.length) my_notificationview.consume_notification(self.object);
     self.object.pre_met = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
     self.cur_view.animcycle_inst.ready();
-    if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+    if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view);
     self.cur_view.pre_met = true;
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
@@ -1988,13 +2078,13 @@ var objectview = function()
       zone = self.cache_available_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
-        if(!zone.met && zone.notifications.length) my_notificationview.consume_notification(zone.notifications);
+        if(!zone.met && zone.notifications.length) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
         self.cur_view.met = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
         self.cur_view.animcycle_inst.ready();
-        if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view.notifications);
+        if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view);
         self.cur_view.pre_met = true;
         self.cur_view.met = true;
         self.unlock_content();
@@ -2083,7 +2173,7 @@ var observationview = function()
   self.consume_observation = function(observation)
   {
     self.observation = observation;
-    if(!self.observation.pre_met && self.observation.notifications.length) my_notificationview.consume_notification(self.observation.notifications);
+    if(!self.observation.pre_met && self.observation.notifications.length) my_notificationview.consume_notification(self.observation);
     self.observation.pre_met = true;
     self.ui_state = UI_STATE_IN_OBSERVATION;
     self.ui_state_t = 0;
@@ -2297,7 +2387,7 @@ var personview = function()
   self.consume_person = function(person)
   {
     self.person = person;
-    if(!self.person.pre_met && self.person.notifications.length) my_notificationview.consume_notification(self.person.notifications);
+    if(!self.person.pre_met && self.person.notifications.length) my_notificationview.consume_notification(self.person);
     self.person.pre_met = true;
     self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
@@ -2341,7 +2431,7 @@ var personview = function()
       self.clicked_option.met = true;
       self.cur_speak = self.clicked_option.target_speak_found;
       self.cur_speak_command_i = 0;
-      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
+      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak);
       self.cur_speak.pre_met = true;
       self.unlock_content();
     }
@@ -2361,7 +2451,7 @@ var personview = function()
       for(var i = 1; i < self.cache_available_speaks.length; i++)
         if(self.cache_available_speaks[i].primary > self.cur_speak.primary)
           self.cur_speak = self.cache_available_speaks[i];
-      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak.notifications);
+      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak);
       self.cur_speak.pre_met = true;
     }
 
@@ -2596,7 +2686,7 @@ var personview = function()
     {
       if(self.clicked_option !== 1) //1 == next speak command
       {
-        if(!self.clicked_option.pre_met && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option.notifications);
+        if(!self.clicked_option.pre_met && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option);
         self.clicked_option.pre_met = true;
         self.clicked_option.met = true;
       }
@@ -2780,7 +2870,7 @@ var wildcardview = function()
   self.consume_wildcard = function(wildcard)
   {
     self.wildcard = wildcard;
-    if(!self.wildcard.pre_met && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard.notifications);
+    if(!self.wildcard.pre_met && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard);
     self.wildcard.pre_met = true;
     self.wildcard.met = true; //technically should wait for dismiss, but can't guarantee dismiss by custom code. needs solution.
     self.wildcard.consume_self(self.wildcard);
@@ -2841,7 +2931,7 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
-    if(!self.cutscene.pre_met && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene.notifications);
+    if(!self.cutscene.pre_met && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene);
     self.cutscene.pre_met = true;
 
     self.cutscene_entitys = [];

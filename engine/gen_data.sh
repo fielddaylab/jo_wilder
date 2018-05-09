@@ -391,7 +391,7 @@ if [ $NOGEN == "0" ]; then
       echo "{" >> $OUT
       cat $entry >> $OUT
       echo "tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);" >> $OUT
-      echo "for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+      echo "for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
       echo "}" >> $OUT
       echo "tmp_level.entrys.push(tmp_entry);" >> $OUT
@@ -448,7 +448,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_cutscene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.notice_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
-          echo "for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+          echo "for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_cutscene.raw_notification_ws[i] ? tmp_cutscene.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.cutscenes.push(tmp_cutscene);" >> $OUT
@@ -473,7 +473,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_person.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_person.hover_cursor_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_person.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_person.notice_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
-          echo "for(var i = 0; i < tmp_person.raw_notifications.length; i++) tmp_person.notifications[i] = stextToLines(tmp_person.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+          echo "for(var i = 0; i < tmp_person.raw_notifications.length; i++) tmp_person.notifications[i] = stextToLines(tmp_person.raw_notifications[i], tmp_person.raw_notification_ws[i] ? tmp_person.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
           if ensuredelimeter speak $person_dir; then :; else continue; fi
           speaks_dir=$person_dir/speaks
@@ -491,7 +491,7 @@ if [ $NOGEN == "0" ]; then
             cat $speak >> $OUT
             echo "tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);" >> $OUT
             echo "for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);" >> $OUT
-            echo "for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+            echo "for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
             if ensuredelimeter option $speak_dir; then :; else continue; fi
             options_dir=$speak_dir/options
@@ -508,7 +508,7 @@ if [ $NOGEN == "0" ]; then
               echo "{" >> $OUT
               cat $option >> $OUT
               echo "tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);" >> $OUT
-              echo "for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+              echo "for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_option.raw_notification_ws[i] ? tmp_option.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
               echo "}" >> $OUT
               echo "tmp_speak.options.push(tmp_option);" >> $OUT
@@ -543,7 +543,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_object.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_object.notice_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
-          echo "for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+          echo "for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_object.raw_notification_ws[i] ? tmp_object.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
           if ensuredelimeter view $object_dir; then :; else continue; fi
           views_dir=$object_dir/views
@@ -560,7 +560,7 @@ if [ $NOGEN == "0" ]; then
             echo "{" >> $OUT
             cat $view >> $OUT
             echo "tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);" >> $OUT
-            echo "for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+            echo "for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
             if ensuredelimeter zone $view_dir; then :; else continue; fi
             zones_dir=$view_dir/zones
@@ -577,7 +577,7 @@ if [ $NOGEN == "0" ]; then
               echo "{" >> $OUT
               cat $zone >> $OUT
               echo "tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);" >> $OUT
-              echo "for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+              echo "for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
               echo "}" >> $OUT
               echo "tmp_view.zones.push(tmp_zone);" >> $OUT
@@ -613,7 +613,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);" >> $OUT
-          echo "for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+          echo "for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_observation.raw_notification_ws[i] ? tmp_observation.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.observations.push(tmp_observation);" >> $OUT
@@ -662,7 +662,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_wildcard.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_cursor_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_wildcard.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_wildcard.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.notice_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
-          echo "for(var i = 0; i < tmp_wildcard.raw_notifications.length; i++) tmp_wildcard.notifications[i] = stextToLines(tmp_wildcard.raw_notifications[i], tmp_level.notifications_w);" >> $OUT
+          echo "for(var i = 0; i < tmp_wildcard.raw_notifications.length; i++) tmp_wildcard.notifications[i] = stextToLines(tmp_wildcard.raw_notifications[i], tmp_wildcard.raw_notification_ws[i] ? tmp_wildcard.raw_notification_ws[i] : tmp_level.notifications_w);" >> $OUT
 
           echo "}" >> $OUT
           echo "tmp_room.wildcards.push(tmp_wildcard);" >> $OUT

@@ -173,7 +173,7 @@ var GamePlayScene = function(game, stage)
     if(url_json.save)
       load_save_code(url_json.save);
 
-    if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level.notifications);
+    if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level);
     cur_level.pre_met = true;
 
     my_navigable.unlock_content();
@@ -188,7 +188,14 @@ var GamePlayScene = function(game, stage)
 
     my_notificationview.dequeue();
     my_notificationview.tick();
-    if(my_notificationview.note.length) clicker.filter(my_notificationview);
+    if(DEBUG && my_keyable.e)
+    {
+      if(my_notificationview.note.length) dragger.filter(my_notificationview);
+    }
+    else
+    {
+      if(my_notificationview.note.length) clicker.filter(my_notificationview);
+    }
 
     switch(state_cur)
     {
