@@ -675,6 +675,7 @@ var view = function()
   self.raw_notifications = [];
   self.raw_notification_ws = [];
   self.reqs = [];
+  self.exit_reqs = [];
   //
   self.met = false;
   self.pre_met = false;
@@ -1407,6 +1408,16 @@ var print_view_meta = function(l)
   }
   str +=
   "];\n"+
+  "tmp_view.exit_reqs = [[\n";
+  for(var i = 0; i < l.exit_reqs.length; i++)
+  {
+    for(var j = 0; j < l.exit_reqs[i].length; j++)
+      str += "\""+l.exit_reqs[i][j]+"\",\n";
+    if(i < l.exit_reqs.length-1)
+      str += "],[\n";
+  }
+  str +=
+  "]];\n"+
   "tmp_view.reqs = [[\n";
   for(var i = 0; i < l.reqs.length; i++)
   {
@@ -1416,7 +1427,7 @@ var print_view_meta = function(l)
       str += "],[\n";
   }
   str +=
-  "]];\n"
+  "]];\n";
   console.log(str);
 }
 
