@@ -4,6 +4,8 @@ tmp_option.target_speak = "null";
 tmp_option.audio_id = "null";
 tmp_option.raw_notifications = [
 ];
+tmp_option.notification_reqs = [[
+]];
 tmp_option.reqs = [[
 ]];
 

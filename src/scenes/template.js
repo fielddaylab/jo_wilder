@@ -296,6 +296,7 @@ var level = function()
   self.scenes = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   self.notebook_reqs = [];
   self.map_reqs = [];
@@ -323,6 +324,7 @@ var scene = function()
   self.rooms = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   //
   self.available = false;
@@ -369,6 +371,7 @@ var room = function()
   self.inerts = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   //
   self.met = false;
@@ -409,6 +412,7 @@ var person = function()
   self.speaks = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.notice_reqs = [];
   self.reqs = [];
   //
@@ -456,6 +460,7 @@ var object = function()
   self.views = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.notice_reqs = [];
   self.reqs = [];
   //
@@ -508,6 +513,7 @@ var observation = function()
   self.blip_h = 0;
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.notice_reqs = [];
   self.reqs = [];
   //
@@ -559,6 +565,7 @@ var porthole = function()
   self.target_start_wy = 0;
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.notice_reqs = [];
   self.reqs = [];
   //
@@ -608,6 +615,7 @@ var wildcard = function()
   self.audio_id = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.notice_reqs = [];
   self.reqs = [];
   //
@@ -674,6 +682,7 @@ var view = function()
   self.zones = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   self.exit_reqs = [];
   //
@@ -698,6 +707,7 @@ var zone = function()
   self.target_view = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   //
   self.available = false;
@@ -750,6 +760,7 @@ var speak = function()
   self.options = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   //
   self.available = false;
@@ -772,6 +783,7 @@ var option = function()
   self.target_speak = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   //
   self.available = false;
@@ -801,6 +813,7 @@ var entry = function()
   self.audio_id = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.reqs = [];
   //
   self.available = false;
@@ -905,6 +918,7 @@ var cutscene = function()
   self.notice_icon_animcycle_id = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
+  self.notification_reqs = [];
   self.notice_reqs = [];
   self.reqs = [];
 
@@ -927,6 +941,29 @@ var cutscene = function()
   self.hover_icon_x = 0;
   self.hover_icon_y = 0;
   self.notifications = [];
+}
+
+var get_notifications_string = function(notifications)
+{
+  var str = "[\n";
+  for(var i = 0; i < notifications.length; i++)
+    str += "\""+notifications[i].replace(/"/g,"\\\"")+"\",\n";
+  str += "];\n"
+  return str;
+}
+
+var get_requirements_string = function(reqs)
+{
+  var str = "[[\n";
+  for(var i = 0; i < reqs.length; i++)
+  {
+    for(var j = 0; j < reqs[i].length; j++)
+      str += "\""+reqs[i][j]+"\",\n";
+    if(i < reqs.length-1)
+      str += "],[\n";
+  }
+  str += "]]\n";
+  return str;
 }
 
 var print_level_meta = function(l)
@@ -959,11 +996,7 @@ var print_level_meta = function(l)
   "tmp_level.notifications_w = "+l.notifications_w+";\n"+
   "tmp_level.notifications_h = "+l.notifications_h+";\n"+
   "tmp_level.target_lerp_s = "+l.target_lerp_s+";\n"+
-  "tmp_level.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_level.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_level.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -972,36 +1005,10 @@ var print_level_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_level.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_level.notebook_reqs = [[\n";
-  for(var i = 0; i < l.notebook_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notebook_reqs[i].length; j++)
-      str += "\""+l.notebook_reqs[i][j]+"\",\n";
-    if(i < l.notebook_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_level.map_reqs = [[\n";
-  for(var i = 0; i < l.map_reqs.length; i++)
-  {
-    for(var j = 0; j < l.map_reqs[i].length; j++)
-      str += "\""+l.map_reqs[i][j]+"\",\n";
-    if(i < l.map_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n";
+  "tmp_level.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_level.reqs = "+get_requirements_string(l.reqs)+
+  "tmp_level.notebook_reqs = "+get_requirements_string(l.notebook_reqs)+
+  "tmp_level.map_reqs = "+get_requirements_string(l.map_reqs);
   console.log(str);
 }
 
@@ -1016,11 +1023,7 @@ var print_entry_meta = function(l)
   "tmp_entry.page = "+l.page+";\n"+
   "tmp_entry.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_entry.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_entry.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_entry.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_entry.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1029,16 +1032,8 @@ var print_entry_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_entry.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"
+  "tmp_entry.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_entry.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1052,11 +1047,7 @@ var print_scene_meta = function(l)
   "tmp_scene.wy = "+l.wy+";\n"+
   "tmp_scene.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_scene.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_scene.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_scene.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_scene.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1065,16 +1056,8 @@ var print_scene_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_scene.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"
+  "tmp_scene.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_scene.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1112,11 +1095,7 @@ var print_room_meta = function(l)
   "tmp_room.ambient_color = \""+l.ambient_color+"\";\n"+
   "tmp_room.target_start_wx = "+l.target_start_wx+";\n"+
   "tmp_room.target_start_wy = "+l.target_start_wy+";\n"+
-  "tmp_room.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_room.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_room.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1125,16 +1104,8 @@ var print_room_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_room.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
+  "tmp_room.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_room.reqs = "+get_requirements_string(l.reqs)+
   "//SUGGEST_H:"+l.wh/660+"\n";
   console.log(str);
 }
@@ -1157,11 +1128,7 @@ var print_person_meta = function(l)
   "tmp_person.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_person.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_person.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_person.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_person.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1170,26 +1137,9 @@ var print_person_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_person.notice_reqs = [[\n";
-  for(var i = 0; i < l.notice_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notice_reqs[i].length; j++)
-      str += "\""+l.notice_reqs[i][j]+"\",\n";
-    if(i < l.notice_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_person.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"
+  "tmp_person.notice_reqs = "+get_requirements_string(l.notice_reqs)+
+  "tmp_person.notification_reqs = "+get_requirements_string(l.reqs)+
+  "tmp_person.reqs = "+get_requirements_string(l.notification_reqs);
   console.log(str);
 }
 
@@ -1201,11 +1151,7 @@ var print_speak_meta = function(l)
   "tmp_speak.options_wy = "+l.options_wy+";\n"+
   "tmp_speak.options_w = "+l.options_w+";\n"+
   "tmp_speak.options_h = "+l.options_h+";\n"+
-  "tmp_speak.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_speak.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_speak.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1214,16 +1160,8 @@ var print_speak_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_speak.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
+  "tmp_speak.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_speak.reqs = "+get_requirements_string(l.reqs);
   "tmp_speak.commands = [];\n";
   var c;
   for(var i = 0; i < l.commands.length; i++)
@@ -1249,11 +1187,7 @@ var print_option_meta = function(l)
   "tmp_option.index = "+l.index+";\n"+
   "tmp_option.raw_qtext = \""+l.raw_qtext.replace(/"/g,"\\\"")+"\";\n"+
   "tmp_option.target_speak = \""+l.target_speak+"\";\n"+
-  "tmp_option.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_option.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_option.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1262,16 +1196,8 @@ var print_option_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_option.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"
+  "tmp_option.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_option.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1293,11 +1219,7 @@ var print_object_meta = function(l)
   "tmp_object.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_object.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_object.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_object.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_object.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1306,26 +1228,9 @@ var print_object_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_object.notice_reqs = [[\n";
-  for(var i = 0; i < l.notice_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notice_reqs[i].length; j++)
-      str += "\""+l.notice_reqs[i][j]+"\",\n";
-    if(i < l.notice_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_object.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n";
+  "tmp_object.notice_reqs = "+get_requirements_string(l.notice_reqs)+
+  "tmp_object.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_object.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1352,11 +1257,7 @@ var print_observation_meta = function(l)
   "tmp_observation.blip_wy = "+l.blip_wy+";\n"+
   "tmp_observation.blip_w = "+l.blip_w+";\n"+
   "tmp_observation.blip_h = "+l.blip_h+";\n"+
-  "tmp_observation.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_observation.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_observation.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1365,26 +1266,9 @@ var print_observation_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_observation.notice_reqs = [[\n";
-  for(var i = 0; i < l.notice_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notice_reqs[i].length; j++)
-      str += "\""+l.notice_reqs[i][j]+"\",\n";
-    if(i < l.notice_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_observation.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n";
+  "tmp_observation.notice_reqs = "+get_requirements_string(l.notice_reqs)+
+  "tmp_observation.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_observation.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1395,11 +1279,7 @@ var print_view_meta = function(l)
   "tmp_view.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_view.magnify = "+l.magnify+";\n"+
   "tmp_view.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_view.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_view.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_view.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1408,26 +1288,9 @@ var print_view_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_view.exit_reqs = [[\n";
-  for(var i = 0; i < l.exit_reqs.length; i++)
-  {
-    for(var j = 0; j < l.exit_reqs[i].length; j++)
-      str += "\""+l.exit_reqs[i][j]+"\",\n";
-    if(i < l.exit_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_view.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n";
+  "tmp_view.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_view.exit_reqs = "+get_requirements_string(l.exit_reqs)+
+  "tmp_view.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1441,11 +1304,7 @@ var print_zone_meta = function(l)
   "tmp_zone.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_zone.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_zone.target_view = \""+l.target_view+"\";\n"+
-  "tmp_zone.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_zone.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_zone.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1454,16 +1313,8 @@ var print_zone_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_zone.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"
+  "tmp_zone.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_zone.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1488,11 +1339,7 @@ var print_porthole_meta = function(l)
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
   "tmp_porthole.target_start_wx = "+l.target_start_wx+";\n"+
   "tmp_porthole.target_start_wy = "+l.target_start_wy+";\n"+
-  "tmp_porthole.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_porthole.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_porthole.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1501,26 +1348,9 @@ var print_porthole_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_porthole.notice_reqs = [[\n";
-  for(var i = 0; i < l.notice_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notice_reqs[i].length; j++)
-      str += "\""+l.notice_reqs[i][j]+"\",\n";
-    if(i < l.notice_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_porthole.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n";
+  "tmp_porthole.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_porthole.notice_reqs = "+get_requirements_string(l.notice_reqs)+
+  "tmp_porthole.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1542,11 +1372,7 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_wildcard.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_wildcard.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_wildcard.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_wildcard.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1555,26 +1381,9 @@ var print_wildcard_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_wildcard.notice_reqs = [[\n";
-  for(var i = 0; i < l.notice_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notice_reqs[i].length; j++)
-      str += "\""+l.notice_reqs[i][j]+"\",\n";
-    if(i < l.notice_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_wildcard.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n";
+  "tmp_wildcard.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_wildcard.notice_reqs = "+get_requirements_string(l.notice_reqs)+
+  "tmp_wildcard.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
@@ -1596,11 +1405,7 @@ var print_cutscene_meta = function(l)
   "tmp_cutscene.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_cutscene.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_cutscene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
-  "tmp_cutscene.raw_notifications = [\n";
-  for(var i = 0; i < l.raw_notifications.length; i++)
-    str += "\""+l.raw_notifications[i].replace(/"/g,"\\\"")+"\",\n";
-  str +=
-  "];\n"+
+  "tmp_cutscene.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_cutscene.raw_notification_ws = [\n";
   for(var i = 0; i < l.raw_notification_ws.length; i++)
   {
@@ -1609,26 +1414,9 @@ var print_cutscene_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_cutscene.notice_reqs = [[\n";
-  for(var i = 0; i < l.notice_reqs.length; i++)
-  {
-    for(var j = 0; j < l.notice_reqs[i].length; j++)
-      str += "\""+l.notice_reqs[i][j]+"\",\n";
-    if(i < l.notice_reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
-  "tmp_cutscene.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"+
+  "tmp_cutscene.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_cutscene.notice_reqs = "+get_requirements_string(l.notice_reqs)+
+  "tmp_cutscene.reqs = "+get_requirements_string(l.reqs)+
   "tmp_cutscene.commands = [];\n";
   var c;
   for(var i = 0; i < l.commands.length; i++)
@@ -1779,16 +1567,7 @@ var print_inert_meta = function(l)
   "tmp_inert.wz = "+l.wz+";\n"+
   "tmp_inert.g = "+l.g+";\n"+
   "tmp_inert.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_inert.reqs = [[\n";
-  for(var i = 0; i < l.reqs.length; i++)
-  {
-    for(var j = 0; j < l.reqs[i].length; j++)
-      str += "\""+l.reqs[i][j]+"\",\n";
-    if(i < l.reqs.length-1)
-      str += "],[\n";
-  }
-  str +=
-  "]];\n"
+  "tmp_inert.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 

@@ -27,6 +27,8 @@ tmp_level.notifications_h = 30;
 tmp_level.target_lerp_s = 0.03;
 tmp_level.raw_notifications = [
 ];
+tmp_level.notification_reqs = [[
+]];
 tmp_level.reqs = [[
 ]];
 tmp_level.notebook_reqs = [[

@@ -4,6 +4,8 @@ tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
+tmp_view.notification_reqs = [[
+]];
 tmp_view.reqs = [[
 ]];
 tmp_view.exit_reqs = [[
