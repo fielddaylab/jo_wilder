@@ -1228,7 +1228,20 @@ var navigable = function()
   self.draw = function()
   {
     if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_available_bg_drawables.length; i++) { var d = self.cache_available_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
+    if(self.room.id == "secret")
+    {
+      var fg_img   = self.room.inerts[0].animcycle_inst.img;
+      var fuzz_img = self.room.inerts[1].animcycle_inst.img;
+      drawCanvMaskedImage(fg_img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
+      ctx.globalCompositeOperation = "destination-in";
+      var s = 400;
+      ctx.drawImage(fuzz_img,my_cursor.known_x-s/2,my_cursor.known_y-s/2,s,s);
+      ctx.globalCompositeOperation = "destination-atop";
+    }
+
     drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
+    ctx.globalCompositeOperation = "source-over";
+
 
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
     var i = 0;

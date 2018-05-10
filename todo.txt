@@ -20,11 +20,10 @@ cutscene tween events (shake, etc...)
 
 consistent scripts for edit/goto/find/etc.. by search/type/fqid/etc..
 
-set hover cursor on objects instead of level (like hover icons)
 animate notification transitions
 cutscenes revert everything on completion
 
-consolidate observations into speaks
+consolidate observations into speaks into cutscenes
 speak bubble types (thought, talk, etc...)
 anything trigger type auto, act, both
 save/load gen_slate should iterate through all reqs, finding noteworthy, only saving those (and caching noteworthy for print/read)
