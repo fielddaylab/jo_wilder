@@ -48,7 +48,7 @@ tmp_level.ui_hover_animcycle_id = "hover_ui";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.cursor_w = 27;
 tmp_level.cursor_h = 31;
-tmp_level.hover_w = 65;
+tmp_level.hover_w = 56;
 tmp_level.hover_h = 56;
 tmp_level.notifications_w = 200;
 tmp_level.notifications_h = 30;
@@ -6533,11 +6533,16 @@ tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 "My notebook!",
 ];
+tmp_object.raw_notification_ws = [
+118,
+];
 tmp_object.notice_reqs = [[
-]];
+]]
+tmp_object.notification_reqs = [[
+]]
 tmp_object.reqs = [[
 "!tunic.historicalsociety.closet.notebook",
-]];
+]]
 
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -7676,11 +7681,14 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
 tmp_speak.reqs = [[
 "tunic.historicalsociety.collection.tunic.slip",
 "!tunic.historicalsociety.collection.gramps.found",
-]];
-tmp_speak.commands = [];
+]]
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -351.97213029455867;
 tmp_speak_command.wy = 281.3625512053247;
@@ -7692,9 +7700,9 @@ tmp_speak_command.raw_atext = "Did you find anything?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 114.39200904015883;
-tmp_speak_command.wy = 140.30326050134659;
-tmp_speak_command.w = 131;
+tmp_speak_command.wx = 114.37822950354155;
+tmp_speak_command.wy = 140.29711546258577;
+tmp_speak_command.w = 209;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -8109,11 +8117,15 @@ tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.notice_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
 ];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]]
 tmp_cutscene.notice_reqs = [[
-]];
+]]
 tmp_cutscene.reqs = [[
 "!tunic.historicalsociety.entry.groupconvo",
-]];
+]]
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
@@ -8146,7 +8158,7 @@ tmp_cutscene_command.cutscene_entity_id = "boss";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 364.9832727272726;
 tmp_cutscene_command.wy = 415.4625454545452;
-tmp_cutscene_command.w = 165;
+tmp_cutscene_command.w = 226;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Who is working to identity the shirt artifact?";
 tmp_cutscene_command.t = 0;
@@ -11327,19 +11339,23 @@ tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.notice_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
 ];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]]
 tmp_cutscene.notice_reqs = [[
-]];
+]]
 tmp_cutscene.reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
-]];
+]]
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 362;
-tmp_cutscene_command.wy = 200.99999999999994;
-tmp_cutscene_command.w = 182;
+tmp_cutscene_command.wx = 328;
+tmp_cutscene_command.wy = 169.99999999999991;
+tmp_cutscene_command.w = 214;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "This team started after the date on the slip.";
 tmp_cutscene_command.t = 0;
@@ -11348,8 +11364,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 362;
-tmp_cutscene_command.wy = 200.99999999999994;
+tmp_cutscene_command.wx = 361;
+tmp_cutscene_command.wy = 170.99999999999997;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Our shirt can't be a basketball jersey.";
@@ -11359,9 +11375,9 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 373;
+tmp_cutscene_command.wx = 393;
 tmp_cutscene_command.wy = 169.99999999999991;
-tmp_cutscene_command.w = 175;
+tmp_cutscene_command.w = 150;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I should tell Gramps the news!";
 tmp_cutscene_command.t = 0;
@@ -11416,14 +11432,22 @@ tmp_view.fqid = "tunic.kohlcenter.halloffame.plaque.face";
 {
 tmp_view.primary = true;
 tmp_view.animcycle_id = "plaque_face";
+tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
+"I should check for clues...",
 ];
+tmp_view.raw_notification_ws = [
+230,
+];
+tmp_view.notification_reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+]]
 tmp_view.exit_reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
-]];
+]]
 tmp_view.reqs = [[
-]];
+]]
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -11441,9 +11465,14 @@ tmp_zone.target_view = "face";
 tmp_zone.raw_notifications = [
 "The slip says 1916 but the team didn't start until 1974!",
 ];
+tmp_zone.raw_notification_ws = [
+252,
+];
+tmp_zone.notification_reqs = [[
+]]
 tmp_zone.reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",
-]];
+]]
 
 tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);

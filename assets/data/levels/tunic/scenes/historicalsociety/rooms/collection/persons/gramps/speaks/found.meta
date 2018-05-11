@@ -5,11 +5,14 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
 tmp_speak.reqs = [[
 "tunic.historicalsociety.collection.tunic.slip",
 "!tunic.historicalsociety.collection.gramps.found",
-]];
-tmp_speak.commands = [];
+]]
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -351.97213029455867;
 tmp_speak_command.wy = 281.3625512053247;
@@ -21,9 +24,9 @@ tmp_speak_command.raw_atext = "Did you find anything?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 114.39200904015883;
-tmp_speak_command.wy = 140.30326050134659;
-tmp_speak_command.w = 131;
+tmp_speak_command.wx = 114.37822950354155;
+tmp_speak_command.wy = 140.29711546258577;
+tmp_speak_command.w = 209;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

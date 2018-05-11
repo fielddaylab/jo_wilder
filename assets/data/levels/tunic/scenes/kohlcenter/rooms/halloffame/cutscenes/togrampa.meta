@@ -15,19 +15,23 @@ tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.notice_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
 ];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]]
 tmp_cutscene.notice_reqs = [[
-]];
+]]
 tmp_cutscene.reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
-]];
+]]
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 362;
-tmp_cutscene_command.wy = 200.99999999999994;
-tmp_cutscene_command.w = 182;
+tmp_cutscene_command.wx = 328;
+tmp_cutscene_command.wy = 169.99999999999991;
+tmp_cutscene_command.w = 214;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "This team started after the date on the slip.";
 tmp_cutscene_command.t = 0;
@@ -36,8 +40,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 362;
-tmp_cutscene_command.wy = 200.99999999999994;
+tmp_cutscene_command.wx = 361;
+tmp_cutscene_command.wy = 170.99999999999997;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Our shirt can't be a basketball jersey.";
@@ -47,9 +51,9 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 373;
+tmp_cutscene_command.wx = 393;
 tmp_cutscene_command.wy = 169.99999999999991;
-tmp_cutscene_command.w = 175;
+tmp_cutscene_command.w = 150;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I should tell Gramps the news!";
 tmp_cutscene_command.t = 0;

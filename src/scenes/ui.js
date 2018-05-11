@@ -1252,13 +1252,11 @@ var navigable = function()
       drawImageBox(d.animcycle_inst.img, d, ctx);
       if(state_cur == STATE_NAV && d.notice)
       {
-        w = cur_level.hover_w;
-        h = cur_level.hover_h;
         hw = cur_level.hover_w/2;
         hh = cur_level.hover_h/2;
         d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
         d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
-        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
       }
     }
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
@@ -1268,13 +1266,11 @@ var navigable = function()
       drawImageBox(d.animcycle_inst.img, d, ctx);
       if(state_cur == STATE_NAV && d.notice)
       {
-        w = cur_level.hover_w;
-        h = cur_level.hover_h;
         hw = cur_level.hover_w/2;
         hh = cur_level.hover_h/2;
         d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
         d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
-        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, w, h);
+        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
       }
     }
 
@@ -1983,6 +1979,7 @@ var objectview = function()
   self.cur_view = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.exit_available = true;
+  self.exit_t = 1;
   self.cache_available_zones = [];
 
   self.consume_object = function(object)
@@ -2110,6 +2107,9 @@ var objectview = function()
 
   self.tick = function()
   {
+    if(!my_notificationview.note.length && self.exit_available) self.exit_t += 0.05;
+    else                                                        self.exit_t -= 0.05;
+    self.exit_t = clamp(0,1,self.exit_t);
     self.cur_view.animcycle_inst.tick();
     for(var i = 0; i < self.cache_available_zones.length; i++)
     {
@@ -2138,8 +2138,12 @@ var objectview = function()
       ctx.drawImage(self.cur_view.animcycle_inst.img,((my_cursor.known_x-self.obj.x)-fs/2)*frw,((my_cursor.known_y-self.obj.y)-fs/2)*frh,fs*frw,fs*frh,my_cursor.known_x-ts/2,my_cursor.known_y-ts/2+yoff,ts,ts);
     }
 
-    if(!my_notificationview.note.length)
-    if(self.exit_available) ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    if(!my_notificationview.note.length && self.exit_available)
+    {
+      ctx.globalAlpha = self.exit_t;
+      ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+      ctx.globalAlpha = 1;
+    }
 
     if(DEBUG)
     {

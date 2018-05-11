@@ -15,11 +15,15 @@ tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.notice_icon_animcycle_id = "null";
 tmp_cutscene.raw_notifications = [
 ];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]]
 tmp_cutscene.notice_reqs = [[
-]];
+]]
 tmp_cutscene.reqs = [[
 "!tunic.historicalsociety.entry.groupconvo",
-]];
+]]
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
@@ -52,7 +56,7 @@ tmp_cutscene_command.cutscene_entity_id = "boss";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 364.9832727272726;
 tmp_cutscene_command.wy = 415.4625454545452;
-tmp_cutscene_command.w = 165;
+tmp_cutscene_command.w = 226;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Who is working to identity the shirt artifact?";
 tmp_cutscene_command.t = 0;

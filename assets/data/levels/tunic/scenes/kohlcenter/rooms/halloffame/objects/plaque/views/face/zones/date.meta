@@ -8,7 +8,12 @@ tmp_zone.target_view = "face";
 tmp_zone.raw_notifications = [
 "The slip says 1916 but the team didn't start until 1974!",
 ];
+tmp_zone.raw_notification_ws = [
+252,
+];
+tmp_zone.notification_reqs = [[
+]]
 tmp_zone.reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",
-]];
+]]
 

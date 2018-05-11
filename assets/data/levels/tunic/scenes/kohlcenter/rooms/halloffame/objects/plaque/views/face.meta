@@ -1,11 +1,19 @@
 tmp_view.primary = true;
 tmp_view.animcycle_id = "plaque_face";
+tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
+"I should check for clues...",
 ];
+tmp_view.raw_notification_ws = [
+230,
+];
+tmp_view.notification_reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+]]
 tmp_view.exit_reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
-]];
+]]
 tmp_view.reqs = [[
-]];
+]]
 
