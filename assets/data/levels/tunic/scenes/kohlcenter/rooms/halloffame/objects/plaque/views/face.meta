@@ -3,6 +3,9 @@ tmp_view.animcycle_id = "plaque_face";
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
+tmp_view.exit_reqs = [[
+"tunic.kohlcenter.halloffame.plaque.face.date",
+]];
 tmp_view.reqs = [[
 ]];
 

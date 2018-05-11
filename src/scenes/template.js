@@ -233,7 +233,7 @@ var load_save_code = function(code)
   s.decode(code);
 }
 
-var queryreqs = function(reqs)
+var queryreqs = function(self, reqs)
 {
   if(UNLOCK) return true;
 
@@ -249,8 +249,10 @@ var queryreqs = function(reqs)
       if(l.charAt(0) == "!") { invert = true; l = l.substr(1); } else invert = false;
       if(l.charAt(0) == "_") { pre    = true; l = l.substr(1); } else pre    = false;
 
-      if(pre) available = find(l).pre_met;
-      else    available = find(l).met;
+      var o = self;
+      if(l != "self") o = find(l);
+      if(pre) available = o.pre_met;
+      else    available = o.met;
       if(invert) available = !available;
     }
   }
