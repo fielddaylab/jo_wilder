@@ -671,7 +671,7 @@ var navigable = function()
   self.consume_room = function(room)
   {
     self.room = room;
-    if(!self.room.met && self.room.notifications.length) my_notificationview.consume_notification(self.room);
+    if(self.room.notifications.length && queryreqs(self.room.notification_reqs)) my_notificationview.consume_notification(self.room);
     self.room.pre_met = true;
     self.room.met = true;
     self.unlock_content();
@@ -705,49 +705,49 @@ var navigable = function()
 
     var o;
     for(var i = 0; i < self.room.persons.length; i++)
-      if(self.room.persons[i].available = queryavailable(self.room.persons[i].reqs))
+      if(self.room.persons[i].available = queryreqs(self.room.persons[i].reqs))
       {
         o = self.room.persons[i];
-        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o.notice_reqs));
         self.cache_available_persons.push(o);
       }
     for(var i = 0; i < self.room.objects.length; i++)
-      if(self.room.objects[i].available = queryavailable(self.room.objects[i].reqs))
+      if(self.room.objects[i].available = queryreqs(self.room.objects[i].reqs))
       {
         o = self.room.objects[i];
-        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o.notice_reqs));
         self.cache_available_objects.push(o);
       }
     for(var i = 0; i < self.room.observations.length; i++)
-      if(self.room.observations[i].available = queryavailable(self.room.observations[i].reqs))
+      if(self.room.observations[i].available = queryreqs(self.room.observations[i].reqs))
       {
         o = self.room.observations[i];
-        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o.notice_reqs));
         self.cache_available_observations.push(o);
       }
     for(var i = 0; i < self.room.portholes.length; i++)
-      if(self.room.portholes[i].available = queryavailable(self.room.portholes[i].reqs))
+      if(self.room.portholes[i].available = queryreqs(self.room.portholes[i].reqs))
       {
         o = self.room.portholes[i];
-        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o.notice_reqs));
         self.cache_available_portholes.push(o);
       }
     for(var i = 0; i < self.room.wildcards.length; i++)
-      if(self.room.wildcards[i].available = queryavailable(self.room.wildcards[i].reqs))
+      if(self.room.wildcards[i].available = queryreqs(self.room.wildcards[i].reqs))
       {
         o = self.room.wildcards[i];
-        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o.notice_reqs));
         self.cache_available_wildcards.push(o);
       }
     for(var i = 0; i < self.room.cutscenes.length; i++)
-      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && (self.room.cutscenes[i].available = queryavailable(self.room.cutscenes[i].reqs)))
+      if(self.room.cutscenes[i].trigger == CUTSCENE_TRIGGER_ACT && (self.room.cutscenes[i].available = queryreqs(self.room.cutscenes[i].reqs)))
       {
         o = self.room.cutscenes[i];
-        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryavailable(o.notice_reqs));
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o.notice_reqs));
         self.cache_available_cutscenes.push(o);
       }
     for(var i = 0; i < self.room.inerts.length; i++)
-      if(self.room.inerts[i].available = queryavailable(self.room.inerts[i].reqs))
+      if(self.room.inerts[i].available = queryreqs(self.room.inerts[i].reqs))
       {
         o = self.room.inerts[i];
         self.cache_available_inerts.push(o);
@@ -784,7 +784,7 @@ var navigable = function()
       for(var i = 0; i < cur_room.cutscenes.length; i++)
       {
         var cutscene = cur_room.cutscenes[i];
-        if(!cutscene.pre_met && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && (cutscene.available = queryavailable(cutscene.reqs)))
+        if(!cutscene.pre_met && cutscene.trigger == CUTSCENE_TRIGGER_AUTO && (cutscene.available = queryreqs(cutscene.reqs)))
         {
           if(state_cur == STATE_NAV)
           {
@@ -1440,7 +1440,7 @@ var mapview = function()
   {
     self.cache_available_scenes = [];
     for(var i = 0; i < self.level.scenes.length; i++)
-      if(self.level.scenes[i].available = queryavailable(self.level.scenes[i].reqs)) self.cache_available_scenes.push(self.level.scenes[i]);
+      if(self.level.scenes[i].available = queryreqs(self.level.scenes[i].reqs)) self.cache_available_scenes.push(self.level.scenes[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1604,7 +1604,7 @@ var notebookview = function()
     for(var i = 0; i < self.entrys.length; i++)
     {
       var l = self.entrys[i].available;
-      self.entrys[i].available = queryavailable(self.entrys[i].reqs);
+      self.entrys[i].available = queryreqs(self.entrys[i].reqs);
       if(l && self.entrys[i].available) ga('send', 'event', 'capitol_entry', 'available', self.entrys[i].fqid, self.n_available_entrys+1);
       if(self.entrys[i].available)
       {
@@ -1987,12 +1987,12 @@ var objectview = function()
   self.consume_object = function(object)
   {
     self.object = object;
-    if(!self.object.pre_met && self.object.notifications.length) my_notificationview.consume_notification(self.object);
+    if(self.object.notifications.length && queryreqs(self.object.notification_reqs)) my_notificationview.consume_notification(self.object);
     self.object.pre_met = true;
     self.cur_view = self.object.views[0];
     for(var i = 1; i < self.object.views.length; i++) if(self.object.views[i].primary > self.cur_view.primary) self.cur_view = self.object.views[i];
     self.cur_view.animcycle_inst.ready();
-    if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view);
+    if(self.cur_view.notifications.length && queryreqs(self.cur_view.notification_reqs)) my_notificationview.consume_notification(self.cur_view);
     self.cur_view.pre_met = true;
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
@@ -2002,7 +2002,7 @@ var objectview = function()
   {
     self.cache_available_zones = [];
     for(var i = 0; i < self.cur_view.zones.length; i++)
-      if(self.cur_view.zones[i].available = queryavailable(self.cur_view.zones[i].reqs)) self.cache_available_zones.push(self.cur_view.zones[i]);
+      if(self.cur_view.zones[i].available = queryreqs(self.cur_view.zones[i].reqs)) self.cache_available_zones.push(self.cur_view.zones[i]);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -2091,13 +2091,13 @@ var objectview = function()
       zone = self.cache_available_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
-        if(!zone.met && zone.notifications.length) my_notificationview.consume_notification(zone);
+        if(zone.notifications.length && queryreqs(zone.notification_reqs)) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
         self.cur_view.met = true;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
         self.cur_view.animcycle_inst.ready();
-        if(!self.cur_view.pre_met && self.cur_view.notifications.length) my_notificationview.consume_notification(self.cur_view);
+        if(self.cur_view.notifications.length && queryreqs(self.cur_view.notification_reqs)) my_notificationview.consume_notification(self.cur_view);
         self.cur_view.pre_met = true;
         self.cur_view.met = true;
         self.unlock_content();
@@ -2186,7 +2186,7 @@ var observationview = function()
   self.consume_observation = function(observation)
   {
     self.observation = observation;
-    if(!self.observation.pre_met && self.observation.notifications.length) my_notificationview.consume_notification(self.observation);
+    if(self.observation.notifications.length && queryreqs(self.observation.notification_reqs)) my_notificationview.consume_notification(self.observation);
     self.observation.pre_met = true;
     self.ui_state = UI_STATE_IN_OBSERVATION;
     self.ui_state_t = 0;
@@ -2400,7 +2400,7 @@ var personview = function()
   self.consume_person = function(person)
   {
     self.person = person;
-    if(!self.person.pre_met && self.person.notifications.length) my_notificationview.consume_notification(self.person);
+    if(self.person.notifications.length && queryreqs(self.person.notification_reqs)) my_notificationview.consume_notification(self.person);
     self.person.pre_met = true;
     self.unlock_content();
     self.ui_state = UI_STATE_IN_SPEAK;
@@ -2444,7 +2444,7 @@ var personview = function()
       self.clicked_option.met = true;
       self.cur_speak = self.clicked_option.target_speak_found;
       self.cur_speak_command_i = 0;
-      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak);
+      if(self.cur_speak.notifications.length && queryreqs(self.cur_speak.notification_reqs)) my_notificationview.consume_notification(self.cur_speak);
       self.cur_speak.pre_met = true;
       self.unlock_content();
     }
@@ -2455,7 +2455,7 @@ var personview = function()
   {
     self.cache_available_speaks = [];
     for(var i = 0; i < self.person.speaks.length; i++)
-      if(self.person.speaks[i].available = queryavailable(self.person.speaks[i].reqs)) self.cache_available_speaks.push(self.person.speaks[i]);
+      if(self.person.speaks[i].available = queryreqs(self.person.speaks[i].reqs)) self.cache_available_speaks.push(self.person.speaks[i]);
 
     if(!self.cur_speak)
     {
@@ -2464,7 +2464,7 @@ var personview = function()
       for(var i = 1; i < self.cache_available_speaks.length; i++)
         if(self.cache_available_speaks[i].primary > self.cur_speak.primary)
           self.cur_speak = self.cache_available_speaks[i];
-      if(!self.cur_speak.pre_met && self.cur_speak.notifications.length) my_notificationview.consume_notification(self.cur_speak);
+      if(self.cur_speak.notifications.length && queryreqs(self.cur_speak.notification_reqs)) my_notificationview.consume_notification(self.cur_speak);
       self.cur_speak.pre_met = true;
     }
 
@@ -2475,7 +2475,7 @@ var personview = function()
     self.cache_available_options = [];
     for(var i = 0; i < self.cur_speak.options.length; i++)
     {
-      if(self.cur_speak.options[i].available = queryavailable(self.cur_speak.options[i].reqs))
+      if(self.cur_speak.options[i].available = queryreqs(self.cur_speak.options[i].reqs))
         self.cache_available_options.push(self.cur_speak.options[i]);
     }
     //bubble sort on index
@@ -2699,7 +2699,7 @@ var personview = function()
     {
       if(self.clicked_option !== 1) //1 == next speak command
       {
-        if(!self.clicked_option.pre_met && self.clicked_option.notifications.length) my_notificationview.consume_notification(self.clicked_option);
+        if(self.clicked_option.notifications.length && queryreqs(self.clicked_option.notification_reqs)) my_notificationview.consume_notification(self.clicked_option);
         self.clicked_option.pre_met = true;
         self.clicked_option.met = true;
       }
@@ -2883,7 +2883,7 @@ var wildcardview = function()
   self.consume_wildcard = function(wildcard)
   {
     self.wildcard = wildcard;
-    if(!self.wildcard.pre_met && self.wildcard.notifications.length) my_notificationview.consume_notification(self.wildcard);
+    if(self.wildcard.notifications.length && queryreqs(self.wildcard.notification_reqs)) my_notificationview.consume_notification(self.wildcard);
     self.wildcard.pre_met = true;
     self.wildcard.met = true; //technically should wait for dismiss, but can't guarantee dismiss by custom code. needs solution.
     self.wildcard.consume_self(self.wildcard);
@@ -2944,7 +2944,7 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
-    if(!self.cutscene.pre_met && self.cutscene.notifications.length) my_notificationview.consume_notification(self.cutscene);
+    if(self.cutscene.notifications.length && queryreqs(self.cutscene.notification_reqs)) my_notificationview.consume_notification(self.cutscene);
     self.cutscene.pre_met = true;
 
     self.cutscene_entitys = [];

@@ -233,7 +233,7 @@ var load_save_code = function(code)
   s.decode(code);
 }
 
-var queryavailable = function(reqs)
+var queryreqs = function(reqs)
 {
   if(UNLOCK) return true;
 
@@ -296,10 +296,10 @@ var level = function()
   self.scenes = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
-  self.notebook_reqs = [];
-  self.map_reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
+  self.notebook_reqs = [[]];
+  self.map_reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -324,8 +324,8 @@ var scene = function()
   self.rooms = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -371,8 +371,8 @@ var room = function()
   self.inerts = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
   //
   self.met = false;
   self.pre_met = false;
@@ -412,9 +412,9 @@ var person = function()
   self.speaks = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.notice_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.notice = false;
@@ -460,9 +460,9 @@ var object = function()
   self.views = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.notice_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.notice = false;
@@ -513,9 +513,9 @@ var observation = function()
   self.blip_h = 0;
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.notice_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.notice = false;
@@ -565,9 +565,9 @@ var porthole = function()
   self.target_start_wy = 0;
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.notice_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.notice = false;
@@ -615,9 +615,9 @@ var wildcard = function()
   self.audio_id = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.notice_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.notice = false;
@@ -652,7 +652,7 @@ var inert = function()
   self.wz = 0;
   self.g = 0; //"ground", as in "foreground", "background", etc... (bg < 0 < fg)
   self.animcycle_id = "null";
-  self.reqs = [];
+  self.reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -682,9 +682,9 @@ var view = function()
   self.zones = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
-  self.exit_reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
+  self.exit_reqs = [[]];
   //
   self.met = false;
   self.pre_met = false;
@@ -707,8 +707,8 @@ var zone = function()
   self.target_view = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -760,8 +760,8 @@ var speak = function()
   self.options = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -783,8 +783,8 @@ var option = function()
   self.target_speak = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -813,8 +813,8 @@ var entry = function()
   self.audio_id = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -918,9 +918,9 @@ var cutscene = function()
   self.notice_icon_animcycle_id = "null";
   self.raw_notifications = [];
   self.raw_notification_ws = [];
-  self.notification_reqs = [];
-  self.notice_reqs = [];
-  self.reqs = [];
+  self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
+  self.reqs = [[]];
 
   //
   self.available = false;
