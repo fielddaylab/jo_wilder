@@ -12,6 +12,7 @@ tmp_object.animcycle_id = "retirement_letter";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "retirement_letter_overlay";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];

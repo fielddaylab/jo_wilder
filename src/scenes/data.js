@@ -1617,6 +1617,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/retirement_l
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "retirement_letter_overlay";
+tmp_animcycle.fqid = "tunic.retirement_letter_overlay";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/retirement_letter_overlay/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "room_capitol_entry";
 tmp_animcycle.fqid = "tunic.room_capitol_entry";
 {
@@ -6587,6 +6602,7 @@ tmp_object.animcycle_id = "retirement_letter";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "retirement_letter_overlay";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
