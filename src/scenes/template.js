@@ -458,11 +458,13 @@ var object = function()
   self.hover_cursor_animcycle_id = "null";
   self.hover_icon_animcycle_id = "null";
   self.notice_icon_animcycle_id = "null";
+  self.view_overlay_animcycle_id = "null";
   self.audio_id = "null";
   self.views = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
   self.notification_reqs = [[]];
+  self.view_overlay_reqs = [[]];
   self.notice_reqs = [[]];
   self.reqs = [[]];
   //
@@ -475,6 +477,7 @@ var object = function()
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
+  self.view_overlay_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -1220,6 +1223,7 @@ var print_object_meta = function(l)
   "tmp_object.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_object.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_object.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_object.view_overlay_animcycle_id = \""+l.view_overlay_animcycle_id+"\";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_object.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_object.raw_notification_ws = [\n";
@@ -1230,8 +1234,9 @@ var print_object_meta = function(l)
   }
   str +=
   "];\n"+
-  "tmp_object.notice_reqs = "+get_requirements_string(l.notice_reqs)+
   "tmp_object.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_object.view_overlay_reqs = "+get_requirements_string(l.view_overlay_reqs)+
+  "tmp_object.notice_reqs = "+get_requirements_string(l.notice_reqs)+
   "tmp_object.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }

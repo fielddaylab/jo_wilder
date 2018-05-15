@@ -95,6 +95,7 @@ var loader = function()
       self.load_animcycle_inst(object.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
       self.load_animcycle_inst(object.notice_icon_animcycle_inst);
+      self.load_animcycle_inst(object.view_overlay_animcycle_inst);
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
@@ -1977,6 +1978,8 @@ var objectview = function()
   self.obj = {wx:0,wy:0,ww:880,wh:660};
   screenSpace(my_ui_camera,canv,self.obj);
   self.cur_view = 0;
+  self.show_view_overlay = 0;
+  self.view_overlay_t = 0;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.exit_available = true;
   self.exit_t = 1;
@@ -1994,6 +1997,7 @@ var objectview = function()
     self.cur_view.pre_met = true;
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
+    self.view_overlay_t = 0;
   }
 
   self.unlock_content = function()
@@ -2002,6 +2006,7 @@ var objectview = function()
     for(var i = 0; i < self.cur_view.zones.length; i++)
       if(self.cur_view.zones[i].available = queryreqs(self.cur_view.zones[i], self.cur_view.zones[i].reqs)) self.cache_available_zones.push(self.cur_view.zones[i]);
     self.exit_available = queryreqs(self.cur_view, self.cur_view.exit_reqs);
+    self.show_view_overlay = (self.object.view_overlay_animcycle_id != "null" && queryreqs(self.object, self.object.view_overlay_reqs));
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -2116,6 +2121,9 @@ var objectview = function()
       self.cache_available_zones[i].animcycle_inst.tick();
       screenSpace(my_ui_camera,canv,self.cache_available_zones[i]);
     }
+    if(self.show_view_overlay) self.view_overlay_t += 0.01;
+    else                       self.view_overlay_t -= 0.01;
+    self.view_overlay_t = clamp(0,1,self.view_overlay_t);
   }
 
   self.draw = function(t)
@@ -2137,6 +2145,9 @@ var objectview = function()
       var ts = 400;
       ctx.drawImage(self.cur_view.animcycle_inst.img,((my_cursor.known_x-self.obj.x)-fs/2)*frw,((my_cursor.known_y-self.obj.y)-fs/2)*frh,fs*frw,fs*frh,my_cursor.known_x-ts/2,my_cursor.known_y-ts/2+yoff,ts,ts);
     }
+
+    if(self.object.view_overlay_animcycle_id != "null" && self.view_overlay_t)
+      ctx.drawImage(self.object.view_overlay_animcycle_inst.img, self.obj.x, self.obj.y+yoff+(1-self.view_overlay_t)*self.obj.h, self.obj.w, self.obj.h);
 
     if(!my_notificationview.note.length && self.exit_available)
     {
