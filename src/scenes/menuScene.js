@@ -32,9 +32,9 @@ var MenuScene = function(game, stage)
     var y = 20;
     var w = 200;
     var h = 50;
-    new_button      = new ButtonBox(x,y,w,h,function(evt){ next = 1; }); y += h+10;
-    continue_button = new ButtonBox(x,y,w,h,function(evt){ next = 1; }); y += h+10;
-    code_button     = new ButtonBox(x,y,w,h,function(evt){ next = 1; }); y += h+10;
+    new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
+    continue_button = new ButtonBox(x,y,w,h,function(evt){                                         next = 1; }); y += h+10;
+    code_button     = new ButtonBox(x,y,w,h,function(evt){ save_code = save_table["abc"];          next = 1; }); y += h+10;
 
     next = 0;
     next_t = 0;

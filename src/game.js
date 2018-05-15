@@ -1,3 +1,15 @@
+var save_code = 0;
+var save_table = [];
+save_table["abc"] = "060000000000000044563244194304013126400000000000000000000000000000000000"; //just after group convo
+var url_json = jsonFromURL();
+var cookie;
+if(url_json.save)
+{
+  save_code = url_json.save;
+  setCookie("save", url_json.save, 100);
+}
+else save_code = getCookie("save");
+
 var Game = function(init)
 {
   var default_init =
