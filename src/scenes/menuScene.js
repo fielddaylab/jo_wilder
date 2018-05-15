@@ -30,8 +30,8 @@ var MenuScene = function(game, stage)
 
     var x = 20;
     var y = 20;
-    var w = 100;
-    var h = 30;
+    var w = 200;
+    var h = 50;
     new_button      = new ButtonBox(x,y,w,h,function(evt){ next = 1; }); y += h+10;
     continue_button = new ButtonBox(x,y,w,h,function(evt){ next = 1; }); y += h+10;
     code_button     = new ButtonBox(x,y,w,h,function(evt){ next = 1; }); y += h+10;
@@ -65,6 +65,10 @@ var MenuScene = function(game, stage)
     new_button.draw(canv);
     continue_button.draw(canv);
     code_button.draw(canv);
+    ctx.fillStyle = black;
+    ctx.fillText("New Game",new_button.x+15,new_button.y+new_button.h-10);
+    ctx.fillText("Continue",continue_button.x+15,continue_button.y+continue_button.h-10);
+    ctx.fillText("Enter Code",code_button.x+15,code_button.y+code_button.h-10);
 
     if(next)
     {
