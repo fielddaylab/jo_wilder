@@ -3138,8 +3138,8 @@ tmp_cutscene_command.cutscene_entity_id = "black";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.t = -1;
-tmp_cutscene_command.ww = 880;
-tmp_cutscene_command.wh = 660;
+tmp_cutscene_command.ww = 880*2;
+tmp_cutscene_command.wh = 660*2;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "black";
@@ -3152,8 +3152,8 @@ tmp_cutscene_command.cutscene_entity_id = "chapter2";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.t = -1;
-tmp_cutscene_command.ww = 880;
-tmp_cutscene_command.wh = 660;
+tmp_cutscene_command.ww = 880*2;
+tmp_cutscene_command.wh = 660*2;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter2";
@@ -3162,9 +3162,9 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 //fade in black
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_id = "chapter2";
+tmp_cutscene_command.cutscene_entity_id = "black";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.t = 10;
+tmp_cutscene_command.t = 1;
 tmp_cutscene_command.end_t = 50;
 tmp_cutscene_command.a = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -3696,25 +3696,29 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
 tmp_speak.reqs = [[
-]];
-
-tmp_speak.commands = [];
-
+]]
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -101.3661746464911;
-tmp_speak_command.wy = 85.98010910074687;
-tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.wx = -274.0934473737639;
+tmp_speak_command.wy = 170.82859394923173;
+tmp_speak_command.w = 273.69814225923324;
 tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "The plaque at the basketball museum shows that the women's team didn't start until 1962!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -129.90090138980202;
-tmp_speak_command.wy = 374.70000148702;
-tmp_speak_command.w = 323.69814225923324;
+tmp_speak_command.wx = -98.08271957162017;
+tmp_speak_command.wy = 380.7606075476261;
+tmp_speak_command.w = 229.69814225923324;
 tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Interesting- but I don't see how that means it isn't a basketball jersey...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
@@ -3765,25 +3769,29 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
 tmp_speak.reqs = [[
-]];
-
-tmp_speak.commands = [];
-
+]]
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -101.3661746464911;
-tmp_speak_command.wy = 85.98010910074687;
-tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.wx = -222.57829585861236;
+tmp_speak_command.wy = 128.40435152498935;
+tmp_speak_command.w = 241.69814225923324;
 tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "I found this slip attached to the shirt- it's from 1942!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -101.3661746464911;
-tmp_speak_command.wy = 85.98010910074687;
-tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.wx = -208.94193222224874;
+tmp_speak_command.wy = 126.88920000983781;
+tmp_speak_command.w = 231.69814225923326;
 tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "That's 4 years BEFORE the women's team was formed!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
