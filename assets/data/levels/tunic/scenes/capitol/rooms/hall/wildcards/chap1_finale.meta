@@ -1,22 +1,29 @@
-tmp_wildcard.ww = 746.6092852524237;
-tmp_wildcard.wh = 391.4645686478035;
-tmp_wildcard.wx = 11.184373924631132;
-tmp_wildcard.wy = 14.771412311023369;
+tmp_wildcard.ww = 154.18504282818134;
+tmp_wildcard.wh = 323.2827504659853;
+tmp_wildcard.wx = 298.30558604584337;
+tmp_wildcard.wy = 39.771412311023454;
 tmp_wildcard.wz = 1;
-tmp_wildcard.act_wx = 45.45034468100204;
-tmp_wildcard.act_wy = 12.120698091296784;
+tmp_wildcard.act_wx = -125.76177653111915;
+tmp_wildcard.act_wy = -86.36415039355171;
 tmp_wildcard.act_anim = 1;
 tmp_wildcard.hover_icon_wx = 34.848484848490784;
 tmp_wildcard.hover_icon_wy = -34.8484848481152;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
 tmp_wildcard.hover_icon_animcycle_id = "null";
+tmp_wildcard.notice_icon_animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
+tmp_wildcard.raw_notification_ws = [
+];
+tmp_wildcard.notification_reqs = [[
+]]
+tmp_wildcard.notice_reqs = [[
+]]
 tmp_wildcard.reqs = [[
 "!tunic.capitol.hall.chap1_finale",
-]];
+]]
 
 ENUM=0;
 var FINALE_WILDCARD_COMMAND_NULL     = ENUM; ENUM++;
@@ -323,9 +330,9 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
             if(self.cur_command.entry_fqid == "HACKME")
             {
               if(my_notebookview.cache_available_entrys[i].fqid == "tunic.entry_cleanerslip")
-                self.commands = self.commands.splice(7,3);
+                self.commands.splice(7,3);
               else if(my_notebookview.cache_available_entrys[i].fqid == "tunic.entry_basketballplaque")
-                self.commands = self.commands.splice(4,3);
+                self.commands.splice(4,3);
               else
               {
                 self.failed = 1;

@@ -69,7 +69,7 @@ tmp_cutscene_command.wx = -230.99781818181776;
 tmp_cutscene_command.wy = 374.7534545454545;
 tmp_cutscene_command.w = 175;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I'm already finished!.";
+tmp_cutscene_command.raw_text = "I'm already finished!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
