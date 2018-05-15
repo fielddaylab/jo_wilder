@@ -14,7 +14,7 @@ var Game = function(init)
   var scenes = [
     new NullScene(self, stage),
     new LoadingScene(self, stage),
-    //new TestScene(self, stage),
+    new MenuScene(self, stage),
     new GamePlayScene(self, stage),
   ];
   var cur_scene     =  0;
@@ -23,8 +23,7 @@ var Game = function(init)
   self.resize = function(args)
   {
     document.getElementById(init.container).removeChild(stage.canv.canvas);
-    if(args.stage)
-      stage = args.stage;
+    if(args.stage) stage = args.stage;
     else stage = new Stage({width:args.width,height:args.height,container:init.container});
     for(var i = 0; i < scenes.length; i++)
       scenes[i].resize(stage);

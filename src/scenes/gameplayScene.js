@@ -2,6 +2,8 @@ var GamePlayScene = function(game, stage)
 {
   var self = this;
 
+  var clicker;
+
   self.resize = function(stage)
   {
     canv = stage.canv;
@@ -737,6 +739,8 @@ var GamePlayScene = function(game, stage)
 
   self.cleanup = function()
   {
+    clicker.detach();
+    clicker = null;
   };
 
 };

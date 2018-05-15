@@ -64,6 +64,7 @@ tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.a = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.raw_text = "";
 tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.audio_id = "null";

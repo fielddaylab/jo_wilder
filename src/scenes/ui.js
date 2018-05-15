@@ -144,6 +144,8 @@ var loader = function()
       self.load_animcycle_inst(cutscene.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(cutscene.hover_icon_animcycle_inst);
       self.load_animcycle_inst(cutscene.notice_icon_animcycle_inst);
+      for(var l = 0; l < cutscene.commands.length; l++)
+        if(cutscene.commands[l].animcycle_id && cutscene.commands[l].animcycle_id != "null") self.load_animcycle(find_animcycle(cutscene.commands[l].animcycle_id,cur_level.animcycles));
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
@@ -3042,10 +3044,20 @@ var cutsceneview = function()
         e.id = c.cutscene_entity_id;
         e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
         e.animcycle_inst.frame_t += c.animcycle_offset_t;
-        e.x = c.wx;
-        e.y = c.wy;
-        e.w = c.ww;
-        e.h = c.wh;
+        e.wx = c.wx;
+        e.wy = c.wy;
+        e.ww = c.ww;
+        e.wh = c.wh;
+        e.a = c.a;
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        {
+          var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+          if(te)
+          {
+            e.wx = te.wx;
+            e.wy = te.wy;
+          }
+        }
         self.cutscene_entitys.push(e);
         break;
       case CUTSCENE_COMMAND_DESTROY:
@@ -3103,8 +3115,20 @@ var cutsceneview = function()
         c.from_wz = e.wz;
         c.from_ww = e.ww;
         c.from_wh = e.wh;
+        c.from_a = e.a;
         if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
-        self.running_commands.push(c);
+        if(c.t >= c.end_t)
+        {
+          //perform immediate
+          if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = c.wx;
+          if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = c.wy;
+          if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = c.wz;
+          if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = c.ww;
+          if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = c.wh;
+          if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = c.a;
+        }
+        else
+          self.running_commands.push(c);
         break;
       case CUTSCENE_COMMAND_TARGET:
         var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
@@ -3277,11 +3301,13 @@ var cutsceneview = function()
       {
         var e = c.cutscene_entity;
         var t = min(1,invlerp(c.t,c.end_t,self.t));
+        if(c.t >= c.end_t) t = 1;
         if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = lerp(c.from_wx,c.wx,t);
         if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = lerp(c.from_wy,c.wy,t);
         if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = lerp(c.from_wz,c.wz,t);
         if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = lerp(c.from_ww,c.ww,t);
         if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
+        if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = lerp(c.from_a,c.a,t);
         if(t == 1)
         {
           self.running_commands.splice(i,1);
@@ -3369,12 +3395,10 @@ var cutsceneview = function()
     for(var i = 0; i < self.cutscene_entitys.length; i++)
     {
       var entity = self.cutscene_entitys[i];
-      //ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
-      ctx.save();
-      ctx.translate(entity.x,entity.y);
-      if(entity.w < 0) ctx.scale(-1,1);
-      ctx.drawImage(entity.animcycle_inst.img,0,0,entity.w,entity.h);
-      ctx.restore();
+      screenSpace(my_camera,canv,entity);
+      if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
+      ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+      ctx.globalAlpha = 1;
     }
 
     for(var i = 0; i < self.running_commands.length; i++)

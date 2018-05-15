@@ -870,8 +870,9 @@ var cutscene_command = function()
   self.wx = CUTSCENE_COMMAND_IGNORE;
   self.wy = CUTSCENE_COMMAND_IGNORE;
   self.wz = CUTSCENE_COMMAND_IGNORE;
-  self.w;
-  self.h;
+  self.w = CUTSCENE_COMMAND_IGNORE;
+  self.h = CUTSCENE_COMMAND_IGNORE;
+  self.a = CUTSCENE_COMMAND_IGNORE;
   self.raw_text = "null";
   self.animcycle_id = "null";
   self.audio_id = "null";
@@ -890,6 +891,7 @@ var cutscene_command = function()
   self.from_z;
   self.from_w;
   self.from_h;
+  self.from_a;
   self.x;
   self.y;
   self.text = stextToLines(self.raw_text,self.w);
@@ -1441,6 +1443,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.wx = "+c.wx+";\n"+
         "tmp_cutscene_command.wy = "+c.wy+";\n"+
         "tmp_cutscene_command.wz = "+c.wz+";\n"+
+        "tmp_cutscene_command.a = "+c.a+";\n"+
         "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
         "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
@@ -1521,6 +1524,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.wx = "+c.wx+";\n"+
         "tmp_cutscene_command.wy = "+c.wy+";\n"+
         "tmp_cutscene_command.wz = "+c.wz+";\n"+
+        "tmp_cutscene_command.a = "+c.a+";\n"+
         "tmp_cutscene_command.t = "+c.t+";\n"+
         "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
@@ -1547,6 +1551,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.wx = "+c.wx+";\n"+
         "tmp_cutscene_command.wy = "+c.wy+";\n"+
         "tmp_cutscene_command.wz = "+c.wz+";\n"+
+        "tmp_cutscene_command.a = "+c.a+";\n"+
         "tmp_cutscene_command.t = "+c.t+";\n"+
         "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
