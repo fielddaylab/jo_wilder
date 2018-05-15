@@ -1,0 +1,30 @@
+tmp_speak.primary = 1;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.reqs = [[
+]];
+
+tmp_speak.commands = [];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -101.3661746464911;
+tmp_speak_command.wy = 85.98010910074687;
+tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.raw_atext = "The plaque at the basketball museum shows that the women's team didn't start until 1962-";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -101.3661746464911;
+tmp_speak_command.wy = 85.98010910074687;
+tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.raw_atext = "That's 4 years AFTER this shirt was used!";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+

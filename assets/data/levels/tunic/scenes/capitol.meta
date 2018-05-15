@@ -8,5 +8,6 @@ tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
 tmp_scene.reqs = [[
+"tunic.kohlcenter.halloffame",
 ]];
 

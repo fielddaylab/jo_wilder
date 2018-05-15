@@ -1,13 +1,13 @@
-tmp_wildcard.ww = 163.69696768113278;
-tmp_wildcard.wh = 325.84848523435653;
-tmp_wildcard.wx = 298.5161040321052;
-tmp_wildcard.wy = 41.518847984903005;
-tmp_wildcard.wz = 2;
-tmp_wildcard.act_wx = -241.90263073900184;
-tmp_wildcard.act_wy = -17.913782213670626;
+tmp_wildcard.ww = 746.6092852524237;
+tmp_wildcard.wh = 391.4645686478035;
+tmp_wildcard.wx = 11.184373924631132;
+tmp_wildcard.wy = 14.771412311023369;
+tmp_wildcard.wz = 1;
+tmp_wildcard.act_wx = 45.45034468100204;
+tmp_wildcard.act_wy = 12.120698091296784;
 tmp_wildcard.act_anim = 1;
-tmp_wildcard.hover_icon_wx = 0;
-tmp_wildcard.hover_icon_wy = 0;
+tmp_wildcard.hover_icon_wx = 34.848484848490784;
+tmp_wildcard.hover_icon_wy = -34.8484848481152;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
 tmp_wildcard.hover_icon_animcycle_id = "null";
@@ -15,8 +15,7 @@ tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
 tmp_wildcard.reqs = [[
-"tunic.kohlcenter.halloffame.plaque.face.date",
-"!tunic.historicalsociety.stacks.journals.hub",
+"!tunic.capitol.hall.chap1_finale",
 ]];
 
 ENUM=0;
@@ -29,15 +28,23 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 //{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" },
 //{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt:stextToLines("I need to show them I know blah blah", tmp_level.notifications_w), fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
 
-tmp_wildcard.commands = [
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt:stextToLines("The slip on the tunic is…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_cleaner_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_cleaner_yes" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_logbook", prompt:stextToLines("The receipt belonged to…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_theodora_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_theodora_yes" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_microfiche", prompt:stextToLines("Theodora Youmans was…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_suffragist_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_suffragist_yes" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theodora", prompt:stextToLines("The tunic is connected to women's suffrage because…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_march_no"] },
+tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHANGE TO HACKME
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_0" },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt:stextToLines("I need to show her the shirt artifact to jog her memory.", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_1" },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"HACKME", prompt:stextToLines("What evidence do I have that the shirt isn't a basketball jersey?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_1_fail"] },
+
+//pick slip
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_slipfirst_0" },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_basketballplaque", prompt:stextToLines("Why is the date on the slip relevant?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_slipfirst_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_slipfirst_1" },
+
+//pick tunic
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0" },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt:stextToLines("Why is the basketball team's founding date relevant?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_plaquefirst_1" },
+
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_2" },
 ];
 
 //view
@@ -125,11 +132,24 @@ tmp_wildcard.commands = [
       self.cur_command_i++;
       if(self.cur_command_i >= self.commands.length)
       {
-        state_from = state_cur;
-        state_to = state_stack;
-        state_cur = STATE_TRANSITION;
-        state_t = 0;
-        self.commands = self.revert_commands;
+        if(self.commands != self.revert_commands)
+        {
+          self.commands = self.revert_commands;
+          self.failed = 0;
+          self.cur_command_i = self.failed_command_i;
+          self.cur_command = self.commands[self.cur_command_i];
+          self.consume_command();
+          self.ui_state = UI_STATE_IN;
+          self.ui_state_t = 0;
+          self.ui_state_p = 0;
+        }
+        else
+        {
+          state_from = state_cur;
+          state_to = state_stack;
+          state_cur = STATE_TRANSITION;
+          state_t = 0;
+        }
       }
       else
       {
@@ -282,9 +302,9 @@ tmp_wildcard.commands = [
         state_to = saved_state_to;
         state_cur = saved_state_cur;
         state_t = saved_state_t;
-        self.failed = 1;
-        self.failed_command_i = 0;
 
+        self.failed = 1;
+        self.failed_command_i = self.cur_command_i;
         self.ui_state_t = 0;
         self.ui_state_p = 0;
         self.ui_state = UI_STATE_OUT;
@@ -300,8 +320,24 @@ tmp_wildcard.commands = [
         {
           if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
-            if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
+            if(self.cur_command.entry_fqid == "HACKME")
+            {
+              if(my_notebookview.cache_available_entrys[i].fqid == "tunic.entry_cleanerslip")
+                self.commands = self.commands.splice(7,3);
+              else if(my_notebookview.cache_available_entrys[i].fqid == "tunic.entry_basketballplaque")
+                self.commands = self.commands.splice(4,3);
+              else
+              {
+                self.failed = 1;
+                self.failed_command_i = self.cur_command_i;
+              }
+            }
+            else if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
+            {
               self.failed = 1;
+              self.failed_command_i = self.cur_command_i;
+            }
+
             self.ui_state_t = 0;
             self.ui_state_p = 0;
             self.ui_state = UI_STATE_OUT;
