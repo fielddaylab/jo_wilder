@@ -1357,6 +1357,15 @@ var toolbar = function()
     self.map_bounce = 0;
   }
 
+  self.shouldClick = function(evt)
+  {
+    if(MAP_ENABLED && self.map_available && ptWithinBox(self.map,evt.doX,evt.doY))
+      return true;
+    if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
+      return true;
+    return false;
+  }
+
   self.click = function(evt)
   {
     if(MAP_ENABLED && self.map_available && ptWithinBox(self.map,evt.doX,evt.doY))
