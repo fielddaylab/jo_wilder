@@ -73,7 +73,7 @@ var GamePlayScene = function(game, stage)
     cur_room = find(cur_level.intro_room_id);
     if(cur_room)
     {
-      cur_scene = find(cur_room.fqid.substring(0,cur_room.fqid.indexOf(cur_room.id)));
+      cur_scene = find(cur_room.fqid.substring(0,cur_room.fqid.indexOf(cur_room.id)-1));
     }
     else
     {
@@ -175,6 +175,10 @@ var GamePlayScene = function(game, stage)
 
     if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level);
     cur_level.pre_met = true;
+    cur_scene.pre_met = true;
+    cur_scene.met = true;
+    cur_room.pre_met = true;
+    cur_room.met = true;
 
     my_navigable.unlock_content();
     my_navigable.trigger_cutscenes();
@@ -548,6 +552,7 @@ var GamePlayScene = function(game, stage)
             state_t = 0.5; //ensure it hits "loading" stage at least once
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
+            cur_scene.met = true;
             cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
             my_loader.consume_room(cur_room);
             my_navigable.consume_room(cur_room);

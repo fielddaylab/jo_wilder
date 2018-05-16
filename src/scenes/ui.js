@@ -1568,6 +1568,7 @@ var mapview = function()
       if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY))
       {
         self.selected_scene = self.cache_available_scenes[i];
+        self.selected_scene.pre_met = true;
         state_from = state_cur;
         state_to = state_stack;
         state_cur = STATE_TRANSITION;
@@ -1638,8 +1639,8 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:75,             y:canv.height-120, w:80, h:80 };
-  self.next_box = {x:canv.width-145, y:canv.height-120, w:80, h:80 };
+  self.prev_box = {x:75,             y:canv.height-140, w:100, h:100 };
+  self.next_box = {x:canv.width-165, y:canv.height-140, w:100, h:100 };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
 

@@ -3,11 +3,17 @@ tmp_scene.ww = 270;
 tmp_scene.wh = 167.99999999999997;
 tmp_scene.wx = -177.99999999999994;
 tmp_scene.wy = -181;
+tmp_scene.hover_icon_wx = -26;
+tmp_scene.hover_icon_wy = 60;
 tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.raw_notification_ws = [
+];
+tmp_scene.notification_reqs = [[
+]];
 tmp_scene.notice_reqs = [[
 "!self",
 ]];

@@ -3399,8 +3399,8 @@ tmp_person.wh = 313.3287704263341;
 tmp_person.wx = 299.70453437843406;
 tmp_person.wy = 40.98731418180236;
 tmp_person.wz = -1;
-tmp_person.act_wx = -242.34903739818594;
-tmp_person.act_wy = -17.171405218007862;
+tmp_person.act_wx = -128.71268817057654;
+tmp_person.act_wy = -132.32292036952302;
 tmp_person.act_anim = 1;
 tmp_person.hover_icon_wx = 72.77820480249332;
 tmp_person.hover_icon_wy = 183.46748014757537;
@@ -3411,10 +3411,14 @@ tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
+tmp_person.raw_notification_ws = [
+];
 tmp_person.notice_reqs = [[
 ]];
-tmp_person.reqs = [[
+tmp_person.notification_reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
+]];
+tmp_person.reqs = [[
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -3903,9 +3907,9 @@ tmp_speak.raw_notifications = [
 tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
-]]
+]];
 tmp_speak.reqs = [[
-]]
+]];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -268.0328413131578;
 tmp_speak_command.wy = 182.9498060704439;
@@ -3917,9 +3921,9 @@ tmp_speak_command.raw_atext = "The plaque at the basketball museum shows that th
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -140.76011404043052;
-tmp_speak_command.wy = 135.98010910074692;
-tmp_speak_command.w = 184.69814225923326;
+tmp_speak_command.wx = -157.4267807070972;
+tmp_speak_command.wy = 129.9195030401408;
+tmp_speak_command.w = 197.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -7263,21 +7267,25 @@ tmp_scene.ww = 238.99999999999997;
 tmp_scene.wh = 144.00000000000003;
 tmp_scene.wx = -190.5000000000001;
 tmp_scene.wy = 220.99999999999994;
+tmp_scene.hover_icon_wx = -22;
+tmp_scene.hover_icon_wy = 12.999999999999998;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.raw_notification_ws = [
+];
+tmp_scene.notification_reqs = [[
+]];
 tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",
-],
-[
+],[
 "tunic.capitol.hall.chapter2",
-]
-];
+]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
 tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
@@ -9013,7 +9021,7 @@ tmp_speak_command.w = 218;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Fix Wells' m- Jolie I don't have time for this!";
+tmp_speak_command.raw_atext = "Oh no, Jolie I don't have time for this!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
@@ -10429,7 +10437,7 @@ tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
-tmp_observation.raw_text = "I should go meet Gramps in the collection!";
+tmp_observation.raw_text = "I should talk to Gramps in the collection!";
 tmp_observation.blip_wx = 416.0839371996251;
 tmp_observation.blip_wy = 230.30721467924008;
 tmp_observation.blip_w = 213;
@@ -10439,7 +10447,7 @@ tmp_observation.raw_notifications = [
 tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.historicalsociety.collection",
+"!tunic.historicalsociety.collection.gramps.found",
 ]];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
@@ -13109,11 +13117,17 @@ tmp_scene.ww = 270;
 tmp_scene.wh = 167.99999999999997;
 tmp_scene.wx = -177.99999999999994;
 tmp_scene.wy = -181;
+tmp_scene.hover_icon_wx = -26;
+tmp_scene.hover_icon_wy = 60;
 tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.raw_notification_ws = [
+];
+tmp_scene.notification_reqs = [[
+]];
 tmp_scene.notice_reqs = [[
 "!self",
 ]];

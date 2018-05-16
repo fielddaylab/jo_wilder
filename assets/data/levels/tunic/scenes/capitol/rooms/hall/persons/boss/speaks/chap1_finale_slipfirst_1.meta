@@ -8,9 +8,9 @@ tmp_speak.raw_notifications = [
 tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
-]]
+]];
 tmp_speak.reqs = [[
-]]
+]];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -268.0328413131578;
 tmp_speak_command.wy = 182.9498060704439;
@@ -22,9 +22,9 @@ tmp_speak_command.raw_atext = "The plaque at the basketball museum shows that th
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -140.76011404043052;
-tmp_speak_command.wy = 135.98010910074692;
-tmp_speak_command.w = 184.69814225923326;
+tmp_speak_command.wx = -157.4267807070972;
+tmp_speak_command.wy = 129.9195030401408;
+tmp_speak_command.w = 197.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
