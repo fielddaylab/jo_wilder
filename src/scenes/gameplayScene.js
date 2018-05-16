@@ -168,10 +168,10 @@ var GamePlayScene = function(game, stage)
     act_stack = 0;
     state_from = STATE_NAV;
     state_to = state_stack;
-    state_t = 0.5;
+    state_t = 0.499;
 
-    if(save_code)
-      load_save_code(save_code);
+    if(save_code) load_save_code(save_code);
+    my_loader.consume_room(cur_room);
 
     if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level);
     cur_level.pre_met = true;
@@ -223,7 +223,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
-        my_navigable.trigger_cutscenes();
+        //my_navigable.trigger_cutscenes();
         my_toolbar.tick();
         break;
       case STATE_MAP:
@@ -476,21 +476,34 @@ var GamePlayScene = function(game, stage)
         if(state_from == STATE_NAV && state_to == STATE_NAV)
         {
           state_t += state_t_speed;
-          if(old_state_t < 0.5 && state_t >= 0.5)
+          if(cur_act && cur_act.act == ACT_PORTHOLE)
           {
-            if(cur_act.act == ACT_PORTHOLE)
+            if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout`
             {
+              state_t = 0.5; //ensure it hits "loading" stage at least once
               if(cur_act.target_room_found) cur_room = cur_act.target_room_found;
               my_loader.consume_room(cur_room);
               my_navigable.consume_room(cur_room);
               my_avatar.consume_room(cur_room);
               my_avatar.from_porthole(cur_act);
               cur_act = 0;
+            }
+            else if(old_state_t == 0.5)
+            {
               if(my_loader.loading) state_t = 0.5;
               else my_navigable.trigger_cutscenes();
             }
           }
-          else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
+          else
+          {
+            if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
+              state_t = 0.5; //ensure it hits "loading" stage at least once
+            else if(old_state_t == 0.5)
+            {
+              if(my_loader.loading) state_t = 0.5;
+              else my_navigable.trigger_cutscenes();
+            }
+          }
         }
         else if(state_to == STATE_PERSON)
         {
@@ -530,8 +543,9 @@ var GamePlayScene = function(game, stage)
         if(state_to == STATE_NAV && my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
         {
           state_t += state_t_speed;
-          if(old_state_t < 0.5 && state_t >= 0.5)
+          if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
           {
+            state_t = 0.5; //ensure it hits "loading" stage at least once
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
             cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
@@ -539,11 +553,13 @@ var GamePlayScene = function(game, stage)
             my_navigable.consume_room(cur_room);
             my_avatar.consume_room(cur_room);
             cur_act = 0;
+          }
+          else if(old_state_t == 0.5)
+          {
             if(my_loader.loading) state_t = 0.5;
             else my_navigable.trigger_cutscenes();
           }
         }
-        else if(state_t >= 0.5 && my_loader.loading) state_t = 0.5;
         else state_t += state_t_speed;
         break;
       case STATE_NOTEBOOK:
@@ -555,21 +571,29 @@ var GamePlayScene = function(game, stage)
         my_navigable.tick();
         my_avatar.tick();
         state_t += state_t_speed;
+        if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
+          my_navigable.trigger_cutscenes();
         break;
       case STATE_OBJECT:
         my_navigable.tick();
         my_avatar.tick();
         state_t += state_t_speed;
+        if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
+          my_navigable.trigger_cutscenes();
         break;
       case STATE_OBSERVATION:
         my_navigable.tick();
         my_avatar.tick();
         state_t += state_t_speed;
+        if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
+          my_navigable.trigger_cutscenes();
         break;
       case STATE_WILDCARD:
         my_navigable.tick();
         my_avatar.tick();
         state_t += state_t_speed;
+        if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
+          my_navigable.trigger_cutscenes();
         break;
     }
 
@@ -652,7 +676,7 @@ var GamePlayScene = function(game, stage)
         else if(state_to == STATE_NAV) //guaranteed cutscene->nav by initial if
         {
           my_navigable.draw();
-          my_toolbar.draw(state_t);
+          my_toolbar.draw((state_t-0.5)*2); //wait in case of cutscene
           my_cutsceneview.draw(1-state_t);
         }
         else if(state_to == STATE_CUTSCENE) //guaranteed nav->cutscene, because no cutscene->cutscene
@@ -711,25 +735,25 @@ var GamePlayScene = function(game, stage)
       case STATE_PERSON:
         my_navigable.draw();
         if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
-        else                              my_toolbar.draw(state_t);
+        else                              my_toolbar.draw((state_t-0.5)*2); //wait in case of cutscene
         my_personview.draw(1-state_t);
         break;
       case STATE_OBJECT:
         my_navigable.draw();
         if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
-        else                              my_toolbar.draw(state_t);
+        else                              my_toolbar.draw((state_t-0.5)*2); //wait in case of cutscene
         my_objectview.draw(1-state_t);
         break;
       case STATE_OBSERVATION:
         my_navigable.draw();
         if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
-        else                              my_toolbar.draw(state_t);
+        else                              my_toolbar.draw((state_t-0.5)*2); //wait in case of cutscene
         my_observationview.draw(1-state_t);
         break;
       case STATE_WILDCARD:
         my_navigable.draw();
         if(state_stack == STATE_CUTSCENE) my_cutsceneview.draw(1);
-        else                              my_toolbar.draw(state_t);
+        else                              my_toolbar.draw((state_t-0.5)*2); //wait in case of cutscene
         my_wildcardview.draw(1-state_t);
         break;
     }
