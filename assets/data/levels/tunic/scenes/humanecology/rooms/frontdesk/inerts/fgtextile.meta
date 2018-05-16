@@ -1,0 +1,9 @@
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
+tmp_inert.wz = 5;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "fgtextile";
+tmp_inert.reqs = [[
+]];

@@ -1,0 +1,9 @@
+tmp_inert.ww = 1543.9276391066314;
+tmp_inert.wh = 194.56092285508296;
+tmp_inert.wx = 148.60545925747454;
+tmp_inert.wy = -234.91167988464292;
+tmp_inert.wz = 5;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "fgcans";
+tmp_inert.reqs = [[
+]];

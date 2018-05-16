@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.drycleaner.frontdesk";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -66,7 +66,6 @@ tmp_level.notebook_reqs = [[
 ]]
 tmp_level.map_reqs = [[
 ]]
-
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivephotos1";
 tmp_animcycle.fqid = "tunic.archivephotos1";
@@ -420,6 +419,51 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadow
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/6.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/7.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadows/8.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "clueoverlay-logbook";
+tmp_animcycle.fqid = "tunic.clueoverlay-logbook";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay-logbook/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "clueoverlay-microfiche";
+tmp_animcycle.fqid = "tunic.clueoverlay-microfiche";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay-microfiche/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "clueoverlay-stacks";
+tmp_animcycle.fqid = "tunic.clueoverlay-stacks";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay-stacks/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -888,6 +932,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/fgartifacts/
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "fgcans";
+tmp_animcycle.fqid = "tunic.fgcans";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/fgcans/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "fgcarts";
 tmp_animcycle.fqid = "tunic.fgcarts";
 {
@@ -945,6 +1004,21 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/fgpipes/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "fgtextile";
+tmp_animcycle.fqid = "tunic.fgtextile";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/fgtextile/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -5833,6 +5907,8 @@ tmp_object.animcycle_id = "logbook";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
+
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
@@ -5842,7 +5918,6 @@ tmp_object.notice_reqs = [[
 tmp_object.reqs = [[
 "tunic.drycleaner.frontdesk.worker.slip01",
 ]];
-
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
@@ -10293,7 +10368,7 @@ tmp_room.id = "secret";
 tmp_room.fqid = "tunic.historicalsociety.secret";
 {
 tmp_room.primary = false;
-tmp_room.ww = 880;
+tmp_room.ww = 1280;
 tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
@@ -10323,7 +10398,6 @@ tmp_room.raw_notification_ws = [
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_inert = new inert();
 tmp_inert.id = "fg";
@@ -10414,6 +10488,8 @@ tmp_object.animcycle_id = "journals";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_stacks";
+
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
@@ -10422,7 +10498,6 @@ tmp_object.notice_reqs = [[
 tmp_object.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_2.newspaper",
 ]];
-
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
@@ -11423,6 +11498,22 @@ tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_i
 tmp_porthole.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.notice_icon_animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
+tmp_inert = new inert();
+tmp_inert.id = "fgtextile";
+tmp_inert.fqid = "tunic.humanecology.frontdesk.fgtextile";
+{
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
+tmp_inert.wz = 5;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "fgtextile";
+tmp_inert.reqs = [[
+]];
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
 }
 tmp_scene.rooms.push(tmp_room);
 }
@@ -11759,6 +11850,22 @@ tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_i
 tmp_porthole.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.notice_icon_animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
+tmp_inert = new inert();
+tmp_inert.id = "fgcans";
+tmp_inert.fqid = "tunic.kohlcenter.halloffame.fgcans";
+{
+tmp_inert.ww = 1543.9276391066314;
+tmp_inert.wh = 194.56092285508296;
+tmp_inert.wx = 148.60545925747454;
+tmp_inert.wy = -234.91167988464292;
+tmp_inert.wz = 5;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "fgcans";
+tmp_inert.reqs = [[
+]];
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
 }
 tmp_scene.rooms.push(tmp_room);
 }
@@ -12350,6 +12457,7 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_stacks";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
@@ -12357,7 +12465,6 @@ tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
 ]];
-
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
