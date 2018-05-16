@@ -5256,6 +5256,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      if(self.ui_state != UI_STATE_SELECT) return;
       var bogus_state_from = 99999999;
       var saved_state_from = state_from;
       state_from = bogus_state_from;
@@ -5274,6 +5275,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
 
         self.failed = 1;
         self.failed_command_i = self.cur_command_i;
+
         self.ui_state_t = 0;
         self.ui_state_p = 0;
         self.ui_state = UI_STATE_OUT;
@@ -5799,6 +5801,7 @@ tmp_wildcard.commands = [
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      if(self.ui_state != UI_STATE_SELECT) return;
       var bogus_state_from = 99999999;
       var saved_state_from = state_from;
       state_from = bogus_state_from;
@@ -5817,6 +5820,7 @@ tmp_wildcard.commands = [
 
         self.failed = 1;
         self.failed_command_i = self.cur_command_i;
+
         self.ui_state_t = 0;
         self.ui_state_p = 0;
         self.ui_state = UI_STATE_OUT;
@@ -6311,6 +6315,7 @@ tmp_wildcard.commands = [
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      if(self.ui_state != UI_STATE_SELECT) return;
       var bogus_state_from = 99999999;
       var saved_state_from = state_from;
       state_from = bogus_state_from;
@@ -6326,6 +6331,7 @@ tmp_wildcard.commands = [
         state_to = saved_state_to;
         state_cur = saved_state_cur;
         state_t = saved_state_t;
+
         self.failed = 1;
         self.failed_command_i = 0;
 
