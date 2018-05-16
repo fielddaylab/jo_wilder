@@ -545,7 +545,7 @@ var avatar = function()
   var done = 0;
   self.draw = function(shading,light_color,shadow_color,ambient_color)
   {
-    if(QUALITY)
+    if(QUALITY && false) //&&false disables lighting- mostly unused
     {
       self.shade = lerp(self.shade,shading,0.02);
 
