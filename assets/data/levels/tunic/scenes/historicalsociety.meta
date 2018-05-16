@@ -7,6 +7,14 @@ tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_scene.reqs = [[
+tmp_scene.notice_reqs = [[
+"!self",
 ]];
+tmp_scene.reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+],
+[
+"tunic.capitol.hall.chapter2",
+]
+];
 

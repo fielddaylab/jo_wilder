@@ -3058,15 +3058,27 @@ tmp_scene.ww = 213;
 tmp_scene.wh = 211.99999999999997;
 tmp_scene.wx = 2.500000000000014;
 tmp_scene.wy = 13.000000000000014;
+tmp_scene.hover_icon_wx = -6.999999999999999;
+tmp_scene.hover_icon_wy = 99;
 tmp_scene.animcycle_id = "scene_capitol";
+tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.raw_notification_ws = [
+];
+tmp_scene.notification_reqs = [[
+]]
+tmp_scene.notice_reqs = [[
+"tunic.kohlcenter.halloffame.plaque.face.date",
+"!tunic.capitol.hall.chapter2",
+]]
 tmp_scene.reqs = [[
-"tunic.kohlcenter.halloffame",
-]];
+"tunic.kohlcenter.halloffame.plaque.face.date",
+]]
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
 tmp_room.id = "hall";
 tmp_room.fqid = "tunic.capitol.hall";
@@ -6586,11 +6598,15 @@ tmp_scene.animcycle_id = "scene_drycleaner";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.notice_reqs = [[
+"!self",
+]];
 tmp_scene.reqs = [[
 "tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
 tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.drycleaner.frontdesk";
@@ -7196,10 +7212,19 @@ tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
-tmp_scene.reqs = [[
+tmp_scene.notice_reqs = [[
+"!self",
 ]];
+tmp_scene.reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+],
+[
+"tunic.capitol.hall.chapter2",
+]
+];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
 tmp_room.id = "basement";
 tmp_room.fqid = "tunic.historicalsociety.basement";
@@ -11954,11 +11979,15 @@ tmp_scene.animcycle_id = "scene_humanecology";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.notice_reqs = [[
+"!self",
+]];
 tmp_scene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_0.slip",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
 tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.humanecology.frontdesk";
@@ -12613,10 +12642,14 @@ tmp_scene.animcycle_id = "scene_kohlcenter";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.notice_reqs = [[
+"!self",
+]];
 tmp_scene.reqs = [[
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
 tmp_room.id = "halloffame";
 tmp_room.fqid = "tunic.kohlcenter.halloffame";
@@ -12709,11 +12742,11 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 393;
-tmp_cutscene_command.wy = 169.99999999999991;
-tmp_cutscene_command.w = 150;
+tmp_cutscene_command.wx = 404;
+tmp_cutscene_command.wy = 198.99999999999991;
+tmp_cutscene_command.w = 139;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I should tell Gramps the news!";
+tmp_cutscene_command.raw_text = "I need to get to the capitol and tell the boss!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
@@ -12949,11 +12982,15 @@ tmp_scene.animcycle_id = "scene_library";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.notice_reqs = [[
+"!self",
+]];
 tmp_scene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_1.library",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
 tmp_room = new room();
 tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.library.frontdesk";
