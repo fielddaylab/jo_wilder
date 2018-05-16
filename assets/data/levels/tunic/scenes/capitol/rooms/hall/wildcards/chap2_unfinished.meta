@@ -15,8 +15,9 @@ tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
 tmp_wildcard.reqs = [[
-"tunic.capitol.hall.chap1_finale",
+"tunic.historicalsociety.closet_dirty",
 "!tunic.capitol.hall.boss.unfinished_suffragist_yes",
+"!tunic.historicalsociety.stacks.journals.hub",
 ]];
 
 ENUM=0;

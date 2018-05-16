@@ -6,6 +6,14 @@ tmp_view.raw_notifications = [
 "This looks like a clue!",
 "I'll record this in my notebook.",
 ];
+tmp_view.raw_notification_ws = [
+0,
+268,
+];
+tmp_view.notification_reqs = [[
+]]
+tmp_view.exit_reqs = [[
+]]
 tmp_view.reqs = [[
-]];
+]]
 

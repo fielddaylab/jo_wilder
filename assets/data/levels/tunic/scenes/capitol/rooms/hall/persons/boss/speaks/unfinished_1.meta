@@ -1,17 +1,20 @@
-tmp_speak.primary = 1;
+tmp_speak.primary = 0;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
 tmp_speak.reqs = [[
-]];
-tmp_speak.commands = [];
+]]
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -101.3661746464911;
-tmp_speak_command.wy = 85.98010910074687;
-tmp_speak_command.w = 148.69814225923326;
+tmp_speak_command.wx = -169.61899154779715;
+tmp_speak_command.wy = 92.040715161353;
+tmp_speak_command.w = 129.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -19,9 +22,9 @@ tmp_speak_command.raw_atext = "Where's Wells?";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -129.90090138980202;
-tmp_speak_command.wy = 374.70000148702;
-tmp_speak_command.w = 323.69814225923324;
+tmp_speak_command.wx = -92.02211395040109;
+tmp_speak_command.wy = 341.36666815368665;
+tmp_speak_command.w = 226.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -29,9 +32,9 @@ tmp_speak_command.raw_atext = "He's meeting me here. He had to do something firs
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -212.51850887198924;
+tmp_speak_command.wx = -215.54881190229227;
 tmp_speak_command.wy = 133.894056242295;
-tmp_speak_command.w = 224;
+tmp_speak_command.w = 160;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -39,9 +42,9 @@ tmp_speak_command.raw_atext = "The shirt is not a basketball jersey!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 5.443985921034923;
-tmp_speak_command.wy = 294.24301887634556;
-tmp_speak_command.w = 163;
+tmp_speak_command.wx = 13.019743496792474;
+tmp_speak_command.wy = 291.2127158460425;
+tmp_speak_command.w = 157;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

@@ -22,7 +22,7 @@ tmp_wildcard.notification_reqs = [[
 tmp_wildcard.notice_reqs = [[
 ]]
 tmp_wildcard.reqs = [[
-"!tunic.capitol.hall.chap1_finale",
+"!self",
 ]]
 
 ENUM=0;

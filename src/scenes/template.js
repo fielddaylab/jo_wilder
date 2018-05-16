@@ -251,6 +251,7 @@ var queryreqs = function(self, reqs)
 
       var o = self;
       if(l != "self") o = find(l);
+      if(!o) console.log("CAN'T FIND "+l);
       if(pre) available = o.pre_met;
       else    available = o.met;
       if(invert) available = !available;
