@@ -1,0 +1,46 @@
+tmp_speak.primary = 1;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
+tmp_speak.reqs = [[
+"tunic.historicalsociety.closet_dirty.gramps.news",
+]]
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -697.495978309857;
+tmp_speak_command.wy = 138.8628126296922;
+tmp_speak_command.w = 141;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "So much to do...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -589.495978309857;
+tmp_speak_command.wy = 53.8628126296922;
+tmp_speak_command.w = 165;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Where do you want me to go, again?";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -694.990349968848;
+tmp_speak_command.wy = 158.8548703987072;
+tmp_speak_command.w = 299;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Go show what you've found to the archivist. He might be able to help.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

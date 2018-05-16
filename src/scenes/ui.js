@@ -64,7 +64,10 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
 
     for(var i = 0; i < level.scenes.length; i++)
+    {
       self.load_animcycle_inst(level.scenes[i].animcycle_inst);
+      self.load_animcycle_inst(level.scenes[i].notice_icon_animcycle_inst);
+    }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
   }
@@ -1448,7 +1451,12 @@ var mapview = function()
   {
     self.cache_available_scenes = [];
     for(var i = 0; i < self.level.scenes.length; i++)
-      if(self.level.scenes[i].available = queryreqs(self.level.scenes[i], self.level.scenes[i].reqs)) self.cache_available_scenes.push(self.level.scenes[i]);
+      if(self.level.scenes[i].available = queryreqs(self.level.scenes[i], self.level.scenes[i].reqs))
+      {
+        var o = self.level.scenes[i];
+        o.notice = (o.notice_icon_animcycle_id && o.notice_icon_animcycle_id != "null" && queryreqs(o, o.notice_reqs));
+        self.cache_available_scenes.push(o);
+      }
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1457,11 +1465,39 @@ var mapview = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
+  self.hover_editor = new (function()
+  {
+    var self = this;
+    self.x = 0;
+    self.y = 0;
+    self.w = 0;
+    self.h = 0;
+    self.wz = 999999;
+    self.hover = 0;
+    self.consume_hover = function(a)
+    {
+      self.hover = a;
+      self.x = self.hover.x+self.hover.w/2+self.hover.hover_icon_x-2;
+      self.y = self.hover.y+self.hover.h/2+self.hover.hover_icon_y-2;
+      self.w = 4;
+      self.h = 4;
+      self.hover.dirty = true;
+    }
+    self.edit = function()
+    {
+      self.w = 4;
+      self.h = 4;
+      self.hover.hover_icon_x = (self.x+self.w/2)-(self.hover.x+self.hover.w/2);
+      self.hover.hover_icon_y = (self.y+self.h/2)-(self.hover.y+self.hover.h/2);
+      self.hover.hover_icon_wx =  worldSpaceW(my_ui_camera,canv,self.hover.hover_icon_x);
+      self.hover.hover_icon_wy = -worldSpaceH(my_ui_camera,canv,self.hover.hover_icon_y);
+    }
+  })();
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    for(var i = 0; !self.edit_o && i < self.cache_available_scenes.length; i++)
-      if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_scenes[i]; self.cache_available_scenes[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_scenes.length; i++) if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_scenes[i]; self.cache_available_scenes[i].dirty = true; }
+    for(var i = 0; i < self.cache_available_scenes.length; i++) { var o = self.cache_available_scenes[i]; if(ptNear(o.x+o.w/2+o.hover_icon_x,o.y+o.h/2+o.hover_icon_y,10,evt.doX,evt.doY)) { self.edit_o = self.hover_editor; self.hover_editor.consume_hover(o); } }
 
     if(!self.edit_o) return;
 
@@ -1495,7 +1531,9 @@ var mapview = function()
 
     self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
-    worldSpace(my_ui_camera,canv,self.edit_o);
+
+    if(self.edit_o == self.hover_editor) self.hover_editor.edit();
+    else worldSpace(my_ui_camera,canv,self.edit_o);
   };
   self.dragFinish = function()
   {
@@ -1530,6 +1568,7 @@ var mapview = function()
       if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY))
       {
         self.selected_scene = self.cache_available_scenes[i];
+        self.selected_scene.pre_met = true;
         state_from = state_cur;
         state_to = state_stack;
         state_cur = STATE_TRANSITION;
@@ -1552,7 +1591,19 @@ var mapview = function()
   {
     var yoff = (1-t)*self.h
     ctx.drawImage(self.map_animcycle_inst.img, self.map.x, self.map.y+yoff, self.map.w, self.map.h);
-    for(var i = 0; i < self.cache_available_scenes.length; i++) ctx.drawImage(self.cache_available_scenes[i].animcycle_inst.img, self.cache_available_scenes[i].x, self.cache_available_scenes[i].y+yoff, self.cache_available_scenes[i].w, self.cache_available_scenes[i].h);
+    for(var i = 0; i < self.cache_available_scenes.length; i++)
+    {
+      var o = self.cache_available_scenes[i];
+      ctx.drawImage(o.animcycle_inst.img, o.x, o.y+yoff, o.w, o.h);
+      if(o.notice)
+      {
+        hw = cur_level.hover_w/2;
+        hh = cur_level.hover_h/2;
+        o.hover_icon_x =  screenSpaceW(my_ui_camera,canv,o.hover_icon_wx);
+        o.hover_icon_y = -screenSpaceH(my_ui_camera,canv,o.hover_icon_wy);
+        ctx.drawImage(o.notice_icon_animcycle_inst.img, o.x+o.w/2+o.hover_icon_x-hw, o.y+o.h/2+o.hover_icon_y-hh+yoff, cur_level.hover_w, cur_level.hover_h);
+      }
+    }
 
     if(!my_notificationview.note.length)
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
@@ -1563,6 +1614,8 @@ var mapview = function()
       ctx.strokeRect(self.x, self.y+yoff, self.w, self.h);
       ctx.strokeRect(self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
       for(var i = 0; i < self.cache_available_scenes.length; i++) ctx.strokeRect(self.cache_available_scenes[i].x, self.cache_available_scenes[i].y+yoff, self.cache_available_scenes[i].w, self.cache_available_scenes[i].h);
+      ctx.strokeStyle = cyan;
+      for(var i = 0; i < self.cache_available_scenes.length; i++) { var o = self.cache_available_scenes[i]; o.hover_icon_x = screenSpaceW(my_ui_camera,canv,o.hover_icon_wx); o.hover_icon_y = -screenSpaceH(my_ui_camera,canv,o.hover_icon_wy); ctx.strokeRect(o.x+o.w/2+o.hover_icon_x-2,o.y+o.h/2+o.hover_icon_y-2,4,4); }
       ctx.strokeStyle = black;
       for(var i = 0; i < self.cache_available_scenes.length; i++) ctx.fillText(self.cache_available_scenes[i].fqid, self.cache_available_scenes[i].x+10, self.cache_available_scenes[i].y+yoff+20);
     }
@@ -1586,8 +1639,8 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:75,             y:canv.height-120, w:80, h:80 };
-  self.next_box = {x:canv.width-145, y:canv.height-120, w:80, h:80 };
+  self.prev_box = {x:75,             y:canv.height-140, w:100, h:100 };
+  self.next_box = {x:canv.width-165, y:canv.height-140, w:100, h:100 };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
 
@@ -3139,11 +3192,11 @@ var cutsceneview = function()
         {
           c.wx = te.wx;
           c.wy = te.wy;
-          if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
-          {
-            c.wx = my_navigable.cam_target_wx(te.wx);
-            c.wy = my_navigable.cam_target_wy(te.wy);
-          }
+        }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
+        {
+          c.wx = my_navigable.cam_target_wx(c.wx);
+          c.wy = my_navigable.cam_target_wy(c.wy);
         }
         if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
         self.running_commands.push(c);

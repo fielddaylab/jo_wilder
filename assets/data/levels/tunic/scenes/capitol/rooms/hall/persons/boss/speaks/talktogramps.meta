@@ -1,0 +1,35 @@
+tmp_speak.primary = 1;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
+tmp_speak.reqs = [[
+"!tunic.historicalsociety.closet_dirty",
+]]
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -230.39742081960944;
+tmp_speak_command.wy = 337.49574082095677;
+tmp_speak_command.w = 321.69814225923324;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Please go tell Leopo- er, Gramps, that I need him working on this ASAP.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -230.1645121504694;
+tmp_speak_command.wy = 332.9502862755022;
+tmp_speak_command.w = 320.69814225923324;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Now that we know what this jersy ISN'T, we need to find out what it IS!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

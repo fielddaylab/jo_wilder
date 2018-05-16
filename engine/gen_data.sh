@@ -413,6 +413,7 @@ if [ $NOGEN == "0" ]; then
       echo "{" >> $OUT
       cat $scene >> $OUT
       echo "tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);" >> $OUT
+      echo "tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
 
       if ensuredelimeter room $scene_dir; then :; else continue; fi
       rooms_dir=$scene_dir/rooms

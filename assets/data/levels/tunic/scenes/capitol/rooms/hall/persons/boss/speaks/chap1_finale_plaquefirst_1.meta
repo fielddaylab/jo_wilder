@@ -5,27 +5,30 @@ tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
 tmp_speak.reqs = [[
-]];
-tmp_speak.commands = [];
+]]
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 58.00000000000012;
-tmp_speak_command.wy = 296.4999999999999;
-tmp_speak_command.w = 132;
+tmp_speak_command.wx = -222.57829585861236;
+tmp_speak_command.wy = 128.40435152498935;
+tmp_speak_command.w = 241.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "A suffragist!";
+tmp_speak_command.raw_atext = "I found this slip attached to the shirt- it's from 1916!";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 58.00000000000012;
-tmp_speak_command.wy = 296.4999999999999;
-tmp_speak_command.w = 132;
+tmp_speak_command.wx = -208.94193222224874;
+tmp_speak_command.wy = 126.88920000983781;
+tmp_speak_command.w = 231.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Nice work. But what does women's suffrage have to do with a Wisconsin tunic?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak_command.raw_atext = "That's 58 years BEFORE the women's team was formed!";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 

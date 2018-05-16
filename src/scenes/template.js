@@ -251,6 +251,7 @@ var queryreqs = function(self, reqs)
 
       var o = self;
       if(l != "self") o = find(l);
+      if(!o) console.log("CAN'T FIND "+l);
       if(pre) available = o.pre_met;
       else    available = o.met;
       if(invert) available = !available;
@@ -321,23 +322,31 @@ var scene = function()
   self.wy = 0;
   self.ww = 0;
   self.wh = 0;
+  self.hover_icon_wx = 0;
+  self.hover_icon_wy = 0;
   self.animcycle_id = "null";
+  self.notice_icon_animcycle_id = "null";
   self.audio_id = "null";
   self.rooms = [];
   self.raw_notifications = [];
   self.raw_notification_ws = [];
   self.notification_reqs = [[]];
+  self.notice_reqs = [[]];
   self.reqs = [[]];
   //
   self.available = false;
+  self.notice = false;
   self.met = false;
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.notice_icon_animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.w = 0;
   self.h = 0;
+  self.hover_icon_x = 0;
+  self.hover_icon_y = 0;
   self.notifications = [];
 }
 
@@ -969,7 +978,7 @@ var get_requirements_string = function(reqs)
     if(i < reqs.length-1)
       str += "],[\n";
   }
-  str += "]]\n";
+  str += "]];\n";
   return str;
 }
 
@@ -1052,7 +1061,10 @@ var print_scene_meta = function(l)
   "tmp_scene.wh = "+l.wh+";\n"+
   "tmp_scene.wx = "+l.wx+";\n"+
   "tmp_scene.wy = "+l.wy+";\n"+
+  "tmp_scene.hover_icon_wx = "+l.hover_icon_wx+";\n"+
+  "tmp_scene.hover_icon_wy = "+l.hover_icon_wy+";\n"+
   "tmp_scene.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_scene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_scene.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_scene.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_scene.raw_notification_ws = [\n";
@@ -1064,6 +1076,7 @@ var print_scene_meta = function(l)
   str +=
   "];\n"+
   "tmp_scene.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_scene.notice_reqs = "+get_requirements_string(l.notice_reqs)+
   "tmp_scene.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }

@@ -20,6 +20,7 @@ tmp_cutscene.notice_reqs = [[
 tmp_cutscene.reqs = [[
 "!tunic.historicalsociety.closet_dirty.trigger_scarf",
 ]];
+
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
@@ -44,7 +45,7 @@ tmp_cutscene_command.wy = -16.17729867083811;
 tmp_cutscene_command.w = 194;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Teddy's scarf is here! Where is he?";
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
@@ -55,7 +56,7 @@ tmp_cutscene_command.wy = 154.84626267535597;
 tmp_cutscene_command.w = 237;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I'm sure he's okay, Jo. Maybe he's out for a walk.";
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
@@ -66,10 +67,10 @@ tmp_cutscene_command.wy = 25.432994145586974;
 tmp_cutscene_command.w = 225;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "But he never goes anywhere without his scarf. Someone took him!";
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

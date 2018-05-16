@@ -4,9 +4,13 @@ tmp_scene.wh = 138;
 tmp_scene.wx = 135.99999999999997;
 tmp_scene.wy = 217.00000000000006;
 tmp_scene.animcycle_id = "scene_drycleaner";
+tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
+tmp_scene.notice_reqs = [[
+"!self",
+]];
 tmp_scene.reqs = [[
 "tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];

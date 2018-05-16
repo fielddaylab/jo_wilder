@@ -1,13 +1,13 @@
-tmp_wildcard.ww = 746.6092852524237;
-tmp_wildcard.wh = 391.4645686478035;
-tmp_wildcard.wx = 11.184373924631132;
-tmp_wildcard.wy = 14.771412311023369;
-tmp_wildcard.wz = 1;
-tmp_wildcard.act_wx = 45.45034468100204;
-tmp_wildcard.act_wy = 12.120698091296784;
+tmp_wildcard.ww = 163.69696768113278;
+tmp_wildcard.wh = 325.84848523435653;
+tmp_wildcard.wx = 298.5161040321052;
+tmp_wildcard.wy = 41.518847984903005;
+tmp_wildcard.wz = 2;
+tmp_wildcard.act_wx = -241.90263073900184;
+tmp_wildcard.act_wy = -17.913782213670626;
 tmp_wildcard.act_anim = 1;
-tmp_wildcard.hover_icon_wx = 34.848484848490784;
-tmp_wildcard.hover_icon_wy = -34.8484848481152;
+tmp_wildcard.hover_icon_wx = 0;
+tmp_wildcard.hover_icon_wy = 0;
 tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
 tmp_wildcard.hover_icon_animcycle_id = "null";
@@ -15,7 +15,9 @@ tmp_wildcard.audio_id = "null";
 tmp_wildcard.raw_notifications = [
 ];
 tmp_wildcard.reqs = [[
-"tunic.historicalsociety.stacks.journals.hub",
+"tunic.historicalsociety.closet_dirty",
+"!tunic.capitol.hall.boss.unfinished_suffragist_yes",
+"!tunic.historicalsociety.stacks.journals.hub",
 ]];
 
 ENUM=0;
@@ -29,20 +31,14 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 //{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt:stextToLines("I need to show them I know blah blah", tmp_level.notifications_w), fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
 
 tmp_wildcard.commands = [
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.wells.finale" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_basketballplaque", prompt:stextToLines("It's not a jersey, because…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_cleaner_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.wells.finale_jersey_yes" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt:stextToLines("I know when the tunic is from, because…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_cleaner_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.finale_slip_yes" },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_1" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt:stextToLines("The slip on the tunic is…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_cleaner_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.wells.finale_cleaner_yes" },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_cleaner_yes" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_logbook", prompt:stextToLines("The receipt belonged to…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_theodora_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.wells.finale_theodora_yes" },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.finale_enough" },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_theodora_yes" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_microfiche", prompt:stextToLines("Theodora Youmans was…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_suffragist_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.finale_suffragist_yes" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theodora", prompt:stextToLines("This is it! The tunic is connected to women's suffrage because…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_march_no"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.ending" },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.unfinished_suffragist_yes" },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theodora", prompt:stextToLines("The tunic is connected to women's suffrage because…", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.unfinished_march_no"] },
 ];
 
 //view
@@ -130,24 +126,11 @@ tmp_wildcard.commands = [
       self.cur_command_i++;
       if(self.cur_command_i >= self.commands.length)
       {
-        if(self.commands != self.revert_commands)
-        {
-          self.commands = self.revert_commands;
-          self.failed = 0;
-          self.cur_command_i = self.failed_command_i;
-          self.cur_command = self.commands[self.cur_command_i];
-          self.consume_command();
-          self.ui_state = UI_STATE_IN;
-          self.ui_state_t = 0;
-          self.ui_state_p = 0;
-        }
-        else
-        {
-          state_from = state_cur;
-          state_to = state_stack;
-          state_cur = STATE_TRANSITION;
-          state_t = 0;
-        }
+        state_from = state_cur;
+        state_to = state_stack;
+        state_cur = STATE_TRANSITION;
+        state_t = 0;
+        self.commands = self.revert_commands;
       }
       else
       {
@@ -285,6 +268,7 @@ tmp_wildcard.commands = [
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      if(self.ui_state != UI_STATE_SELECT) return;
       var bogus_state_from = 99999999;
       var saved_state_from = state_from;
       state_from = bogus_state_from;
@@ -302,7 +286,8 @@ tmp_wildcard.commands = [
         state_t = saved_state_t;
 
         self.failed = 1;
-        self.failed_command_i = self.cur_command_i;
+        self.failed_command_i = 0;
+
         self.ui_state_t = 0;
         self.ui_state_p = 0;
         self.ui_state = UI_STATE_OUT;
@@ -319,10 +304,7 @@ tmp_wildcard.commands = [
           if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
             if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
-            {
               self.failed = 1;
-              self.failed_command_i = self.cur_command_i;
-            }
             self.ui_state_t = 0;
             self.ui_state_p = 0;
             self.ui_state = UI_STATE_OUT;

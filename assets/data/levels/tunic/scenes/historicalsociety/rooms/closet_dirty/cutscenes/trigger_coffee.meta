@@ -20,6 +20,7 @@ tmp_cutscene.notice_reqs = [[
 tmp_cutscene.reqs = [[
 "!tunic.historicalsociety.closet_dirty.trigger_coffee",
 ]];
+
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
@@ -44,7 +45,7 @@ tmp_cutscene_command.wy = 8.048440985385888;
 tmp_cutscene_command.w = 259;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Is this coffee yours, Gramps?";
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
@@ -55,10 +56,11 @@ tmp_cutscene_command.wy = 66.66750204352135;
 tmp_cutscene_command.w = 245;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Nope, I only drink Holdgers!";
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

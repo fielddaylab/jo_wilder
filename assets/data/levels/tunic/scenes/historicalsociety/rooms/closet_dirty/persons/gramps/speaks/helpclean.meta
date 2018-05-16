@@ -1,0 +1,61 @@
+tmp_speak.primary = 1;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
+tmp_speak.reqs = [
+[
+"!tunic.historicalsociety.closet_dirty.trigger_coffee",
+],
+[
+"!tunic.historicalsociety.closet_dirty.trigger_scarf",
+]
+];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -694.5288016922691;
+tmp_speak_command.wy = 151.86599115321604;
+tmp_speak_command.w = 207;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Well, looks like we need to get to cleanin'!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -580.9903543952486;
+tmp_speak_command.wy = 52.85486998886149;
+tmp_speak_command.w = 209;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "But the jersey! I talked to the boss and-";
+tmp_speak_command.speaker = SPEAKER_PLAYER;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -694.990349968848;
+tmp_speak_command.wy = 152.8548703987072;
+tmp_speak_command.w = 231;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Now now- help me clean up first and then we'll talk.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -694.990349968848;
+tmp_speak_command.wy = 151.8548703987072;
+tmp_speak_command.w = 294;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "You've got a bit of a mess over in your area- why not start there?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
