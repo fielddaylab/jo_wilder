@@ -3191,11 +3191,11 @@ var cutsceneview = function()
         {
           c.wx = te.wx;
           c.wy = te.wy;
-          if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
-          {
-            c.wx = my_navigable.cam_target_wx(te.wx);
-            c.wy = my_navigable.cam_target_wy(te.wy);
-          }
+        }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
+        {
+          c.wx = my_navigable.cam_target_wx(c.wx);
+          c.wy = my_navigable.cam_target_wy(c.wy);
         }
         if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
         self.running_commands.push(c);
