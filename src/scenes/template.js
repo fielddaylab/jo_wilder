@@ -978,7 +978,7 @@ var get_requirements_string = function(reqs)
     if(i < reqs.length-1)
       str += "],[\n";
   }
-  str += "]]\n";
+  str += "]];\n";
   return str;
 }
 

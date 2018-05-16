@@ -4,6 +4,7 @@ tmp_scene.wh = 132.00000000000003;
 tmp_scene.wx = -238;
 tmp_scene.wy = 79.00000000000001;
 tmp_scene.animcycle_id = "scene_humanecology";
+tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];

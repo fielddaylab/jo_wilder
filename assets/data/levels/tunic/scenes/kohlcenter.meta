@@ -4,6 +4,7 @@ tmp_scene.wh = 167.99999999999997;
 tmp_scene.wx = -177.99999999999994;
 tmp_scene.wy = -181;
 tmp_scene.animcycle_id = "scene_kohlcenter";
+tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.raw_notifications = [
 ];
