@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.drycleaner.frontdesk";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet_dirty";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -347,7 +347,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_0/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_0/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -362,7 +362,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_1/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_1/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -377,7 +377,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_bingo/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cleaner_card_bingo/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -422,8 +422,8 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadow
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "clueoverlay-logbook";
-tmp_animcycle.fqid = "tunic.clueoverlay-logbook";
+tmp_animcycle.id = "clueoverlay_logbook";
+tmp_animcycle.fqid = "tunic.clueoverlay_logbook";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
@@ -433,12 +433,12 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay-logbook/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay_logbook/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "clueoverlay-microfiche";
-tmp_animcycle.fqid = "tunic.clueoverlay-microfiche";
+tmp_animcycle.id = "clueoverlay_microfiche";
+tmp_animcycle.fqid = "tunic.clueoverlay_microfiche";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
@@ -448,12 +448,12 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay-microfiche/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay_microfiche/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "clueoverlay-stacks";
-tmp_animcycle.fqid = "tunic.clueoverlay-stacks";
+tmp_animcycle.id = "clueoverlay_stacks";
+tmp_animcycle.fqid = "tunic.clueoverlay_stacks";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
@@ -463,7 +463,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay-stacks/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay_stacks/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -7156,7 +7156,6 @@ tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
-
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
@@ -14154,7 +14153,7 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "clueoverlay_stacks";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
