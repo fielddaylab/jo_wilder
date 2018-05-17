@@ -129,8 +129,6 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
   self.h = h;
   self.canv = canv;
 
-  self.bg_color = white;
-
   self.txt = txt;
   self.box = document.createElement('input');
   self.box.type = "text";
@@ -173,20 +171,16 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
 
   self.draw = function(canv)
   {
-    canv.context.fillStyle = self.bg_color;
-    canv.context.fillRect(self.x,self.y,self.w,self.h);
-    canv.context.strokeStyle = black;
     canv.context.strokeRect(self.x,self.y,self.w,self.h);
-    canv.context.fillStyle = black;
+    canv.context.fillStyle = "#000000";
     if(self.box_on)
     {
       //
     }
     else
     {
-      var n = 24;
-      if(self.txt.length < n) canv.context.fillText(self.txt,self.x+4,self.y+self.h*3/4,self.w-4);
-      else                    canv.context.fillText(self.txt.substring(0,n)+"...",self.x+4,self.y+self.h*3/4,self.w-4);
+      if(self.txt.length < 5) canv.context.fillText(self.txt,self.x+4,self.y+self.h*3/4,self.w-4);
+      else                    canv.context.fillText(self.txt.substring(0,5)+"...",self.x+4,self.y+self.h*3/4,self.w-4);
     }
   }
 }
