@@ -18,6 +18,7 @@ tmp_observation.blip_wx = 100;
 tmp_observation.blip_wy = 100;
 tmp_observation.blip_w = 100;
 tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
 ];
 tmp_observation.notification_reqs = [[

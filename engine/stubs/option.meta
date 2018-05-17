@@ -2,6 +2,7 @@ tmp_option.index = 0;
 tmp_option.raw_qtext = "null";
 tmp_option.target_speak = "null";
 tmp_option.audio_id = "null";
+tmp_option.notifications_persistent = 0;
 tmp_option.raw_notifications = [
 ];
 tmp_option.notification_reqs = [[

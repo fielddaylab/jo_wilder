@@ -1605,8 +1605,8 @@ var mapview = function()
       }
     }
 
-    if(!my_notificationview.note.length)
-    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    if(!my_notificationview.note.length || my_notificationview.clickthrough)
+      ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     if(DEBUG)
     {
@@ -1796,8 +1796,8 @@ var notebookview = function()
     if(self.page > 0)
     ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
 
-    if(!my_notificationview.note.length)
-    ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+    if(!my_notificationview.note.length || my_notificationview.clickthrough)
+      ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     ctx.fillStyle = black;
     ctx.fillText("Save Code: "+self.current_code,80,60+yoff);
@@ -1828,10 +1828,12 @@ var notificationview = function()
   self.w = canv.width;
   self.h = canv.height;
 
-  self.q = [];
   self.c;
   self.note = [];
+  self.note_ws = [];
+  self.c_note_i = 0; //for editing
   self.note_i = 0;
+  self.clickthrough = 0;
 
   self.bubble_color = "#242224";
   self.text_color = white;
@@ -1855,22 +1857,27 @@ var notificationview = function()
 
   self.consume_notification = function(c)
   {
-    self.q.push(c);
-  }
+    var force_click = self.clickthrough; //new notif enqueued through persistent notif- dismiss
+    var note_exists = self.note.length;
+    self.c = c;
 
-  self.dequeue = function()
-  {
-    if(!self.note.length && self.q.length)
+    for(var i = 0; i < self.c.notifications.length; i++)
     {
-      self.c = self.q[0];
-      self.note = self.c.notifications;
-      self.note_i = 0;
-      self.q.splice(0,1);
+      if(self.c.raw_notification_ws && self.c.raw_notification_ws[i])
+        self.note_ws[self.note.length+i] = self.c.raw_notification_ws[i];
+      else
+        self.note_ws[self.note.length+i] = cur_level.notifications_w;
+    }
+    if(note_exists) { self.c_note_i = self.note_i-self.note.length; self.note = self.note.concat(self.c.notifications); }
+    else { self.note = [].concat(self.c.notifications); self.note_i = 0; self.c_note_i = 0; }
+    self.clickthrough = (self.c.notifications_persistent && self.note_i == self.note.length-1);
+    if(force_click) self.click();
+    else if(!note_exists)
+    {
       self.ui_state = UI_STATE_IN_NOTE;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
     }
-    return self.note;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1899,8 +1906,9 @@ var notificationview = function()
     self.edit = function()
     {
       if(!self.nv.c.raw_notification_ws) self.nv.c.raw_notification_ws = [];
-      self.nv.c.raw_notification_ws[self.nv.note_i] = self.w;
-      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.note_i], self.w);
+      self.nv.c.raw_notification_ws[self.nv.c_note_i] = self.w;
+      self.nv.note_ws[self.nv.note_i] = self.w;
+      self.nv.note[self.nv.note_i] = stextToLines(self.nv.note_ws[self.nv.note_i], self.w);
     }
   })();
   self.dragStart = function(evt)
@@ -1953,6 +1961,10 @@ var notificationview = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
+  self.shouldClick = function(evt)
+  {
+    return !self.clickthrough;
+  }
   self.click = function(evt)
   {
     if(self.ui_state == UI_STATE_NULL) return;
@@ -1961,7 +1973,7 @@ var notificationview = function()
     {
       self.ui_state_t = 0;
       self.ui_state_p = 0;
-      if(self.note[self.note_i+1])
+      if(self.note_i < self.note.length-1)
         self.ui_state = UI_STATE_NEXT;
       else
         self.ui_state = UI_STATE_OUT;
@@ -1980,18 +1992,21 @@ var notificationview = function()
         if(self.ui_state_p >= 1)
         {
           self.note_i++;
+          self.c_note_i++;
           self.ui_state = UI_STATE_SELECT;
           self.ui_state_t = 0;
           self.ui_state_p = 0;
+          self.clickthrough = (self.c.notifications_persistent && self.note_i == self.note.length-1);
         }
         break;
       case UI_STATE_OUT:
         if(self.ui_state_p >= 1)
         {
-          self.note = 0;
+          self.note = [];
           self.ui_state = UI_STATE_NULL;
           self.ui_state_t = 0;
           self.ui_state_p = 0;
+          self.clickthrough = 0;
         }
         break;
     }
@@ -2015,8 +2030,7 @@ var notificationview = function()
 
     var b = 10;
     var h = cur_level.notifications_h*self.note[self.note_i].length;
-    var w = cur_level.notifications_w;
-    if(self.c.raw_notification_ws && self.c.raw_notification_ws[self.note_i]) w = self.c.raw_notification_ws[self.note_i];
+    var w = self.note_ws[self.note_i];
     var x = self.x+self.w/2-w/2;
     var y = self.y+self.h-30-h;
     ctx.fillStyle = self.bubble_color;
@@ -2163,6 +2177,7 @@ var objectview = function()
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
       state_t = 0;
+      if(my_notificationview.clickthrough) my_notificationview.click();
     }
     var zone;
     for(var i = 0; i < self.cache_available_zones.length; i++)
@@ -2187,8 +2202,8 @@ var objectview = function()
 
   self.tick = function()
   {
-    if(!my_notificationview.note.length && self.exit_available) self.exit_t += 0.05;
-    else                                                        self.exit_t -= 0.05;
+    if((!my_notificationview.note.length || my_notificationview.clickthrough) && self.exit_available) self.exit_t += 0.05;
+    else                                                                                              self.exit_t -= 0.05;
     self.exit_t = clamp(0,1,self.exit_t);
     self.cur_view.animcycle_inst.tick();
     for(var i = 0; i < self.cache_available_zones.length; i++)
@@ -2224,7 +2239,7 @@ var objectview = function()
     if(self.object.view_overlay_animcycle_id != "null" && self.view_overlay_t)
       ctx.drawImage(self.object.view_overlay_animcycle_inst.img, self.obj.x, self.obj.y+yoff+(1-self.view_overlay_t)*self.obj.h, self.obj.w, self.obj.h);
 
-    if(!my_notificationview.note.length && self.exit_available)
+    if((!my_notificationview.note.length || my_notificationview.clickthrough) && self.exit_available)
     {
       ctx.globalAlpha = self.exit_t;
       ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
