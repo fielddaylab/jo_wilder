@@ -119,6 +119,71 @@ function TextBox(x,y,w,h,txt,callback)
   }
 }
 
+function DomTextBox(x,y,w,h,canv,txt,callback)
+//register to clicker, blurer
+{
+  var self = this;
+  self.x = x;
+  self.y = y;
+  self.w = w;
+  self.h = h;
+  self.canv = canv;
+
+  self.txt = txt;
+  self.box = document.createElement('input');
+  self.box.type = "text";
+  self.box.style.position = "absolute";
+  self.box_on = 0; //0 = canv, 1 = DOM
+
+  self.box.onchange = function()
+  {
+    self.txt = self.box.value;
+    callback(self.txt);
+  }
+
+  self.click = function()
+  {
+    self.focus();
+  }
+
+  self.blur = function()
+  {
+    self.box_on = 0;
+    self.txt = self.box.value;
+    self.canv.removeChild(self.box);
+    callback(self.txt);
+  }
+  self.focus = function()
+  {
+    self.box_on = 1;
+    self.box.style.top = self.y;
+    self.box.style.left = self.x;
+    self.canv.appendChild(self.box);
+  }
+  self.set = function(n)
+  {
+    self.txt = n;
+    self.box.value = self.txt;
+    callback(self.txt);
+  }
+
+  self.draw = function(canv)
+  {
+    canv.context.strokeRect(self.x,self.y,self.w,self.h);
+    canv.context.fillStyle = "#000000";
+    if(self.box_on)
+    {
+      //
+    }
+    else
+    {
+      if(self.txt.length < 5) canv.context.fillText(self.txt,self.x+4,self.y+self.h*3/4,self.w-4);
+      else                    canv.context.fillText(self.txt.substring(0,5)+"...",self.x+4,self.y+self.h*3/4,self.w-4);
+    }
+  }
+}
+
+
 function NumberBox(x,y,w,h,val,delta,callback)
 //register to keyer, dragger, blurer
 {
