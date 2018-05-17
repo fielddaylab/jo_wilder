@@ -2211,8 +2211,8 @@ var objectview = function()
       self.cache_available_zones[i].animcycle_inst.tick();
       screenSpace(my_ui_camera,canv,self.cache_available_zones[i]);
     }
-    if(self.show_view_overlay) self.view_overlay_t += 0.01;
-    else                       self.view_overlay_t -= 0.01;
+    if(self.show_view_overlay) self.view_overlay_t += 0.02;
+    else                       self.view_overlay_t -= 0.02;
     self.view_overlay_t = clamp(0,1,self.view_overlay_t);
   }
 
@@ -2237,7 +2237,7 @@ var objectview = function()
     }
 
     if(self.object.view_overlay_animcycle_id != "null" && self.view_overlay_t)
-      ctx.drawImage(self.object.view_overlay_animcycle_inst.img, self.obj.x, self.obj.y+yoff+(1-self.view_overlay_t)*self.obj.h, self.obj.w, self.obj.h);
+      ctx.drawImage(self.object.view_overlay_animcycle_inst.img, self.obj.x, self.obj.y+yoff+(1-easeout(self.view_overlay_t))*self.obj.h, self.obj.w, self.obj.h);
 
     if((!my_notificationview.note.length || my_notificationview.clickthrough) && self.exit_available)
     {

@@ -36,6 +36,8 @@ function clamp(a,b,v) { if(v < a) return a; if(v > b) return b; return v; }
 function eq(a,b,e) { return (a < b+e && a > b-e); }
 function lerp(s,e,t) { return s+((e-s)*t); }
 function invlerp(s,e,v) { return (v-s)/(e-s); }
+function easein(x)  { return x*x; } //only valid from 0-1
+function easeout(x) { x = 1-x; return 1-(x*x); } //only valid from 0-1
 function smooth(x) { return 3*x*x - 2*x*x*x; } //only valid from 0-1!
 function smoothn(n,x) //not at all done...
 {
