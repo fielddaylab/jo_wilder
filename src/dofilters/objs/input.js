@@ -151,6 +151,7 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
 
   self.blur = function()
   {
+    if(!self.box_on) return;
     self.box_on = 0;
     self.txt = self.box.value;
     self.canv.canvas.parentElement.removeChild(self.box);

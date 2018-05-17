@@ -1643,6 +1643,7 @@ var notebookview = function()
   self.next_box = {x:canv.width-165, y:canv.height-140, w:100, h:100 };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
+  self.current_code = "-";
 
   self.page = 0;
   self.last_page = 0;
@@ -1679,6 +1680,13 @@ var notebookview = function()
     if(self.cache_available_entrys.length > self.n_available_entrys)
       my_toolbar.notebook_bounce = 1;
     self.n_available_entrys = self.cache_available_entrys.length;
+
+    self.current_code = 0;
+    for(var i = 0; !self.current_code && i < save_codes.length; i++)
+    {
+      if(queryreqs(0, save_table[save_codes[i]].reqs))
+        self.current_code = save_codes[i];
+    }
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1790,6 +1798,9 @@ var notebookview = function()
 
     if(!my_notificationview.note.length)
     ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
+
+    ctx.fillStyle = black;
+    ctx.fillText("Save Code: "+self.current_code,80,60+yoff);
 
     if(DEBUG)
     {

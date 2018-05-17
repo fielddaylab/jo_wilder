@@ -191,7 +191,7 @@ var save_slate = function()
     var int_c = parseInt(sub_c);
     c = c.substring(room_len);
     cur_room = self.rooms[int_c];
-    cur_scene = find(cur_room.fqid.substring(0,cur_room.fqid.indexOf(cur_room.id)));
+    cur_scene = find(cur_room.fqid.substring(0,cur_room.fqid.indexOf(cur_room.id)-1));
     my_loader.consume_room(cur_room);
     my_navigable.consume_room(cur_room);
     my_avatar.consume_room(cur_room);

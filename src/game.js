@@ -1,6 +1,23 @@
 var save_code = 0;
+var save_codes = [];
 var save_table = [];
-save_table["abc"] = "060000000000000044563244194304013126400000000000000000000000000000000000"; //just after group convo
+
+//must be in chronological order
+
+save_codes.push("startgame");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"000000000000000000000000000000000000000000000000000000000000000000000000"
+};
+
+save_codes.push("tunic");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
 var url_json = jsonFromURL();
 var cookie;
 if(url_json.save)

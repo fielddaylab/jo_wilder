@@ -24,6 +24,8 @@ var MenuScene = function(game, stage)
   var code_button;
   var code_txt;
 
+  var continuable = 0;
+
   var next = 0;
   var next_t = 0;
 
@@ -37,12 +39,13 @@ var MenuScene = function(game, stage)
     var w = 200;
     var h = 50;
     new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
-    continue_button = new ButtonBox(x,y,w,h,function(evt){                                         next = 1; }); y += h+10;
-    code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_code = save_table[code_txt.txt]; next = 1; } }); y += h+10;
+    continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
+    code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_code = save_table[code_txt.txt].code; next = 1; } }); y += h+10;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = white; return; } if(save_table[txt]) code_txt.bg_color = green; else code_txt.bg_color = red; }); y += h+10;
 
     next = 0;
     next_t = 0;
+    continuable = save_code;
   };
 
   self.tick = function()
@@ -59,12 +62,12 @@ var MenuScene = function(game, stage)
     }
     else
     {
+      blurer.filter(code_txt);
       if(
         !clicker.filter(new_button) &&
         !clicker.filter(continue_button) &&
         !clicker.filter(code_button) &&
         !clicker.filter(code_txt) &&
-        !blurer.filter(code_txt) &&
         false)
         ;
       clicker.flush();
@@ -75,12 +78,12 @@ var MenuScene = function(game, stage)
   self.draw = function()
   {
     new_button.draw(canv);
-    continue_button.draw(canv);
+    if(continuable) continue_button.draw(canv);
     code_button.draw(canv);
     code_txt.draw(canv);
     ctx.fillStyle = black;
     ctx.fillText("New Game",new_button.x+15,new_button.y+new_button.h-10);
-    ctx.fillText("Continue",continue_button.x+15,continue_button.y+continue_button.h-10);
+    if(continuable) ctx.fillText("Continue",continue_button.x+15,continue_button.y+continue_button.h-10);
     ctx.fillText("Enter Code",code_button.x+15,code_button.y+code_button.h-10);
 
     if(next)
