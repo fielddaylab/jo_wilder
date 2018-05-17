@@ -3,6 +3,7 @@ var MenuScene = function(game, stage)
   var self = this;
 
   var clicker;
+  var blurer;
 
   var canv;
   var canvas;
@@ -13,13 +14,15 @@ var MenuScene = function(game, stage)
     canvas = canv.canvas;
     ctx = canv.context;
 
-    if(clicker) { clicker = new Clicker({source:canvas}); }
+    if(clicker) clicker = new Clicker({source:canvas});
+    if(blurer)  blurer  = new Blurer({source:canvas});
   }
   self.resize(stage);
 
   var new_button;
   var continue_button;
   var code_button;
+  var code_txt;
 
   var next = 0;
   var next_t = 0;
@@ -27,6 +30,7 @@ var MenuScene = function(game, stage)
   self.ready = function()
   {
     if(!clicker) clicker = new Clicker({source:canvas});
+    if(!blurer)  blurer  = new Blurer({source:canvas});
 
     var x = 20;
     var y = 20;
@@ -34,7 +38,8 @@ var MenuScene = function(game, stage)
     var h = 50;
     new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
     continue_button = new ButtonBox(x,y,w,h,function(evt){                                         next = 1; }); y += h+10;
-    code_button     = new ButtonBox(x,y,w,h,function(evt){ save_code = save_table["abc"];          next = 1; }); y += h+10;
+    code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_code = save_table[code_txt.txt]; next = 1; } }); y += h+10;
+    code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = white; return; } if(save_table[txt]) code_txt.bg_color = green; else code_txt.bg_color = red; }); y += h+10;
 
     next = 0;
     next_t = 0;
@@ -46,7 +51,11 @@ var MenuScene = function(game, stage)
     {
       next_t += 0.01;
       if(next_t >= 1) game.nextScene();
-      else clicker.flush();
+      else
+      {
+        clicker.flush();
+        blurer.flush();
+      }
     }
     else
     {
@@ -54,9 +63,12 @@ var MenuScene = function(game, stage)
         !clicker.filter(new_button) &&
         !clicker.filter(continue_button) &&
         !clicker.filter(code_button) &&
+        !clicker.filter(code_txt) &&
+        !blurer.filter(code_txt) &&
         false)
         ;
       clicker.flush();
+      blurer.flush();
     }
   };
 
@@ -65,6 +77,7 @@ var MenuScene = function(game, stage)
     new_button.draw(canv);
     continue_button.draw(canv);
     code_button.draw(canv);
+    code_txt.draw(canv);
     ctx.fillStyle = black;
     ctx.fillText("New Game",new_button.x+15,new_button.y+new_button.h-10);
     ctx.fillText("Continue",continue_button.x+15,continue_button.y+continue_button.h-10);
@@ -83,5 +96,7 @@ var MenuScene = function(game, stage)
   {
     clicker.detach();
     clicker = null;
+    blurer.detach();
+    blurer = null;
   };
 };
