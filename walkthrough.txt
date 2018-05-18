@@ -163,7 +163,9 @@
   @ boss knows history
   @ boss tells jolie to write report
   @ jolie + gramps write report
+  @ record scratch;
   @ oh shit, where's wells
   @ oh shit, we forgot about teddy
-  @ teddy in cage
+  @ cut to teddy in cage
+  @ to be continued
 

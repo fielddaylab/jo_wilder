@@ -11,7 +11,126 @@ save_table[save_codes[save_codes.length-1]] = {
   code:"000000000000000000000000000000000000000000000000000000000000000000000000"
 };
 
-save_codes.push("tunic");
+save_codes.push("notebook");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("wiscwonders");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("jersey");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("mysteryslip");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("plaque");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("notajersey");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("trashed");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("uptome");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("archivist");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("expert");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("oldestcleaner");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("logbook");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("checkbacklater");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("suffragist");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("taxidermist");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("stacks");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("photo");
+save_table[save_codes[save_codes.length-1]] = {
+  reqs:[[
+  ]],
+  code:"060000000000000044563244194304013126400000000000000000000000000000000000"
+};
+
+save_codes.push("blowthisthingwideopen");
 save_table[save_codes[save_codes.length-1]] = {
   reqs:[[
   ]],
