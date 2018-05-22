@@ -26,6 +26,6 @@ tmp_object.view_overlay_reqs = [[
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"tunic.humanecology.frontdesk.worker.better",
+"tunic.humanecology.frontdesk.worker.intro2",
 ]];
 
