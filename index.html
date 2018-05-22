@@ -85,6 +85,16 @@ function begin()
   content.style.width          = w; content.style.height          = h;
   stage_container.style.width  = w; stage_container.style.height  = h;
 
+  var first_audio = new Audio("assets/silence.mp3");
+  var play_first_audio = function()
+  {
+    first_audio.play();
+    if(platform == "PC")          stage_container.removeEventListener('mousedown', play_first_audio);
+    else if(platform == "MOBILE") stage_container.removeEventListener('touchstart', play_first_audio);
+  }
+  if(platform == "PC")          stage_container.addEventListener('mousedown', play_first_audio);
+  else if(platform == "MOBILE") stage_container.addEventListener('touchstart', play_first_audio);
+
   g = new Game({width:w,height:h,container:"stage_container"});
   g.begin();
 }
