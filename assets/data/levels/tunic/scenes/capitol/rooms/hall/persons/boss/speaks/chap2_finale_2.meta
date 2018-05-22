@@ -3,15 +3,15 @@ tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
-]]
+]];
 tmp_speak.reqs = [[
-]]
-
+]];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -74.0934473737639;
 tmp_speak_command.wy = 328.40435152498935;
@@ -22,21 +22,19 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Aha! An expert opinion- good thinking!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -74.0934473737639;
-tmp_speak_command.wy = 328.40435152498935;
-tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.wx = -130.15405343436996;
+tmp_speak_command.wy = 287.4952606158985;
+tmp_speak_command.w = 253.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Where did you go from there?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -170.8099922988929;
-tmp_speak_command.wy = 130.76060754762608;
+tmp_speak_command.wx = -173.84029532919595;
+tmp_speak_command.wy = 179.24545603247452;
 tmp_speak_command.w = 207.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -44,11 +42,10 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Well, I had to figure out WHICH cleaner the receipt was from...";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -161.0033573568378;
-tmp_speak_command.wy = 333.89405624229494;
-tmp_speak_command.w = 272;
+tmp_speak_command.wx = -124.63972099320142;
+tmp_speak_command.wy = 292.98496533320406;
+tmp_speak_command.w = 248;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
