@@ -5117,7 +5117,11 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
       my_cursor.mode = CURSOR_NORMAL;
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        {
           my_cursor.mode = CURSOR_UI;
+          if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
+          my_notebookview.cache_available_entrys[i].hoverexpand = min(1,my_notebookview.cache_available_entrys[i].hoverexpand+0.2);
+        }
     }
   }
   self.unhover = function(evt)
@@ -5674,7 +5678,11 @@ tmp_wildcard.commands = [
       my_cursor.mode = CURSOR_NORMAL;
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        {
           my_cursor.mode = CURSOR_UI;
+          if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
+          my_notebookview.cache_available_entrys[i].hoverexpand = min(1,my_notebookview.cache_available_entrys[i].hoverexpand+0.2);
+        }
     }
   }
   self.unhover = function(evt)

@@ -1670,6 +1670,7 @@ var notebookview = function()
       if(l && self.entrys[i].available) ga('send', 'event', 'capitol_entry', 'available', self.entrys[i].fqid, self.n_available_entrys+1);
       if(self.entrys[i].available)
       {
+        self.entrys[i].hoverexpand = 0;
         if(self.entrys[i].page > self.last_page) self.last_page = self.entrys[i].page;
         //sort by page->z
         var j = 0;
@@ -1778,7 +1779,7 @@ var notebookview = function()
     self.notebook_animcycle_inst.tick();
   }
 
-  self.draw = function(t)
+  self.draw = function(t,hoverexpand=0)
   {
     var yoff = (1-t)*self.h;
     ctx.drawImage(self.notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff, self.notebook.w, self.notebook.h);
@@ -1788,7 +1789,15 @@ var notebookview = function()
     {
       entry = self.cache_available_entrys[i];
       if(entry.page == self.page)
-        ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
+      {
+        if(entry.hoverexpand)
+        {
+          ctx.drawImage(entry.animcycle_inst.img,entry.x-entry.hoverexpand*10,entry.y+yoff-entry.hoverexpand*10,entry.w+entry.hoverexpand*20,entry.h+entry.hoverexpand*20);
+          entry.hoverexpand = max(0,entry.hoverexpand-0.1);
+        }
+        else
+          ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
+      }
     }
 
     if(self.page < self.last_page)
