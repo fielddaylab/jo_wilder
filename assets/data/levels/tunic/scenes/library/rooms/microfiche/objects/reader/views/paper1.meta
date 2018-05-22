@@ -5,3 +5,7 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.library.microfiche.reader.paper2.bingo",
+]];
+

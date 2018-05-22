@@ -6454,6 +6454,9 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.drycleaner.frontdesk.logbook.page.bingo"
+]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -11461,11 +11464,15 @@ tmp_object.view_overlay_animcycle_id = "clueoverlay_stacks";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
 ];
+tmp_object.view_overlay_reqs = [[
+"!tunic.historicalsociety.stacks.journals.pic_0",
+]];
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_2.newspaper",
 ]];
+
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
@@ -11482,6 +11489,9 @@ tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
+]];
+tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -11519,6 +11529,9 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals.pic_2.bingo",
+]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -11555,6 +11568,9 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals.pic_2.bingo",
+]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -11589,6 +11605,9 @@ tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
+]];
+tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -12222,6 +12241,9 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo"
+]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -12258,6 +12280,9 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo"
+]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -12293,6 +12318,9 @@ tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
+]];
+tmp_view.exit_reqs = [[
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo"
 ]];
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
@@ -12739,9 +12767,11 @@ tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "face";
 tmp_zone.raw_notifications = [
+"Aha!",
 "The slip says 1916 but the team didn't start until 1974!",
 ];
 tmp_zone.raw_notification_ws = [
+50,
 252,
 ];
 tmp_zone.notification_reqs = [[
@@ -13526,6 +13556,9 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.library.microfiche.reader.paper2.bingo",
+]];
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_zone = new zone();
@@ -13553,6 +13586,31 @@ tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.ani
 for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
 }
 tmp_view.zones.push(tmp_zone);
+tmp_zone = new zone();
+tmp_zone.id = "prev";
+tmp_zone.fqid = "tunic.library.microfiche.reader.paper0.prev";
+{
+tmp_zone.ww = 54.99999999999998;
+tmp_zone.wh = 49.000000000000114;
+tmp_zone.wx = -25.500000000000025;
+tmp_zone.wy = -223.50000000000006;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper2";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 tmp_view = new view();
@@ -13566,6 +13624,10 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.library.microfiche.reader.paper2.bingo",
+]];
+
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_zone = new zone();
@@ -13631,6 +13693,10 @@ tmp_view.raw_notifications = [
 ];
 tmp_view.reqs = [[
 ]];
+tmp_view.exit_reqs = [[
+"tunic.library.microfiche.reader.paper2.bingo",
+]];
+
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_zone = new zone();
