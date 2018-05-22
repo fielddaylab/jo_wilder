@@ -11,6 +11,7 @@ tmp_speak.notification_reqs = [[
 ]]
 tmp_speak.reqs = [[
 ]]
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 1.664128383811871;
 tmp_speak_command.wy = 331.4346545552924;

@@ -12,7 +12,6 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 ]]
 
-tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -170.8099922988929;
 tmp_speak_command.wy = 130.76060754762608;
@@ -44,8 +43,8 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Wait. Who is Theodora Youmans?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
-
 tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -170.8099922988929;
 tmp_speak_command.wy = 130.76060754762608;
@@ -57,7 +56,6 @@ tmp_speak_command.raw_atext = "That's the same question I had.";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
 
-tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -170.8099922988929;
 tmp_speak_command.wy = 130.76060754762608;

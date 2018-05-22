@@ -32,8 +32,8 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Where did you go from there?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
-
 tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -170.8099922988929;
 tmp_speak_command.wy = 130.76060754762608;
