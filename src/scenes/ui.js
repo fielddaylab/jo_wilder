@@ -3485,7 +3485,7 @@ var cutsceneview = function()
       var entity = self.cutscene_entitys[i];
       screenSpace(my_camera,canv,entity);
       if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
-      ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+      if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
       ctx.globalAlpha = 1;
     }
 
