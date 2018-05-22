@@ -1,10 +1,10 @@
 tmp_object.ww = 55.06871334921671;
 tmp_object.wh = 35.000000000000036;
-tmp_object.wx = 317.2191683281635;
-tmp_object.wy = 29.499999999999883;
+tmp_object.wx = 310.2215047133857;
+tmp_object.wy = -56.500000000000156;
 tmp_object.wz = 0;
-tmp_object.act_wx = -112.2398460734563;
-tmp_object.act_wy = -82;
+tmp_object.act_wx = -42.239844649089264;
+tmp_object.act_wy = -18;
 tmp_object.act_anim = 1;
 tmp_object.hover_icon_wx = -0.29508815856570436;
 tmp_object.hover_icon_wy = 36;
@@ -12,11 +12,20 @@ tmp_object.animcycle_id = "businesscards";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "null";
 tmp_object.audio_id = "null";
+tmp_object.notifications_persistent = 0;
 tmp_object.raw_notifications = [
 ];
+tmp_object.raw_notification_ws = [
+];
+tmp_object.notification_reqs = [[
+]];
+tmp_object.view_overlay_reqs = [[
+]];
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
 "tunic.humanecology.frontdesk.worker.better",
 ]];
+

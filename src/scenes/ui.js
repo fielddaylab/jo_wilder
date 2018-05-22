@@ -1908,7 +1908,7 @@ var notificationview = function()
       if(!self.nv.c.raw_notification_ws) self.nv.c.raw_notification_ws = [];
       self.nv.c.raw_notification_ws[self.nv.c_note_i] = self.w;
       self.nv.note_ws[self.nv.note_i] = self.w;
-      self.nv.note[self.nv.note_i] = stextToLines(self.nv.note_ws[self.nv.note_i], self.w);
+      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.note_i], self.w);
     }
   })();
   self.dragStart = function(evt)

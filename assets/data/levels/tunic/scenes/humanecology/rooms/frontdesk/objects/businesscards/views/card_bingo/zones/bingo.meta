@@ -1,13 +1,19 @@
-tmp_zone.ww = 153.99999999999994;
-tmp_zone.wh = 45;
-tmp_zone.wx = 126.00000000000001;
-tmp_zone.wy = 63.4999999999999;
+tmp_zone.ww = 177.99999999999994;
+tmp_zone.wh = 77.00000000000003;
+tmp_zone.wx = -63.00000000000003;
+tmp_zone.wy = -137.5000000000001;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "card_bingo";
+tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "Whoah this is the only dry cleaner old enough to be around in 1916!",
 ];
+tmp_zone.raw_notification_ws = [
+205,
+];
+tmp_zone.notification_reqs = [[
+]];
 tmp_zone.reqs = [[
 "!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];

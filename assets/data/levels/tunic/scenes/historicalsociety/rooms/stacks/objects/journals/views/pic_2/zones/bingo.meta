@@ -5,11 +5,19 @@ tmp_zone.wy = -158;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "pic_2";
+tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "Hey, this is Youmans!",
 "And Look! She's wearing the shirt!",
 "I should go to the Capitol and let everyone know!",
 ];
+tmp_zone.raw_notification_ws = [
+0,
+295,
+230,
+];
+tmp_zone.notification_reqs = [[
+]];
 tmp_zone.reqs = [[
 ]];
 

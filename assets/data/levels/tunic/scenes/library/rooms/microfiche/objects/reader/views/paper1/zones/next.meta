@@ -1,12 +1,17 @@
-tmp_zone.ww = 36.99999999999998;
-tmp_zone.wh = 27.000000000000018;
-tmp_zone.wx = 25.49999999999997;
-tmp_zone.wy = -223.5000000000001;
+tmp_zone.ww = 54.99999999999998;
+tmp_zone.wh = 42.000000000000014;
+tmp_zone.wx = 32.500000000000036;
+tmp_zone.wy = -224.00000000000009;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper2";
+tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 ];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
 tmp_zone.reqs = [[
 ]];
 

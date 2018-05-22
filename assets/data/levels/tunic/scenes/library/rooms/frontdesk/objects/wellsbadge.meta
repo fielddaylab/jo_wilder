@@ -1,6 +1,6 @@
-tmp_object.ww = 42.66666666666814;
+tmp_object.ww = 58.30303030303185;
 tmp_object.wh = 58.303030303030226;
-tmp_object.wx = 133.88152529317244;
+tmp_object.wx = 141.69970711135423;
 tmp_object.wy = -98.06060740243169;
 tmp_object.wz = 0;
 tmp_object.act_wx = -83.76453090423374;
@@ -12,9 +12,17 @@ tmp_object.animcycle_id = "wellsbadge_small";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "null";
 tmp_object.audio_id = "null";
+tmp_object.notifications_persistent = 0;
 tmp_object.raw_notifications = [
 ];
+tmp_object.raw_notification_ws = [
+];
+tmp_object.notification_reqs = [[
+]];
+tmp_object.view_overlay_reqs = [[
+]];
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[

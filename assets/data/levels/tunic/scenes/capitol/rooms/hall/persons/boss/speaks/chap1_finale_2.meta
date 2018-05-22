@@ -3,14 +3,15 @@ tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
-]]
+]];
 tmp_speak.reqs = [[
-]]
+]];
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 336.7657652768647;
 tmp_speak_command.wy = 292.8818196688382;
@@ -21,7 +22,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Wow!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 347.37182588292535;
 tmp_speak_command.wy = 288.33636512338364;
@@ -32,7 +32,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Excellent work!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -129.900901389802;
 tmp_speak_command.wy = 380.7606075476261;
@@ -43,7 +42,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "I think you're right, Jolie- we definitely can't put Wells' shoddy research on display...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -151.11302260192323;
 tmp_speak_command.wy = 336.82121360823214;
@@ -54,29 +52,26 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "I need you to work on this right away.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -151.11302260192323;
-tmp_speak_command.wy = 336.82121360823214;
-tmp_speak_command.w = 265.69814225923324;
+tmp_speak_command.wx = -8.68878017768074;
+tmp_speak_command.wy = 88.3363651233837;
+tmp_speak_command.w = 98.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Wait- what";
 tmp_speak_command.speaker = SPEAKER_PLAYER;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -151.11302260192323;
-tmp_speak_command.wy = 336.82121360823214;
-tmp_speak_command.w = 265.69814225923324;
+tmp_speak_command.wx = -55.658477147377766;
+tmp_speak_command.wy = 341.3666681536867;
+tmp_speak_command.w = 200.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "You'll need to find the story behind this shirt.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -90.50696199586261;
 tmp_speak_command.wy = 333.7909105779291;
