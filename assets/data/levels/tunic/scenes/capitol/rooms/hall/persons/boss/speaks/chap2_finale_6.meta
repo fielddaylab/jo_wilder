@@ -1,0 +1,75 @@
+tmp_speak.primary = 0;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]]
+tmp_speak.reqs = [[
+]]
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -74.0934473737639;
+tmp_speak_command.wy = 328.40435152498935;
+tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Wow! There she is!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -74.0934473737639;
+tmp_speak_command.wy = 328.40435152498935;
+tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "This shirt was used in marches by suffragists!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -74.0934473737639;
+tmp_speak_command.wy = 328.40435152498935;
+tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "What a fanstastic piece of history-";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -74.0934473737639;
+tmp_speak_command.wy = 328.40435152498935;
+tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "and what impeccable research!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -74.0934473737639;
+tmp_speak_command.wy = 328.40435152498935;
+tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I'm going to need you and Leopold to write this up A.S.A.P.!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -74.0934473737639;
+tmp_speak_command.wy = 328.40435152498935;
+tmp_speak_command.w = 212.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "The fight to ensure women had a right to vote needs to be celebrated!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+
