@@ -6421,8 +6421,9 @@ tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
 tmp_object.audio_id = "null";
-tmp_object.notifications_persistent = 0;
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I have to find the entry for this slip",
 ];
 tmp_object.raw_notification_ws = [
 ];
@@ -9083,7 +9084,9 @@ tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I need to find a clue",
 ];
 tmp_object.notice_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
@@ -11460,9 +11463,10 @@ tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.view_overlay_animcycle_id = "clueoverlay_stacks";
-
 tmp_object.audio_id = "null";
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I need to find more information about Theodora Youmans",
 ];
 tmp_object.view_overlay_reqs = [[
 "!tunic.historicalsociety.stacks.journals.pic_0",
@@ -12161,8 +12165,9 @@ tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.view_overlay_animcycle_id = "null";
 tmp_object.audio_id = "null";
-tmp_object.notifications_persistent = 0;
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I need to figure out which dry cleaners to check",
 ];
 tmp_object.raw_notification_ws = [
 ];
@@ -13444,7 +13449,9 @@ tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
 tmp_object.audio_id = "null";
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I need some info on Theodora Youmans",
 ];
 tmp_object.notice_reqs = [[
 ]];

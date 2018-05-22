@@ -14,8 +14,9 @@ tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.view_overlay_animcycle_id = "null";
 tmp_object.audio_id = "null";
-tmp_object.notifications_persistent = 0;
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I need to figure out which dry cleaners to check",
 ];
 tmp_object.raw_notification_ws = [
 ];

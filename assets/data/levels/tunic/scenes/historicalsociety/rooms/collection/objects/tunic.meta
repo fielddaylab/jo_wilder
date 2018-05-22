@@ -13,7 +13,9 @@ tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
+tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
+"I need to find a clue",
 ];
 tmp_object.notice_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
