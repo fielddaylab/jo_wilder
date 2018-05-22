@@ -12,10 +12,8 @@ tmp_room.navs = [
 {wx:10.504266621348336, wy:-164, ww:566.00666856617, wh:338 },
 ];
 tmp_room.lights = [
-{wx:-8, wy:-249.5, ww:744, wh:261 },
 ];
 tmp_room.shadows = [
-{wx:-29, wy:-225.50000000000028, ww:744, wh:261 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2)";
 tmp_room.shadow_color = "rgba(0,0,0,0.2)";
