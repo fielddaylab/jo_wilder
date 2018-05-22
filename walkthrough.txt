@@ -3,6 +3,7 @@
 # save
 ! observation
 ? evidence
+( evidence prompt
 & teddy-evidence
 @ narrative beat
 ^ learning
@@ -42,12 +43,12 @@
   @ gramps too busy to correct wells
   @ jolie wants to help
   @ artifact looks like a jersey
-  ? shirt
+  ? shirt ( "what shirt?"
   # jersey
   @ there was a slip on the artifact
   @ the slip has a date
   @ gramps wants you to check out bball for clues re: the date
-  ? slip: dated 19whatever
+  ? slip: dated 19whatever ( "what evidence do you have?" -or- "how is the date on the plaque relevant?"
   * find clues at bball center
   # mysteryslip
 - bball center
@@ -55,7 +56,7 @@
   @ jolie knows shirt not a jersey
   @ jolie wants to tell boss [ HOW DOES SHE KNOW WHERE BOSS IS? WHY NOT TELL GRAMPS INSTEAD?
   @ jolie knows boss at capitol
-  ? plaque: women's team started later
+  ? plaque: women's team started later ( "what evidence do you have?" -or- "how is the date on the slip relevant?"
   ! wells is wrong
   * tell boss wells is wrong
   # plaque
@@ -101,10 +102,10 @@
 - textile
   @ jolie learns it's a dry cleaner slip
   ! textile lady
-  ? expert opinion: its a dry cleaner receipt
+  ? expert opinion: its a dry cleaner receipt ( "How did you know it was a cleaners?"
   # expert
   @ there's only one dry cleaner old enough
-  ? business cards: only one old enough
+  ? business cards: only one old enough ( "How did you know which cleaners?"
   * go to dry cleaner's
   # oldestcleaner
 - dry cleaner's
@@ -114,7 +115,7 @@
   @ gramps is losing papers himself [ IS THIS TRUE? I THOUGHT TEDDY WAS TAKING PAPERS?
   @ jolie learns the name of shirt owner
   @ jolie wants to tell archivist [ SLIGHTLY ODD? GRAMPS SEEMS GO-TO HELP SOURCE
-  ? logbook: name is theodora youmans
+  ? logbook: name is theodora youmans ( "Who did it belong to?"
   * go tell archivist
   # logbook
 - archivist
@@ -133,7 +134,7 @@
   # microfiche
   @ jolie learns of historical significance of youmans (suffragist)
   @ jolie wants to tell archivist
-  ? newspaper: youman's was suffragist
+  ? newspaper: youman's was suffragist ( "Who is theodora youmans?"
   * go to archivist
   # suffragist
   @ librarian doesn't like wells [ I THOUGHT WELLS WAS ACTUALLY A GOOD GUY?
@@ -154,7 +155,7 @@
   @ jolie finds picture of youmans wearing shirt
   @ jolie knows the historical significance of the shirt
   @ jolie wants to tell boss
-  ? picture: youmans marched in tunic
+  ? picture: youmans marched in tunic ( "What does TY/Suffragists have to do with the shirt?"
   * go tell boss at capitol
   # photo
 - capitol

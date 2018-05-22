@@ -6,9 +6,11 @@ tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "face";
 tmp_zone.raw_notifications = [
+"Aha!",
 "The slip says 1916 but the team didn't start until 1974!",
 ];
 tmp_zone.raw_notification_ws = [
+50,
 252,
 ];
 tmp_zone.notification_reqs = [[
