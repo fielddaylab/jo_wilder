@@ -13,52 +13,62 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 ]];
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -193;
-tmp_speak_command.wy = 119;
+tmp_speak_command.wx = -281.0000000122775;
+tmp_speak_command.wy = 143;
 tmp_speak_command.w = 257;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Oh, all right. How can I help?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -8.000000000000057;
-tmp_speak_command.wy = 8.999999999999984;
+tmp_speak_command.wx = -86.00000000013301;
+tmp_speak_command.wy = 31.000000000000018;
 tmp_speak_command.w = 265;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Do you know what this slip is?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -195.00000000000009;
-tmp_speak_command.wy = 149.00000000000006;
-tmp_speak_command.w = 147;
+tmp_speak_command.wx = -309.0000000000071;
+tmp_speak_command.wy = 144.00000000000006;
+tmp_speak_command.w = 302;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Looks like a dry cleaning receipt.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -6.000000000000117;
-tmp_speak_command.wy = 65.00000000000001;
+tmp_speak_command.wx = -88.00000000000009;
+tmp_speak_command.wy = 86;
 tmp_speak_command.w = 247;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "I need to find all the dry cleaners that were around in 1916! Can you help me?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -196.00000001733537;
-tmp_speak_command.wy = 175.00000000000003;
+tmp_speak_command.wx = -281.0000000173354;
+tmp_speak_command.wy = 202.00000000000006;
 tmp_speak_command.w = 247;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Come to think of it, I've got a file of dry cleaners on the table. Take a look!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);

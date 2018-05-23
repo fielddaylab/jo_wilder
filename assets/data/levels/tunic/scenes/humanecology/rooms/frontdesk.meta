@@ -5,11 +5,13 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_humanecology_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [
+];
 tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 1;
 tmp_room.nav_max_wz = 9;
 tmp_room.navs = [
-{wx:-3.5, wy:-200.49999999999997, ww:873, wh:253.00000000000003 },
+{wx:158.4109366061021, wy:-237.9999999999999, ww:851.3912812235366, wh:115.99999999999994 },
 ];
 tmp_room.lights = [
 ];
@@ -30,3 +32,4 @@ tmp_room.notification_reqs = [[
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
+

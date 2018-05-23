@@ -1,7 +1,7 @@
-tmp_object.ww = 55.06871334921671;
-tmp_object.wh = 35.000000000000036;
-tmp_object.wx = 310.2215047133857;
-tmp_object.wy = -56.500000000000156;
+tmp_object.ww = 48.06871334920727;
+tmp_object.wh = 29.00000000000004;
+tmp_object.wx = 469.7215046736234;
+tmp_object.wy = -51.50000000000015;
 tmp_object.wz = 0;
 tmp_object.act_wx = -42.239844649089264;
 tmp_object.act_wy = -18;
@@ -14,6 +14,8 @@ tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
 tmp_object.view_overlay_animcycle_id = "null";
 tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
 "I need to figure out which dry cleaners to check",

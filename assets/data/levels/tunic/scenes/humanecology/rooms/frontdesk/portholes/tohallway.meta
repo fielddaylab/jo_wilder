@@ -1,7 +1,7 @@
-tmp_porthole.ww = 84.11587760913382;
-tmp_porthole.wh = 295.19999999999993;
-tmp_porthole.wx = 460.74272592432186;
-tmp_porthole.wy = -37.79999999999984;
+tmp_porthole.ww = 65.11587760538475;
+tmp_porthole.wh = 314.19999999999993;
+tmp_porthole.wx = 654.2427243035245;
+tmp_porthole.wy = -48.29999999999981;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -13,6 +13,8 @@ tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "door";
+tmp_porthole.deck_animcycle_ids = [
+];
 tmp_porthole.target_room = "hallway";
 tmp_porthole.target_start_wx = 440;
 tmp_porthole.target_start_wy = 330;

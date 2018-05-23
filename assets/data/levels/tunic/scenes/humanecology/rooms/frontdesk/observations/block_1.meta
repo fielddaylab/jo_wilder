@@ -1,7 +1,7 @@
-tmp_observation.ww = 120.99999999999996;
-tmp_observation.wh = 338;
-tmp_observation.wx = 528.5000000000001;
-tmp_observation.wy = 2.842170943040401e-14;
+tmp_observation.ww = 95.99991917494879;
+tmp_observation.wh = 59.00000000000001;
+tmp_observation.wx = 395.9999536216391;
+tmp_observation.wy = -32.499999999999986;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
@@ -13,14 +13,21 @@ tmp_observation.hover_cursor_animcycle_id = "null";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
 tmp_observation.raw_text = "I wonder if there's a clue in those business cards...";
 tmp_observation.blip_wx = 196.99999999999994;
 tmp_observation.blip_wy = 126.99999999999997;
 tmp_observation.blip_w = 219;
 tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.raw_notification_ws = [
+];
 tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
 "!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
