@@ -142,6 +142,36 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_act/0
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "avatar_angry";
+tmp_animcycle.fqid = "tunic.avatar_angry";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_angry/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "avatar_happy";
+tmp_animcycle.fqid = "tunic.avatar_happy";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_happy/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "avatar_idle";
 tmp_animcycle.fqid = "tunic.avatar_idle";
 {
@@ -154,6 +184,36 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_idle/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "avatar_nervous";
+tmp_animcycle.fqid = "tunic.avatar_nervous";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_nervous/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "avatar_sad";
+tmp_animcycle.fqid = "tunic.avatar_sad";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/avatar_sad/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -7225,7 +7285,7 @@ tmp_speak_command.wx = 200.1141705840032;
 tmp_speak_command.wy = -7.068034501009009;
 tmp_speak_command.w = 164;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "avatar_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Teddy, you have to stay hidden today!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
@@ -7235,10 +7295,10 @@ tmp_speak_command.wx = 211.60354799515324;
 tmp_speak_command.wy = -7.502648845687112;
 tmp_speak_command.w = 155;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "avatar_nervous";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Now where did I put my notebook?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);

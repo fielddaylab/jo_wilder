@@ -86,14 +86,22 @@ var loader = function()
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
       self.load_animcycle_inst(person.notice_icon_animcycle_inst);
       for(var i = 0; i < person.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(person.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(person.deck_animcycle_ids[i],cur_level.animcycles));
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
         speak = person.speaks[l];
         self.load_animcycle_inst(speak.animcycle_inst);
         for(var i = 0; i < speak.deck_animcycle_ids; i++)
-          self.load_animcycle(find_animcycle(speak.deck_animcycle_ids[i],level.animcycles));
+          self.load_animcycle(find_animcycle(speak.deck_animcycle_ids[i],cur_level.animcycles));
+        var speak_command;
+        for(var m = 0; m < speak.commands.length; m++)
+        {
+          speak_command = speak.commands[m];
+          self.load_animcycle(find_animcycle(speak_command.animcycle_id,cur_level.animcycles));
+          for(var i = 0; i < speak_command.deck_animcycle_ids; i++)
+            self.load_animcycle(find_animcycle(speak_command.deck_animcycle_ids[i],cur_level.animcycles));
+        }
       }
     }
     var object;
@@ -106,21 +114,21 @@ var loader = function()
       self.load_animcycle_inst(object.notice_icon_animcycle_inst);
       self.load_animcycle_inst(object.view_overlay_animcycle_inst);
       for(var i = 0; i < object.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(object.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(object.deck_animcycle_ids[i],cur_level.animcycles));
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
         view = object.views[l];
         self.load_animcycle_inst(view.animcycle_inst);
         for(var i = 0; i < view.deck_animcycle_ids; i++)
-          self.load_animcycle(find_animcycle(view.deck_animcycle_ids[i],level.animcycles));
+          self.load_animcycle(find_animcycle(view.deck_animcycle_ids[i],cur_level.animcycles));
         var zone;
         for(var m = 0; m < view.zones.length; m++)
         {
           zone = view.zones[m];
           self.load_animcycle_inst(zone.animcycle_inst);
           for(var i = 0; i < zone.deck_animcycle_ids; i++)
-            self.load_animcycle(find_animcycle(zone.deck_animcycle_ids[i],level.animcycles));
+            self.load_animcycle(find_animcycle(zone.deck_animcycle_ids[i],cur_level.animcycles));
         }
       }
     }
@@ -133,7 +141,7 @@ var loader = function()
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
       self.load_animcycle_inst(observation.notice_icon_animcycle_inst);
       for(var i = 0; i < observation.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(observation.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(observation.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
@@ -144,7 +152,7 @@ var loader = function()
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
       self.load_animcycle_inst(porthole.notice_icon_animcycle_inst);
       for(var i = 0; i < porthole.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(porthole.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(porthole.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var wildcard;
     for(var k = 0; k < room.wildcards.length; k++)
@@ -155,7 +163,7 @@ var loader = function()
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
       self.load_animcycle_inst(wildcard.notice_icon_animcycle_inst);
       for(var i = 0; i < wildcard.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(wildcard.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(wildcard.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var cutscene;
     for(var k = 0; k < room.cutscenes.length; k++)
@@ -168,7 +176,7 @@ var loader = function()
       for(var l = 0; l < cutscene.commands.length; l++)
         if(cutscene.commands[l].animcycle_id && cutscene.commands[l].animcycle_id != "null") self.load_animcycle(find_animcycle(cutscene.commands[l].animcycle_id,cur_level.animcycles));
       for(var i = 0; i < cutscene.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(cutscene.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(cutscene.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
@@ -176,7 +184,7 @@ var loader = function()
       inert = room.inerts[k];
       self.load_animcycle_inst(inert.animcycle_inst);
       for(var i = 0; i < room.deck_animcycle_ids; i++)
-        self.load_animcycle(find_animcycle(room.deck_animcycle_ids[i],level.animcycles));
+        self.load_animcycle(find_animcycle(room.deck_animcycle_ids[i],cur_level.animcycles));
     }
   }
 }
@@ -310,6 +318,9 @@ var avatar = function()
   self.idle_animcycle = null_animcycle;
   self.walk_animcycle = null_animcycle;
   self.act_animcycle  = null_animcycle;
+
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
 
   self.anim.transition = function()
   {
@@ -579,7 +590,13 @@ var avatar = function()
       shading_canv.context.save();
       shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
       if(self.anim.flip) shading_canv.context.scale(-1,1);
-      shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      if(self.stack_animcycle_t)
+      {
+        shading_canv.context.drawImage(self.stack_animcycle_inst.img,-self.w/2,-self.h/2,self.w,self.h);
+        self.stack_animcycle_t--;
+      }
+      else
+        shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
       shading_canv.context.restore();
 
       if(self.shade > 0.01)
@@ -604,7 +621,13 @@ var avatar = function()
       shading_canv.context.save();
       shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
       if(self.anim.flip) shading_canv.context.scale(-1,1);
-      shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      if(self.stack_animcycle_t)
+      {
+        shading_canv.context.drawImage(self.stack_animcycle_inst.img,-self.w/2,-self.h/2,self.w,self.h);
+        self.stack_animcycle_t--;
+      }
+      else
+        shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
       shading_canv.context.restore();
 
       ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
@@ -615,7 +638,13 @@ var avatar = function()
       ctx.save();
       ctx.translate(self.x+self.w/2,self.y+self.h/2);
       if(self.anim.flip) ctx.scale(-1,1);
-      ctx.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      if(self.stack_animcycle_t)
+      {
+        ctx.drawImage(self.stack_animcycle_inst.img,-self.w/2,-self.h/2,self.w,self.h);
+        self.stack_animcycle_t--;
+      }
+      else
+        ctx.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
       ctx.restore();
     }
 
@@ -1277,7 +1306,13 @@ var navigable = function()
     for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
     {
       d = self.cache_available_drawables[i];
-      drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(d.stack_animcycle_t)
+      {
+        drawImageBox(d.stack_animcycle_inst.img, d, ctx);
+        d.stack_animcycle_t--;
+      }
+      else
+        drawImageBox(d.animcycle_inst.img, d, ctx);
       if(state_cur == STATE_NAV && d.notice)
       {
         hw = cur_level.hover_w/2;
@@ -1291,7 +1326,13 @@ var navigable = function()
     for(; i < self.cache_available_drawables.length; i++)
     {
       d = self.cache_available_drawables[i];
-      drawImageBox(d.animcycle_inst.img, d, ctx);
+      if(d.stack_animcycle_t)
+      {
+        drawImageBox(d.stack_animcycle_inst.img, d, ctx);
+        d.stack_animcycle_t--;
+      }
+      else
+        drawImageBox(d.animcycle_inst.img, d, ctx);
       if(state_cur == STATE_NAV && d.notice)
       {
         hw = cur_level.hover_w/2;
@@ -2554,6 +2595,20 @@ var personview = function()
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak_command_i++;
+      var c = self.cur_speak.commands[self.cur_speak_command_i];
+      if(c.animcycle_id && c.animcycle_id != "null")
+      {
+        if(c.speaker == SPEAKER_PERSON)
+        {
+          self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          self.person.stack_animcycle_t = 50;
+        }
+        else
+        {
+          my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          my_avatar.stack_animcycle_t = 50;
+        }
+      }
     }
     else if(
       (self.clicked_option === 1 && self.cur_speak_command_i === self.cur_speak.commands.length-1) || //no options
@@ -2582,6 +2637,20 @@ var personview = function()
       self.clicked_option.met = true;
       self.cur_speak = self.clicked_option.target_speak_found;
       self.cur_speak_command_i = 0;
+      var c = self.cur_speak.commands[self.cur_speak_command_i];
+      if(c.animcycle_id && c.animcycle_id != "null")
+      {
+        if(c.speaker == SPEAKER_PERSON)
+        {
+          self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          self.person.stack_animcycle_t = 50;
+        }
+        else
+        {
+          my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          my_avatar.stack_animcycle_t = 50;
+        }
+      }
       if(self.cur_speak.notifications.length && queryreqs(self.cur_speak, self.cur_speak.notification_reqs)) my_notificationview.consume_notification(self.cur_speak);
       self.cur_speak.pre_met = true;
       self.unlock_content();
@@ -2599,9 +2668,24 @@ var personview = function()
     {
       self.cur_speak_i = 0;
       self.cur_speak = self.cache_available_speaks[0];
+      self.cur_speak_command_i = 0;
       for(var i = 1; i < self.cache_available_speaks.length; i++)
         if(self.cache_available_speaks[i].primary > self.cur_speak.primary)
           self.cur_speak = self.cache_available_speaks[i];
+      var c = self.cur_speak.commands[self.cur_speak_command_i];
+      if(c.animcycle_id && c.animcycle_id != "null")
+      {
+        if(c.speaker == SPEAKER_PERSON)
+        {
+          self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          self.person.stack_animcycle_t = 50;
+        }
+        else
+        {
+          my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          my_avatar.stack_animcycle_t = 50;
+        }
+      }
       if(self.cur_speak.notifications.length && queryreqs(self.cur_speak, self.cur_speak.notification_reqs)) my_notificationview.consume_notification(self.cur_speak);
       self.cur_speak.pre_met = true;
     }
