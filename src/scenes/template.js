@@ -1272,7 +1272,7 @@ var print_speak_meta = function(l)
     "tmp_speak_command.h = "+c.h+";\n"+
     "tmp_speak_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
     "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
-    "tmp_speak.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+    "tmp_speak_command.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
     "tmp_speak_command.raw_atext = \""+c.raw_atext.replace(/"/g,"\\\"")+"\";\n"+
     "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_AVATAR ? "SPEAKER_AVATAR" : "SPEAKER_PERSON" )+";\n"+
     "tmp_speak.commands.push(tmp_speak_command);\n";
