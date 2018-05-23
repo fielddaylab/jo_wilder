@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet_dirty";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -677,6 +677,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_exhibi
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "entry_expert_img";
+tmp_animcycle.fqid = "tunic.entry_expert_img";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_expert_img/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "entry_javajacket";
 tmp_animcycle.fqid = "tunic.entry_javajacket";
 {
@@ -719,6 +734,21 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_microfiche_img/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "entry_newspaper_img";
+tmp_animcycle.fqid = "tunic.entry_newspaper_img";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_newspaper_img/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -2650,6 +2680,35 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
+tmp_entry.id = "entry_expert";
+tmp_entry.fqid = "tunic.entry_expert";
+{
+tmp_entry.ww = 226.00000000000006;
+tmp_entry.wh = 102.99999999999999;
+tmp_entry.wx = 126.00000000000003;
+tmp_entry.wy = 21.499999999999964;
+tmp_entry.wz = 100;
+tmp_entry.page = 1;
+tmp_entry.animcycle_id = "entry_expert_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.humanecology.frontdesk.worker.intro2",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
 tmp_entry.id = "entry_javajacket";
 tmp_entry.fqid = "tunic.entry_javajacket";
 {
@@ -2707,6 +2766,35 @@ tmp_entry.animcycle_id = "entry_microfiche_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];
+tmp_entry.reqs = [[
+"tunic.library.microfiche.reader.paper2.bingo",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_newspaper";
+tmp_entry.fqid = "tunic.entry_newspaper";
+{
+tmp_entry.ww = 239.00000000000006;
+tmp_entry.wh = 96.00000000000001;
+tmp_entry.wx = 192.50000000000006;
+tmp_entry.wy = 68.99999999999997;
+tmp_entry.wz = 100;
+tmp_entry.page = 2;
+tmp_entry.animcycle_id = "entry_newspaper_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
 tmp_entry.reqs = [[
 "tunic.library.microfiche.reader.paper2.bingo",
 ]];
@@ -3007,14 +3095,21 @@ tmp_entry.fqid = "tunic.entry_quest_textile";
 {
 tmp_entry.ww = 366;
 tmp_entry.wh = 125.00000000000003;
-tmp_entry.wx = 183.99999999999997;
-tmp_entry.wy = 73.5000000000001;
+tmp_entry.wx = 181.99999999999994;
+tmp_entry.wy = 101.50000000000013;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_quest_textile_img";
 tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
 tmp_entry.raw_notifications = [
 ];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
 tmp_entry.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_0.slip",
 ]];
@@ -3029,14 +3124,21 @@ tmp_entry.fqid = "tunic.entry_quest_textile_x";
 {
 tmp_entry.ww = 353;
 tmp_entry.wh = 86.99999999999997;
-tmp_entry.wx = 180.49999999999997;
-tmp_entry.wy = 70.49999999999999;
+tmp_entry.wx = 176.5;
+tmp_entry.wy = 102.50000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
 tmp_entry.raw_notifications = [
 ];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
 tmp_entry.reqs = [[
 "tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
@@ -3161,14 +3263,21 @@ tmp_entry.fqid = "tunic.entry_wellsid";
 {
 tmp_entry.ww = 360;
 tmp_entry.wh = 189.00000000000006;
-tmp_entry.wx = 183;
-tmp_entry.wy = -24.500000000000014;
+tmp_entry.wx = 178.99999999999997;
+tmp_entry.wy = -61.500000000000036;
 tmp_entry.wz = 100;
 tmp_entry.page = 2;
 tmp_entry.animcycle_id = "entry_wellsid_img";
 tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
 tmp_entry.raw_notifications = [
 ];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
 tmp_entry.reqs = [[
 "tunic.library.frontdesk.wellsbadge.hub",
 ]];
@@ -3972,7 +4081,7 @@ tmp_speak_command.w = 216.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Have you found anything regarding the shirt exhi-";
+tmp_speak_command.raw_atext = "Have you found anything regarding the shirt exhibit?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
@@ -4957,7 +5066,7 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHANGE TO HACKME
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt:stextToLines("I need to show her the shirt artifact to jog her memory.", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt:stextToLines("I'll show her my photo of the shirt to remind her.", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_1" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"HACKME", prompt:stextToLines("What evidence do I have that the shirt isn't a basketball jersey?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_1_fail"] },
 
@@ -5518,15 +5627,15 @@ tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap2_finale_0" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt:stextToLines("I need to show her the slip I found on the shirt.", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap2_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_exhibition", prompt:stextToLines("From whom did I learn it was a dry cleaners?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_expert", prompt:stextToLines("From whom did I learn it was a dry cleaners?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap2_finale_2" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanercard", prompt:stextToLines("How did I learn which dry cleaner to go to?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_2_fail"] },
 
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap2_finale_3" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_logbook", prompt:stextToLines("I need to show her what I found in the log books-", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_3_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_logbook", prompt:stextToLines("Show her how I figured out the name of the shirt's owner.", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_3_fail"] },
 
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap2_finale_4" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_microfiche", prompt:stextToLines("I'll show her what I found at the library.", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_4_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_newspaper", prompt:stextToLines("I'll show her why Youmans is famous", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_4_fail"] },
 
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap2_finale_5" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theodora", prompt:stextToLines("Time to show her Youmans wearing the shirt!", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap2_finale_5_fail"] },
@@ -6558,12 +6667,12 @@ tmp_zone.target_view = "page";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "The number matches the slip-",
-"She must be the owner!",
+"Theodora Youmans must be the owner.",
 "I'll make a note of this...",
 ];
 tmp_zone.raw_notification_ws = [
 253,
-0,
+280,
 217,
 ];
 tmp_zone.notification_reqs = [[
@@ -9227,6 +9336,9 @@ tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
 "I need to find a clue",
 ];
+tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.collection.tunic.slip",
+]];
 tmp_object.notice_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
 ]];
@@ -9292,6 +9404,7 @@ tmp_view.raw_notification_ws = [
 268,
 ];
 tmp_view.notification_reqs = [[
+"!self",
 ]]
 tmp_view.exit_reqs = [[
 ]]
@@ -9300,26 +9413,6 @@ tmp_view.reqs = [[
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
-tmp_zone = new zone();
-tmp_zone.id = "return";
-tmp_zone.fqid = "tunic.historicalsociety.collection.tunic.slip.return";
-{
-tmp_zone.ww = 100;
-tmp_zone.wh = 100;
-tmp_zone.wx = 385.00000000000006;
-tmp_zone.wy = 275;
-tmp_zone.animcycle_id = "null";
-tmp_zone.audio_id = "null";
-tmp_zone.target_view = "hub";
-tmp_zone.raw_notifications = [
-];
-tmp_zone.reqs = [[
-]];
-
-tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
@@ -10884,7 +10977,17 @@ tmp_speak_command.w = 267;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Excellent! You'll want to try the library… They'll have all sorts of info on Youmans. I'll dig up some stuff around here.";
+tmp_speak_command.raw_atext = "Excellent! I know I've heard that name before...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -318.99999999999994;
+tmp_speak_command.wy = 271.99999999999994;
+tmp_speak_command.w = 267;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "You'll want to try the library… They'll have all sorts of info on Youmans. I'll dig up some stuff around here.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -11223,7 +11326,7 @@ tmp_speak_command.w = 203;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "How does the tunic fit in? I need to figure this out fast. Gramps' job is at stake!";
+tmp_speak_command.raw_atext = "How does the shirt fit in? I need to figure this out fast. Gramps' job is at stake!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
@@ -12330,13 +12433,13 @@ tmp_object.animcycle_id = "businesscards";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"I need to figure out which dry cleaners to check",
+"Which of these dry cleaners might know something about this slip?",
 ];
 tmp_object.raw_notification_ws = [
 ];
@@ -12817,7 +12920,7 @@ tmp_object.animcycle_id = "plaque";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
-tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
 tmp_object.audio_id = "null";
 tmp_object.notifications_persistent = 0;
 tmp_object.raw_notifications = [

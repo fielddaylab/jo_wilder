@@ -8,12 +8,12 @@ tmp_zone.target_view = "page";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "The number matches the slip-",
-"She must be the owner!",
+"Theodora Youmans must be the owner.",
 "I'll make a note of this...",
 ];
 tmp_zone.raw_notification_ws = [
 253,
-0,
+280,
 217,
 ];
 tmp_zone.notification_reqs = [[

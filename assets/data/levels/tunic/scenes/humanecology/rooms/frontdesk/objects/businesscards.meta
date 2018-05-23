@@ -12,13 +12,13 @@ tmp_object.animcycle_id = "businesscards";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"I need to figure out which dry cleaners to check",
+"Which of these dry cleaners might know something about this slip?",
 ];
 tmp_object.raw_notification_ws = [
 ];

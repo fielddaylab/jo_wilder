@@ -17,6 +17,9 @@ tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
 "I need to find a clue",
 ];
+tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.collection.tunic.slip",
+]];
 tmp_object.notice_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
 ]];

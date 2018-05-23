@@ -29,7 +29,7 @@ tmp_speak_command.w = 216.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Have you found anything regarding the shirt exhi-";
+tmp_speak_command.raw_atext = "Have you found anything regarding the shirt exhibit?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();

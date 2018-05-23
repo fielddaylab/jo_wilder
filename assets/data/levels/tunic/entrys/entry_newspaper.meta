@@ -1,10 +1,10 @@
-tmp_entry.ww = 360;
-tmp_entry.wh = 189.00000000000006;
-tmp_entry.wx = 178.99999999999997;
-tmp_entry.wy = -61.500000000000036;
+tmp_entry.ww = 239.00000000000006;
+tmp_entry.wh = 96.00000000000001;
+tmp_entry.wx = 192.50000000000006;
+tmp_entry.wy = 68.99999999999997;
 tmp_entry.wz = 100;
 tmp_entry.page = 2;
-tmp_entry.animcycle_id = "entry_wellsid_img";
+tmp_entry.animcycle_id = "entry_newspaper_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
 ];
@@ -16,6 +16,6 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.library.frontdesk.wellsbadge.hub",
+"tunic.library.microfiche.reader.paper2.bingo",
 ]];
 

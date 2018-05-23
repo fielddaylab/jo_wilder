@@ -11,6 +11,7 @@ tmp_view.raw_notification_ws = [
 268,
 ];
 tmp_view.notification_reqs = [[
+"!self",
 ]]
 tmp_view.exit_reqs = [[
 ]]

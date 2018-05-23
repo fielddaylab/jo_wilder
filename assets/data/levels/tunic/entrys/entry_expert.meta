@@ -1,10 +1,10 @@
-tmp_entry.ww = 360;
-tmp_entry.wh = 189.00000000000006;
-tmp_entry.wx = 178.99999999999997;
-tmp_entry.wy = -61.500000000000036;
+tmp_entry.ww = 226.00000000000006;
+tmp_entry.wh = 102.99999999999999;
+tmp_entry.wx = 126.00000000000003;
+tmp_entry.wy = 21.499999999999964;
 tmp_entry.wz = 100;
-tmp_entry.page = 2;
-tmp_entry.animcycle_id = "entry_wellsid_img";
+tmp_entry.page = 1;
+tmp_entry.animcycle_id = "entry_expert_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
 ];
@@ -16,6 +16,6 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.library.frontdesk.wellsbadge.hub",
+"tunic.humanecology.frontdesk.worker.intro2",
 ]];
 
