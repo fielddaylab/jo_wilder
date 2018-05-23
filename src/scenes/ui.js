@@ -62,6 +62,8 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ui_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
+    for(var i = 0; i < level.deck_animcycle_ids; i++)
+      self.load_animcycle(find_animcycle(level.deck_animcycle_ids[i],level.animcycles));
 
     for(var i = 0; i < level.scenes.length; i++)
     {
@@ -83,11 +85,15 @@ var loader = function()
       self.load_animcycle_inst(person.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
       self.load_animcycle_inst(person.notice_icon_animcycle_inst);
+      for(var i = 0; i < person.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(person.deck_animcycle_ids[i],level.animcycles));
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
         speak = person.speaks[l];
         self.load_animcycle_inst(speak.animcycle_inst);
+        for(var i = 0; i < speak.deck_animcycle_ids; i++)
+          self.load_animcycle(find_animcycle(speak.deck_animcycle_ids[i],level.animcycles));
       }
     }
     var object;
@@ -99,16 +105,22 @@ var loader = function()
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
       self.load_animcycle_inst(object.notice_icon_animcycle_inst);
       self.load_animcycle_inst(object.view_overlay_animcycle_inst);
+      for(var i = 0; i < object.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(object.deck_animcycle_ids[i],level.animcycles));
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
         view = object.views[l];
         self.load_animcycle_inst(view.animcycle_inst);
+        for(var i = 0; i < view.deck_animcycle_ids; i++)
+          self.load_animcycle(find_animcycle(view.deck_animcycle_ids[i],level.animcycles));
         var zone;
         for(var m = 0; m < view.zones.length; m++)
         {
           zone = view.zones[m];
           self.load_animcycle_inst(zone.animcycle_inst);
+          for(var i = 0; i < zone.deck_animcycle_ids; i++)
+            self.load_animcycle(find_animcycle(zone.deck_animcycle_ids[i],level.animcycles));
         }
       }
     }
@@ -120,6 +132,8 @@ var loader = function()
       self.load_animcycle_inst(observation.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
       self.load_animcycle_inst(observation.notice_icon_animcycle_inst);
+      for(var i = 0; i < observation.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(observation.deck_animcycle_ids[i],level.animcycles));
     }
     var porthole;
     for(var k = 0; k < room.portholes.length; k++)
@@ -129,6 +143,8 @@ var loader = function()
       self.load_animcycle_inst(porthole.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
       self.load_animcycle_inst(porthole.notice_icon_animcycle_inst);
+      for(var i = 0; i < porthole.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(porthole.deck_animcycle_ids[i],level.animcycles));
     }
     var wildcard;
     for(var k = 0; k < room.wildcards.length; k++)
@@ -138,6 +154,8 @@ var loader = function()
       self.load_animcycle_inst(wildcard.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
       self.load_animcycle_inst(wildcard.notice_icon_animcycle_inst);
+      for(var i = 0; i < wildcard.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(wildcard.deck_animcycle_ids[i],level.animcycles));
     }
     var cutscene;
     for(var k = 0; k < room.cutscenes.length; k++)
@@ -149,12 +167,16 @@ var loader = function()
       self.load_animcycle_inst(cutscene.notice_icon_animcycle_inst);
       for(var l = 0; l < cutscene.commands.length; l++)
         if(cutscene.commands[l].animcycle_id && cutscene.commands[l].animcycle_id != "null") self.load_animcycle(find_animcycle(cutscene.commands[l].animcycle_id,cur_level.animcycles));
+      for(var i = 0; i < cutscene.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(cutscene.deck_animcycle_ids[i],level.animcycles));
     }
     var inert;
     for(var k = 0; k < room.inerts.length; k++)
     {
       inert = room.inerts[k];
       self.load_animcycle_inst(inert.animcycle_inst);
+      for(var i = 0; i < room.deck_animcycle_ids; i++)
+        self.load_animcycle(find_animcycle(room.deck_animcycle_ids[i],level.animcycles));
     }
   }
 }

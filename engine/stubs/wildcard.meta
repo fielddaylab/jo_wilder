@@ -13,6 +13,7 @@ tmp_wildcard.notice_icon_animcycle_id = "null";
 tmp_wildcard.hover_cursor_animcycle_id = "null";
 tmp_wildcard.hover_icon_animcycle_id = "null";
 tmp_wildcard.audio_id = "null";
+tmp_wildcard.deck_animcycle_ids = [];
 tmp_wildcard.notifications_persistent = 0;
 tmp_wildcard.raw_notifications = [
 ];

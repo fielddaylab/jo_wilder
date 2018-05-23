@@ -13,6 +13,7 @@ tmp_observation.hover_cursor_animcycle_id = "null";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [];
 tmp_observation.raw_text = "null";
 tmp_observation.blip_wx = 100;
 tmp_observation.blip_wy = 100;
