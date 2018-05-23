@@ -2261,8 +2261,9 @@ var objectview = function()
         zone.pre_met = true;
         zone.met = true;
         self.cur_view.met = true;
+        var old_view = self.cur_view;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
-        self.cur_view.animcycle_inst.ready();
+        if(self.cur_view != old_view) self.cur_view.animcycle_inst.ready();
         if(self.cur_view.notifications.length && queryreqs(self.cur_view, self.cur_view.notification_reqs)) my_notificationview.consume_notification(self.cur_view);
         self.cur_view.pre_met = true;
         self.cur_view.met = true;
