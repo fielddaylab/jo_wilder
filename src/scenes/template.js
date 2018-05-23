@@ -344,6 +344,8 @@ var scene = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.notice_icon_animcycle_inst;
   self.x = 0;
   self.y = 0;
@@ -395,6 +397,8 @@ var room = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -441,6 +445,8 @@ var person = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
@@ -493,6 +499,8 @@ var object = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
@@ -549,6 +557,8 @@ var observation = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
@@ -603,6 +613,8 @@ var porthole = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
@@ -655,6 +667,8 @@ var wildcard = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
@@ -690,6 +704,8 @@ var inert = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -723,6 +739,8 @@ var view = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.notifications = [];
 }
 
@@ -750,6 +768,8 @@ var zone = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.w = 0;
   self.h = 0;
   self.x = 0;
@@ -777,6 +797,8 @@ var speak_command = function()
   self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_AVATAR
   //
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.text;
@@ -861,6 +883,8 @@ var entry = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -974,6 +998,8 @@ var cutscene = function()
   self.pre_met = false;
   self.dirty = false;
   self.animcycle_inst;
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
   self.hover_cursor_animcycle_inst;
   self.hover_icon_animcycle_inst;
   self.notice_icon_animcycle_inst;
