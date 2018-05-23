@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.humanecology.frontdesk";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -397,6 +397,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple/2.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple/3.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/click_ripple/4.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "closet_chair";
+tmp_animcycle.fqid = "tunic.closet_chair";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closet_chair/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -8645,6 +8660,23 @@ tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.a
 }
 tmp_room.inerts.push(tmp_inert);
 tmp_inert = new inert();
+tmp_inert.id = "deskchair";
+tmp_inert.fqid = "tunic.historicalsociety.closet_dirty.deskchair";
+{
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "closet_chair";
+tmp_inert.deck_animcycle_ids = [];
+tmp_inert.reqs = [[
+]];
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
 tmp_inert.id = "fgdesk";
 tmp_inert.fqid = "tunic.historicalsociety.closet_dirty.fgdesk";
 {
@@ -8675,6 +8707,23 @@ tmp_inert.animcycle_id = "room_historicalsociety_closet_fgpipes";
 tmp_inert.reqs = [[
 ]];
 
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "fire";
+tmp_inert.fqid = "tunic.historicalsociety.closet_dirty.fire";
+{
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "boilerfire";
+tmp_inert.deck_animcycle_ids = [];
+tmp_inert.reqs = [[
+]];
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
@@ -11885,7 +11934,7 @@ tmp_room.id = "frontdesk";
 tmp_room.fqid = "tunic.humanecology.frontdesk";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1194.5508684863523;
+tmp_room.ww = 1500;
 tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
@@ -11916,7 +11965,6 @@ tmp_room.notification_reqs = [[
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "worker";

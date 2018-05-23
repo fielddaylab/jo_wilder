@@ -1,5 +1,5 @@
 tmp_room.primary = false;
-tmp_room.ww = 1194.5508684863523;
+tmp_room.ww = 1500;
 tmp_room.wh = 660;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
@@ -30,4 +30,3 @@ tmp_room.notification_reqs = [[
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
-
