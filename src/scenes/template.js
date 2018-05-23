@@ -774,7 +774,7 @@ var speak_command = function()
   self.h = 0;
   self.raw_atext = "null";
   self.atext = stextToLines(self.raw_atext,self.w);
-  self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_PLAYER
+  self.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_AVATAR
   //
   self.animcycle_inst;
   self.x = 0;
@@ -1236,7 +1236,7 @@ var print_speak_meta = function(l)
     "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
     "tmp_speak.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
     "tmp_speak_command.raw_atext = \""+c.raw_atext.replace(/"/g,"\\\"")+"\";\n"+
-    "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_PLAYER ? "SPEAKER_PLAYER" : "SPEAKER_PERSON" )+";\n"+
+    "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_AVATAR ? "SPEAKER_AVATAR" : "SPEAKER_PERSON" )+";\n"+
     "tmp_speak.commands.push(tmp_speak_command);\n";
   }
   console.log(str);
