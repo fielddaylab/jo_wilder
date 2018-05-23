@@ -1037,6 +1037,18 @@ var get_requirements_string = function(reqs)
   return str;
 }
 
+var get_deck_animcycle_ids = function(ids)
+{
+  var str = "[\n";
+  for(var i = 0; i < ids.length; i++)
+  {
+    for(var j = 0; j < ids[i].length; j++)
+      str += "\""+ids[i][j]+"\",\n";
+  }
+  str += "];\n";
+  return str;
+}
+
 var print_level_meta = function(l)
 {
   var str = "SAVE level "+l.fqid+"\n"+
