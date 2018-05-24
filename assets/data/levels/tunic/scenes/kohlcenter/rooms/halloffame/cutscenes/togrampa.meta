@@ -13,52 +13,59 @@ tmp_cutscene.animcycle_id = "null";
 tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
 tmp_cutscene.hover_icon_animcycle_id = "null";
 tmp_cutscene.notice_icon_animcycle_id = "null";
+tmp_cutscene.deck_animcycle_ids = [
+];
+tmp_cutscene.notifications_persistent = 0;
 tmp_cutscene.raw_notifications = [
 ];
 tmp_cutscene.raw_notification_ws = [
 ];
 tmp_cutscene.notification_reqs = [[
-]]
+]];
 tmp_cutscene.notice_reqs = [[
-]]
+]];
 tmp_cutscene.reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
-]]
+]];
 tmp_cutscene.commands = [];
 tmp_cutscene_command = new cutscene_command();
+//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 328;
-tmp_cutscene_command.wy = 169.99999999999991;
+tmp_cutscene_command.wx = 316;
+tmp_cutscene_command.wy = 166.99999999999994;
 tmp_cutscene_command.w = 210;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "This team started after the date on the slip.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
+//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 361;
-tmp_cutscene_command.wy = 170.99999999999997;
+tmp_cutscene_command.wx = 344;
+tmp_cutscene_command.wy = 163.99999999999994;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Our shirt can't be a basketball jersey.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
+//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 404;
-tmp_cutscene_command.wy = 198.99999999999991;
+tmp_cutscene_command.wx = 385;
+tmp_cutscene_command.wy = 196.99999999999991;
 tmp_cutscene_command.w = 139;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I need to get to the capitol and tell the boss!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
+//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
