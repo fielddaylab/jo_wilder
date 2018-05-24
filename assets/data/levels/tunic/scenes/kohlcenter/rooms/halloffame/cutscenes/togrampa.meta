@@ -61,7 +61,7 @@ tmp_cutscene_command.wx = 385;
 tmp_cutscene_command.wy = 196.99999999999991;
 tmp_cutscene_command.w = 139;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I need to get to the capitol and tell the boss!";
+tmp_cutscene_command.raw_text = "I need to get to the capitol and tell gramps!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
