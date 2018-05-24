@@ -15,7 +15,7 @@ tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"I need to find a clue",
+"Anything here out of the ordinary?",
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",

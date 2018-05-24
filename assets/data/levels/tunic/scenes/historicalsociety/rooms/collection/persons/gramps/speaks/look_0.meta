@@ -6,7 +6,6 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.historicalsociety.collection.gramps.look_0",
 "!tunic.historicalsociety.collection.tunic.slip",
 ]];
 tmp_speak.commands = [];
@@ -17,7 +16,7 @@ tmp_speak_command.w = 118;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Take look at the tunic!";
+tmp_speak_command.raw_atext = "Have a look at the artifact!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

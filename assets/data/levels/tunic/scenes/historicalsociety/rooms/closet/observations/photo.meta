@@ -1,7 +1,7 @@
 tmp_observation.ww = 242.5221929444906;
 tmp_observation.wh = 164.0023109162744;
-tmp_observation.wx = 465.67784975346535;
-tmp_observation.wy = -49.05610468928902;
+tmp_observation.wx = 470.6778497512441;
+tmp_observation.wy = -45.05610468928798;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = -107.51714131069957;
 tmp_observation.act_wy = -129.10494391114588;
@@ -13,14 +13,21 @@ tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
 tmp_observation.raw_text = "I love these photos of me and Teddy.";
 tmp_observation.blip_wx = 141.0757818219442;
 tmp_observation.blip_wy = 3.4127062912952084;
 tmp_observation.blip_w = 175;
 tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.raw_notification_ws = [
+];
 tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
 ]];

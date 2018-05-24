@@ -1265,7 +1265,8 @@ var print_speak_meta = function(l)
   for(var i = 0; i < l.commands.length; i++)
   {
     c = l.commands[i];
-    str += "tmp_speak_command = new speak_command();\n"+
+    str += "//\n"+
+    "tmp_speak_command = new speak_command();\n"+
     "tmp_speak_command.wx = "+c.wx+";\n"+
     "tmp_speak_command.wy = "+c.wy+";\n"+
     "tmp_speak_command.w = "+c.w+";\n"+
@@ -1542,7 +1543,8 @@ var print_cutscene_meta = function(l)
     switch(c.command)
     {
       case CUTSCENE_COMMAND_CREATE:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
         "tmp_cutscene_command.ww = "+c.ww+";\n"+
@@ -1557,13 +1559,15 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_DESTROY:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_DESTROY;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_DESTROY;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ANIMATE:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1583,7 +1587,8 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.t = 0;\n";
         break;
       case CUTSCENE_COMMAND_SPEAK:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1600,18 +1605,21 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ACT:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_AUDIO:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_AUDIO;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_AUDIO;\n"+
         "tmp_cutscene_command.audio_id = \""+c.audio_id+"\";\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_TWEEN:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1638,7 +1646,8 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
       case CUTSCENE_COMMAND_TARGET:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1665,11 +1674,13 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
       case CUTSCENE_COMMAND_WAIT:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_END:
-        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_END;\n"+
+        str += "//\n"+
+        "tmp_cutscene_command.command = CUTSCENE_COMMAND_END;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
     }

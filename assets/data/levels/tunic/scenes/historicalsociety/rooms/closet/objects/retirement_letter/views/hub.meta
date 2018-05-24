@@ -3,8 +3,9 @@ tmp_view.animcycle_id = "retirement_letter_closeup";
 tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.raw_notifications = [
-"They are forcing Gramps to retire!",
-"But he loves the History Center!",
+"Gramps is in trouble for losing papers?",
+"This can't be right!",
+"Gramps is the best historian I've ever met!",
 ];
 tmp_view.raw_notification_ws = [
 300,
