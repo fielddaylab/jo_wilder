@@ -3,7 +3,7 @@
 # save
 ! observation
 ? evidence
-( evidence prompt
+P evidence prompt
 & teddy-evidence
 @ narrative beat
 ^ learning
@@ -17,21 +17,18 @@
   @ jolie wants teddy to stay quiet
   ! teddy's great
   @ gramps has a job
-  @ gramps is retiring
-  ! gramps is retiring
+  @ gramps is in trouble for losing papers
+  ! gramps is in trouble for losing papers
   * find notebook
   * go to meeting
   # notebook
 - group convo
   @ wells is gramps' colleague
-  @ wells is a jerk
+  @ wells is a jerk (rooted in insecurity)
   @ wells doesn't want jolie there
-  @ boss doesn't want teddy there
   @ boss is gramps' and wells' boss
   @ there is a task to identify artifact
   @ wells already identified the artifact as a jersey
-  @ gramps doesn't trust id
-  @ boss does trust id
   @ gramps regularly loses papers
   @ boss will be at capitol setting up [ NOT CURRENTLY EXPRESSED
   ! wells is a jerk
@@ -39,36 +36,39 @@
   * talk to gramps
   # wiscwonders
 - collections
+  @ gramps doesn't trust id
   @ gramps wants to correct wells
+  @ gramps held in calling out wells (patient, composed)
   @ gramps too busy to correct wells
-  @ jolie wants to help
+  @ gramps wants jolie to help
+  @ gramps will be helping boss at capitol
+  @ jolie interested in helping (adventure)
   @ artifact looks like a jersey
-  ? shirt ( "what shirt?"
+  ? shirt P: "what shirt?"
   # jersey
   @ there was a slip on the artifact
   @ the slip has a date
   @ gramps wants you to check out bball for clues re: the date
-  ? slip: dated 19whatever ( "what evidence do you have?" -or- "how is the date on the plaque relevant?"
+  ? slip: dated 19whatever P: "what evidence do you have?" -or- "how is the date on the plaque relevant?"
   * find clues at bball center
   # mysteryslip
 - bball center
   @ women's team started after slip
   @ jolie knows shirt not a jersey
-  @ jolie wants to tell boss [ HOW DOES SHE KNOW WHERE BOSS IS? WHY NOT TELL GRAMPS INSTEAD?
-  @ jolie knows boss at capitol
-  ? plaque: women's team started later ( "what evidence do you have?" -or- "how is the date on the slip relevant?"
+  @ jolie wants to tell gramps
+  @ jolie knows gramps/boss at capitol
+  ? plaque: women's team started later P: "what evidence do you have?" -or- "how is the date on the slip relevant?"
   ! wells is wrong
   * tell boss wells is wrong
   # plaque
 - capitol
-  @ jolie tells boss what she knows
+  @ jolie tells gramps/boss what she knows
   @ boss learns wells lied
   @ boss knows shirt not a jersey
-  @ boss tasks jolie with solving artifact
-  @ jolie wants to go to gramps for help
-  ! I'm hired
-  ! why hire a 12 year old
-  * tell gramps the news
+  @ boss tasks gramps+jolie with solving artifact
+  @ gramps wants to go to office to get started
+  ! me 'n gramps set to solve the artifact
+  * meet gramps back at the office
   # notajersey
 - dirty basement
   @ jolie learns basement raided
@@ -80,8 +80,9 @@
   @ jolie learns someone other than gramps was here (gramps drinks holdgers)
   @ jolie thinks wells raided basement, stole teddy
   @ gramps doesn't suspect anyone in particular, unworried about teddy
-  @ gramps still too busy to take on any new tasks
-  @ gramps tells jolie to find archivist for help
+  @ gramps now too busy to take on any new tasks
+  @ jolie on her own to follow leads
+  @ gramps tells jolie to find archivist for help to start
   ! I have to find out who did this
   ! I have to find teddy
   ! I have to solve artifact
@@ -91,59 +92,49 @@
 - archivist
   @ archivist is no-nonsense guy
   @ archivist can't see well
-  @ archivist doesn't know about teddy [ YES HE DOES? RATHER THAN LIE HERE (ESTABLISHES HIM AS EVIL), WE SHOULD JUST NOT BRING IT UP (PLAUSIBLE DENIABILITY- DID NOTHING HE THINKS IS WRONG/HAS NOTHING TO HIDE)
+  @ jolie sees cup
+  @ confused at presence of this evidence- already convinced it's wells
+  @ archivist lies about teddy (dismissive)
   @ archivist saw wells at coffee shop
-  @ archivist tells jolie to go to textile place
-  @ archivist thinks leo should retire [ THIS IS NOISE- CUT?
-  ! i have some opinion about the archivist
+  @ jolie satisfied in confirming bias re: wells
+  @ archivist tells jolie to go to university
+  ! archivist grumpy, but helpful
   & coffee cup: archivist met wells at coffee place
-  * go to textile
+  * go to university
   # archivist
-- textile
+- university
   @ jolie learns it's a dry cleaner slip
   ! textile lady
-  ? expert opinion: its a dry cleaner receipt ( "How did you know it was a cleaners?"
+  ? expert opinion: its a dry cleaner receipt P: "How did you know it was a cleaners?"
   # expert
   @ there's only one dry cleaner old enough
-  ? business cards: only one old enough ( "How did you know which cleaners?"
+  ? business cards: only one old enough P: "How did you know which cleaners?"
   * go to dry cleaner's
   # oldestcleaner
 - dry cleaner's
   ! what the heck is a dry cleaners
   @ gramps uses this cleaners
   @ gramps is loved by community
-  @ gramps is losing papers himself [ IS THIS TRUE? I THOUGHT TEDDY WAS TAKING PAPERS?
   @ jolie learns the name of shirt owner
-  @ jolie wants to tell archivist [ SLIGHTLY ODD? GRAMPS SEEMS GO-TO HELP SOURCE
-  ? logbook: name is theodora youmans ( "Who did it belong to?"
-  * go tell archivist
+  @ cleaner recommends checking out the library
+  ? logbook: name is theodora youmans P: "Who did it belong to?"
+  * go check library
   # logbook
-- archivist
-  @ archivist likes jokes [ I THOUGHT HE WAS NO-NONSENSE? EVOLUTION?
-  @ archivist says to check library
-  @ archivist can look for stuff here too
-  @ jolie waiting on archivist to find stuff in archives
-  @ jolie go to library in mean time
-  ! maybe he's helpful after all
-  * go to library
-  * check back later
-  # checkbacklater
 - library
+  @ librarian says to check out microfiche
   ! wow libraries are for more than just books
   ! what the heck is a microfiche
   # microfiche
   @ jolie learns of historical significance of youmans (suffragist)
-  @ jolie wants to tell archivist
-  ? newspaper: youman's was suffragist ( "Who is theodora youmans?"
+  @ librarian says more info in archives
+  ? newspaper: youman's was suffragist P: "Who is theodora youmans?"
   * go to archivist
   # suffragist
-  @ librarian doesn't like wells [ I THOUGHT WELLS WAS ACTUALLY A GOOD GUY?
   @ jolie learns wells went to library to look for taxidermist
   & ID: wells was at library
-  & librarian account of taxidermist: wells looking for taxidermy [ WHY DOES THAT MAKE SENSE? PHONE BOOK? GOOGLE?
+  & librarian account of taxidermist: wells looking for taxidermy
   # taxidermist
 - archivist
-  @ archivist really likes jokes
   @ archivist invested/excited in jolie's search
   @ archivist has found location of youmans documents
   @ jolie goes to stacks
@@ -154,19 +145,31 @@
   ! they have a lot of old stuff here
   @ jolie finds picture of youmans wearing shirt
   @ jolie knows the historical significance of the shirt
-  @ jolie wants to tell boss
-  ? picture: youmans marched in tunic ( "What does TY/Suffragists have to do with the shirt?"
+  @ jolie wants to tell gramps/boss
+  ? picture: youmans marched in tunic P: "What does TY/Suffragists have to do with the shirt?"
   * go tell boss at capitol
   # photo
 - capitol
   # blowthisthingwideopen
-  @ jolie updates boss
-  @ boss knows history
+  @ jolie starts blurting to boss/gramps "I found shirt, and Wells stole teddy and sabotaged gramps"
+  @ gramps slows jolie down- talk about shirt first
+  @ jolie walks through shirt
+  @ boss knows/ is excited about history
   @ boss tells jolie to write report
-  @ jolie + gramps write report
-  @ record scratch;
-  @ oh shit, where's wells
-  @ oh shit, we forgot about teddy
-  @ cut to teddy in cage
-  @ to be continued
+  @ jolie wants to accuse wells
+  @ goes through scarf & coffee cup
+  @ coffee cup on archivists desk + wells sighting
+  @ boss says "well, _I_ drink beantown coffee..."
+  @ report of taxidermist at library
+  @ wells walks in
+  @ J:give back teddy!
+  @ W:what? who's teddy?
+  @ J:you stole him!
+  @ B:jolie- I asked him to find a taxidermist for a different project
+  @ J:but who stole gramps' papers?
+  @ G:I found this in the office (badger-shredded up paper)
+  @ J:what? but- if _you_ didn't take him...
+  @ G:we'll figure this out jo- we just have to be thorough in the research
+  @ blah blah blah
+
 
