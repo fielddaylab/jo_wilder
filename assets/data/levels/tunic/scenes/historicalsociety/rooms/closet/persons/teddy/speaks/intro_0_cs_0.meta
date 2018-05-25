@@ -3,25 +3,30 @@ tmp_speak.options_wx = -304.576136087485;
 tmp_speak.options_wy = -68.81594167679211;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
-]]
+]];
 tmp_speak.reqs = [[
 "!tunic.historicalsociety.closet.teddy.intro_0_cs_0",
-]]
+]];
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 200.1141705840032;
-tmp_speak_command.wy = -7.068034501009009;
-tmp_speak_command.w = 164;
+tmp_speak_command.wx = 225.1141705840032;
+tmp_speak_command.wy = -5.068034501008995;
+tmp_speak_command.w = 140;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "avatar_angry";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Teddy, you have to stay hidden!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
+//
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 211.60354799515324;
 tmp_speak_command.wy = -7.502648845687112;
@@ -29,6 +34,8 @@ tmp_speak_command.w = 155;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "avatar_nervous";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Now where did I put my notebook?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
