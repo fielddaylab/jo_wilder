@@ -143,7 +143,7 @@ tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = -940.6694207088169;
 tmp_cutscene_command.wy = 26.292612746742293;
 tmp_cutscene_command.t = 383;
-tmp_cutscene_command.end_t = 420;
+tmp_cutscene_command.end_t = 440;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
@@ -154,7 +154,7 @@ tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = 421;
+tmp_cutscene_command.t = 441;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
@@ -163,12 +163,12 @@ tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 999999;
 tmp_cutscene_command.wy = 999999;
-tmp_cutscene_command.t = 422;
-tmp_cutscene_command.end_t = 422;
+tmp_cutscene_command.t = 442;
+tmp_cutscene_command.end_t = 442;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 423;
+tmp_cutscene_command.t = 443;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

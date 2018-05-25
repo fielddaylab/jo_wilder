@@ -4282,7 +4282,7 @@ tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = -940.6694207088169;
 tmp_cutscene_command.wy = 26.292612746742293;
 tmp_cutscene_command.t = 383;
-tmp_cutscene_command.end_t = 420;
+tmp_cutscene_command.end_t = 440;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
@@ -4293,7 +4293,7 @@ tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = 421;
+tmp_cutscene_command.t = 441;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
@@ -4302,13 +4302,13 @@ tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 999999;
 tmp_cutscene_command.wy = 999999;
-tmp_cutscene_command.t = 422;
-tmp_cutscene_command.end_t = 422;
+tmp_cutscene_command.t = 442;
+tmp_cutscene_command.end_t = 442;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 423;
+tmp_cutscene_command.t = 443;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
@@ -8582,10 +8582,8 @@ tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.raw_notifications = [
-"My notebook!",
 ];
 tmp_object.raw_notification_ws = [
-118,
 ];
 tmp_object.notice_reqs = [[
 ]]
@@ -12888,6 +12886,24 @@ tmp_inert.wy = -272.9478270719087;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.1;
 tmp_inert.animcycle_id = "fgcarts";
+tmp_inert.reqs = [[
+]];
+
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "outtolunch";
+tmp_inert.fqid = "tunic.historicalsociety.stacks.outtolunch";
+{
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "null";
+tmp_inert.deck_animcycle_ids = [];
 tmp_inert.reqs = [[
 ]];
 
