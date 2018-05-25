@@ -3,6 +3,7 @@ tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.raw_notification_ws = [
@@ -11,23 +12,29 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 ]];
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -268.0328413131578;
-tmp_speak_command.wy = 182.9498060704439;
+tmp_speak_command.wx = -492.27526555558205;
+tmp_speak_command.wy = 151.13162425226216;
 tmp_speak_command.w = 273.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "The plaque at the basketball museum shows that the women's team didn't start until 1974-";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -157.4267807070972;
-tmp_speak_command.wy = 129.9195030401408;
+tmp_speak_command.wx = -378.6389019192184;
+tmp_speak_command.wy = 105.67707879771658;
 tmp_speak_command.w = 197.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "That's 58 years AFTER this shirt was used!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);

@@ -1,10 +1,10 @@
 tmp_wildcard.ww = 426.91231555545414;
 tmp_wildcard.wh = 371.7675989508338;
-tmp_wildcard.wx = 163.45710119735844;
-tmp_wildcard.wy = 10.983533523144644;
+tmp_wildcard.wx = 164.97225271251;
+tmp_wildcard.wy = 23.10474564435677;
 tmp_wildcard.wz = 1;
-tmp_wildcard.act_wx = 25.753374984032348;
-tmp_wildcard.act_wy = -86.36415039355171;
+tmp_wildcard.act_wx = -209.09510986445247;
+tmp_wildcard.act_wy = -165.1520291814305;
 tmp_wildcard.act_anim = 1;
 tmp_wildcard.hover_icon_wx = 34.848484848490784;
 tmp_wildcard.hover_icon_wy = -34.8484848481152;
