@@ -117,17 +117,19 @@ var GamePlayScene = function(game, stage)
     my_keyable = new keyable({});
     my_keyable.key = function(evt)
     {
-      if(evt.key == " ") print_whole_level(cur_level,false);
-      if(evt.key == "f") print_whole_level(cur_level,true);
+      //if(evt.key == " ") print_whole_level(cur_level,false);
+      //if(evt.key == "f") print_whole_level(cur_level,true);
       if(evt.key == "c") get_save_code();
-      if(evt.key == "d") DEBUG = !DEBUG;
-      if(evt.key == "u") UNLOCK = !UNLOCK;
+      //if(evt.key == "d") DEBUG = !DEBUG;
+      //if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "t") DOUBLETIME = !DOUBLETIME;
+      /*
       if(evt.key == "v")
       {
         if(my_camera == my_real_camera) my_camera = my_debug_camera;
         else                            my_camera = my_real_camera;
       }
+      */
       if(evt.key == "g") SHOW_GROUNDS = !SHOW_GROUNDS;
       if(evt.key == "q")
       {

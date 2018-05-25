@@ -1748,8 +1748,8 @@ var notebookview = function()
     self.current_code = 0;
     for(var i = 0; !self.current_code && i < save_codes.length; i++)
     {
-      if(queryreqs(0, save_table[save_codes[i]].reqs))
-        self.current_code = save_codes[i];
+      if(queryreqs(0, save_table[save_codes[save_codes.length-1-i]].reqs))
+        self.current_code = save_codes[save_codes.length-1-i];
     }
   }
 
