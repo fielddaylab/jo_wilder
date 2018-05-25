@@ -1,8 +1,0 @@
-tmp_option.index = 0;
-tmp_option.raw_qtext = "I was just wondering…";
-tmp_option.target_speak = "slip01";
-tmp_option.raw_notifications = [
-];
-tmp_option.reqs = [[
-]];
-

@@ -7,9 +7,9 @@ tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
 "tunic.historicalsociety.frontdesk.magnify",
-"!tunic.historicalsociety.frontdesk.archivist_0.have_glass",
 ]];
 tmp_speak.commands = [];
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -282.7866110915223;
 tmp_speak_command.wy = 211.99999999999997;
@@ -19,5 +19,159 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.raw_atext = "Now that's more like it! Did you have a question?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Yes! I found this-";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Wait a minute!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Where did you get that coffee?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Oh, that's from Bean Town!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "(That's the same as the coffee in Gramps' office!)";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I just saw Wells there earlier today...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I knew it!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Knew what? Did you need something?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Nevermind! I mean- yes!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I found this slip on the shirt artifact-";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Any idea what it is?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -237.99999999999997;
+tmp_speak_command.wy = 218;
+tmp_speak_command.w = 187;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "archivist";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "An old shirt? Try the University.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -245.99999999999997;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 190;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "archivist";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "You can talk to a clothes expert there.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -282.7866110915223;
+tmp_speak_command.wy = 211.99999999999997;
+tmp_speak_command.w = 236;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Great! Thanks for the help!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

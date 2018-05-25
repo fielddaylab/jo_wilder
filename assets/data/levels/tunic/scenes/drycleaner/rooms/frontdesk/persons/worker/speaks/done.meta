@@ -8,6 +8,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.reqs = [[
 ]];
 tmp_speak.commands = [];
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 69.98295216110182;
 tmp_speak_command.wy = 197.99999999999994;
@@ -15,7 +16,73 @@ tmp_speak_command.w = 100;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Good luck!";
+tmp_speak_command.raw_atext = "I found her!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 69.98295216110182;
+tmp_speak_command.wy = 197.99999999999994;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Found who?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 69.98295216110182;
+tmp_speak_command.wy = 197.99999999999994;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "The owner of the shirt:";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 69.98295216110182;
+tmp_speak_command.wy = 197.99999999999994;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Her name is \"Theodora Youmans\"";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 69.98295216110182;
+tmp_speak_command.wy = 197.99999999999994;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Hmmm... that name sounds familiar.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 69.98295216110182;
+tmp_speak_command.wy = 197.99999999999994;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I'd bet you could find more info at the library!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 69.98295216110182;
+tmp_speak_command.wy = 197.99999999999994;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "Good thinking!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

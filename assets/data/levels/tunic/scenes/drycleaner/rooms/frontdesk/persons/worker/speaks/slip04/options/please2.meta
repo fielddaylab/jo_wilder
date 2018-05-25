@@ -1,8 +1,0 @@
-tmp_option.index = 0;
-tmp_option.raw_qtext = "Please? It's for my Grampa Leo… he's a historian.";
-tmp_option.target_speak = "slip05";
-tmp_option.raw_notifications = [
-];
-tmp_option.reqs = [[
-]];
-
