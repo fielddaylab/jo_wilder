@@ -3000,10 +3000,10 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_javajacket";
 tmp_entry.fqid = "tunic.entry_javajacket";
 {
-tmp_entry.ww = 360;
-tmp_entry.wh = 182.00000000000009;
-tmp_entry.wx = -198;
-tmp_entry.wy = -175;
+tmp_entry.ww = 366;
+tmp_entry.wh = 189.00000000000009;
+tmp_entry.wx = -193;
+tmp_entry.wy = -163.5;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_javajacket_img";
@@ -3593,64 +3593,6 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
-tmp_entry.id = "entry_quest_museum";
-tmp_entry.fqid = "tunic.entry_quest_museum";
-{
-tmp_entry.ww = 149.99999999999991;
-tmp_entry.wh = 51.999999999999886;
-tmp_entry.wx = 82.99999999999991;
-tmp_entry.wy = -285.99999999999994;
-tmp_entry.wz = 100;
-tmp_entry.page = 1;
-tmp_entry.animcycle_id = "entry_quest_museum_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.kohlcenter.halloffame.plaque.face.date",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_quest_museum_x";
-tmp_entry.fqid = "tunic.entry_quest_museum_x";
-{
-tmp_entry.ww = 46.00000000000002;
-tmp_entry.wh = 43.99999999999982;
-tmp_entry.wx = 38.999999999999915;
-tmp_entry.wy = -267.0000000000001;
-tmp_entry.wz = 100;
-tmp_entry.page = 1;
-tmp_entry.animcycle_id = "entry_x_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.capitol.hall.chap1_finale",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
 tmp_entry.id = "entry_quest_notajersey";
 tmp_entry.fqid = "tunic.entry_quest_notajersey";
 {
@@ -3882,13 +3824,13 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_stacks_slip";
 tmp_entry.fqid = "tunic.entry_stacks_slip";
 {
-tmp_entry.ww = 364;
-tmp_entry.wh = 179.00000000000003;
-tmp_entry.wx = -218;
-tmp_entry.wy = -220.49999999999994;
+tmp_entry.ww = 391;
+tmp_entry.wh = 170;
+tmp_entry.wx = -201.5;
+tmp_entry.wy = -158.99999999999994;
 tmp_entry.wz = 100;
 tmp_entry.page = 3;
-tmp_entry.animcycle_id = "entry_stacks_slip";
+tmp_entry.animcycle_id = "entry_stacks_slip_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
 ];
