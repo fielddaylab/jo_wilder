@@ -15,9 +15,10 @@ tmp_speak.reqs = [[
 ],[
 "!tunic.historicalsociety.closet_dirty.trigger_scarf",
 ]];
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -775.368612777346;
-tmp_speak_command.wy = 191.00025319616577;
+tmp_speak_command.wx = -693.3700689139392;
+tmp_speak_command.wy = 145.00067057965197;
 tmp_speak_command.w = 207;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -27,9 +28,10 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Well, looks like we need to get to cleanin'!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -639.0076065647739;
-tmp_speak_command.wy = 62.8554732246652;
+tmp_speak_command.wx = -580.0076065647739;
+tmp_speak_command.wy = 46.85547322466522;
 tmp_speak_command.w = 209;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -39,9 +41,10 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "But the jersey! I talked to the boss and-";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -743.9909450405889;
-tmp_speak_command.wy = 169.854891205863;
+tmp_speak_command.wx = -688.9909450405889;
+tmp_speak_command.wy = 154.854891205863;
 tmp_speak_command.w = 231;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -51,9 +54,10 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Now now- help me clean up first and then we'll talk.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -733.9903540783639;
-tmp_speak_command.wy = 164.85487054239968;
+tmp_speak_command.wx = -688.9903540783639;
+tmp_speak_command.wy = 151.85487054239968;
 tmp_speak_command.w = 294;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
