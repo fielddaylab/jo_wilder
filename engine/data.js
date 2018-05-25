@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.historicalsociety.closet";
+tmp_level.intro_room_id = "tunic.historicalsociety.basement";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -7202,13 +7202,15 @@ tmp_room.id = "basement";
 tmp_room.fqid = "tunic.historicalsociety.basement";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1000;
+tmp_room.ww = 1500;
 tmp_room.wh = 680;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
+tmp_room.deck_animcycle_ids = [
+];
+tmp_room.cam_wh = 680;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
@@ -7223,12 +7225,16 @@ tmp_room.shadow_color = "rgba(0,0,0,0.5);";
 tmp_room.ambient_color = "rgba(0,0,0,0);";
 tmp_room.target_start_wx = -300;
 tmp_room.target_start_wy = -77.00000000000001;
+tmp_room.notifications_persistent = 0;
 tmp_room.raw_notifications = [
 ];
+tmp_room.raw_notification_ws = [
+];
+tmp_room.notification_reqs = [[
+]];
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1.0303030303030303
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_observation = new observation();
 tmp_observation.id = "janitor";
@@ -7379,13 +7385,15 @@ tmp_inert = new inert();
 tmp_inert.id = "fgpipes";
 tmp_inert.fqid = "tunic.historicalsociety.basement.fgpipes";
 {
-tmp_inert.ww = 1008.9370390464723;
-tmp_inert.wh = 914.004317156754;
-tmp_inert.wx = -26.637644918115086;
-tmp_inert.wy = 53.28041040300866;
+tmp_inert.ww = 366.66431177374466;
+tmp_inert.wh = 664.4588626112994;
+tmp_inert.wx = 292.7848166798267;
+tmp_inert.wy = -5.849437230467231;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.4;
 tmp_inert.animcycle_id = "fgpipes";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 

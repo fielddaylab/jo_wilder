@@ -1,10 +1,12 @@
-tmp_inert.ww = 1008.9370390464723;
-tmp_inert.wh = 914.004317156754;
-tmp_inert.wx = -26.637644918115086;
-tmp_inert.wy = 53.28041040300866;
+tmp_inert.ww = 366.66431177374466;
+tmp_inert.wh = 664.4588626112994;
+tmp_inert.wx = 292.7848166798267;
+tmp_inert.wy = -5.849437230467231;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.4;
 tmp_inert.animcycle_id = "fgpipes";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 
