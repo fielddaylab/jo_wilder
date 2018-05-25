@@ -61,7 +61,7 @@ tmp_cutscene_command.wx = -546.706909090909;
 tmp_cutscene_command.wy = 200.42147531205106;
 tmp_cutscene_command.w = 161;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Then I can tell him about the jersey!";
+tmp_cutscene_command.raw_text = "Then we can get to work on the jersey!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

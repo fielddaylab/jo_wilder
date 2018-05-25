@@ -3473,8 +3473,6 @@ tmp_cutscene_command.cutscene_entity_id = "black";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.ww = 1760;
 tmp_cutscene_command.wh = 1320;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "black";
@@ -3490,8 +3488,6 @@ tmp_cutscene_command.cutscene_entity_id = "chapter2";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.ww = 1760;
 tmp_cutscene_command.wh = 1320;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter2";
@@ -3505,13 +3501,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "black";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
-tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.a = 1;
 tmp_cutscene_command.t = 1;
 tmp_cutscene_command.end_t = 50;
@@ -3521,13 +3510,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter2";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
-tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.a = 1;
 tmp_cutscene_command.t = 100;
 tmp_cutscene_command.end_t = 150;
@@ -3537,13 +3519,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter2";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
-tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.t = 300;
 tmp_cutscene_command.end_t = 350;
@@ -3553,13 +3528,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "black";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
-tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.t = 350;
 tmp_cutscene_command.end_t = 380;
@@ -3593,37 +3561,28 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
-tmp_cutscene_command.wx = -927345892;
-tmp_cutscene_command.wy = -927345892;
-tmp_cutscene_command.wz = -927345892;
 tmp_cutscene_command.animcycle_id = "gramps_walk";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = 0;
+tmp_cutscene_command.t = 382;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "tomap";
+tmp_cutscene_command.cutscene_target_entity_id = "toentry";
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
 tmp_cutscene_command.wx = -940.6694207088169;
 tmp_cutscene_command.wy = 26.292612746742293;
-tmp_cutscene_command.wz = -927345892;
-tmp_cutscene_command.a = -927345892;
 tmp_cutscene_command.t = 383;
-tmp_cutscene_command.end_t = 400;
+tmp_cutscene_command.end_t = 420;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 481;
+tmp_cutscene_command.t = 421;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
@@ -5424,9 +5383,9 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHANGE TO HACKME
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt:stextToLines("I'll show her my photo of the shirt to remind her.", 210), fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt:stextToLines("I'll show her my photo of the shirt to remind her.", 220), fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"HACKME", prompt:stextToLines("What evidence do I have that the shirt isn't a basketball jersey?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"HACKME", prompt:stextToLines("What evidence do I have that the shirt isn't a basketball jersey?", 220), fail:["tunic.capitol.hall.boss.chap1_finale_1_fail"] },
 
 //pick slip
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_slipfirst_0" },
@@ -6499,23 +6458,6 @@ tmp_inert.wy = -442.418249480281;
 tmp_inert.wz = 999;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "capitol_rotunda";
-tmp_inert.reqs = [[
-]];
-
-tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
-}
-tmp_room.inerts.push(tmp_inert);
-tmp_inert = new inert();
-tmp_inert.id = "tunic";
-tmp_inert.fqid = "tunic.capitol.hall.tunic";
-{
-tmp_inert.ww = 84.99947873925443;
-tmp_inert.wh = 227.2764210563526;
-tmp_inert.wx = 437.12436656161833;
-tmp_inert.wy = 36.842995349206774;
-tmp_inert.wz = 0;
-tmp_inert.g = 0;
-tmp_inert.animcycle_id = "capitol_tunic";
 tmp_inert.reqs = [[
 ]];
 
@@ -8338,7 +8280,7 @@ tmp_cutscene_command.wx = -546.706909090909;
 tmp_cutscene_command.wy = 200.42147531205106;
 tmp_cutscene_command.w = 161;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Then I can tell him about the jersey!";
+tmp_cutscene_command.raw_text = "Then we can get to work on the jersey!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
@@ -8409,7 +8351,7 @@ tmp_cutscene_command.wx = -637.1765263623739;
 tmp_cutscene_command.wy = 200.61850746132185;
 tmp_cutscene_command.w = 248;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I need to tell Gramps the good news about the jersey!";
+tmp_cutscene_command.raw_text = "I should talk to gramps about the jersey.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
@@ -9842,7 +9784,7 @@ tmp_object.raw_notifications = [
 "Anything here out of the ordinary?",
 ];
 tmp_object.raw_notification_ws = [
-200,
+180,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
