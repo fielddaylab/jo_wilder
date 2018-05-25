@@ -28,6 +28,6 @@ tmp_object.notice_reqs = [[
 "!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 tmp_object.reqs = [[
-"tunic.drycleaner.frontdesk.worker.slip01",
+"tunic.drycleaner.frontdesk.worker.leo",
 ]];
 
