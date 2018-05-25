@@ -4,7 +4,7 @@ tmp_entry.wx = -180;
 tmp_entry.wy = -158;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
-tmp_entry.animcycle_id = "entry_javajacket";
+tmp_entry.animcycle_id = "entry_javajacket_img";
 tmp_entry.audio_id = "null";
 tmp_entry.raw_notifications = [
 ];

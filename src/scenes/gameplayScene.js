@@ -451,6 +451,7 @@ var GamePlayScene = function(game, stage)
 
     if(DEBUG)
     {
+    /*
       ctx.fillStyle = black;
       var y = 40;
       ctx.fillText("DEBUG keys:",10,y); y += 25;
@@ -461,6 +462,7 @@ var GamePlayScene = function(game, stage)
       ctx.fillText("g: toggle forground/background",10,y); y += 25;
       ctx.fillText("q: toggle quality",10,y); y += 25;
       ctx.fillText("(spacebar): print level to javascript console",10,y); y += 25;
+    */
     }
 
     my_notificationview.draw();

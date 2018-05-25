@@ -1702,8 +1702,8 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:75,             y:canv.height-240, w:200, h:200 };
-  self.next_box = {x:canv.width-265, y:canv.height-240, w:200, h:200 };
+  self.prev_box = {x:25,             y:canv.height-220, w:200, h:200 };
+  self.next_box = {x:canv.width-235, y:canv.height-220, w:200, h:200 };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
   self.current_code = "-";
@@ -1882,7 +1882,10 @@ var notebookview = function()
       {
         entry = self.cache_available_entrys[i];
         if(entry.page == self.page)
+        {
           ctx.strokeRect(entry.x,entry.y+yoff,entry.w,entry.h);
+          ctx.fillText(entry.id,entry.x+5,entry.y+25);
+        }
       }
       ctx.strokeRect(self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
       ctx.strokeRect(self.next_box.x, self.next_box.y+yoff, self.next_box.w, self.next_box.h);
