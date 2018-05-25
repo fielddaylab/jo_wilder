@@ -16,8 +16,8 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "Door's locked...";
-tmp_observation.blip_wx = -101.50489675125361;
-tmp_observation.blip_wy = 199.12874568164509;
+tmp_observation.blip_wx = -92.76110140201544;
+tmp_observation.blip_wy = 19.33423302310083;
 tmp_observation.blip_w = 140;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
