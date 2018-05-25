@@ -19,6 +19,6 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_1.library",
+"tunic.drycleaner.frontdesk.worker.done",
 ]];
 

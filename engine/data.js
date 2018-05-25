@@ -3642,7 +3642,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_0.slip",
+"tunic.historicalsociety.frontdesk.archivist_0.have_glass",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -7105,6 +7105,7 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
+"tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 tmp_speak.commands = [];
 
@@ -7202,8 +7203,9 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.drycleaner.frontdesk.worker.slip01",
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
+
 tmp_speak.commands = [];
 
 tmp_speak_command = new speak_command();
@@ -7265,12 +7267,12 @@ tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.a
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_option = new option();
-tmp_option.id = "please1";
-tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.hub.please1";
+tmp_option.id = "toleo";
+tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.hub.toleo";
 {
 tmp_option.index = 0;
-tmp_option.raw_qtext = "Please? I won't tell anybody!";
-tmp_option.target_speak = "please";
+tmp_option.raw_qtext = "Please? It's for my Grampa Leo… he's a historian.";
+tmp_option.target_speak = "leo";
 tmp_option.raw_notifications = [
 ];
 tmp_option.reqs = [[
@@ -7281,12 +7283,12 @@ for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifica
 }
 tmp_speak.options.push(tmp_option);
 tmp_option = new option();
-tmp_option.id = "please2";
-tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.hub.please2";
+tmp_option.id = "toplease";
+tmp_option.fqid = "tunic.drycleaner.frontdesk.worker.hub.toplease";
 {
 tmp_option.index = 0;
-tmp_option.raw_qtext = "Please? It's for my Grampa Leo… he's a historian.";
-tmp_option.target_speak = "leo";
+tmp_option.raw_qtext = "Please? I won't tell anybody!";
+tmp_option.target_speak = "please";
 tmp_option.raw_notifications = [
 ];
 tmp_option.reqs = [[
@@ -11565,22 +11567,6 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
-tmp_option = new option();
-tmp_option.id = "next";
-tmp_option.fqid = "tunic.historicalsociety.frontdesk.archivist_0.have_glass.next";
-{
-tmp_option.index = 0;
-tmp_option.raw_qtext = ">";
-tmp_option.target_speak = "hub";
-tmp_option.raw_notifications = [
-];
-tmp_option.reqs = [[
-]];
-
-tmp_option.qtext = stextToLines(tmp_option.raw_qtext, tmp_speak.options_w);
-for(var i = 0; i < tmp_option.raw_notifications.length; i++) tmp_option.notifications[i] = stextToLines(tmp_option.raw_notifications[i], tmp_option.raw_notification_ws[i] ? tmp_option.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_speak.options.push(tmp_option);
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
@@ -13025,7 +13011,7 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_0.slip",
+"tunic.historicalsociety.frontdesk.archivist_0.have_glass",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
@@ -14085,7 +14071,7 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_1.library",
+"tunic.drycleaner.frontdesk.worker.done",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);

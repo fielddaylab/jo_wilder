@@ -19,6 +19,6 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_0.slip",
+"tunic.historicalsociety.frontdesk.archivist_0.have_glass",
 ]];
 

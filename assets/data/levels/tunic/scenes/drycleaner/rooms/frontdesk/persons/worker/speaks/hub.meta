@@ -6,8 +6,9 @@ tmp_speak.options_h = 30;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.reqs = [[
-"!tunic.drycleaner.frontdesk.worker.slip01",
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
+
 tmp_speak.commands = [];
 
 tmp_speak_command = new speak_command();
