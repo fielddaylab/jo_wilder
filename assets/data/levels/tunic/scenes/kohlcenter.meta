@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
 tmp_scene.ww = 203;
 tmp_scene.wh = 120.99999999999994;
-tmp_scene.wx = 174.50000000000006;
-tmp_scene.wy = 62.500000000000014;
+tmp_scene.wx = 255.50000000000003;
+tmp_scene.wy = 107.5;
 tmp_scene.hover_icon_wx = 98;
 tmp_scene.hover_icon_wy = -36;
 tmp_scene.animcycle_id = "scene_kohlcenter";

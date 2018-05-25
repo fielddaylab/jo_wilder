@@ -381,6 +381,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/chapter2/0.p
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "chapter3";
+tmp_animcycle.fqid = "tunic.chapter3";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/chapter3/0.jpg");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "cleaner";
 tmp_animcycle.fqid = "tunic.cleaner";
 {
@@ -4318,6 +4333,101 @@ tmp_cutscene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.notice
 for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_cutscene.raw_notification_ws[i] ? tmp_cutscene.raw_notification_ws[i] : tmp_level.notifications_w);
 }
 tmp_room.cutscenes.push(tmp_cutscene);
+tmp_cutscene = new cutscene();
+tmp_cutscene.id = "chapter3";
+tmp_cutscene.fqid = "tunic.capitol.hall.chapter3";
+{
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_AUTO;
+tmp_cutscene.ww = 10;
+tmp_cutscene.wh = 10;
+tmp_cutscene.wx = 10;
+tmp_cutscene.wy = 10;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = 0;
+tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 0;
+tmp_cutscene.hover_icon_wy = 0;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.notice_icon_animcycle_id = "null";
+tmp_cutscene.deck_animcycle_ids = [
+];
+tmp_cutscene.notifications_persistent = 0;
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]];
+tmp_cutscene.notice_reqs = [[
+]];
+tmp_cutscene.reqs = [[
+"tunic.capitol.hall.boss.chap2_finale_6",
+]];
+tmp_cutscene.commands = [];
+
+//setup black
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
+tmp_cutscene_command.cutscene_entity_id = "black";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.ww = 880*2;
+tmp_cutscene_command.wh = 660*2;
+tmp_cutscene_command.wz = 999;
+tmp_cutscene_command.a = 0;
+tmp_cutscene_command.animcycle_id = "black";
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//setup chap
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
+tmp_cutscene_command.cutscene_entity_id = "chapter3";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.ww = 880*2;
+tmp_cutscene_command.wh = 660*2;
+tmp_cutscene_command.wz = 999;
+tmp_cutscene_command.a = 0;
+tmp_cutscene_command.animcycle_id = "chapter3";
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//fade in black
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "black";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.t = 1;
+tmp_cutscene_command.end_t = 50;
+tmp_cutscene_command.a = 1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//fade in chap
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "chapter3";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.t = 100;
+tmp_cutscene_command.end_t = 150;
+tmp_cutscene_command.a = 1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 9999;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_cutscene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.notice_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_cutscene.raw_notification_ws[i] ? tmp_cutscene.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_room.cutscenes.push(tmp_cutscene);
 tmp_person = new person();
 tmp_person.id = "boss";
 tmp_person.fqid = "tunic.capitol.hall.boss";
@@ -7865,10 +7975,10 @@ tmp_scene.fqid = "tunic.historicalsociety";
 tmp_scene.primary = true;
 tmp_scene.ww = 119.0000000000001;
 tmp_scene.wh = 144.00000000000003;
-tmp_scene.wx = 81.49999999999977;
-tmp_scene.wy = 116.99999999999999;
-tmp_scene.hover_icon_wx = -49;
-tmp_scene.hover_icon_wy = -33;
+tmp_scene.wx = 103.4999999999998;
+tmp_scene.wy = 156.99999999999994;
+tmp_scene.hover_icon_wx = -59;
+tmp_scene.hover_icon_wy = -46;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
@@ -12329,14 +12439,15 @@ tmp_inert = new inert();
 tmp_inert.id = "coffee";
 tmp_inert.fqid = "tunic.historicalsociety.frontdesk.coffee";
 {
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
-tmp_inert.wz = 0;
+tmp_inert.ww = 71;
+tmp_inert.wh = 55.999999999999986;
+tmp_inert.wx = -90.50000000000003;
+tmp_inert.wy = -25.99999999999998;
+tmp_inert.wz = 4.9;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "coffeecup";
-tmp_inert.deck_animcycle_ids = [];
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 
@@ -13605,8 +13716,8 @@ tmp_scene.fqid = "tunic.kohlcenter";
 tmp_scene.primary = false;
 tmp_scene.ww = 203;
 tmp_scene.wh = 120.99999999999994;
-tmp_scene.wx = 174.50000000000006;
-tmp_scene.wy = 62.500000000000014;
+tmp_scene.wx = 255.50000000000003;
+tmp_scene.wy = 107.5;
 tmp_scene.hover_icon_wx = 98;
 tmp_scene.hover_icon_wy = -36;
 tmp_scene.animcycle_id = "scene_kohlcenter";
