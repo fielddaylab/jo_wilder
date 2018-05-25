@@ -1,15 +1,17 @@
 tmp_room.primary = false;
-tmp_room.ww = 1000;
-tmp_room.wh = 680;
+tmp_room.ww = 1600;
+tmp_room.wh = 980;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
 tmp_room.audio_id = "null";
-tmp_room.cam_wh = 660;
+tmp_room.deck_animcycle_ids = [
+];
+tmp_room.cam_wh = 920;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-15.409090909090821, wy:-146.7272727272725, ww:794.2727272727274, wh:410.00000000000017 },
+{wx:75.8979690479369, wy:-239.42424385960555, ww:996.3941997472244, wh:188.36363645637445 },
 ];
 tmp_room.lights = [
 ];
@@ -20,9 +22,14 @@ tmp_room.shadow_color = "rgba(0,0,0,0.5);";
 tmp_room.ambient_color = "rgba(0,0,0,0);";
 tmp_room.target_start_wx = -300;
 tmp_room.target_start_wy = -77.00000000000001;
+tmp_room.notifications_persistent = 0;
 tmp_room.raw_notifications = [
 ];
+tmp_room.raw_notification_ws = [
+];
+tmp_room.notification_reqs = [[
+]];
 tmp_room.reqs = [[
 ]];
-//SUGGEST_H:1.0303030303030303
+//SUGGEST_H:1.4848484848484849
 

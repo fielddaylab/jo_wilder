@@ -1,15 +1,20 @@
-tmp_entry.ww = 100;
-tmp_entry.wh = 100;
-tmp_entry.wx = 100;
-tmp_entry.wy = 100;
+tmp_entry.ww = 276;
+tmp_entry.wh = 162.00000000000009;
+tmp_entry.wx = -153.0000000000001;
+tmp_entry.wy = 116.99999999999984;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_onthecase_img";
 tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [];
+tmp_entry.deck_animcycle_ids = [
+];
 tmp_entry.notifications_persistent = 0;
 tmp_entry.raw_notifications = [
 ];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
 tmp_entry.reqs = [[
 ]];
 
