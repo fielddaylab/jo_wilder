@@ -19,7 +19,7 @@ tmp_speak_command.w = 164;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "avatar_angry";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Teddy, you have to stay hidden today!";
+tmp_speak_command.raw_atext = "Teddy, you have to stay hidden!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();

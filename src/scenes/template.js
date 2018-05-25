@@ -1539,11 +1539,11 @@ var print_cutscene_meta = function(l)
   for(var i = 0; i < l.commands.length; i++)
   {
     c = l.commands[i];
-    str += "tmp_cutscene_command = new cutscene_command();\n";
+    str += "//\n"+
+    "tmp_cutscene_command = new cutscene_command();\n";
     switch(c.command)
     {
       case CUTSCENE_COMMAND_CREATE:
-        str += "//\n"+
         "tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
@@ -1559,15 +1559,13 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_DESTROY:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_DESTROY;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_DESTROY;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ANIMATE:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1587,8 +1585,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.t = 0;\n";
         break;
       case CUTSCENE_COMMAND_SPEAK:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1605,21 +1602,18 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ACT:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_AUDIO:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_AUDIO;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_AUDIO;\n"+
         "tmp_cutscene_command.audio_id = \""+c.audio_id+"\";\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_TWEEN:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1646,8 +1640,7 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
       case CUTSCENE_COMMAND_TARGET:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = ";
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
@@ -1674,13 +1667,11 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
       case CUTSCENE_COMMAND_WAIT:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_END:
-        str += "//\n"+
-        "tmp_cutscene_command.command = CUTSCENE_COMMAND_END;\n"+
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_END;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
     }
