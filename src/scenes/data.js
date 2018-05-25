@@ -7671,6 +7671,7 @@ tmp_object.raw_notification_ws = [
 tmp_object.notification_reqs = [[
 ]];
 tmp_object.view_overlay_reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 tmp_object.notice_reqs = [[
 "!tunic.drycleaner.frontdesk.logbook.page.bingo",
@@ -12046,7 +12047,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Yes… I found out about Youmans. She was a suffragist!";
+tmp_speak_command.raw_atext = "I found out about Youmans. She was a suffragist!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
