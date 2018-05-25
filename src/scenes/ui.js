@@ -1872,7 +1872,7 @@ var notebookview = function()
       ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     ctx.fillStyle = black;
-    ctx.fillText("Save Code: "+self.current_code,80,60+yoff);
+    ctx.fillText("Save Code: "+self.current_code,60,30+yoff);
 
     if(DEBUG)
     {

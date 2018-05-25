@@ -2817,7 +2817,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_2.coffee",
+"tunic.historicalsociety.frontdesk.archivist_0.have_glass",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3134,6 +3134,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.capitol.hall.chapter2",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3162,6 +3163,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.closet_dirty.gramps.archivist",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3190,6 +3192,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_0.have_glass",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3218,6 +3221,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.library.frontdesk.worker.wells",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3246,6 +3250,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3477,6 +3482,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.capitol.hall.boss.chap2_finale_6",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -3910,6 +3916,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -8531,7 +8538,7 @@ tmp_speak_command.wx = 225.1141705840032;
 tmp_speak_command.wy = -5.068034501008995;
 tmp_speak_command.w = 140;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "avatar_angry";
+tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -8544,7 +8551,7 @@ tmp_speak_command.wx = 211.60354799515324;
 tmp_speak_command.wy = -7.502648845687112;
 tmp_speak_command.w = 155;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "avatar_nervous";
+tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -8856,43 +8863,6 @@ tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_i
 tmp_porthole.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.notice_icon_animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
-tmp_porthole = new porthole();
-tmp_porthole.id = "tosecret";
-tmp_porthole.fqid = "tunic.historicalsociety.closet.tosecret";
-{
-tmp_porthole.ww = 100;
-tmp_porthole.wh = 100;
-tmp_porthole.wx = 703.1164392547275;
-tmp_porthole.wy = -153.00850952657993;
-tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
-tmp_porthole.act_anim = 1;
-tmp_porthole.hover_icon_wx = 0;
-tmp_porthole.hover_icon_wy = 0;
-tmp_porthole.animcycle_id = "null";
-tmp_porthole.hover_cursor_animcycle_id = "null";
-tmp_porthole.hover_icon_animcycle_id = "null";
-tmp_porthole.notice_icon_animcycle_id = "null";
-tmp_porthole.audio_id = "null";
-tmp_porthole.target_room = "secret";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = 0;
-tmp_porthole.raw_notifications = [
-];
-tmp_porthole.raw_notification_ws = [
-];
-tmp_porthole.notice_reqs = [[
-]];
-tmp_porthole.reqs = [[
-]];
-
-tmp_porthole.animcycle_inst = gen_animcycle_inst(tmp_porthole.animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_cursor_animcycle_id,tmp_level.animcycles);
-tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_icon_animcycle_id,tmp_level.animcycles);
-tmp_porthole.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.notice_icon_animcycle_id,tmp_level.animcycles);
-}
-tmp_room.portholes.push(tmp_porthole);
 tmp_inert = new inert();
 tmp_inert.id = "chair";
 tmp_inert.fqid = "tunic.historicalsociety.closet.chair";
@@ -8974,42 +8944,6 @@ tmp_inert.wy = -147.50000677546035;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "boilerfire";
-tmp_inert.reqs = [[
-]];
-
-tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
-}
-tmp_room.inerts.push(tmp_inert);
-tmp_inert = new inert();
-tmp_inert.id = "gidle";
-tmp_inert.fqid = "tunic.historicalsociety.closet.gidle";
-{
-tmp_inert.ww = 882.9123074499626;
-tmp_inert.wh = 440.9999593461816;
-tmp_inert.wx = -499.6497021814614;
-tmp_inert.wy = 131.6112239061366;
-tmp_inert.wz = 0;
-tmp_inert.g = 0;
-tmp_inert.animcycle_id = "gramps_idle";
-tmp_inert.deck_animcycle_ids = [
-];
-tmp_inert.reqs = [[
-]];
-
-tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
-}
-tmp_room.inerts.push(tmp_inert);
-tmp_inert = new inert();
-tmp_inert.id = "shadows";
-tmp_inert.fqid = "tunic.historicalsociety.closet.shadows";
-{
-tmp_inert.ww = 560.0074564785687;
-tmp_inert.wh = 455.00054492879343;
-tmp_inert.wx = 375.0409646498976;
-tmp_inert.wy = -5.502993747924677;
-tmp_inert.wz = 0;
-tmp_inert.g = 0;
-tmp_inert.animcycle_id = "closetshadows";
 tmp_inert.reqs = [[
 ]];
 
