@@ -7915,19 +7915,19 @@ tmp_room.id = "basement";
 tmp_room.fqid = "tunic.historicalsociety.basement";
 {
 tmp_room.primary = false;
-tmp_room.ww = 1500;
-tmp_room.wh = 680;
+tmp_room.ww = 1600;
+tmp_room.wh = 980;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
 tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
-tmp_room.cam_wh = 680;
+tmp_room.cam_wh = 920;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-15.409090909090821, wy:-146.7272727272725, ww:794.2727272727274, wh:410.00000000000017 },
+{wx:75.8979690479369, wy:-239.42424385960555, ww:996.3941997472244, wh:188.36363645637445 },
 ];
 tmp_room.lights = [
 ];
@@ -7947,7 +7947,8 @@ tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
 ]];
-//SUGGEST_H:1.0303030303030303
+//SUGGEST_H:1.4848484848484849
+
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_observation = new observation();
 tmp_observation.id = "janitor";
@@ -7955,8 +7956,8 @@ tmp_observation.fqid = "tunic.historicalsociety.basement.janitor";
 {
 tmp_observation.ww = 157.00000000000003;
 tmp_observation.wh = 222.99999999999997;
-tmp_observation.wx = -221.49999999999994;
-tmp_observation.wy = 115.50000000000001;
+tmp_observation.wx = -221.4999979257002;
+tmp_observation.wy = -11.348484903679037;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 77.00570027022911;
 tmp_observation.act_wy = -61.0009545064006;
@@ -7968,14 +7969,21 @@ tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
 tmp_observation.raw_text = "Door's locked...";
 tmp_observation.blip_wx = -101.50489675125361;
 tmp_observation.blip_wy = 199.12874568164509;
 tmp_observation.blip_w = 140;
 tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.raw_notification_ws = [
+];
 tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
 ]];
@@ -7994,8 +8002,8 @@ tmp_porthole.fqid = "tunic.historicalsociety.basement.tocloset";
 {
 tmp_porthole.ww = 140.54545454545473;
 tmp_porthole.wh = 222.18181818181822;
-tmp_porthole.wx = 129.69795344466908;
-tmp_porthole.wy = 117.2715424956355;
+tmp_porthole.wx = 159.51492054072497;
+tmp_porthole.wy = -16.659257053756534;
 tmp_porthole.wz = -0.9;
 tmp_porthole.act_wx = 3;
 tmp_porthole.act_wy = -76;
@@ -8007,11 +8015,18 @@ tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "null";
+tmp_porthole.deck_animcycle_ids = [
+];
 tmp_porthole.target_room = "closet";
 tmp_porthole.target_start_wx = -374.75951624996645;
 tmp_porthole.target_start_wy = -34.4078948742569;
+tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
 ];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
 tmp_porthole.notice_reqs = [[
 ]];
 tmp_porthole.reqs = [[
@@ -8030,11 +8045,11 @@ tmp_porthole.fqid = "tunic.historicalsociety.basement.tocloset_dirty";
 {
 tmp_porthole.ww = 140.5454545454546;
 tmp_porthole.wh = 222.18181818181822;
-tmp_porthole.wx = 127.7272727004599;
-tmp_porthole.wy = 118.09090908982567;
+tmp_porthole.wx = 159.1109422467461;
+tmp_porthole.wy = -17.214472065382395;
 tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 4;
-tmp_porthole.act_wy = -76;
+tmp_porthole.act_wx = 5.3924473708724365;
+tmp_porthole.act_wy = -74.60607166197283;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 26;
 tmp_porthole.hover_icon_wy = 72;
@@ -8043,11 +8058,18 @@ tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "null";
+tmp_porthole.deck_animcycle_ids = [
+];
 tmp_porthole.target_room = "closet_dirty";
 tmp_porthole.target_start_wx = -374.75951624996645;
 tmp_porthole.target_start_wy = -34.4078948742569;
+tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
 ];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
 tmp_porthole.notice_reqs = [[
 ]];
 tmp_porthole.reqs = [[
@@ -8065,11 +8087,11 @@ tmp_porthole.fqid = "tunic.historicalsociety.basement.toentry";
 {
 tmp_porthole.ww = 126.54545454545456;
 tmp_porthole.wh = 554.4545454545454;
-tmp_porthole.wx = -455.27272727272987;
-tmp_porthole.wy = 71.86363636363643;
+tmp_porthole.wx = -504.0604022173027;
+tmp_porthole.wy = 4.954540030563578;
 tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 32;
-tmp_porthole.act_wy = -130;
+tmp_porthole.act_wx = 69.47294391599398;
+tmp_porthole.act_wy = -169.03151397278108;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 59;
 tmp_porthole.hover_icon_wy = -3;
@@ -8078,11 +8100,18 @@ tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "null";
+tmp_porthole.deck_animcycle_ids = [
+];
 tmp_porthole.target_room = "entry";
 tmp_porthole.target_start_wx = 581.1727590073484;
 tmp_porthole.target_start_wy = -3.124616842446756;
+tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
 ];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
 tmp_porthole.notice_reqs = [[
 ]];
 tmp_porthole.reqs = [[
@@ -8098,10 +8127,10 @@ tmp_inert = new inert();
 tmp_inert.id = "fgpipes";
 tmp_inert.fqid = "tunic.historicalsociety.basement.fgpipes";
 {
-tmp_inert.ww = 366.66431177374466;
-tmp_inert.wh = 664.4588626112994;
-tmp_inert.wx = 292.7848166798267;
-tmp_inert.wy = -5.849437230467231;
+tmp_inert.ww = 524.225895385451;
+tmp_inert.wh = 993.4567891357317;
+tmp_inert.wx = 449.11013929983284;
+tmp_inert.wy = -3.609727246160787;
 tmp_inert.wz = 999;
 tmp_inert.g = 0.4;
 tmp_inert.animcycle_id = "fgpipes";
