@@ -4038,24 +4038,29 @@ tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
 tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
 ];
 tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
-]]
+]];
 tmp_speak.reqs = [[
-]]
+]];
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -274.0934473737639;
-tmp_speak_command.wy = 170.82859394923173;
+tmp_speak_command.wx = -486.2146594949761;
+tmp_speak_command.wy = 148.101321221959;
 tmp_speak_command.w = 273.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "The plaque at the basketball museum shows that the women's team didn't start until 1974!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
+//
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -98.08271957162017;
 tmp_speak_command.wy = 380.7606075476261;
@@ -4063,6 +4068,8 @@ tmp_speak_command.w = 229.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Interesting- but I don't see how that means it isn't a basketball jersey...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
@@ -4122,8 +4129,8 @@ tmp_speak.reqs = [[
 ]];
 //
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -222.57829585861236;
-tmp_speak_command.wy = 128.40435152498935;
+tmp_speak_command.wx = -443.7904170707336;
+tmp_speak_command.wy = 105.67707879771658;
 tmp_speak_command.w = 241.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -4135,8 +4142,8 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -222.57829585861236;
-tmp_speak_command.wy = 126.88920000983781;
+tmp_speak_command.wx = -448.3358716161882;
+tmp_speak_command.wy = 107.1922303128681;
 tmp_speak_command.w = 244.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -9784,7 +9791,7 @@ tmp_object.raw_notifications = [
 "Anything here out of the ordinary?",
 ];
 tmp_object.raw_notification_ws = [
-180,
+160,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
