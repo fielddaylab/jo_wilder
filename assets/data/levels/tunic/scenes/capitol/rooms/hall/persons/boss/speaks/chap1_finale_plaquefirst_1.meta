@@ -22,7 +22,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I found this slip attached to the shirt- it's from 1916!";
+tmp_speak_command.raw_atext = "I found this slip attached to the shirt. It's from 1916!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
@@ -35,7 +35,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's 58 years BEFORE the women's team was formed!";
+tmp_speak_command.raw_atext = "That's 58 years BEFORE the women's team started!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

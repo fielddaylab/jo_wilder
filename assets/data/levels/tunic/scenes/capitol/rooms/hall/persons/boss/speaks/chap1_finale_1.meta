@@ -22,7 +22,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ah yes! The basketball jersey. What's the problem now?";
+tmp_speak_command.raw_atext = "Ah yes! The basketball jersey. What's the problem?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 //
@@ -37,19 +37,6 @@ tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "IT ISN'T A BASKETBALL JERSEY!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-//
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -94.33669069017117;
-tmp_speak_command.wy = 283.89405624229494;
-tmp_speak_command.w = 230;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "What makes you say that?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 //
 tmp_speak_command = new speak_command();
