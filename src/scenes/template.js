@@ -15,6 +15,8 @@ var find = function(id)
     if(ids.length <= ++k) return person;
     var speak; for(var i = 0; i < person.speaks.length; i++) if(person.speaks[i].id == ids[k]) speak = person.speaks[i];
     if(!speak || ids.length <= ++k) return speak;
+    var option; for(var i = 0; i < speak.options.length; i++) if(speak.options[i].id == ids[k]) option = speak.options[i];
+    if(!option || ids.length <= ++k) return option;
     return;
   }
   var object; for(var i = 0; i < room.objects.length; i++) if(room.objects[i].id == ids[k]) object = room.objects[i];
@@ -222,6 +224,13 @@ var get_save_code = function()
 {
   var s = new save_slate();
   s.gen_slate(cur_level);
+  var list = "[\n";
+  for(var i = 0; i < s.slate.length; i++)
+  {
+    if(s.slate[i].met)
+      list += "\""+s.slate[i].fqid+"\",\n";
+  }
+  console.log(list+"]");
   console.log(s.code());
   console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+s.code());
 }
@@ -231,6 +240,21 @@ var load_save_code = function(code)
   var s = new save_slate();
   s.gen_slate(cur_level);
   s.decode(code);
+}
+
+var load_save_table_code = function(code)
+{
+  var s = new save_slate();
+  s.gen_slate(cur_level);
+  for(var i = 0; i < s.slate.length; i++)
+    s.slate[i].met = 0;
+  var st = save_table[code];
+  for(var i = 0; i < st.all.length; i++)
+  {
+    var o = find(st.all[i]);
+    if(!o) console.log("not found "+st.all[i]);
+    else o.met = 1;
+  }
 }
 
 var queryreqs = function(self, reqs)
