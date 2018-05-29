@@ -79,6 +79,6 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
-tmp_cutscene_command.t = 9999;
+tmp_cutscene_command.t = 200;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

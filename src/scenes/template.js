@@ -247,13 +247,20 @@ var load_save_table_code = function(code)
   var s = new save_slate();
   s.gen_slate(cur_level);
   for(var i = 0; i < s.slate.length; i++)
+  {
     s.slate[i].met = 0;
+    s.slate[i].pre_met = 0;
+  }
   var st = save_table[code];
   for(var i = 0; i < st.all.length; i++)
   {
     var o = find(st.all[i]);
     if(!o) console.log("not found "+st.all[i]);
-    else o.met = 1;
+    else
+    {
+      o.met = 1;
+      o.pre_met = 1;
+    }
   }
 }
 

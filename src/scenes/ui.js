@@ -3173,6 +3173,7 @@ var cutsceneview = function()
     self.cutscene = cutscene;
     if(self.cutscene.notifications.length && queryreqs(self.cutscene, self.cutscene.notification_reqs)) my_notificationview.consume_notification(self.cutscene);
     self.cutscene.pre_met = true;
+    my_navigable.unlock_content();
 
     self.cutscene_entitys = [];
     self.t = 0;
