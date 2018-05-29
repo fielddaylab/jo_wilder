@@ -1,0 +1,27 @@
+tmp_person.ww = 140.37458471274593;
+tmp_person.wh = 275.6382226718452;
+tmp_person.wx = -16.80867934130994;
+tmp_person.wy = -72.86402587371214;
+tmp_person.wz = 0;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 65.07800456475236;
+tmp_person.hover_icon_wy = 128.12365567617067;
+tmp_person.animcycle_id = "gramps";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.raw_notifications = [
+];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"tunic.capitol.hall.chapter3",
+]];
+
