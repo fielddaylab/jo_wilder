@@ -1,7 +1,7 @@
-tmp_wildcard.ww = 154.18504282818134;
-tmp_wildcard.wh = 323.2827504659853;
-tmp_wildcard.wx = 298.30558604584337;
-tmp_wildcard.wy = 39.771412311023454;
+tmp_wildcard.ww = 55.70019434333287;
+tmp_wildcard.wh = 46.010023193258014;
+tmp_wildcard.wx = -226.69441395415663;
+tmp_wildcard.wy = 361.7411092807203;
 tmp_wildcard.wz = 1;
 tmp_wildcard.act_wx = -125.76177653111915;
 tmp_wildcard.act_wy = -86.36415039355171;
@@ -12,19 +12,22 @@ tmp_wildcard.animcycle_id = "null";
 tmp_wildcard.hover_cursor_animcycle_id = "hover_ui";
 tmp_wildcard.hover_icon_animcycle_id = "null";
 tmp_wildcard.notice_icon_animcycle_id = "null";
+tmp_wildcard.deck_animcycle_ids = [
+];
 tmp_wildcard.audio_id = "null";
+tmp_wildcard.notifications_persistent = 0;
 tmp_wildcard.raw_notifications = [
 ];
 tmp_wildcard.raw_notification_ws = [
 ];
 tmp_wildcard.notification_reqs = [[
-]]
+]];
 tmp_wildcard.notice_reqs = [[
-]]
+]];
 tmp_wildcard.reqs = [[
 "tunic.historicalsociety.stacks.journals.pic_2.bingo",
 "!self",
-]]
+]];
 
 ENUM=0;
 var FINALE_WILDCARD_COMMAND_NULL     = ENUM; ENUM++;
