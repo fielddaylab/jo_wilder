@@ -8,7 +8,7 @@ tmp_view.notifications_persistent = 0;
 tmp_view.raw_notifications = [
 "Gramps is in trouble for losing papers?",
 "This can't be right!",
-"Gramps is the best historian I've ever met!",
+"Gramps is the best historian ever!",
 ];
 tmp_view.raw_notification_ws = [
 336,

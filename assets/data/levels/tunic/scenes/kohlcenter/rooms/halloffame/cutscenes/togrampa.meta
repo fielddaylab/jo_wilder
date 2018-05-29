@@ -28,18 +28,7 @@ tmp_cutscene.reqs = [[
 "tunic.kohlcenter.halloffame.plaque.face.date",
 ]];
 tmp_cutscene.commands = [];
-tmp_cutscene_command = new cutscene_command();
-//
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 316;
-tmp_cutscene_command.wy = 166.99999999999994;
-tmp_cutscene_command.w = 210;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "This team started after the date on the slip.";
-tmp_cutscene_command.t = 0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 //
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
@@ -49,7 +38,7 @@ tmp_cutscene_command.wx = 344;
 tmp_cutscene_command.wy = 163.99999999999994;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Our shirt can't be a basketball jersey.";
+tmp_cutscene_command.raw_text = "Our shirt is too old to be a basketball jersey!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
@@ -61,7 +50,7 @@ tmp_cutscene_command.wx = 385;
 tmp_cutscene_command.wy = 196.99999999999991;
 tmp_cutscene_command.w = 139;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I need to get to the capitol and tell gramps!";
+tmp_cutscene_command.raw_text = "I need to get to the Capitol and tell Gramps!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();
