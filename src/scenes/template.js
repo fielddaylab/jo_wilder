@@ -1259,8 +1259,8 @@ var print_person_meta = function(l)
   str +=
   "];\n"+
   "tmp_person.notice_reqs = "+get_requirements_string(l.notice_reqs)+
-  "tmp_person.notification_reqs = "+get_requirements_string(l.reqs)+
-  "tmp_person.reqs = "+get_requirements_string(l.notification_reqs);
+  "tmp_person.notification_reqs = "+get_requirements_string(l.notification_reqs)+
+  "tmp_person.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }
 
