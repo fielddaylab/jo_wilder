@@ -2,7 +2,7 @@ tmp_observation.ww = 235.06060606060612;
 tmp_observation.wh = 270.3939393939393;
 tmp_observation.wx = -220.1060585317607;
 tmp_observation.wy = -7.166666721860878;
-tmp_observation.wz = 0;
+tmp_observation.wz = 1;
 tmp_observation.act_wx = 77.00570027022911;
 tmp_observation.act_wy = -61.0009545064006;
 tmp_observation.act_anim = 0;
@@ -30,5 +30,6 @@ tmp_observation.notice_reqs = [[
 tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
+"!tunic.historicalsociety.basement.gramps.elevator"
 ]];
 
