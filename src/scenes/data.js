@@ -7969,6 +7969,76 @@ tmp_scene.rooms.push(tmp_room);
 }
 tmp_level.scenes.push(tmp_scene);
 tmp_scene = new scene();
+tmp_scene.id = "flaghouse";
+tmp_scene.fqid = "tunic.flaghouse";
+{
+tmp_scene.primary = false;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
+tmp_scene.wx = 100;
+tmp_scene.wy = 100;
+tmp_scene.hover_icon_wx = 0;
+tmp_scene.hover_icon_wy = 0;
+tmp_scene.animcycle_id = "null";
+tmp_scene.notice_icon_animcycle_id = "null";
+tmp_scene.audio_id = "null";
+tmp_scene.deck_animcycle_ids = [];
+tmp_scene.notifications_persistent = 0;
+tmp_scene.raw_notifications = [
+];
+tmp_scene.notification_reqs = [[
+]];
+tmp_scene.notice_reqs = [[
+]];
+tmp_scene.reqs = [[
+]];
+
+tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_room = new room();
+tmp_room.id = "entry";
+tmp_room.fqid = "tunic.flaghouse.entry";
+{
+tmp_room.primary = false;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "null";
+tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [];
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.lights = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.shadows = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.light_color   = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color  = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.start_wx = canv.width/2;
+tmp_room.start_wy = canv.height/2;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
+tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
+}
+tmp_scene.rooms.push(tmp_room);
+}
+tmp_level.scenes.push(tmp_scene);
+tmp_scene = new scene();
 tmp_scene.id = "historicalsociety";
 tmp_scene.fqid = "tunic.historicalsociety";
 {
@@ -8234,6 +8304,47 @@ tmp_inert.reqs = [[
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
+}
+tmp_scene.rooms.push(tmp_room);
+tmp_room = new room();
+tmp_room.id = "cage";
+tmp_room.fqid = "tunic.historicalsociety.cage";
+{
+tmp_room.primary = false;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "null";
+tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [];
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.lights = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.shadows = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.light_color   = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color  = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.start_wx = canv.width/2;
+tmp_room.start_wy = canv.height/2;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
+tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 }
 tmp_scene.rooms.push(tmp_room);
 tmp_room = new room();
@@ -10800,6 +10911,47 @@ tmp_inert.reqs = [[
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
+}
+tmp_scene.rooms.push(tmp_room);
+tmp_room = new room();
+tmp_room.id = "elevator";
+tmp_room.fqid = "tunic.historicalsociety.elevator";
+{
+tmp_room.primary = false;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "null";
+tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [];
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.lights = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.shadows = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.light_color   = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color  = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.start_wx = canv.width/2;
+tmp_room.start_wy = canv.height/2;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
+tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 }
 tmp_scene.rooms.push(tmp_room);
 tmp_room = new room();
@@ -15061,6 +15213,117 @@ tmp_inert.reqs = [[
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
+}
+tmp_scene.rooms.push(tmp_room);
+}
+tmp_level.scenes.push(tmp_scene);
+tmp_scene = new scene();
+tmp_scene.id = "wildlife";
+tmp_scene.fqid = "tunic.wildlife";
+{
+tmp_scene.primary = false;
+tmp_scene.ww = 100;
+tmp_scene.wh = 100;
+tmp_scene.wx = 100;
+tmp_scene.wy = 100;
+tmp_scene.hover_icon_wx = 0;
+tmp_scene.hover_icon_wy = 0;
+tmp_scene.animcycle_id = "null";
+tmp_scene.notice_icon_animcycle_id = "null";
+tmp_scene.audio_id = "null";
+tmp_scene.deck_animcycle_ids = [];
+tmp_scene.notifications_persistent = 0;
+tmp_scene.raw_notifications = [
+];
+tmp_scene.notification_reqs = [[
+]];
+tmp_scene.notice_reqs = [[
+]];
+tmp_scene.reqs = [[
+]];
+
+tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
+tmp_scene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_scene.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_room = new room();
+tmp_room.id = "center";
+tmp_room.fqid = "tunic.wildlife.center";
+{
+tmp_room.primary = false;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "null";
+tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [];
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.lights = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.shadows = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.light_color   = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color  = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.start_wx = canv.width/2;
+tmp_room.start_wy = canv.height/2;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
+tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
+}
+tmp_scene.rooms.push(tmp_room);
+tmp_room = new room();
+tmp_room.id = "trail";
+tmp_room.fqid = "tunic.wildlife.trail";
+{
+tmp_room.primary = false;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "null";
+tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [];
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.lights = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.shadows = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.light_color   = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color  = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.start_wx = canv.width/2;
+tmp_room.start_wy = canv.height/2;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
+tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 }
 tmp_scene.rooms.push(tmp_room);
 }
