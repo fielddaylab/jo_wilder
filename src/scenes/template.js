@@ -953,8 +953,8 @@ var cutscene_command = function()
   self.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
   self.cutscene_target_entity_id = "null";
   self.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-  self.t = 0;
-  self.end_t = 0;
+  self.t = CUTSCENE_COMMAND_IGNORE;
+  self.end_t = CUTSCENE_COMMAND_IGNORE;
   self.ww = CUTSCENE_COMMAND_IGNORE;
   self.wh = CUTSCENE_COMMAND_IGNORE;
   self.wx = CUTSCENE_COMMAND_IGNORE;
@@ -1575,19 +1575,21 @@ var print_cutscene_meta = function(l)
     switch(c.command)
     {
       case CUTSCENE_COMMAND_CREATE:
+        str +=
         "tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
-        "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
-        "tmp_cutscene_command.ww = "+c.ww+";\n"+
-        "tmp_cutscene_command.wh = "+c.wh+";\n"+
-        "tmp_cutscene_command.wx = "+c.wx+";\n"+
-        "tmp_cutscene_command.wy = "+c.wy+";\n"+
-        "tmp_cutscene_command.wz = "+c.wz+";\n"+
-        "tmp_cutscene_command.a = "+c.a+";\n"+
+        "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n";
+        if(c.ww != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.ww = "+c.ww+";\n";
+        if(c.wh != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wh = "+c.wh+";\n";
+        if(c.wx != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
+        if(c.wy != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
+        if(c.wz != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
+        if(c.a  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.a = "+c.a+";\n";
+        str +=
         "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
         "tmp_cutscene_command.deck_animcycle_ids = "+get_deck_animcycle_ids(c.deck_animcycle_ids)+
-        "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n"+
-        "tmp_cutscene_command.t = "+c.t+";\n";
+        "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n";
+        if(c.t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_DESTROY:
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_DESTROY;\n"+
@@ -1604,16 +1606,16 @@ var print_cutscene_meta = function(l)
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
+        if(c.ww != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.ww = "+c.ww+";\n";
+        if(c.wh != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wh = "+c.wh+";\n";
+        if(c.wx != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
+        if(c.wy != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
+        if(c.wz != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
         str +=
-        "tmp_cutscene_command.ww = "+c.ww+";\n"+
-        "tmp_cutscene_command.wh = "+c.wh+";\n"+
-        "tmp_cutscene_command.wx = "+c.wx+";\n"+
-        "tmp_cutscene_command.wy = "+c.wy+";\n"+
-        "tmp_cutscene_command.wz = "+c.wz+";\n"+
         "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
         "tmp_cutscene_command.deck_animcycle_ids = "+get_deck_animcycle_ids(c.deck_animcycle_ids)+
-        "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n"+
-        "tmp_cutscene_command.t = 0;\n";
+        "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n";
+        if(c.t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_SPEAK:
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;\n"+
@@ -1624,13 +1626,12 @@ var print_cutscene_meta = function(l)
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
-        str +=
-        "tmp_cutscene_command.wx = "+c.wx+";\n"+
-        "tmp_cutscene_command.wy = "+c.wy+";\n"+
-        "tmp_cutscene_command.w = "+c.w+";\n"+
-        "tmp_cutscene_command.h = "+c.h+";\n"+
-        "tmp_cutscene_command.raw_text = \""+c.raw_text.replace(/"/g,"\\\"")+"\";\n"+
-        "tmp_cutscene_command.t = "+c.t+";\n";
+        if(c.wx != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
+        if(c.wy != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
+        if(c.w  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.w = "+c.w+";\n";
+        if(c.h  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.h = "+c.h+";\n";
+        str += "tmp_cutscene_command.raw_text = \""+c.raw_text.replace(/"/g,"\\\"")+"\";\n";
+        if(c.t  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ACT:
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;\n"+
@@ -1652,23 +1653,32 @@ var print_cutscene_meta = function(l)
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
-        str +=
-        "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n"+
-        "tmp_cutscene_command.cutscene_target_entity_type = ";
-             if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
-        str +=
-        "tmp_cutscene_command.ww = "+c.ww+";\n"+
-        "tmp_cutscene_command.wh = "+c.wh+";\n"+
-        "tmp_cutscene_command.wx = "+c.wx+";\n"+
-        "tmp_cutscene_command.wy = "+c.wy+";\n"+
-        "tmp_cutscene_command.wz = "+c.wz+";\n"+
-        "tmp_cutscene_command.a = "+c.a+";\n"+
-        "tmp_cutscene_command.t = "+c.t+";\n"+
-        "tmp_cutscene_command.end_t = "+c.end_t+";\n";
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        {
+               if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)
+          {
+            str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
+            "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n";
+          }
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE)
+          {
+            str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
+            "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n";
+          }
+        }
+        else
+        {
+          if(c.ww    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.ww = "+c.ww+";\n";
+          if(c.wh    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wh = "+c.wh+";\n";
+          if(c.wx    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
+          if(c.wy    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
+          if(c.wz    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
+        }
+        if(c.a     != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.a = "+c.a+";\n";
+        if(c.t     != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
+        if(c.end_t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
       case CUTSCENE_COMMAND_TARGET:
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;\n"+
@@ -1679,23 +1689,32 @@ var print_cutscene_meta = function(l)
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
-        str +=
-        "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n"+
-        "tmp_cutscene_command.cutscene_target_entity_type = ";
-             if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
-        else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
-        str +=
-        "tmp_cutscene_command.ww = "+c.ww+";\n"+
-        "tmp_cutscene_command.wh = "+c.wh+";\n"+
-        "tmp_cutscene_command.wx = "+c.wx+";\n"+
-        "tmp_cutscene_command.wy = "+c.wy+";\n"+
-        "tmp_cutscene_command.wz = "+c.wz+";\n"+
-        "tmp_cutscene_command.a = "+c.a+";\n"+
-        "tmp_cutscene_command.t = "+c.t+";\n"+
-        "tmp_cutscene_command.end_t = "+c.end_t+";\n";
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        {
+               if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)
+          {
+            str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
+            "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n";
+          }
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE)
+          {
+            str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
+            "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n";
+          }
+        }
+        else
+        {
+          if(c.ww    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.ww = "+c.ww+";\n";
+          if(c.wh    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wh = "+c.wh+";\n";
+          if(c.wx    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
+          if(c.wy    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
+          if(c.wz    != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
+        }
+        if(c.a     != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.a = "+c.a+";\n";
+        if(c.t     != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
+        if(c.end_t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.end_t = "+c.end_t+";\n";
         break;
       case CUTSCENE_COMMAND_WAIT:
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_WAIT;\n"+
