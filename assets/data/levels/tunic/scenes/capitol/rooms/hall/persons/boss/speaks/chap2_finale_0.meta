@@ -27,19 +27,21 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 40.292470769519916;
-tmp_speak_command.wy = 333.636958270285;
-tmp_speak_command.w = 140;
+tmp_speak_command.wx = 9.989440466489626;
+tmp_speak_command.wy = 344.2430188763456;
+tmp_speak_command.w = 159;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Let's hear it! What's the story?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 //
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -55.75758688618049;
-tmp_speak_command.wy = 132.93939432662387;
+tmp_speak_command.wx = -252.72728385587752;
+tmp_speak_command.wy = 117.78787917510874;
 tmp_speak_command.w = 130;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
