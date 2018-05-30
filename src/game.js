@@ -1066,7 +1066,6 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.capitol.hall.boss.chap2_finale_5",
 "tunic.capitol.hall.boss.chap2_finale_6",
 "tunic.capitol.hall.gramps",
-"tunic.capitol.hall.gramps.hub",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
 "tunic.capitol.hall.chapter2",

@@ -16,8 +16,8 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "Button's not working.";
-tmp_observation.blip_wx = -56.59201466469346;
-tmp_observation.blip_wy = 112.72817241704018;
+tmp_observation.blip_wx = -420.2421164205936;
+tmp_observation.blip_wy = 59.758475447343294;
 tmp_observation.blip_w = 195;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
@@ -30,6 +30,6 @@ tmp_observation.notice_reqs = [[
 tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.historicalsociety.basement.gramps.elevator",
+"!tunic.historicalsociety.basement.gramps.whatdo",
 ]];
 
