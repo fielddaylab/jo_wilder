@@ -28,5 +28,6 @@ tmp_person.reqs = [[
 "!tunic.capitol.hall.chapter2",
 ],[
 "_tunic.capitol.hall.chapter3",
+"!tunic.capitol.hall.chapter3",
 ]];
 
