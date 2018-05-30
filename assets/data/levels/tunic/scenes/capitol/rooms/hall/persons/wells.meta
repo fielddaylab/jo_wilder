@@ -25,7 +25,6 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
-"_tunic.capitol.hall.chap2_finale_entrances",
-"!tunic.capitol.hall.chapter3",
+"_tunic.capitol.hall.chapter3",
 ]];
 
