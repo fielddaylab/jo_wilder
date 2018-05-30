@@ -7,8 +7,8 @@ tmp_zone.audio_id = "null";
 tmp_zone.target_view = "page";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"The number matches the slip-",
-"Theodora Youmans must be the owner.",
+"The number matches the slip.",
+"Theodora Youmans must be the owner!",
 "I'll make a note of this...",
 ];
 tmp_zone.raw_notification_ws = [

@@ -15,7 +15,7 @@ tmp_speak_command.w = 203;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Sorry. Rules are rules.";
+tmp_speak_command.raw_atext = "Sorry. Gotta stick to the rules.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
