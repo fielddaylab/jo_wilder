@@ -88,7 +88,7 @@ tmp_cutscene_command.wx = -568.8213632353732;
 tmp_cutscene_command.wy = 12.400077509706513;
 tmp_cutscene_command.w = 187;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "What happened here!?";
+tmp_cutscene_command.raw_text = "What happened here?!";
 tmp_cutscene_command.t = 81;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

@@ -8,8 +8,8 @@ tmp_zone.target_view = "pic_2";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "Hey, this is Youmans!",
-"And Look! She's wearing the shirt!",
-"I should go to the Capitol and let everyone know!",
+"And look! She's wearing the shirt!",
+"I should go to the Capitol and tell everyone!",
 ];
 tmp_zone.raw_notification_ws = [
 0,

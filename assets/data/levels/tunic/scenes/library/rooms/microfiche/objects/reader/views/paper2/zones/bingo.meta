@@ -6,7 +6,7 @@ tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.target_view = "paper2";
 tmp_zone.raw_notifications = [
-"Aha! Youmans was an influential Suffragist?!",
+"Wow! Youmans was an important suffragist?!",
 ];
 tmp_zone.reqs = [[
 "!tunic.library.microfiche.reader.paper2.bingo",

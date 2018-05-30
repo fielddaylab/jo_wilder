@@ -50,7 +50,7 @@ tmp_cutscene_command.wx = -637.1765263623739;
 tmp_cutscene_command.wy = 200.61850746132185;
 tmp_cutscene_command.w = 248;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I should talk to gramps about the jersey.";
+tmp_cutscene_command.raw_text = "I should talk to Gramps again.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_cutscene_command = new cutscene_command();

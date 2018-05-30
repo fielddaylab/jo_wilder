@@ -55,7 +55,7 @@ tmp_cutscene_command.wx = -92.01398077985169;
 tmp_cutscene_command.wy = 66.66750204352135;
 tmp_cutscene_command.w = 245;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Nope, I only drink Holdgers!";
+tmp_cutscene_command.raw_text = "Nope, that's from Bean Town. I only drink Holdgers!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

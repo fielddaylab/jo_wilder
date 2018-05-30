@@ -7,7 +7,7 @@ tmp_zone.audio_id = "null";
 tmp_zone.target_view = "card_bingo";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"Whoah this is the only dry cleaner old enough to be around in 1916!",
+"This is the only dry cleaner that was around in 1916!",
 ];
 tmp_zone.raw_notification_ws = [
 205,

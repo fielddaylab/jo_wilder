@@ -16,7 +16,7 @@ tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
 tmp_object.audio_id = "null";
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"I need some info on Theodora Youmans",
+"Hmm. Where are you, Theodora?",
 ];
 tmp_object.notice_reqs = [[
 ]];
