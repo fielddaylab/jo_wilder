@@ -27,64 +27,52 @@ tmp_cutscene.notice_reqs = [[
 tmp_cutscene.reqs = [[
 ]];
 tmp_cutscene.commands = [];
+
 tmp_cutscene_command = new cutscene_command();
-//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -269.92424242424244;
-tmp_cutscene_command.wy = 239.62121212121227;
-tmp_cutscene_command.w = 53;
+tmp_cutscene_command.wx = -349.09090909090907;
+tmp_cutscene_command.wy = 277.0454545454547;
+tmp_cutscene_command.w = 106;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Wowee, look at that!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
-//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -360.6060606060607;
-tmp_cutscene_command.wy = 324.5454545454547;
-tmp_cutscene_command.w = 114;
+tmp_cutscene_command.wx = -353.40909090909093;
+tmp_cutscene_command.wy = 272.7272727272728;
+tmp_cutscene_command.w = 104;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Wish I could investigate.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
-//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.cutscene_target_entity_id = "tunic";
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
-tmp_cutscene_command.wx = 2.5294072798266996;
-tmp_cutscene_command.wy = 9.925503144933941;
-tmp_cutscene_command.wz = -927345892;
-tmp_cutscene_command.a = -927345892;
+tmp_cutscene_command.cutscene_target_entity_id = "tunic";
 tmp_cutscene_command.t = 2;
 tmp_cutscene_command.end_t = 2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
-//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.cutscene_target_entity_id = "null";
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
-tmp_cutscene_command.ww = -927345892;
-tmp_cutscene_command.wh = -927345892;
 tmp_cutscene_command.wx = 200;
 tmp_cutscene_command.wy = -100;
-tmp_cutscene_command.wz = -927345892;
-tmp_cutscene_command.a = -927345892;
 tmp_cutscene_command.t = 2;
 tmp_cutscene_command.end_t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
-//
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
@@ -95,7 +83,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "It's not fair!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
@@ -107,6 +95,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "You're not losing your papers!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
@@ -131,24 +120,17 @@ tmp_cutscene_command.raw_text = "Well, SOMETHING is happening to them...";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
-
-
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -412.4242424242423;
-tmp_cutscene_command.wy = 281.3636363636363;
-tmp_cutscene_command.w = 149;
+tmp_cutscene_command.wx = -432.5757575757574;
+tmp_cutscene_command.wy = 278.4848484848484;
+tmp_cutscene_command.w = 163;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "But there's no use fretting over it.";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
-
-
-
-
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;

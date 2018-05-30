@@ -15,10 +15,12 @@ tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.audio_id = "null";
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"What do you think, Jo? Anything out of the ordinary?",
+"What do you think, Jo?",
+"Anything out of the ordinary?",
 ];
 tmp_object.raw_notification_ws = [
-160,
+220,
+150,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
