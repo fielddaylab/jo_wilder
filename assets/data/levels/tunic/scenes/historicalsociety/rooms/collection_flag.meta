@@ -1,0 +1,28 @@
+tmp_room.primary = false;
+tmp_room.ww = 1626.7701863354039;
+tmp_room.wh = 990;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "room_historicalsociety_collection";
+tmp_room.audio_id = "null";
+tmp_room.cam_wh = 950;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:71.12826086956488, wy:-241.2801242236024, ww:1187.7378881987577, wh:470.5999999999999 },
+];
+tmp_room.lights = [
+];
+tmp_room.shadows = [
+];
+tmp_room.light_color = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.target_start_wx = 58.79999999999998;
+tmp_room.target_start_wy = -212.4;
+tmp_room.raw_notifications = [
+];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
