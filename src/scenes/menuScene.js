@@ -40,7 +40,7 @@ var MenuScene = function(game, stage)
     var h = 50;
     new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
     continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
-    code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_code = save_table[code_txt.txt].code; next = 1; } }); y += h+10;
+    code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_table_code = code_txt.txt; save_code = save_table[save_table_code].code; next = 1; } }); y += h+10;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = white; return; } if(save_table[txt]) code_txt.bg_color = green; else code_txt.bg_color = red; }); y += h+10;
 
     next = 0;

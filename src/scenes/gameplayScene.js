@@ -171,6 +171,7 @@ var GamePlayScene = function(game, stage)
     state_t = 0.499;
 
     if(save_code) load_save_code(save_code);
+    if(save_table_code) load_save_table_code(save_table_code);
     my_loader.consume_room(cur_room);
 
     if(!cur_level.pre_met && cur_level.notifications.length) my_notificationview.consume_notification(cur_level);

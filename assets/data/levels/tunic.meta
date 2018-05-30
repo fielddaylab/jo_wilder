@@ -18,6 +18,8 @@ tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";
 tmp_level.ui_hover_animcycle_id = "hover_ui";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
+tmp_level.deck_animcycle_ids = [
+];
 tmp_level.cursor_w = 27;
 tmp_level.cursor_h = 31;
 tmp_level.hover_w = 56;
@@ -25,16 +27,18 @@ tmp_level.hover_h = 56;
 tmp_level.notifications_w = 200;
 tmp_level.notifications_h = 30;
 tmp_level.target_lerp_s = 0.03;
+tmp_level.notifications_persistent = 0;
 tmp_level.raw_notifications = [
 ];
 tmp_level.raw_notification_ws = [
 ];
 tmp_level.notification_reqs = [[
-]]
+]];
 tmp_level.reqs = [[
-]]
+]];
 tmp_level.notebook_reqs = [[
 "tunic.historicalsociety.closet.notebook",
-]]
+]];
 tmp_level.map_reqs = [[
-]]
+]];
+

@@ -1,0 +1,33 @@
+tmp_porthole.ww = 235.06060606060612;
+tmp_porthole.wh = 270.3939393939393;
+tmp_porthole.wx = -220.1060585317607;
+tmp_porthole.wy = -7.166666721860878;
+tmp_porthole.wz = 0;
+tmp_porthole.act_wx = 77.00570027022911;
+tmp_porthole.act_wy = -61.0009545064006;
+tmp_porthole.act_anim = 0;
+tmp_porthole.hover_icon_wx = 47.81673205629488;
+tmp_porthole.hover_icon_wy = 79.86323876869221;
+tmp_porthole.animcycle_id = "null";
+tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
+tmp_porthole.hover_icon_animcycle_id = "hblip_door";
+tmp_porthole.notice_icon_animcycle_id = "null";
+tmp_porthole.audio_id = "null";
+tmp_porthole.deck_animcycle_ids = [
+];
+tmp_porthole.target_room = "elevator";
+tmp_porthole.target_start_wx = -374.75951624996645;
+tmp_porthole.target_start_wy = -34.4078948742569;
+tmp_porthole.notifications_persistent = 0;
+tmp_porthole.raw_notifications = [
+];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
+tmp_porthole.notice_reqs = [[
+]];
+tmp_porthole.reqs = [[
+"tunic.historicalsociety.basement.gramps.elevator"
+]];
+
