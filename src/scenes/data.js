@@ -15887,6 +15887,36 @@ tmp_view.reqs = [[
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "archivist";
+tmp_zone.fqid = "tunic.historicalsociety.entry.directory.closeup.archivist";
+{
+tmp_zone.ww = 197;
+tmp_zone.wh = 136.00000000000003;
+tmp_zone.wx = -8.500000000000043;
+tmp_zone.wy = -222;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "closeup";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+"The glasses… it’s a match!",
+"The archivist must be the badger-napper!",
+];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+"tunic.historicalsociety.cage.glasses",
+]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
