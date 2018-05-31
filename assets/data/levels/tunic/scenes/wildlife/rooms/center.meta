@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 880;
-tmp_room.wh = 660;
+tmp_room.ww = 1904;
+tmp_room.wh = 800;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_wildlife_center";
@@ -11,7 +11,7 @@ tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-5.599999999999966, wy:-74.60000000000012, ww:858.3999999999999, wh:199.60000000000022 },
+{wx:16.609196283006327, wy:-181.29488757234844, ww:1360.2939313115037, wh:233.3446002146894 },
 ];
 tmp_room.lights = [
 ];
@@ -31,5 +31,5 @@ tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
 ]];
-//SUGGEST_H:1
+//SUGGEST_H:1.2121212121212122
 
