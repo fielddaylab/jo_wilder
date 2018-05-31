@@ -1764,7 +1764,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/key/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/key/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -15882,6 +15882,8 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [
+];
 tmp_room.cam_wh = 660;
 tmp_room.nav_min_wz = 5;
 tmp_room.nav_max_wz = 10;
@@ -15897,8 +15899,13 @@ tmp_room.shadow_color = "rgba(0,0,0,0.2)";
 tmp_room.ambient_color = "rgba(0,0,0,0)";
 tmp_room.target_start_wx = 44.502020905923295;
 tmp_room.target_start_wy = -171.6;
+tmp_room.notifications_persistent = 0;
 tmp_room.raw_notifications = [
 ];
+tmp_room.raw_notification_ws = [
+];
+tmp_room.notification_reqs = [[
+]];
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1
@@ -16769,11 +16776,11 @@ tmp_observation.fqid = "tunic.historicalsociety.frontdesk.key";
 {
 tmp_observation.ww = 50.146372131457355;
 tmp_observation.wh = 35.99999999999997;
-tmp_observation.wx = 213.07926091128468;
-tmp_observation.wy = 174;
-tmp_observation.wz = 0;
-tmp_observation.act_wx = 45.74081256558395;
-tmp_observation.act_wy = -264;
+tmp_observation.wx = -38.920739017895244;
+tmp_observation.wy = -20;
+tmp_observation.wz = 4.9;
+tmp_observation.act_wx = 78.74262753650089;
+tmp_observation.act_wy = -130;
 tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = -0.19702019410135563;
 tmp_observation.hover_icon_wy = 32;
@@ -16782,14 +16789,21 @@ tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
 tmp_observation.raw_text = "This must be the key for Teddy's cage!";
-tmp_observation.blip_wx = 268.1565178623663;
-tmp_observation.blip_wy = 86.99999999999997;
-tmp_observation.blip_w = 160;
+tmp_observation.blip_wx = -98.95000486866414;
+tmp_observation.blip_wy = 107;
+tmp_observation.blip_w = 185;
 tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
 ];
+tmp_observation.raw_notification_ws = [
+];
 tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
 "tunic.historicalsociety.cage",
@@ -16903,7 +16917,7 @@ tmp_inert.fqid = "tunic.historicalsociety.frontdesk.coffee";
 {
 tmp_inert.ww = 71;
 tmp_inert.wh = 55.999999999999986;
-tmp_inert.wx = -90.50000000000003;
+tmp_inert.wx = -99.5;
 tmp_inert.wy = -25.99999999999998;
 tmp_inert.wz = 4.9;
 tmp_inert.g = 0;
