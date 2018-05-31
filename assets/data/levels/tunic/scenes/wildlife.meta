@@ -20,5 +20,6 @@ tmp_scene.notification_reqs = [[
 tmp_scene.notice_reqs = [[
 ]];
 tmp_scene.reqs = [[
+"tunic.historicalsociety.entry.groupconvo_flag",
 ]];
 
