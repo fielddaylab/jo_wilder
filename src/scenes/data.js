@@ -20533,8 +20533,10 @@ tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
 {wx:-5.599999999999966, wy:-74.60000000000012, ww:858.3999999999999, wh:199.60000000000022 },
 ];
-tmp_room.lights = [ ];
-tmp_room.shadows = [ ];
+tmp_room.lights = [
+];
+tmp_room.shadows = [
+];
 tmp_room.light_color = "rgba(255,255,255,0.2);";
 tmp_room.shadow_color = "rgba(0,0,0,0.5);";
 tmp_room.ambient_color = "rgba(0,0,0,0);";
@@ -20556,10 +20558,10 @@ tmp_person = new person();
 tmp_person.id = "expert";
 tmp_person.fqid = "tunic.wildlife.center.expert";
 {
-tmp_person.ww = 100;
-tmp_person.wh = 100;
-tmp_person.wx = 253.60000000000008;
-tmp_person.wy = 100;
+tmp_person.ww = 140.99999999999994;
+tmp_person.wh = 273.99999999999994;
+tmp_person.wx = 109.10000000000014;
+tmp_person.wy = 53;
 tmp_person.wz = 0;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
@@ -20753,8 +20755,8 @@ tmp_person.fqid = "tunic.wildlife.center.fox";
 {
 tmp_person.ww = 100;
 tmp_person.wh = 100;
-tmp_person.wx = 227.20000000000005;
-tmp_person.wy = -34.39999999999999;
+tmp_person.wx = -155.79999999999998;
+tmp_person.wy = 36.60000000000005;
 tmp_person.wz = 0;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
@@ -20838,10 +20840,10 @@ tmp_person = new person();
 tmp_person.id = "wells";
 tmp_person.fqid = "tunic.wildlife.center.wells";
 {
-tmp_person.ww = 100;
-tmp_person.wh = 100;
-tmp_person.wx = -286.39999999999986;
-tmp_person.wy = 26.80000000000001;
+tmp_person.ww = 149;
+tmp_person.wh = 257;
+tmp_person.wx = -317.89999999999986;
+tmp_person.wy = -7.700000000000031;
 tmp_person.wz = 0;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
@@ -21201,8 +21203,8 @@ tmp_object.fqid = "tunic.wildlife.center.tracks";
 {
 tmp_object.ww = 100;
 tmp_object.wh = 100;
-tmp_object.wx = -204.79999999999998;
-tmp_object.wy = 125.19999999999999;
+tmp_object.wx = 387.2;
+tmp_object.wy = 33.199999999999946;
 tmp_object.wz = 0;
 tmp_object.act_wx = 0;
 tmp_object.act_wy = 0;
@@ -21290,10 +21292,10 @@ tmp_observation = new observation();
 tmp_observation.id = "coffee";
 tmp_observation.fqid = "tunic.wildlife.center.coffee";
 {
-tmp_observation.ww = 100;
-tmp_observation.wh = 100;
-tmp_observation.wx = -25.99999999999993;
-tmp_observation.wy = 256;
+tmp_observation.ww = 77;
+tmp_observation.wh = 63.99999999999998;
+tmp_observation.wx = -241.49999999999994;
+tmp_observation.wy = -139;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;

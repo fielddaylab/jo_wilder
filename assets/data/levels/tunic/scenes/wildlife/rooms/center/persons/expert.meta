@@ -1,7 +1,7 @@
-tmp_person.ww = 100;
-tmp_person.wh = 100;
-tmp_person.wx = 253.60000000000008;
-tmp_person.wy = 100;
+tmp_person.ww = 140.99999999999994;
+tmp_person.wh = 273.99999999999994;
+tmp_person.wx = 109.10000000000014;
+tmp_person.wy = 53;
 tmp_person.wz = 0;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
