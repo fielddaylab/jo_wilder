@@ -52,7 +52,7 @@ var MenuScene = function(game, stage)
   {
     if(next)
     {
-      next_t += 0.01;
+      next_t += 1.01; //HACK- set to 0.01 for fade
       if(next_t >= 1) game.nextScene();
       else
       {
