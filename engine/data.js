@@ -19256,6 +19256,7 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
+"tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -19446,7 +19447,7 @@ tmp_speak = new speak();
 tmp_speak.id = "flag";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.flag";
 {
-tmp_speak.primary = 999;
+tmp_speak.primary = 998;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -19621,7 +19622,7 @@ tmp_speak = new speak();
 tmp_speak.id = "nelson";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.nelson";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 999;
 tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -19633,6 +19634,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.library.microfiche.reader_flag.paper2.bingo",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -20058,6 +20060,7 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
+"!tunic.flaghouse.entry.colorbook.bingo",
 ]];
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -20317,11 +20320,11 @@ tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
 tmp_object.audio_id = "null";
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"Hmm. Where are you, Theodora?",
 ];
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
+"tunic.flaghouse.entry.colorbook.bingo",
 ]];
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);

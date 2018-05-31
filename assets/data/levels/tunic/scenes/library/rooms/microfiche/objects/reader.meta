@@ -21,4 +21,5 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
+"!tunic.flaghouse.entry.colorbook.bingo",
 ]];
