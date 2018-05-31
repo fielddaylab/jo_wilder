@@ -11688,9 +11688,9 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = -427.4848484848488;
-tmp_cutscene_command.wy = 232.72727272727272;
-tmp_cutscene_command.w = 201;
+tmp_cutscene_command.wx = -287.4848484848488;
+tmp_cutscene_command.wy = 19.545454545454575;
+tmp_cutscene_command.w = 237;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Somebody left these. I bet that’s who took Teddy!";
 tmp_cutscene_command.t = 0;
@@ -11700,9 +11700,9 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = -402.93939393939417;
-tmp_cutscene_command.wy = 219.090909090909;
-tmp_cutscene_command.w = 173;
+tmp_cutscene_command.wx = -300.0606060606062;
+tmp_cutscene_command.wy = -0.4545454545455456;
+tmp_cutscene_command.w = 245;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Hmm... there's a staff directory in the entryway.";
 tmp_cutscene_command.t = 0;
@@ -11712,9 +11712,9 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = -339.6060606060606;
-tmp_cutscene_command.wy = 240.15151515151507;
-tmp_cutscene_command.w = 154;
+tmp_cutscene_command.wx = -264.3030303030302;
+tmp_cutscene_command.wy = -4.8484848484849365;
+tmp_cutscene_command.w = 194;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I should see who wears these glasses!";
 tmp_cutscene_command.t = 0;
@@ -15887,6 +15887,36 @@ tmp_view.reqs = [[
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "archivist";
+tmp_zone.fqid = "tunic.historicalsociety.entry.directory.closeup.archivist";
+{
+tmp_zone.ww = 197;
+tmp_zone.wh = 136.00000000000003;
+tmp_zone.wx = -8.500000000000043;
+tmp_zone.wy = -222;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "closeup";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+"The glasses… it’s a match!",
+"The archivist must be the badger-napper!",
+];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+"tunic.historicalsociety.cage.glasses",
+]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
 }
 tmp_object.views.push(tmp_view);
 }
