@@ -2269,6 +2269,7 @@ var objectview = function()
         if(zone.notifications.length && queryreqs(zone, zone.notification_reqs)) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
+        if(zone.target_view == "null") zone.target_view = old_view.id;
         self.cur_view.met = true;
         var old_view = self.cur_view;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);

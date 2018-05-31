@@ -9,6 +9,6 @@ tmp_zone.raw_notifications = [
 "Wow! Youmans was an important suffragist?!",
 ];
 tmp_zone.reqs = [[
-"!tunic.library.microfiche.reader.paper2.bingo",
+"!self",
 ]];
 
