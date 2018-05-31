@@ -16,7 +16,9 @@ tmp_person.audio_id = "null";
 tmp_person.raw_notifications = [
 ];
 tmp_person.notice_reqs = [[
+"!self",
 ]];
 tmp_person.reqs = [[
+"!tunic.historicalsociety.entry.groupconvo_flag",
 ]];
 
