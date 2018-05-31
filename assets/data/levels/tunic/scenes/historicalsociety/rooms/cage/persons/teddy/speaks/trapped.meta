@@ -12,10 +12,10 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 ]];
-//
+
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 32.000000000000014;
-tmp_speak_command.wy = 57;
+tmp_speak_command.wx = 373.8360987631392;
+tmp_speak_command.wy = -77.97027476620643;
 tmp_speak_command.w = 202;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -25,10 +25,10 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Teddy! Are you okay?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 298.99999999999994;
-tmp_speak_command.wy = 109.99999999999997;
+tmp_speak_command.wx = 695.6667966366015;
+tmp_speak_command.wy = -26.818292495068206;
 tmp_speak_command.w = 100;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -38,10 +38,10 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "(HELP!)";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 64.00000000000003;
-tmp_speak_command.wy = 78.99999999999996;
+tmp_speak_command.wx = 379.0000008854469;
+tmp_speak_command.wy = -27.06060681461515;
 tmp_speak_command.w = 170;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
