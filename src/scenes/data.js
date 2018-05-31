@@ -4379,7 +4379,7 @@ tmp_cutscene.notification_reqs = [[
 tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
-"tunic.capitol.hall.chap2_finale_entrances",
+"tunic.capitol.hall.chap1_finale",
 "!self",
 ]];
 tmp_cutscene.commands = [];
@@ -4397,6 +4397,15 @@ tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "black";
 tmp_cutscene.commands.push(tmp_cutscene_command);
+//
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "black";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //setup chap
 tmp_cutscene_command = new cutscene_command();
@@ -4410,6 +4419,15 @@ tmp_cutscene_command.wh = 660*2;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter2";
+tmp_cutscene.commands.push(tmp_cutscene_command);
+//
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "chapter2";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 //fade in black
