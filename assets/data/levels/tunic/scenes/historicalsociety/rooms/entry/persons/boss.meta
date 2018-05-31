@@ -19,5 +19,8 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
+],[
+"tunic.historicalsociety.collection_flag.gramps.flag",
+"!tunic.wildlife",
 ]];
 
