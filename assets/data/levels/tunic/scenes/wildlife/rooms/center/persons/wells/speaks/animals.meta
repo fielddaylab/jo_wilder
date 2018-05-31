@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = 3;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,6 +11,7 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
