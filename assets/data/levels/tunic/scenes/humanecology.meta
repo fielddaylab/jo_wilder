@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
 tmp_scene.ww = 175.99999999999997;
 tmp_scene.wh = 121.00000000000011;
-tmp_scene.wx = -25.999999999999986;
-tmp_scene.wy = -134.5;
+tmp_scene.wx = -12.000000000000028;
+tmp_scene.wy = -136.50000000000003;
 tmp_scene.hover_icon_wx = -87;
 tmp_scene.hover_icon_wy = -38;
 tmp_scene.animcycle_id = "scene_humanecology";

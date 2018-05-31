@@ -1,24 +1,20 @@
-tmp_person.ww = 100;
-tmp_person.wh = 100;
-tmp_person.wx = 100;
-tmp_person.wy = 100;
+tmp_person.ww = 189.24285888530645;
+tmp_person.wh = 354.77272727272725;
+tmp_person.wx = -159.07506881375969;
+tmp_person.wy = -11.553030303030312;
 tmp_person.wz = 0;
-tmp_person.act_wx = 0;
-tmp_person.act_wy = 0;
+tmp_person.act_wx = 245.29136436273882;
+tmp_person.act_wy = -41.78567838584007;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 0;
-tmp_person.hover_icon_wy = 0;
-tmp_person.animcycle_id = "null";
-tmp_person.hover_cursor_animcycle_id = "null";
+tmp_person.hover_icon_wx = -54.69696969637356;
+tmp_person.hover_icon_wy = 155.45454545454547;
+tmp_person.animcycle_id = "gramps";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "null";
-tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "notice";
 tmp_person.audio_id = "null";
-tmp_person.deck_animcycle_ids = [];
-tmp_person.notifications_persistent = 0;
 tmp_person.raw_notifications = [
 ];
-tmp_person.notification_reqs = [[
-]];
 tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
