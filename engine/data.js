@@ -11471,6 +11471,90 @@ tmp_room.reqs = [[
 //SUGGEST_H:1.2121212121212122
 
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
+tmp_cutscene = new cutscene();
+tmp_cutscene.id = "unlockdoor";
+tmp_cutscene.fqid = "tunic.historicalsociety.cage.unlockdoor";
+{
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
+tmp_cutscene.ww = 175.73717194797763;
+tmp_cutscene.wh = 429.4848484835715;
+tmp_cutscene.wx = 615.9836009983322;
+tmp_cutscene.wy = 18.924242435808594;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = -54;
+tmp_cutscene.act_wy = -20.999999999999996;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 1;
+tmp_cutscene.hover_icon_wy = -3;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.notice_icon_animcycle_id = "null";
+tmp_cutscene.deck_animcycle_ids = [
+];
+tmp_cutscene.notifications_persistent = 0;
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]];
+tmp_cutscene.notice_reqs = [[
+]];
+tmp_cutscene.reqs = [[
+"tunic.historicalsociety.frontdesk.key",
+"!tunic.historicalsociety.cage.unlockdoor",
+]];
+tmp_cutscene.commands = [];
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 499.78787878787875;
+tmp_cutscene_command.wy = 109.99999999999994;
+tmp_cutscene_command.w = 90;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Teddy!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "teddy";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 753.0909090909092;
+tmp_cutscene_command.wy = -7.636363636363679;
+tmp_cutscene_command.w = 36;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "❤️";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 459.48484848484844;
+tmp_cutscene_command.wy = 117.42424242424244;
+tmp_cutscene_command.w = 154;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Come on, let's get out of here!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_cutscene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.notice_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_cutscene.raw_notification_ws[i] ? tmp_cutscene.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_room.cutscenes.push(tmp_cutscene);
 tmp_person = new person();
 tmp_person.id = "teddy";
 tmp_person.fqid = "tunic.historicalsociety.cage.teddy";
@@ -11502,6 +11586,7 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
+"!tunic.historicalsociety.cage.unlockdoor",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -11656,6 +11741,7 @@ tmp_observation.notice_reqs = [[
 tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
+"!tunic.historicalsociety.frontdesk.key",
 ]];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
@@ -16606,6 +16692,7 @@ tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
 "tunic.historicalsociety.cage",
+"!tunic.historicalsociety.frontdesk.key",
 ]];
 
 tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
