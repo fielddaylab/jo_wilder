@@ -20765,13 +20765,14 @@ tmp_speak.id = "question";
 tmp_speak.fqid = "tunic.nelson.trail.hiker.question";
 {
 tmp_speak.primary = false;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
 ]];
@@ -20779,37 +20780,40 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
+tmp_speak_command.wx = -193.11230706587446;
+tmp_speak_command.wy = 285.00045839871905;
 tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Wow, a wild badger!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -229.99983244829588;
+tmp_speak_command.wy = 77.99999999999999;
+tmp_speak_command.w = 264;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Do you know where I can find the Governor Nelson exhibit?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
+tmp_speak_command.wx = -187.00000000000006;
+tmp_speak_command.wy = 274;
 tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "It's just up the trail!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
