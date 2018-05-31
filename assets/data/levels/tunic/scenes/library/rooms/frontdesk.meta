@@ -5,6 +5,8 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [
+];
 tmp_room.cam_wh = 860;
 tmp_room.nav_min_wz = 11;
 tmp_room.nav_max_wz = 20;
