@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
 tmp_scene.ww = 160.99999999999997;
 tmp_scene.wh = 114;
-tmp_scene.wx = -206.5;
-tmp_scene.wy = -74.99999999999983;
+tmp_scene.wx = -203.5;
+tmp_scene.wy = -93.99999999999983;
 tmp_scene.hover_icon_wx = -82;
 tmp_scene.hover_icon_wy = -32;
 tmp_scene.animcycle_id = "scene_drycleaner";

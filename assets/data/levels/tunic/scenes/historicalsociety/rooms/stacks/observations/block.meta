@@ -23,7 +23,7 @@ tmp_observation.raw_notifications = [
 tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
+"tunic.historicalsociety.frontdesk.archivist.newspaper",
 "!tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 
