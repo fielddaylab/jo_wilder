@@ -19,6 +19,8 @@ while IFS='' read -r LINE || [[ -n "$LINE" ]]; do
         if [ "@$LINE" == "@" ]; then
           echo "" >> $FILE
           BLOCK=0;
+        elif [ "@$LINE" == "@//" ]; then
+          echo "" >> $FILE
         else
           echo $LINE >> $FILE
         fi

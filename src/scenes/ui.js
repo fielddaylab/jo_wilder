@@ -1702,8 +1702,13 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
-  self.prev_box = {x:25,             y:canv.height-220, w:200, h:200 };
-  self.next_box = {x:canv.width-235, y:canv.height-220, w:200, h:200 };
+  var prev_x_edge = 25;
+  var prev_y_edge = canv.height-20;
+  var next_x_edge = canv.width-35;
+  var next_y_edge = canv.height-20;
+  var page_s = 100;
+  self.prev_box = {x:prev_x_edge,        y:prev_y_edge-page_s, w:page_s, h:page_s };
+  self.next_box = {x:next_x_edge-page_s, y:prev_y_edge-page_s, w:page_s, h:page_s };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
   self.current_code = "-";

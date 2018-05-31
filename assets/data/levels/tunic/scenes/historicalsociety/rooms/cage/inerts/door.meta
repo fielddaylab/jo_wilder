@@ -1,0 +1,12 @@
+tmp_inert.ww = 119.63657156793829;
+tmp_inert.wh = 479.72727272583427;
+tmp_inert.wx = 640.1685435537571;
+tmp_inert.wy = -38.22716717188271;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "cage_door";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

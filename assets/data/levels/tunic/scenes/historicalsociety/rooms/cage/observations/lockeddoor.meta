@@ -1,0 +1,34 @@
+tmp_observation.ww = 175.73717194797763;
+tmp_observation.wh = 429.4848484835715;
+tmp_observation.wx = 615.9836009983322;
+tmp_observation.wy = 18.924242435808594;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = -54;
+tmp_observation.act_wy = -20.999999999999996;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 1;
+tmp_observation.hover_icon_wy = -3;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "It’s locked! Gotta find another clue.";
+tmp_observation.blip_wx = 361.781478538615;
+tmp_observation.blip_wy = 87.8252511694048;
+tmp_observation.blip_w = 176;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+]];
+

@@ -1,10 +1,10 @@
-tmp_porthole.ww = 367;
-tmp_porthole.wh = 619;
-tmp_porthole.wx = 6.500000000000028;
-tmp_porthole.wy = -12.5;
+tmp_porthole.ww = 175.90807997877943;
+tmp_porthole.wh = 559.8494539709426;
+tmp_porthole.wx = -940.6694207088169;
+tmp_porthole.wy = 26.292612746742293;
 tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
+tmp_porthole.act_wx = 7.948666912035332;
+tmp_porthole.act_wy = -130.13163636363635;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 0;
 tmp_porthole.hover_icon_wy = 0;
@@ -13,20 +13,17 @@ tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "null";
-tmp_porthole.deck_animcycle_ids = [
-];
-tmp_porthole.target_room = "basement";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = 0;
+tmp_porthole.target_room = "collection_flag";
+tmp_porthole.target_start_wx = 621.9243073212195;
+tmp_porthole.target_start_wy = -136.7670926438998;
 tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
-];
-tmp_porthole.raw_notification_ws = [
 ];
 tmp_porthole.notification_reqs = [[
 ]];
 tmp_porthole.notice_reqs = [[
 ]];
 tmp_porthole.reqs = [[
+"tunic.capitol.hall.chapter3",
 ]];
 

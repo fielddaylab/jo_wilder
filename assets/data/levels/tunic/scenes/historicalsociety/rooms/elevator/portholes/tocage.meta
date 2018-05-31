@@ -16,8 +16,8 @@ tmp_porthole.audio_id = "null";
 tmp_porthole.deck_animcycle_ids = [
 ];
 tmp_porthole.target_room = "cage";
-tmp_porthole.target_start_wx = 0;
-tmp_porthole.target_start_wy = 0;
+tmp_porthole.target_start_wx = -812.7272727272727;
+tmp_porthole.target_start_wy = -171.8181818181818;
 tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
 ];

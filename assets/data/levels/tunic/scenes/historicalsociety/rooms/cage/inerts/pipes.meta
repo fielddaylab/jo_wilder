@@ -1,0 +1,12 @@
+tmp_inert.ww = 2030.9090909090908;
+tmp_inert.wh = 413.63636363636374;
+tmp_inert.wx = 7.74927616550201;
+tmp_inert.wy = 144.71218679161143;
+tmp_inert.wz = 2;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "cage_pipes";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

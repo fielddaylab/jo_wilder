@@ -1,0 +1,182 @@
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
+tmp_cutscene.ww = 564.0836363636361;
+tmp_cutscene.wh = 492.4356363636362;
+tmp_cutscene.wx = 132.94157900906043;
+tmp_cutscene.wy = 51.52330233226783;
+tmp_cutscene.wz = 1;
+tmp_cutscene.act_wx = 273.2659952420667;
+tmp_cutscene.act_wy = -96.10993403265934;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 87.64805366290636;
+tmp_cutscene.hover_icon_wy = 213.94686296870225;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_cursor_animcycle_id = "null";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.notice_icon_animcycle_id = "null";
+tmp_cutscene.deck_animcycle_ids = [
+];
+tmp_cutscene.notifications_persistent = 0;
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.raw_notification_ws = [
+];
+tmp_cutscene.notification_reqs = [[
+]];
+tmp_cutscene.notice_reqs = [[
+]];
+tmp_cutscene.reqs = [[
+"!tunic.historicalsociety.entry.groupconvo",
+]];
+tmp_cutscene.commands = [];
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.cutscene_target_entity_id = "boss";
+tmp_cutscene_command.t = -1;
+tmp_cutscene_command.end_t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I'm telling you, Boss.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Taxidermy!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "People would love it!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Nonsense.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "The exhibit is called Wisconsin Wonders!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I want live animals, not stuffed ones.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Any ideas about the flag?";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Um... well... the symbol looks like a deer hoof.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "It could be an early design for the Wisconsin state flag!";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Jolie, I want you and your grampa to get to the bottom of this flag.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 363.05032036028274;
+tmp_cutscene_command.wy = 459.47345441597105;
+tmp_cutscene_command.w = 193;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I'll head to the Capitol to get things ready.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
