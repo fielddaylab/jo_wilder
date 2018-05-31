@@ -1,0 +1,12 @@
+tmp_inert.ww = 3838.068181818182;
+tmp_inert.wh = 703.4090909090916;
+tmp_inert.wx = 30.605305192243804;
+tmp_inert.wy = -9.977833941245024;
+tmp_inert.wz = 5;
+tmp_inert.g = 0.5;
+tmp_inert.animcycle_id = "scene_trail_trees";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
