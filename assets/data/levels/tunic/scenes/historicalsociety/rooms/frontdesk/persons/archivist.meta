@@ -19,5 +19,7 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 "!tunic.historicalsociety.cage",
+],[
+"tunic.library.frontdesk.worker.flag",
 ]];
 

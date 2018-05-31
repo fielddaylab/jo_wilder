@@ -11,6 +11,7 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.historicalsociety.collection_flag.gramps.flag",
 ]];
 
 tmp_speak_command = new speak_command();

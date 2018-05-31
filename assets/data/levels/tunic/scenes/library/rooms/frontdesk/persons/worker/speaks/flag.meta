@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = 999;
 tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -10,6 +10,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 
 tmp_speak_command = new speak_command();

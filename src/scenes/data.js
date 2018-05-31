@@ -15481,6 +15481,7 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.historicalsociety.collection_flag.gramps.flag",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -15727,6 +15728,7 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.historicalsociety.collection_flag.gramps.flag",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -16395,6 +16397,8 @@ tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
 "!tunic.historicalsociety.cage",
+],[
+"tunic.library.frontdesk.worker.flag",
 ]];
 
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
@@ -16406,7 +16410,7 @@ tmp_speak = new speak();
 tmp_speak.id = "confrontation";
 tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.confrontation";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 999;
 tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -16418,6 +16422,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.library.frontdesk.worker.flag",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -19351,7 +19356,7 @@ tmp_speak = new speak();
 tmp_speak.id = "flag";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.flag";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = 999;
 tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
@@ -19363,6 +19368,7 @@ tmp_speak.raw_notifications = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -20596,6 +20602,7 @@ tmp_scene.notification_reqs = [[
 tmp_scene.notice_reqs = [[
 ]];
 tmp_scene.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist.confrontation",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
