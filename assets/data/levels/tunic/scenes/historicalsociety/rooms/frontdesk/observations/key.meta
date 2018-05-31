@@ -24,5 +24,6 @@ tmp_observation.notice_reqs = [[
 ]];
 tmp_observation.reqs = [[
 "tunic.historicalsociety.cage",
+"!tunic.historicalsociety.frontdesk.key",
 ]];
 

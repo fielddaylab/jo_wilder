@@ -25,5 +25,6 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
+"!tunic.historicalsociety.cage.unlockdoor",
 ]];
 
