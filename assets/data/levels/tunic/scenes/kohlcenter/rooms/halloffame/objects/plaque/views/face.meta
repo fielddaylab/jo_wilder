@@ -4,7 +4,7 @@ tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.notifications_persistent = 1;
 tmp_view.raw_notifications = [
-"I should check for clues...",
+"Anything useful on here?",
 ];
 tmp_view.raw_notification_ws = [
 230,
