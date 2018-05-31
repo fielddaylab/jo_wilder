@@ -10788,13 +10788,14 @@ tmp_speak.id = "symbol";
 tmp_speak.fqid = "tunic.flaghouse.entry.flag_girl.symbol";
 {
 tmp_speak.primary = 999;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
 ]];
@@ -10803,97 +10804,105 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -75.96731773865373;
+tmp_speak_command.wy = 130.00252794288235;
+tmp_speak_command.w = 172;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Cool. What about that weird symbol?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 83.00000013295879;
+tmp_speak_command.wy = 255.00000001028428;
+tmp_speak_command.w = 135;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Easy. That's a theta symbol.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -0.9999999999969162;
+tmp_speak_command.wy = 250.00000000000028;
+tmp_speak_command.w = 223;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "In ancient Greece, it was the symbol of death.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 33.00000000000005;
+tmp_speak_command.wy = 99.99999999999999;
+tmp_speak_command.w = 67;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Yikes!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -19.999999999999957;
+tmp_speak_command.wy = 274;
+tmp_speak_command.w = 233;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "You know, now that I think of it, I HAVE seen that flag somewhere before...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -17.99999999999997;
+tmp_speak_command.wy = 251;
+tmp_speak_command.w = 234;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "I think it had something to do with environmentalism.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 78.00000000000001;
+tmp_speak_command.wy = 239;
+tmp_speak_command.w = 138;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "You're gonna need more info.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 56.00000000000004;
+tmp_speak_command.wy = 274;
+tmp_speak_command.w = 161;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "I always use the library for all my vexillophile needs!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
@@ -10976,10 +10985,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.flaghouse.entry.tomap";
 {
-tmp_porthole.ww = 100;
-tmp_porthole.wh = 100;
-tmp_porthole.wx = 100;
-tmp_porthole.wy = 100;
+tmp_porthole.ww = 782.9993425875654;
+tmp_porthole.wh = 104.99996592200743;
+tmp_porthole.wx = 95.45766300617453;
+tmp_porthole.wy = -271.49780539632565;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 0;
 tmp_porthole.act_wy = 0;
@@ -10991,12 +11000,15 @@ tmp_porthole.hover_cursor_animcycle_id = "null";
 tmp_porthole.hover_icon_animcycle_id = "null";
 tmp_porthole.notice_icon_animcycle_id = "null";
 tmp_porthole.audio_id = "null";
-tmp_porthole.deck_animcycle_ids = [];
+tmp_porthole.deck_animcycle_ids = [
+];
 tmp_porthole.target_room = "null";
 tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = 0;
 tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
+];
+tmp_porthole.raw_notification_ws = [
 ];
 tmp_porthole.notification_reqs = [[
 ]];
@@ -19133,6 +19145,8 @@ tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_library_frontdesk";
 tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [
+];
 tmp_room.cam_wh = 860;
 tmp_room.nav_min_wz = 11;
 tmp_room.nav_max_wz = 20;
@@ -19215,10 +19229,10 @@ tmp_person = new person();
 tmp_person.id = "cleaner";
 tmp_person.fqid = "tunic.library.frontdesk.cleaner";
 {
-tmp_person.ww = 100;
-tmp_person.wh = 100;
-tmp_person.wx = 100;
-tmp_person.wy = 100;
+tmp_person.ww = 167.75757575757578;
+tmp_person.wh = 229;
+tmp_person.wx = 67.42424242424222;
+tmp_person.wy = -191.2272727272727;
 tmp_person.wz = 0;
 tmp_person.act_wx = 0;
 tmp_person.act_wy = 0;
@@ -19230,13 +19244,16 @@ tmp_person.hover_cursor_animcycle_id = "null";
 tmp_person.hover_icon_animcycle_id = "null";
 tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
-tmp_person.deck_animcycle_ids = [];
+tmp_person.deck_animcycle_ids = [
+];
 tmp_person.notifications_persistent = 0;
 tmp_person.raw_notifications = [
 ];
-tmp_person.notification_reqs = [[
-]];
+tmp_person.raw_notification_ws = [
+];
 tmp_person.notice_reqs = [[
+]];
+tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
 ]];
@@ -19251,13 +19268,14 @@ tmp_speak.id = "blog";
 tmp_speak.fqid = "tunic.library.frontdesk.cleaner.blog";
 {
 tmp_speak.primary = false;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
 ]];
@@ -19265,85 +19283,92 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
+tmp_speak_command.wx = 120.6723342209441;
+tmp_speak_command.wy = 2.2567593736019056;
 tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Hey, Jo!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 255.0608306400568;
+tmp_speak_command.wy = -43.33333651562691;
+tmp_speak_command.w = 141;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Hi! What are you doing here?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 123.45454549354449;
+tmp_speak_command.wy = 45.27272727217467;
+tmp_speak_command.w = 142;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Just writing up a new blog post.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 122.15151515151513;
+tmp_speak_command.wy = 38.75757575757569;
+tmp_speak_command.w = 137;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "I ran into your gramps earlier!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 275.909090909091;
+tmp_speak_command.wy = -42.030303030303095;
+tmp_speak_command.w = 129;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "What?! Where?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 122.15151515151513;
+tmp_speak_command.wy = 38.75757575757569;
+tmp_speak_command.w = 125;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "He stopped by the cleaners.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 320.2121212121212;
+tmp_speak_command.wy = -60.27272727272736;
+tmp_speak_command.w = 113;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "That's odd...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
@@ -19422,13 +19447,14 @@ tmp_speak.id = "flag";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.flag";
 {
 tmp_speak.primary = 999;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
 ]];
@@ -19437,37 +19463,40 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
+tmp_speak_command.wx = -363.72309665829266;
+tmp_speak_command.wy = 384.06180782062296;
 tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Welcome back, Dear!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -267.44930459447244;
+tmp_speak_command.wy = 223.78788106840824;
+tmp_speak_command.w = 159;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Thanks! Can I use the microfiche?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = -361.27272726267495;
+tmp_speak_command.wy = 374.93939393939837;
+tmp_speak_command.w = 188;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Of course! Let me know if you need help.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
@@ -19937,11 +19966,13 @@ tmp_inert.fqid = "tunic.library.frontdesk.fgdesks";
 {
 tmp_inert.ww = 1663.0390033943024;
 tmp_inert.wh = 455.9523950763754;
-tmp_inert.wx = -17.928885598877514;
-tmp_inert.wy = -336.37535166745874;
+tmp_inert.wx = -29.65615832614992;
+tmp_inert.wy = -354.617775909883;
 tmp_inert.wz = 999;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "libraryfg";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 
