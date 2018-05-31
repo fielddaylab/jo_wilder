@@ -21,7 +21,7 @@ tmp_speak_command.w = 177.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "I need you to get to work on this shirt!";
+tmp_speak_command.raw_atext = "You better get to work. The exhibit opens tonight!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
@@ -31,7 +31,7 @@ tmp_speak_command.w = 321.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Your grampa is waiting for you in his office.";
+tmp_speak_command.raw_atext = "Your grampa's waiting for you in his office.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

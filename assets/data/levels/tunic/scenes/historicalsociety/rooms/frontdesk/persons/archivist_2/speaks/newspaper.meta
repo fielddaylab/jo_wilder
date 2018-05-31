@@ -36,21 +36,8 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Youmans? Is that who owned the shirt?";
+tmp_speak_command.raw_atext = "Youmans? Is that who owned the shirt? Well, why didn't you say so?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-//
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 141.50000046769486;
-tmp_speak_command.wy = 82.00000000000001;
-tmp_speak_command.w = 53;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Yeah!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
 tmp_speak_command = new speak_command();
@@ -75,7 +62,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Youmans was a suffragist leader here in Wisconsin! She fought to win the vote for women.";
+tmp_speak_command.raw_atext = "Youmans was a suffragist leader here in Wisconsin. She fought to win votes for women!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
