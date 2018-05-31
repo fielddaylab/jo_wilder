@@ -1,30 +1,33 @@
 tmp_observation.ww = 100;
 tmp_observation.wh = 100;
-tmp_observation.wx = 100;
-tmp_observation.wy = 100;
+tmp_observation.wx = -25.99999999999993;
+tmp_observation.wy = 256;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
 tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = 0;
 tmp_observation.hover_icon_wy = 0;
-tmp_observation.animcycle_id = "null";
+tmp_observation.animcycle_id = "coffeecupup";
 tmp_observation.hover_cursor_animcycle_id = "null";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
-tmp_observation.deck_animcycle_ids = [];
+tmp_observation.deck_animcycle_ids = [
+];
 tmp_observation.raw_text = "null";
 tmp_observation.blip_wx = 100;
 tmp_observation.blip_wy = 100;
 tmp_observation.blip_w = 100;
-tmp_observation.blip_h = 30; //h of a single line
+tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
 ];
-tmp_observation.notification_reqs = [[
-]];
+tmp_observation.raw_notification_ws = [
+];
 tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
 ]];
