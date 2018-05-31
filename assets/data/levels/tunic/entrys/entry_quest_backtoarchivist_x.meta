@@ -16,6 +16,6 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
+"tunic.historicalsociety.frontdesk.archivist.newspaper",
 ]];
 

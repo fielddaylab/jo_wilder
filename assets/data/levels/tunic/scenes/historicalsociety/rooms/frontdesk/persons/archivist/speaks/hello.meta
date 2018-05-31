@@ -11,7 +11,7 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
-"!tunic.historicalsociety.frontdesk.archivist_0.hello",
+"!tunic.historicalsociety.frontdesk.archivist.hello",
 ]];
 //
 tmp_speak_command = new speak_command();

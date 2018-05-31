@@ -1,0 +1,14 @@
+tmp_zone.ww = 159.99999999999997;
+tmp_zone.wh = 56.999999999999986;
+tmp_zone.wx = -238;
+tmp_zone.wy = -103.5;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.target_view = "paper2";
+tmp_zone.raw_notifications = [
+"Wow! Youmans was an important suffragist?!",
+];
+tmp_zone.reqs = [[
+"!tunic.library.microfiche.reader.paper2.bingo",
+]];
+

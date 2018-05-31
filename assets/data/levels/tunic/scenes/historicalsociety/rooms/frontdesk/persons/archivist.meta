@@ -18,6 +18,6 @@ tmp_person.raw_notifications = [
 tmp_person.notice_reqs = [[
 ]];
 tmp_person.reqs = [[
-"!tunic.drycleaner.frontdesk.logbook.page.bingo",
+"!tunic.historicalsociety.cage",
 ]];
 
