@@ -546,7 +546,7 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         my_navigable.tick();
         my_avatar.tick();
-        if(state_to == STATE_NAV && my_mapview.selected_scene && my_mapview.selected_scene != cur_scene)
+        if(state_to == STATE_NAV && (my_mapview.selected_scene && my_mapview.selected_scene != cur_scene) || old_state_t >= 0.5)
         {
           state_t += state_t_speed;
           if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
