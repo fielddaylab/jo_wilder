@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 155;
-tmp_scene.wh = 162;
-tmp_scene.wx = -330.49999999999994;
-tmp_scene.wy = 218;
+tmp_scene.ww = 214;
+tmp_scene.wh = 220.00000000000009;
+tmp_scene.wx = 328;
+tmp_scene.wy = -211.99999999999997;
 tmp_scene.hover_icon_wx = 0;
 tmp_scene.hover_icon_wy = 0;
 tmp_scene.animcycle_id = "scene_wildlife";
