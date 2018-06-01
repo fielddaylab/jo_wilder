@@ -17,6 +17,6 @@ tmp_zone.raw_notification_ws = [
 tmp_zone.notification_reqs = [[
 ]];
 tmp_zone.reqs = [[
-"tunic.historicalsociety.cage.glasses",
+"tunic.historicalsociety.cage.glasses.afterteddy",
 ]];
 
