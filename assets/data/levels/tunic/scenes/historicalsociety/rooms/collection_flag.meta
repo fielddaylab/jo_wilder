@@ -3,7 +3,7 @@ tmp_room.ww = 1626.7701863354039;
 tmp_room.wh = 990;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_historicalsociety_collection";
+tmp_room.animcycle_id = "room_historicalsociety_collection_flag";
 tmp_room.audio_id = "null";
 tmp_room.cam_wh = 950;
 tmp_room.nav_min_wz = 0;
@@ -25,4 +25,3 @@ tmp_room.raw_notifications = [
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1.5
-
