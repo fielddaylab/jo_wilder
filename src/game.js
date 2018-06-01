@@ -13,12 +13,11 @@ save_table[save_codes[save_codes.length-1]] = {
 };
 
 save_codes.push("notebook");
-save_table[save_codes[save_codes.length-1]] = {
-  reqs:[[
-  "tunic.historicalsociety.closet.notebook",
-  ]],
-  all:
-  [
+save_table[save_codes[save_codes.length-1]] = {reqs:[[
+"tunic.historicalsociety.closet.notebook",
+],],
+all:
+[
 "tunic.historicalsociety",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
@@ -31,10 +30,9 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.historicalsociety.closet.notebook.hub",
 "tunic.historicalsociety.closet.retirement_letter",
 "tunic.historicalsociety.closet.retirement_letter.hub",
-"tunic.historicalsociety.closet.photo",
 "tunic.historicalsociety.closet.intro",
 ],
-  code:"03000000000000008372480000003200000000000000000000000000000000000"
+code:"050000000000000000000000000032001843100000000000000000000000000000000000000000000000000000000"
 };
 
 save_codes.push("wiscwonders");
@@ -69,11 +67,11 @@ save_table[save_codes[save_codes.length-1]] = {
 
 save_codes.push("mysteryslip");
 save_table[save_codes[save_codes.length-1]] = {
-  reqs:[[
-  "tunic.historicalsociety.collection.gramps.found",
-  ]],
-  all:
-  [
+reqs:[[
+"tunic.historicalsociety.collection.gramps.found",
+],],
+all:
+[
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
 "tunic.historicalsociety.closet",
@@ -102,7 +100,7 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.historicalsociety.entry.report.closeup",
 "tunic.historicalsociety.entry.groupconvo",
 ],
-  code:"05000000000000008372992183504302933590000001000000000000000000000",
+code:"070000000000000000000000000096002252705484640262912000000000000000000000000000000000000000000"
 };
 
 save_codes.push("plaque");

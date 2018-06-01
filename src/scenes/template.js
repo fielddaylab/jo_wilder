@@ -224,13 +224,37 @@ var get_save_code = function()
 {
   var s = new save_slate();
   s.gen_slate(cur_level);
-  var list = "[\n";
+
+  var code = "startgame";
+  if(my_notebookview && my_notebookview.current_code)
+    code = my_notebookview.current_code;
+  var st = save_table[code];
+
+  var str =
+  "save_codes.push(\""+code+"\");\n"+
+  "save_table[save_codes[save_codes.length-1]] = {\n"+
+  "reqs:[";
+  for(var i = 0; i < st.reqs.length; i++)
+  {
+    str += "[\n";
+    for(var j = 0; j < st.reqs[i].length; j++)
+      str += "\""+st.reqs[i][j]+"\",\n";
+    str += "],";
+  }
+  str +=
+  "],\n"+
+  "all:\n"+
+  "[\n";
   for(var i = 0; i < s.slate.length; i++)
   {
     if(s.slate[i].met)
-      list += "\""+s.slate[i].fqid+"\",\n";
+      str += "\""+s.slate[i].fqid+"\",\n";
   }
-  console.log(list+"]");
+  str +=
+  "],\n"+
+  "code:\""+s.code()+"\"\n"+
+  "};\n";
+  console.log(str);
   console.log(s.code());
   console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+s.code());
 }
