@@ -2617,6 +2617,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/null/0.png")
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "outtolunch";
+tmp_animcycle.fqid = "tunic.outtolunch";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/outtolunch/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "plaque";
 tmp_animcycle.fqid = "tunic.plaque";
 {
@@ -9785,12 +9800,15 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
         {
           my_cursor.mode = CURSOR_UI;
           if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
-          my_notebookview.cache_available_entrys[i].hoverexpand = min(1,my_notebookview.cache_available_entrys[i].hoverexpand+0.2);
+          my_notebookview.cache_available_entrys[i].hovering = 1;
         }
+        else my_notebookview.cache_available_entrys[i].hovering = 0;
     }
   }
   self.unhover = function(evt)
   {
+    for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+      my_notebookview.cache_available_entrys[i].hovering = 0;
   }
 
   self.click = function(evt)
@@ -10349,12 +10367,15 @@ tmp_wildcard.commands = [
         {
           my_cursor.mode = CURSOR_UI;
           if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
-          my_notebookview.cache_available_entrys[i].hoverexpand = min(1,my_notebookview.cache_available_entrys[i].hoverexpand+0.2);
+          my_notebookview.cache_available_entrys[i].hovering = 1;
         }
+        else my_notebookview.cache_available_entrys[i].hovering = 0;
     }
   }
   self.unhover = function(evt)
   {
+    for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+      my_notebookview.cache_available_entrys[i].hovering = 0;
   }
 
   self.click = function(evt)
@@ -10893,12 +10914,15 @@ tmp_wildcard.commands = [
         {
           my_cursor.mode = CURSOR_UI;
           if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
-          my_notebookview.cache_available_entrys[i].hoverexpand = min(1,my_notebookview.cache_available_entrys[i].hoverexpand+0.2);
+          my_notebookview.cache_available_entrys[i].hovering = 1;
         }
+        else my_notebookview.cache_available_entrys[i].hovering = 0;
     }
   }
   self.unhover = function(evt)
   {
+    for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+      my_notebookview.cache_available_entrys[i].hovering = 0;
   }
 
   self.click = function(evt)
@@ -19405,7 +19429,7 @@ tmp_observation.act_wy = -90;
 tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = 6.004597013486318;
 tmp_observation.hover_icon_wy = 25;
-tmp_observation.animcycle_id = "null";
+tmp_observation.animcycle_id = "outtolunch";
 tmp_observation.hover_cursor_animcycle_id = "hover_ui";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";

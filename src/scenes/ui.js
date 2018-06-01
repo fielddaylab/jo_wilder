@@ -1859,11 +1859,11 @@ var notebookview = function()
       entry = self.cache_available_entrys[i];
       if(entry.page == self.page)
       {
+        if(!entry.hoverexpand) entry.hoverexpand = 0;
+        if(entry.hovering) entry.hoverexpand = min(1,entry.hoverexpand+0.1);
+        else               entry.hoverexpand = max(0,entry.hoverexpand-0.1);
         if(entry.hoverexpand)
-        {
           ctx.drawImage(entry.animcycle_inst.img,entry.x-entry.hoverexpand*10,entry.y+yoff-entry.hoverexpand*10,entry.w+entry.hoverexpand*20,entry.h+entry.hoverexpand*20);
-          entry.hoverexpand = max(0,entry.hoverexpand-0.1);
-        }
         else
           ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
       }
