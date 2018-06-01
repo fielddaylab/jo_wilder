@@ -16265,6 +16265,7 @@ tmp_person.notice_reqs = [[
 "!self",
 ]];
 tmp_person.reqs = [[
+"tunic.historicalsociety.basement.savedteddy",
 "!tunic.historicalsociety.entry.groupconvo_flag",
 ]];
 
