@@ -1,15 +1,20 @@
-tmp_entry.ww = 100;
-tmp_entry.wh = 100;
-tmp_entry.wx = 100;
-tmp_entry.wy = 100;
+tmp_entry.ww = 133;
+tmp_entry.wh = 35;
+tmp_entry.wx = 134.4999999999999;
+tmp_entry.wy = 208.50000000000014;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_green_img";
 tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [];
+tmp_entry.deck_animcycle_ids = [
+];
 tmp_entry.notifications_persistent = 0;
 tmp_entry.raw_notifications = [
 ];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
 tmp_entry.reqs = [[
 ]];
 
