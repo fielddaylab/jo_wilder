@@ -1337,11 +1337,11 @@ var print_speak_meta = function(l)
   var i = 0;
   while(i != -1)
   {
-    i = nthIndex('\n',10,str);
-    if(i == -1) console.log(str);
+    i = nthIndex('\n',200,str);
+    if(i == -1 || i > str.length-5) console.log(str);
     else
     {
-      console.log(str.substr(0,i+1));
+      console.log(str.substr(0,i));
       str = str.substr(i+1);
     }
   }
@@ -1781,11 +1781,11 @@ var print_cutscene_meta = function(l)
   var i = 0;
   while(i != -1)
   {
-    i = nthIndex('\n',10,str);
-    if(i == -1) console.log(str);
+    i = nthIndex('\n',200,str);
+    if(i == -1 || i > str.length-5) console.log(str);
     else
     {
-      console.log(str.substr(0,i+1));
+      console.log(str.substr(0,i));
       str = str.substr(i+1);
     }
   }

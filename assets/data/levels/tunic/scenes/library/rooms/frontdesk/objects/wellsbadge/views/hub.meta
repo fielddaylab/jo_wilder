@@ -1,9 +1,19 @@
 tmp_view.primary = false;
 tmp_view.animcycle_id = "wellsbadge_big";
+tmp_view.magnify = false;
 tmp_view.audio_id = "null";
+tmp_view.deck_animcycle_ids = [
+];
+tmp_view.notifications_persistent = 0;
 tmp_view.raw_notifications = [
 "Wells! What was he doing here? I should ask the librarian.",
 ];
+tmp_view.raw_notification_ws = [
+];
+tmp_view.notification_reqs = [[
+]];
+tmp_view.exit_reqs = [[
+]];
 tmp_view.reqs = [[
 ]];
 

@@ -12,6 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 ]];
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -96.19179528397014;
 tmp_speak_command.wy = 60.99999999999999;
@@ -24,6 +25,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "You haven't seen any badgers around here, have you?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -322.0003502155767;
 tmp_speak_command.wy = 204;
@@ -36,6 +38,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Badgers? No. But there are rumors that the museum's got one on the loose! Exciting, isn't it?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -87.00000000049573;
 tmp_speak_command.wy = 61.99999999999999;

@@ -12,7 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 ]];
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -143.79041707073355;
 tmp_speak_command.wy = 329.9195030401409;
@@ -25,7 +25,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Ah, yes! The basketball jersey. What's the problem?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -492.0221135110139;
 tmp_speak_command.wy = 59.5484863355049;
@@ -38,7 +38,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "IT ISN'T A BASKETBALL JERSEY!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -83.73063008411049;
 tmp_speak_command.wy = 329.34860169684043;

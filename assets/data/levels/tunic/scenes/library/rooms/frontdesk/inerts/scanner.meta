@@ -5,6 +5,8 @@ tmp_inert.wy = -57.75781798408241;
 tmp_inert.wz = 15;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "libraryscanner";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 

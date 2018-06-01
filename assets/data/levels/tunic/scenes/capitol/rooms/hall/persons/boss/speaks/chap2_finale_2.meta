@@ -12,7 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 ]];
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 0.1489768686603945;
 tmp_speak_command.wy = 331.4346545552923;
@@ -25,7 +25,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "An expert opinion. Good thinking!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -130.15405343436996;
 tmp_speak_command.wy = 287.4952606158985;
@@ -38,7 +38,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Where did you go from there?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -361.7190832079839;
 tmp_speak_command.wy = 164.09394088095937;
@@ -51,7 +51,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Well, I had to figure out WHICH cleaner the receipt was from...";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -124.63972099320142;
 tmp_speak_command.wy = 292.98496533320406;

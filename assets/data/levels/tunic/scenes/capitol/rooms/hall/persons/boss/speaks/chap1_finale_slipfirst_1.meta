@@ -12,7 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 ]];
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -492.27526555558205;
 tmp_speak_command.wy = 151.13162425226216;
@@ -25,7 +25,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "The plaque at the Basketball Center shows that the women's team didn't start until 1974-";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -378.6389019192184;
 tmp_speak_command.wy = 105.67707879771658;
