@@ -1,16 +1,16 @@
 tmp_person.ww = 184.9999999998853;
 tmp_person.wh = 296.99999999999994;
-tmp_person.wx = 244.7036750510209;
-tmp_person.wy = 34.50776872663036;
+tmp_person.wx = 244.70367505102087;
+tmp_person.wy = 36.50776872663042;
 tmp_person.wz = 0;
 tmp_person.act_wx = -115.83567257385425;
 tmp_person.act_wy = -93.25900108072;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = -3.0026410234154355;
-tmp_person.hover_icon_wy = -26.99999999258489;
+tmp_person.hover_icon_wx = 82.99735897658456;
+tmp_person.hover_icon_wy = 136.0000000074151;
 tmp_person.animcycle_id = "flag_girl";
-tmp_person.hover_cursor_animcycle_id = "null";
-tmp_person.hover_icon_animcycle_id = "null";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.notice_icon_animcycle_id = "null";
 tmp_person.audio_id = "null";
 tmp_person.deck_animcycle_ids = [
@@ -26,4 +26,3 @@ tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
 ]];
-
