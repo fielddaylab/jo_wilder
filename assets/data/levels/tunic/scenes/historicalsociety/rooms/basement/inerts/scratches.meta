@@ -1,0 +1,12 @@
+tmp_inert.ww = 130.5151515151517;
+tmp_inert.wh = 197.9090909090908;
+tmp_inert.wx = -206.86363428933635;
+tmp_inert.wy = -97.77272732792146;
+tmp_inert.wz = -1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "scratches";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+"tunic.capitol.hall.chapter3",
+]];
