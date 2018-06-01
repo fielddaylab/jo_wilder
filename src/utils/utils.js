@@ -30,6 +30,18 @@ var gray    = "#888888";
 var dark_gray  = "#444444";
 var light_gray = "#CCCCCC";
 
+function nthIndex(needle, n, hay)
+{
+  var l = hay.length;
+  var index = -1;
+  for(var i = 0; i < n && index++ < l; i++)
+  {
+      index = hay.indexOf(needle, index);
+      if(index < 0) break;
+  }
+  return index;
+}
+
 //math (raw)
 function mapVal(from_min, from_max, to_min, to_max, v) { return ((v-from_min)/(from_max-from_min))*(to_max-to_min)+to_min; }
 function clamp(a,b,v) { if(v < a) return a; if(v > b) return b; return v; }
