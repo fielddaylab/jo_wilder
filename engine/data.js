@@ -4112,7 +4112,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.flaghouse.entry.colorbook.bingo",
+"tunic.flaghouse.entry.colorbook",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -12036,7 +12036,7 @@ tmp_person.hover_icon_wy = 136.0000000074151;
 tmp_person.animcycle_id = "flag_girl";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
-tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "notice";
 tmp_person.audio_id = "null";
 tmp_person.deck_animcycle_ids = [
 ];
@@ -12046,6 +12046,8 @@ tmp_person.raw_notifications = [
 tmp_person.raw_notification_ws = [
 ];
 tmp_person.notice_reqs = [[
+"tunic.flaghouse.entry.colorbook",
+"!tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 tmp_person.notification_reqs = [[
 ]];
@@ -12253,7 +12255,7 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
-"tunic.flaghouse.entry.colorbook.bingo",
+"tunic.flaghouse.entry.colorbook",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -12367,73 +12369,54 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 tmp_person.speaks.push(tmp_speak);
 }
 tmp_room.persons.push(tmp_person);
-tmp_object = new object();
-tmp_object.id = "colorbook";
-tmp_object.fqid = "tunic.flaghouse.entry.colorbook";
+tmp_observation = new observation();
+tmp_observation.id = "colorbook";
+tmp_observation.fqid = "tunic.flaghouse.entry.colorbook";
 {
-tmp_object.ww = 87.98534996738672;
-tmp_object.wh = 72.00177749957291;
-tmp_object.wx = -49.87389794193018;
-tmp_object.wy = -87.2622840552314;
-tmp_object.wz = 3;
-tmp_object.act_wx = 117.99183704899941;
-tmp_object.act_wy = 21.00031032693539;
-tmp_object.act_anim = 1;
-tmp_object.hover_icon_wx = 117.68838942008836;
-tmp_object.hover_icon_wy = 21.011846347760013;
-tmp_object.animcycle_id = "flaghouse_book";
-tmp_object.hover_cursor_animcycle_id = "null";
-tmp_object.hover_icon_animcycle_id = "null";
-tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "null";
-tmp_object.audio_id = "null";
-tmp_object.deck_animcycle_ids = [
+tmp_observation.ww = 87.98534996738672;
+tmp_observation.wh = 72.00177749957291;
+tmp_observation.wx = -49.87389794193018;
+tmp_observation.wy = -87.2622840552314;
+tmp_observation.wz = 3;
+tmp_observation.act_wx = 117.99183704899941;
+tmp_observation.act_wy = 21.00031032693539;
+tmp_observation.act_anim = 1;
+tmp_observation.hover_icon_wx = 35.711280829471036;
+tmp_observation.hover_icon_wy = 33.67962457212013;
+tmp_observation.animcycle_id = "flaghouse_book";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "notice";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
 ];
-tmp_object.notifications_persistent = 0;
-tmp_object.raw_notifications = [
+tmp_observation.raw_text = "Huh… “Green represents nature, earth and the environment.”";
+tmp_observation.blip_wx = -175.18267115202792;
+tmp_observation.blip_wy = 145.0120956789311;
+tmp_observation.blip_w = 291;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
 ];
-tmp_object.raw_notification_ws = [
+tmp_observation.raw_notification_ws = [
 ];
-tmp_object.notification_reqs = [[
+tmp_observation.notice_reqs = [[
+"!self",
 ]];
-tmp_object.view_overlay_reqs = [[
+tmp_observation.notification_reqs = [[
 ]];
-tmp_object.notice_reqs = [[
-]];
-tmp_object.reqs = [[
+tmp_observation.reqs = [[
+"tunic.flaghouse.entry.flag_girl.hello",
 ]];
 
-tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
-tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
-tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);
-tmp_object.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_object.notice_icon_animcycle_id,tmp_level.animcycles);
-tmp_object.view_overlay_animcycle_inst = gen_animcycle_inst(tmp_object.view_overlay_animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_object.raw_notifications.length; i++) tmp_object.notifications[i] = stextToLines(tmp_object.raw_notifications[i], tmp_object.raw_notification_ws[i] ? tmp_object.raw_notification_ws[i] : tmp_level.notifications_w);
-tmp_view = new view();
-tmp_view.id = "bingo";
-tmp_view.fqid = "tunic.flaghouse.entry.colorbook.bingo";
-{
-tmp_view.primary = false;
-tmp_view.animcycle_id = "null";
-tmp_view.magnify = false;
-tmp_view.audio_id = "null";
-tmp_view.deck_animcycle_ids = [];
-tmp_view.notifications_persistent = 0;
-tmp_view.raw_notifications = [
-];
-tmp_view.notification_reqs = [[
-]];
-tmp_view.reqs = [[
-]];
-tmp_view.exit_reqs = [[
-]];
-
-tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_observation.raw_notification_ws[i] ? tmp_observation.raw_notification_ws[i] : tmp_level.notifications_w);
 }
-tmp_object.views.push(tmp_view);
-}
-tmp_room.objects.push(tmp_object);
+tmp_room.observations.push(tmp_observation);
 tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.flaghouse.entry.tomap";
@@ -21662,7 +21645,7 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"!tunic.flaghouse.entry.colorbook.bingo",
+"!tunic.flaghouse.entry.colorbook",
 ]];
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -21926,7 +21909,7 @@ tmp_object.raw_notifications = [
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
-"tunic.flaghouse.entry.colorbook.bingo",
+"tunic.flaghouse.entry.colorbook",
 ]];
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
