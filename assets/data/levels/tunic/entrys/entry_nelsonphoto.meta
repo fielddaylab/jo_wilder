@@ -1,7 +1,7 @@
 tmp_entry.ww = 189;
 tmp_entry.wh = 39.99999999999997;
 tmp_entry.wx = 154.50000000000006;
-tmp_entry.wy = -158;
+tmp_entry.wy = -214.99999999999994;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_nelsonphoto_img";
@@ -16,5 +16,6 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.nelson.trail.sign.view",
 ]];
 
