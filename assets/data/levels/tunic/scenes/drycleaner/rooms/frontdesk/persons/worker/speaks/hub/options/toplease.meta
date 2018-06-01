@@ -1,8 +1,13 @@
 tmp_option.index = 0;
 tmp_option.raw_qtext = "Please? I won't tell anybody!";
 tmp_option.target_speak = "please";
+tmp_option.notifications_persistent = 0;
 tmp_option.raw_notifications = [
 ];
+tmp_option.raw_notification_ws = [
+];
+tmp_option.notification_reqs = [[
+]];
 tmp_option.reqs = [[
 ]];
 

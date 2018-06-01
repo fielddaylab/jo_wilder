@@ -5,5 +5,8 @@ tmp_inert.wy = -234.91167988464292;
 tmp_inert.wz = 5;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "fgcans";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
+

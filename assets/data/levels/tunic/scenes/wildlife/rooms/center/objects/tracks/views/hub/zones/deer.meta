@@ -18,3 +18,4 @@ tmp_zone.notification_reqs = [[
 tmp_zone.reqs = [[
 "tunic.wildlife.center.expert.gps",
 ]];
+

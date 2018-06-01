@@ -13,6 +13,7 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "!tunic.humanecology.frontdesk.worker.intro1",
 ]];
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -266.7710457893429;
 tmp_speak_command.wy = 180;

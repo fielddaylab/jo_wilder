@@ -13,6 +13,7 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "tunic.capitol.hall.chap2_finale",
 ]];
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -183.20767292686372;
 tmp_speak_command.wy = 328.40435152498935;
@@ -20,9 +21,12 @@ tmp_speak_command.w = 284.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "I'm going to need you and Leopold to write this up A.S.A.P.!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -246.82072015845307;
 tmp_speak_command.wy = 332.94980607044386;
@@ -30,6 +34,8 @@ tmp_speak_command.w = 329.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "The fight to win votes for women needs to be celebrated!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);

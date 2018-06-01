@@ -5,6 +5,8 @@ tmp_inert.wy = 134.6285018169531;
 tmp_inert.wz = 8;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "librarydeskchair";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 

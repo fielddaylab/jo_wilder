@@ -29,7 +29,7 @@ tmp_cutscene.reqs = [[
 "!tunic.historicalsociety.basement.savedteddy",
 ]];
 tmp_cutscene.commands = [];
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
@@ -41,7 +41,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Yippee! Welcome back, Teddy.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
@@ -53,7 +53,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "It was the archivist, Gramps. He lied about taking Teddy.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
@@ -65,7 +65,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "You’re becoming quite the detective!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
@@ -77,7 +77,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "The boss sent down the next artifact. Want to take a crack at it?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
@@ -89,8 +89,9 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Meet me upstairs in the collections!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-//
+
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
+

@@ -1,8 +1,13 @@
 tmp_option.index = 0;
 tmp_option.raw_qtext = "I'm sort of in a hurry.";
 tmp_option.target_speak = "intro2";
+tmp_option.notifications_persistent = 0;
 tmp_option.raw_notifications = [
 ];
+tmp_option.raw_notification_ws = [
+];
+tmp_option.notification_reqs = [[
+]];
 tmp_option.reqs = [[
 ]];
 
