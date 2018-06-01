@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 159;
-tmp_scene.wh = 139.00000000000003;
-tmp_scene.wx = 329.5;
-tmp_scene.wy = -226.50000000000006;
+tmp_scene.ww = 217;
+tmp_scene.wh = 204;
+tmp_scene.wx = -329.49999999999994;
+tmp_scene.wy = 224.00000000000006;
 tmp_scene.hover_icon_wx = 0;
 tmp_scene.hover_icon_wy = 0;
 tmp_scene.animcycle_id = "scene_nelson";
