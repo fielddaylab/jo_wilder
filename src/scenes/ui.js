@@ -668,9 +668,6 @@ var familiar = function()
   self.w = 0;
   self.h = 0;
 
-  self.to_wx = self.wx;
-  self.to_wy = self.wy;
-
   self.shade = 0;
 
   self.state = FAMILIAR_IDLE;
@@ -746,15 +743,11 @@ var familiar = function()
   self.consume_room = function(room)
   {
     my_navigable.wpt_in_navigable(room.target_start_wx,room.target_start_wy,self);
-    self.to_wx = self.wx;
-    self.to_wy = self.wy;
   }
 
   self.from_porthole = function(porthole)
   {
     my_navigable.wpt_in_navigable(porthole.target_start_wx,porthole.target_start_wy,self);
-    self.to_wx = self.wx;
-    self.to_wy = self.wy;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -822,14 +815,36 @@ var familiar = function()
   {
     var speed = walk_speed;
     var act_dist = 10;
+    var hug_dist = 100;
+    var stable_dist = 200;
 
-    var wdx = self.to_wx-self.wx;
-    var wdy = self.to_wy-self.wy;
+    var wdx = my_avatar.wx-self.wx;
+    var wdy = my_avatar.wy-self.wy;
+    if(self.state == FAMILIAR_WALK)
+    {
+           if(wdx >  hug_dist) wdx -= hug_dist;
+      else if(wdx < -hug_dist) wdx += hug_dist;
+      else wdx = 0;
+           if(wdy >  hug_dist) wdy -= hug_dist;
+      else if(wdy < -hug_dist) wdy += hug_dist;
+      else wdy = 0;
+    }
+    else
+    {
+           if(wdx >  stable_dist) wdx -= stable_dist;
+      else if(wdx < -stable_dist) wdx += stable_dist;
+      else wdx = 0;
+           if(wdy >  stable_dist) wdy -= stable_dist;
+      else if(wdy < -stable_dist) wdy += stable_dist;
+      else wdy = 0;
+    }
     var wd = wdx*wdx+wdy*wdy;
-    if(wdx >  speed) { wdx =  speed; self.anim.flip = 0; }
-    if(wdx < -speed) { wdx = -speed; self.anim.flip = 1; }
-    if(wdy >  speed) { wdy =  speed;                     }
-    if(wdy < -speed) { wdy = -speed;                     }
+    if(wdx >  speed) wdx =  speed;
+    if(wdx < -speed) wdx = -speed;
+    if(wdy >  speed) wdy =  speed;
+    if(wdy < -speed) wdy = -speed;
+    if(wdx > 0) self.anim.flip = 0;
+    if(wdx < 0) self.anim.flip = 1;
 
     if(!DEBUG || !my_keyable.e)
     {
@@ -1624,6 +1639,7 @@ var navigable = function()
         ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
       }
     }
+    my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     for(; i < self.cache_available_drawables.length; i++)
     {
