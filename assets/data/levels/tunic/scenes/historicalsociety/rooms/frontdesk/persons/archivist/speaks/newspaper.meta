@@ -123,7 +123,6 @@ tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 2.499999999999993;
 tmp_speak_command.wy = 265;
 tmp_speak_command.w = 382;
-newspaper.meta
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
