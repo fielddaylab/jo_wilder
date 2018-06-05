@@ -224,13 +224,37 @@ var get_save_code = function()
 {
   var s = new save_slate();
   s.gen_slate(cur_level);
-  var list = "[\n";
+
+  var code = "startgame";
+  if(my_notebookview && my_notebookview.current_code)
+    code = my_notebookview.current_code;
+  var st = save_table[code];
+
+  var str =
+  "save_codes.push(\""+code+"\");\n"+
+  "save_table[save_codes[save_codes.length-1]] = {\n"+
+  "reqs:[";
+  for(var i = 0; i < st.reqs.length; i++)
+  {
+    str += "[\n";
+    for(var j = 0; j < st.reqs[i].length; j++)
+      str += "\""+st.reqs[i][j]+"\",\n";
+    str += "],";
+  }
+  str +=
+  "],\n"+
+  "all:\n"+
+  "[\n";
   for(var i = 0; i < s.slate.length; i++)
   {
     if(s.slate[i].met)
-      list += "\""+s.slate[i].fqid+"\",\n";
+      str += "\""+s.slate[i].fqid+"\",\n";
   }
-  console.log(list+"]");
+  str +=
+  "],\n"+
+  "code:\""+s.code()+"\"\n"+
+  "};\n";
+  console.log(str);
   console.log(s.code());
   console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+s.code());
 }
@@ -1309,7 +1333,18 @@ var print_speak_meta = function(l)
     "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_AVATAR ? "SPEAKER_AVATAR" : "SPEAKER_PERSON" )+";\n"+
     "tmp_speak.commands.push(tmp_speak_command);\n";
   }
-  console.log(str);
+
+  var i = 0;
+  while(i != -1)
+  {
+    i = nthIndex('\n',200,str);
+    if(i == -1 || i > str.length-5) console.log(str);
+    else
+    {
+      console.log(str.substr(0,i));
+      str = str.substr(i+1);
+    }
+  }
 }
 
 var print_option_meta = function(l)
@@ -1579,6 +1614,21 @@ var print_cutscene_meta = function(l)
         "tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;\n"+
         "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
         "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n";
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        {
+               if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)
+          {
+            str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
+            "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n";
+          }
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CUTSCENE)
+          {
+            str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CUTSCENE;\n"+
+            "tmp_cutscene_command.cutscene_target_entity_id = \""+c.cutscene_target_entity_id+"\";\n";
+          }
+        }
         if(c.ww != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.ww = "+c.ww+";\n";
         if(c.wh != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wh = "+c.wh+";\n";
         if(c.wx != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
@@ -1727,7 +1777,18 @@ var print_cutscene_meta = function(l)
     }
     str += "tmp_cutscene.commands.push(tmp_cutscene_command);\n";
   }
-  console.log(str);
+
+  var i = 0;
+  while(i != -1)
+  {
+    i = nthIndex('\n',200,str);
+    if(i == -1 || i > str.length-5) console.log(str);
+    else
+    {
+      console.log(str.substr(0,i));
+      str = str.substr(i+1);
+    }
+  }
 }
 
 var print_inert_meta = function(l)

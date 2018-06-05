@@ -1,0 +1,12 @@
+tmp_inert.ww = 1731.2499999999998;
+tmp_inert.wh = 452.84090909090935;
+tmp_inert.wx = -1060.9431818181815;
+tmp_inert.wy = 44.988636363636715;
+tmp_inert.wz = 0;
+tmp_inert.g = -0.5;
+tmp_inert.animcycle_id = "scene_trail_lake";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

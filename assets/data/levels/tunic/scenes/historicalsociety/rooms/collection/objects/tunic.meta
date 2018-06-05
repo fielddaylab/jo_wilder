@@ -12,7 +12,10 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "null";
 tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
 "What do you think, Jo?",
@@ -24,6 +27,8 @@ tmp_object.raw_notification_ws = [
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
+]];
+tmp_object.view_overlay_reqs = [[
 ]];
 tmp_object.notice_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",

@@ -21,10 +21,13 @@ tmp_person.raw_notifications = [
 tmp_person.raw_notification_ws = [
 ];
 tmp_person.notice_reqs = [[
+"!tunic.historicalsociety.basement.gramps.whatdo",
+"!tunic.historicalsociety.basement.seescratches",
 ]];
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
 "tunic.capitol.hall.chapter3",
+"!tunic.historicalsociety.basement.savedteddy",
 ]];
 

@@ -1,0 +1,29 @@
+tmp_person.ww = 100;
+tmp_person.wh = 100;
+tmp_person.wx = -390.74518308573863;
+tmp_person.wy = 38.654258493068795;
+tmp_person.wz = 0;
+tmp_person.act_wx = 97.31637532143606;
+tmp_person.act_wy = -37.0096457755983;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 32.02862065587664;
+tmp_person.hover_icon_wy = 32.00000001990486;
+tmp_person.animcycle_id = "wildlife_fox";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+]];
+

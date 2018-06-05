@@ -1,0 +1,21 @@
+tmp_entry.ww = 40;
+tmp_entry.wh = 34.999999999999986;
+tmp_entry.wx = -389;
+tmp_entry.wy = 223.5;
+tmp_entry.wz = 100;
+tmp_entry.page = 4;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.entry.directory.closeup.archivist",
+]];
+

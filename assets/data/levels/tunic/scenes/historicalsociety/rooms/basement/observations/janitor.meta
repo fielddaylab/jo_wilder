@@ -30,6 +30,6 @@ tmp_observation.notice_reqs = [[
 tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.historicalsociety.basement.gramps.whatdo",
+"!tunic.capitol.hall.chapter3",
 ]];
 

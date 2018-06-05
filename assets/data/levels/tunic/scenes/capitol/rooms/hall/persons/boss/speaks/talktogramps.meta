@@ -14,6 +14,7 @@ tmp_speak.reqs = [[
 "tunic.capitol.hall.chap1_finale",
 "!tunic.historicalsociety.closet_dirty",
 ]];
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -15.24765102218548;
 tmp_speak_command.wy = 334.4654377906537;
@@ -21,9 +22,12 @@ tmp_speak_command.w = 177.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "You better get to work. The exhibit opens tonight!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -230.39742081960944;
 tmp_speak_command.wy = 337.49574082095677;
@@ -31,6 +35,8 @@ tmp_speak_command.w = 321.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
 tmp_speak_command.raw_atext = "Your grampa's waiting for you in his office.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);

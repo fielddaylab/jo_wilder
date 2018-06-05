@@ -3,7 +3,7 @@ tmp_room.ww = 1250;
 tmp_room.wh = 680;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
-tmp_room.animcycle_id = "scene_flaghouse";
+tmp_room.animcycle_id = "room_flaghouse";
 tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];

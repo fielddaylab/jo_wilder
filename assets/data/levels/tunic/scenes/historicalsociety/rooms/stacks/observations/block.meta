@@ -13,17 +13,24 @@ tmp_observation.hover_cursor_animcycle_id = "null";
 tmp_observation.hover_icon_animcycle_id = "null";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
 tmp_observation.raw_text = "The archivist said I should look in the stacks.";
 tmp_observation.blip_wx = 58.46382852368461;
 tmp_observation.blip_wy = -56.114534801898216;
 tmp_observation.blip_w = 229;
 tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
 ];
 tmp_observation.notice_reqs = [[
 ]];
+tmp_observation.notification_reqs = [[
+]];
 tmp_observation.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist_2.newspaper",
+"tunic.historicalsociety.frontdesk.archivist.newspaper",
 "!tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 

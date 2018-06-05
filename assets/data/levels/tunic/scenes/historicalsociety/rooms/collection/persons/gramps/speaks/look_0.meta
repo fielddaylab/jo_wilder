@@ -13,7 +13,7 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",
 ]];
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -385.70489402293197;
 tmp_speak_command.wy = 278.5111931068908;

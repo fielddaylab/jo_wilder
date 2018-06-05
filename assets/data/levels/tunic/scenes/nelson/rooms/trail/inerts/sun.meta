@@ -1,0 +1,12 @@
+tmp_inert.ww = 314.77272727272685;
+tmp_inert.wh = 4804.545454545458;
+tmp_inert.wx = -1286.681818181819;
+tmp_inert.wy = -3055.1590909090937;
+tmp_inert.wz = 2;
+tmp_inert.g = -2.25;
+tmp_inert.animcycle_id = "scene_trail_sun";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

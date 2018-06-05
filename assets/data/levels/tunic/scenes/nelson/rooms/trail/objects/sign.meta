@@ -1,0 +1,32 @@
+tmp_object.ww = 284.0909090909092;
+tmp_object.wh = 171.5909090909091;
+tmp_object.wx = 1335.3863636363635;
+tmp_object.wy = -13;
+tmp_object.wz = 0;
+tmp_object.act_wx = -184.0909090909091;
+tmp_object.act_wy = -61.36363636363636;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = -178.97727272727272;
+tmp_object.hover_icon_wy = -71.5909090909091;
+tmp_object.animcycle_id = "nelson_sign";
+tmp_object.hover_cursor_animcycle_id = "null";
+tmp_object.hover_icon_animcycle_id = "null";
+tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 0;
+tmp_object.raw_notifications = [
+];
+tmp_object.raw_notification_ws = [
+];
+tmp_object.notification_reqs = [[
+]];
+tmp_object.view_overlay_reqs = [[
+]];
+tmp_object.notice_reqs = [[
+]];
+tmp_object.reqs = [[
+]];
+

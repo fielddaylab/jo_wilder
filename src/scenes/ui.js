@@ -1859,11 +1859,11 @@ var notebookview = function()
       entry = self.cache_available_entrys[i];
       if(entry.page == self.page)
       {
+        if(!entry.hoverexpand) entry.hoverexpand = 0;
+        if(entry.hovering) entry.hoverexpand = min(1,entry.hoverexpand+0.1);
+        else               entry.hoverexpand = max(0,entry.hoverexpand-0.1);
         if(entry.hoverexpand)
-        {
           ctx.drawImage(entry.animcycle_inst.img,entry.x-entry.hoverexpand*10,entry.y+yoff-entry.hoverexpand*10,entry.w+entry.hoverexpand*20,entry.h+entry.hoverexpand*20);
-          entry.hoverexpand = max(0,entry.hoverexpand-0.1);
-        }
         else
           ctx.drawImage(entry.animcycle_inst.img,entry.x,entry.y+yoff,entry.w,entry.h);
       }
@@ -2269,6 +2269,7 @@ var objectview = function()
         if(zone.notifications.length && queryreqs(zone, zone.notification_reqs)) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
+        if(zone.target_view == "null") zone.target_view = old_view.id;
         self.cur_view.met = true;
         var old_view = self.cur_view;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);

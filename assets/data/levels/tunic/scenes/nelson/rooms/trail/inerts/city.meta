@@ -1,0 +1,12 @@
+tmp_inert.ww = 1470.454545454546;
+tmp_inert.wh = 212.50000000000003;
+tmp_inert.wx = -1138.0456765419779;
+tmp_inert.wy = 289.25000000003985;
+tmp_inert.wz = 1;
+tmp_inert.g = -0.8;
+tmp_inert.animcycle_id = "scene_trail_city";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

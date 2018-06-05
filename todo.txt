@@ -59,3 +59,38 @@ archivist_2 convo wobbles between teddy drama and "I like suffragists" weirdly
 need archivist_2 "I found it!" after you've _been_ to the stacks
 literally no direction to capitol when we need it
 
+entry_scratches elevator scratches
+entry_teddyfound found teddy
+entry_glasses glasses
+entry_quest_checkstaff check staff dir
+entry_quest_checkstaff_x
+entry_staffdir glasses match archivist
+entry_quest_backbacktoarchivist go to archives
+entry_quest_backbacktoarchivist_x
+entry_key found key
+entry_teddyfree set teddy free
+entry_flag figure out flag
+entry_wellshoof wells' theory: deer hoof
+entry_quest_dnr go to dnr
+entry_quest_dnr_x
+entry_tracks deer tracks don't match
+entry_littering people litter
+entry_quest_flaglady go talk to flag
+entry_quest_flaglady_x
+entry_green green = nature
+entry_theta theta = death
+entry_flagguess flag expert thinks environmentalism
+entry_quest_backtolibrary go to library
+entry_quest_backtolibrary_x
+entry_nelson gov nelson started earth day
+entry_quest_backbackbacktoarchivist go to archives
+entry_quest_backbackbacktoarchivist_x
+entry_mugs everyone should bring mugs
+entry_grampscleaners grampa skipped work to go to cleaners
+entry_nelsonphoto gov nelson photo
+entry_quest_nelsonstatepark go to gov nelson state park
+entry_quest_nelsonstatepark_x
+entry_ecoflag ecology flag
+entry_quest_toend go to cap
+entry_quest_toend_x
+
