@@ -5,6 +5,11 @@ tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 124.2914274419755;
 tmp_level.avatar_wh = 227.18935293838604;
+tmp_level.familiar_walk_animcycle_id = "familiar_walk";
+tmp_level.familiar_idle_animcycle_id = "familiar_idle";
+tmp_level.familiar_act_animcycle_id = "familiar_act";
+tmp_level.familiar_ww = 124.2914274419755;
+tmp_level.familiar_wh = 227.18935293838604;
 tmp_level.exit_animcycle_id = "exit";
 tmp_level.toolbar_animcycle_id = "null";
 tmp_level.toolbar_audio_id = "null";
@@ -40,5 +45,7 @@ tmp_level.notebook_reqs = [[
 "tunic.historicalsociety.closet.notebook",
 ]];
 tmp_level.map_reqs = [[
+]];
+tmp_level.familiar_reqs = [[
 ]];
 

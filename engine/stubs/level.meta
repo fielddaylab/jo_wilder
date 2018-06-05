@@ -5,6 +5,11 @@ tmp_level.avatar_idle_animcycle_id = "null";
 tmp_level.avatar_act_animcycle_id = "null";
 tmp_level.avatar_ww = 1;
 tmp_level.avatar_wh = 1;
+tmp_level.familiar_walk_animcycle_id = "null";
+tmp_level.familiar_idle_animcycle_id = "null";
+tmp_level.familiar_act_animcycle_id = "null";
+tmp_level.familiar_ww = 1;
+tmp_level.familiar_wh = 1;
 tmp_level.exit_animcycle_id = "null";
 tmp_level.toolbar_animcycle_id = "null";
 tmp_level.toolbar_audio_id = "null";
@@ -37,5 +42,6 @@ tmp_level.notebook_reqs = [[
 ]];
 tmp_level.map_reqs = [[
 ]];
-
+tmp_level.familiar_reqs = [[
+]];
 
