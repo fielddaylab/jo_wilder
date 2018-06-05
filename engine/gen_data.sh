@@ -470,6 +470,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_person.fqid = \"$level_id.$scene_id.$room_id.$person_id\";" >> $OUT
           echo "{" >> $OUT
           cat $person >> $OUT
+          echo "if(tmp_person.ww < 0) { tmp_person.ww *= -1; tmp_person.flip = 1; }" >> $OUT
           echo "tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_person.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_person.hover_cursor_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_person.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_person.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
@@ -540,6 +541,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_object.fqid = \"$level_id.$scene_id.$room_id.$object_id\";" >> $OUT
           echo "{" >> $OUT
           cat $object >> $OUT
+          echo "if(tmp_object.ww < 0) { tmp_object.ww *= -1; tmp_object.flip = 1; }" >> $OUT
           echo "tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);" >> $OUT
           echo "tmp_object.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_object.hover_icon_animcycle_id,tmp_level.animcycles);" >> $OUT
@@ -685,6 +687,7 @@ if [ $NOGEN == "0" ]; then
           echo "tmp_inert.fqid = \"$level_id.$scene_id.$room_id.$inert_id\";" >> $OUT
           echo "{" >> $OUT
           cat $inert >> $OUT
+          echo "if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }" >> $OUT
           echo "tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);" >> $OUT
 
           echo "}" >> $OUT
