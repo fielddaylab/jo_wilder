@@ -3649,7 +3649,7 @@ var cutsceneview = function()
           if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = c.wx;
           if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = c.wy;
           if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = c.wz;
-          if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+          if(c.ww != CUTSCENE_COMMAND_IGNORE) { e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0; }
           if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = c.wh;
           if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = c.a;
         }
@@ -3832,7 +3832,7 @@ var cutsceneview = function()
         if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = lerp(c.from_wx,c.wx,t);
         if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = lerp(c.from_wy,c.wy,t);
         if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = lerp(c.from_wz,c.wz,t);
-        if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = lerp(c.from_ww,c.ww,t); if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+        if(c.ww != CUTSCENE_COMMAND_IGNORE) { e.ww = lerp(c.from_ww,c.ww,t); if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0; }
         if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
         if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = lerp(c.from_a,c.a,t);
         if(t == 1)

@@ -33,7 +33,7 @@ tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 124.2914274419755;
 tmp_level.avatar_wh = 227.18935293838604;
-tmp_level.familiar_walk_animcycle_id = "gramps_walk";
+tmp_level.familiar_walk_animcycle_id = "avatar_walk";
 tmp_level.familiar_idle_animcycle_id = "avatar_idle";
 tmp_level.familiar_act_animcycle_id = "avatar_act";
 tmp_level.familiar_ww = 124.2914274419755;
@@ -17197,6 +17197,15 @@ tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.ww = -100;
+tmp_cutscene_command.t = 1;
+tmp_cutscene_command.end_t = 2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
