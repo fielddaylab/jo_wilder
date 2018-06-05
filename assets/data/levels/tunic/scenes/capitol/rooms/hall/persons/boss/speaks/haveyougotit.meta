@@ -21,7 +21,7 @@ tmp_speak_command.w = 99.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Jolie! I was hoping you'd stop by soon.";
+tmp_speak_command.raw_atext = "Jolie! I was hoping you'd stop by. Any news on the shirt artifact?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -32,18 +32,7 @@ tmp_speak_command.w = 99.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "Have you found anything regarding the shirt artifact?"
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 344.34152276734835;
-tmp_speak_command.wy = 289.85151664245063;
-tmp_speak_command.w = 99.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "I'm haven't quite figured it out just yet..."
+tmp_speak_command.raw_atext = "Um...not quite yet."
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -54,7 +43,7 @@ tmp_speak_command.w = 99.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.raw_atext = "We need to have this exhibit ready! Get on it!"
+tmp_speak_command.raw_atext = "Well, get on it. I'm counting on you and your gramps to figure this out!"
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -40,19 +40,6 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -202.13177165472257;
-tmp_speak_command.wy = 309.39453402786074;
-tmp_speak_command.w = 137;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Aha! Did you find something?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-//
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 6.959137436186538;
 tmp_speak_command.wy = 330.606655239982;
 tmp_speak_command.w = 159;
@@ -61,7 +48,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "What are you two talking about?";
+tmp_speak_command.raw_atext = "What are you talking about?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 //

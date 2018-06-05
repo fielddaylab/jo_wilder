@@ -136,7 +136,7 @@ tmp_cutscene_command.wx = -7.515151515151473;
 tmp_cutscene_command.wy = 333.6969696969697;
 tmp_cutscene_command.w = 172;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie! I was hoping you'd stop by soon-";
+tmp_cutscene_command.raw_text = "Jolie! Any news?";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -172,7 +172,7 @@ tmp_cutscene_command.wx = 53.09090909090915;
 tmp_cutscene_command.wy = 332.1818181818182;
 tmp_cutscene_command.w = 130;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "What are you talking about?";
+tmp_cutscene_command.raw_text = "Who on earth is Teddy?";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -229,7 +229,7 @@ tmp_cutscene_command.wx = 147.030303030303;
 tmp_cutscene_command.wy = 345.8181818181818;
 tmp_cutscene_command.w = 91;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Sorry for the delay-";
+tmp_cutscene_command.raw_text = "Sorry for the delay, Boss.";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -241,7 +241,7 @@ tmp_cutscene_command.wx = 153.09090909090918;
 tmp_cutscene_command.wy = 345.81818181818187;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "There was a bit of a... situation... in my office";
+tmp_cutscene_command.raw_text = "There was a bit of a...situation...in my office.";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -277,7 +277,7 @@ tmp_cutscene_command.wx = 147.030303030303;
 tmp_cutscene_command.wy = 300.36363636363626;
 tmp_cutscene_command.w = 136;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Woah there, Jo.";
+tmp_cutscene_command.raw_text = "Whoa there, Jo.";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -301,7 +301,7 @@ tmp_cutscene_command.wx = 148.54545454545448;
 tmp_cutscene_command.wy = 341.27272727272725;
 tmp_cutscene_command.w = 237;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I overheard you had found something about the shirt?";
+tmp_cutscene_command.raw_text = "Did you figure out the shirt artifact?";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -310,7 +310,7 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "chap2_finale";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = 51;
-tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene.commands.push(tmp_cutscene_command); 
 //
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
@@ -320,7 +320,7 @@ tmp_cutscene_command.wx = -296.9090909090909;
 tmp_cutscene_command.wy = 292.7878787878787;
 tmp_cutscene_command.w = 237;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I'm so proud of you, Jolie!";
+tmp_cutscene_command.raw_text = "I knew you could do it, Jolie!";
 tmp_cutscene_command.t = 52;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
@@ -344,7 +344,7 @@ tmp_cutscene_command.wx = -254.4848484848485;
 tmp_cutscene_command.wy = 117.03030303030292;
 tmp_cutscene_command.w = 137;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I also know who stole teddy!";
+tmp_cutscene_command.raw_text = "I also know who stole Teddy!";
 tmp_cutscene_command.t = 52;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //
