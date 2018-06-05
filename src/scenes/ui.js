@@ -818,25 +818,35 @@ var familiar = function()
     var hug_dist = 100;
     var stable_dist = 200;
 
-    var wdx = my_avatar.wx-self.wx;
-    var wdy = my_avatar.wy-self.wy;
+    var wdx = my_avatar.wx+cur_level.familiar_off_wx-self.wx;
+    var wdy = my_avatar.wy+cur_level.familiar_off_wy-self.wy;
     if(self.state == FAMILIAR_WALK)
     {
-           if(wdx >  hug_dist) wdx -= hug_dist;
-      else if(wdx < -hug_dist) wdx += hug_dist;
-      else wdx = 0;
-           if(wdy >  hug_dist) wdy -= hug_dist;
-      else if(wdy < -hug_dist) wdy += hug_dist;
-      else wdy = 0;
+      var l = sqrt(wdx*wdx+wdy+wdy);
+      if(l > hug_dist)
+      {
+        wdx = wdx/l*hug_dist;
+        wdy = wdy/l*hug_dist;
+      }
+      else
+      {
+        wdx = 0;
+        wdy = 0;
+      }
     }
     else
     {
-           if(wdx >  stable_dist) wdx -= stable_dist;
-      else if(wdx < -stable_dist) wdx += stable_dist;
-      else wdx = 0;
-           if(wdy >  stable_dist) wdy -= stable_dist;
-      else if(wdy < -stable_dist) wdy += stable_dist;
-      else wdy = 0;
+      var l = sqrt(wdx*wdx+wdy+wdy);
+      if(l > stable_dist)
+      {
+        wdx = wdx/l*stable_dist;
+        wdy = wdy/l*stable_dist;
+      }
+      else
+      {
+        wdx = 0;
+        wdy = 0;
+      }
     }
     var wd = wdx*wdx+wdy*wdy;
     if(wdx >  speed) wdx =  speed;
@@ -2307,7 +2317,7 @@ var notificationview = function()
       if(!self.nv.c.raw_notification_ws) self.nv.c.raw_notification_ws = [];
       self.nv.c.raw_notification_ws[self.nv.c_note_i] = self.w;
       self.nv.note_ws[self.nv.note_i] = self.w;
-      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.note_i], self.w);
+      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.c_note_i], self.w);
     }
   })();
   self.dragStart = function(evt)
