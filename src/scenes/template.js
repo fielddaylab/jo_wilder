@@ -328,6 +328,11 @@ var level = function()
   self.avatar_act_animcycle_id = "null";
   self.avatar_ww = 0;
   self.avatar_wh = 0;
+  self.familiar_walk_animcycle_id = "null";
+  self.familiar_idle_animcycle_id = "null";
+  self.familiar_act_animcycle_id = "null";
+  self.familiar_ww = 0;
+  self.familiar_wh = 0;
   self.exit_animcycle_id = "null";
   self.toolbar_animcycle_id = "null";
   self.toolbar_audio_id = "null";
@@ -360,6 +365,7 @@ var level = function()
   self.reqs = [[]];
   self.notebook_reqs = [[]];
   self.map_reqs = [[]];
+  self.familiar_reqs = [[]];
   //
   self.available = false;
   self.met = false;
@@ -1114,6 +1120,11 @@ var print_level_meta = function(l)
   "tmp_level.avatar_act_animcycle_id = \""+l.avatar_act_animcycle_id+"\";\n"+
   "tmp_level.avatar_ww = "+l.avatar_ww+";\n"+
   "tmp_level.avatar_wh = "+l.avatar_wh+";\n"+
+  "tmp_level.familiar_walk_animcycle_id = \""+l.familiar_walk_animcycle_id+"\";\n"+
+  "tmp_level.familiar_idle_animcycle_id = \""+l.familiar_idle_animcycle_id+"\";\n"+
+  "tmp_level.familiar_act_animcycle_id = \""+l.familiar_act_animcycle_id+"\";\n"+
+  "tmp_level.familiar_ww = "+l.familiar_ww+";\n"+
+  "tmp_level.familiar_wh = "+l.familiar_wh+";\n"+
   "tmp_level.exit_animcycle_id = \""+l.exit_animcycle_id+"\";\n"+
   "tmp_level.toolbar_animcycle_id = \""+l.toolbar_animcycle_id+"\";\n"+
   "tmp_level.toolbar_audio_id = \""+l.toolbar_audio_id+"\";\n"+
@@ -1148,7 +1159,8 @@ var print_level_meta = function(l)
   "tmp_level.notification_reqs = "+get_requirements_string(l.notification_reqs)+
   "tmp_level.reqs = "+get_requirements_string(l.reqs)+
   "tmp_level.notebook_reqs = "+get_requirements_string(l.notebook_reqs)+
-  "tmp_level.map_reqs = "+get_requirements_string(l.map_reqs);
+  "tmp_level.map_reqs = "+get_requirements_string(l.map_reqs)+
+  "tmp_level.familiar_reqs = "+get_requirements_string(l.familiar_reqs);
   console.log(str);
 }
 

@@ -33,22 +33,8 @@ tmp_speak_command.w = 363.00000181982193;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "He was looking for a number for a taxidermist. Seemed rather stressed out.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command.raw_atext = "He was looking for a taxidermist. Seemed rather stressed out.";
 
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -357.06324225332736;
-tmp_speak_command.wy = 340.0086856311185;
-tmp_speak_command.w = 481.00000181982193;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Poor guy...sounds like the boss isn't too happy with him.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -72,9 +58,18 @@ tmp_speak_command.w = 308.00000181982193;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Here, let me look it up. \"Taxidermy: the art of preparing, stuffing, and mounting the skins of animals.\"";
+tmp_speak_command.raw_atext = "Here, let me look it up.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -366.1844530287872;
+tmp_speak_command.wy = 351.7359583498967;
+tmp_speak_command.w = 212.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "\"Taxidermy: the art of preparing, stuffing, and mounting the skins of animals.\"";
+
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -91,3 +86,25 @@ tmp_speak_command.raw_atext = "Oh no...Teddy!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -271.0632409075751;
+tmp_speak_command.wy = 183.64504925898763;
+tmp_speak_command.w = 133.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I need to find Wells. Do you know where he is?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -366.1844530287872;
+tmp_speak_command.wy = 351.7359583498967;
+tmp_speak_command.w = 212.0000018198219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.raw_atext = "I think he's friends with the archivist. You could try him.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);

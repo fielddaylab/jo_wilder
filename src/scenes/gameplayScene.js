@@ -101,6 +101,9 @@ var GamePlayScene = function(game, stage)
     my_avatar = new avatar();
     my_avatar.consume_level(cur_level);
     my_avatar.consume_room(cur_room);
+    my_familiar = new familiar();
+    my_familiar.consume_level(cur_level);
+    my_familiar.consume_room(cur_room);
     my_toolbar = new toolbar();
     my_toolbar.consume_level(cur_level);
     my_mapview = new mapview();
@@ -227,6 +230,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         //my_navigable.trigger_cutscenes();
         my_toolbar.tick();
         break;
@@ -251,6 +255,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         my_mapview.tick();
         break;
       case STATE_NOTEBOOK:
@@ -274,6 +279,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         my_notebookview.tick();
         break;
       case STATE_PERSON:
@@ -297,6 +303,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         my_personview.tick();
         break;
       case STATE_OBJECT:
@@ -320,6 +327,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         my_objectview.tick();
         break;
       case STATE_OBSERVATION:
@@ -342,6 +350,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         my_observationview.tick();
         break;
       case STATE_WILDCARD:
@@ -364,6 +373,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         my_wildcardview.tick();
         break;
       case STATE_CUTSCENE:
@@ -386,6 +396,7 @@ var GamePlayScene = function(game, stage)
         }
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         //my_cutsceneview.tick(); //will tick because of stack
         break;
       case STATE_TRANSITION:
@@ -479,6 +490,7 @@ var GamePlayScene = function(game, stage)
       case STATE_CUTSCENE:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         if(state_from == STATE_NAV && state_to == STATE_NAV)
         {
           state_t += state_t_speed;
@@ -492,6 +504,8 @@ var GamePlayScene = function(game, stage)
               my_navigable.consume_room(cur_room);
               my_avatar.consume_room(cur_room);
               my_avatar.from_porthole(cur_act);
+              my_familiar.consume_room(cur_room);
+              my_familiar.from_porthole(cur_act);
               cur_act = 0;
             }
             else if(old_state_t == 0.5)
@@ -546,6 +560,7 @@ var GamePlayScene = function(game, stage)
       case STATE_MAP:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         if(state_to == STATE_NAV && (my_mapview.selected_scene && my_mapview.selected_scene != cur_scene) || old_state_t >= 0.5)
         {
           state_t += state_t_speed;
@@ -559,6 +574,7 @@ var GamePlayScene = function(game, stage)
             my_loader.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
             my_avatar.consume_room(cur_room);
+            my_familiar.consume_room(cur_room);
             cur_act = 0;
           }
           else if(old_state_t == 0.5)
@@ -572,11 +588,13 @@ var GamePlayScene = function(game, stage)
       case STATE_NOTEBOOK:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         state_t += state_t_speed;
         break;
       case STATE_PERSON:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         state_t += state_t_speed;
         if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
           my_navigable.trigger_cutscenes();
@@ -584,6 +602,7 @@ var GamePlayScene = function(game, stage)
       case STATE_OBJECT:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         state_t += state_t_speed;
         if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
           my_navigable.trigger_cutscenes();
@@ -591,6 +610,7 @@ var GamePlayScene = function(game, stage)
       case STATE_OBSERVATION:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         state_t += state_t_speed;
         if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
           my_navigable.trigger_cutscenes();
@@ -598,6 +618,7 @@ var GamePlayScene = function(game, stage)
       case STATE_WILDCARD:
         my_navigable.tick();
         my_avatar.tick();
+        my_familiar.tick();
         state_t += state_t_speed;
         if(old_state_t < 0.5 && state_t >= 0.5) //ended fadeout
           my_navigable.trigger_cutscenes();
