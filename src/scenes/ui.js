@@ -2073,7 +2073,7 @@ var notebookview = function()
       if(queryreqs(0, save_table[save_codes[save_codes.length-1-i]].reqs))
         self.current_code = save_codes[save_codes.length-1-i];
     }
-    setCookie("save", self.current_code, 10);
+    setCookie("save", get_save_code(), 10);
   }
 
   //DRAG DEBUG EDIT STUFF

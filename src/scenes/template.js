@@ -224,6 +224,13 @@ var get_save_code = function()
 {
   var s = new save_slate();
   s.gen_slate(cur_level);
+  return s.code();
+}
+
+var print_save_code = function()
+{
+  var s = new save_slate();
+  s.gen_slate(cur_level);
 
   var code = "startgame";
   if(my_notebookview && my_notebookview.current_code)
@@ -257,6 +264,7 @@ var get_save_code = function()
   console.log(str);
   console.log(s.code());
   console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+s.code());
+  return s.code();
 }
 
 var load_save_code = function(code)

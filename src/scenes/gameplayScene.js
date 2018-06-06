@@ -122,7 +122,7 @@ var GamePlayScene = function(game, stage)
     {
       if(evt.key == " ") print_whole_level(cur_level,false);
       if(evt.key == "f") print_whole_level(cur_level,true);
-      if(evt.key == "c") get_save_code();
+      if(evt.key == "c") print_save_code();
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "t") DOUBLETIME = !DOUBLETIME;
