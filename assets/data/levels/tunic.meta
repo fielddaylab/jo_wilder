@@ -49,4 +49,5 @@ tmp_level.notebook_reqs = [[
 tmp_level.map_reqs = [[
 ]];
 tmp_level.familiar_reqs = [[
+"tunic.historicalsociety.cage.unlockdoor",
 ]];

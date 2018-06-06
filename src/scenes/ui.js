@@ -671,6 +671,7 @@ var familiar = function()
   self.w = 0;
   self.h = 0;
 
+  self.available = 0;
   self.shade = 0;
 
   self.state = FAMILIAR_IDLE;
@@ -1162,6 +1163,9 @@ var navigable = function()
     else
     { var j = 0; while(j < self.cache_available_drawables.length    && self.cache_available_inerts[i].wz >= self.cache_available_drawables[j].wz)    j++; self.cache_available_drawables.splice(j,0,self.cache_available_inerts[i]); }
     }
+
+    //familiar
+    my_familiar.available = queryreqs(0,cur_level.familiar_reqs);
   }
 
   self.trigger_cutscenes = function()
@@ -1655,7 +1659,7 @@ var navigable = function()
     var i = 0;
     for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
       draw_junk(self.cache_available_drawables[i]);
-    my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+    if(my_familiar.available) my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     for(; i < self.cache_available_drawables.length; i++)
       draw_junk(self.cache_available_drawables[i]);

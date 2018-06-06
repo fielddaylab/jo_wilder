@@ -6,8 +6,8 @@ tmp_person.wz = 0;
 tmp_person.act_wx = -117.78080216269593;
 tmp_person.act_wy = 0.0022168893366714465;
 tmp_person.act_anim = 0;
-tmp_person.hover_icon_wx = 36.985846856688326;
-tmp_person.hover_icon_wy = -15.878822293344097;
+tmp_person.hover_icon_wx = 36.48788766557281;
+tmp_person.hover_icon_wy = 24.359381199249835;
 tmp_person.animcycle_id = "glasses";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "null";
@@ -28,5 +28,6 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
+"!tunic.historicalsociety.cage.glasses.afterteddy"
 ]];
 
