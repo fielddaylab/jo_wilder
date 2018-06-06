@@ -3927,9 +3927,14 @@ var cutsceneview = function()
     {
       var entity = self.cutscene_entitys[i];
       screenSpace(my_camera,canv,entity);
-      if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
-      if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
-      ctx.globalAlpha = 1;
+      if(entity.a != CUTSCENE_COMMAND_IGNORE)
+      {
+        ctx.globalAlpha = entity.a;
+        if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+        ctx.globalAlpha = 1;
+      }
+      else
+        ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
     }
 
     for(var i = 0; i < self.running_commands.length; i++)
@@ -4003,7 +4008,12 @@ var cutsceneview = function()
           }
         }
       }
+
+      ctx.strokeStyle = magenta;
+      for(var i = 0; i < self.cutscene_entitys.length; i++)
+        strokeBox(self.cutscene_entitys[i],ctx);
     }
+
   }
 
   //playback vars
