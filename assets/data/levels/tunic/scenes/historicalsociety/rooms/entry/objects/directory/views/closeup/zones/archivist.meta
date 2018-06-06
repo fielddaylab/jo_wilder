@@ -13,6 +13,8 @@ tmp_zone.raw_notifications = [
 "The archivist must be the badger-napper!",
 ];
 tmp_zone.raw_notification_ws = [
+234,
+190,
 ];
 tmp_zone.notification_reqs = [[
 ]];
