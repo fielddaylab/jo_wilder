@@ -154,7 +154,7 @@ code:"00000000600000000000000000060800737242193856105164800000000000000000114800
 save_codes.push("notajersey");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 ],],
 all:
 [
@@ -166,7 +166,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
 "tunic.historicalsociety.basement.janitor",
@@ -219,7 +219,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
 "tunic.historicalsociety.basement.janitor",
@@ -274,7 +274,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
 "tunic.historicalsociety.basement.janitor",
@@ -342,7 +342,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
 "tunic.historicalsociety.basement.janitor",
@@ -425,7 +425,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
@@ -518,7 +518,7 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
@@ -619,7 +619,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
@@ -725,7 +725,7 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
@@ -832,7 +832,7 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
@@ -948,7 +948,7 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
 "tunic.capitol.hall.chap1_finale",
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
@@ -1052,7 +1052,7 @@ code:"00002082200000000120809000060836126682193912524595283815654191968659366000
 save_codes.push("ch3");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
-"tunic.capitol.hall.chapter3",
+"tunic.capitol.hall.chap2_finale_c",
 ],],
 all:
 [
@@ -1081,8 +1081,8 @@ all:
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
 "tunic.capitol.hall.chap2_teddy_finale",
-"tunic.capitol.hall.chapter2",
-"tunic.capitol.hall.chapter3",
+"tunic.capitol.hall.chap1_finale_c",
+"tunic.capitol.hall.chap2_finale_c",
 "tunic.drycleaner",
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",

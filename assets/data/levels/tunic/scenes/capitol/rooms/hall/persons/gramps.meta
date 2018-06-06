@@ -25,9 +25,9 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
-"!tunic.capitol.hall.chapter2",
+"!tunic.capitol.hall.chap1_finale_c",
 ],[
-"_tunic.capitol.hall.chapter3",
-"!tunic.capitol.hall.chapter3",
+"_tunic.capitol.hall.chap2_finale_c",
+"!tunic.capitol.hall.chap2_finale_c",
 ]];
 

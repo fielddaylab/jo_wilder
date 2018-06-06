@@ -23,6 +23,6 @@ tmp_scene.notice_reqs = [[
 tmp_scene.reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",
 ],[
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 ]];
 
