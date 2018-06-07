@@ -14,67 +14,54 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -305.65847714737777;
-tmp_speak_command.wy = 117.12424391126248;
-tmp_speak_command.w = 167.69814225923324;
+tmp_speak_command.wx = -402.62817411707454;
+tmp_speak_command.wy = 156.51818330520183;
+tmp_speak_command.w = 232.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "It belonged to Theodora Youmans!";
+tmp_speak_command.raw_atext = "It has a great history of being used in protests and other forms of activism.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 109.23988595956929;
-tmp_speak_command.wy = 284.4649575855954;
-tmp_speak_command.w = 96.69814225923326;
+tmp_speak_command.wx = -316.51768979800636;
+tmp_speak_command.wy = 163.2528363734742;
+tmp_speak_command.w = 176.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hmm. That name sounds awfully familiar...";
+tmp_speak_command.raw_atext = "These pictures show students marching on the capitol";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -160.45708373740015;
-tmp_speak_command.wy = 329.9195030401409;
-tmp_speak_command.w = 269.69814225923324;
+tmp_speak_command.wx = -266.2645377534383;
+tmp_speak_command.wy = 71.66969845671689;
+tmp_speak_command.w = 142.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Who is Theodora Youmans?";
+tmp_speak_command.raw_atext = "er, THIS capitol!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -21.06314434346084;
+tmp_speak_command.wy = 332.9498060704439;
+tmp_speak_command.w = 181.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "This is some really great material Jolie!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -261.7190832079838;
-tmp_speak_command.wy = 123.1848499718684;
-tmp_speak_command.w = 138.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "That's the same question I had.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -372.3251438140443;
-tmp_speak_command.wy = 117.12424391126248;
-tmp_speak_command.w = 207.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "So I went to the library to get some answers.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

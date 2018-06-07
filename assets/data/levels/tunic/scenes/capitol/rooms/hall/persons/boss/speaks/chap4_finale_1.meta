@@ -14,41 +14,28 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 13.785340505024063;
-tmp_speak_command.wy = 296.5861697068075;
-tmp_speak_command.w = 152.69814225923326;
+tmp_speak_command.wx = -320.8099922988928;
+tmp_speak_command.wy = 71.66969845671694;
+tmp_speak_command.w = 178.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Okay. What is it?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -420.8099922988928;
-tmp_speak_command.wy = 68.63939542641396;
-tmp_speak_command.w = 243.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "It's a dry cleaner's receipt!";
+tmp_speak_command.raw_atext = "It's an ecology flag!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 26.875430521950108;
-tmp_speak_command.wy = 333.89405624229494;
-tmp_speak_command.w = 148;
+tmp_speak_command.wx = -42.821539175019495;
+tmp_speak_command.wy = 380.8637532119918;
+tmp_speak_command.w = 194;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Oh? How did you figure that out?";
+tmp_speak_command.raw_atext = "Interesting- I wonder who decided we needed an ecology flag...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

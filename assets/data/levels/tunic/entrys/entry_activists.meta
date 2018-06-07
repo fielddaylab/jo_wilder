@@ -4,7 +4,7 @@ tmp_entry.wx = 171.5;
 tmp_entry.wy = 21.00000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_grampscleaners_img";
+tmp_entry.animcycle_id = "entry_activists_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
 ];
@@ -16,6 +16,6 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.library.frontdesk.cleaner.blog",
+"tunic.historicalsociety.frontdesk.archivist.confrontation",
 ]];
 

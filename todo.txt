@@ -77,7 +77,6 @@ entry_tracks deer tracks don't match
 entry_littering people litter
 entry_quest_flaglady go talk to flag
 entry_quest_flaglady_x
-entry_green green = nature
 entry_theta theta = death
 entry_flagguess flag expert thinks environmentalism
 entry_quest_backtolibrary go to library
@@ -86,7 +85,6 @@ entry_nelson gov nelson started earth day
 entry_quest_backbackbacktoarchivist go to archives
 entry_quest_backbackbacktoarchivist_x
 entry_mugs everyone should bring mugs
-entry_grampscleaners grampa skipped work to go to cleaners
 entry_nelsonphoto gov nelson photo
 entry_quest_nelsonstatepark go to gov nelson state park
 entry_quest_nelsonstatepark_x
