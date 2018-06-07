@@ -25104,8 +25104,8 @@ tmp_room.reqs = [[
 //SUGGEST_H:1.0303030303030303
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
-tmp_person.id = "hiker";
-tmp_person.fqid = "tunic.nelson.trail.hiker";
+tmp_person.id = "gramps";
+tmp_person.fqid = "tunic.nelson.trail.gramps";
 {
 tmp_person.ww = 220;
 tmp_person.wh = 327.00000000000006;
@@ -25117,7 +25117,7 @@ tmp_person.act_wy = 0;
 tmp_person.act_anim = 1;
 tmp_person.hover_icon_wx = 0;
 tmp_person.hover_icon_wy = 0;
-tmp_person.animcycle_id = "hiker";
+tmp_person.animcycle_id = "gramps";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.notice_icon_animcycle_id = "null";
@@ -25144,7 +25144,7 @@ tmp_person.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_person.notice_ico
 for(var i = 0; i < tmp_person.raw_notifications.length; i++) tmp_person.notifications[i] = stextToLines(tmp_person.raw_notifications[i], tmp_person.raw_notification_ws[i] ? tmp_person.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_speak = new speak();
 tmp_speak.id = "question";
-tmp_speak.fqid = "tunic.nelson.trail.hiker.question";
+tmp_speak.fqid = "tunic.nelson.trail.gramps.question";
 {
 tmp_speak.primary = false;
 tmp_speak.options_wx = 100;

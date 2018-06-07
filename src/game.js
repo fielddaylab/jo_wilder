@@ -2901,7 +2901,7 @@ code:"0"
 save_codes.push("sunset");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
-"tunic.nelson.trail.hiker.question",
+"tunic.nelson.trail.gramps.question",
 ]],
 all:
 [
@@ -2912,7 +2912,7 @@ code:"0"
 save_codes.push("exhibition");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
-"tunic.nelson.trail.hiker.question",
+"tunic.nelson.trail.gramps.question",
 ]],
 all:
 [
