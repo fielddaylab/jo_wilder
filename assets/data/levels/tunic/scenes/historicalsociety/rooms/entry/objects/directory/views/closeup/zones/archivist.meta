@@ -13,7 +13,7 @@ tmp_zone.raw_notifications = [
 "If the archivist locked up Teddy, he probably has the key!",
 ];
 tmp_zone.raw_notification_ws = [
-234,
+243,
 190,
 ];
 tmp_zone.notification_reqs = [[

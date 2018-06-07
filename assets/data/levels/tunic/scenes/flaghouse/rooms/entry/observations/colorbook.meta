@@ -16,9 +16,9 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "Huh… “The ecology symbol, by Ron Cobb.”";
-tmp_observation.blip_wx = -175.18267115202792;
-tmp_observation.blip_wy = 145.0120956789311;
-tmp_observation.blip_w = 291;
+tmp_observation.blip_wx = -260.395513623895;
+tmp_observation.blip_wy = 104.00897617603255;
+tmp_observation.blip_w = 363;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [

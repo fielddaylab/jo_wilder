@@ -16,9 +16,9 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "It’s locked!";
-tmp_observation.blip_wx = 361.781478538615;
-tmp_observation.blip_wy = 87.8252511694048;
-tmp_observation.blip_w = 176;
+tmp_observation.blip_wx = 382.1923078422531;
+tmp_observation.blip_wy = 35.85644414725577;
+tmp_observation.blip_w = 108;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
