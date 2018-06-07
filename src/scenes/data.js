@@ -91,36 +91,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/../assets/data/levels/tunic/animcycles/archivephotos1/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivephotos1/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -7506,7 +7477,7 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "chap2_finale";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.t = 51;
-tmp_cutscene.commands.push(tmp_cutscene_command);
+tmp_cutscene.commands.push(tmp_cutscene_command); 
 //
 
 tmp_cutscene_command = new cutscene_command();
@@ -27502,3 +27473,4 @@ levels.push(tmp_level);
     }
   }
 }
+
