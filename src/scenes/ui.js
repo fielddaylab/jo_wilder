@@ -52,6 +52,9 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.avatar_walk_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_idle_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.familiar_walk_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.familiar_idle_animcycle_id,level.animcycles));
+    self.load_animcycle(find_animcycle(level.familiar_act_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.exit_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.toolbar_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.map_animcycle_id,level.animcycles));
@@ -656,6 +659,334 @@ var avatar = function()
   }
 };
 
+var familiar = function()
+{
+  var self = this;
+  self.wx = 0;
+  self.wy = 0;
+  self.ww = 85;
+  self.wh = 200;
+  self.x = 0;
+  self.y = 0;
+  self.w = 0;
+  self.h = 0;
+
+  self.available = 0;
+  self.shade = 0;
+
+  self.state = FAMILIAR_IDLE;
+  self.anim = new animation();
+  self.anim.frame_delay = 10;
+
+  self.idle_animcycle = null_animcycle;
+  self.walk_animcycle = null_animcycle;
+  self.act_animcycle  = null_animcycle;
+
+  self.stack_animcycle_t;
+  self.stack_animcycle_inst;
+
+  self.anim.transition = function()
+  {
+    if(self.anim.anim_queue.length) //has queue
+    {
+      self.anim.cur_anim = self.anim.anim_queue[0];
+      self.anim.anim_queue.splice(0,1);
+      self.anim.cur_anim_i = 0;
+    }
+    else //no queue
+    {
+      switch(self.anim.cur_anim)
+      {
+        case ANIM_IDLE:
+          self.anim.cur_anim_i = 0; //repeat
+        break;
+        case ANIM_WALK:
+          if(self.state != FAMILIAR_WALK) self.anim.cur_anim = ANIM_IDLE;
+          self.anim.cur_anim_i = 0; //idle
+        break;
+        case ANIM_ACT:
+          self.anim.cur_anim = ANIM_IDLE;
+          self.anim.cur_anim_i = 0;
+        break;
+        default:
+          self.anim.cur_anim = ANIM_IDLE; //revert
+          self.anim.cur_anim_i = 0;
+        break;
+      }
+    }
+  }
+
+  self.consume_level = function(level)
+  {
+    self.ww = level.familiar_ww;
+    self.wh = level.familiar_wh;
+
+    self.idle_animcycle = null_animcycle;
+    self.walk_animcycle = null_animcycle;
+    self.act_animcycle  = null_animcycle;
+    for(var i = 0; i < level.animcycles.length; i++)
+    {
+      if(level.animcycles[i].id == level.familiar_idle_animcycle_id) self.idle_animcycle = level.animcycles[i];
+      if(level.animcycles[i].id == level.familiar_walk_animcycle_id) self.walk_animcycle = level.animcycles[i];
+      if(level.animcycles[i].id == level.familiar_act_animcycle_id)  self.act_animcycle  = level.animcycles[i];
+    }
+    self.anim.src = [];
+    for(var i = 0; i < self.idle_animcycle.frames.length; i++) self.anim.src.push(self.idle_animcycle.frames[i]);
+    for(var i = 0; i < self.walk_animcycle.frames.length; i++) self.anim.src.push(self.walk_animcycle.frames[i]);
+    for(var i = 0; i < self.act_animcycle.frames.length; i++)  self.anim.src.push(self.act_animcycle.frames[i]);
+    self.anim.animations[ANIM_NULL] = []; self.anim.animations[ANIM_NULL].push(0);
+    var j = 0;
+    self.anim.animations[ANIM_IDLE] = []; for(var i = j; i < j+self.idle_animcycle.frames.length; i++) self.anim.animations[ANIM_IDLE].push(i);
+    j += self.idle_animcycle.frames.length;
+    self.anim.animations[ANIM_WALK] = []; for(var i = j; i < j+self.walk_animcycle.frames.length; i++) self.anim.animations[ANIM_WALK].push(i);
+    j += self.walk_animcycle.frames.length;
+    self.anim.animations[ANIM_ACT]  = []; for(var i = j; i < j+self.act_animcycle.frames.length; i++)  self.anim.animations[ANIM_ACT].push(i);
+    j += self.act_animcycle.frames.length;
+  }
+
+  self.consume_room = function(room)
+  {
+    my_navigable.wpt_in_navigable(room.target_start_wx,room.target_start_wy,self);
+  }
+
+  self.from_porthole = function(porthole)
+  {
+    my_navigable.wpt_in_navigable(porthole.target_start_wx,porthole.target_start_wy,self);
+  }
+
+  //DRAG DEBUG EDIT STUFF
+  self.edit_cur_dragging = false;
+  self.edit_cur_resizing = false;
+  self.edit_offX;
+  self.edit_offY;
+  self.edit_o = 0;
+  self.dragStart = function(evt)
+  {
+    self.edit_o = self;
+
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    if(self.edit_offX > 0.4*self.edit_o.w && self.edit_offY > 0.4*self.edit_o.h)
+      self.edit_cur_resizing = true
+    else
+      self.edit_cur_dragging = true;
+
+    cur_level.dirty = true;
+  };
+  self.drag = function(evt)
+  {
+    if(!self.edit_o) return;
+    self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
+    self.deltaY = (evt.doY-(self.edit_o.y+(self.edit_o.h/2)))-self.edit_offY;
+
+    if(self.edit_cur_dragging)
+    {
+      self.edit_o.x += self.deltaX;
+      self.edit_o.y += self.deltaY;
+    }
+    else if(self.edit_cur_resizing)
+    {
+      self.edit_o.w += self.deltaX;
+      self.edit_o.h += self.deltaY;
+    }
+
+    self.edit_offX = evt.doX-(self.edit_o.x+(self.edit_o.w/2));
+    self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
+
+    worldSpace(my_camera,canv,self.edit_o);
+    //propagate to level
+    cur_level.familiar_ww = self.edit_o.ww;
+    cur_level.familiar_wh = self.edit_o.wh;
+  };
+  self.dragFinish = function()
+  {
+    self.edit_o = 0;
+    self.edit_cur_dragging = false;
+    self.edit_cur_resizing = false;
+  };
+  //DRAG DEBUG EDIT STUFF END
+
+  self.click = function(evt)
+  {
+
+  }
+
+  self.tick = function()
+  {
+    var speed = walk_speed;
+    var act_dist = 10;
+    var hug_dist = 100;
+    var stable_dist = 200;
+
+    var wdx = my_avatar.wx+cur_level.familiar_off_wx-self.wx;
+    var wdy = my_avatar.wy+cur_level.familiar_off_wy-self.wy;
+    if(self.state == FAMILIAR_WALK)
+    {
+      var l = sqrt(wdx*wdx+wdy+wdy);
+      if(l > hug_dist)
+      {
+        wdx = wdx/l*hug_dist;
+        wdy = wdy/l*hug_dist;
+      }
+      else
+      {
+        wdx = 0;
+        wdy = 0;
+      }
+    }
+    else
+    {
+      var l = sqrt(wdx*wdx+wdy+wdy);
+      if(l > stable_dist)
+      {
+        wdx = wdx/l*stable_dist;
+        wdy = wdy/l*stable_dist;
+      }
+      else
+      {
+        wdx = 0;
+        wdy = 0;
+      }
+    }
+    var wd = wdx*wdx+wdy*wdy;
+    if(wdx >  speed) wdx =  speed;
+    if(wdx < -speed) wdx = -speed;
+    if(wdy >  speed) wdy =  speed;
+    if(wdy < -speed) wdy = -speed;
+    if(wdx > 0) self.anim.flip = 0;
+    if(wdx < 0) self.anim.flip = 1;
+
+    if(!DEBUG || !my_keyable.e)
+    {
+      self.wx += wdx;
+      self.wy += wdy;
+    }
+
+    switch(self.anim.cur_anim)
+    {
+      case ANIM_IDLE: self.anim.frame_delay = self.idle_animcycle.frame_t; break;
+      case ANIM_WALK: self.anim.frame_delay = self.walk_animcycle.frame_t; break;
+      case ANIM_ACT:  self.anim.frame_delay = self.act_animcycle.frame_t;  break;
+    }
+
+    if(wd > act_dist)
+    {
+      if(self.state != FAMILIAR_WALK)
+        self.anim.swapAnim(ANIM_WALK);
+      self.state = FAMILIAR_WALK;
+    }
+    else if(wd <= act_dist)
+    {
+      if(my_navigable.selected_act)
+      {
+        if(my_familiar.state != FAMILIAR_ACT)
+        {
+          my_familiar.state = FAMILIAR_ACT;
+          my_familiar.anim.injectAnim(ANIM_ACT);
+          var dir = my_navigable.selected_act.wx - self.wx;
+               if(dir >  2) self.anim.flip = 0;
+          else if(dir < -2) self.anim.flip = 1;
+
+          if(!my_navigable.selected_act.act_anim) self.anim.transition();
+        }
+      }
+      else
+      {
+        my_familiar.state = FAMILIAR_IDLE;
+        if(my_familiar.anim.cur_anim != FAMILIAR_IDLE) my_familiar.anim.injectAnim(ANIM_IDLE);
+      }
+    }
+
+    self.anim.tick();
+    screenSpace(my_camera, canv, self);
+  }
+
+  var shading_canv = GenIcon(canv.width,canv.height);
+  var done = 0;
+  self.draw = function(shading,light_color,shadow_color,ambient_color)
+  {
+    if(QUALITY && false) //&&false disables lighting- mostly unused
+    {
+      self.shade = lerp(self.shade,shading,0.02);
+
+      shading_canv.context.globalCompositeOperation = "source-over";
+      var b = 10;
+      shading_canv.context.clearRect(self.x-b,self.y-b,self.w+2*b,self.h+2*b);
+
+      var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
+      shading_canv.context.save();
+      shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
+      if(self.anim.flip) shading_canv.context.scale(-1,1);
+      if(self.stack_animcycle_t)
+      {
+        shading_canv.context.drawImage(self.stack_animcycle_inst.img,-self.w/2,-self.h/2,self.w,self.h);
+        self.stack_animcycle_t--;
+      }
+      else
+        shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      shading_canv.context.restore();
+
+      if(self.shade > 0.01)
+      {
+        shading_canv.context.globalAlpha = self.shade;
+        shading_canv.context.fillStyle = light_color;
+        shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+        shading_canv.context.globalAlpha = 1-self.shade;
+      }
+      else if(self.shade < -0.01)
+      {
+        shading_canv.context.globalAlpha = -self.shade;
+        shading_canv.context.fillStyle = shadow_color;
+        shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+        shading_canv.context.globalAlpha = 1+self.shade;
+      }
+      shading_canv.context.fillStyle = ambient_color;
+      shading_canv.context.fillRect(self.x,self.y,self.w,self.h);
+
+      shading_canv.context.globalCompositeOperation = "destination-in";
+      shading_canv.context.globalAlpha = 1;
+      shading_canv.context.save();
+      shading_canv.context.translate(self.x+self.w/2,self.y+self.h/2);
+      if(self.anim.flip) shading_canv.context.scale(-1,1);
+      if(self.stack_animcycle_t)
+      {
+        shading_canv.context.drawImage(self.stack_animcycle_inst.img,-self.w/2,-self.h/2,self.w,self.h);
+        self.stack_animcycle_t--;
+      }
+      else
+        shading_canv.context.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      shading_canv.context.restore();
+
+      ctx.drawImage(shading_canv,self.x,self.y,self.w,self.h,self.x,self.y,self.w,self.h);
+    }
+    else
+    {
+      var img = self.anim.src[self.anim.animations[self.anim.cur_anim][self.anim.cur_anim_i]];
+      ctx.save();
+      ctx.translate(self.x+self.w/2,self.y+self.h/2);
+      if(self.anim.flip) ctx.scale(-1,1);
+      if(self.stack_animcycle_t)
+      {
+        ctx.drawImage(self.stack_animcycle_inst.img,-self.w/2,-self.h/2,self.w,self.h);
+        self.stack_animcycle_t--;
+      }
+      else
+        ctx.drawImage(img,-self.w/2,-self.h/2,self.w,self.h);
+      ctx.restore();
+    }
+
+    if(DEBUG)
+    {
+      ctx.strokeStyle = black;
+      ctx.strokeRect(self.x,self.y,self.w,self.h);
+    }
+  }
+};
+
 var null_audio;
 var get_audio = function(id,audios)
 {
@@ -832,6 +1163,9 @@ var navigable = function()
     else
     { var j = 0; while(j < self.cache_available_drawables.length    && self.cache_available_inerts[i].wz >= self.cache_available_drawables[j].wz)    j++; self.cache_available_drawables.splice(j,0,self.cache_available_inerts[i]); }
     }
+
+    //familiar
+    my_familiar.available = queryreqs(0,cur_level.familiar_reqs);
   }
 
   self.trigger_cutscenes = function()
@@ -1282,6 +1616,28 @@ var navigable = function()
     }
   }
 
+  var draw_junk = function(d)
+  {
+    ctx.save();
+    ctx.translate(d.x+d.w/2,d.y+d.h/2);
+    if(d.flip) ctx.scale(-1,1);
+    if(d.stack_animcycle_t)
+    {
+      ctx.drawImage(d.stack_animcycle_inst.img,-d.w/2,-d.h/2,d.w,d.h);
+      d.stack_animcycle_t--;
+    }
+    else
+      ctx.drawImage(d.animcycle_inst.img,-d.w/2,-d.h/2,d.w,d.h);
+    ctx.restore();
+    if(state_cur == STATE_NAV && d.notice)
+    {
+      hw = cur_level.hover_w/2;
+      hh = cur_level.hover_h/2;
+      d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
+      d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
+      ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
+    }
+  }
   self.draw = function()
   {
     if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_available_bg_drawables.length; i++) { var d = self.cache_available_bg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
@@ -1299,49 +1655,14 @@ var navigable = function()
     drawCanvMaskedImage(self.room.animcycle_inst.img,self.room.x,self.room.y,self.room.w,self.room.h, canv, ctx);
     ctx.globalCompositeOperation = "source-over";
 
-
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
     var i = 0;
-    var d;
     for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
-    {
-      d = self.cache_available_drawables[i];
-      if(d.stack_animcycle_t)
-      {
-        drawImageBox(d.stack_animcycle_inst.img, d, ctx);
-        d.stack_animcycle_t--;
-      }
-      else
-        drawImageBox(d.animcycle_inst.img, d, ctx);
-      if(state_cur == STATE_NAV && d.notice)
-      {
-        hw = cur_level.hover_w/2;
-        hh = cur_level.hover_h/2;
-        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
-        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
-        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
-      }
-    }
+      draw_junk(self.cache_available_drawables[i]);
+    if(my_familiar.available) my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     for(; i < self.cache_available_drawables.length; i++)
-    {
-      d = self.cache_available_drawables[i];
-      if(d.stack_animcycle_t)
-      {
-        drawImageBox(d.stack_animcycle_inst.img, d, ctx);
-        d.stack_animcycle_t--;
-      }
-      else
-        drawImageBox(d.animcycle_inst.img, d, ctx);
-      if(state_cur == STATE_NAV && d.notice)
-      {
-        hw = cur_level.hover_w/2;
-        hh = cur_level.hover_h/2;
-        d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
-        d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
-        ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
-      }
-    }
+      draw_junk(self.cache_available_drawables[i]);
 
     if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_available_fg_drawables.length; i++) { var d = self.cache_available_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
 
@@ -1756,7 +2077,7 @@ var notebookview = function()
       if(queryreqs(0, save_table[save_codes[save_codes.length-1-i]].reqs))
         self.current_code = save_codes[save_codes.length-1-i];
     }
-    setCookie("save", self.current_code, 10);
+    setCookie("save", get_save_code(), 10);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -1989,7 +2310,7 @@ var notificationview = function()
       if(!self.nv.c.raw_notification_ws) self.nv.c.raw_notification_ws = [];
       self.nv.c.raw_notification_ws[self.nv.c_note_i] = self.w;
       self.nv.note_ws[self.nv.note_i] = self.w;
-      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.note_i], self.w);
+      self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.c_note_i], self.w);
     }
   })();
   self.dragStart = function(evt)
@@ -3201,6 +3522,8 @@ var cutsceneview = function()
         return my_camera;
       case CUTSCENE_ENTITY_AVATAR:
         return my_avatar;
+      case CUTSCENE_ENTITY_FAMILIAR:
+        return my_familiar;
       case CUTSCENE_ENTITY_SCENE:
         for(var i = 0; i < cur_room.persons.length; i++)
           if(cur_room.persons[i].id == id) return cur_room.persons[i];
@@ -3252,7 +3575,7 @@ var cutsceneview = function()
         e.animcycle_inst.frame_t += c.animcycle_offset_t;
         e.wx = c.wx;
         e.wy = c.wy;
-        e.ww = c.ww;
+        e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
         e.wh = c.wh;
         e.a = c.a;
         if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
@@ -3322,14 +3645,15 @@ var cutsceneview = function()
         c.from_ww = e.ww;
         c.from_wh = e.wh;
         c.from_a = e.a;
-        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   { e.to_wx = c.wx; e.to_wy = c.wy; }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
         if(c.t >= c.end_t)
         {
           //perform immediate
           if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = c.wx;
           if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = c.wy;
           if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = c.wz;
-          if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = c.ww;
+          if(c.ww != CUTSCENE_COMMAND_IGNORE) { e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0; }
           if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = c.wh;
           if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = c.a;
         }
@@ -3351,7 +3675,8 @@ var cutsceneview = function()
           c.wx = my_navigable.cam_target_wx(c.wx);
           c.wy = my_navigable.cam_target_wy(c.wy);
         }
-        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   { e.to_wx = c.wx; e.to_wy = c.wy; }
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
         self.running_commands.push(c);
         break;
       case CUTSCENE_COMMAND_WAIT:
@@ -3511,7 +3836,7 @@ var cutsceneview = function()
         if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = lerp(c.from_wx,c.wx,t);
         if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = lerp(c.from_wy,c.wy,t);
         if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = lerp(c.from_wz,c.wz,t);
-        if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = lerp(c.from_ww,c.ww,t);
+        if(c.ww != CUTSCENE_COMMAND_IGNORE) { e.ww = lerp(c.from_ww,c.ww,t); if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0; }
         if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
         if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = lerp(c.from_a,c.a,t);
         if(t == 1)
@@ -3602,9 +3927,14 @@ var cutsceneview = function()
     {
       var entity = self.cutscene_entitys[i];
       screenSpace(my_camera,canv,entity);
-      if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
-      if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
-      ctx.globalAlpha = 1;
+      if(entity.a != CUTSCENE_COMMAND_IGNORE)
+      {
+        ctx.globalAlpha = entity.a;
+        if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+        ctx.globalAlpha = 1;
+      }
+      else
+        ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
     }
 
     for(var i = 0; i < self.running_commands.length; i++)
@@ -3678,7 +4008,12 @@ var cutsceneview = function()
           }
         }
       }
+
+      ctx.strokeStyle = magenta;
+      for(var i = 0; i < self.cutscene_entitys.length; i++)
+        strokeBox(self.cutscene_entitys[i],ctx);
     }
+
   }
 
   //playback vars

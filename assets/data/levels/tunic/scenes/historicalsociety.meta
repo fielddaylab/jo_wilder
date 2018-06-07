@@ -3,8 +3,8 @@ tmp_scene.ww = 119.0000000000001;
 tmp_scene.wh = 144.00000000000003;
 tmp_scene.wx = 89.49999999999983;
 tmp_scene.wy = 169.9999999999999;
-tmp_scene.hover_icon_wx = -59;
-tmp_scene.hover_icon_wy = -46;
+tmp_scene.hover_icon_wx = 27;
+tmp_scene.hover_icon_wy = 41.99999999999999;
 tmp_scene.animcycle_id = "scene_historicalsociety";
 tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
@@ -23,6 +23,6 @@ tmp_scene.notice_reqs = [[
 tmp_scene.reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",
 ],[
-"tunic.capitol.hall.chapter2",
+"tunic.capitol.hall.chap1_finale_c",
 ]];
 

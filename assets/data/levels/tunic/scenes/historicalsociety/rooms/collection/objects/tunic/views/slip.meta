@@ -10,7 +10,7 @@ tmp_view.raw_notifications = [
 "I'll record this in my notebook.",
 ];
 tmp_view.raw_notification_ws = [
-0,
+194,
 268,
 ];
 tmp_view.notification_reqs = [[

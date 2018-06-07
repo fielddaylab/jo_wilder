@@ -8,6 +8,6 @@ tmp_inert.animcycle_id = "scratches";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
-"tunic.capitol.hall.chapter3",
+"tunic.capitol.hall.chap2_finale_c",
 ]];
 
