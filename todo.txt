@@ -94,3 +94,11 @@ entry_ecoflag ecology flag
 entry_quest_toend go to cap
 entry_quest_toend_x
 
+
+cutscene loads new room
+ensure cutscene->cutscene seamless transition
+cutscene options
+convert observations/speaks to cutscenes (w/ underlying observations/people to inerts)
+speech bubbles choose carat, bubbles, nothing
+zone->null = exit, zone->self = parent view
+
