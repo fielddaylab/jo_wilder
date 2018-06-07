@@ -13,7 +13,8 @@ save_table[save_codes[save_codes.length-1]] = {
 };
 
 save_codes.push("notebook");
-save_table[save_codes[save_codes.length-1]] = {reqs:[[
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
 "tunic.historicalsociety.closet.notebook",
 ],],
 all:
@@ -30,20 +31,23 @@ all:
 "tunic.historicalsociety.closet.notebook.hub",
 "tunic.historicalsociety.closet.retirement_letter",
 "tunic.historicalsociety.closet.retirement_letter.hub",
+"tunic.historicalsociety.closet.doorblock",
+"tunic.historicalsociety.closet.photo",
 "tunic.historicalsociety.closet.intro",
 ],
-code:"050000000000000000000000000032001843100000000000000000000000000000000000000000000000000000000"
+code:"050000000000000000000001048576812646400007670000000000000000000000000000000000000000000000000"
 };
 
 save_codes.push("wiscwonders");
 save_table[save_codes[save_codes.length-1]] = {
-  reqs:[[
-  "tunic.historicalsociety.entry.groupconvo",
-  ]],
-  all:
-  [
+reqs:[[
+"tunic.historicalsociety.entry.groupconvo",
+],],
+all:
+[
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -55,14 +59,20 @@ save_table[save_codes[save_codes.length-1]] = {
 "tunic.historicalsociety.closet.notebook.hub",
 "tunic.historicalsociety.closet.retirement_letter",
 "tunic.historicalsociety.closet.retirement_letter.hub",
+"tunic.historicalsociety.closet.doorblock",
 "tunic.historicalsociety.closet.photo",
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.entry",
+"tunic.historicalsociety.entry.boss",
+"tunic.historicalsociety.entry.boss.talktogramps",
+"tunic.historicalsociety.entry.wells",
+"tunic.historicalsociety.entry.wells.talktogramps",
 "tunic.historicalsociety.entry.report",
 "tunic.historicalsociety.entry.report.closeup",
+"tunic.historicalsociety.entry.block_tomap1",
 "tunic.historicalsociety.entry.groupconvo",
 ],
-  code:"05000000000000008372992026217902933120000001000000000000000000000"
+code:"090000000000000000000003145728812646600007675423104000828000000000000000000000000000000000000"
 };
 
 save_codes.push("mysteryslip");
@@ -112,8 +122,6 @@ reqs:[[
 ],],
 all:
 [
-"tunic.capitol",
-"tunic.capitol.hall",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
 "tunic.historicalsociety.basement.janitor",
@@ -128,19 +136,28 @@ all:
 "tunic.historicalsociety.closet.notebook.hub",
 "tunic.historicalsociety.closet.retirement_letter",
 "tunic.historicalsociety.closet.retirement_letter.hub",
+"tunic.historicalsociety.closet.doorblock",
+"tunic.historicalsociety.closet.photo",
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
+"tunic.historicalsociety.collection.gramps.lost",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
 "tunic.historicalsociety.collection.tunic.slip",
 "tunic.historicalsociety.collection.cs",
 "tunic.historicalsociety.entry",
+"tunic.historicalsociety.entry.boss",
+"tunic.historicalsociety.entry.boss.talktogramps",
+"tunic.historicalsociety.entry.wells",
+"tunic.historicalsociety.entry.wells.talktogramps",
 "tunic.historicalsociety.entry.report",
 "tunic.historicalsociety.entry.report.closeup",
+"tunic.historicalsociety.entry.block_tomap1",
 "tunic.historicalsociety.entry.groupconvo",
+"tunic.historicalsociety.stacks",
 "tunic.kohlcenter",
 "tunic.kohlcenter.halloffame",
 "tunic.kohlcenter.halloffame.plaque",
@@ -148,7 +165,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"000000006000000000000000000608007372421938561051648000000000000000001148000000000000000000000"
+code:"140000000000000000000003145728812646641950715423867000828000000648126464000000800000000000000"
 };
 
 save_codes.push("notajersey");
@@ -160,11 +177,13 @@ all:
 [
 "tunic.capitol",
 "tunic.capitol.hall",
+"tunic.capitol.hall.boss",
 "tunic.capitol.hall.boss.chap1_finale_0",
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_0",
 "tunic.capitol.hall.boss.chap1_finale_slipfirst_1",
+"tunic.capitol.hall.boss.talktogramps",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
@@ -181,19 +200,28 @@ all:
 "tunic.historicalsociety.closet.notebook.hub",
 "tunic.historicalsociety.closet.retirement_letter",
 "tunic.historicalsociety.closet.retirement_letter.hub",
+"tunic.historicalsociety.closet.doorblock",
+"tunic.historicalsociety.closet.photo",
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
+"tunic.historicalsociety.collection.gramps.lost",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
 "tunic.historicalsociety.collection.tunic.slip",
 "tunic.historicalsociety.collection.cs",
 "tunic.historicalsociety.entry",
+"tunic.historicalsociety.entry.boss",
+"tunic.historicalsociety.entry.boss.talktogramps",
+"tunic.historicalsociety.entry.wells",
+"tunic.historicalsociety.entry.wells.talktogramps",
 "tunic.historicalsociety.entry.report",
 "tunic.historicalsociety.entry.report.closeup",
+"tunic.historicalsociety.entry.block_tomap1",
 "tunic.historicalsociety.entry.groupconvo",
+"tunic.historicalsociety.stacks",
 "tunic.kohlcenter",
 "tunic.kohlcenter.halloffame",
 "tunic.kohlcenter.halloffame.plaque",
@@ -201,7 +229,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"000020822000000000000090000608007372421938561051648000000000000000001148000000000000000000000"
+code:"000020830209715202785283145728812646641950715423867000828000000648126464000000800000000000000"
 };
 
 save_codes.push("trashed");
@@ -1047,6 +1075,149 @@ all:
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
 code:"000020822000000001208090000608361266821939125245952838156541919686593660001265700000000000000"
+};
+
+save_codes.push("mustfindteddy");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.basement.gramps.whatdo",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("scratches");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.basement.seescratches",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("hesalive");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.cage.teddy.trapped",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("theculprit");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.entry.directory.closeup.archivist",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("akey");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.frontdesk.key",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("rescued");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.cage.confrontation",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("backtowork");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.collection_flag.gramps.flag",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("sadanimals");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.wildlife.center.wells.nodeer",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("flaglady");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.flaghouse.entry.flag_girl.symbol",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("ecologists");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.library.microfiche.reader_flag.paper2.bingo",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("duedilligence");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.historicalsociety.frontdesk.archivist.confrontation",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("sunset");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.nelson.trail.hiker.question",
+]],
+all:
+[
+],
+code:"0"
+};
+
+save_codes.push("exhibition");
+save_table[save_codes[save_codes.length-1]] = {
+reqs:[[
+"tunic.nelson.trail.hiker.question",
+]],
+all:
+[
+],
+code:"0"
 };
 
 save_codes.push("ch3");
