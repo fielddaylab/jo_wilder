@@ -36,7 +36,7 @@ tmp_cutscene_command.wx = -349.09090909090907;
 tmp_cutscene_command.wy = 277.0454545454547;
 tmp_cutscene_command.w = 106;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Wowee, look at that!";
+tmp_cutscene_command.raw_text = "Look at that! It's the bee's knees!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

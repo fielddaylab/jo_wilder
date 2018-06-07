@@ -63,7 +63,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Badgers have rights, too. I won't stop fighting until he's safe!";
+tmp_speak_command.raw_atext = "I won't stop fighting until he's safe!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
@@ -89,10 +89,22 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "A lot! Look at Theodora Youmans...she was just one lady, but she changed the world!";
+tmp_speak_command.raw_atext = "A lot!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 //
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 136.50000000000006;
+tmp_speak_command.wy = 133;
+tmp_speak_command.w = 173;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Look at Theodora Youmans. She was just one lady, but she changed the world!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 2.499999999999993;
 tmp_speak_command.wy = 265;
@@ -128,7 +140,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Wow, what a find!";
+tmp_speak_command.raw_atext = "Wow, why didn't you say so?!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -141,7 +153,20 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Youmans was a super important suffragist here in Wisconsin. She had a big part in getting support for women's rights! Thanks to her, Wisconsin became the first state to sign a women's rights bill, right at our own Capitol.";
+tmp_speak_command.raw_atext = "Youmans was a super important suffragist here in Wisconsin. She had a big part in getting support for women's rights!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 2.499999999999993;
+tmp_speak_command.wy = 265;
+tmp_speak_command.w = 382;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Thanks to her, Wisconsin became the first state to sign a women's rights bill, right at our own Capitol.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -38,7 +38,7 @@ tmp_cutscene_command.wx = 499.78787878787875;
 tmp_cutscene_command.wy = 109.99999999999994;
 tmp_cutscene_command.w = 90;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Teddy!";
+tmp_cutscene_command.raw_text = "I've got you, Teddy!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "notice";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "Huh… “Green represents nature, earth and the environment.”";
+tmp_observation.raw_text = "Huh… “The ecology symbol, by Ron Cobb.”";
 tmp_observation.blip_wx = -175.18267115202792;
 tmp_observation.blip_wy = 145.0120956789311;
 tmp_observation.blip_w = 291;
