@@ -9,8 +9,8 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "closeup";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"The glasses… it’s a match!",
-"The archivist must be the badger-napper!",
+"Those are the same glasses!",
+"If the archivist locked up Teddy, he probably has the key!",
 ];
 tmp_zone.raw_notification_ws = [
 234,

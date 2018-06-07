@@ -474,7 +474,7 @@ tmp_cutscene_command.wx = 147.030303030303;
 tmp_cutscene_command.wy = 304.9090909090908;
 tmp_cutscene_command.w = 58;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "JOLIE!";
+tmp_cutscene_command.raw_text = "Easy, Jolie.";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -486,7 +486,7 @@ tmp_cutscene_command.wx = 150.0606060606061;
 tmp_cutscene_command.wy = 342.7878787878787;
 tmp_cutscene_command.w = 205;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "If you have something to say, make your case.";
+tmp_cutscene_command.raw_text = "Why don't you make your case?";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -505,7 +505,7 @@ tmp_cutscene_command.wx = 151.57575757575756;
 tmp_cutscene_command.wy = 348.8484848484847;
 tmp_cutscene_command.w = 141;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I'm sorry Jolie- we'll find Teddy.";
+tmp_cutscene_command.raw_text = "I'm sorry, Jolie. We'll find Teddy.";
 tmp_cutscene_command.t = 102;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -517,7 +517,7 @@ tmp_cutscene_command.wx = -46.909090909090914;
 tmp_cutscene_command.wy = 336.7272727272726;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "(and when you do, keep him out of my museum!)";
+tmp_cutscene_command.raw_text = "And when you do, keep him out of my museum!";
 tmp_cutscene_command.t = 102;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

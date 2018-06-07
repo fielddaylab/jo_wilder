@@ -38,7 +38,7 @@ tmp_cutscene_command.wx = -549.7575757575758;
 tmp_cutscene_command.wy = 132.96969696969688;
 tmp_cutscene_command.w = 268;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Wait a minute, look at those scratches! Maybe somebody took Teddy up in the elevator!";
+tmp_cutscene_command.raw_text = "Hey, look at those scratches! Maybe someone took him on the elevator!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -50,7 +50,7 @@ tmp_cutscene_command.wx = 23.15151515151542;
 tmp_cutscene_command.wy = 188.7272727272727;
 tmp_cutscene_command.w = 116;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Great Scott, you’re right!";
+tmp_cutscene_command.raw_text = "Great Scott! You’re right!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -62,7 +62,7 @@ tmp_cutscene_command.wx = -456.36363636363643;
 tmp_cutscene_command.wy = 45.1515151515151;
 tmp_cutscene_command.w = 199;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "…Why isn’t it working?";
+tmp_cutscene_command.raw_text = "Why isn't the button working?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -74,7 +74,7 @@ tmp_cutscene_command.wx = 23.15151515151515;
 tmp_cutscene_command.wy = 223.57575757575756;
 tmp_cutscene_command.w = 191;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You need an ID card. I’d give you mine, but Teddy chewed it up.";
+tmp_cutscene_command.raw_text = "You'll need a key card. Wish I had mine...Teddy chewed it up.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -86,7 +86,7 @@ tmp_cutscene_command.wx = -421.5151515151515;
 tmp_cutscene_command.wy = 49.333333333333364;
 tmp_cutscene_command.w = 172;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I’ve got Wells’s ID!";
+tmp_cutscene_command.raw_text = "I’ve got Wells’s ID! Could that work?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -98,7 +98,31 @@ tmp_cutscene_command.wx = 24.54545454545464;
 tmp_cutscene_command.wy = 144.1212121212121;
 tmp_cutscene_command.w = 180;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "That’ll do the trick.";
+tmp_cutscene_command.raw_text = "Yes! That’ll do the trick.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -151.090909090909;
+tmp_cutscene_command.wy = 192.90909090909088;
+tmp_cutscene_command.w = 200;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I'm supposed to take the artifact upstairs. Can you handle this on your own?";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -414.5454545454545;
+tmp_cutscene_command.wy = 181.75757575757575;
+tmp_cutscene_command.w = 221;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Sure! One step at a time.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -110,7 +134,7 @@ tmp_cutscene_command.wx = -495.39393939393943;
 tmp_cutscene_command.wy = 130.1818181818182;
 tmp_cutscene_command.w = 221;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You stay here and keep watch, Gramps. I’m gonna follow the trail!";
+tmp_cutscene_command.raw_text = "Teddy, here I come!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -119,3 +143,7 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);

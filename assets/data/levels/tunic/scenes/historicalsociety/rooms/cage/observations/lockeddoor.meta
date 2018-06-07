@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "It’s locked! Gotta find another clue.";
+tmp_observation.raw_text = "It’s locked!";
 tmp_observation.blip_wx = 361.781478538615;
 tmp_observation.blip_wy = 87.8252511694048;
 tmp_observation.blip_w = 176;

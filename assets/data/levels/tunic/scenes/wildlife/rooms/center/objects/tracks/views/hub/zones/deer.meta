@@ -9,7 +9,7 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "hub";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"Those hoofprints don’t match the flag!",
+"That hoofprint doesn't match the flag!",
 ];
 tmp_zone.raw_notification_ws = [
 ];
