@@ -1,0 +1,11 @@
+tmp_inert.ww = 1792.613636363637;
+tmp_inert.wh = 248.29545454545467;
+tmp_inert.wx = 434.9431818181824;
+tmp_inert.wy = 25.85227272727289;
+tmp_inert.wz = 4;
+tmp_inert.g = 0.3;
+tmp_inert.animcycle_id = "trail_dust";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];

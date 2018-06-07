@@ -34,10 +34,10 @@ tmp_level.avatar_act_animcycle_id = "avatar_act";
 tmp_level.avatar_ww = 124.2914274419755;
 tmp_level.avatar_wh = 227.18935293838604;
 tmp_level.familiar_walk_animcycle_id = "teddy_walk";
-tmp_level.familiar_idle_animcycle_id = "avatar_idle";
+tmp_level.familiar_idle_animcycle_id = "teddy_idle";
 tmp_level.familiar_act_animcycle_id = "avatar_act";
-tmp_level.familiar_ww = 124.2914274419755;
-tmp_level.familiar_wh = 227.18935293838604;
+tmp_level.familiar_ww = 133;
+tmp_level.familiar_wh = 120;
 tmp_level.familiar_off_wx = 0.;
 tmp_level.familiar_off_wy = -20.;
 tmp_level.exit_animcycle_id = "exit";
@@ -3417,7 +3417,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_trail_lake/0.jpg");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_trail_lake/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -3433,6 +3433,21 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_trail_midground/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "scene_trail_sky";
+tmp_animcycle.fqid = "tunic.scene_trail_sky";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/scene_trail_sky/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -3578,8 +3593,7 @@ tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
 tmp_animcycle.frame_t = 10;
 tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
+tmp_animcycle.loop = 0;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/0.png");
@@ -3665,6 +3679,21 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/tracks_closeup/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "trail_dust";
+tmp_animcycle.fqid = "tunic.trail_dust";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/trail_dust/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -25047,8 +25076,8 @@ tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 660;
-tmp_room.nav_min_wz = 4;
-tmp_room.nav_max_wz = 4;
+tmp_room.nav_min_wz = 5;
+tmp_room.nav_max_wz = 5;
 tmp_room.navs = [
 {wx:-55.96590909090969, wy:-160.7954545454549, ww:3756.2500000000005, wh:89.77272727272725 },
 ];
@@ -25059,7 +25088,7 @@ tmp_room.shadows = [
 {wx:-528.9772727272737, wy:585.7954545454545, ww:100, wh:100 },
 ];
 tmp_room.light_color = "rgba(255,255,255,0.2);";
-tmp_room.shadow_color = "rgba(0,0,0,0.5);";
+tmp_room.shadow_color = "rgba(24,25,62,0.9);";
 tmp_room.ambient_color = "rgba(0,0,0,0);";
 tmp_room.target_start_wx = -1667.0454545454547;
 tmp_room.target_start_wy = -153.40909090909076;
@@ -25073,7 +25102,6 @@ tmp_room.notification_reqs = [[
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1.0303030303030303
-
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "hiker";
@@ -25183,10 +25211,10 @@ tmp_object = new object();
 tmp_object.id = "sign";
 tmp_object.fqid = "tunic.nelson.trail.sign";
 {
-tmp_object.ww = 284.0909090909092;
-tmp_object.wh = 171.5909090909091;
-tmp_object.wx = 1335.3863636363635;
-tmp_object.wy = -13;
+tmp_object.ww = 197.15909090909096;
+tmp_object.wh = 140.90909090909093;
+tmp_object.wx = 1562.9431818181813;
+tmp_object.wy = -59.0227272727273;
 tmp_object.wz = 0;
 tmp_object.act_wx = -184.0909090909091;
 tmp_object.act_wy = -61.36363636363636;
@@ -25296,12 +25324,12 @@ tmp_inert = new inert();
 tmp_inert.id = "city";
 tmp_inert.fqid = "tunic.nelson.trail.city";
 {
-tmp_inert.ww = 1470.454545454546;
-tmp_inert.wh = 212.50000000000003;
-tmp_inert.wx = -1138.0456765419779;
-tmp_inert.wy = 289.25000000003985;
+tmp_inert.ww = 1225.0000000000005;
+tmp_inert.wh = 7264.204545454547;
+tmp_inert.wx = 78.99977800347642;
+tmp_inert.wy = 3165.6704545454954;
 tmp_inert.wz = 1;
-tmp_inert.g = -0.8;
+tmp_inert.g = -2.25;
 tmp_inert.animcycle_id = "scene_trail_city";
 tmp_inert.deck_animcycle_ids = [
 ];
@@ -25313,21 +25341,39 @@ tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.a
 }
 tmp_room.inerts.push(tmp_inert);
 tmp_inert = new inert();
+tmp_inert.id = "dust";
+tmp_inert.fqid = "tunic.nelson.trail.dust";
+{
+tmp_inert.ww = 1792.613636363637;
+tmp_inert.wh = 248.29545454545467;
+tmp_inert.wx = 434.9431818181824;
+tmp_inert.wy = 25.85227272727289;
+tmp_inert.wz = 4;
+tmp_inert.g = 0.3;
+tmp_inert.animcycle_id = "trail_dust";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
 tmp_inert.id = "lake";
 tmp_inert.fqid = "tunic.nelson.trail.lake";
 {
-tmp_inert.ww = 1731.2499999999998;
-tmp_inert.wh = 452.84090909090935;
-tmp_inert.wx = -1060.9431818181815;
-tmp_inert.wy = 44.988636363636715;
+tmp_inert.ww = 1700.5681818181818;
+tmp_inert.wh = 570.4545454545455;
+tmp_inert.wx = -1071.1704545454536;
+tmp_inert.wy = -167.22727272727252;
 tmp_inert.wz = 0;
-tmp_inert.g = -0.5;
+tmp_inert.g = -1;
 tmp_inert.animcycle_id = "scene_trail_lake";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
 ]];
-
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
@@ -25338,31 +25384,11 @@ tmp_inert.fqid = "tunic.nelson.trail.midground";
 {
 tmp_inert.ww = 3878.9772727272725;
 tmp_inert.wh = 682.9545454545454;
-tmp_inert.wx = -71.27033296445802;
-tmp_inert.wy = -10.727272725669593;
+tmp_inert.wx = 66.79784885372374;
+tmp_inert.wy = -0.4999999983971861;
 tmp_inert.wz = 3;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "scene_trail_midground";
-tmp_inert.deck_animcycle_ids = [
-];
-tmp_inert.reqs = [[
-]];
-
-if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
-tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
-}
-tmp_room.inerts.push(tmp_inert);
-tmp_inert = new inert();
-tmp_inert.id = "sun";
-tmp_inert.fqid = "tunic.nelson.trail.sun";
-{
-tmp_inert.ww = 314.77272727272685;
-tmp_inert.wh = 4804.545454545458;
-tmp_inert.wx = -1286.681818181819;
-tmp_inert.wy = -3055.1590909090937;
-tmp_inert.wz = 2;
-tmp_inert.g = -2.25;
-tmp_inert.animcycle_id = "scene_trail_sun";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
@@ -25377,10 +25403,10 @@ tmp_inert.id = "trees";
 tmp_inert.fqid = "tunic.nelson.trail.trees";
 {
 tmp_inert.ww = 3838.068181818182;
-tmp_inert.wh = 703.4090909090916;
-tmp_inert.wx = 30.605305192243804;
-tmp_inert.wy = -9.977833941245024;
-tmp_inert.wz = 5;
+tmp_inert.wh = 703.4090909090914;
+tmp_inert.wx = 41.996310135073145;
+tmp_inert.wy = 0.23509772257841632;
+tmp_inert.wz = 7;
 tmp_inert.g = 0.5;
 tmp_inert.animcycle_id = "scene_trail_trees";
 tmp_inert.deck_animcycle_ids = [

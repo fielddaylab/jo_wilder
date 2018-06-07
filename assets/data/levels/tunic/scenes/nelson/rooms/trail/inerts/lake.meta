@@ -1,12 +1,11 @@
-tmp_inert.ww = 1731.2499999999998;
-tmp_inert.wh = 452.84090909090935;
-tmp_inert.wx = -1060.9431818181815;
-tmp_inert.wy = 44.988636363636715;
+tmp_inert.ww = 1700.5681818181818;
+tmp_inert.wh = 570.4545454545455;
+tmp_inert.wx = -1071.1704545454536;
+tmp_inert.wy = -167.22727272727252;
 tmp_inert.wz = 0;
-tmp_inert.g = -0.5;
+tmp_inert.g = -1;
 tmp_inert.animcycle_id = "scene_trail_lake";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
 ]];
-
