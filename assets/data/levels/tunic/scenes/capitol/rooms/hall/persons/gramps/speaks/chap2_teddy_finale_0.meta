@@ -53,9 +53,9 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -379.4044989274497;
-tmp_speak_command.wy = 104.84907948240624;
-tmp_speak_command.w = 215;
+tmp_speak_command.wx = -394.5560140789649;
+tmp_speak_command.wy = 113.93998857331532;
+tmp_speak_command.w = 227;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -74,7 +74,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "How do you know he was STOLEN?";
+tmp_speak_command.raw_atext = "How do you know he was stolen?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -671,6 +671,7 @@ var familiar = function()
   self.w = 0;
   self.h = 0;
 
+  self.available = 0;
   self.shade = 0;
 
   self.state = FAMILIAR_IDLE;
@@ -1162,6 +1163,9 @@ var navigable = function()
     else
     { var j = 0; while(j < self.cache_available_drawables.length    && self.cache_available_inerts[i].wz >= self.cache_available_drawables[j].wz)    j++; self.cache_available_drawables.splice(j,0,self.cache_available_inerts[i]); }
     }
+
+    //familiar
+    my_familiar.available = queryreqs(0,cur_level.familiar_reqs);
   }
 
   self.trigger_cutscenes = function()
@@ -1655,7 +1659,7 @@ var navigable = function()
     var i = 0;
     for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
       draw_junk(self.cache_available_drawables[i]);
-    my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+    if(my_familiar.available) my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
     for(; i < self.cache_available_drawables.length; i++)
       draw_junk(self.cache_available_drawables[i]);
@@ -2073,7 +2077,7 @@ var notebookview = function()
       if(queryreqs(0, save_table[save_codes[save_codes.length-1-i]].reqs))
         self.current_code = save_codes[save_codes.length-1-i];
     }
-    setCookie("save", self.current_code, 10);
+    setCookie("save", get_save_code(), 10);
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -3649,7 +3653,7 @@ var cutsceneview = function()
           if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = c.wx;
           if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = c.wy;
           if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = c.wz;
-          if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+          if(c.ww != CUTSCENE_COMMAND_IGNORE) { e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0; }
           if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = c.wh;
           if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = c.a;
         }
@@ -3832,7 +3836,7 @@ var cutsceneview = function()
         if(c.wx != CUTSCENE_COMMAND_IGNORE) e.wx = lerp(c.from_wx,c.wx,t);
         if(c.wy != CUTSCENE_COMMAND_IGNORE) e.wy = lerp(c.from_wy,c.wy,t);
         if(c.wz != CUTSCENE_COMMAND_IGNORE) e.wz = lerp(c.from_wz,c.wz,t);
-        if(c.ww != CUTSCENE_COMMAND_IGNORE) e.ww = lerp(c.from_ww,c.ww,t); if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+        if(c.ww != CUTSCENE_COMMAND_IGNORE) { e.ww = lerp(c.from_ww,c.ww,t); if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0; }
         if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
         if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = lerp(c.from_a,c.a,t);
         if(t == 1)
@@ -3923,9 +3927,14 @@ var cutsceneview = function()
     {
       var entity = self.cutscene_entitys[i];
       screenSpace(my_camera,canv,entity);
-      if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
-      if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
-      ctx.globalAlpha = 1;
+      if(entity.a != CUTSCENE_COMMAND_IGNORE)
+      {
+        ctx.globalAlpha = entity.a;
+        if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
+        ctx.globalAlpha = 1;
+      }
+      else
+        ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
     }
 
     for(var i = 0; i < self.running_commands.length; i++)
@@ -3999,7 +4008,12 @@ var cutsceneview = function()
           }
         }
       }
+
+      ctx.strokeStyle = magenta;
+      for(var i = 0; i < self.cutscene_entitys.length; i++)
+        strokeBox(self.cutscene_entitys[i],ctx);
     }
+
   }
 
   //playback vars

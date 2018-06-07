@@ -14,41 +14,41 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -287.4848484848488;
-tmp_speak_command.wy = 19.545454545454575;
+tmp_speak_command.wx = -430.71552427675437;
+tmp_speak_command.wy = 13.191413701274975;
 tmp_speak_command.w = 237;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Somebody left these. I bet that’s who took Teddy!";
+tmp_speak_command.raw_atext = "Whoever dropped these is probably the culprit!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -300.0606060606062;
-tmp_speak_command.wy = -0.4545454545455456;
-tmp_speak_command.w = 245;
+tmp_speak_command.wx = -430.5151515157806;
+tmp_speak_command.wy = 11.212121212244575;
+tmp_speak_command.w = 234;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hmm… there's a staff directory in the entryway.";
+tmp_speak_command.raw_atext = "There's a staff directory in the entryway.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -264.3030303030302;
-tmp_speak_command.wy = -4.8484848484849365;
+tmp_speak_command.wx = -384.151515151515;
+tmp_speak_command.wy = 11.060606060606005;
 tmp_speak_command.w = 194;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I should see who wears these glasses!";
+tmp_speak_command.raw_atext = "I should check who wears these glasses!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -96,12 +96,12 @@ var GamePlayScene = function(game, stage)
     my_camera = my_real_camera;
     my_cursor = new cursor();
     my_cursor.consume_level(cur_level);
+    my_avatar = new avatar();
+    my_familiar = new familiar();
     my_navigable = new navigable();
     my_navigable.consume_room(cur_room);
-    my_avatar = new avatar();
     my_avatar.consume_level(cur_level);
     my_avatar.consume_room(cur_room);
-    my_familiar = new familiar();
     my_familiar.consume_level(cur_level);
     my_familiar.consume_room(cur_room);
     my_toolbar = new toolbar();
@@ -122,7 +122,7 @@ var GamePlayScene = function(game, stage)
     {
       if(evt.key == " ") print_whole_level(cur_level,false);
       if(evt.key == "f") print_whole_level(cur_level,true);
-      if(evt.key == "c") get_save_code();
+      if(evt.key == "c") print_save_code();
       if(evt.key == "d") DEBUG = !DEBUG;
       if(evt.key == "u") UNLOCK = !UNLOCK;
       if(evt.key == "t") DOUBLETIME = !DOUBLETIME;

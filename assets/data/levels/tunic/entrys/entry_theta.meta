@@ -1,7 +1,7 @@
 tmp_entry.ww = 120.99999999999999;
 tmp_entry.wh = 31.99999999999997;
-tmp_entry.wx = 123.50000000000004;
-tmp_entry.wy = 178;
+tmp_entry.wx = 121.5;
+tmp_entry.wy = 213;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_theta_img";

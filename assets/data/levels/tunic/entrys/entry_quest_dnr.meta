@@ -1,7 +1,7 @@
 tmp_entry.ww = 173.00000000000003;
 tmp_entry.wh = 35.99999999999999;
-tmp_entry.wx = -286.5;
-tmp_entry.wy = -93;
+tmp_entry.wx = -280.5;
+tmp_entry.wy = -122.00000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_quest_dnr_img";

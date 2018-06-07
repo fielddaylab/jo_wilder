@@ -224,6 +224,13 @@ var get_save_code = function()
 {
   var s = new save_slate();
   s.gen_slate(cur_level);
+  return s.code();
+}
+
+var print_save_code = function()
+{
+  var s = new save_slate();
+  s.gen_slate(cur_level);
 
   var code = "startgame";
   if(my_notebookview && my_notebookview.current_code)
@@ -257,6 +264,7 @@ var get_save_code = function()
   console.log(str);
   console.log(s.code());
   console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+s.code());
+  return s.code();
 }
 
 var load_save_code = function(code)
@@ -1637,6 +1645,7 @@ var print_cutscene_meta = function(l)
         {
                if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;\n";
           else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_FAMILIAR) str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_FAMILIAR;\n";
           else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)
           {
             str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
@@ -1673,6 +1682,7 @@ var print_cutscene_meta = function(l)
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        else if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) str += "CUTSCENE_ENTITY_FAMILIAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
         if(c.ww != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.ww = "+c.ww+";\n";
@@ -1693,6 +1703,7 @@ var print_cutscene_meta = function(l)
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        else if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) str += "CUTSCENE_ENTITY_FAMILIAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
         if(c.wx != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wx = "+c.wx+";\n";
@@ -1720,12 +1731,14 @@ var print_cutscene_meta = function(l)
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        else if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) str += "CUTSCENE_ENTITY_FAMILIAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
         if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
         {
                if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;\n";
           else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;\n";
+          else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_FAMILIAR) str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_FAMILIAR;\n";
           else if(c.cutscene_target_entity_type == CUTSCENE_ENTITY_SCENE)
           {
             str += "tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;\n"+
@@ -1756,6 +1769,7 @@ var print_cutscene_meta = function(l)
              if(c.cutscene_entity_type == CUTSCENE_ENTITY_NULL)     str += "CUTSCENE_ENTITY_NULL;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)   str += "CUTSCENE_ENTITY_CAMERA;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   str += "CUTSCENE_ENTITY_AVATAR;\n";
+        else if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) str += "CUTSCENE_ENTITY_FAMILIAR;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_SCENE)    str += "CUTSCENE_ENTITY_SCENE;\n";
         else if(c.cutscene_entity_type == CUTSCENE_ENTITY_CUTSCENE) str += "CUTSCENE_ENTITY_CUTSCENE;\n";
         if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)

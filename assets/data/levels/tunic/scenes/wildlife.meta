@@ -3,10 +3,10 @@ tmp_scene.ww = 214;
 tmp_scene.wh = 220.00000000000009;
 tmp_scene.wx = 328;
 tmp_scene.wy = -211.99999999999997;
-tmp_scene.hover_icon_wx = 0;
-tmp_scene.hover_icon_wy = 0;
+tmp_scene.hover_icon_wx = 48;
+tmp_scene.hover_icon_wy = 35;
 tmp_scene.animcycle_id = "scene_wildlife";
-tmp_scene.notice_icon_animcycle_id = "null";
+tmp_scene.notice_icon_animcycle_id = "notice";
 tmp_scene.audio_id = "null";
 tmp_scene.deck_animcycle_ids = [
 ];

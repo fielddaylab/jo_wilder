@@ -14,28 +14,28 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 338.48350870000786;
-tmp_speak_command.wy = 141.48872183725865;
-tmp_speak_command.w = 100;
+tmp_speak_command.wx = 303.4835090379581;
+tmp_speak_command.wy = 132.48872197250236;
+tmp_speak_command.w = 133;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hi! Can you help me?";
+tmp_speak_command.raw_atext = "Hey! Can I ask you something?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 333.0002864445986;
-tmp_speak_command.wy = 242.00026415173437;
-tmp_speak_command.w = 221;
+tmp_speak_command.wx = 378.00028644460053;
+tmp_speak_command.wy = 237.0002641517355;
+tmp_speak_command.w = 176;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Sorry! Need to get a GPS collar on this deer.";
+tmp_speak_command.raw_atext = "Sorry. Gotta help this crane get free!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -53,16 +53,29 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 297.0000000000362;
-tmp_speak_command.wy = 105.00000000003746;
-tmp_speak_command.w = 136;
+tmp_speak_command.wx = 321.0000000000362;
+tmp_speak_command.wy = 132.00000000003752;
+tmp_speak_command.w = 109;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ooh, can I help?";
+tmp_speak_command.raw_atext = "Poor crane. Can I help?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 375.0000000000173;
+tmp_speak_command.wy = 263.99999999999727;
+tmp_speak_command.w = 181;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Sure! I'll hold her steady. You get that coffee cup off.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
@@ -74,33 +87,33 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Got something to calm her down?";
+tmp_speak_command.raw_atext = "Easy now...that beak is sharp!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 432;
-tmp_speak_command.wy = 213.99999999999997;
-tmp_speak_command.w = 127;
+tmp_speak_command.wx = 401.99999999999994;
+tmp_speak_command.wy = 235;
+tmp_speak_command.w = 154;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Nice work, kid!";
+tmp_speak_command.raw_atext = "Nice work, kid. You're a natural.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 338;
-tmp_speak_command.wy = 242;
-tmp_speak_command.w = 217;
+tmp_speak_command.wx = 411.99999999999994;
+tmp_speak_command.wy = 234.00000000000003;
+tmp_speak_command.w = 145;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You're a natural. What'd you need help with?";
+tmp_speak_command.raw_atext = "What did you want to ask me?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -126,7 +139,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Could it be a deer hoof?";
+tmp_speak_command.raw_atext = "Do you think it could be a deer hoof?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -152,7 +165,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Go take a peek!";
+tmp_speak_command.raw_atext = "Go take a look!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
