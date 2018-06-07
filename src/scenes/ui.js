@@ -3486,6 +3486,8 @@ var cutsceneview = function()
   self.cutscene_entitys = [];
   self.t = 0;
   self.end = 0;
+  self.scene_to = 0;
+  self.selected_scene = 0;
   self.waiting = 0;
   self.command_i = 0;
   self.running_commands = [];
@@ -3504,7 +3506,9 @@ var cutsceneview = function()
 
     self.cutscene_entitys = [];
     self.t = 0;
-    self.end = false;
+    self.end = 0;
+    self.scene_to = 0;
+    self.selected_scene = 0;
     self.command_i = 0;
 
     self.frame_commands = [];
@@ -3683,6 +3687,10 @@ var cutsceneview = function()
         self.waiting = 1;
         break;
       case CUTSCENE_COMMAND_END:
+        self.end = 1;
+        break;
+      case CUTSCENE_COMMAND_LOAD_SCENE:
+        self.scene_to = c.cutscene_entity_id;
         self.end = 1;
         break;
     }
@@ -3898,6 +3906,14 @@ var cutsceneview = function()
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
       state_t = 0;
+
+      if(self.scene_to)
+      {
+        self.selected_scene = find(cur_level.id+"."+self.scene_to);
+        self.selected_scene.pre_met = true;
+        state_to = STATE_NAV; //force nav- unreliable to use stack. WONKY
+        state_t = 0.499999; //skip fadeout, but needs 1 tick < 0.5. WONKY
+      }
     }
   }
 
