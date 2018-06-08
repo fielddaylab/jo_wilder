@@ -1,11 +1,11 @@
 tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
-tmp_cutscene.ww = 1616.5151515151515;
-tmp_cutscene.wh = 865;
-tmp_cutscene.wx = -345.530303030303;
-tmp_cutscene.wy = 0.07575757575750686;
+tmp_cutscene.ww = 1823.7878787878785;
+tmp_cutscene.wh = 875.9090909090911;
+tmp_cutscene.wx = -1212.8030303030307;
+tmp_cutscene.wy = 10.984848484848612;
 tmp_cutscene.wz = 0;
-tmp_cutscene.act_wx = 767.878787878788;
-tmp_cutscene.act_wy = -162.27272727272728;
+tmp_cutscene.act_wx = 846.1830990072746;
+tmp_cutscene.act_wy = -157.7323318989927;
 tmp_cutscene.act_anim = 0;
 tmp_cutscene.hover_icon_wx = 273.6363636363636;
 tmp_cutscene.hover_icon_wy = 270.45454545454544;
@@ -64,6 +64,7 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_FAMILIAR;
 tmp_cutscene_command.wx = 280;
 tmp_cutscene_command.wy = -200;
@@ -81,9 +82,10 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.wx = 280;
-tmp_cutscene_command.wy = -150;
+tmp_cutscene_command.wx = 313.06844121212134;
+tmp_cutscene_command.wy = -13.647017045454538;
 tmp_cutscene_command.t = -1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -395,7 +397,7 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "You can't just lock an animal in a cage.";
 tmp_cutscene_command.t = 11;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
+//
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "boss";

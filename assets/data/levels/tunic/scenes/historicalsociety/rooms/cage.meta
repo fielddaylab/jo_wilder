@@ -1,5 +1,5 @@
 tmp_room.primary = false;
-tmp_room.ww = 2000;
+tmp_room.ww = 4000;
 tmp_room.wh = 800;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
@@ -7,11 +7,11 @@ tmp_room.animcycle_id = "scene_historicalsociety_cage";
 tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
-tmp_room.cam_wh = 700;
+tmp_room.cam_wh = 749.0909090909091;
 tmp_room.nav_min_wz = 1;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
-{wx:-114.81818181818176, wy:-222.86363636363626, ww:1321.2727272727273, wh:199.54545454545456 },
+{wx:-1068, wy:-216.0454545454547, ww:1771.2727272727273, wh:229.54545454545416 },
 ];
 tmp_room.lights = [
 ];

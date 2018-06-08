@@ -1,14 +1,14 @@
 tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
-tmp_cutscene.ww = 175.73717194797763;
-tmp_cutscene.wh = 429.4848484835715;
-tmp_cutscene.wx = 615.9836009983322;
-tmp_cutscene.wy = 18.924242435808594;
+tmp_cutscene.ww = 153.37904534840507;
+tmp_cutscene.wh = 482.26721762881266;
+tmp_cutscene.wx = -125.8968354857674;
+tmp_cutscene.wy = -47.23771318709771;
 tmp_cutscene.wz = 0;
 tmp_cutscene.act_wx = -54;
 tmp_cutscene.act_wy = -20.999999999999996;
 tmp_cutscene.act_anim = 0;
-tmp_cutscene.hover_icon_wx = 15.848490965451061;
-tmp_cutscene.hover_icon_wy = -11.484848503182686;
+tmp_cutscene.hover_icon_wx = -34.09090295823749;
+tmp_cutscene.hover_icon_wy = 45.264462792109335;
 tmp_cutscene.animcycle_id = "null";
 tmp_cutscene.hover_cursor_animcycle_id = "hover_ui";
 tmp_cutscene.hover_icon_animcycle_id = "null";
@@ -28,11 +28,11 @@ tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.key",
 "!tunic.historicalsociety.cage.unlockdoor",
 ]];
-
 tmp_cutscene.commands = [];
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.cutscene_target_entity_id = "teddy";
@@ -41,6 +41,7 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_FAMILIAR;
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.cutscene_target_entity_id = "teddy";
@@ -51,8 +52,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 335.3939393939394;
-tmp_cutscene_command.wy = 45.30303030303026;
+tmp_cutscene_command.wx = -143.39332287910005;
+tmp_cutscene_command.wy = 78.17469269522635;
 tmp_cutscene_command.w = 170;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I've got you, Teddy!";
@@ -63,9 +64,9 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "teddy";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 753.0909090909092;
-tmp_cutscene_command.wy = -7.636363636363679;
-tmp_cutscene_command.w = 36;
+tmp_cutscene_command.wx = 17.862258953167764;
+tmp_cutscene_command.wy = -81.17906336088166;
+tmp_cutscene_command.w = 24;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "❤️";
 tmp_cutscene_command.t = 0;
@@ -75,8 +76,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 357.66666666666663;
-tmp_cutscene_command.wy = 78.18181818181822;
+tmp_cutscene_command.wx = -140.59228650137743;
+tmp_cutscene_command.wy = 109.96143250688709;
 tmp_cutscene_command.w = 148;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Come on, let's get out of here!";

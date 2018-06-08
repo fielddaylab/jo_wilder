@@ -1,10 +1,10 @@
 tmp_porthole.ww = 235.06060606060612;
 tmp_porthole.wh = 270.3939393939393;
-tmp_porthole.wx = -220.1060585317607;
-tmp_porthole.wy = -7.166666721860878;
+tmp_porthole.wx = -220.10605853176065;
+tmp_porthole.wy = -9.954545509739688;
 tmp_porthole.wz = 0;
-tmp_porthole.act_wx = 77.00570027022911;
-tmp_porthole.act_wy = -61.0009545064006;
+tmp_porthole.act_wx = -27.539754275225416;
+tmp_porthole.act_wy = -67.97065147609759;
 tmp_porthole.act_anim = 0;
 tmp_porthole.hover_icon_wx = -0.9660300356730398;
 tmp_porthole.hover_icon_wy = 42.22853561356718;
@@ -16,8 +16,8 @@ tmp_porthole.audio_id = "null";
 tmp_porthole.deck_animcycle_ids = [
 ];
 tmp_porthole.target_room = "cage";
-tmp_porthole.target_start_wx = -737.1428584208346;
-tmp_porthole.target_start_wy = -183.94848757764856;
+tmp_porthole.target_start_wx = -1882.2787584745208;
+tmp_porthole.target_start_wy = -146.50043445789868;
 tmp_porthole.notifications_persistent = 0;
 tmp_porthole.raw_notifications = [
 ];
