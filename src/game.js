@@ -3001,4 +3001,3 @@ var Game = function(init)
     scenes[cur_scene].ready();
   }
 };
-

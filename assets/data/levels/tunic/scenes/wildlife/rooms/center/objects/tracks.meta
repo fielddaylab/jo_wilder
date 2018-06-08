@@ -1,7 +1,7 @@
-tmp_object.ww = 120.0015280149588;
-tmp_object.wh = 171.00027154561744;
-tmp_object.wx = 731.120208006767;
-tmp_object.wy = 39.65630318267593;
+tmp_object.ww = 157.55955710883967;
+tmp_object.wh = 174.0303883923966;
+tmp_object.wx = 1056.1005666868036;
+tmp_object.wy = -56.51987897356767;
 tmp_object.wz = 0;
 tmp_object.act_wx = -52.99999921473716;
 tmp_object.act_wy = -56.00000006357243;
@@ -31,3 +31,4 @@ tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
 ]];
+
