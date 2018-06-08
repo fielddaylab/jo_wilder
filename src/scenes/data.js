@@ -25016,7 +25016,7 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_theta";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
@@ -25334,7 +25334,7 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "clueoverlay_theta";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
@@ -27008,6 +27008,7 @@ tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
 ]];
+
 if(tmp_object.ww < 0) { tmp_object.ww *= -1; tmp_object.flip = 1; }
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
