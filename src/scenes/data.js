@@ -7325,6 +7325,249 @@ tmp_cutscene_command.t = 102;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
+<<<<<<< HEAD
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 154.6060606060608;
+tmp_cutscene_command.wy = 335.2121212121212;
+tmp_cutscene_command.w = 162;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Let's take this one step at a time.";
+tmp_cutscene_command.t = 50;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 148.54545454545448;
+tmp_cutscene_command.wy = 341.27272727272725;
+tmp_cutscene_command.w = 237;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Did you figure out the shirt artifact?";
+tmp_cutscene_command.t = 50;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene_command.cutscene_entity_id = "chap2_finale";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 51;
+tmp_cutscene.commands.push(tmp_cutscene_command); 
+//
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -296.9090909090909;
+tmp_cutscene_command.wy = 292.7878787878787;
+tmp_cutscene_command.w = 237;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I knew you could do it, Jolie!";
+tmp_cutscene_command.t = 52;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -283.27272727272725;
+tmp_cutscene_command.wy = 117.03030303030292;
+tmp_cutscene_command.w = 150;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "But wait- it gets even better!";
+tmp_cutscene_command.t = 52;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -254.4848484848485;
+tmp_cutscene_command.wy = 117.03030303030292;
+tmp_cutscene_command.w = 137;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I also know who stole Teddy!";
+tmp_cutscene_command.t = 52;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 531.8787878787879;
+tmp_cutscene_command.wy = 132.18181818181813;
+tmp_cutscene_command.w = 60;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Whew.";
+tmp_cutscene_command.t = 52;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 0;
+tmp_cutscene_command.wy = 0;
+tmp_cutscene_command.t = 53;
+tmp_cutscene_command.end_t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.animcycle_id = "youngboy";
+tmp_cutscene_command.deck_animcycle_ids = [
+];
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -330.24242424242425;
+tmp_cutscene_command.wy = 286.72727272727263;
+tmp_cutscene_command.w = 192;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "You wouldn't BELIEVE the day I've had...";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -133.27272727272725;
+tmp_cutscene_command.wy = 67.03030303030293;
+tmp_cutscene_command.w = 49;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "YOU!";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -72.66666666666663;
+tmp_cutscene_command.wy = 247.33333333333326;
+tmp_cutscene_command.w = 15;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "?";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -313.5757575757576;
+tmp_cutscene_command.wy = 63.99999999999994;
+tmp_cutscene_command.w = 172;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "YOU STOLE TEDDY!";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -295.3939393939394;
+tmp_cutscene_command.wy = 242.7878787878787;
+tmp_cutscene_command.w = 171;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I did no such thing!";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -287.81818181818176;
+tmp_cutscene_command.wy = 247.33333333333326;
+tmp_cutscene_command.w = 169;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Wait- who's Teddy?";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -277.21212121212125;
+tmp_cutscene_command.wy = 65.51515151515142;
+tmp_cutscene_command.w = 145;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Don't play dumb!";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 147.030303030303;
+tmp_cutscene_command.wy = 304.9090909090908;
+tmp_cutscene_command.w = 58;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "JOLIE!";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 150.0606060606061;
+tmp_cutscene_command.wy = 342.7878787878787;
+tmp_cutscene_command.w = 205;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "If you have something to say, make your case.";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene_command.cutscene_entity_id = "chap2_teddy_finale";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 101;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 151.57575757575756;
+tmp_cutscene_command.wy = 348.8484848484847;
+tmp_cutscene_command.w = 141;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "I'm sorry Jolie- we'll find Teddy.";
+tmp_cutscene_command.t = 102;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -46.909090909090914;
+tmp_cutscene_command.wy = 336.7272727272726;
+tmp_cutscene_command.w = 200;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "(and when you do, keep him out of my museum!)";
+tmp_cutscene_command.t = 102;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+=======
+>>>>>>> aeb132c7f201c17044469fe7bce92d41437e256b
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "black";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
