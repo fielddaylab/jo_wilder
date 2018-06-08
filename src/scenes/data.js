@@ -916,6 +916,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_doodle
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "entry_ecologyflag_img";
+tmp_animcycle.fqid = "tunic.entry_ecologyflag_img";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_ecologyflag_img/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "entry_exhibition_img";
 tmp_animcycle.fqid = "tunic.entry_exhibition_img";
 {
@@ -4241,6 +4256,35 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
+tmp_entry.id = "entry_ecologyflag";
+tmp_entry.fqid = "tunic.entry_ecologyflag";
+{
+tmp_entry.ww = 371;
+tmp_entry.wh = 173.00000000000003;
+tmp_entry.wx = -213.5;
+tmp_entry.wy = 175.5;
+tmp_entry.wz = 100;
+tmp_entry.page = 6;
+tmp_entry.animcycle_id = "entry_ecologyflag_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.flaghouse.entry.flag_girl.symbol",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
 tmp_entry.id = "entry_expert";
 tmp_entry.fqid = "tunic.entry_expert";
 {
@@ -4855,8 +4899,8 @@ tmp_entry.fqid = "tunic.entry_quest_backtolibrary";
 {
 tmp_entry.ww = 386;
 tmp_entry.wh = 68.99999999999997;
-tmp_entry.wx = -207;
-tmp_entry.wy = 48.5;
+tmp_entry.wx = -201;
+tmp_entry.wy = -88.49999999999997;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_quest_backtolibrary_img";
@@ -4884,8 +4928,8 @@ tmp_entry.fqid = "tunic.entry_quest_backtolibrary_x";
 {
 tmp_entry.ww = 39.99999999999999;
 tmp_entry.wh = 39.99999999999993;
-tmp_entry.wx = -380.99999999999994;
-tmp_entry.wy = 48.999999999999964;
+tmp_entry.wx = -377.99999999999994;
+tmp_entry.wy = -96.00000000000003;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -5956,8 +6000,8 @@ tmp_entry.fqid = "tunic.entry_theta";
 {
 tmp_entry.ww = 371;
 tmp_entry.wh = 173.00000000000003;
-tmp_entry.wx = -204.5;
-tmp_entry.wy = 175.5;
+tmp_entry.wx = -215.5;
+tmp_entry.wy = 29.5;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_theta_img";
@@ -12601,7 +12645,7 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theta", prompt:stextToLines("What is this flag?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_ecologyflag", prompt:stextToLines("What is this flag?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_1" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_nelson", prompt:stextToLines("What was the flag for?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_2" },
