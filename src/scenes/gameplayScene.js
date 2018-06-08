@@ -534,7 +534,6 @@ var GamePlayScene = function(game, stage)
             state_t = 0.5; //ensure it hits "loading" stage at least once
             cur_scene = my_cutsceneview.selected_scene;
             my_cutsceneview.selected_scene = 0;
-            my_cutsceneview.scene_to = 0;
             cur_scene.met = true;
             cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
             my_loader.consume_room(cur_room);
@@ -685,13 +684,12 @@ var GamePlayScene = function(game, stage)
             ctx.fillText("loading...",canv.width-100,canv.height-20);
           }
         }
-        else if(state_from == STATE_CUTSCENE && state_to == STATE_NAV)
+        else if(state_from == STATE_CUTSCENE && state_to == STATE_NAV && my_cutsceneview.scene_to)
         {
           my_navigable.draw();
           my_toolbar.draw(1);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
-          console.log(blur);
           ctx.fillStyle = "rgba(0,0,0,"+blur+")";
           ctx.fillRect(0,0,canv.width,canv.height);
           if(my_loader.loading)
