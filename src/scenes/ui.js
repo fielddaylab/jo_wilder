@@ -3519,6 +3519,10 @@ var cutsceneview = function()
     self.editable_frame_commands = [];
     self.running_commands = [];
 
+    my_avatar.cutscene_target_command = 0;
+    my_familiar.cutscene_target_command = 0;
+    my_camera.cutscene_target_command = 0;
+
     self.tick();
   }
 
@@ -3670,22 +3674,11 @@ var cutsceneview = function()
         break;
       case CUTSCENE_COMMAND_TARGET:
         var e = self.find_cutscene_entity(c.cutscene_entity_type, c.cutscene_entity_id);
-        c.cutscene_entity = e;
         var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+        if(!te) te = {wx:c.wx,wy:c.wy};
         c.cutscene_target_entity = te;
-        if(te)
-        {
-          c.wx = te.wx;
-          c.wy = te.wy;
-        }
-        if(c.cutscene_entity_type == CUTSCENE_ENTITY_CAMERA)
-        {
-          c.wx = my_navigable.cam_target_wx(c.wx);
-          c.wy = my_navigable.cam_target_wy(c.wy);
-        }
-        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   { e.to_wx = c.wx; e.to_wy = c.wy; }
-        if(c.cutscene_entity_type == CUTSCENE_ENTITY_FAMILIAR) { e.to_wx = c.wx; e.to_wy = c.wy; }
-        self.running_commands.push(c);
+        e.cutscene_target_command = c;
+        if(c.cutscene_entity_type == CUTSCENE_ENTITY_AVATAR)   { e.to_wx = te.wx; e.to_wy = te.wy; }
         break;
       case CUTSCENE_COMMAND_WAIT:
         self.waiting = 1;
@@ -3837,6 +3830,22 @@ var cutsceneview = function()
         screenSpace(my_camera, canv, c);
     }
 
+    if(my_camera.cutscene_target_command)
+    {
+      my_camera.wx = lerp(my_camera.wx,my_navigable.cam_target_wx(my_camera.cutscene_target_command.cutscene_target_entity.wx),cur_level.target_lerp_s);
+      my_camera.wy = lerp(my_camera.wy,my_navigable.cam_target_wy(my_camera.cutscene_target_command.cutscene_target_entity.wy),cur_level.target_lerp_s);
+    }
+    if(my_avatar.cutscene_target_command)
+    {
+      my_avatar.to_wx = my_avatar.cutscene_target_command.cutscene_target_entity.wx;
+      my_avatar.to_wy = my_avatar.cutscene_target_command.cutscene_target_entity.wy;
+    }
+    if(my_familiar.cutscene_target_command)
+    {
+      my_familiar.to_wx = my_familiar.cutscene_target_command.cutscene_target_entity.wx;
+      my_familiar.to_wy = my_familiar.cutscene_target_command.cutscene_target_entity.wy;
+    }
+
     for(var i = 0; !self.end && i < self.running_commands.length; i++)
     {
       var c = self.running_commands[i];
@@ -3852,17 +3861,6 @@ var cutsceneview = function()
         if(c.wh != CUTSCENE_COMMAND_IGNORE) e.wh = lerp(c.from_wh,c.wh,t);
         if(c.a  != CUTSCENE_COMMAND_IGNORE) e.a  = lerp(c.from_a,c.a,t);
         if(t == 1)
-        {
-          self.running_commands.splice(i,1);
-          i--;
-        }
-      }
-      else if(c.command == CUTSCENE_COMMAND_TARGET)
-      {
-        var e = c.cutscene_entity;
-        e.wx = lerp(e.wx,c.wx,cur_level.target_lerp_s);
-        e.wy = lerp(e.wy,c.wy,cur_level.target_lerp_s);
-        if(distsqr(e.wx,e.wy,c.wx,c.wy) < 0.0001)
         {
           self.running_commands.splice(i,1);
           i--;
@@ -3947,14 +3945,15 @@ var cutsceneview = function()
     {
       var entity = self.cutscene_entitys[i];
       screenSpace(my_camera,canv,entity);
-      if(entity.a != CUTSCENE_COMMAND_IGNORE)
+      if(entity.a == CUTSCENE_COMMAND_IGNORE || entity.a > 0)
       {
-        ctx.globalAlpha = entity.a;
-        if(entity.a > 0) ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
-        ctx.globalAlpha = 1;
+        ctx.save();
+        if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
+        ctx.translate(entity.x+entity.w/2,entity.y+entity.h/2);
+        if(entity.flip) ctx.scale(-1,1);
+        ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+        ctx.restore();
       }
-      else
-        ctx.drawImage(entity.animcycle_inst.img,entity.x,entity.y,entity.w,entity.h);
     }
 
     for(var i = 0; i < self.running_commands.length; i++)
