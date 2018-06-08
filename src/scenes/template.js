@@ -227,7 +227,7 @@ var get_save_code = function()
   return s.code();
 }
 
-var print_save_code = function()
+var get_save_code_module = function()
 {
   var s = new save_slate();
   s.gen_slate(cur_level);
@@ -261,10 +261,7 @@ var print_save_code = function()
   "],\n"+
   "code:\""+s.code()+"\"\n"+
   "};\n";
-  console.log(str);
-  console.log(s.code());
-  console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+s.code());
-  return s.code();
+  return str;
 }
 
 var load_save_code = function(code)

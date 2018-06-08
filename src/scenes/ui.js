@@ -2071,12 +2071,16 @@ var notebookview = function()
       my_toolbar.notebook_bounce = 1;
     self.n_available_entrys = self.cache_available_entrys.length;
 
+    self.old_code = self.current_code;
     self.current_code = 0;
     for(var i = 0; !self.current_code && i < save_codes.length; i++)
     {
       if(queryreqs(0, save_table[save_codes[save_codes.length-1-i]].reqs))
         self.current_code = save_codes[save_codes.length-1-i];
     }
+    var c = get_save_code();
+    if(self.old_code != self.current_code)
+      save_modules_str += get_save_code_module();
     setCookie("save", get_save_code(), 10);
   }
 

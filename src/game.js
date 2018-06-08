@@ -2,6 +2,7 @@ var save_code = 0;
 var save_table_code = 0;
 var save_codes = [];
 var save_table = [];
+var save_modules_str = "";
 
 //must be in chronological order
 
