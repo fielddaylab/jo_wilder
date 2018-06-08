@@ -1,7 +1,7 @@
-tmp_entry.ww = 32.99999999999999;
-tmp_entry.wh = 32.99999999999993;
-tmp_entry.wx = 63.50000000000004;
-tmp_entry.wy = 132.5;
+tmp_entry.ww = 39.99999999999999;
+tmp_entry.wh = 39.99999999999993;
+tmp_entry.wx = -372.99999999999994;
+tmp_entry.wy = -25.000000000000036;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_x_img";

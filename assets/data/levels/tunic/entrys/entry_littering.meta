@@ -1,7 +1,7 @@
-tmp_entry.ww = 161;
-tmp_entry.wh = 41.99999999999995;
-tmp_entry.wx = -228.5;
-tmp_entry.wy = -199.00000000000003;
+tmp_entry.ww = 383;
+tmp_entry.wh = 180.00000000000003;
+tmp_entry.wx = 198.49999999999997;
+tmp_entry.wy = 160.9999999999999;
 tmp_entry.wz = 100;
 tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_littering_img";

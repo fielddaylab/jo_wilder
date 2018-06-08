@@ -1,7 +1,7 @@
-tmp_entry.ww = 163.99999999999997;
-tmp_entry.wh = 28.00000000000002;
-tmp_entry.wx = -294.99999999999994;
-tmp_entry.wy = 11.000000000000004;
+tmp_entry.ww = 193;
+tmp_entry.wh = 45.99999999999999;
+tmp_entry.wx = -142.5;
+tmp_entry.wy = -272;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_teddyfree_img";
