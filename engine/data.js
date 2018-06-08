@@ -916,21 +916,6 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_doodle
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "entry_ecoflag_img";
-tmp_animcycle.fqid = "tunic.entry_ecoflag_img";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
-tmp_animcycle.frame_files = [];
-tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_ecoflag_img/0.png");
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
 tmp_animcycle.id = "entry_exhibition_img";
 tmp_animcycle.fqid = "tunic.entry_exhibition_img";
 {
@@ -988,6 +973,21 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_flagguess_img/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "entry_flaglady_img";
+tmp_animcycle.fqid = "tunic.entry_flaglady_img";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_flaglady_img/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -1276,6 +1276,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_quest_
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "entry_quest_checkoutflag_img";
+tmp_animcycle.fqid = "tunic.entry_quest_checkoutflag_img";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_quest_checkoutflag_img/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "entry_quest_checkstaff_img";
 tmp_animcycle.fqid = "tunic.entry_quest_checkstaff_img";
 {
@@ -1393,21 +1408,6 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_quest_museum_img/0.png");
-}
-tmp_level.animcycles.push(tmp_animcycle);
-tmp_animcycle = new animcycle();
-tmp_animcycle.id = "entry_quest_nelsonstatepark_img";
-tmp_animcycle.fqid = "tunic.entry_quest_nelsonstatepark_img";
-{
-tmp_animcycle.w = 0;
-tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
-tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 1;
-
-tmp_animcycle.frame_files = [];
-tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_quest_nelsonstatepark_img/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -4018,7 +4018,7 @@ tmp_entry.wh = 33.99999999999995;
 tmp_entry.wx = 171.5;
 tmp_entry.wy = 21.00000000000001;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_activists_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4211,35 +4211,6 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
-tmp_entry.id = "entry_ecoflag";
-tmp_entry.fqid = "tunic.entry_ecoflag";
-{
-tmp_entry.ww = 163;
-tmp_entry.wh = 33.000000000000014;
-tmp_entry.wx = 127.49999999999997;
-tmp_entry.wy = -239.5;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_ecoflag_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.nelson.trail.sign.view",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
 tmp_entry.id = "entry_expert";
 tmp_entry.fqid = "tunic.entry_expert";
 {
@@ -4306,7 +4277,7 @@ tmp_entry.wh = 37.000000000000036;
 tmp_entry.wx = 146;
 tmp_entry.wy = 178.4999999999999;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_flagguess_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4320,6 +4291,35 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.flaghouse.entry.flag_girl.symbol",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_flaglady";
+tmp_entry.fqid = "tunic.entry_flaglady";
+{
+tmp_entry.ww = 163;
+tmp_entry.wh = 33.000000000000014;
+tmp_entry.wx = 127.49999999999997;
+tmp_entry.wy = -239.5;
+tmp_entry.wz = 100;
+tmp_entry.page = 4;
+tmp_entry.animcycle_id = "entry_flaglady_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.flaghouse.entry.flag_girl",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -4422,7 +4422,7 @@ tmp_entry.wh = 41.99999999999995;
 tmp_entry.wx = -228.5;
 tmp_entry.wy = -199.00000000000003;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_littering_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4501,35 +4501,6 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
-tmp_entry.id = "entry_mugs";
-tmp_entry.fqid = "tunic.entry_mugs";
-{
-tmp_entry.ww = 118;
-tmp_entry.wh = 30.99999999999997;
-tmp_entry.wx = 123.00000000000003;
-tmp_entry.wy = -14.499999999999979;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_mugs_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.library.frontdesk.worker.nelson",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
 tmp_entry.id = "entry_nelson";
 tmp_entry.fqid = "tunic.entry_nelson";
 {
@@ -4538,7 +4509,7 @@ tmp_entry.wh = 32.99999999999997;
 tmp_entry.wx = 132.49999999999991;
 tmp_entry.wy = 56.500000000000014;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_nelson_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4552,35 +4523,6 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.library.microfiche.reader_flag.paper2.bingo",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_nelsonphoto";
-tmp_entry.fqid = "tunic.entry_nelsonphoto";
-{
-tmp_entry.ww = 189;
-tmp_entry.wh = 39.99999999999997;
-tmp_entry.wx = 140.50000000000009;
-tmp_entry.wy = -204;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_nelsonphoto_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.nelson.trail.sign.view",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -4712,7 +4654,7 @@ tmp_entry.wh = 36.99999999999999;
 tmp_entry.wx = 164;
 tmp_entry.wy = -82.50000000000011;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_quest_backbackbacktoarchivist_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4741,7 +4683,7 @@ tmp_entry.wh = 21.00000000000005;
 tmp_entry.wx = 44.000000000000135;
 tmp_entry.wy = -46.49999999999996;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4886,7 +4828,7 @@ tmp_entry.wh = 46.99999999999998;
 tmp_entry.wx = 194.5;
 tmp_entry.wy = 91.50000000000003;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_quest_backtolibrary_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -4915,7 +4857,7 @@ tmp_entry.wh = 32.99999999999993;
 tmp_entry.wx = 63.50000000000004;
 tmp_entry.wy = 132.5;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -5052,6 +4994,64 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
+tmp_entry.id = "entry_quest_checkoutflag";
+tmp_entry.fqid = "tunic.entry_quest_checkoutflag";
+{
+tmp_entry.ww = 223;
+tmp_entry.wh = 40.99999999999995;
+tmp_entry.wx = 162.50000000000003;
+tmp_entry.wy = -161.50000000000003;
+tmp_entry.wz = 100;
+tmp_entry.page = 5;
+tmp_entry.animcycle_id = "entry_quest_checkoutflag_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.basement.savedteddy",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_checkoutflag_x";
+tmp_entry.fqid = "tunic.entry_quest_checkoutflag_x";
+{
+tmp_entry.ww = 38.99999999999999;
+tmp_entry.wh = 36.99999999999993;
+tmp_entry.wx = 34.50000000000003;
+tmp_entry.wy = -129.49999999999991;
+tmp_entry.wz = 100;
+tmp_entry.page = 5;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.collection_flag.gramps.flag",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
 tmp_entry.id = "entry_quest_checkstaff";
 tmp_entry.fqid = "tunic.entry_quest_checkstaff";
 {
@@ -5176,7 +5176,7 @@ tmp_entry.wh = 35.99999999999999;
 tmp_entry.wx = -280.5;
 tmp_entry.wy = -122.00000000000001;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_quest_dnr_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -5205,7 +5205,7 @@ tmp_entry.wh = 32.999999999999986;
 tmp_entry.wx = -381.5;
 tmp_entry.wy = -90.49999999999994;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -5292,7 +5292,7 @@ tmp_entry.wh = 38.99999999999995;
 tmp_entry.wx = -164.4999999999999;
 tmp_entry.wy = -268.5;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_quest_flaglady_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -5321,7 +5321,7 @@ tmp_entry.wh = 25.99999999999996;
 tmp_entry.wx = -284;
 tmp_entry.wy = -240;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -5450,64 +5450,6 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.historicalsociety.entry.groupconvo",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_quest_nelsonstatepark";
-tmp_entry.fqid = "tunic.entry_quest_nelsonstatepark";
-{
-tmp_entry.ww = 223;
-tmp_entry.wh = 40.99999999999995;
-tmp_entry.wx = 162.50000000000003;
-tmp_entry.wy = -161.50000000000003;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_quest_nelsonstatepark_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist.confrontation",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_quest_nelsonstatepark_x";
-tmp_entry.fqid = "tunic.entry_quest_nelsonstatepark_x";
-{
-tmp_entry.ww = 38.99999999999999;
-tmp_entry.wh = 36.99999999999993;
-tmp_entry.wx = 34.50000000000003;
-tmp_entry.wy = -129.49999999999991;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_x_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.nelson",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -5740,64 +5682,6 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_quest_toend";
-tmp_entry.fqid = "tunic.entry_quest_toend";
-{
-tmp_entry.ww = 186.99999999999997;
-tmp_entry.wh = 35.00000000000003;
-tmp_entry.wx = 136.50000000000006;
-tmp_entry.wy = -286.5;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_quest_toend_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.nelson.trail.sign.view",
-]];
-
-tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_level.entrys.push(tmp_entry);
-tmp_entry = new entry();
-tmp_entry.id = "entry_quest_toend_x";
-tmp_entry.fqid = "tunic.entry_quest_toend_x";
-{
-tmp_entry.ww = 28.999999999999996;
-tmp_entry.wh = 29.99999999999997;
-tmp_entry.wx = 30.499999999999908;
-tmp_entry.wy = -260.99999999999994;
-tmp_entry.wz = 100;
-tmp_entry.page = 4;
-tmp_entry.animcycle_id = "entry_x_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.nelson.trail.sign.view",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -6044,7 +5928,7 @@ tmp_entry.wh = 31.99999999999997;
 tmp_entry.wx = 121.5;
 tmp_entry.wy = 213;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_theta_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -6073,7 +5957,7 @@ tmp_entry.wh = 34.99999999999999;
 tmp_entry.wx = -276;
 tmp_entry.wy = -159.50000000000003;
 tmp_entry.wz = 100;
-tmp_entry.page = 4;
+tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_tracks_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -7401,8 +7285,8 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 13.628846018801678;
 tmp_cutscene_command.wy = 332.1826447187166;
 tmp_cutscene_command.w = 159;
@@ -7425,8 +7309,7 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "boss";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = -363.5757575757575;
 tmp_cutscene_command.wy = 121.57575757575756;
 tmp_cutscene_command.w = 206;
@@ -7456,8 +7339,8 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 12.181818181818244;
 tmp_cutscene_command.wy = 326.12121212121195;
 tmp_cutscene_command.w = 159;
@@ -7468,8 +7351,8 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 43.999999999999986;
 tmp_cutscene_command.wy = 323.09090909090895;
 tmp_cutscene_command.w = 136;
@@ -25877,7 +25760,7 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.capitol.hall.chap4_finale_c",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
