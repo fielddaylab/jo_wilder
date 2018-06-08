@@ -1807,6 +1807,18 @@ var print_cutscene_meta = function(l)
         str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_END;\n"+
         "tmp_cutscene_command.t = "+c.t+";\n";
         break;
+      case CUTSCENE_COMMAND_LOAD_SCENE:
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_LOAD_SCENE;\n"+
+        "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SPECIAL;\n"+
+        "tmp_cutscene_command.t = "+c.t+";\n";
+        break;
+      case CUTSCENE_COMMAND_LOAD_ROOM:
+        str += "tmp_cutscene_command.command = CUTSCENE_COMMAND_LOAD_ROOM;\n"+
+        "tmp_cutscene_command.cutscene_entity_id = \""+c.cutscene_entity_id+"\";\n"+
+        "tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SPECIAL;\n"+
+        "tmp_cutscene_command.t = "+c.t+";\n";
+        break;
     }
     str += "tmp_cutscene.commands.push(tmp_cutscene_command);\n";
   }
