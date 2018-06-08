@@ -18,6 +18,7 @@ tmp_scene.raw_notification_ws = [
 tmp_scene.notification_reqs = [[
 ]];
 tmp_scene.notice_reqs = [[
+"!self",
 ]];
 tmp_scene.reqs = [[
 "tunic.wildlife.center.wells.nodeer",

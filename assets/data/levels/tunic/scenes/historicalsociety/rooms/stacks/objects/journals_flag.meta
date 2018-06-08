@@ -1,7 +1,7 @@
-tmp_object.ww = 68.97395230899636;
+tmp_object.ww = 67.97395230899636;
 tmp_object.wh = 110.99211147207005;
-tmp_object.wx = 335.6818376810318;
-tmp_object.wy = 132.10402224800836;
+tmp_object.wx = 334.1818376810318;
+tmp_object.wy = 72.10402224800836;
 tmp_object.wz = 0;
 tmp_object.act_wx = 0;
 tmp_object.act_wy = 0;
@@ -29,4 +29,5 @@ tmp_object.view_overlay_reqs = [[
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist.confrontation",
 ]];

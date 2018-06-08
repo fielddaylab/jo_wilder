@@ -18,8 +18,9 @@ tmp_scene.raw_notification_ws = [
 tmp_scene.notification_reqs = [[
 ]];
 tmp_scene.notice_reqs = [[
+"!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.capitol.hall.chap4_finale_c",
 ]];
 
