@@ -18,7 +18,7 @@ tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"I need to find more info about Theodora!",
+"I need more context about how this flag was used.",
 ];
 tmp_object.raw_notification_ws = [
 ];
