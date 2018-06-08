@@ -1,0 +1,12 @@
+tmp_inert.ww = 2765.767272727273;
+tmp_inert.wh = 577.2945454545448;
+tmp_inert.wx = 1.4921322544228133;
+tmp_inert.wy = -339.7785815110644;
+tmp_inert.wz = 10;
+tmp_inert.g = 0.5;
+tmp_inert.animcycle_id = "wildlife_fg";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
