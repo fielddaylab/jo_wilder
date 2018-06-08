@@ -15,8 +15,8 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -4.974729340696678;
-tmp_speak_command.wy = 261;
+tmp_speak_command.wx = -0.5695068340728255;
+tmp_speak_command.wy = 238;
 tmp_speak_command.w = 169.99426888971652;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
