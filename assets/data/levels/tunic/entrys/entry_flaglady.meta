@@ -1,7 +1,7 @@
-tmp_entry.ww = 387;
-tmp_entry.wh = 171.00000000000003;
-tmp_entry.wx = 325.5;
-tmp_entry.wy = -249.49999999999994;
+tmp_entry.ww = 330;
+tmp_entry.wh = 172;
+tmp_entry.wx = 192.99999999999994;
+tmp_entry.wy = -169;
 tmp_entry.wz = 100;
 tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_flaglady_img";
