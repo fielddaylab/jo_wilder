@@ -4302,10 +4302,10 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_flagguess";
 tmp_entry.fqid = "tunic.entry_flagguess";
 {
-tmp_entry.ww = 170;
-tmp_entry.wh = 37.000000000000036;
-tmp_entry.wx = -190.99999999999994;
-tmp_entry.wy = -206.50000000000014;
+tmp_entry.ww = 21.99999999999999;
+tmp_entry.wh = 29.00000000000004;
+tmp_entry.wx = 4.9999999999999805;
+tmp_entry.wy = -297.5000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_flagguess_img";
@@ -4420,8 +4420,8 @@ tmp_entry.fqid = "tunic.entry_key";
 {
 tmp_entry.ww = 366;
 tmp_entry.wh = 175;
-tmp_entry.wx = 196.0000000000002;
-tmp_entry.wy = -103.50000000000003;
+tmp_entry.wx = 220.00000000000017;
+tmp_entry.wy = -99.50000000000009;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_key_img";
@@ -4768,8 +4768,8 @@ tmp_entry.fqid = "tunic.entry_quest_backbacktoarchivist_x";
 {
 tmp_entry.ww = 30.999999999999993;
 tmp_entry.wh = 31.999999999999986;
-tmp_entry.wx = -1.4999999999998828;
-tmp_entry.wy = 281.99999999999994;
+tmp_entry.wx = 21.500000000000107;
+tmp_entry.wy = 24.999999999999908;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -5027,10 +5027,10 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_quest_checkoutflag";
 tmp_entry.fqid = "tunic.entry_quest_checkoutflag";
 {
-tmp_entry.ww = 392;
-tmp_entry.wh = 77.99999999999994;
-tmp_entry.wx = -208;
-tmp_entry.wy = 197;
+tmp_entry.ww = 268;
+tmp_entry.wh = 64.99999999999994;
+tmp_entry.wx = 148.00000000000006;
+tmp_entry.wy = -203.5;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_quest_checkoutflag_img";
@@ -5058,8 +5058,8 @@ tmp_entry.fqid = "tunic.entry_quest_checkoutflag_x";
 {
 tmp_entry.ww = 38.99999999999999;
 tmp_entry.wh = 36.99999999999993;
-tmp_entry.wx = 34.50000000000003;
-tmp_entry.wy = -129.49999999999991;
+tmp_entry.wx = 20.500000000000064;
+tmp_entry.wy = -200.49999999999997;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -5116,8 +5116,8 @@ tmp_entry.fqid = "tunic.entry_quest_checkstaff_x";
 {
 tmp_entry.ww = 40;
 tmp_entry.wh = 34.999999999999986;
-tmp_entry.wx = 51.00000000000004;
-tmp_entry.wy = 303.5;
+tmp_entry.wx = -365.99999999999994;
+tmp_entry.wy = -215.50000000000003;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -5724,8 +5724,8 @@ tmp_entry.fqid = "tunic.entry_scratches";
 {
 tmp_entry.ww = 389;
 tmp_entry.wh = 192.00000000000006;
-tmp_entry.wx = -203.5;
-tmp_entry.wy = 197.00000000000014;
+tmp_entry.wx = -195.5;
+tmp_entry.wy = 194.00000000000014;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_scratches_img";
@@ -5838,10 +5838,10 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_teddyfound";
 tmp_entry.fqid = "tunic.entry_teddyfound";
 {
-tmp_entry.ww = 179;
+tmp_entry.ww = 23.99999999999998;
 tmp_entry.wh = 34.000000000000014;
-tmp_entry.wx = -42.50000000000003;
-tmp_entry.wy = 214.00000000000003;
+tmp_entry.wx = 31.000000000000004;
+tmp_entry.wy = -307.00000000000006;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_teddyfound_img";
@@ -5867,10 +5867,10 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_teddyfree";
 tmp_entry.fqid = "tunic.entry_teddyfree";
 {
-tmp_entry.ww = 193;
-tmp_entry.wh = 45.99999999999999;
-tmp_entry.wx = -142.5;
-tmp_entry.wy = -272;
+tmp_entry.ww = 24.99999999999999;
+tmp_entry.wh = 28.999999999999986;
+tmp_entry.wx = -3.5000000000000124;
+tmp_entry.wy = -309.50000000000006;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_teddyfree_img";
@@ -12601,7 +12601,7 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_flagguess", prompt:stextToLines("What is this flag?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theta", prompt:stextToLines("What is this flag?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_1" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_nelson", prompt:stextToLines("What was the flag for?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_2" },
