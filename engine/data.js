@@ -631,6 +631,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/closetshadow
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "clueoverlay_flagstiched";
+tmp_animcycle.fqid = "tunic.clueoverlay_flagstiched";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay_flagstiched/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "clueoverlay_logbook";
 tmp_animcycle.fqid = "tunic.clueoverlay_logbook";
 {
@@ -1846,6 +1861,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/flag_girl/0.
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "flagbox";
+tmp_animcycle.fqid = "tunic.flagbox";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/flagbox/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "flaghouse_book";
 tmp_animcycle.fqid = "tunic.flaghouse_book";
 {
@@ -2210,6 +2240,51 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/journals/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "journals_flag_pic_0";
+tmp_animcycle.fqid = "tunic.journals_flag_pic_0";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/journals_flag_pic_0/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "journals_flag_pic_1";
+tmp_animcycle.fqid = "tunic.journals_flag_pic_1";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/journals_flag_pic_1/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "journals_flag_pic_2";
+tmp_animcycle.fqid = "tunic.journals_flag_pic_2";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/journals_flag_pic_2/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -13912,6 +13987,7 @@ tmp_scene.raw_notification_ws = [
 tmp_scene.notification_reqs = [[
 ]];
 tmp_scene.notice_reqs = [[
+"!self",
 ]];
 tmp_scene.reqs = [[
 "tunic.wildlife.center.wells.nodeer",
@@ -15110,18 +15186,18 @@ tmp_inert = new inert();
 tmp_inert.id = "box";
 tmp_inert.fqid = "tunic.historicalsociety.basement.box";
 {
-tmp_inert.ww = 154.3636363636363;
-tmp_inert.wh = 86.06060606060606;
-tmp_inert.wx = 120.2121212121211;
-tmp_inert.wy = -155.0909090909091;
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
-tmp_inert.animcycle_id = "null";
-tmp_inert.deck_animcycle_ids = [
-];
+tmp_inert.animcycle_id = "flagbox";
+tmp_inert.deck_animcycle_ids = [];
 tmp_inert.reqs = [[
+"tunic.capitol.hall.chap2_finale_c",
+"!tunic.historicalsociety.cage",
 ]];
-
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
@@ -22384,7 +22460,7 @@ tmp_object.animcycle_id = "journals";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "clueoverlay_stacks";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_stacksflag";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
@@ -22401,8 +22477,8 @@ tmp_object.view_overlay_reqs = [[
 tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist.confrontation",
 ]];
-
 if(tmp_object.ww < 0) { tmp_object.ww *= -1; tmp_object.flip = 1; }
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -22469,7 +22545,7 @@ tmp_view.id = "pic_0";
 tmp_view.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_0";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "journals_pic_0";
+tmp_view.animcycle_id = "journals_flag_pic_0";
 tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.deck_animcycle_ids = [
@@ -22486,7 +22562,6 @@ tmp_view.exit_reqs = [[
 ]];
 tmp_view.reqs = [[
 ]];
-
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_zone = new zone();
@@ -22523,7 +22598,7 @@ tmp_view.id = "pic_1";
 tmp_view.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_1";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "journals_pic_1";
+tmp_view.animcycle_id = "journals_flag_pic_1";
 tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.deck_animcycle_ids = [
@@ -22540,7 +22615,6 @@ tmp_view.exit_reqs = [[
 ]];
 tmp_view.reqs = [[
 ]];
-
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_zone = new zone();
@@ -22577,7 +22651,7 @@ tmp_view.id = "pic_2";
 tmp_view.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_2";
 {
 tmp_view.primary = false;
-tmp_view.animcycle_id = "journals_pic_2";
+tmp_view.animcycle_id = "journals_flag_pic_2";
 tmp_view.magnify = false;
 tmp_view.audio_id = "null";
 tmp_view.deck_animcycle_ids = [
@@ -22594,7 +22668,6 @@ tmp_view.exit_reqs = [[
 ]];
 tmp_view.reqs = [[
 ]];
-
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
 tmp_zone = new zone();
@@ -25366,7 +25439,6 @@ tmp_object.notice_reqs = [[
 tmp_object.reqs = [[
 "tunic.flaghouse.entry.colorbook",
 ]];
-
 if(tmp_object.ww < 0) { tmp_object.ww *= -1; tmp_object.flip = 1; }
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -25562,10 +25634,10 @@ tmp_zone = new zone();
 tmp_zone.id = "bingo";
 tmp_zone.fqid = "tunic.library.microfiche.reader_flag.paper2.bingo";
 {
-tmp_zone.ww = 159.99999999999997;
-tmp_zone.wh = 56.999999999999986;
-tmp_zone.wx = -238;
-tmp_zone.wy = -103.5;
+tmp_zone.ww = 284.00000000000006;
+tmp_zone.wh = 201.99999999999997;
+tmp_zone.wx = -141.99999999999997;
+tmp_zone.wy = -27.999999999999986;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.deck_animcycle_ids = [
@@ -25573,7 +25645,7 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "paper2";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"Wow! Youmans was an important suffragist!",
+"Hey! That's Governor Nelson in front of our flag!",
 ];
 tmp_zone.raw_notification_ws = [
 ];
@@ -25802,6 +25874,7 @@ tmp_scene.raw_notification_ws = [
 tmp_scene.notification_reqs = [[
 ]];
 tmp_scene.notice_reqs = [[
+"!self",
 ]];
 tmp_scene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.confrontation",
@@ -26193,6 +26266,7 @@ tmp_scene.raw_notification_ws = [
 tmp_scene.notification_reqs = [[
 ]];
 tmp_scene.notice_reqs = [[
+"!self",
 ]];
 tmp_scene.reqs = [[
 "tunic.historicalsociety.entry.groupconvo_flag",
@@ -26417,9 +26491,9 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 319;
-tmp_speak_command.wy = 137.00000000000006;
-tmp_speak_command.w = 114;
+tmp_speak_command.wx = 310.00000000000097;
+tmp_speak_command.wy = 157.000000000001;
+tmp_speak_command.w = 116;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -27002,7 +27076,7 @@ tmp_object.animcycle_id = "tracks";
 tmp_object.hover_cursor_animcycle_id = "null";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "notice";
-tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_flagstiched";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
@@ -27021,7 +27095,6 @@ tmp_object.notice_reqs = [[
 ]];
 tmp_object.reqs = [[
 ]];
-
 if(tmp_object.ww < 0) { tmp_object.ww *= -1; tmp_object.flip = 1; }
 tmp_object.animcycle_inst = gen_animcycle_inst(tmp_object.animcycle_id,tmp_level.animcycles);
 tmp_object.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_object.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -27057,10 +27130,10 @@ tmp_zone = new zone();
 tmp_zone.id = "deer";
 tmp_zone.fqid = "tunic.wildlife.center.tracks.hub.deer";
 {
-tmp_zone.ww = 100;
-tmp_zone.wh = 100;
-tmp_zone.wx = 266;
-tmp_zone.wy = -18.999999999999982;
+tmp_zone.ww = 84;
+tmp_zone.wh = 124.00000000000003;
+tmp_zone.wx = 274;
+tmp_zone.wy = -29.00000000000002;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.deck_animcycle_ids = [
