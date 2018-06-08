@@ -15,9 +15,9 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -271.3933402557868;
-tmp_speak_command.wy = 260.2728804945012;
-tmp_speak_command.w = 155;
+tmp_speak_command.wx = -266.1868426604555;
+tmp_speak_command.wy = 290.2427151057771;
+tmp_speak_command.w = 165;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -28,9 +28,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -271.3933402557868;
-tmp_speak_command.wy = 260.2728804945012;
-tmp_speak_command.w = 155;
+tmp_speak_command.wx = -271.39334025590284;
+tmp_speak_command.wy = 260.2728804945041;
+tmp_speak_command.w = 205;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -42,8 +42,8 @@ tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -363.87878787880834;
-tmp_speak_command.wy = 377.54545454545473;
-tmp_speak_command.w = 384;
+tmp_speak_command.wy = 344.96969696969717;
+tmp_speak_command.w = 358;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -56,7 +56,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -363.87878787880834;
 tmp_speak_command.wy = 377.54545454545473;
-tmp_speak_command.w = 384;
+tmp_speak_command.w = 263;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -69,7 +69,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -266.1515151515152;
 tmp_speak_command.wy = 221.1818181818182;
-tmp_speak_command.w = 125;
+tmp_speak_command.w = 140;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -78,3 +78,4 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Oh, trust me. He'll make time.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
