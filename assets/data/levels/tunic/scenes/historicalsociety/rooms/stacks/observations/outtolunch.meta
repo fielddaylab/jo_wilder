@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "\"Out To Lunch\"- better check back later.";
+tmp_observation.raw_text = "Better check back later.";
 tmp_observation.blip_wx = 79.80582133754872;
 tmp_observation.blip_wy = 235.0047667573491;
 tmp_observation.blip_w = 143;

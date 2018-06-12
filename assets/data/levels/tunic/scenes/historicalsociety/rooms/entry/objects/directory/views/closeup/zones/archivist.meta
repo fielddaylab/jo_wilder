@@ -10,7 +10,7 @@ tmp_zone.target_view = "closeup";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "Those are the same glasses!",
-"If the archivist locked up Teddy, he probably has the key!",
+"The archivist must've taken Teddy!",
 ];
 tmp_zone.raw_notification_ws = [
 243,

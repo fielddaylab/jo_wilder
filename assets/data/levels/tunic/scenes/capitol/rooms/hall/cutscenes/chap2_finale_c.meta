@@ -319,7 +319,7 @@ tmp_cutscene_command.wx = 148.5454545454546;
 tmp_cutscene_command.wy = 341.27272727272725;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Did you figure out the shirt artifact?";
+tmp_cutscene_command.raw_text = "Did you figure out the shirt?";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -350,7 +350,7 @@ tmp_cutscene_command.wx = -283.27272727272725;
 tmp_cutscene_command.wy = 117.03030303030292;
 tmp_cutscene_command.w = 150;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "But wait- it gets even better!";
+tmp_cutscene_command.raw_text = "But wait, it gets even better!";
 tmp_cutscene_command.t = 52;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
