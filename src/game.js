@@ -2409,7 +2409,12 @@ var Game = function(init)
     slow = flop-flip > 25;
     flip = flop;
     if(old_cur_scene == cur_scene && (DOUBLETIME || slow))
+    {
       scenes[cur_scene].tick();
+      //more like QUADRUPLETIME amirite
+      if(DOUBLETIME) scenes[cur_scene].tick();
+      if(DOUBLETIME) scenes[cur_scene].tick();
+    }
     if(old_cur_scene == cur_scene) //still in same scene- draw
     {
       stage.clear();
