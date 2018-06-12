@@ -21,7 +21,7 @@ tmp_object.raw_notifications = [
 "Which one might know something about this slip?",
 ];
 tmp_object.raw_notification_ws = [
-215,
+220,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
