@@ -11056,6 +11056,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_notebookview.exit_available = 0;
       self.ui_state = UI_STATE_IN;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -11111,6 +11112,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          my_notebookview.exit_available = 1;
         }
       }
       else
@@ -11629,6 +11631,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_notebookview.exit_available = 0;
       self.ui_state = UI_STATE_IN;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -11684,6 +11687,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          my_notebookview.exit_available = 1;
         }
       }
       else
@@ -12182,6 +12186,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_notebookview.exit_available = 0;
       self.ui_state = UI_STATE_IN;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -12237,6 +12242,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          my_notebookview.exit_available = 1;
         }
       }
       else
@@ -12735,6 +12741,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_notebookview.exit_available = 0;
       self.ui_state = UI_STATE_IN;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -12790,6 +12797,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          my_notebookview.exit_available = 1;
         }
       }
       else
