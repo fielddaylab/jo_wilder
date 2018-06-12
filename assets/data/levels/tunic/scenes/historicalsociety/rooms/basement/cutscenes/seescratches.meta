@@ -1,8 +1,8 @@
 tmp_cutscene.trigger = CUTSCENE_TRIGGER_ACT;
 tmp_cutscene.ww = 226.69696969694482;
 tmp_cutscene.wh = 321.96969696970814;
-tmp_cutscene.wx = -224.28787671359146;
-tmp_cutscene.wy = -32.95454550974566;
+tmp_cutscene.wx = -221.49999792571265;
+tmp_cutscene.wy = -25.984848540048603;
 tmp_cutscene.wz = 1;
 tmp_cutscene.act_wx = 77.00570027022911;
 tmp_cutscene.act_wy = -61.0009545064006;
