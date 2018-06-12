@@ -41,13 +41,13 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.chap2_teddy_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_teddytaken", prompt:stextToLines("How do I know he was taken?", tmp_level.notifications_w), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_teddytaken", prompt:stextToLines("How do I know he was taken?", 260), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.chap2_teddy_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_javajacket", prompt:stextToLines("What other evidence did I find at the crime scene?", tmp_level.notifications_w), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_javajacket", prompt:stextToLines("What other evidence did I find at the crime scene?", 270), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.chap2_teddy_finale_2" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_archivistcoffee", prompt:stextToLines("How can I connect the coffee to Wells?", tmp_level.notifications_w), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_2_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.chap2_teddy_finale_3" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_taxidermy", prompt:stextToLines("How else can I connect Wells to Teddy?", tmp_level.notifications_w), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_taxidermy", prompt:stextToLines("How else can I connect Wells to Teddy?", 220), fail:["tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.gramps.chap2_teddy_finale_4" },
 
 ];
