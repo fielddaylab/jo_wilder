@@ -12,6 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.microfiche.reader.paper2.bingo",
+"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 
 tmp_speak_command = new speak_command();

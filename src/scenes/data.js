@@ -13631,31 +13631,33 @@ tmp_speak.id = "takealook";
 tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.takealook";
 {
 tmp_speak.primary = true;
-tmp_speak.commands = [];
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.drycleaner.frontdesk.worker.leo",
-"!tunic.drycleaner.frontdesk.logbook.page.bingo"
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
-tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.wx = 55.00000000000003;
+tmp_speak_command.wy = 205.00000000000003;
+tmp_speak_command.w = 114;
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
-tmp_speak_command.raw_atext = "take a look";
-tmp_speak_command.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_AVATAR
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Take a look!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -13668,13 +13670,14 @@ tmp_speak.id = "tryagain";
 tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.tryagain";
 {
 tmp_speak.primary = true;
-tmp_speak.commands = [];
-tmp_speak.options_wx = 100;
-tmp_speak.options_wy = 100;
-tmp_speak.options_w = 100;
-tmp_speak.options_h = 30; //h of a single line
+tmp_speak.options_wx = 5000;
+tmp_speak.options_wy = 148.99999999999997;
+tmp_speak.options_w = 256;
+tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
 ];
 tmp_speak.notification_reqs = [[
 ]];
@@ -13684,15 +13687,16 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 100;
-tmp_speak_command.wy = 100;
+tmp_speak_command.wx = 64.00000000000006;
+tmp_speak_command.wy = 204.99999999999997;
 tmp_speak_command.w = 100;
-tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [];
-tmp_speak_command.raw_atext = "try again";
-tmp_speak_command.speaker = SPEAKER_PERSON; //SPEAKER_PERSON or SPEAKER_AVATAR
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Try again...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
@@ -13771,8 +13775,10 @@ tmp_object.raw_notifications = [
 "I have to find the entry for this slip",
 ];
 tmp_object.raw_notification_ws = [
+170,
 ];
 tmp_object.notification_reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
 "!tunic.drycleaner.frontdesk.logbook.page.bingo",
@@ -13837,8 +13843,8 @@ tmp_zone.raw_notifications = [
 ];
 tmp_zone.raw_notification_ws = [
 253,
-280,
-217,
+320,
+212,
 ];
 tmp_zone.notification_reqs = [[
 ]];
@@ -21005,6 +21011,66 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
+tmp_speak.id = "foundtheodora";
+tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.foundtheodora";
+{
+tmp_speak.primary = true;
+tmp_speak.commands = [];
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.historicalsociety.stacks.journals.pic_2.bingo",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 100;
+tmp_speak_command.wy = 100;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.raw_atext = "I found it!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 100;
+tmp_speak_command.wy = 100;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.raw_atext = "Theodora wearing the shirt!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 100;
+tmp_speak_command.wy = 100;
+tmp_speak_command.w = 100;
+tmp_speak_command.h = 30; //h of a single line
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [];
+tmp_speak_command.raw_atext = "You better get to the capitol!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
 tmp_speak.id = "have_glass";
 tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.have_glass";
 {
@@ -21230,6 +21296,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.have_glass",
+"!tunic.library.microfiche.reader.paper2.bingo",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -21691,8 +21758,8 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
-tmp_speak.id = "recap";
-tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.recap";
+tmp_speak.id = "newspaper_recap";
+tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.newspaper_recap";
 {
 tmp_speak.primary = 92;
 tmp_speak.options_wx = 210.5;
@@ -21708,6 +21775,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.microfiche.reader.paper2.bingo",
+"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -23011,7 +23079,7 @@ tmp_person.ww = 158.1362046610845;
 tmp_person.wh = 286.00000000000006;
 tmp_person.wx = -243.38601940974914;
 tmp_person.wy = -73.19999999999995;
-tmp_person.wz = 3;
+tmp_person.wz = -1;
 tmp_person.act_wx = 201.17807825439044;
 tmp_person.act_wy = -83.99999999999999;
 tmp_person.act_anim = true;
@@ -23324,7 +23392,7 @@ tmp_object.raw_notifications = [
 "Which one might know something about this slip?",
 ];
 tmp_object.raw_notification_ws = [
-215,
+220,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
@@ -23496,7 +23564,7 @@ tmp_zone.raw_notifications = [
 "This is the only dry cleaner that was around in 1916!",
 ];
 tmp_zone.raw_notification_ws = [
-190,
+180,
 ];
 tmp_zone.notification_reqs = [[
 ]];
@@ -25082,7 +25150,7 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "clueoverlay_theta";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
@@ -25091,10 +25159,13 @@ tmp_object.raw_notifications = [
 "Where are you, Theodora?",
 ];
 tmp_object.raw_notification_ws = [
+230,
 ];
 tmp_object.notification_reqs = [[
+"!tunic.library.microfiche.reader.paper2.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
+"!tunic.library.microfiche.reader.paper2.bingo",
 ]];
 tmp_object.notice_reqs = [[
 ]];
@@ -25313,6 +25384,7 @@ tmp_zone.raw_notifications = [
 "Ooh! Youmans was a suffragist? What's that?",
 ];
 tmp_zone.raw_notification_ws = [
+220,
 ];
 tmp_zone.notification_reqs = [[
 ]];
@@ -25400,7 +25472,7 @@ tmp_object.animcycle_id = "null";
 tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "null";
 tmp_object.notice_icon_animcycle_id = "null";
-tmp_object.view_overlay_animcycle_id = "clueoverlay_microfiche";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_theta";
 tmp_object.audio_id = "null";
 tmp_object.deck_animcycle_ids = [
 ];
