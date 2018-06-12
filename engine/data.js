@@ -13656,7 +13656,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Take a look!";
+tmp_speak_command.raw_atext = "take a look";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13670,7 +13670,7 @@ tmp_speak.id = "tryagain";
 tmp_speak.fqid = "tunic.drycleaner.frontdesk.worker.tryagain";
 {
 tmp_speak.primary = true;
-tmp_speak.options_wx = 5000;
+tmp_speak.options_wx = -368;
 tmp_speak.options_wy = 148.99999999999997;
 tmp_speak.options_w = 256;
 tmp_speak.options_h = 30;
@@ -13695,7 +13695,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Try again...";
+tmp_speak_command.raw_atext = "try again";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13843,7 +13843,7 @@ tmp_zone.raw_notifications = [
 ];
 tmp_zone.raw_notification_ws = [
 253,
-320,
+330,
 212,
 ];
 tmp_zone.notification_reqs = [[
@@ -22236,6 +22236,7 @@ tmp_object.raw_notifications = [
 tmp_object.raw_notification_ws = [
 ];
 tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.stacks.journals.pic_0",
 ]];
 tmp_object.view_overlay_reqs = [[
 "!tunic.historicalsociety.stacks.journals.pic_0",
@@ -23392,7 +23393,7 @@ tmp_object.raw_notifications = [
 "Which one might know something about this slip?",
 ];
 tmp_object.raw_notification_ws = [
-220,
+230,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
