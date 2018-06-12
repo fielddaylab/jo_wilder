@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.capitol.hall.chap1_finale_c",
 ]];
+tmp_entry.interactive = 1;
 

@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.entry.wells.flag",
 ]];
+tmp_entry.interactive = 1;
 

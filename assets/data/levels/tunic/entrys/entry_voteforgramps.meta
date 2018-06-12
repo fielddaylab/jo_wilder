@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.closet.retirement_letter.hub",
 ]];
+tmp_entry.interactive = 1;
 
