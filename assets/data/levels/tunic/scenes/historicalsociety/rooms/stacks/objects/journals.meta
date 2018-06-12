@@ -23,6 +23,7 @@ tmp_object.raw_notifications = [
 tmp_object.raw_notification_ws = [
 ];
 tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.stacks.journals.pic_0",
 ]];
 tmp_object.view_overlay_reqs = [[
 "!tunic.historicalsociety.stacks.journals.pic_0",
