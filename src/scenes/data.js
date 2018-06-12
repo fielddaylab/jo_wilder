@@ -13337,9 +13337,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -35.975208828576484;
+tmp_speak_command.wx = -35.975208828576505;
 tmp_speak_command.wy = 149;
-tmp_speak_command.w = 159.99426888971652;
+tmp_speak_command.w = 150.99426888971652;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -13546,9 +13546,9 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -71.99999999999999;
-tmp_speak_command.wy = 257.99999999999994;
-tmp_speak_command.w = 238;
+tmp_speak_command.wx = -122.99999999999996;
+tmp_speak_command.wy = 234.99999999999994;
+tmp_speak_command.w = 293;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -13559,9 +13559,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -71.99999999999999;
-tmp_speak_command.wy = 257.99999999999994;
-tmp_speak_command.w = 238;
+tmp_speak_command.wx = -38.99999999999996;
+tmp_speak_command.wy = 237.99999999999991;
+tmp_speak_command.w = 206;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -13572,9 +13572,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -43.99999999999993;
-tmp_speak_command.wy = 228.99999999999994;
-tmp_speak_command.w = 209;
+tmp_speak_command.wx = -8.999999999999888;
+tmp_speak_command.wy = 204.99999999999991;
+tmp_speak_command.w = 174;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -22972,9 +22972,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -17.000000000495753;
+tmp_speak_command.wx = -17.00000000049577;
 tmp_speak_command.wy = -4.999999999999996;
-tmp_speak_command.w = 190;
+tmp_speak_command.w = 188;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -22996,7 +22996,7 @@ tmp_speak.fqid = "tunic.humanecology.frontdesk.worker.intro1";
 tmp_speak.primary = 100;
 tmp_speak.options_wx = -74.2007221987254;
 tmp_speak.options_wy = 77.99999999999999;
-tmp_speak.options_w = 295;
+tmp_speak.options_w = 268;
 tmp_speak.options_h = 30;
 tmp_speak.notifications_persistent = 0;
 tmp_speak.raw_notifications = [
@@ -23128,9 +23128,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 1.9999999925591005;
+tmp_speak_command.wx = 1.9999999925590686;
 tmp_speak_command.wy = 48.000000000000014;
-tmp_speak_command.w = 247;
+tmp_speak_command.w = 238;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -23143,7 +23143,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -180.0000000173391;
 tmp_speak_command.wy = 186.00000000000006;
-tmp_speak_command.w = 247;
+tmp_speak_command.w = 201;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -23208,10 +23208,13 @@ tmp_object.raw_notifications = [
 "Which one might know something about this slip?",
 ];
 tmp_object.raw_notification_ws = [
+215,
 ];
 tmp_object.notification_reqs = [[
+"!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
+"!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
 ]];
 tmp_object.notice_reqs = [[
 ]];
@@ -23377,7 +23380,7 @@ tmp_zone.raw_notifications = [
 "This is the only dry cleaner that was around in 1916!",
 ];
 tmp_zone.raw_notification_ws = [
-205,
+190,
 ];
 tmp_zone.notification_reqs = [[
 ]];
