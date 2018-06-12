@@ -23,7 +23,7 @@ tmp_object.raw_notifications = [
 ];
 tmp_object.raw_notification_ws = [
 203,
-150,
+145,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",

@@ -120,23 +120,11 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "archivist";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.wx = -1102.787878787879;
-tmp_cutscene_command.wy = 130.1515151515151;
-tmp_cutscene_command.w = 43;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "GAH!";
-tmp_cutscene_command.t = 60;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "archivist";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.wx = -1107.030303030303;
 tmp_cutscene_command.wy = 159.84848484848476;
-tmp_cutscene_command.w = 198;
+tmp_cutscene_command.w = 148;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "And what is THAT doing out of its cage?!";
+tmp_cutscene_command.raw_text = "GAH! And what is THAT doing out of its cage?!";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -148,7 +136,7 @@ tmp_cutscene_command.wx = -823.9779614325071;
 tmp_cutscene_command.wy = 68.3388429752065;
 tmp_cutscene_command.w = 151;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You stole Teddy!";
+tmp_cutscene_command.raw_text = "You stole Teddy! How could you?!";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -169,7 +157,7 @@ tmp_cutscene_command.wx = -1310.3471074380166;
 tmp_cutscene_command.wy = 173.54269972451775;
 tmp_cutscene_command.w = 148;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Alright now what's going on?";
+tmp_cutscene_command.raw_text = "Okay, I'm here. What's going on?";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -262,7 +250,7 @@ tmp_cutscene_command.wx = -803.5482093663913;
 tmp_cutscene_command.wy = 98.98347107438006;
 tmp_cutscene_command.w = 217;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Have you been stealing Gramps' paperwork too?!";
+tmp_cutscene_command.raw_text = "Have you been stealing Gramps's paperwork too?!";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -310,7 +298,7 @@ tmp_cutscene_command.wx = -1107.030303030303;
 tmp_cutscene_command.wy = 129.09090909090898;
 tmp_cutscene_command.w = 41;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "See!";
+tmp_cutscene_command.raw_text = "See?!";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -343,7 +331,7 @@ tmp_cutscene_command.wx = -1314.534435261708;
 tmp_cutscene_command.wy = 174.93939393939382;
 tmp_cutscene_command.w = 244;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie- you have to keep your badger under control.";
+tmp_cutscene_command.raw_text = "Jolie- you need to keep your badger under control, or he'll have to go.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -403,19 +391,7 @@ tmp_cutscene_command.wx = -1311.595041322314;
 tmp_cutscene_command.wy = 172.79889807162522;
 tmp_cutscene_command.w = 182;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You can't just lock an animal in a cage.";
-tmp_cutscene_command.t = 61;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "boss";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.wx = -1314.1515151515152;
-tmp_cutscene_command.wy = 185.30303030303023;
-tmp_cutscene_command.w = 324;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "ATTENTION: THIS NEEDS REWRITING";
+tmp_cutscene_command.raw_text = "You can't just steal Jolie's pet. Don't you know badgers are protected?";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -427,7 +403,7 @@ tmp_cutscene_command.wx = -1383.090909090909;
 tmp_cutscene_command.wy = 160.90909090909082;
 tmp_cutscene_command.w = 567;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "IT'S VERY REASONABLE TO JUST LOCK A WILD ANIMAL IN A CAGE";
+tmp_cutscene_command.raw_text = "Besides, he looks pretty friendly to me.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -439,7 +415,7 @@ tmp_cutscene_command.wx = -1104.909090909091;
 tmp_cutscene_command.wy = 130.15151515151504;
 tmp_cutscene_command.w = 44;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Wha!";
+tmp_cutscene_command.raw_text = "Wha?!";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -451,7 +427,7 @@ tmp_cutscene_command.wx = -1105.969696969697;
 tmp_cutscene_command.wy = 134.3939393939393;
 tmp_cutscene_command.w = 112;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Ugh. Alright.";
+tmp_cutscene_command.raw_text = "Ugh. Fine.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -475,7 +451,7 @@ tmp_cutscene_command.wx = -1308.8209366391186;
 tmp_cutscene_command.wy = 172.33333333333326;
 tmp_cutscene_command.w = 131;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Alright Jolie. Back to work.";
+tmp_cutscene_command.raw_text = "Alright, Jolie. Back to work.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -487,7 +463,7 @@ tmp_cutscene_command.wx = -1313.9201101928375;
 tmp_cutscene_command.wy = 174.39944903581255;
 tmp_cutscene_command.w = 237;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Your grampa is waiting for you in the collections.";
+tmp_cutscene_command.raw_text = "Your grampa is waiting for you in the collection room.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -517,7 +493,7 @@ tmp_cutscene_command.wx = -806.9531680440773;
 tmp_cutscene_command.wy = 68.33884297520652;
 tmp_cutscene_command.w = 188;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Alright Teddy";
+tmp_cutscene_command.raw_text = "Come on, Teddy.";
 tmp_cutscene_command.t = 62;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -529,7 +505,7 @@ tmp_cutscene_command.wx = -806.9531680440773;
 tmp_cutscene_command.wy = 68.33884297520652;
 tmp_cutscene_command.w = 188;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "To the collections!";
+tmp_cutscene_command.raw_text = "Let's go find Grampa!";
 tmp_cutscene_command.t = 62;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

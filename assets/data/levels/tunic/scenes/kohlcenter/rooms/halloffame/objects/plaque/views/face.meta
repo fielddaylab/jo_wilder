@@ -9,7 +9,7 @@ tmp_view.raw_notifications = [
 "Anything useful on here?",
 ];
 tmp_view.raw_notification_ws = [
-230,
+225,
 ];
 tmp_view.notification_reqs = [[
 "!tunic.kohlcenter.halloffame.plaque.face.date",

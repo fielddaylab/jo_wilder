@@ -86,7 +86,7 @@ tmp_cutscene_command.wx = -372.72727272727275;
 tmp_cutscene_command.wy = 114.84848484848492;
 tmp_cutscene_command.w = 172;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I’ve got Wells’s ID! Could that work?";
+tmp_cutscene_command.raw_text = "I’ve got Wells’s ID!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -98,7 +98,7 @@ tmp_cutscene_command.wx = 21.75757575757585;
 tmp_cutscene_command.wy = 192.90909090909088;
 tmp_cutscene_command.w = 113;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Yes! That’ll do the trick.";
+tmp_cutscene_command.raw_text = "Excellent. That’ll do the trick.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -110,7 +110,7 @@ tmp_cutscene_command.wx = 23.1515151515152;
 tmp_cutscene_command.wy = 229.15151515151518;
 tmp_cutscene_command.w = 236;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I'm supposed to take the artifact upstairs. Can you handle this on your own?";
+tmp_cutscene_command.raw_text = "I need to take the artifact upstairs. Do you want to wait until I get back?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -122,7 +122,7 @@ tmp_cutscene_command.wx = -428.4848484848485;
 tmp_cutscene_command.wy = 68.84848484848482;
 tmp_cutscene_command.w = 221;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Sure! One step at a time.";
+tmp_cutscene_command.raw_text = "It's okay, Gramps. I can handle this.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

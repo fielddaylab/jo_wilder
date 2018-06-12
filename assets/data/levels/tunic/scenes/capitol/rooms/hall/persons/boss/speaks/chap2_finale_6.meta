@@ -65,16 +65,3 @@ tmp_speak_command.raw_atext = "and what impeccable research!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -24.093447373763908;
-tmp_speak_command.wy = 376.8892000098378;
-tmp_speak_command.w = 180.69814225923326;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "I'm going to need you and Leopold to write this up A.S.A.P.!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
