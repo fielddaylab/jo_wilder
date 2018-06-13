@@ -8,5 +8,6 @@ tmp_inert.animcycle_id = "cage_door";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
+"!tunic.historicalsociety.cage.unlockdoor",
 ]];
 
