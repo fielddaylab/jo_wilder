@@ -13739,7 +13739,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "take a look";
+tmp_speak_command.raw_atext = "Take a look!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13926,7 +13926,7 @@ tmp_zone.raw_notifications = [
 ];
 tmp_zone.raw_notification_ws = [
 253,
-330,
+350,
 212,
 ];
 tmp_zone.notification_reqs = [[
