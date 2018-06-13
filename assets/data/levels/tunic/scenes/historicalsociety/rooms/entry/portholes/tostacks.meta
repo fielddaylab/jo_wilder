@@ -29,5 +29,8 @@ tmp_porthole.notice_reqs = [[
 ]];
 tmp_porthole.reqs = [[
 "tunic.historicalsociety.collection",
+"!tunic.historicalsociety.collection_flag.gramps.flag",
+],[
+"tunic.wildlife",
 ]];
 

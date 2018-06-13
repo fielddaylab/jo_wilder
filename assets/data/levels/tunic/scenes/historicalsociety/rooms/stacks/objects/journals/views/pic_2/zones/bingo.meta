@@ -14,7 +14,7 @@ tmp_zone.raw_notifications = [
 "I should go to the Capitol and tell everyone!",
 ];
 tmp_zone.raw_notification_ws = [
-0,
+178,
 295,
 230,
 ];
