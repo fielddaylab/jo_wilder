@@ -14,9 +14,9 @@ tmp_zone.raw_notifications = [
 "I'll make a note of this.",
 ];
 tmp_zone.raw_notification_ws = [
-253,
-350,
-212,
+247.7677764892578,
+332.36773681640625,
+202.91180419921875,
 ];
 tmp_zone.notification_reqs = [[
 ]];

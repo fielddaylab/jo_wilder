@@ -11,9 +11,9 @@ tmp_view.raw_notifications = [
 "Gramps is the best historian ever!",
 ];
 tmp_view.raw_notification_ws = [
-336,
-164,
-293,
+336.711669921875,
+164.6558380126953,
+293.24774169921875,
 ];
 tmp_view.notification_reqs = [[
 ]];

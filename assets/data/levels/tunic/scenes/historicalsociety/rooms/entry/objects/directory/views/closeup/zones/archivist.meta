@@ -13,8 +13,8 @@ tmp_zone.raw_notifications = [
 "The archivist must've taken Teddy!",
 ];
 tmp_zone.raw_notification_ws = [
-243,
-190,
+243.27980041503906,
+186,
 ];
 tmp_zone.notification_reqs = [[
 ]];

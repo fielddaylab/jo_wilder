@@ -12,7 +12,7 @@ tmp_zone.raw_notifications = [
 "Ooh! Youmans was a suffragist? What's that?",
 ];
 tmp_zone.raw_notification_ws = [
-220,
+219,
 ];
 tmp_zone.notification_reqs = [[
 ]];

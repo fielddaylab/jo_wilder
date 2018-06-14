@@ -83,7 +83,7 @@ var GamePlayScene = function(game, stage)
           var bogus_w = ob.raw_notification_ws[i];
           if(bogus_lines.length == 1)
           {
-            bogus_w = ctx.measureText(bogus_lines[0]).width
+            bogus_w = ctx.measureText(bogus_lines[0]).width+1;
           }
           else
           {
@@ -109,7 +109,7 @@ var GamePlayScene = function(game, stage)
         var bogus_w = w;
         if(bogus_lines.length == 1)
         {
-          bogus_w = ctx.measureText(bogus_lines[0]).width
+          bogus_w = ctx.measureText(bogus_lines[0]).width+1;
         }
         else
         {
@@ -150,7 +150,7 @@ var GamePlayScene = function(game, stage)
               for(var m = 0; m < speak.commands.length; m++)
               {
                 command = speak.commands[m];
-                command.w = tighten_text_bubbles(command.atext,command.raw_atext,command.w,command);
+                command.w = tighten_text_bubbles(command.atext,command.raw_atext,command.w,speak);
               }
 
               var option;

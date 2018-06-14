@@ -21,6 +21,7 @@ tmp_object.raw_notifications = [
 "I need to find more info about Theodora!",
 ];
 tmp_object.raw_notification_ws = [
+185,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.stacks.journals.pic_0",

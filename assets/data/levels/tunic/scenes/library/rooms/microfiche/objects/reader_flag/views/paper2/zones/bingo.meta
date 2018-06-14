@@ -12,7 +12,7 @@ tmp_zone.raw_notifications = [
 "Hey! That's Governor Nelson in front of our flag!",
 ];
 tmp_zone.raw_notification_ws = [
-247,
+245,
 ];
 tmp_zone.notification_reqs = [[
 ]];
