@@ -1,5 +1,4 @@
-tmp_speak.primary = false;
-tmp_speak.commands = [];
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;

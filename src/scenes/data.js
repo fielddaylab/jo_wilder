@@ -21326,6 +21326,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.frontdesk.worker.flag",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -21511,7 +21512,7 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-template.js:1365 tmp_speak_command.wx = 139;
+tmp_speak_command.wx = 139;
 tmp_speak_command.wy = 74;
 tmp_speak_command.w = 65;
 tmp_speak_command.h = 30;
@@ -21533,6 +21534,56 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "But first, to the Stacks!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "confrontation_recap";
+tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.confrontation_recap";
+{
+tmp_speak.primary = false;
+tmp_speak.commands = [];
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30; //h of a single line
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist.confrontation",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 1.0000000000000142;
+tmp_speak_command.wy = 210.99999999999997;
+tmp_speak_command.w = 204;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "You have the number for the Wisconsin conservationist photots.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 1.0000000000000142;
+tmp_speak_command.wy = 210.99999999999997;
+tmp_speak_command.w = 204;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "They're right outside this door.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -25031,8 +25082,7 @@ tmp_speak = new speak();
 tmp_speak.id = "flag_recap";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.flag_recap";
 {
-tmp_speak.primary = false;
-tmp_speak.commands = [];
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;

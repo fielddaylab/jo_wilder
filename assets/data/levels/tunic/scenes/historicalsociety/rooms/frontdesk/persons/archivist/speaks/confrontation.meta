@@ -198,7 +198,7 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-template.js:1365 tmp_speak_command.wx = 139;
+tmp_speak_command.wx = 139;
 tmp_speak_command.wy = 74;
 tmp_speak_command.w = 65;
 tmp_speak_command.h = 30;
