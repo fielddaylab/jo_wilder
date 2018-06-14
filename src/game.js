@@ -14,7 +14,7 @@ all:
 [
 "tunic.historicalsociety.closet",
 ],
-code:"0500000000000000000000000000002097152000000000000000000000000000000000000000000000000000000000000000"
+code:"0500000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000"
 };
 save_codes.push("notebook");
 save_table[save_codes[save_codes.length-1]] = {
@@ -35,7 +35,7 @@ all:
 "tunic.historicalsociety.closet.notebook.hub",
 "tunic.historicalsociety.closet.intro",
 ],
-code:"0500000000000000000000020971526291456000422300000000000000000000000000000000000000000000000000000000"
+code:"0500000000000000000000000000000000001001689500000000000000000000000000000000000000000000000000000000"
 };
 save_codes.push("wiscwonders");
 save_table[save_codes[save_codes.length-1]] = {
@@ -63,7 +63,7 @@ all:
 "tunic.historicalsociety.entry.report.closeup",
 "tunic.historicalsociety.entry.groupconvo",
 ],
-code:"0900000000000000000000062914566291456000460702621440131456000000000000000000000000000000000000000000"
+code:"0900000000000000000000000000000000003001843110485762103296000000000000000000000000000000000000000000"
 };
 save_codes.push("mysteryslip");
 save_table[save_codes[save_codes.length-1]] = {
@@ -89,7 +89,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -100,7 +99,7 @@ all:
 "tunic.historicalsociety.entry.report.closeup",
 "tunic.historicalsociety.entry.groupconvo",
 ],
-code:"0700000000000000000000062914566291456000460702682200131456000000000000000000000000000000000000000000"
+code:"0700000000000000000000000000000000003001843110727522103296000000000000000000000000000000000000000000"
 };
 save_codes.push("plaque");
 save_table[save_codes[save_codes.length-1]] = {
@@ -126,7 +125,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -143,7 +141,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"1400000000000000000000062914566291456000460702682200131456000000000000000587776000000000000000000000"
+code:"1400000000000000000000000000000000003001843110727522103296000000000000002031616000000200000000000000"
 };
 save_codes.push("notajersey");
 save_table[save_codes[save_codes.length-1]] = {
@@ -158,7 +156,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
@@ -179,7 +176,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -196,7 +192,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"0000039260000000001740862914566291456000460702682200131456000000000000000587776000000000000000000000"
+code:"0000029020000000001740800000000000003001843110727522103296000000000000002031616000000200000000000000"
 };
 save_codes.push("trashed");
 save_table[save_codes[save_codes.length-1]] = {
@@ -211,7 +207,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
@@ -234,7 +229,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -251,7 +245,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"0600039260000000001740862914566291456001279902682220131456000000000000000587776000000000000000000000"
+code:"0600029020000000001740800000000000003005119910727602103296000000000000002031616000000200000000000000"
 };
 save_codes.push("archivist");
 save_table[save_codes[save_codes.length-1]] = {
@@ -266,12 +260,12 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -286,6 +280,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -293,7 +288,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -316,7 +310,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"1000039260000000001740862914566291456435455902682231704320000461300000000587776000000000000000000000"
+code:"1000029020000000001740800000000000035090316710727662103296014761900000002031616000000200000000000000"
 };
 save_codes.push("textile");
 save_table[save_codes[save_codes.length-1]] = {
@@ -331,12 +325,12 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -351,6 +345,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -358,7 +353,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -378,7 +372,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -395,7 +389,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"1300039260000000001740862914566291456435455902682231704320000461377168640587903000000000000000000000"
+code:"1300029020000000001740800000000000035090316710727662103296014761936700162035707000000200000000000000"
 };
 save_codes.push("logbook");
 save_table[save_codes[save_codes.length-1]] = {
@@ -410,7 +404,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
@@ -418,13 +411,17 @@ all:
 "tunic.drycleaner.frontdesk",
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -439,6 +436,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -446,7 +444,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -466,7 +463,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -483,7 +480,7 @@ all:
 "tunic.kohlcenter.halloffame.plaque.face.date",
 "tunic.kohlcenter.halloffame.togrampa",
 ],
-code:"0100039260000000604672062932536291456435455902682231704320000461377168640587903000000000000000000000"
+code:"0100029020000000604672000019020000035090316710727662103296014761936700162035707000000200000000000000"
 };
 save_codes.push("suffragist");
 save_table[save_codes[save_codes.length-1]] = {
@@ -498,7 +495,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
@@ -507,13 +503,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -528,6 +528,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -535,7 +536,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -555,7 +555,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -582,7 +582,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"1600039260000000814387262932536291456435455902682231704320000461377168647927935161997200000000000000"
+code:"1600029020000000814387200019020000035090316710727662103296014761936700162035707301494200000120000000"
 };
 save_codes.push("taxidermist");
 save_table[save_codes[save_codes.length-1]] = {
@@ -597,7 +597,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap1_finale_c",
@@ -606,13 +605,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -627,6 +630,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -634,7 +638,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -654,7 +657,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -684,7 +687,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"1500039260000000814387262932536291456435455902682231704320000461377168647927935162019600000000000000"
+code:"1500029020000000814387200019020000035090316710727662103296014761936700162035707302927800000120000000"
 };
 save_codes.push("blowthisthingwideopen");
 save_table[save_codes[save_codes.length-1]] = {
@@ -700,7 +703,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.haveyougotit",
 "tunic.capitol.hall.chap1_finale",
@@ -710,13 +712,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -731,6 +737,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -738,7 +745,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -768,7 +774,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -798,7 +804,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"1200039340065536814387262932536291456435455902682231704320419075777168647927935162019600000000000000"
+code:"1200029100065536814387200019020000035090316710727662103296827510736700312035707302927800000120000000"
 };
 save_codes.push("mustsaveteddy");
 save_table[save_codes[save_codes.length-1]] = {
@@ -814,7 +820,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.chap2_finale_0",
 "tunic.capitol.hall.boss.chap2_finale_1",
@@ -828,6 +833,7 @@ all:
 "tunic.capitol.hall.gramps.chap2_teddy_finale_1",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_2",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_3",
+"tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_4",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
@@ -839,13 +845,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.closet",
 "tunic.historicalsociety.closet.gramps",
 "tunic.historicalsociety.closet.gramps.intro_0_cs_0",
@@ -860,6 +870,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -867,7 +878,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -897,7 +907,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -927,7 +937,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"0027892145308437818282662932536291456435455902682231704320419075777168647927935162019600000000000000"
+code:"0027881905308437818284200019020000035090316710727662103296827510736700312035707302927800000120000000"
 };
 save_codes.push("scratches");
 save_table[save_codes[save_codes.length-1]] = {
@@ -943,7 +953,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.chap2_finale_0",
 "tunic.capitol.hall.boss.chap2_finale_1",
@@ -953,10 +962,12 @@ all:
 "tunic.capitol.hall.boss.chap2_finale_5",
 "tunic.capitol.hall.boss.chap2_finale_6",
 "tunic.capitol.hall.boss.haveyougotit",
+"tunic.capitol.hall.boss.writeitup",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_0",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_1",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_2",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_3",
+"tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_4",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
@@ -968,13 +979,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.basement.ch3start",
 "tunic.historicalsociety.basement.seescratches",
 "tunic.historicalsociety.closet",
@@ -991,6 +1006,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -998,7 +1014,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -1028,7 +1043,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -1058,7 +1073,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"0327892145308437818282662932536292736435455902682231704320419075777168647927935162019600000000000000"
+code:"0327881905570581818284200019020005155090316710727662103296827510736700312035707302927800000120000000"
 };
 save_codes.push("hesalive");
 save_table[save_codes[save_codes.length-1]] = {
@@ -1074,7 +1089,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.chap2_finale_0",
 "tunic.capitol.hall.boss.chap2_finale_1",
@@ -1084,10 +1098,12 @@ all:
 "tunic.capitol.hall.boss.chap2_finale_5",
 "tunic.capitol.hall.boss.chap2_finale_6",
 "tunic.capitol.hall.boss.haveyougotit",
+"tunic.capitol.hall.boss.writeitup",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_0",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_1",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_2",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_3",
+"tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_4",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
@@ -1099,13 +1115,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.basement.ch3start",
 "tunic.historicalsociety.basement.seescratches",
 "tunic.historicalsociety.cage",
@@ -1128,6 +1148,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -1135,7 +1156,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -1165,7 +1185,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -1195,7 +1215,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"0427892145308437818282662932536544640435455902682231704320419075777168647927935162019600000000000000"
+code:"0427881905570581818284200019021012771090316710727662103296827510736700312035707302927800000120000000"
 };
 save_codes.push("akey");
 save_table[save_codes[save_codes.length-1]] = {
@@ -1211,7 +1231,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.chap2_finale_0",
 "tunic.capitol.hall.boss.chap2_finale_1",
@@ -1221,10 +1240,12 @@ all:
 "tunic.capitol.hall.boss.chap2_finale_5",
 "tunic.capitol.hall.boss.chap2_finale_6",
 "tunic.capitol.hall.boss.haveyougotit",
+"tunic.capitol.hall.boss.writeitup",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_0",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_1",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_2",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_3",
+"tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_4",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
@@ -1236,13 +1257,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.basement.ch3start",
 "tunic.historicalsociety.basement.seescratches",
 "tunic.historicalsociety.cage",
@@ -1266,6 +1291,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -1273,7 +1299,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -1307,7 +1332,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -1337,7 +1362,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"1027892145308437818282662932536552832435455902682231704432419101377168647927935162019600000000000000"
+code:"1027881905570581818284200019021045539090316710727662105088828329936700312035707302927800000120000000"
 };
 save_codes.push("rescued");
 save_table[save_codes[save_codes.length-1]] = {
@@ -1353,7 +1378,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.chap2_finale_0",
 "tunic.capitol.hall.boss.chap2_finale_1",
@@ -1363,10 +1387,12 @@ all:
 "tunic.capitol.hall.boss.chap2_finale_5",
 "tunic.capitol.hall.boss.chap2_finale_6",
 "tunic.capitol.hall.boss.haveyougotit",
+"tunic.capitol.hall.boss.writeitup",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_0",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_1",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_2",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_3",
+"tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_4",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
@@ -1378,13 +1404,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.basement.ch3start",
 "tunic.historicalsociety.basement.seescratches",
 "tunic.historicalsociety.cage",
@@ -1410,6 +1440,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -1417,7 +1448,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -1451,7 +1481,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -1481,7 +1511,7 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"0427892145308437818282662932538125696435455902682231704432419101377168647927935162019600000000000000"
+code:"0427881905570581818284200019027336995090316710727662105088828329936700312035707302927800000120000000"
 };
 save_codes.push("backtowork");
 save_table[save_codes[save_codes.length-1]] = {
@@ -1497,7 +1527,6 @@ all:
 "tunic.capitol.hall.boss.chap1_finale_1",
 "tunic.capitol.hall.boss.chap1_finale_2",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_0",
-"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail",
 "tunic.capitol.hall.boss.chap1_finale_plaquefirst_1",
 "tunic.capitol.hall.boss.chap2_finale_0",
 "tunic.capitol.hall.boss.chap2_finale_1",
@@ -1507,10 +1536,12 @@ all:
 "tunic.capitol.hall.boss.chap2_finale_5",
 "tunic.capitol.hall.boss.chap2_finale_6",
 "tunic.capitol.hall.boss.haveyougotit",
+"tunic.capitol.hall.boss.writeitup",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_0",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_1",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_2",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_3",
+"tunic.capitol.hall.gramps.chap2_teddy_finale_3_fail",
 "tunic.capitol.hall.gramps.chap2_teddy_finale_4",
 "tunic.capitol.hall.chap1_finale",
 "tunic.capitol.hall.chap2_finale",
@@ -1522,13 +1553,17 @@ all:
 "tunic.drycleaner.frontdesk.worker",
 "tunic.drycleaner.frontdesk.worker.done",
 "tunic.drycleaner.frontdesk.worker.hub",
-"tunic.drycleaner.frontdesk.worker.hub.toleo",
+"tunic.drycleaner.frontdesk.worker.hub.toplease",
 "tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.please",
+"tunic.drycleaner.frontdesk.worker.tryagain",
+"tunic.drycleaner.frontdesk.worker.tryagain.toleo",
 "tunic.drycleaner.frontdesk.logbook",
 "tunic.drycleaner.frontdesk.logbook.page",
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
 "tunic.historicalsociety",
 "tunic.historicalsociety.basement",
+"tunic.historicalsociety.basement.janitor",
 "tunic.historicalsociety.basement.ch3start",
 "tunic.historicalsociety.basement.savedteddy",
 "tunic.historicalsociety.basement.seescratches",
@@ -1555,6 +1590,7 @@ all:
 "tunic.historicalsociety.closet.intro",
 "tunic.historicalsociety.closet_dirty",
 "tunic.historicalsociety.closet_dirty.gramps",
+"tunic.historicalsociety.closet_dirty.gramps.helpclean",
 "tunic.historicalsociety.closet_dirty.gramps.news",
 "tunic.historicalsociety.closet_dirty.trigger_coffee",
 "tunic.historicalsociety.closet_dirty.trigger_scarf",
@@ -1562,7 +1598,6 @@ all:
 "tunic.historicalsociety.collection",
 "tunic.historicalsociety.collection.gramps",
 "tunic.historicalsociety.collection.gramps.found",
-"tunic.historicalsociety.collection.gramps.look_0",
 "tunic.historicalsociety.collection.tunic",
 "tunic.historicalsociety.collection.tunic.hub",
 "tunic.historicalsociety.collection.tunic.hub.slip",
@@ -1599,7 +1634,7 @@ all:
 "tunic.humanecology.frontdesk",
 "tunic.humanecology.frontdesk.worker",
 "tunic.humanecology.frontdesk.worker.intro1",
-"tunic.humanecology.frontdesk.worker.intro1.next2",
+"tunic.humanecology.frontdesk.worker.intro1.next1",
 "tunic.humanecology.frontdesk.worker.intro2",
 "tunic.humanecology.frontdesk.worker.intro2.next",
 "tunic.humanecology.frontdesk.businesscards",
@@ -1629,9 +1664,8 @@ all:
 "tunic.library.microfiche.reader.paper2",
 "tunic.library.microfiche.reader.paper2.bingo",
 ],
-code:"0827892145308437818282662932538126208435455903255671704432419101377168647927935162019600000000000000"
+code:"0827881905570581818284200019027339043090316713021422105088828329936700312035707302927800000120000000"
 };
-
 
 
 
