@@ -12,12 +12,13 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.frontdesk.worker.flag",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -2.9840892544758475;
+tmp_speak_command.wx = -2.4918364947644918;
 tmp_speak_command.wy = 220.99999999999991;
-tmp_speak_command.w = 190;
+tmp_speak_command.w = 137;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -28,9 +29,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 135.00000000000003;
+tmp_speak_command.wx = 135.00001332780965;
 tmp_speak_command.wy = 105.99999999999999;
-tmp_speak_command.w = 235;
+tmp_speak_command.w = 252;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -41,9 +42,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 135.00000000000003;
+tmp_speak_command.wx = 135.0000000018671;
 tmp_speak_command.wy = 105.99999999999999;
-tmp_speak_command.w = 235;
+tmp_speak_command.w = 189;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -69,7 +70,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 134.00000000000006;
 tmp_speak_command.wy = 77.99999999999999;
-tmp_speak_command.w = 115;
+tmp_speak_command.w = 84;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -82,7 +83,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 1.0000000000000142;
 tmp_speak_command.wy = 210.99999999999997;
-tmp_speak_command.w = 352;
+tmp_speak_command.w = 204;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -92,11 +93,10 @@ tmp_speak_command.raw_atext = "Bah. Fine. Here's a call number for the Stacks.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
-
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 1.0000000000000142;
 tmp_speak_command.wy = 210.99999999999997;
-tmp_speak_command.w = 352;
+tmp_speak_command.w = 269;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -106,11 +106,10 @@ tmp_speak_command.raw_atext = "But this one might be hard for you to figure out 
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 134.00000000000006;
-tmp_speak_command.wy = 77.99999999999999;
-tmp_speak_command.w = 115;
+tmp_speak_command.wx = 136;
+tmp_speak_command.wy = 100.99999999999999;
+tmp_speak_command.w = 318;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -122,8 +121,8 @@ tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 134.00000000000006;
-tmp_speak_command.wy = 77.99999999999999;
-tmp_speak_command.w = 115;
+tmp_speak_command.wy = 105.00000000000001;
+tmp_speak_command.w = 317;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -134,9 +133,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -10.999999999999964;
-tmp_speak_command.wy = 184.99999999999997;
-tmp_speak_command.w = 85;
+tmp_speak_command.wx = -0.9999999999999716;
+tmp_speak_command.wy = 183.99999999999997;
+tmp_speak_command.w = 282;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -149,7 +148,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -0.9999999999999716;
 tmp_speak_command.wy = 245.99999999999997;
-tmp_speak_command.w = 380;
+tmp_speak_command.w = 336;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -160,9 +159,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 139;
-tmp_speak_command.wy = 112.99999999999996;
-tmp_speak_command.w = 268;
+tmp_speak_command.wx = 135.00000000000003;
+tmp_speak_command.wy = 75.99999999999997;
+tmp_speak_command.w = 254;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -175,7 +174,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 139;
 tmp_speak_command.wy = 112.99999999999996;
-tmp_speak_command.w = 193;
+tmp_speak_command.w = 191;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -186,9 +185,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -0.9999999999999716;
-tmp_speak_command.wy = 245.99999999999997;
-tmp_speak_command.w = 380;
+tmp_speak_command.wx = -4.99999999999995;
+tmp_speak_command.wy = 183.99999999999997;
+tmp_speak_command.w = 271;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -199,7 +198,7 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 139;
+template.js:1365 tmp_speak_command.wx = 139;
 tmp_speak_command.wy = 74;
 tmp_speak_command.w = 65;
 tmp_speak_command.h = 30;
@@ -212,9 +211,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 139;
-tmp_speak_command.wy = 74;
-tmp_speak_command.w = 65;
+tmp_speak_command.wx = 136;
+tmp_speak_command.wy = 99.99999999999999;
+tmp_speak_command.w = 112;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -223,3 +222,4 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "But first, to the Stacks!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
