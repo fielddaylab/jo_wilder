@@ -81,8 +81,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -363.87878787880834;
-tmp_speak_command.wy = 377.54545454545473;
+tmp_speak_command.wx = -363.8788536075727;
+tmp_speak_command.wy = 377.5454554823801;
 tmp_speak_command.w = 263;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";

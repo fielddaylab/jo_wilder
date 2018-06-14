@@ -12,6 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.flaghouse.entry.colorbook",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -28,9 +29,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -44.57250880075423;
-tmp_speak_command.wy = 130.00832315060615;
-tmp_speak_command.w = 141;
+tmp_speak_command.wx = -45.55966175010129;
+tmp_speak_command.wy = 161.00851172706814;
+tmp_speak_command.w = 136;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -41,9 +42,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 123.00013463885985;
-tmp_speak_command.wy = 224.00000198463076;
-tmp_speak_command.w = 99;
+tmp_speak_command.wx = 82.0001349414975;
+tmp_speak_command.wy = 225.00000198907304;
+tmp_speak_command.w = 136;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

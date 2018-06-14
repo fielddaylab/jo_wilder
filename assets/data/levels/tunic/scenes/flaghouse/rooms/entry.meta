@@ -24,8 +24,8 @@ tmp_room.shadows = [
 tmp_room.light_color = "rgba(255,255,255,0.2);";
 tmp_room.shadow_color = "rgba(0,0,0,0.5);";
 tmp_room.ambient_color = "rgba(0,0,0,0);";
-tmp_room.target_start_wx = 45.32138727135213;
-tmp_room.target_start_wy = -105.58419639339468;
+tmp_room.target_start_wx = 496.32270031916676;
+tmp_room.target_start_wy = -166.5842040431845;
 tmp_room.notifications_persistent = 0;
 tmp_room.raw_notifications = [
 ];
