@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.cage.teddy",
 ]];
+tmp_entry.interactive = 1;
 

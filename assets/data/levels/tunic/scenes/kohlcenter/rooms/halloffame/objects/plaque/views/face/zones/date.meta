@@ -13,8 +13,8 @@ tmp_zone.raw_notifications = [
 "The slip says 1916 but the team didn't start until 1974!",
 ];
 tmp_zone.raw_notification_ws = [
-84,
-252,
+81.13592529296875,
+251,
 ];
 tmp_zone.notification_reqs = [[
 ]];

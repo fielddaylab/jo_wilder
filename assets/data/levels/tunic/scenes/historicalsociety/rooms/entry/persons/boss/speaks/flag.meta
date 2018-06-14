@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -12,57 +12,32 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.historicalsociety.collection_flag.gramps.flag",
+"!self",
 ]];
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 374.46525009305;
-tmp_speak_command.wy = 365.3497468326835;
-tmp_speak_command.w = 185;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Can I help you, Jolie?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -82.24916459156788;
 tmp_speak_command.wy = 298.651255652258;
-tmp_speak_command.w = 165;
+tmp_speak_command.w = 155;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Yeah! Do you know where I could find a deer expert?";
+tmp_speak_command.raw_atext = "Do you know where I could find a deer expert?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 362.29371695090924;
 tmp_speak_command.wy = 458.23092463356824;
-tmp_speak_command.w = 179;
+tmp_speak_command.w = 171;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hmm...you could try the Aldo Leopold Center in Tomahawk.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 350.89517149622765;
-tmp_speak_command.wy = 419.1501973608523;
-tmp_speak_command.w = 195;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "They've got a great wildlife rescue exhibit.";
+tmp_speak_command.raw_atext = "Hmm...you could try the Aldo Leopold Wildlife Refuge.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -82,7 +57,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 258.0784442235005;
 tmp_speak_command.wy = 197.69274281539788;
-tmp_speak_command.w = 214;
+tmp_speak_command.w = 208.67181396484375;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

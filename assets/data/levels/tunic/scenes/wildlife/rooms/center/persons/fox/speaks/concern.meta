@@ -14,9 +14,9 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -352.86445246636526;
-tmp_speak_command.wy = 118.81408083666071;
-tmp_speak_command.w = 162;
+tmp_speak_command.wx = -351.9292275739373;
+tmp_speak_command.wy = 119.10694053677645;
+tmp_speak_command.w = 153.73587036132812;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -29,26 +29,26 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -351.3030309028051;
 tmp_speak_command.wy = 156.18181818316995;
-tmp_speak_command.w = 189;
+tmp_speak_command.w = 187;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Oh no! She got sick from polluted water?";
+tmp_speak_command.raw_atext = "Oh no...they got sick from polluted water?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -347.3939399975877;
-tmp_speak_command.wy = 190.0606060607448;
-tmp_speak_command.w = 252;
+tmp_speak_command.wx = -351.3030281784206;
+tmp_speak_command.wy = 121.00000085447533;
+tmp_speak_command.w = 105.11190795898438;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's not fair. How can she survive if she doesn't even have clean drinking water?!";
+tmp_speak_command.raw_atext = "Poor foxes!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

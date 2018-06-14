@@ -14,9 +14,9 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -281.0000000122775;
-tmp_speak_command.wy = 143;
-tmp_speak_command.w = 257;
+tmp_speak_command.wx = -193.0000000122775;
+tmp_speak_command.wy = 122.00000000000001;
+tmp_speak_command.w = 248.9917755126953;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -29,7 +29,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -7.999999998454239;
 tmp_speak_command.wy = -11.000000000000034;
-tmp_speak_command.w = 265;
+tmp_speak_command.w = 257.1517333984375;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -42,7 +42,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -189.00004236100068;
 tmp_speak_command.wy = 122.00000000000006;
-tmp_speak_command.w = 302;
+tmp_speak_command.w = 289.14373779296875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -53,9 +53,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 1.9999999925591005;
+tmp_speak_command.wx = 1.9999999925590686;
 tmp_speak_command.wy = 48.000000000000014;
-tmp_speak_command.w = 247;
+tmp_speak_command.w = 237;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -68,13 +68,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -180.0000000173391;
 tmp_speak_command.wy = 186.00000000000006;
-tmp_speak_command.w = 247;
+tmp_speak_command.w = 201;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Certainly! I've got a file of dry cleaners on the table. Take a look!";
+tmp_speak_command.raw_atext = "Certainly. I've got a file of dry cleaners on the table. Take a look!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

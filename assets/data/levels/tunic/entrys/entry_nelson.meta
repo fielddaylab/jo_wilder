@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.library.microfiche.reader_flag.paper2.bingo",
 ]];
+tmp_entry.interactive = 1;
 

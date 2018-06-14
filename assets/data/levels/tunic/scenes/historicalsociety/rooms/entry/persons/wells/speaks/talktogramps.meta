@@ -14,15 +14,15 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -272.9491931680918;
-tmp_speak_command.wy = 425.67371677073874;
-tmp_speak_command.w = 201;
+tmp_speak_command.wx = -251.78046589571602;
+tmp_speak_command.wy = 425.67371677075033;
+tmp_speak_command.w = 189;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Why don't you go play with your Grandpa?";
+tmp_speak_command.raw_atext = "Why don't you go play with your grampa?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

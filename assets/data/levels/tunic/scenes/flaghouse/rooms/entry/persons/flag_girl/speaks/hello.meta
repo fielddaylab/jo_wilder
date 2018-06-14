@@ -11,12 +11,13 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 65.94890898829405;
 tmp_speak_command.wy = 254.89695504589469;
-tmp_speak_command.w = 158;
+tmp_speak_command.w = 154;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -29,7 +30,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -36.99999999990182;
 tmp_speak_command.wy = 96.99999999998231;
-tmp_speak_command.w = 130;
+tmp_speak_command.w = 122.5838623046875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -42,7 +43,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 93.00000001716116;
 tmp_speak_command.wy = 254.00000000139337;
-tmp_speak_command.w = 124;
+tmp_speak_command.w = 120;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -55,7 +56,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 60.000000000001656;
 tmp_speak_command.wy = 253.0000000000001;
-tmp_speak_command.w = 154;
+tmp_speak_command.w = 151;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -68,19 +69,19 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -66.99999999999996;
 tmp_speak_command.wy = 133;
-tmp_speak_command.w = 164;
+tmp_speak_command.w = 155;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Wow, you've got a million flags here!";
+tmp_speak_command.raw_atext = "You've got a million flags here!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 103.00000000000006;
-tmp_speak_command.wy = 249.99999999999997;
+tmp_speak_command.wx = 108.00000000000004;
+tmp_speak_command.wy = 250.99999999999997;
 tmp_speak_command.w = 107;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -92,48 +93,48 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -2.999999999999986;
-tmp_speak_command.wy = 107.00000000000001;
-tmp_speak_command.w = 100;
+tmp_speak_command.wx = -13.999999999999986;
+tmp_speak_command.wy = 106.99999999999999;
+tmp_speak_command.w = 109.71994018554688;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Vexy-wha?";
+tmp_speak_command.raw_atext = "A vexy-wha?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 81.00000000000001;
-tmp_speak_command.wy = 249;
-tmp_speak_command.w = 139;
+tmp_speak_command.wx = 79.00000000000003;
+tmp_speak_command.wy = 275;
+tmp_speak_command.w = 132;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Flag expert. How can I help?";
+tmp_speak_command.raw_atext = "It just means flag expert. How can I help?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -57.999999999999986;
-tmp_speak_command.wy = 134;
-tmp_speak_command.w = 150;
+tmp_speak_command.wx = -51;
+tmp_speak_command.wy = 133.99999999999997;
+tmp_speak_command.w = 140;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I'm investigating this old flag.";
+tmp_speak_command.raw_atext = "I'm investigating this flag.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -93.99999999999997;
 tmp_speak_command.wy = 107.00000000000001;
-tmp_speak_command.w = 194;
+tmp_speak_command.w = 187.86383056640625;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -144,9 +145,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -20.999999999999986;
-tmp_speak_command.wy = 278;
-tmp_speak_command.w = 240;
+tmp_speak_command.wx = -4.9999999999999645;
+tmp_speak_command.wy = 257;
+tmp_speak_command.w = 223;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

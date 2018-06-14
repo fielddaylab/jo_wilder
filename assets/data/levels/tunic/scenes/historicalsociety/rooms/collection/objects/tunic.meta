@@ -22,8 +22,8 @@ tmp_object.raw_notifications = [
 "Anything out of the ordinary?",
 ];
 tmp_object.raw_notification_ws = [
-203,
-150,
+197.7038116455078,
+138,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",

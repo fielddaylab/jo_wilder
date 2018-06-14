@@ -43,11 +43,11 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "boss";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 363.05032036028274;
-tmp_cutscene_command.wy = 459.47345441597105;
-tmp_cutscene_command.w = 193;
+tmp_cutscene_command.wx = 369.5637703406022;
+tmp_cutscene_command.wy = 457.84509145882816;
+tmp_cutscene_command.w = 209;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Let's get started. The Wisconsin Wonders exhibit opens tonight!";
+tmp_cutscene_command.raw_text = "Let's get started. The Wisconsin Wonders exhibit opens tomorrow!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -162,7 +162,7 @@ tmp_cutscene_command.wx = 363.35490909090913;
 tmp_cutscene_command.wy = 413.8341818181819;
 tmp_cutscene_command.w = 212;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I need to talk to you about that paperwork.";
+tmp_cutscene_command.raw_text = "We need to talk about that missing paperwork.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

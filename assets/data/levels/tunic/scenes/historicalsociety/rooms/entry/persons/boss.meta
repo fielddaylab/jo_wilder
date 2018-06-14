@@ -11,7 +11,7 @@ tmp_person.hover_icon_wy = 198.6603644170071;
 tmp_person.animcycle_id = "boss";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
-tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "notice";
 tmp_person.audio_id = "null";
 tmp_person.deck_animcycle_ids = [
 ];
@@ -21,6 +21,8 @@ tmp_person.raw_notifications = [
 tmp_person.raw_notification_ws = [
 ];
 tmp_person.notice_reqs = [[
+"tunic.historicalsociety.entry.wells.flag",
+"!tunic.historicalsociety.entry.boss.flag",
 ]];
 tmp_person.notification_reqs = [[
 ]];

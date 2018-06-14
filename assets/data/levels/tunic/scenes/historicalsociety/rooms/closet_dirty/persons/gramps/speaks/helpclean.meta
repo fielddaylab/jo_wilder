@@ -17,54 +17,28 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -693.3701536672845;
-tmp_speak_command.wy = 145.00069469317947;
-tmp_speak_command.w = 188;
+tmp_speak_command.wx = -690.3701536673851;
+tmp_speak_command.wy = 151.00069469318407;
+tmp_speak_command.w = 128;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Looks like we need to get to cleanin'.";
+tmp_speak_command.raw_atext = "Oy...where'd my papers get to?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -580.0076086122509;
-tmp_speak_command.wy = 68.85547382649081;
-tmp_speak_command.w = 141;
+tmp_speak_command.wx = -691.9909450405889;
+tmp_speak_command.wy = 152.854891205863;
+tmp_speak_command.w = 152;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "What?! We need to find out who did this!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -688.9909450405889;
-tmp_speak_command.wy = 154.854891205863;
-tmp_speak_command.w = 175;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Help me tidy up first and then we'll talk.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -688.9903540783639;
-tmp_speak_command.wy = 151.85487054239968;
-tmp_speak_command.w = 294;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "You've got a bit of a mess over in your area. Why not start there?";
+tmp_speak_command.raw_atext = "Can you help me tidy up this mess?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

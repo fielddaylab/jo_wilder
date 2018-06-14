@@ -36,26 +36,32 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 //members are one of the following: (ensure all speak_fqid exist on a person w/in the room)
 //{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.path.to.speak" },
-//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt:stextToLines("I need to show them I know blah blah", tmp_level.notifications_w), fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
+//{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.path.to.entry", prompt_raw:"I need to show them I know blah blah", prompt_w:tmp_level.notifications_w, fail:[ "tunic.path.to.speak", "tunic.path.to.speak" ] },
 
 tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHANGE TO HACKME
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt:stextToLines("I'll show her my photo of the shirt to remind her.", 220), fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tunic", prompt_raw:"I'll show her my photo of the shirt to remind her.", prompt_w:220, fail:["tunic.capitol.hall.boss.chap1_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"HACKME", prompt:stextToLines("What evidence do I have that the shirt isn't a basketball jersey?", 220), fail:["tunic.capitol.hall.boss.chap1_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"HACKME", prompt_raw:"What evidence do I have that the shirt isn't a basketball jersey?", prompt_w:220, fail:["tunic.capitol.hall.boss.chap1_finale_1_fail"] },
 
 //pick slip
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_slipfirst_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_basketballplaque", prompt:stextToLines("Why is the date on the slip relevant?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_slipfirst_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_basketballplaque", prompt_raw:"Why is the date on the slip relevant?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol.hall.boss.chap1_finale_slipfirst_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_slipfirst_1" },
 
 //pick tunic
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_plaquefirst_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt:stextToLines("Why does it matter that the basketball team started in 1974?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt_raw:"Why does it matter that the basketball team started in 1974?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol.hall.boss.chap1_finale_plaquefirst_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_plaquefirst_1" },
 
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap1_finale_2" },
 ];
+
+for(var i = 0; i < tmp_wildcard.commands.length; i++)
+{
+  var c = tmp_wildcard.commands[i];
+  if(c.command == FINALE_WILDCARD_COMMAND_NOTEBOOK) c.prompt = stextToLines(c.prompt_raw, c.prompt_w);
+}
 
 //view
 {
@@ -104,6 +110,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_notebookview.exit_available = 0;
       self.ui_state = UI_STATE_IN;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -159,6 +166,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          my_notebookview.exit_available = 1;
         }
       }
       else
@@ -274,7 +282,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
     {
       my_cursor.mode = CURSOR_NORMAL;
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
-        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
         {
           my_cursor.mode = CURSOR_UI;
           if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
@@ -337,7 +345,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
         //find response
         for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
-          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
             if(self.cur_command.entry_fqid == "HACKME")
             {
@@ -533,7 +541,7 @@ tmp_wildcard.commands = [ //NOTE- CHANGING ORDERING WILL RESULT IN NECESSARY CHA
 
       var b = 10;
       var h = cur_level.notifications_h*self.cur_command.prompt.length;
-      var w = cur_level.notifications_w;
+      var w = self.cur_command.prompt_w;
       var x = canv.width/2-w/2;
       var y = canv.height-30-h;
       ctx.fillStyle = self.bubble_color;

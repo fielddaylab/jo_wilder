@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -12,12 +12,13 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.historicalsociety.collection_flag.gramps.flag",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -168.27119224340674;
 tmp_speak_command.wy = 375.26604895836914;
-tmp_speak_command.w = 136;
+tmp_speak_command.w = 128.8238983154297;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -30,7 +31,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 220.44484881176294;
 tmp_speak_command.wy = 261.2089930818036;
-tmp_speak_command.w = 217;
+tmp_speak_command.w = 213;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -43,13 +44,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -272.9491931680918;
 tmp_speak_command.wy = 425.67371677073874;
-tmp_speak_command.w = 201;
+tmp_speak_command.w = 193;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "No clue. Do I look like a deer expert to you?'";
+tmp_speak_command.raw_atext = "No clue. Do I look like a deer expert to you?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

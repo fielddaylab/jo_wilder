@@ -16,7 +16,7 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -469.5479928283093;
 tmp_speak_command.wy = 111.73768485832268;
-tmp_speak_command.w = 274.69814225923324;
+tmp_speak_command.w = 268.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -29,7 +29,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -499.8510231313396;
 tmp_speak_command.wy = 290.52556364620153;
-tmp_speak_command.w = 297.69814225923324;
+tmp_speak_command.w = 293.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -40,48 +40,35 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 217.06879557989504;
-tmp_speak_command.wy = 333.7909105779291;
-tmp_speak_command.w = 244.69814225923324;
+tmp_speak_command.wx = -395.05241654131726;
+tmp_speak_command.wy = 339.8515166385352;
+tmp_speak_command.w = 295.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's a big accusation for some pretty weak evidence-";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -376.87059835949907;
-tmp_speak_command.wy = 361.06363785065645;
-tmp_speak_command.w = 307.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "You've also just confirmed that the ARCHIVIST was at Bean Town...";
+tmp_speak_command.raw_atext = "You've also just confirmed that the ARCHIVIST was at Bean Town.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 215.5536440647436;
 tmp_speak_command.wy = 333.7909105779291;
-tmp_speak_command.w = 204.69814225923324;
+tmp_speak_command.w = 177.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Heck, I'm drinking Bean Town coffee right now!";
+tmp_speak_command.raw_atext = "Heck, I stop at Bean Town every day!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -307.9730543265348;
 tmp_speak_command.wy = 65.71223806047682;
-tmp_speak_command.w = 170;
+tmp_speak_command.w = 162.9998321533203;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

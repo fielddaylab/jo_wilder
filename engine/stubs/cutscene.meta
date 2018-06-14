@@ -74,6 +74,13 @@ tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 */
 
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
 //Leave this at the end- remember to set tmp_cutscene_command.t!
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;

@@ -17,7 +17,7 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -279.28286032863224;
 tmp_speak_command.wy = 151.99999999999991;
-tmp_speak_command.w = 173;
+tmp_speak_command.w = 169;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -30,7 +30,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 7.982950360014925;
 tmp_speak_command.wy = 258.99999999999994;
-tmp_speak_command.w = 155;
+tmp_speak_command.w = 143;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -43,13 +43,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -316.0170478388982;
 tmp_speak_command.wy = 90.99999999999993;
-tmp_speak_command.w = 206;
+tmp_speak_command.w = 162.49586486816406;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ooh, good idea. Thanks!";
+tmp_speak_command.raw_atext = "Good idea. Thanks!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

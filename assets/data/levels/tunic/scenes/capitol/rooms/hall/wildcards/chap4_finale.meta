@@ -41,16 +41,22 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_ecologyflag", prompt:stextToLines("What is this flag?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_ecologyflag", prompt_raw:"What is this flag?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol.hall.boss.chap4_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_nelson", prompt:stextToLines("What was the flag for?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_nelson", prompt_raw:"What was the flag for?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol.hall.boss.chap4_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_2" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theta", prompt:stextToLines("What do I know about the symbols?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_2_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theta", prompt_raw:"What do I know about the symbols?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol.hall.boss.chap4_finale_2_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_3" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_activists", prompt:stextToLines("What materials do I have regarding its history?", tmp_level.notifications_w), fail:["tunic.capitol.hall.boss.chap4_finale_3_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_activists", prompt_raw:"What materials do I have regarding its history?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol.hall.boss.chap4_finale_3_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol.hall.boss.chap4_finale_4" },
 
 ];
+
+for(var i = 0; i < tmp_wildcard.commands.length; i++)
+{
+  var c = tmp_wildcard.commands[i];
+  if(c.command == FINALE_WILDCARD_COMMAND_NOTEBOOK) c.prompt = stextToLines(c.prompt_raw, c.prompt_w);
+}
 
 //view
 {
@@ -99,6 +105,7 @@ tmp_wildcard.commands = [
     }
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_NOTEBOOK)
     {
+      my_notebookview.exit_available = 0;
       self.ui_state = UI_STATE_IN;
       self.ui_state_t = 0;
       self.ui_state_p = 0;
@@ -154,6 +161,7 @@ tmp_wildcard.commands = [
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          my_notebookview.exit_available = 1;
         }
       }
       else
@@ -269,7 +277,7 @@ tmp_wildcard.commands = [
     {
       my_cursor.mode = CURSOR_NORMAL;
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
-        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
         {
           my_cursor.mode = CURSOR_UI;
           if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
@@ -332,7 +340,7 @@ tmp_wildcard.commands = [
         //find response
         for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
-          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
             if(my_notebookview.cache_available_entrys[i].fqid != self.cur_command.entry_fqid)
             {
@@ -516,7 +524,7 @@ tmp_wildcard.commands = [
 
       var b = 10;
       var h = cur_level.notifications_h*self.cur_command.prompt.length;
-      var w = cur_level.notifications_w;
+      var w = self.cur_command.prompt_w;
       var x = canv.width/2-w/2;
       var y = canv.height-30-h;
       ctx.fillStyle = self.bubble_color;

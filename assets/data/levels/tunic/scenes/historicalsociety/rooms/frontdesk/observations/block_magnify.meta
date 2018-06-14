@@ -16,9 +16,9 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "I don't need that right now.";
-tmp_observation.blip_wx = 308.97395854447853;
+tmp_observation.blip_wx = 308.97395864479165;
 tmp_observation.blip_wy = 78.99999999999996;
-tmp_observation.blip_w = 163;
+tmp_observation.blip_w = 134;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [

@@ -17,78 +17,65 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -683.5248528706321;
 tmp_speak_command.wy = 100.93301796887438;
-tmp_speak_command.w = 222;
+tmp_speak_command.w = 207.80780029296875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Gah. What am I gonna do?";
+tmp_speak_command.raw_atext = "Gah. I can't believe this.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -543.199014420489;
-tmp_speak_command.wy = 5.417259596735647;
-tmp_speak_command.w = 130;
+tmp_speak_command.wx = -693.1289257582941;
+tmp_speak_command.wy = 142.64895285005792;
+tmp_speak_command.w = 149;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "What's wrong?";
+tmp_speak_command.raw_atext = "I'm a historian, not a zookeeper!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -687.4339445100873;
+tmp_speak_command.wy = 140.02392708846986;
+tmp_speak_command.w = 196;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "And this place is dirty, and itchy, and--";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -543.1990144205073;
+tmp_speak_command.wy = 5.4172595967361445;
+tmp_speak_command.w = 75.68792724609375;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I love it!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -685.393939664189;
 tmp_speak_command.wy = 141.81818183527798;
-tmp_speak_command.w = 229;
+tmp_speak_command.w = 271;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I can't cart these animals off to the exhibit...";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -678.2727272728853;
-tmp_speak_command.wy = 131.99999999999343;
-tmp_speak_command.w = 203;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "They need to stay here and get better.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -541.5929533796279;
-tmp_speak_command.wy = 46.144532180864985;
-tmp_speak_command.w = 169;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Wow...I'm surprised you actually care!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -676.969696969855;
-tmp_speak_command.wy = 131.99999999999343;
-tmp_speak_command.w = 209;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Trust me, kid. Nobody's more surprised than me.";
+tmp_speak_command.raw_atext = "Of course you do. You've got a rodent following you around.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

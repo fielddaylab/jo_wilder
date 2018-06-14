@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,83 +11,32 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"!tunic.historicalsociety.basement.seescratches",
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 17.765562686449;
-tmp_speak_command.wy = 189.21184713215484;
-tmp_speak_command.w = 181;
+tmp_speak_command.wx = 21.923765038084255;
+tmp_speak_command.wy = 143.1680843236593;
+tmp_speak_command.w = 143.12789916992188;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Wowee! That must be the last artifact!";
+tmp_speak_command.raw_atext = "We'll find Teddy.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 20.54545454161557;
-tmp_speak_command.wy = 143.21212121194296;
-tmp_speak_command.w = 190;
+tmp_speak_command.wx = 26.12121203257655;
+tmp_speak_command.wy = 141.8181816608659;
+tmp_speak_command.w = 263.87176513671875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Want to have a look?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -380.6626799063011;
-tmp_speak_command.wy = 42.80289917696651;
-tmp_speak_command.w = 127;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "I can't. Teddy is still missing!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -389.02631626993747;
-tmp_speak_command.wy = 48.378656752724076;
-tmp_speak_command.w = 129;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "What if he's gone forever?!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 24.727272718240812;
-tmp_speak_command.wy = 186.4242424242424;
-tmp_speak_command.w = 153;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Keep a cool head, Jo. We'll find him.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 20.54545453642261;
-tmp_speak_command.wy = 190.6060606060606;
-tmp_speak_command.w = 194;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "We must've missed something important...";
+tmp_speak_command.raw_atext = "We just have to stay vigilant!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

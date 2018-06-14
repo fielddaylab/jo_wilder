@@ -817,7 +817,7 @@ var familiar = function()
 
   self.tick = function()
   {
-    var speed = walk_speed;
+    var speed = walk_speed/1.5;
     var act_dist = 10;
     var hug_dist = 100;
     var stable_dist = 200;
@@ -2023,6 +2023,7 @@ var notebookview = function()
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
   self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  self.exit_available = 1;
   var prev_x_edge = 25;
   var prev_y_edge = canv.height-20;
   var next_x_edge = canv.width-35;
@@ -2150,7 +2151,7 @@ var notebookview = function()
 
   self.click = function(evt)
   {
-    if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
+    if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
       state_from = state_cur;
       state_to = state_stack;
@@ -2199,7 +2200,7 @@ var notebookview = function()
     if(self.page > 0)
     ctx.drawImage(self.notebook_prev_animcycle_inst.img, self.prev_box.x, self.prev_box.y+yoff, self.prev_box.w, self.prev_box.h);
 
-    if(!my_notificationview.note.length || my_notificationview.clickthrough)
+    if((!my_notificationview.note.length || my_notificationview.clickthrough) && self.exit_available)
       ctx.drawImage(self.exit_animcycle_inst.img, self.exit_box.x, self.exit_box.y+yoff, self.exit_box.w, self.exit_box.h);
 
     ctx.fillStyle = black;

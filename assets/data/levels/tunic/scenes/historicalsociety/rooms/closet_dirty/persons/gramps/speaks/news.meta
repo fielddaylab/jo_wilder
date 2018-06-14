@@ -18,8 +18,8 @@ tmp_speak.reqs = [[
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -693.9444280619125;
-tmp_speak_command.wy = 158.85175738093878;
-tmp_speak_command.w = 166;
+tmp_speak_command.wy = 158.8517573809388;
+tmp_speak_command.w = 165;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -32,7 +32,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -583.495978309857;
 tmp_speak_command.wy = 17.862812629692186;
-tmp_speak_command.w = 136;
+tmp_speak_command.w = 123.13591003417969;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -45,7 +45,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -582.495978309857;
 tmp_speak_command.wy = 49.8628126296922;
-tmp_speak_command.w = 282;
+tmp_speak_command.w = 279;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -57,21 +57,21 @@ tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -696.9903543841413;
-tmp_speak_command.wy = 150.85486998778578;
-tmp_speak_command.w = 245;
+tmp_speak_command.wy = 125.85486998778573;
+tmp_speak_command.w = 185.17581176757812;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Easy, Jo. We can't just jump to conclusions like that.";
+tmp_speak_command.raw_atext = "Hold your horses, Jo.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -581.990349968848;
 tmp_speak_command.wy = 14.854870398707163;
-tmp_speak_command.w = 195;
+tmp_speak_command.w = 192.30384826660156;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -84,78 +84,78 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -695.9903499688528;
 tmp_speak_command.wy = 153.8548703987072;
-tmp_speak_command.w = 169;
+tmp_speak_command.w = 185;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Let's take things one step at a time.";
+tmp_speak_command.raw_atext = "You don't know that. We need evidence.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -694.990349968848;
-tmp_speak_command.wy = 150.85487039870713;
-tmp_speak_command.w = 312;
+tmp_speak_command.wx = -579.990349968848;
+tmp_speak_command.wy = 45.85487039870718;
+tmp_speak_command.w = 129;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "While we're investigating the shirt, we can look for clues about Teddy!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak_command.raw_atext = "Fine. Then let's investigate!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -697.495978309857;
 tmp_speak_command.wy = 155.8628126296922;
-tmp_speak_command.w = 228;
+tmp_speak_command.w = 269;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Oh, but it looks like my papers have gone missing...";
+tmp_speak_command.raw_atext = "Good idea. But I'm afraid my papers have gone missing again.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -585.990349968848;
-tmp_speak_command.wy = 18.85487039870719;
-tmp_speak_command.w = 154;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Oh no! Not again!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -694.990349968848;
 tmp_speak_command.wy = 152.85487039870713;
-tmp_speak_command.w = 243;
+tmp_speak_command.w = 174;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You'll have to follow up on the shirt case without me.";
+tmp_speak_command.raw_atext = "You'll have to get started without me.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -587.990349968848;
+tmp_speak_command.wy = 16.854870398707178;
+tmp_speak_command.w = 182.6318359375;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Don't worry, Gramps!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -583.990349968848;
 tmp_speak_command.wy = 47.85487039870716;
-tmp_speak_command.w = 311;
+tmp_speak_command.w = 215;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Don't worry, Gramps. I'll find Teddy, and I'll figure out the shirt too!";
+tmp_speak_command.raw_atext = "I'll find Teddy, and I'll figure out the shirt too!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -175,20 +175,20 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -693.990349968848;
 tmp_speak_command.wy = 158.8548703987072;
-tmp_speak_command.w = 194;
+tmp_speak_command.w = 153;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "If I were you, I'd pay a visit to the archivist.";
+tmp_speak_command.raw_atext = "If I were you, I'd try the archivist.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -693.990349968848;
 tmp_speak_command.wy = 158.8548703987072;
-tmp_speak_command.w = 203;
+tmp_speak_command.w = 202;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

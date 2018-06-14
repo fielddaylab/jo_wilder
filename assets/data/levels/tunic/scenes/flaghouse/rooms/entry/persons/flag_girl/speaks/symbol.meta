@@ -12,12 +12,13 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.flaghouse.entry.colorbook",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -44.57250880075423;
 tmp_speak_command.wy = 130.00832315060615;
-tmp_speak_command.w = 141;
+tmp_speak_command.w = 133;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -28,28 +29,41 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 123.00013463885985;
-tmp_speak_command.wy = 224.00000198463076;
-tmp_speak_command.w = 99;
+tmp_speak_command.wx = -45.55966175010129;
+tmp_speak_command.wy = 161.00851172706814;
+tmp_speak_command.w = 132;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You got it!";
+tmp_speak_command.raw_atext = "Do you know anything about Earth Day?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 82.0001349414975;
+tmp_speak_command.wy = 225.00000198907304;
+tmp_speak_command.w = 135.25584411621094;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Hmm...not much.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -28.99999999197017;
 tmp_speak_command.wy = 250.0000000001181;
-tmp_speak_command.w = 247;
+tmp_speak_command.w = 240;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "If I were you, I'd stop by the library and do some digging.";
+tmp_speak_command.raw_atext = "If I were you, I'd go to the library and do some digging.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
