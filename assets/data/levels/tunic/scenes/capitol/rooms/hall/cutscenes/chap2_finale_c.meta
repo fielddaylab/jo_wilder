@@ -139,18 +139,6 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "boss";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 37.93939393939391;
-tmp_cutscene_command.wy = 285.21212121212125;
-tmp_cutscene_command.w = 142;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie! Any news?";
-tmp_cutscene_command.t = 1;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = -230.3105479205922;
@@ -307,7 +295,7 @@ tmp_cutscene_command.wx = 154.6060606060608;
 tmp_cutscene_command.wy = 335.2121212121212;
 tmp_cutscene_command.w = 162;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Let's take this one step at a time.";
+tmp_cutscene_command.raw_text = "One step at a time.";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -522,7 +510,7 @@ tmp_cutscene_command.wx = 143.9999999999999;
 tmp_cutscene_command.wy = 341.27272727272714;
 tmp_cutscene_command.w = 144;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I'm sorry, Jolie. We'll find Teddy.";
+tmp_cutscene_command.raw_text = "Keep your chin up, Jo. We'll find Teddy.";
 tmp_cutscene_command.t = 102;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -590,18 +578,6 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.t = 452;
 tmp_cutscene_command.end_t = 482;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "boss";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 350.060606060606;
-tmp_cutscene_command.wy = 283.69696969696963;
-tmp_cutscene_command.w = 63;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "*ahem*";
-tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
@@ -726,31 +702,7 @@ tmp_cutscene_command.wx = 44.000000000000135;
 tmp_cutscene_command.wy = 291.2727272727272;
 tmp_cutscene_command.w = 166;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I hope you find your badger, Jolie.";
-tmp_cutscene_command.t = 545;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "wells";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 42.48484848484852;
-tmp_cutscene_command.wy = 297.33333333333326;
-tmp_cutscene_command.w = 146;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "And great work on the shirt.";
-tmp_cutscene_command.t = 545;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "wells";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 34.90909090909102;
-tmp_cutscene_command.wy = 298.84848484848476;
-tmp_cutscene_command.w = 182;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I could learn a thing or two from you...";
+tmp_cutscene_command.raw_text = "I hope you find your skunk, or whatever.";
 tmp_cutscene_command.t = 545;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

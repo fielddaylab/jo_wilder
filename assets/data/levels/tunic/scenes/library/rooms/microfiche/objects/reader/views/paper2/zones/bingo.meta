@@ -9,7 +9,7 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "paper2";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"Ooh! Youmans was a suffragist? What's that?",
+"Youmans was a suffragist!",
 ];
 tmp_zone.raw_notification_ws = [
 220,
