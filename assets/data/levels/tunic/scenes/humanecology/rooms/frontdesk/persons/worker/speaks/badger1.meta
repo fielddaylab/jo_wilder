@@ -29,13 +29,26 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -196.00035021560979;
 tmp_speak_command.wy = 172.99999999999997;
-tmp_speak_command.w = 297;
+tmp_speak_command.w = 242;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Badgers? No. But there are rumors that the museum's got one on the loose! Exciting, isn't it?";
+tmp_speak_command.raw_atext = "Badgers? No. But there are rumors that the museum's got one on the loose!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -196.00035021560979;
+tmp_speak_command.wy = 172.99999999999997;
+tmp_speak_command.w = 149.2238311767578;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Exciting, isn't it?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

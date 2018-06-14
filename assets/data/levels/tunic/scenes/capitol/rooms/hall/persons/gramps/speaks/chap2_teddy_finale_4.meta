@@ -81,13 +81,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 218.3307950504783;
 tmp_speak_command.wy = 385.98010910074686;
-tmp_speak_command.w = 191.69814225923324;
+tmp_speak_command.w = 179.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I'd prefer live animals, of course. But we need a back-up plan.";
+tmp_speak_command.raw_atext = "I'd prefer live animals. But we need a back-up plan.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
