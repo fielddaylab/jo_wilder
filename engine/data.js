@@ -4280,6 +4280,7 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.flaghouse.entry.flag_girl.symbol",
 ]];
+tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -6040,6 +6041,7 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.flaghouse.entry.flag_girl.symbol",
 ]];
+tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
