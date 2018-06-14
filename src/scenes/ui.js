@@ -817,7 +817,7 @@ var familiar = function()
 
   self.tick = function()
   {
-    var speed = walk_speed;
+    var speed = walk_speed/1.5;
     var act_dist = 10;
     var hug_dist = 100;
     var stable_dist = 200;
