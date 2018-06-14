@@ -1,4 +1,4 @@
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -17,7 +17,7 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 1.0000000000000142;
 tmp_speak_command.wy = 210.99999999999997;
-tmp_speak_command.w = 179;
+tmp_speak_command.w = 312;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

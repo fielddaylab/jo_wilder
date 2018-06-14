@@ -11,19 +11,19 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
-"tunic.library.frontdesk.worker.flag",
+"tunic.library.frontdesk.worker.nelson",
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -361.27254826011335;
-tmp_speak_command.wy = 374.9393940172903;
-tmp_speak_command.w = 246;
+tmp_speak_command.wx = -363.87878787880834;
+tmp_speak_command.wy = 344.96969696969717;
+tmp_speak_command.w = 256.18365478515625;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "There's some old newspapers loaded up in the microfiche.";
+tmp_speak_command.raw_atext = "The archives are the place to go for primary documents!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

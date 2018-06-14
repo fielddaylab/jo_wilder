@@ -12,6 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.microfiche.reader_flag.paper2.bingo",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -54,8 +55,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -271.39334025590284;
-tmp_speak_command.wy = 260.2728804945041;
+tmp_speak_command.wx = -272.69637055893315;
+tmp_speak_command.wy = 215.96985019147374;
 tmp_speak_command.w = 164;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";

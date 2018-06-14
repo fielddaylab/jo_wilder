@@ -11,6 +11,8 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.library.frontdesk.wellsbadge.hub",
+"!tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 
 tmp_speak_command = new speak_command();

@@ -14227,9 +14227,9 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 103.00000000000006;
-tmp_speak_command.wy = 249.99999999999997;
-tmp_speak_command.w = 77;
+tmp_speak_command.wx = 108.00000000000004;
+tmp_speak_command.wy = 250.99999999999997;
+tmp_speak_command.w = 107;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -21242,9 +21242,9 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -2.4918364947644918;
-tmp_speak_command.wy = 220.99999999999991;
-tmp_speak_command.w = 102;
+tmp_speak_command.wx = -1.4918364947318281;
+tmp_speak_command.wy = 216.9999999999999;
+tmp_speak_command.w = 146;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -21307,8 +21307,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 1.0000000000000142;
-tmp_speak_command.wy = 210.99999999999997;
+tmp_speak_command.wx = -2.9999999999999645;
+tmp_speak_command.wy = 181.99999999999997;
 tmp_speak_command.w = 52.911956787109375;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -21320,8 +21320,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 136;
-tmp_speak_command.wy = 100.99999999999999;
+tmp_speak_command.wx = 138.00000000000003;
+tmp_speak_command.wy = 69;
 tmp_speak_command.w = 171.78384399414062;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -21346,8 +21346,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -0.9999999999999716;
-tmp_speak_command.wy = 245.99999999999997;
+tmp_speak_command.wx = -1.999999999999993;
+tmp_speak_command.wy = 183.99999999999997;
 tmp_speak_command.w = 319.8397216796875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -21399,7 +21399,7 @@ tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 139;
-tmp_speak_command.wy = 112.99999999999996;
+tmp_speak_command.wy = 71.99999999999999;
 tmp_speak_command.w = 251.9437713623047;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -21412,7 +21412,7 @@ tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 139;
-tmp_speak_command.wy = 112.99999999999996;
+tmp_speak_command.wy = 103.99999999999997;
 tmp_speak_command.w = 191;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -21432,7 +21432,7 @@ tmp_speak = new speak();
 tmp_speak.id = "confrontation_recap";
 tmp_speak.fqid = "tunic.historicalsociety.frontdesk.archivist.confrontation_recap";
 {
-tmp_speak.primary = false;
+tmp_speak.primary = true;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -21451,7 +21451,7 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 1.0000000000000142;
 tmp_speak_command.wy = 210.99999999999997;
-tmp_speak_command.w = 179;
+tmp_speak_command.w = 312;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -21497,6 +21497,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.historicalsociety.stacks.journals.pic_2.bingo",
+"!tunic.capitol.hall.chap2_finale_c",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -22098,7 +22099,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 136.50000000000003;
 tmp_speak_command.wy = 129;
-tmp_speak_command.w = 281;
+tmp_speak_command.w = 280;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -23042,9 +23043,9 @@ tmp_zone.id = "topics";
 tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.hub.topics";
 {
 tmp_zone.ww = 36;
-tmp_zone.wh = 283;
-tmp_zone.wx = 141.99999999999997;
-tmp_zone.wy = -6.500000000000057;
+tmp_zone.wh = 299;
+tmp_zone.wx = -334.99999999999994;
+tmp_zone.wy = 29.50000000000003;
 tmp_zone.animcycle_id = "null";
 tmp_zone.audio_id = "null";
 tmp_zone.deck_animcycle_ids = [
@@ -24989,9 +24990,9 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -361.27272726267495;
-tmp_speak_command.wy = 374.93939393939837;
-tmp_speak_command.w = 172;
+tmp_speak_command.wx = -361.27254826011335;
+tmp_speak_command.wy = 374.9393940172903;
+tmp_speak_command.w = 246;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -25178,6 +25179,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.microfiche.reader_flag.paper2.bingo",
+"!self",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -25220,8 +25222,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -271.39334025590284;
-tmp_speak_command.wy = 260.2728804945041;
+tmp_speak_command.wx = -272.69637055893315;
+tmp_speak_command.wy = 215.96985019147374;
 tmp_speak_command.w = 164;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -25277,6 +25279,44 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
+tmp_speak.id = "nelson_recap";
+tmp_speak.fqid = "tunic.library.frontdesk.worker.nelson_recap";
+{
+tmp_speak.primary = true;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.library.frontdesk.worker.nelson",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -363.87878787880834;
+tmp_speak_command.wy = 344.96969696969717;
+tmp_speak_command.w = 256.18365478515625;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "The archives are the place to go for primary documents!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
 tmp_speak.id = "wells";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.wells";
 {
@@ -25293,6 +25333,8 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"tunic.library.frontdesk.wellsbadge.hub",
+"!tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 
 tmp_speak_command = new speak_command();
