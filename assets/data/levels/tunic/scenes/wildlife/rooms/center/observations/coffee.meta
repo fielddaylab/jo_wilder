@@ -16,8 +16,8 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "Ugh. People need to pick up their trash!";
-tmp_observation.blip_wx = -175.72877913878364;
-tmp_observation.blip_wy = -81.2000214835279;
+tmp_observation.blip_wx = -181.28183512228648;
+tmp_observation.blip_wy = -11.134191908033273;
 tmp_observation.blip_w = 176;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;

@@ -1,10 +1,10 @@
-tmp_person.ww = 105.68675753746182;
-tmp_person.wh = 262.4975461528268;
-tmp_person.wx = -394.55944433774135;
-tmp_person.wy = 139.61035410702456;
+tmp_person.ww = 154.39926379771194;
+tmp_person.wh = 292.46799179171194;
+tmp_person.wx = -381.14212784682485;
+tmp_person.wy = 124.61420391044749;
 tmp_person.wz = 9;
-tmp_person.act_wx = 87.38662316476346;
-tmp_person.act_wy = -56.4;
+tmp_person.act_wx = 168.23728337043983;
+tmp_person.act_wy = -47.27953871995158;
 tmp_person.act_anim = true;
 tmp_person.hover_icon_wx = 64.62729385380858;
 tmp_person.hover_icon_wy = 143.3360981848623;

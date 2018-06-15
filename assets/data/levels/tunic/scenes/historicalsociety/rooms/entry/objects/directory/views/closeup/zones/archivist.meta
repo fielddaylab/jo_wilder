@@ -14,7 +14,7 @@ tmp_zone.raw_notifications = [
 ];
 tmp_zone.raw_notification_ws = [
 243.27980041503906,
-186,
+313,
 ];
 tmp_zone.notification_reqs = [[
 ]];

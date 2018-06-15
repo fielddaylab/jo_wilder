@@ -16,8 +16,8 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "I bet the archivist could use this!";
-tmp_observation.blip_wx = 268.1565178623663;
-tmp_observation.blip_wy = 86.99999999999997;
+tmp_observation.blip_wx = 248.47276520583677;
+tmp_observation.blip_wy = 111.99999999999999;
 tmp_observation.blip_w = 160;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
