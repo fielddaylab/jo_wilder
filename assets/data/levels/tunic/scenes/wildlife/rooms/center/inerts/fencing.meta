@@ -1,0 +1,12 @@
+tmp_inert.ww = 2568.1681818181814;
+tmp_inert.wh = 822.4750000000003;
+tmp_inert.wx = -24.445454545454822;
+tmp_inert.wy = -292.3488636363635;
+tmp_inert.wz = 1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_fencing";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

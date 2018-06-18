@@ -15,8 +15,8 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -687.0303030891106;
-tmp_speak_command.wy = 139.09090910203804;
+tmp_speak_command.wx = -896.646986593207;
+tmp_speak_command.wy = -206.3636348695395;
 tmp_speak_command.w = 117;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -28,8 +28,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -685.7272727272729;
-tmp_speak_command.wy = 140.39393939393932;
+tmp_speak_command.wx = -908.3204546112881;
+tmp_speak_command.wy = -214.94696969117155;
 tmp_speak_command.w = 160;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";

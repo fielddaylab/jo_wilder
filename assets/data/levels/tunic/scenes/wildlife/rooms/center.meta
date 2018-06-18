@@ -1,6 +1,6 @@
 tmp_room.primary = false;
-tmp_room.ww = 2400;
-tmp_room.wh = 1300;
+tmp_room.ww = 2535;
+tmp_room.wh = 1854;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_wildlife_center";
@@ -8,10 +8,10 @@ tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 860;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.nav_min_wz = 2;
+tmp_room.nav_max_wz = 6;
 tmp_room.navs = [
-{wx:8.492946796975048, wy:-250.8512698346031, ww:1861.064840402412, wh:365.3664183965078 },
+{wx:67.25885588788435, wy:-613.8171789255131, ww:2179.092113129685, wh:420.67550930559844 },
 ];
 tmp_room.lights = [
 ];
@@ -31,5 +31,4 @@ tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
 ]];
-//SUGGEST_H:1.9696969696969697
-
+//SUGGEST_H:2.809090909090909

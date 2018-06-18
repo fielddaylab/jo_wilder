@@ -4285,6 +4285,12 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/0
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/1.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/2.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/8.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/9.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -4438,6 +4444,190 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wellsbadge_s
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wildlife_animal_bison";
+tmp_animcycle.fqid = "tunic.wildlife_animal_bison";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/8.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/9.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/10.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/11.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/12.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/13.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/14.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/15.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/16.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/17.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/18.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/19.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/20.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/21.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/22.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/23.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/24.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/25.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/26.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/27.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/28.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/29.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/30.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/31.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/32.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/33.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/34.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_bison/35.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wildlife_animal_crane_cup";
+tmp_animcycle.fqid = "tunic.wildlife_animal_crane_cup";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/8.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/9.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/10.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/11.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/12.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/13.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/14.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/16.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/17.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/18.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/19.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/20.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/21.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/22.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/23.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/24.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/25.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/26.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/27.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/28.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/29.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/30.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_crane_cup/31.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wildlife_animal_fox";
+tmp_animcycle.fqid = "tunic.wildlife_animal_fox";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/8.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/9.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/10.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_fox/11.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wildlife_animal_lynx";
+tmp_animcycle.fqid = "tunic.wildlife_animal_lynx";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_lynx/7.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wildlife_animal_owl";
+tmp_animcycle.fqid = "tunic.wildlife_animal_owl";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/8.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/9.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/10.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/11.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/12.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/13.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/14.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/15.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/16.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/17.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/18.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/19.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/20.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/21.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/22.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/23.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/24.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/25.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/26.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_animal_owl/27.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "wildlife_expert";
 tmp_animcycle.fqid = "tunic.wildlife_expert";
 {
@@ -4453,6 +4643,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_exp
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_expert/2.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_expert/3.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_expert/4.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wildlife_fencing";
+tmp_animcycle.fqid = "tunic.wildlife_fencing";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wildlife_fencing/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -26897,8 +27102,8 @@ tmp_room.id = "center";
 tmp_room.fqid = "tunic.wildlife.center";
 {
 tmp_room.primary = false;
-tmp_room.ww = 2400;
-tmp_room.wh = 1300;
+tmp_room.ww = 2535;
+tmp_room.wh = 1854;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_wildlife_center";
@@ -26906,10 +27111,10 @@ tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 860;
-tmp_room.nav_min_wz = 0;
-tmp_room.nav_max_wz = 1;
+tmp_room.nav_min_wz = 2;
+tmp_room.nav_max_wz = 6;
 tmp_room.navs = [
-{wx:8.492946796975048, wy:-250.8512698346031, ww:1861.064840402412, wh:365.3664183965078 },
+{wx:67.25885588788435, wy:-613.8171789255131, ww:2179.092113129685, wh:420.67550930559844 },
 ];
 tmp_room.lights = [
 ];
@@ -26929,8 +27134,7 @@ tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
 ]];
-//SUGGEST_H:1.9696969696969697
-
+//SUGGEST_H:2.809090909090909
 tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 tmp_person = new person();
 tmp_person.id = "expert";
@@ -26938,14 +27142,14 @@ tmp_person.fqid = "tunic.wildlife.center.expert";
 {
 tmp_person.ww = 139.1497301532902;
 tmp_person.wh = 349.26120876396044;
-tmp_person.wx = 549.5488748346799;
-tmp_person.wy = -69.89990586630478;
-tmp_person.wz = 0;
+tmp_person.wx = 717.4034035617957;
+tmp_person.wy = -441.50274525240116;
+tmp_person.wz = 2;
 tmp_person.act_wx = -126.35538090967611;
 tmp_person.act_wy = -56;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = 71.12932533900924;
-tmp_person.hover_icon_wy = 153.16216284020103;
+tmp_person.hover_icon_wx = 43.8059317452364;
+tmp_person.hover_icon_wy = 179.24387714556838;
 tmp_person.animcycle_id = "wildlife_expert";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
@@ -27201,7 +27405,7 @@ tmp_person.ww = 100;
 tmp_person.wh = 100;
 tmp_person.wx = -478.04855077748493;
 tmp_person.wy = 41.26059962899396;
-tmp_person.wz = 0;
+tmp_person.wz = 1;
 tmp_person.act_wx = 97.31637532143606;
 tmp_person.act_wy = -37.0096457755983;
 tmp_person.act_anim = 1;
@@ -27225,7 +27429,6 @@ tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
 ]];
-
 if(tmp_person.ww < 0) { tmp_person.ww *= -1; tmp_person.flip = 1; }
 tmp_person.animcycle_inst = gen_animcycle_inst(tmp_person.animcycle_id,tmp_level.animcycles);
 tmp_person.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_person.hover_cursor_animcycle_id,tmp_level.animcycles);
@@ -27301,11 +27504,11 @@ tmp_person = new person();
 tmp_person.id = "wells";
 tmp_person.fqid = "tunic.wildlife.center.wells";
 {
-tmp_person.ww = 199.21157396002943;
-tmp_person.wh = 316.1604208422104;
-tmp_person.wx = -719.6155428199347;
-tmp_person.wy = -116.47327272510461;
-tmp_person.wz = 0;
+tmp_person.ww = 230.35850555012468;
+tmp_person.wh = 319.86312015483503;
+tmp_person.wx = -837.3762111253819;
+tmp_person.wy = -499.63716574393845;
+tmp_person.wz = 2;
 tmp_person.act_wx = 149;
 tmp_person.act_wy = -48;
 tmp_person.act_anim = 1;
@@ -27747,8 +27950,8 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -687.0303030891106;
-tmp_speak_command.wy = 139.09090910203804;
+tmp_speak_command.wx = -896.646986593207;
+tmp_speak_command.wy = -206.3636348695395;
 tmp_speak_command.w = 117;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -27760,8 +27963,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -685.7272727272729;
-tmp_speak_command.wy = 140.39393939393932;
+tmp_speak_command.wx = -908.3204546112881;
+tmp_speak_command.wy = -214.94696969117155;
 tmp_speak_command.w = 160;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -27783,10 +27986,10 @@ tmp_object = new object();
 tmp_object.id = "tracks";
 tmp_object.fqid = "tunic.wildlife.center.tracks";
 {
-tmp_object.ww = 157.55955710883967;
-tmp_object.wh = 174.0303883923966;
-tmp_object.wx = 1056.1005666868036;
-tmp_object.wy = -56.51987897356767;
+tmp_object.ww = 195.58455710883965;
+tmp_object.wh = 229.3394793014874;
+tmp_object.wx = 1140.7926121413493;
+tmp_object.wy = -419.4857880644768;
 tmp_object.wz = 0;
 tmp_object.act_wx = -52.99999921473716;
 tmp_object.act_wy = -56.00000006357243;
@@ -27932,10 +28135,10 @@ tmp_porthole = new porthole();
 tmp_porthole.id = "tomap";
 tmp_porthole.fqid = "tunic.wildlife.center.tomap";
 {
-tmp_porthole.ww = 973.8145454545455;
-tmp_porthole.wh = 238.95636363636336;
-tmp_porthole.wx = -64.74470797028954;
-tmp_porthole.wy = -633.337492536745;
+tmp_porthole.ww = 465.66227272727303;
+tmp_porthole.wh = 59.20181818181791;
+tmp_porthole.wx = -97.58448069756219;
+tmp_porthole.wy = -913.3397652640176;
 tmp_porthole.wz = -1;
 tmp_porthole.act_wx = 2.606060606060606;
 tmp_porthole.act_wy = 3.9090909090909087;
@@ -27971,13 +28174,71 @@ tmp_porthole.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.notice
 }
 tmp_room.portholes.push(tmp_porthole);
 tmp_inert = new inert();
+tmp_inert.id = "bison";
+tmp_inert.fqid = "tunic.wildlife.center.bison";
+{
+tmp_inert.ww = 428.3977272727273;
+tmp_inert.wh = 338.5204545454546;
+tmp_inert.wx = 188.1488636363643;
+tmp_inert.wy = -240.4965909090915;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_bison";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "crane_cup";
+tmp_inert.fqid = "tunic.wildlife.center.crane_cup";
+{
+tmp_inert.ww = 100;
+tmp_inert.wh = 100;
+tmp_inert.wx = 100;
+tmp_inert.wy = 100;
+tmp_inert.wz = 2;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_crane_cup";
+tmp_inert.deck_animcycle_ids = [];
+tmp_inert.reqs = [[
+]];
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "fencing";
+tmp_inert.fqid = "tunic.wildlife.center.fencing";
+{
+tmp_inert.ww = 2568.1681818181814;
+tmp_inert.wh = 822.4750000000003;
+tmp_inert.wx = -24.445454545454822;
+tmp_inert.wy = -292.3488636363635;
+tmp_inert.wz = 1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_fencing";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
 tmp_inert.id = "foreground";
 tmp_inert.fqid = "tunic.wildlife.center.foreground";
 {
-tmp_inert.ww = 2765.767272727273;
-tmp_inert.wh = 577.2945454545448;
-tmp_inert.wx = -5.9102580310902795;
-tmp_inert.wy = -304.3840135311437;
+tmp_inert.ww = 2976.633181818181;
+tmp_inert.wh = 573.8377272727266;
+tmp_inert.wx = 6.188605605272869;
+tmp_inert.wy = -637.9669680765985;
 tmp_inert.wz = 10;
 tmp_inert.g = 0.5;
 tmp_inert.animcycle_id = "wildlife_fg";
@@ -27991,14 +28252,74 @@ tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.a
 }
 tmp_room.inerts.push(tmp_inert);
 tmp_inert = new inert();
+tmp_inert.id = "fox";
+tmp_inert.fqid = "tunic.wildlife.center.fox";
+{
+tmp_inert.ww = 155.30909090909086;
+tmp_inert.wh = 155.30909090909094;
+tmp_inert.wx = -446.17727272727257;
+tmp_inert.wy = -339.01590909090925;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_fox";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "lynx";
+tmp_inert.fqid = "tunic.wildlife.center.lynx";
+{
+tmp_inert.ww = 189.87727272727264;
+tmp_inert.wh = 162.22272727272718;
+tmp_inert.wx = -1078.7749999999999;
+tmp_inert.wy = -294.07727272727277;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_lynx";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "owl";
+tmp_inert.fqid = "tunic.wildlife.center.owl";
+{
+tmp_inert.ww = 75.80227272727272;
+tmp_inert.wh = 124.19772727272732;
+tmp_inert.wx = 851.8579545454552;
+tmp_inert.wy = -268.1511363636364;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_owl";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
 tmp_inert.id = "tree";
 tmp_inert.fqid = "tunic.wildlife.center.tree";
 {
-tmp_inert.ww = 962.6909090909093;
-tmp_inert.wh = 1050.269090909091;
-tmp_inert.wx = -90.03636363636343;
-tmp_inert.wy = 137.74545454545444;
-tmp_inert.wz = 0;
+tmp_inert.ww = 966.1477272727275;
+tmp_inert.wh = 870.5145454545452;
+tmp_inert.wx = -93.91829663026533;
+tmp_inert.wy = -279.5256333898998;
+tmp_inert.wz = 4;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "wildlife_tree";
 tmp_inert.deck_animcycle_ids = [
@@ -28010,6 +28331,47 @@ if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
 tmp_room.inerts.push(tmp_inert);
+}
+tmp_scene.rooms.push(tmp_room);
+tmp_room = new room();
+tmp_room.id = "trail";
+tmp_room.fqid = "tunic.wildlife.trail";
+{
+tmp_room.primary = false;
+tmp_room.ww = canv.width;
+tmp_room.wh = canv.height;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "null";
+tmp_room.audio_id = "null";
+tmp_room.deck_animcycle_ids = [];
+tmp_room.cam_wh = 660;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.lights = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.shadows = [
+{wx:100, wy:100, ww:100, wh:100},
+];
+tmp_room.light_color   = "rgba(255,255,255,0.2);";
+tmp_room.shadow_color  = "rgba(0,0,0,0.5);";
+tmp_room.ambient_color = "rgba(0,0,0,0);";
+tmp_room.start_wx = canv.width/2;
+tmp_room.start_wy = canv.height/2;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.5
+
+tmp_room.animcycle_inst = gen_animcycle_inst(tmp_room.animcycle_id,tmp_level.animcycles);
 }
 tmp_scene.rooms.push(tmp_room);
 }

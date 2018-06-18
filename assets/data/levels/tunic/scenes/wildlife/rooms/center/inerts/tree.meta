@@ -1,8 +1,8 @@
-tmp_inert.ww = 962.6909090909093;
-tmp_inert.wh = 1050.269090909091;
-tmp_inert.wx = -90.03636363636343;
-tmp_inert.wy = 137.74545454545444;
-tmp_inert.wz = 0;
+tmp_inert.ww = 966.1477272727275;
+tmp_inert.wh = 870.5145454545452;
+tmp_inert.wx = -93.91829663026533;
+tmp_inert.wy = -279.5256333898998;
+tmp_inert.wz = 4;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "wildlife_tree";
 tmp_inert.deck_animcycle_ids = [
