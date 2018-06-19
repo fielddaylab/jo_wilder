@@ -3143,6 +3143,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/microfichefr
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "microfichesign";
+tmp_animcycle.fqid = "tunic.microfichesign";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/microfichesign/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "nelson_sign";
 tmp_animcycle.fqid = "tunic.nelson_sign";
 {
@@ -25886,6 +25901,26 @@ tmp_inert.wy = -354.617775909883;
 tmp_inert.wz = 999;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "libraryfg";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "microfiche_sign";
+tmp_inert.fqid = "tunic.library.frontdesk.microfiche_sign";
+{
+tmp_inert.ww = 229.75552787093255;
+tmp_inert.wh = 90.87501277407634;
+tmp_inert.wx = 617.1677055847106;
+tmp_inert.wy = 363.95069071784263;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "microfichesign";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
