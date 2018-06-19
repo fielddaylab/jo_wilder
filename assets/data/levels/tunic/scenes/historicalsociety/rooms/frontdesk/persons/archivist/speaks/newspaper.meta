@@ -57,7 +57,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -60.49999999851141;
 tmp_speak_command.wy = 225.99999999999991;
-tmp_speak_command.w = 221;
+tmp_speak_command.w = 211.19180297851562;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -70,7 +70,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 65.50000000000006;
 tmp_speak_command.wy = 101.00000000000003;
-tmp_speak_command.w = 247;
+tmp_speak_command.w = 239.3197784423828;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -209,3 +209,4 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Right outside the door.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
