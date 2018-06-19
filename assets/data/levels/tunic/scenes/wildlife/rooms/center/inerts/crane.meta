@@ -1,0 +1,12 @@
+tmp_inert.ww = 234.81590909090923;
+tmp_inert.wh = 252.1000000000001;
+tmp_inert.wx = 896.7965909090916;
+tmp_inert.wy = -608.6477272727266;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_crane";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
