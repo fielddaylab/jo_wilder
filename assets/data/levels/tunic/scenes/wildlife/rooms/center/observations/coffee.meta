@@ -1,7 +1,7 @@
-tmp_observation.ww = 77;
-tmp_observation.wh = 63.99999999999998;
-tmp_observation.wx = -309.1469603753192;
-tmp_observation.wy = -286.02420280220167;
+tmp_observation.ww = 91.33333333333336;
+tmp_observation.wh = 77.03030303030292;
+tmp_observation.wx = -468.7517043362753;
+tmp_observation.wy = -772.0560655477116;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = 75.90405352161179;
 tmp_observation.act_wy = 63.66740252919851;
@@ -16,8 +16,8 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "Ugh. People need to pick up their trash!";
-tmp_observation.blip_wx = -181.28183512228648;
-tmp_observation.blip_wy = -11.134191908033273;
+tmp_observation.blip_wx = -333.7364960044172;
+tmp_observation.blip_wy = -491.9522120071983;
 tmp_observation.blip_w = 176;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
