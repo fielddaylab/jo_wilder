@@ -1,0 +1,12 @@
+tmp_inert.ww = 258.909090909091;
+tmp_inert.wh = 278.4242424242424;
+tmp_inert.wx = -191.33333333258065;
+tmp_inert.wy = -61.696969696983075;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "janitorcart";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

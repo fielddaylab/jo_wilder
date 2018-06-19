@@ -1,10 +1,10 @@
-tmp_observation.ww = 228.09090909090918;
-tmp_observation.wh = 328.93939393939394;
-tmp_observation.wx = -220.80302822873037;
-tmp_observation.wy = -26.681818237011953;
+tmp_observation.ww = 203.00002239341683;
+tmp_observation.wh = 255.06060645548385;
+tmp_observation.wx = -220.79999277901507;
+tmp_observation.wy = -13.439447520644407;
 tmp_observation.wz = 1;
-tmp_observation.act_wx = 77.00570027022911;
-tmp_observation.act_wy = -61.0009545064006;
+tmp_observation.act_wx = 79.44757984260579;
+tmp_observation.act_wy = -72.17094866785862;
 tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = -0.9711467315839303;
 tmp_observation.hover_icon_wy = 95.19657210202551;
