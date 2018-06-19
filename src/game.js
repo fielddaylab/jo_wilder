@@ -1668,7 +1668,6 @@ code:"08278819055705818182842000190273390430903167130214221050888283299367003120
 };
 
 
-
 save_codes.push("sadanimals");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
