@@ -14,15 +14,15 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -1373.339579793245;
-tmp_speak_command.wy = 145.02318567144619;
-tmp_speak_command.w = 98;
+tmp_speak_command.wx = -1375.7271743433314;
+tmp_speak_command.wy = 145.01686717826985;
+tmp_speak_command.w = 240;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Wow, a wild badger!";
+tmp_speak_command.raw_atext = "Go check out the display at the end of the trail.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -40,15 +40,15 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -1385.1136363636363;
-tmp_speak_command.wy = 149.29545454545465;
-tmp_speak_command.w = 99;
+tmp_speak_command.wx = -1385.1137123327096;
+tmp_speak_command.wy = 133.29545434441133;
+tmp_speak_command.w = 264;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "It's just up the trail!";
+tmp_speak_command.raw_atext = "I'll stay here with the sunset.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
