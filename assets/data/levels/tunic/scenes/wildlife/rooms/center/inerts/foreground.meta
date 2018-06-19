@@ -1,7 +1,7 @@
 tmp_inert.ww = 2976.633181818181;
 tmp_inert.wh = 573.8377272727266;
-tmp_inert.wx = 2.9093094315439885;
-tmp_inert.wy = -639.3080188977227;
+tmp_inert.wx = -0.9997814775470033;
+tmp_inert.wy = -673.1868067765106;
 tmp_inert.wz = 10;
 tmp_inert.g = 0.5;
 tmp_inert.animcycle_id = "wildlife_fg";
