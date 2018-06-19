@@ -58,7 +58,7 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.ww = -140.37458471274593;
+tmp_cutscene_command.ww = -182.18916849603553;
 tmp_cutscene_command.t = 0;
 tmp_cutscene_command.end_t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
