@@ -37,7 +37,7 @@ tmp_level.familiar_walk_animcycle_id = "teddy_walk";
 tmp_level.familiar_idle_animcycle_id = "teddy_idle";
 tmp_level.familiar_act_animcycle_id = "teddy_idle";
 tmp_level.familiar_ww = 153;
-tmp_level.familiar_wh = 120;
+tmp_level.familiar_wh = 90;
 tmp_level.familiar_off_wx = 0;
 tmp_level.familiar_off_wy = -80;
 tmp_level.exit_animcycle_id = "exit";
@@ -79,7 +79,6 @@ tmp_level.map_reqs = [[
 tmp_level.familiar_reqs = [[
 "tunic.historicalsociety.cage.unlockdoor",
 ]];
-
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "archivephotos1";
 tmp_animcycle.fqid = "tunic.archivephotos1";
@@ -4305,10 +4304,9 @@ tmp_animcycle.fqid = "tunic.teddy_walk";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
+tmp_animcycle.frame_t = 4;
 tmp_animcycle.offset_t = 0;
 tmp_animcycle.loop = 1;
-
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_walk/0.png");
