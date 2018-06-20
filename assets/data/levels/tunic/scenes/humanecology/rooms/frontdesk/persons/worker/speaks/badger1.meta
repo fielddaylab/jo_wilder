@@ -29,7 +29,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -348.0227396069702;
 tmp_speak_command.wy = 177.99999999999997;
-tmp_speak_command.w = 411;
+tmp_speak_command.w = 350;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";

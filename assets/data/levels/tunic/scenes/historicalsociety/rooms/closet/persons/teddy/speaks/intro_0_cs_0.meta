@@ -30,7 +30,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 195.1141705840032;
 tmp_speak_command.wy = -9.068034501009024;
-tmp_speak_command.w = 173;
+tmp_speak_command.w = 171;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "avatar_angry";
 tmp_speak_command.audio_id = "null";
