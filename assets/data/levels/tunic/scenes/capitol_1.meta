@@ -1,0 +1,28 @@
+tmp_scene.primary = false;
+tmp_scene.ww = 130;
+tmp_scene.wh = 142.99999999999997;
+tmp_scene.wx = 24.999999999999986;
+tmp_scene.wy = 21.499999999999986;
+tmp_scene.hover_icon_wx = 20;
+tmp_scene.hover_icon_wy = 41.99999999999999;
+tmp_scene.animcycle_id = "scene_capitol";
+tmp_scene.notice_icon_animcycle_id = "notice";
+tmp_scene.audio_id = "null";
+tmp_scene.deck_animcycle_ids = [
+];
+tmp_scene.notifications_persistent = 0;
+tmp_scene.raw_notifications = [
+];
+tmp_scene.raw_notification_ws = [
+];
+tmp_scene.notification_reqs = [[
+]];
+tmp_scene.notice_reqs = [[
+"tunic.kohlcenter.halloffame.plaque.face.date",
+"!tunic.capitol_0.hall.chap1_finale_c",
+]];
+tmp_scene.reqs = [[
+"tunic.historicalsociety.closet_dirty",
+"!tunic.historicalsociety.basement.ch3start"
+]];
+

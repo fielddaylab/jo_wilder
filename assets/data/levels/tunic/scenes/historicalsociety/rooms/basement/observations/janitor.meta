@@ -30,6 +30,6 @@ tmp_observation.notice_reqs = [[
 tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
-"!tunic.capitol.hall.chap2_finale_c",
+"!tunic.capitol_1.hall.chap2_finale_c",
 ]];
 
