@@ -1,10 +1,12 @@
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
-tmp_inert.wz = 0;
+tmp_inert.ww = 708.0446240242898;
+tmp_inert.wh = 389.5600735634266;
+tmp_inert.wx = 31.608052257706504;
+tmp_inert.wy = -183.8353886802154;
+tmp_inert.wz = 2;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "capitol_crowd";
-tmp_inert.deck_animcycle_ids = [];
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
+
