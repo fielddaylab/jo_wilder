@@ -28,6 +28,35 @@ tmp_wildcard.reqs = [[
 {
   var self = tmp_wildcard;
 
+  var t = 0;
+  var spacing = 30;
+  var lines = [
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+  ];
+
   self.consume_self = function(wildcard)
   {
     self = wildcard;
@@ -60,10 +89,29 @@ tmp_wildcard.reqs = [[
 
   self.tick = function()
   {
+    t += 0.001;
   }
 
   self.draw = function(t)
   {
+    if(t < 0.01)
+    {
+      ctx.globalAlpha = t/0.01;
+    }
+    ctx.fillStyle = black;
+    ctx.fillRect(0,0,canv.width,canv.height);
+    ctx.globalAlpha = 1;
+
+    var bottom = canv.height;
+    var top = 0-spacing*lines.length;
+    var p = lerp(bottom,top,t);
+    ctx.fillStyle = white;
+    for(var i = 0; i < lines.length; i++)
+    {
+      if(p > -spacing && p < canv.height+spacing)
+        ctx.fillText(lines[i],canv.width/2,p);
+      p += spacing;
+    }
   }
 }
 

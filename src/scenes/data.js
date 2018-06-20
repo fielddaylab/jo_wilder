@@ -14371,8 +14371,123 @@ tmp_cutscene_command.end_t = 350;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene_command.cutscene_entity_id = "credits";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 350;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 351;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_cutscene.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.notice_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_cutscene.raw_notifications.length; i++) tmp_cutscene.notifications[i] = stextToLines(tmp_cutscene.raw_notifications[i], tmp_cutscene.raw_notification_ws[i] ? tmp_cutscene.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_room.cutscenes.push(tmp_cutscene);
+tmp_cutscene = new cutscene();
+tmp_cutscene.id = "credit_trigger";
+tmp_cutscene.fqid = "tunic.capitol_3.hall.credit_trigger";
+{
+tmp_cutscene.trigger = CUTSCENE_TRIGGER_AUTO;
+tmp_cutscene.ww = 100;
+tmp_cutscene.wh = 100;
+tmp_cutscene.wx = 10;
+tmp_cutscene.wy = 10;
+tmp_cutscene.wz = 0;
+tmp_cutscene.act_wx = 0;
+tmp_cutscene.act_wy = 0;
+tmp_cutscene.act_anim = 0;
+tmp_cutscene.hover_icon_wx = 0;
+tmp_cutscene.hover_icon_wy = 0;
+tmp_cutscene.animcycle_id = "null";
+tmp_cutscene.hover_cursor_animcycle_id = "null";
+tmp_cutscene.hover_icon_animcycle_id = "null";
+tmp_cutscene.notice_icon_animcycle_id = "null";
+tmp_cutscene.deck_animcycle_ids = [];
+tmp_cutscene.notifications_persistent = 0;
+tmp_cutscene.raw_notifications = [
+];
+tmp_cutscene.notification_reqs = [[
+]];
+tmp_cutscene.notice_reqs = [[
+]];
+tmp_cutscene.reqs = [[
+"self", //requires "self" = never gets triggered
+]];
+
+tmp_cutscene.commands = [];
+
+/*
+Possible Commands:
+
+CUTSCENE_COMMAND_CREATE
+CUTSCENE_COMMAND_DESTROY
+CUTSCENE_COMMAND_ANIMATE
+CUTSCENE_COMMAND_SPEAK
+CUTSCENE_COMMAND_ACT
+CUTSCENE_COMMAND_AUDIO
+CUTSCENE_COMMAND_TWEEN
+CUTSCENE_COMMAND_TARGET
+CUTSCENE_COMMAND_WAIT
+CUTSCENE_COMMAND_END
+CUTSCENE_COMMAND_IGNORE
+
+
+Possible Entity Types:
+CUTSCENE_ENTITY_CAMERA
+CUTSCENE_ENTITY_AVATAR
+CUTSCENE_ENTITY_SCENE
+CUTSCENE_ENTITY_CUTSCENE
+*/
+
+/*
+//skeleton command addition
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_NULL;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
+tmp_cutscene_command.cutscene_target_entity_id = "null";
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
+tmp_cutscene_command.t = 0;
+tmp_cutscene_command.end_t = 0;
+tmp_cutscene_command.ww = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wh = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wx = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wy = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.wz = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.w = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.h = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.a = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.raw_text = "";
+tmp_cutscene_command.animcycle_id = "null";
+tmp_cutscene_command.audio_id = "null";
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+*/
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.t = -1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
+tmp_cutscene_command.cutscene_entity_id = "credits";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+//Leave this at the end- remember to set tmp_cutscene_command.t!
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
+tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
@@ -14497,6 +14612,134 @@ tmp_porthole.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.hover_i
 tmp_porthole.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_porthole.notice_icon_animcycle_id,tmp_level.animcycles);
 }
 tmp_room.portholes.push(tmp_porthole);
+tmp_wildcard = new wildcard();
+tmp_wildcard.id = "credits";
+tmp_wildcard.fqid = "tunic.capitol_3.hall.credits";
+{
+tmp_wildcard.ww = 100;
+tmp_wildcard.wh = 100;
+tmp_wildcard.wx = 100;
+tmp_wildcard.wy = 100;
+tmp_wildcard.wz = 0;
+tmp_wildcard.act_wx = 0;
+tmp_wildcard.act_wy = 0;
+tmp_wildcard.act_anim = 1;
+tmp_wildcard.hover_icon_wx = 0;
+tmp_wildcard.hover_icon_wy = 0;
+tmp_wildcard.animcycle_id = "null";
+tmp_wildcard.notice_icon_animcycle_id = "null";
+tmp_wildcard.hover_cursor_animcycle_id = "null";
+tmp_wildcard.hover_icon_animcycle_id = "null";
+tmp_wildcard.audio_id = "null";
+tmp_wildcard.deck_animcycle_ids = [];
+tmp_wildcard.notifications_persistent = 0;
+tmp_wildcard.raw_notifications = [
+];
+tmp_wildcard.notification_reqs = [[
+]];
+tmp_wildcard.notice_reqs = [[
+]];
+tmp_wildcard.reqs = [[
+]];
+
+//view
+{
+  var self = tmp_wildcard;
+
+  var t = 0;
+  var spacing = 30;
+  var lines = [
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+    "role",
+    "name",
+    "",
+  ];
+
+  self.consume_self = function(wildcard)
+  {
+    self = wildcard;
+  }
+
+  self.dismiss = function()
+  {
+  }
+
+  self.dragStart = function(evt)
+  {
+  };
+  self.drag = function(evt)
+  {
+  };
+  self.dragFinish = function()
+  {
+  };
+
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
+
+  self.click = function(evt)
+  {
+  }
+
+  self.tick = function()
+  {
+    t += 0.001;
+  }
+
+  self.draw = function(t)
+  {
+    if(t < 0.01)
+    {
+      ctx.globalAlpha = t/0.01;
+    }
+    ctx.fillStyle = black;
+    ctx.fillRect(0,0,canv.width,canv.height);
+    ctx.globalAlpha = 1;
+
+    var bottom = canv.height;
+    var top = 0-spacing*lines.length;
+    var p = lerp(bottom,top,t);
+    ctx.fillStyle = white;
+    for(var i = 0; i < lines.length; i++)
+    {
+      if(p > -spacing && p < canv.height+spacing)
+        ctx.fillText(lines[i],canv.width/2,p);
+      p += spacing;
+    }
+  }
+}
+
+tmp_wildcard.animcycle_inst = gen_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);
+tmp_wildcard.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_wildcard.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_wildcard.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.notice_icon_animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_wildcard.raw_notifications.length; i++) tmp_wildcard.notifications[i] = stextToLines(tmp_wildcard.raw_notifications[i], tmp_wildcard.raw_notification_ws[i] ? tmp_wildcard.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_room.wildcards.push(tmp_wildcard);
 tmp_inert = new inert();
 tmp_inert.id = "rotunda";
 tmp_inert.fqid = "tunic.capitol_3.hall.rotunda";
