@@ -28,9 +28,9 @@ tmp_wildcard.reqs = [[
 {
   var self = tmp_wildcard;
 
-  var t = 0;
-  var spacing = 30;
-  var lines = [
+  self.t = 0;
+  self.spacing = 30;
+  self.lines = [
     "role",
     "name",
     "",
@@ -60,6 +60,7 @@ tmp_wildcard.reqs = [[
   self.consume_self = function(wildcard)
   {
     self = wildcard;
+    self.t = 0;
   }
 
   self.dismiss = function()
@@ -89,28 +90,29 @@ tmp_wildcard.reqs = [[
 
   self.tick = function()
   {
-    t += 0.001;
+    self.t += 0.001;
   }
 
-  self.draw = function(t)
+  self.draw = function(yoff)
   {
-    if(t < 0.01)
+    var faded_in = 0.05;
+    if(self.t < faded_in)
     {
-      ctx.globalAlpha = t/0.01;
+      ctx.globalAlpha = self.t/faded_in;
     }
     ctx.fillStyle = black;
     ctx.fillRect(0,0,canv.width,canv.height);
     ctx.globalAlpha = 1;
 
     var bottom = canv.height;
-    var top = 0-spacing*lines.length;
-    var p = lerp(bottom,top,t);
+    var top = 0-self.spacing*self.lines.length;
+    var p = lerp(bottom,top,self.t);
     ctx.fillStyle = white;
-    for(var i = 0; i < lines.length; i++)
+    for(var i = 0; i < self.lines.length; i++)
     {
-      if(p > -spacing && p < canv.height+spacing)
-        ctx.fillText(lines[i],canv.width/2,p);
-      p += spacing;
+      if(p > -self.spacing && p < canv.height+self.spacing)
+        ctx.fillText(self.lines[i],canv.width/2,p);
+      p += self.spacing;
     }
   }
 }
