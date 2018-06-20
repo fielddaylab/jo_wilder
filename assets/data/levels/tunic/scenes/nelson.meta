@@ -21,6 +21,6 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.capitol.hall.chap4_finale_c",
+"tunic.capitol_2.hall.chap4_finale_c",
 ]];
 

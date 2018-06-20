@@ -1,0 +1,33 @@
+tmp_person.ww = 166.66666666666666;
+tmp_person.wh = 289.3939393939394;
+tmp_person.wx = 46.96969696969707;
+tmp_person.wy = 16.666666666666657;
+tmp_person.wz = 0;
+tmp_person.act_wx = -86.36363636363636;
+tmp_person.act_wy = -157.57575757575756;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 80.3030303030303;
+tmp_person.hover_icon_wy = 166.66666666666666;
+tmp_person.animcycle_id = "gramps";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"!tunic.capitol_0.hall.chap1_finale_c",
+],[
+"_tunic.capitol_1.hall.chap2_finale_c",
+"!tunic.capitol_1.hall.chap2_finale_c",
+]];
+

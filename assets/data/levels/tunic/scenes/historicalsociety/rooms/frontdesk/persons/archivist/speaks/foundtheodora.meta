@@ -12,7 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.historicalsociety.stacks.journals.pic_2.bingo",
-"!tunic.capitol.hall.chap2_finale_c",
+"!tunic.capitol_1.hall.chap2_finale_c",
 ]];
 
 tmp_speak_command = new speak_command();
