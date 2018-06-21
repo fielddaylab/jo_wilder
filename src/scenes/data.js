@@ -27,7 +27,7 @@ tmp_level.id = "tunic";
 tmp_level.fqid = "tunic";
 {
 tmp_level.primary = true;
-tmp_level.intro_room_id = "tunic.capitol_3.hall";
+tmp_level.intro_room_id = "tunic.historicalsociety.closet";
 tmp_level.avatar_walk_animcycle_id = "avatar_walk";
 tmp_level.avatar_idle_animcycle_id = "avatar_idle";
 tmp_level.avatar_act_animcycle_id = "avatar_act";
@@ -8806,14 +8806,15 @@ tmp_inert = new inert();
 tmp_inert.id = "shirt";
 tmp_inert.fqid = "tunic.capitol_0.hall.shirt";
 {
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 90.9026520504204;
+tmp_inert.wh = 236.3652956905717;
+tmp_inert.wx = 437.75643408748755;
+tmp_inert.wy = 43.907862739232;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
-tmp_inert.animcycle_id = "null";
-tmp_inert.deck_animcycle_ids = [];
+tmp_inert.animcycle_id = "capitol_tunic";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
@@ -12657,17 +12658,17 @@ tmp_inert = new inert();
 tmp_inert.id = "shirt";
 tmp_inert.fqid = "tunic.capitol_1.hall.shirt";
 {
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 90.9026520504204;
+tmp_inert.wh = 236.3652956905717;
+tmp_inert.wx = 437.75643408748755;
+tmp_inert.wy = 43.907862739232;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
-tmp_inert.animcycle_id = "null";
-tmp_inert.deck_animcycle_ids = [];
+tmp_inert.animcycle_id = "capitol_tunic";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
-
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
@@ -14281,14 +14282,15 @@ tmp_inert = new inert();
 tmp_inert.id = "flag";
 tmp_inert.fqid = "tunic.capitol_2.hall.flag";
 {
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 157.57575756991966;
+tmp_inert.wh = 290.9090909105955;
+tmp_inert.wx = -340.78309797373913;
+tmp_inert.wy = 84.65941194752014;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "capitol_flag";
-tmp_inert.deck_animcycle_ids = [];
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
@@ -14319,17 +14321,17 @@ tmp_inert = new inert();
 tmp_inert.id = "shirt";
 tmp_inert.fqid = "tunic.capitol_2.hall.shirt";
 {
-tmp_inert.ww = 100;
-tmp_inert.wh = 100;
-tmp_inert.wx = 100;
-tmp_inert.wy = 100;
+tmp_inert.ww = 90.9026520504204;
+tmp_inert.wh = 236.3652956905717;
+tmp_inert.wx = 437.75643408748755;
+tmp_inert.wy = 43.907862739232;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
-tmp_inert.animcycle_id = "null";
-tmp_inert.deck_animcycle_ids = [];
+tmp_inert.animcycle_id = "capitol_tunic";
+tmp_inert.deck_animcycle_ids = [
+];
 tmp_inert.reqs = [[
 ]];
-
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }
