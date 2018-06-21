@@ -23,6 +23,6 @@ tmp_scene.notice_reqs = [[
 ]];
 tmp_scene.reqs = [[
 "tunic.historicalsociety.closet_dirty",
-"!tunic.historicalsociety.basement.ch3start"
+"!tunic.historicalsociety.basement.ch3start",
 ]];
 

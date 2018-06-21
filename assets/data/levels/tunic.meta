@@ -26,6 +26,10 @@ tmp_level.icon_map_animcycle_id = "icon_map";
 tmp_level.icon_notebook_animcycle_id = "icon_notebook";
 tmp_level.ui_hover_animcycle_id = "hover_ui";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
+tmp_level.loading_animcycle_ids = [
+];
+tmp_level.loading_animcycle_reqs = [
+];
 tmp_level.deck_animcycle_ids = [
 ];
 tmp_level.cursor_w = 27;
@@ -52,3 +56,4 @@ tmp_level.map_reqs = [[
 tmp_level.familiar_reqs = [[
 "tunic.historicalsociety.cage.unlockdoor",
 ]];
+

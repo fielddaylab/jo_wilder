@@ -354,6 +354,8 @@ var level = function()
   self.icon_notebook_animcycle_id = "null";
   self.ui_hover_animcycle_id = "null";
   self.ripple_click_animcycle_id = "click_ripple";
+  self.loading_animcycle_ids = [];
+  self.loading_animcycle_reqs = [];
   self.deck_animcycle_ids = [];
   self.cursor_w = 0;
   self.cursor_h = 0;
@@ -1109,7 +1111,16 @@ var get_requirements_string = function(reqs)
   return str;
 }
 
-var get_deck_animcycle_ids = function(ids)
+var get_requirements_strings = function(reqs)
+{
+  var str = "[\n";
+  for(var i = 0; i < reqs.length; i++)
+    str += get_requirements_string(reqs[i]);
+  str += "];\n";
+  return str;
+}
+
+var get_animcycle_ids = function(ids)
 {
   var str = "[\n";
   for(var i = 0; i < ids.length; i++)
@@ -1152,7 +1163,9 @@ var print_level_meta = function(l)
   "tmp_level.icon_notebook_animcycle_id = \""+l.icon_notebook_animcycle_id+"\";\n"+
   "tmp_level.ui_hover_animcycle_id = \""+l.ui_hover_animcycle_id+"\";\n"+
   "tmp_level.ripple_click_animcycle_id = \""+l.ripple_click_animcycle_id+"\";\n"+
-  "tmp_level.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_level.loading_animcycle_ids = "+get_animcycle_ids(l.loading_animcycle_ids)+
+  "tmp_level.loading_animcycle_reqs = "+get_requirements_strings(l.loading_animcycle_reqs)+
+  "tmp_level.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_level.cursor_w = "+l.cursor_w+";\n"+
   "tmp_level.cursor_h = "+l.cursor_h+";\n"+
   "tmp_level.hover_w = "+l.hover_w+";\n"+
@@ -1189,7 +1202,7 @@ var print_entry_meta = function(l)
   "tmp_entry.page = "+l.page+";\n"+
   "tmp_entry.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_entry.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_entry.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_entry.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_entry.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_entry.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_entry.raw_notification_ws = [\n";
@@ -1218,7 +1231,7 @@ var print_scene_meta = function(l)
   "tmp_scene.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_scene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_scene.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_scene.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_scene.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_scene.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_scene.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_scene.raw_notification_ws = [\n";
@@ -1246,7 +1259,7 @@ var print_room_meta = function(l)
   "tmp_room.wy = "+l.wy+";\n"+
   "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_room.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_room.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_room.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_room.cam_wh = "+l.cam_wh+";\n"+
   "tmp_room.nav_min_wz = "+l.nav_min_wz+";\n"+
   "tmp_room.nav_max_wz = "+l.nav_max_wz+";\n"+
@@ -1304,7 +1317,7 @@ var print_person_meta = function(l)
   "tmp_person.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_person.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_person.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_person.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_person.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_person.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_person.raw_notification_ws = [\n";
@@ -1354,7 +1367,7 @@ var print_speak_meta = function(l)
     "tmp_speak_command.h = "+c.h+";\n"+
     "tmp_speak_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
     "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
-    "tmp_speak_command.deck_animcycle_ids = "+get_deck_animcycle_ids(c.deck_animcycle_ids)+
+    "tmp_speak_command.deck_animcycle_ids = "+get_animcycle_ids(c.deck_animcycle_ids)+
     "tmp_speak_command.raw_atext = \""+c.raw_atext.replace(/"/g,"\\\"")+"\";\n"+
     "tmp_speak_command.speaker = "+(c.speaker == SPEAKER_AVATAR ? "SPEAKER_AVATAR" : "SPEAKER_PERSON" )+";\n"+
     "tmp_speak.commands.push(tmp_speak_command);\n";
@@ -1413,7 +1426,7 @@ var print_object_meta = function(l)
   "tmp_object.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_object.view_overlay_animcycle_id = \""+l.view_overlay_animcycle_id+"\";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_object.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_object.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_object.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_object.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_object.raw_notification_ws = [\n";
@@ -1449,7 +1462,7 @@ var print_observation_meta = function(l)
   "tmp_observation.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_observation.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_observation.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_observation.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_observation.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_observation.raw_text = \""+l.raw_text.replace(/"/g,"\\\"")+"\";\n"+
   "tmp_observation.blip_wx = "+l.blip_wx+";\n"+
   "tmp_observation.blip_wy = "+l.blip_wy+";\n"+
@@ -1478,7 +1491,7 @@ var print_view_meta = function(l)
   "tmp_view.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_view.magnify = "+l.magnify+";\n"+
   "tmp_view.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_view.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_view.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_view.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_view.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_view.raw_notification_ws = [\n";
@@ -1504,7 +1517,7 @@ var print_zone_meta = function(l)
   "tmp_zone.wy = "+l.wy+";\n"+
   "tmp_zone.animcycle_id = \""+l.animcycle_id+"\";\n"+
   "tmp_zone.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_zone.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_zone.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_zone.target_view = \""+l.target_view+"\";\n"+
   "tmp_zone.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_zone.raw_notifications = "+get_notifications_string(l.raw_notifications)+
@@ -1539,7 +1552,7 @@ var print_porthole_meta = function(l)
   "tmp_porthole.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_porthole.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
   "tmp_porthole.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_porthole.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_porthole.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
   "tmp_porthole.target_start_wx = "+l.target_start_wx+";\n"+
   "tmp_porthole.target_start_wy = "+l.target_start_wy+";\n"+
@@ -1576,7 +1589,7 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_wildcard.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_wildcard.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
-  "tmp_wildcard.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_wildcard.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_wildcard.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_wildcard.raw_notifications = "+get_notifications_string(l.raw_notifications)+
@@ -1612,7 +1625,7 @@ var print_cutscene_meta = function(l)
   "tmp_cutscene.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
   "tmp_cutscene.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
   "tmp_cutscene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
-  "tmp_cutscene.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_cutscene.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_cutscene.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_cutscene.raw_notifications = "+get_notifications_string(l.raw_notifications)+
   "tmp_cutscene.raw_notification_ws = [\n";
@@ -1664,7 +1677,7 @@ var print_cutscene_meta = function(l)
         if(c.a  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.a = "+c.a+";\n";
         str +=
         "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
-        "tmp_cutscene_command.deck_animcycle_ids = "+get_deck_animcycle_ids(c.deck_animcycle_ids)+
+        "tmp_cutscene_command.deck_animcycle_ids = "+get_animcycle_ids(c.deck_animcycle_ids)+
         "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n";
         if(c.t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
@@ -1691,7 +1704,7 @@ var print_cutscene_meta = function(l)
         if(c.wz != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
         str +=
         "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
-        "tmp_cutscene_command.deck_animcycle_ids = "+get_deck_animcycle_ids(c.deck_animcycle_ids)+
+        "tmp_cutscene_command.deck_animcycle_ids = "+get_animcycle_ids(c.deck_animcycle_ids)+
         "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n";
         if(c.t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
@@ -1845,7 +1858,7 @@ var print_inert_meta = function(l)
   "tmp_inert.wz = "+l.wz+";\n"+
   "tmp_inert.g = "+l.g+";\n"+
   "tmp_inert.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_inert.deck_animcycle_ids = "+get_deck_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_inert.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_inert.reqs = "+get_requirements_string(l.reqs);
   console.log(str);
 }

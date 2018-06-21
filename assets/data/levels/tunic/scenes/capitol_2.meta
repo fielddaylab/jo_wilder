@@ -23,6 +23,6 @@ tmp_scene.notice_reqs = [[
 ]];
 tmp_scene.reqs = [[
 "tunic.historicalsociety.basement.ch3start",
-"!tunic.nelson"
+"!tunic.nelson",
 ]];
 

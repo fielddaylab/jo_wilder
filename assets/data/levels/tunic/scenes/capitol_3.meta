@@ -22,6 +22,6 @@ tmp_scene.notice_reqs = [[
 "!tunic.capitol_0.hall.chap1_finale_c",
 ]];
 tmp_scene.reqs = [[
-"tunic.nelson"
+"tunic.nelson",
 ]];
 
