@@ -10,6 +10,8 @@ var LoadingScene = function(game, stage)
     canv = stage.canv;
     canvas = canv.canvas;
     ctx = canv.context;
+
+    ctx.font = text_font;
   }
   self.resize(stage);
 

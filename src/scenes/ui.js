@@ -14,6 +14,12 @@ var loader = function()
   self.loading = false;
   self.loading_q = [];
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.loaded = function(args)
   {
     for(var i = 0; i < self.loading_q.length; i++)
@@ -221,6 +227,12 @@ var cursor = function()
   self.ui_animcycle_inst;
   self.ripple_animcycle_inst;
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.consume_level = function(level)
   {
     self.ui_animcycle_inst     = gen_animcycle_inst(level.ui_hover_animcycle_id, level.animcycles);
@@ -332,6 +344,12 @@ var avatar = function()
 
   self.stack_animcycle_t;
   self.stack_animcycle_inst;
+
+  self.resize = function()
+  {
+
+  }
+  self.resize();
 
   self.anim.transition = function()
   {
@@ -693,6 +711,12 @@ var familiar = function()
   self.stack_animcycle_t;
   self.stack_animcycle_inst;
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.anim.transition = function()
   {
     if(self.anim.anim_queue.length) //has queue
@@ -1048,8 +1072,6 @@ var navigable = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.room;
   self.selected_act = 0;
@@ -1063,6 +1085,24 @@ var navigable = function()
   self.cache_available_cutscenes    = [];
   self.cache_available_inerts       = [];
   self.cache_available_drawables    = [];
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+    if(my_real_camera && self.room)
+    {
+      my_real_camera.wh = self.room.cam_wh;
+      my_real_camera.ww = canv.width*self.room.cam_wh/canv.height;
+      my_debug_camera.ww = self.room.ww*1.2;
+      my_debug_camera.wh = self.room.wh*1.2;
+      if(my_debug_camera.ww/my_debug_camera.wh > canv.width/canv.height)
+        my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
+      else
+        my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
+    }
+  }
+  self.resize();
 
   self.consume_room = function(room)
   {
@@ -1727,21 +1767,26 @@ var toolbar = function()
   var self = this;
 
   self.x = 0;
-  self.y = canv.height-90;
   self.w = 100;
   self.h = 100;
 
   self.toolbar_animcycle_inst;
   self.icon_map_instanimcycle_inst;
   self.icon_notebook_animcycle_inst;
-  self.notebook = {x:20,  y:self.y+15, w:self.h-40, h:self.h-40};
-  self.map      = {x:100, y:self.y+15, w:self.h-40, h:self.h-40};
   self.notebook_available = false;
   self.map_available = false;
   self.notebook_bounce = 0;
   self.map_bounce = 0;
 
   var MAP_ENABLED = 0;
+
+  self.resize = function()
+  {
+    self.y = canv.height-90;
+    self.notebook = {x:20,  y:self.y+15, w:self.h-40, h:self.h-40};
+    self.map      = {x:100, y:self.y+15, w:self.h-40, h:self.h-40};
+  }
+  self.resize();
 
   self.consume_level = function(level)
   {
@@ -1818,17 +1863,22 @@ var mapview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.level;
   self.selected_scene = 0;
-  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.cache_available_scenes = [];
 
-  self.map = {wx:0,wy:0,ww:880,wh:660};
-  screenSpace(my_ui_camera,canv,self.map);
   self.map_animcycle_inst;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height; 
+    self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+    self.map = {wx:0,wy:0,ww:880,wh:660};
+    screenSpace(my_ui_camera,canv,self.map);
+  }
+  self.resize();
 
   self.consume_level = function(level)
   {
@@ -2020,31 +2070,38 @@ var notebookview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.entrys;
   self.notebook_animcycle_inst;
-  self.notebook = {wx:0,wy:0,ww:880,wh:660};
-  screenSpace(my_ui_camera,canv,self.notebook);
   self.exit_animcycle_inst;
   self.notebook_next_animcycle_inst;
   self.notebook_prev_animcycle_inst;
-  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.exit_available = 1;
-  var prev_x_edge = 25;
-  var prev_y_edge = canv.height-20;
-  var next_x_edge = canv.width-35;
-  var next_y_edge = canv.height-20;
-  var page_s = 100;
-  self.prev_box = {x:prev_x_edge,        y:prev_y_edge-page_s, w:page_s, h:page_s };
-  self.next_box = {x:next_x_edge-page_s, y:prev_y_edge-page_s, w:page_s, h:page_s };
   self.cache_available_entrys = [];
   self.n_available_entrys = 0;
   self.current_code = "-";
 
   self.page = 0;
   self.last_page = 0;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+
+    self.notebook = {wx:0,wy:0,ww:880,wh:660};
+    screenSpace(my_ui_camera,canv,self.notebook);
+    self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+
+    var prev_x_edge = 25;
+    var prev_y_edge = canv.height-20;
+    var next_x_edge = canv.width-35;
+    var next_y_edge = canv.height-20;
+    var page_s = 100;
+    self.prev_box = {x:prev_x_edge,        y:prev_y_edge-page_s, w:page_s, h:page_s };
+    self.next_box = {x:next_x_edge-page_s, y:prev_y_edge-page_s, w:page_s, h:page_s };
+  }
+  self.resize();
 
   self.consume_level = function(level)
   {
@@ -2240,8 +2297,6 @@ var notificationview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.c;
   self.note = [];
@@ -2252,6 +2307,13 @@ var notificationview = function()
 
   self.bubble_color = "#242224";
   self.text_color = white;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+  }
+  self.resize();
 
   var ENUM = 0;
   var UI_STATE_NULL    = ENUM; ENUM++;
@@ -2475,19 +2537,24 @@ var objectview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.object;
-  self.obj = {wx:0,wy:0,ww:880,wh:660};
-  screenSpace(my_ui_camera,canv,self.obj);
   self.cur_view = 0;
   self.show_view_overlay = 0;
   self.view_overlay_t = 0;
-  self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
   self.exit_available = true;
   self.exit_t = 1;
   self.cache_available_zones = [];
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+    self.obj = {wx:0,wy:0,ww:880,wh:660}; //note hard-coded
+    screenSpace(my_ui_camera,canv,self.obj);
+    self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
+  }
+  self.resize();
 
   self.consume_object = function(object)
   {
@@ -2684,8 +2751,6 @@ var observationview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.observation;
 
@@ -2706,6 +2771,13 @@ var observationview = function()
   self.ui_state_t_max[UI_STATE_SELECT]         = 0;
   self.ui_state_t_max[UI_STATE_OUT]            = 10;
   self.ui_state_p = 0;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+  }
+  self.resize();
 
   self.consume_observation = function(observation)
   {
@@ -2888,8 +2960,6 @@ var personview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.person;
   self.cur_speak = 0;
@@ -2920,6 +2990,13 @@ var personview = function()
   self.ui_state_t_max[UI_STATE_SELECT]    = 0;
   self.ui_state_t_max[UI_STATE_OUT]       = 10;
   self.ui_state_p = 0;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+  }
+  self.resize();
 
   self.consume_person = function(person)
   {
@@ -3442,10 +3519,15 @@ var wildcardview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.wildcard;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+  }
+  self.resize();
 
   self.consume_wildcard = function(wildcard)
   {
@@ -3492,8 +3574,6 @@ var cutsceneview = function()
 
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
 
   self.cutscene;
   self.cutscene_entitys = [];
@@ -3509,6 +3589,13 @@ var cutsceneview = function()
 
   self.bubble_color = "#242224";
   self.text_color = white;
+
+  self.resize = function()
+  {
+    self.w = canv.width;
+    self.h = canv.height;
+  }
+  self.resize();
 
   self.consume_cutscene = function(cutscene)
   {

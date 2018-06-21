@@ -14,6 +14,22 @@ var GamePlayScene = function(game, stage)
     if(dragger) { dragger = new Dragger({source:canvas}); }
     if(hoverer) { hoverer = new PersistentHoverer({source:canvas}); }
     if(keyer)   { keyer = new Keyer({source:canvas}); }
+
+    ctx.font = text_font;
+    if(my_real_camera)  { my_real_camera.ww  = canv.width*660/canv.height; my_real_camera.wh  = 660; }
+    if(my_debug_camera) { my_debug_camera.ww = my_real_camera.ww;          my_debug_camera.wh = my_real_camera.wh; }
+    if(my_ui_camera)    { my_ui_camera.ww    = canv.width*660/canv.height; my_ui_camera.wh    = 660; }
+    if(my_cursor) my_cursor.resize();
+    if(my_loader) my_loader.resize();
+    if(my_navigable) my_navigable.resize();
+    if(my_toolbar) my_toolbar.resize();
+    if(my_mapview) my_mapview.resize();
+    if(my_notebookview) my_notebookview.resize();
+    if(my_objectview) my_objectview.resize();
+    if(my_observationview) my_observationview.resize();
+    if(my_personview) my_personview.resize();
+    if(my_cutsceneview) my_cutsceneview.resize();
+    if(my_notificationview) my_notificationview.resize();
   }
   self.resize(stage);
 

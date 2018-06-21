@@ -154,7 +154,7 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
     if(!self.box_on) return;
     self.box_on = 0;
     self.txt = self.box.value;
-    self.canv.canvas.parentElement.removeChild(self.box);
+    self.box.parentElement.removeChild(self.box);
     callback(self.txt);
   }
   self.focus = function()
@@ -162,6 +162,9 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
     self.box_on = 1;
     self.box.style.top = self.y;
     self.box.style.left = self.x;
+    console.log(self.canv);
+    console.log(self.canv.canvas);
+    console.log(self.canv.canvas.parentElement);
     self.canv.canvas.parentElement.appendChild(self.box);
     self.box.focus();
   }

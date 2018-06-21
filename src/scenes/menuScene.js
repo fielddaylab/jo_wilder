@@ -10,12 +10,16 @@ var MenuScene = function(game, stage)
   var ctx;
   self.resize = function(stage)
   {
+    if(code_txt && code_txt.box_on) code_txt.blur();
     canv = stage.canv;
+    if(code_txt) code_txt.canv = canv;
     canvas = canv.canvas;
     ctx = canv.context;
 
     if(clicker) clicker = new Clicker({source:canvas});
     if(blurer)  blurer  = new Blurer({source:canvas});
+
+    ctx.font = text_font;
   }
   self.resize(stage);
 
