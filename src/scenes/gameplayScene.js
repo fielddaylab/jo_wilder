@@ -219,8 +219,8 @@ var GamePlayScene = function(game, stage)
     }
     else
     {
-      cur_scene = cur_level.scenes[0]; for(var i = 1; i < cur_level.scenes.length;  i++) if(cur_level.scenes[i].primary)  cur_scene = cur_level.scenes[i];
-      cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room  = cur_scene.rooms[i];
+      cur_scene = cur_level.scenes[0]; for(var i = 1; i < cur_level.scenes.length; i++) if(cur_level.scenes[i].primary) cur_scene = cur_level.scenes[i];
+      cur_room  = cur_scene.rooms[0];  for(var i = 1; i < cur_scene.rooms.length;  i++) if(cur_scene.rooms[i].primary)  cur_room  = cur_scene.rooms[i];
     }
 
     clicker = new Clicker({source:canvas});
@@ -292,12 +292,40 @@ var GamePlayScene = function(game, stage)
           stage = new Stage({width:stage.width,height:stage.height,container:stage.container});
           g.resize({stage:stage});
           ctx.font = text_font;
+          LOWFI = 0;
+          for(var i = 0; i < cur_level.animcycles.length; i++)
+          {
+            var a = cur_level.animcycles[i];
+            for(var j = 0; j < a.frames.length; j++)
+            {
+              if(a.frames[j])
+              {
+                var src = a.frame_files[j];
+                if(a.frames[j].src != src)
+                  a.frames[j] = GenImg(src);
+              }
+            }
+          }
         }
         else
         {
-          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:8});
+          stage = new Stage({width:stage.width,height:stage.height,container:stage.container,bspr:2});
           g.resize({stage:stage});
           ctx.font = text_font;
+          LOWFI = 1;
+          for(var i = 0; i < cur_level.animcycles.length; i++)
+          {
+            var a = cur_level.animcycles[i];
+            for(var j = 0; j < a.frames.length; j++)
+            {
+              if(a.frames[j])
+              {
+                var src = a.frame_files[j].replace("animcycles","lofianimcycles")
+                if(a.frames[j].src != src)
+                  a.frames[j] = GenImg(src);
+              }
+            }
+          }
         }
       }
     }

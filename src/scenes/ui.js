@@ -32,7 +32,11 @@ var loader = function()
   {
     for(var i = 0; i < animcycle.frame_files.length; i++)
     {
-      if(!animcycle.frames[i]) animcycle.frames[i] = GenImg(animcycle.frame_files[i]);
+      if(!animcycle.frames[i])
+      {
+        if(LOFI) animcycle.frames[i] = GenImg(animcycle.frame_files[i].replace("animcycles","lofianimcycles"));
+        else     animcycle.frames[i] = GenImg(animcycle.frame_files[i]);
+      }
       var img = animcycle.frames[i];
       if(!img.complete)
       {
@@ -42,7 +46,11 @@ var loader = function()
           if(self.loading_q[j] == img) return;
         self.loading_q.push(img);
         self.loading = true;
-        if(!img.src) img.src = animcycle.frame_files[i];
+        if(!img.src)
+        {
+          if(LOFI) img.src = animcycle.frame_files[i].replace("animcycles","lofianimcycles");
+          else     img.src = animcycle.frame_files[i];
+        }
       }
     }
   }
