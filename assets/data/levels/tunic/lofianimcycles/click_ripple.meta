@@ -1,0 +1,6 @@
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 3;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
