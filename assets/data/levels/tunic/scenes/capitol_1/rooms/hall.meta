@@ -3,7 +3,7 @@ tmp_room.ww = 2000;
 tmp_room.wh = 1162;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
-tmp_room.animcycle_id = "room_capitol_hall";
+tmp_room.animcycle_id = "room_capitol_hall_1";
 tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
@@ -32,4 +32,3 @@ tmp_room.notification_reqs = [[
 tmp_room.reqs = [[
 ]];
 //SUGGEST_H:1.7606060606060605
-

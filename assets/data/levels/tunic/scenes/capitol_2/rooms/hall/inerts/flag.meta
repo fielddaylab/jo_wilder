@@ -1,0 +1,11 @@
+tmp_inert.ww = 157.57575756991966;
+tmp_inert.wh = 290.9090909105955;
+tmp_inert.wx = -340.78309797373913;
+tmp_inert.wy = 84.65941194752014;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "capitol_flag";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
