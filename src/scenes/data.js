@@ -40,6 +40,7 @@ tmp_level.familiar_ww = 153;
 tmp_level.familiar_wh = 90;
 tmp_level.familiar_off_wx = 0;
 tmp_level.familiar_off_wy = -80;
+tmp_level.audio_id = "music";
 tmp_level.exit_animcycle_id = "exit";
 tmp_level.toolbar_animcycle_id = "null";
 tmp_level.toolbar_audio_id = "null";
@@ -4907,6 +4908,13 @@ tmp_audio.id = "door";
 tmp_audio.fqid = "tunic.door";
 {
 tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/door.mp3");
+}
+tmp_level.audios.push(tmp_audio);
+tmp_audio = new audio();
+tmp_audio.id = "music";
+tmp_audio.fqid = "tunic.music";
+{
+tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/music.mp3");
 }
 tmp_level.audios.push(tmp_audio);
 tmp_audio = new audio();

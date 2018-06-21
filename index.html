@@ -72,6 +72,7 @@ body,div,canvas
 var g;
 var game_width  = 880;
 var game_height = 660;
+var game_first_audio_played = 0;
 function resize()
 {
   var w = window.innerWidth;
@@ -95,6 +96,7 @@ function begin()
     first_audio.play();
     if(platform == "PC")          stage_container.removeEventListener('mousedown', play_first_audio);
     else if(platform == "MOBILE") stage_container.removeEventListener('touchstart', play_first_audio);
+    game_first_audio_played = 1;
   }
   if(platform == "PC")          stage_container.addEventListener('mousedown', play_first_audio);
   else if(platform == "MOBILE") stage_container.addEventListener('touchstart', play_first_audio);

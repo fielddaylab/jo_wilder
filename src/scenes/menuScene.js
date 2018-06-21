@@ -4,6 +4,7 @@ var MenuScene = function(game, stage)
 
   var clicker;
   var blurer;
+  var audio;
 
   var canv;
   var canvas;
@@ -37,6 +38,7 @@ var MenuScene = function(game, stage)
   {
     if(!clicker) clicker = new Clicker({source:canvas});
     if(!blurer)  blurer  = new Blurer({source:canvas});
+    if(!audio) audio = GenAudio("assets/data/levels/tunic/audios/music.mp3");
 
     var x = 20;
     var y = 20;
@@ -54,6 +56,8 @@ var MenuScene = function(game, stage)
 
   self.tick = function()
   {
+    if(audio && game_first_audio_played && !audio.playing) audio.play();
+
     if(next)
     {
       next_t += 1.01; //HACK- set to 0.01 for fade
@@ -105,5 +109,7 @@ var MenuScene = function(game, stage)
     clicker = null;
     blurer.detach();
     blurer = null;
+    audio.pause();
+    audio = null;
   };
 };
