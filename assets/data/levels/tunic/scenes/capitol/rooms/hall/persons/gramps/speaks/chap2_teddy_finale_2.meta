@@ -40,15 +40,15 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 95.60352232320578;
-tmp_speak_command.wy = 304.16192728256516;
-tmp_speak_command.w = 106.26390075683594;
+tmp_speak_command.wx = 69.8459465656302;
+tmp_speak_command.wy = 361.73768485832267;
+tmp_speak_command.w = 253.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's true.";
+tmp_speak_command.raw_atext = "That's true. They have an excellent light roast.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

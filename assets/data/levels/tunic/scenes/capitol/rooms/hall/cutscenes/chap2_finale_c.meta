@@ -588,7 +588,7 @@ tmp_cutscene_command.wx = 237.939393939394;
 tmp_cutscene_command.wy = 298.84848484848476;
 tmp_cutscene_command.w = 146;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie- good work with the shirt.";
+tmp_cutscene_command.raw_text = "Leopold, I need you to run to your office.";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -600,7 +600,7 @@ tmp_cutscene_command.wx = 233.3939393939393;
 tmp_cutscene_command.wy = 300.3636363636363;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Leopold- I need this written up A.S.A.P.";
+tmp_cutscene_command.raw_text = "The next artifact should have arrived by now.";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -612,7 +612,7 @@ tmp_cutscene_command.wx = 89.45454545454555;
 tmp_cutscene_command.wy = 309.4545454545453;
 tmp_cutscene_command.w = 113.67988586425781;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Alright boss!";
+tmp_cutscene_command.raw_text = "Alright, boss!";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -624,7 +624,7 @@ tmp_cutscene_command.wx = 80.36363636363643;
 tmp_cutscene_command.wy = 356.4242424242423;
 tmp_cutscene_command.w = 157;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie- meet me back at my office.";
+tmp_cutscene_command.raw_text = "Jolie, let's meet back at my office.";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -636,7 +636,7 @@ tmp_cutscene_command.wx = 83.39393939393952;
 tmp_cutscene_command.wy = 351.87878787878776;
 tmp_cutscene_command.w = 177;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "We'll write this up, and then find Teddy!";
+tmp_cutscene_command.raw_text = "We'll take a gander at the next artifact, and then we'll keep looking for Teddy!";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -331,7 +331,7 @@ tmp_cutscene_command.wx = -1261.068870523416;
 tmp_cutscene_command.wy = 221.4738292011018;
 tmp_cutscene_command.w = 244;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie- you need to keep your badger under control, or he'll have to go.";
+tmp_cutscene_command.raw_text = "Jolie- keep your badger under control, or he'll have to go.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -456,18 +456,6 @@ tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "boss";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.wx = -1253.6446280991736;
-tmp_cutscene_command.wy = 190.28925619834698;
-tmp_cutscene_command.w = 237;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Your grampa is waiting for you in the collection room.";
-tmp_cutscene_command.t = 61;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TARGET;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
@@ -505,7 +493,7 @@ tmp_cutscene_command.wx = -830.6027495516923;
 tmp_cutscene_command.wy = 87.62900779141701;
 tmp_cutscene_command.w = 188;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Let's go find Grampa!";
+tmp_cutscene_command.raw_text = "Let's go find Gramps!";
 tmp_cutscene_command.t = 62;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

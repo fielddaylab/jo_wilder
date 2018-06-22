@@ -119,7 +119,7 @@ tmp_cutscene_command.wx = -18.66666666666662;
 tmp_cutscene_command.wy = 149.6969696969697;
 tmp_cutscene_command.w = 160;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Excellent. That’ll do the trick.";
+tmp_cutscene_command.raw_text = "That’ll do the trick.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -131,7 +131,7 @@ tmp_cutscene_command.wx = -54.90909090909086;
 tmp_cutscene_command.wy = 185.939393939394;
 tmp_cutscene_command.w = 240;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I need to take the artifact upstairs. Do you want to wait until I get back?";
+tmp_cutscene_command.raw_text = "But I need to take the artifact upstairs...";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -143,7 +143,7 @@ tmp_cutscene_command.wx = -524.6666666666666;
 tmp_cutscene_command.wy = 56.303030303030326;
 tmp_cutscene_command.w = 156;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "It's okay, Gramps. I can handle this.";
+tmp_cutscene_command.raw_text = "It's okay, Gramps. I've got this!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -16,16 +16,16 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 78.21338690716152;
-tmp_speak_command.wy = 135.99999999999997;
-tmp_speak_command.w = 240;
+tmp_speak_command.wx = -243.99999999999997;
+tmp_speak_command.wy = 254.00000000000003;
+tmp_speak_command.w = 210;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "archivist";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Where can I find information about this slip?";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak_command.raw_atext = "You're still here? I'm trying to work!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
@@ -37,9 +37,10 @@ tmp_speak_command.animcycle_id = "archivist";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "A slip from an old shirt? Try the university.";
+tmp_speak_command.raw_atext = "Run along to the university.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -202.99999999999994;

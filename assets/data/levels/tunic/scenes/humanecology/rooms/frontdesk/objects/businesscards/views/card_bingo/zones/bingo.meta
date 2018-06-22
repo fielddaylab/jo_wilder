@@ -9,7 +9,7 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "card_bingo";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"This is the only dry cleaner that was around in 1916!",
+"This place was around in 1916! I can start there!",
 ];
 tmp_zone.raw_notification_ws = [
 465,

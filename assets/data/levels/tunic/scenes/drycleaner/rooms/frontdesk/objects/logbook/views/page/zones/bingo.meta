@@ -11,7 +11,6 @@ tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "The number matches the slip.",
 "Theodora Youmans must be the owner!",
-"I'll make a note of this.",
 ];
 tmp_zone.raw_notification_ws = [
 247.7677764892578,

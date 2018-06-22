@@ -102,7 +102,7 @@ tmp_cutscene_command.wx = -755.7070878719303;
 tmp_cutscene_command.wy = 190.42146469378045;
 tmp_cutscene_command.w = 244;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I got here and everything was trashed!";
+tmp_cutscene_command.raw_text = "I got here and the whole place was ransacked!";
 tmp_cutscene_command.t = 81;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

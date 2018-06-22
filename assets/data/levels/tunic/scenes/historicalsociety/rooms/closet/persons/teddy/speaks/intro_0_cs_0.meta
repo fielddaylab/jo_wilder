@@ -28,19 +28,6 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 195.1141705840032;
-tmp_speak_command.wy = -9.068034501009024;
-tmp_speak_command.w = 173;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "avatar_angry";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Please don't eat my homework this time!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 203.60402956144299;
 tmp_speak_command.wy = -1.5026840391547296;
 tmp_speak_command.w = 154;
