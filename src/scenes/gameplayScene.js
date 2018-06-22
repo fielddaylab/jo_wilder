@@ -4,8 +4,9 @@ var GamePlayScene = function(game, stage)
 
   var clicker;
 
-  self.resize = function(stage)
+  self.resize = function(st)
   {
+    stage = st;
     canv = stage.canv;
     canvas = canv.canvas;
     ctx = canv.context;

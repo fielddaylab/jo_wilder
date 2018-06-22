@@ -73,13 +73,21 @@ var g;
 var game_width  = 880;
 var game_height = 660;
 var game_first_audio_played = 0;
+function fullscreen()
+{
+  var el = document.body;
+  var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;
+  if(requestMethod) requestMethod.call(el);
+}
+
 function resize()
 {
   var w = window.innerWidth;
   var h = window.innerHeight;
-  if(w > game_width)  w = game_width;
-  if(h > game_height) h = game_height;
-  if(h < game_height) w = h/game_height*game_width;
+  //if(w > game_width)  w = game_width;
+  //if(h > game_height) h = game_height;
+  //if(h < game_height) w = h/game_height*game_width;
+  w = h/game_height*game_width;
   if(g) g.resize({width:w,height:h});
   stage_container.style.width = w; stage_container.style.height = h;
 }
@@ -94,6 +102,7 @@ function begin()
   var play_first_audio = function()
   {
     first_audio.play();
+    fullscreen();
     if(platform == "PC")          stage_container.removeEventListener('mousedown', play_first_audio);
     else if(platform == "MOBILE") stage_container.removeEventListener('touchstart', play_first_audio);
     game_first_audio_played = 1;
@@ -111,7 +120,7 @@ window.addEventListener("resize",resize,false);
 </script>
 
 </head>
-<body style="width:100%; background-color:#052427;">
+<body id="body" style="width:100%; background-color:#052427;">
 
 <div id="stage_container" style="margin:0px; padding:0px; position:absolute; top:0px; left:0px; user-select:none; background-color:#FFFFFF;"> </div>
 
