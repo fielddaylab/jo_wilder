@@ -105,6 +105,7 @@ tmp_cutscene_command.wy = 101.43939394451162;
 tmp_cutscene_command.w = 94;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "...are you?";
+tmp_cutscene_command.animcycle_id = "emote_jo_worried";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -117,6 +118,7 @@ tmp_cutscene_command.wy = 278.4848484849755;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Well, SOMETHING is happening to them...";
+tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

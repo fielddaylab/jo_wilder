@@ -7483,7 +7483,7 @@ tmp_speak_command.wx = 159.98944046644573;
 tmp_speak_command.wy = 239.69756433089145;
 tmp_speak_command.w = 251.89578247070312;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_boss_frown";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -7509,7 +7509,7 @@ tmp_speak_command.wx = -401.2121322716009;
 tmp_speak_command.wy = 81.42424282625937;
 tmp_speak_command.w = 208;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -7710,7 +7710,7 @@ tmp_speak_command.wy = 258.03333482035333;
 tmp_speak_command.w = 44.51197814941406;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
+tmp_speak_command.audio_id = "emote_boss_happy";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "Wow!";
@@ -7722,7 +7722,7 @@ tmp_speak_command.wx = -67.77968926858988;
 tmp_speak_command.wy = 258.03333482035333;
 tmp_speak_command.w = 218.7997589111328;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_boss_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -7774,7 +7774,7 @@ tmp_speak_command.wx = -60.203931692832306;
 tmp_speak_command.wy = 294.39697118398965;
 tmp_speak_command.w = 219.69814225923324;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_boss_frown";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -20950,6 +20950,7 @@ tmp_cutscene_command.wy = 101.43939394451162;
 tmp_cutscene_command.w = 94;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "...are you?";
+tmp_cutscene_command.animcycle_id = "emote_jo_worried";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -20962,6 +20963,7 @@ tmp_cutscene_command.wy = 278.4848484849755;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Well, SOMETHING is happening to them...";
+tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -21095,7 +21097,7 @@ tmp_speak_command.wx = -429.6977345345588;
 tmp_speak_command.wy = 246.81784073321688;
 tmp_speak_command.w = 161.60784912109375;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_gramps_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -21160,7 +21162,7 @@ tmp_speak_command.wx = 124.46776750454661;
 tmp_speak_command.wy = 161.894169534985;
 tmp_speak_command.w = 145.4798583984375;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -21315,7 +21317,7 @@ tmp_object.deck_animcycle_ids = [
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
 "Hooray, a boring old shirt...",
-"Anything out of the ordinary?",
+"Guess I should look for clues.",
 ];
 tmp_object.raw_notification_ws = [
 197.7038116455078,
@@ -21948,6 +21950,7 @@ tmp_cutscene_command.wy = 387.78290681324336;
 tmp_cutscene_command.w = 194;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Well, Leopold here is always losing papers...";
+tmp_cutscene_command.animcycle_id = "emote_wells_annoyed";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -21960,6 +21963,7 @@ tmp_cutscene_command.wy = 202.14692389680633;
 tmp_cutscene_command.w = 39;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Hey!";
+tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -22039,6 +22043,7 @@ tmp_cutscene_command.wy = 361.72654545454566;
 tmp_cutscene_command.w = 212;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "We need to talk about that missing paperwork.";
+tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

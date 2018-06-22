@@ -72,6 +72,7 @@ tmp_cutscene_command.wy = 387.78290681324336;
 tmp_cutscene_command.w = 194;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Well, Leopold here is always losing papers...";
+tmp_cutscene_command.animcycle_id = "emote_wells_annoyed";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -84,6 +85,7 @@ tmp_cutscene_command.wy = 202.14692389680633;
 tmp_cutscene_command.w = 39;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Hey!";
+tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -163,6 +165,7 @@ tmp_cutscene_command.wy = 361.72654545454566;
 tmp_cutscene_command.w = 212;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "We need to talk about that missing paperwork.";
+tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -46,7 +46,7 @@ tmp_speak_command.wx = -429.6977345345588;
 tmp_speak_command.wy = 246.81784073321688;
 tmp_speak_command.w = 161.60784912109375;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_gramps_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -111,7 +111,7 @@ tmp_speak_command.wx = 124.46776750454661;
 tmp_speak_command.wy = 161.894169534985;
 tmp_speak_command.w = 145.4798583984375;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
