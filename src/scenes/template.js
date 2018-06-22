@@ -992,9 +992,9 @@ var cutscene_command = function()
   var self = this;
 
   self.command = CUTSCENE_COMMAND_NULL;
-  self.cutscene_entity_id = "null";
+  self.cutscene_entity_id = CUTSCENE_COMMAND_IGNORE;
   self.cutscene_entity_type = CUTSCENE_ENTITY_NULL;
-  self.cutscene_target_entity_id = "null";
+  self.cutscene_target_entity_id = CUTSCENE_COMMAND_IGNORE;
   self.cutscene_target_entity_type = CUTSCENE_ENTITY_NULL;
   self.t = CUTSCENE_COMMAND_IGNORE;
   self.end_t = CUTSCENE_COMMAND_IGNORE;
@@ -1006,9 +1006,9 @@ var cutscene_command = function()
   self.w = CUTSCENE_COMMAND_IGNORE;
   self.h = CUTSCENE_COMMAND_IGNORE;
   self.a = CUTSCENE_COMMAND_IGNORE;
-  self.raw_text = "null";
-  self.animcycle_id = "null";
-  self.audio_id = "null";
+  self.raw_text = CUTSCENE_COMMAND_IGNORE;
+  self.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+  self.audio_id = CUTSCENE_COMMAND_IGNORE;
   self.deck_animcycle_ids = [];
   self.animcycle_offset_t = 0;
 
