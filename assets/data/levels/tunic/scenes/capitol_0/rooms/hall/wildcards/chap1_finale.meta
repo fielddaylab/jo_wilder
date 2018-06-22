@@ -137,6 +137,22 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
       self.ui_state_t = 0;
       self.ui_state_p = 0;
       self.cur_speak_command_i++;
+
+      var c = self.cur_speak.commands[self.cur_speak_command_i];
+      if(c.animcycle_id && c.animcycle_id != "null")
+      {
+        if(c.speaker == SPEAKER_PERSON)
+        {
+          self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          self.person.stack_animcycle_t = 50;
+        }
+        else
+        {
+          my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          my_avatar.stack_animcycle_t = 50;
+        }
+      }
+
     }
     else if(self.cur_speak_command_i == self.cur_speak.commands.length-1)
     {
