@@ -734,7 +734,14 @@ var GamePlayScene = function(game, stage)
             cur_scene = my_cutsceneview.selected_scene;
             my_cutsceneview.selected_scene = 0;
             cur_scene.met = true;
-            cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
+            cur_room = 0;
+            for(var i = 0; i < cur_scene.rooms.length; i++)
+              if(cur_scene.rooms[i].primary && (!cur_room || cur_scene.rooms[i].primary > cur_room.primary) && queryreqs(cur_scene.rooms[i].primary,cur_scene.rooms[i].reqs))
+                cur_room = cur_scene.rooms[i];
+            for(var i = 0; !cur_room && i < cur_scene.rooms.length; i++)
+              if(queryreqs(cur_scene.rooms[i].primary,cur_scene.rooms[i].reqs))
+                cur_room = cur_scene.rooms[i];
+            if(!cur_room) cur_room = cur_scene.rooms[0];
             my_loader.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
             my_avatar.consume_room(cur_room);
@@ -792,7 +799,14 @@ var GamePlayScene = function(game, stage)
             cur_scene = my_mapview.selected_scene;
             my_mapview.selected_scene = 0;
             cur_scene.met = true;
-            cur_room = cur_scene.rooms[0]; for(var i = 1; i < cur_scene.rooms.length; i++) if(cur_scene.rooms[i].primary) cur_room = cur_scene.rooms[i];
+            cur_room = 0;
+            for(var i = 0; i < cur_scene.rooms.length; i++)
+              if(cur_scene.rooms[i].primary && (!cur_room || cur_scene.rooms[i].primary > cur_room.primary) && queryreqs(cur_scene.rooms[i].primary,cur_scene.rooms[i].reqs))
+                cur_room = cur_scene.rooms[i];
+            for(var i = 0; !cur_room && i < cur_scene.rooms.length; i++)
+              if(queryreqs(cur_scene.rooms[i].primary,cur_scene.rooms[i].reqs))
+                cur_room = cur_scene.rooms[i];
+            if(!cur_room) cur_room = cur_scene.rooms[0];
             my_loader.consume_room(cur_room);
             my_navigable.consume_room(cur_room);
             my_avatar.consume_room(cur_room);

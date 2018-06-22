@@ -9104,7 +9104,7 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_ANIMATE;
 tmp_cutscene_command.cutscene_entity_id = "wells";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.animcycle_id = "gramps_walk";
+tmp_cutscene_command.animcycle_id = "wells";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
@@ -9224,7 +9224,7 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 100;
-tmp_cutscene_command.wy = 50;
+tmp_cutscene_command.wy = 10;
 tmp_cutscene_command.t = 2;
 tmp_cutscene_command.end_t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -9757,6 +9757,13 @@ tmp_cutscene_command.wx = 999999;
 tmp_cutscene_command.wy = 999999;
 tmp_cutscene_command.t = 602;
 tmp_cutscene_command.end_t = 602;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_LOAD_SCENE;
+tmp_cutscene_command.cutscene_entity_id = "historicalsociety";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SPECIAL;
+tmp_cutscene_command.t = 602;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
@@ -11516,7 +11523,7 @@ tmp_person = new person();
 tmp_person.id = "wells";
 tmp_person.fqid = "tunic.capitol_1.hall.wells";
 {
-tmp_person.ww = 168.18181816536378;
+tmp_person.ww = 188.18181816536378;
 tmp_person.wh = 327.272727272716;
 tmp_person.wx = 9.848484379258224;
 tmp_person.wy = 21.212121212461085;
@@ -16960,7 +16967,7 @@ tmp_room = new room();
 tmp_room.id = "basement";
 tmp_room.fqid = "tunic.historicalsociety.basement";
 {
-tmp_room.primary = false;
+tmp_room.primary = 1;
 tmp_room.ww = 1600;
 tmp_room.wh = 980;
 tmp_room.wx = 0;
@@ -22082,7 +22089,7 @@ tmp_room = new room();
 tmp_room.id = "entry";
 tmp_room.fqid = "tunic.historicalsociety.entry";
 {
-tmp_room.primary = true;
+tmp_room.primary = 2;
 tmp_room.ww = 2529.910931174089;
 tmp_room.wh = 1188;
 tmp_room.wx = 0;
@@ -22114,6 +22121,9 @@ tmp_room.raw_notification_ws = [
 tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
+"!_tunic.capitol_1.hall.chap2_finale_c",
+],[
+"tunic.historicalsociety.basement.ch3start",
 ]];
 //SUGGEST_H:1.8
 

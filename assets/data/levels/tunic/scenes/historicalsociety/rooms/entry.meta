@@ -1,4 +1,4 @@
-tmp_room.primary = true;
+tmp_room.primary = 2;
 tmp_room.ww = 2529.910931174089;
 tmp_room.wh = 1188;
 tmp_room.wx = 0;
@@ -30,6 +30,9 @@ tmp_room.raw_notification_ws = [
 tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
+"!_tunic.capitol_1.hall.chap2_finale_c",
+],[
+"tunic.historicalsociety.basement.ch3start",
 ]];
 //SUGGEST_H:1.8
 
