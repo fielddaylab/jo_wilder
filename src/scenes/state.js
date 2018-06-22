@@ -24,6 +24,7 @@ var UNLOCK = 0;
 var DOUBLETIME = 0;
 var SHOW_GROUNDS = 1;
 var QUALITY = 1;
+var LOFI = 1;
 var CUTSCENE_ADVANCE = 0;
 var COMPRESS_SPEAKS = 0;
 var TIGHTEN_BUBBLES = 0;

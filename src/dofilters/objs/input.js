@@ -154,7 +154,7 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
     if(!self.box_on) return;
     self.box_on = 0;
     self.txt = self.box.value;
-    self.canv.canvas.parentElement.removeChild(self.box);
+    self.box.parentElement.removeChild(self.box);
     callback(self.txt);
   }
   self.focus = function()

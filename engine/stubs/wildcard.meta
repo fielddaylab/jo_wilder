@@ -24,3 +24,46 @@ tmp_wildcard.notice_reqs = [[
 tmp_wildcard.reqs = [[
 ]];
 
+//view
+{
+  var self = tmp_wildcard;
+
+  self.consume_self = function(wildcard)
+  {
+    self = wildcard;
+  }
+
+  self.dismiss = function()
+  {
+  }
+
+  self.dragStart = function(evt)
+  {
+  };
+  self.drag = function(evt)
+  {
+  };
+  self.dragFinish = function()
+  {
+  };
+
+  self.hover = function(evt)
+  {
+  }
+  self.unhover = function(evt)
+  {
+  }
+
+  self.click = function(evt)
+  {
+  }
+
+  self.tick = function()
+  {
+  }
+
+  self.draw = function(t)
+  {
+  }
+}
+

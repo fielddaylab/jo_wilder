@@ -1,0 +1,30 @@
+tmp_person.ww = 139.46770625546648;
+tmp_person.wh = 275.4499825475462;
+tmp_person.wx = 259.5530192269189;
+tmp_person.wy = 2.35095054543865;
+tmp_person.wz = -1;
+tmp_person.act_wx = -343.86420332209167;
+tmp_person.act_wy = -185.35322339982605;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 77.32365934794788;
+tmp_person.hover_icon_wy = 156.19475287484812;
+tmp_person.animcycle_id = "boss";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"tunic.kohlcenter.halloffame.plaque.face.date",
+]];
+

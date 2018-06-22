@@ -1,0 +1,12 @@
+tmp_inert.ww = 137.88255678439972;
+tmp_inert.wh = 172.72816672862257;
+tmp_inert.wx = 109.86502660285417;
+tmp_inert.wy = -34.852408626965534;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "capitol_stool";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

@@ -70,19 +70,24 @@ body,div,canvas
 
 <script type="text/javascript">
 var g;
+var game_width  = 880;
+var game_height = 660;
+var game_first_audio_played = 0;
 function resize()
 {
   var w = window.innerWidth;
   var h = window.innerHeight;
+  if(w > game_width)  w = game_width;
+  if(h > game_height) h = game_height;
+  if(h < game_height) w = h/game_height*game_width;
   if(g) g.resize({width:w,height:h});
+  stage_container.style.width = w; stage_container.style.height = h;
 }
 function begin()
 {
-  var w = 880;
-  var h = 660;
-  var content          = document.getElementById("content");
+  var w = game_width;
+  var h = game_height;
   var stage_container  = document.getElementById("stage_container");
-  content.style.width          = w; content.style.height          = h;
   stage_container.style.width  = w; stage_container.style.height  = h;
 
   var first_audio = new Audio("assets/silence.mp3");
@@ -91,24 +96,24 @@ function begin()
     first_audio.play();
     if(platform == "PC")          stage_container.removeEventListener('mousedown', play_first_audio);
     else if(platform == "MOBILE") stage_container.removeEventListener('touchstart', play_first_audio);
+    game_first_audio_played = 1;
   }
   if(platform == "PC")          stage_container.addEventListener('mousedown', play_first_audio);
   else if(platform == "MOBILE") stage_container.addEventListener('touchstart', play_first_audio);
 
   g = new Game({width:w,height:h,container:"stage_container"});
+  resize();
   g.begin();
 }
 window.addEventListener("touchstart", function(e){ e.preventDefault() }); //prevent browser from doing anything funny
 window.addEventListener("load",begin,false);
-<!-- window.addEventListener("resize",resize,false); -->
+window.addEventListener("resize",resize,false);
 </script>
 
 </head>
 <body style="width:100%; background-color:#052427;">
 
-<div id="content" style="margin:50px auto; position:relative;">
-  <div id="stage_container" style="position:absolute; top:0px; left:0px; user-select:none; background-color:#FFFFFF;"> </div>
-</div>
+<div id="stage_container" style="margin:0px; padding:0px; position:absolute; top:0px; left:0px; user-select:none; background-color:#FFFFFF;"> </div>
 
 </body>
 </html>

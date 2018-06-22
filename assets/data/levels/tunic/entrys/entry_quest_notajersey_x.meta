@@ -16,6 +16,6 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.capitol.hall.chap1_finale_c",
+"tunic.capitol_0.hall.chap1_finale_c",
 ]];
 
