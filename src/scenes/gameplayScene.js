@@ -30,6 +30,7 @@ var GamePlayScene = function(game, stage)
     if(my_personview) my_personview.resize();
     if(my_cutsceneview) my_cutsceneview.resize();
     if(my_notificationview) my_notificationview.resize();
+    if(my_wildcardview) my_wildcardview.resize();
   }
   self.resize(stage);
 

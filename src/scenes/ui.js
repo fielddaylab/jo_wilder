@@ -3527,6 +3527,7 @@ var wildcardview = function()
   {
     self.w = canv.width;
     self.h = canv.height;
+    if(self.wildcard) self.wildcard.resize();
   }
   self.resize();
 

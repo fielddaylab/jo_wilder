@@ -98,6 +98,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
   self.ui_state_t_max[UI_STATE_OUT]    = 10;
   self.ui_state_p = 0;
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.consume_command = function()
   {
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)

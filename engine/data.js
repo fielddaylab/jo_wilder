@@ -8340,6 +8340,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
   self.ui_state_t_max[UI_STATE_OUT]    = 10;
   self.ui_state_p = 0;
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.consume_command = function()
   {
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
@@ -11647,6 +11653,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
   self.ui_state_t_max[UI_STATE_OUT]    = 10;
   self.ui_state_p = 0;
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.consume_command = function()
   {
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
@@ -12217,6 +12229,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
   self.ui_state_t_max[UI_STATE_SELECT] = 0;
   self.ui_state_t_max[UI_STATE_OUT]    = 10;
   self.ui_state_p = 0;
+
+  self.resize = function()
+  {
+
+  }
+  self.resize();
 
   self.consume_command = function()
   {
@@ -13930,6 +13948,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
   self.ui_state_t_max[UI_STATE_OUT]    = 10;
   self.ui_state_p = 0;
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.consume_command = function()
   {
     if(self.cur_command.command == FINALE_WILDCARD_COMMAND_SPEAK)
@@ -15206,6 +15230,12 @@ tmp_wildcard.reqs = [[
     "name",
     "",
   ];
+
+  self.resize = function()
+  {
+
+  }
+  self.resize();
 
   self.consume_self = function(wildcard)
   {
