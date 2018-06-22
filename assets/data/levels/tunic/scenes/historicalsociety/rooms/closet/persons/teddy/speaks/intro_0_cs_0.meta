@@ -19,11 +19,24 @@ tmp_speak_command.wx = 225.1141705840032;
 tmp_speak_command.wy = -5.068034501008995;
 tmp_speak_command.w = 138;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "avatar_nervous";
+tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Teddy, you have to stay hidden.";
+tmp_speak_command.raw_atext = "Hang tight, Teddy.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 225.1141705840032;
+tmp_speak_command.wy = -5.068034501008995;
+tmp_speak_command.w = 138;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I'll hurry back and then we can go exploring!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

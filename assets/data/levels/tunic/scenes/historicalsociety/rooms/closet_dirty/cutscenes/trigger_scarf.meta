@@ -47,6 +47,7 @@ tmp_cutscene_command.wy = -8.494223349608411;
 tmp_cutscene_command.w = 215;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Teddy's scarf! Somebody must've taken him!";
+tmp_cutscene_command.animcycle_id = "emote_jo_worried";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -58,7 +59,7 @@ tmp_cutscene_command.wx = -447.76600362306937;
 tmp_cutscene_command.wy = 156.84622477659707;
 tmp_cutscene_command.w = 255;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Oh dear. Try not to panic...maybe he just got scared and ran off.";
+tmp_cutscene_command.raw_text = "Try not to panic, Jo...maybe he just got scared and ran off.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -83,6 +84,7 @@ tmp_cutscene_command.wy = 23.432993457894135;
 tmp_cutscene_command.w = 316;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I think he's in trouble!";
+tmp_cutscene_command.animcycle_id = "emote_jo_worried";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

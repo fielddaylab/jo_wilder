@@ -21,7 +21,7 @@ tmp_speak_command.wx = -703.4333668817749;
 tmp_speak_command.wy = 152.00734365300318;
 tmp_speak_command.w = 165;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_gramps_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -47,7 +47,7 @@ tmp_speak_command.wx = -571.4969052743982;
 tmp_speak_command.wy = 55.86287057525104;
 tmp_speak_command.w = 279;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -73,7 +73,7 @@ tmp_speak_command.wx = -574.9903499746795;
 tmp_speak_command.wy = 24.85487039907173;
 tmp_speak_command.w = 192.30384826660156;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -90,7 +90,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You don't know that. We need evidence.";
+tmp_speak_command.raw_atext = "That may be true. But we need evidence.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -155,7 +155,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I'll find Teddy and I'll figure out the shirt too!";
+tmp_speak_command.raw_atext = "I'll find Teddy, and I'll figure out the shirt, too.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -181,7 +181,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "If I were you, I'd try the archivist.";
+tmp_speak_command.raw_atext = "If I were you, I'd pay a visit to the archivist.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
