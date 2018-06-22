@@ -2177,7 +2177,10 @@ var notebookview = function()
       }
     }
     if(self.cache_available_entrys.length > self.n_available_entrys)
+    {
       my_toolbar.notebook_bounce = 1;
+      self.page = self.last_page;
+    }
     self.n_available_entrys = self.cache_available_entrys.length;
 
     self.old_code = self.current_code;

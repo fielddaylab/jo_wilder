@@ -15390,6 +15390,17 @@ tmp_wildcard.reqs = [[
     ctx.fillRect(0,0,canv.width,canv.height);
     ctx.globalAlpha = 1;
 
+    var img_t = self.t*self.imgs.length;
+    var img_i = floor(img_t);
+    img_t -= img_i;
+    var pad = 100;
+    offx = lerp(-pad,pad,img_t);
+    offy = lerp(-pad,pad,img_t);
+    if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
+    if(img_t > 0.9) ctx.globalAlpha = 1-((img_t-0.9)/0.1);
+    ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
+    ctx.globalAlpha = 1;
+
     var bottom = canv.height;
     var top = 0-self.spacing*self.lines.length;
     var p = lerp(bottom,top,self.t);
@@ -15400,16 +15411,6 @@ tmp_wildcard.reqs = [[
         ctx.fillText(self.lines[i],canv.width/2,p);
       p += self.spacing;
     }
-
-    var img_t = self.t*self.imgs.length;
-    var img_i = floor(img_t);
-    img_t -= img_i;
-    var pad = 100;
-    offx = lerp(-pad,pad,img_t);
-    offy = lerp(-pad,pad,img_t);
-    if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
-    ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
-    ctx.globalAlpha = 1;
   }
 }
 
