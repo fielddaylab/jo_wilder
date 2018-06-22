@@ -22,7 +22,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "It has a great history of being used in protests and other forms of activism.";
+tmp_speak_command.raw_atext = "People made their own ecology flags for protests and marches! This symbol helped unite the movement.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -35,21 +35,34 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "These pictures show students marching on the capitol";
+tmp_speak_command.raw_atext = "Here are some pictures of people holding ecology flags and marching on the Capitol!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -320.8099922988928;
-tmp_speak_command.wy = 38.33636512338362;
-tmp_speak_command.w = 142.8158721923828;
+tmp_speak_command.wx = -10.45708373740029;
+tmp_speak_command.wy = 307.19223031286816;
+tmp_speak_command.w = 179.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "er, THIS capitol!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak_command.raw_atext = "Nice work, Jolie!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -10.45708373740029;
+tmp_speak_command.wy = 307.19223031286816;
+tmp_speak_command.w = 179.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Those are the true Wisconsin Wonders...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
@@ -61,7 +74,8 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "This is some really great material Jolie!";
+tmp_speak_command.raw_atext = "Ordinary Wisconsin folks taking a stand and changing the world!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
 

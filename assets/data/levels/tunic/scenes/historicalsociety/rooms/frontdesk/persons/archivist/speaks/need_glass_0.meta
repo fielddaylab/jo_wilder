@@ -24,7 +24,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Blasted tiny letters. Can't believe I lost my reading glasses...";
+tmp_speak_command.raw_atext = "Can't believe I lost my reading glasses...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

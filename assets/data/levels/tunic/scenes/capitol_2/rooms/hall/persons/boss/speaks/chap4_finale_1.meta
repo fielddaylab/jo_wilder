@@ -35,7 +35,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Interesting- I wonder who decided we needed an ecology flag...";
+tmp_speak_command.raw_atext = "Interesting! I wonder what it was used for...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

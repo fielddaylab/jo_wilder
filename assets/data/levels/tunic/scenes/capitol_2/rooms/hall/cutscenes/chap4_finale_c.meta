@@ -85,7 +85,7 @@ tmp_cutscene_command.wx = 6.614697252849702;
 tmp_cutscene_command.wy = 226.35309860622363;
 tmp_cutscene_command.w = 133;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "There you are-";
+tmp_cutscene_command.raw_text = "Jolie! Where have you been?";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -97,7 +97,19 @@ tmp_cutscene_command.wx = -31.855493141268603;
 tmp_cutscene_command.wy = 271.5796080578542;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "How's research on that flag going?";
+tmp_cutscene_command.raw_text = "Wells just got in trouble for littering at the Wildlife Refuge. I need to go bail him out.";
+tmp_cutscene_command.t = 1;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 21.174809889034492;
+tmp_cutscene_command.wy = 298.8523353305815;
+tmp_cutscene_command.w = 159;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "PLEASE tell me you're doing better than he is.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -109,7 +121,7 @@ tmp_cutscene_command.wx = -195.39393939393915;
 tmp_cutscene_command.wy = 33.69696969696961;
 tmp_cutscene_command.w = 61;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Great!";
+tmp_cutscene_command.raw_text = "I'm doing great!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -121,7 +133,7 @@ tmp_cutscene_command.wx = -416.60606060606057;
 tmp_cutscene_command.wy = 79.15151515151518;
 tmp_cutscene_command.w = 206;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I think I have a lot of great information here.";
+tmp_cutscene_command.raw_text = "I figured out the flag!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -133,7 +145,7 @@ tmp_cutscene_command.wx = 125.8181606575439;
 tmp_cutscene_command.wy = 232.1818203295406;
 tmp_cutscene_command.w = 57;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Hit me.";
+tmp_cutscene_command.raw_text = "Good. Let's hear it.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -152,7 +164,7 @@ tmp_cutscene_command.wx = -27.212121212121097;
 tmp_cutscene_command.wy = 276.12121212121195;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I'm glad I put you on the case, Jolie.";
+tmp_cutscene_command.raw_text = "I'm glad I put you on the case.";
 tmp_cutscene_command.t = 52;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -164,8 +176,32 @@ tmp_cutscene_command.wx = 4.606060606060645;
 tmp_cutscene_command.wy = 270.0606060606059;
 tmp_cutscene_command.w = 136;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You really pulled through.";
+tmp_cutscene_command.raw_text = "You're certainly following in your grampa's footsteps.";
 tmp_cutscene_command.t = 52;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -162.06060606060606;
+tmp_cutscene_command.wy = 68.54545454545446;
+tmp_cutscene_command.w = 72;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Thanks!";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -71.15151515151518;
+tmp_cutscene_command.wy = 309.45454545454527;
+tmp_cutscene_command.w = 220;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "You better go get some rest before the big day. I'll see you tomorrow at the exhibit!";
+tmp_cutscene_command.t = 102;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();

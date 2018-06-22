@@ -96,7 +96,7 @@ tmp_cutscene_command.wx = 301.17250217844617;
 tmp_cutscene_command.wy = 366.65672714326064;
 tmp_cutscene_command.w = 225;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Make sure to get lots of old photos, like last time!";
+tmp_cutscene_command.raw_text = "Make sure to get lots of photos, like last time!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -144,7 +144,7 @@ tmp_cutscene_command.wx = 302.80086581482806;
 tmp_cutscene_command.wy = 369.9134544159711;
 tmp_cutscene_command.w = 224;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Sorry, Wells. You already have a job to do.";
+tmp_cutscene_command.raw_text = "Wells, you already have a job to do.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

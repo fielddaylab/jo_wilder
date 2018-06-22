@@ -331,7 +331,7 @@ tmp_cutscene_command.wx = -1261.068870523416;
 tmp_cutscene_command.wy = 221.4738292011018;
 tmp_cutscene_command.w = 244;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Jolie- you need to keep your badger under control, or he'll have to go.";
+tmp_cutscene_command.raw_text = "Jolie- keep your badger under control, or he'll have to go.";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -505,7 +505,7 @@ tmp_cutscene_command.wx = -810.1729966971486;
 tmp_cutscene_command.wy = 70.6042143833924;
 tmp_cutscene_command.w = 188;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Let's go find Grampa!";
+tmp_cutscene_command.raw_text = "Let's go find Gramps!";
 tmp_cutscene_command.t = 62;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

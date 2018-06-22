@@ -67,7 +67,7 @@ tmp_cutscene_command.wx = -403.3940766248419;
 tmp_cutscene_command.wy = 117.63642321792207;
 tmp_cutscene_command.w = 253;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Come look- we've recieved the next artifact!";
+tmp_cutscene_command.raw_text = "Take a look at the next artifact!";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -111,7 +111,7 @@ tmp_cutscene_command.wx = -326.7269256585187;
 tmp_cutscene_command.wy = 112.06060460793029;
 tmp_cutscene_command.w = 192;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "It's a flag! I'm not sure WHAT flag it is...";
+tmp_cutscene_command.raw_text = "Some kind of flag! Pretty spiffy, isn't it?";
 tmp_cutscene_command.t = 142;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -123,7 +123,7 @@ tmp_cutscene_command.wx = 339.5757659130529;
 tmp_cutscene_command.wy = 128.78787875298272;
 tmp_cutscene_command.w = 157;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I can't waste time on this right now";
+tmp_cutscene_command.raw_text = "I don't have time for this, Gramps.";
 tmp_cutscene_command.t = 142;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -135,7 +135,7 @@ tmp_cutscene_command.wx = 336.7878788706299;
 tmp_cutscene_command.wy = 127.39393939359312;
 tmp_cutscene_command.w = 152;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Teddy is still out there somewhere!";
+tmp_cutscene_command.raw_text = "Teddy is still out there!";
 tmp_cutscene_command.t = 142;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -159,7 +159,7 @@ tmp_cutscene_command.wx = -309.9999999999854;
 tmp_cutscene_command.wy = 103.69696969696972;
 tmp_cutscene_command.w = 183;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "We just have to keep vigilant for clues!";
+tmp_cutscene_command.raw_text = "We just need to keep vigilant for clues!";
 tmp_cutscene_command.t = 142;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

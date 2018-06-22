@@ -37,7 +37,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "He was looking for a taxidermist. Seemed rather stressed out.";
+tmp_speak_command.raw_atext = "He was looking for a taxidermist. Seemed a bit frazzled.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -102,7 +102,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I need to find Wells. Do you know where he is?";
+tmp_speak_command.raw_atext = "I need to find Wells right away!! Do you know where he is?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -115,7 +115,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I think he's friends with the archivist. You could try him.";
+tmp_speak_command.raw_atext = "I think he gets coffee with the archivist sometimes. You could try him.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

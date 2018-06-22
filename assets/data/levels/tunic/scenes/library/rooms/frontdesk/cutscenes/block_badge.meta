@@ -38,7 +38,7 @@ tmp_cutscene_command.wx = -482.31296969696956;
 tmp_cutscene_command.wy = 389.0275359181116;
 tmp_cutscene_command.w = 333;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Did you drop something, Dear? There's something on the floor over there.";
+tmp_cutscene_command.raw_text = "Did you drop something, Dear? There's a card on the floor over there.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
