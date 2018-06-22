@@ -150,12 +150,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
 

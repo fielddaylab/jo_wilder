@@ -70,6 +70,7 @@ tmp_level.loading_animcycle_reqs = [
 ];
 tmp_level.deck_animcycle_ids = [
 ];
+tmp_level.stack_animcycle_t = 100;
 tmp_level.cursor_w = 27;
 tmp_level.cursor_h = 31;
 tmp_level.hover_w = 56;
@@ -8480,12 +8481,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
 
@@ -11800,12 +11801,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
 
@@ -12377,12 +12378,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
 
@@ -14095,12 +14096,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
 
@@ -15322,6 +15323,14 @@ tmp_wildcard.reqs = [[
     "name",
     "",
   ];
+  self.img_srcs = [
+    "assets/data/levels/tunic/animcycles/avatar_idle/0.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/1.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/2.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
+  ];
+  self.imgs = [
+  ];
 
   self.resize = function()
   {
@@ -15333,6 +15342,11 @@ tmp_wildcard.reqs = [[
   {
     self = wildcard;
     self.t = 0;
+    for(var i = 0; i < self.img_srcs.length; i++)
+    {
+      self.imgs[i] = new Image();
+      self.imgs[i].src = self.img_srcs[i];
+    }
   }
 
   self.dismiss = function()
@@ -15386,6 +15400,16 @@ tmp_wildcard.reqs = [[
         ctx.fillText(self.lines[i],canv.width/2,p);
       p += self.spacing;
     }
+
+    var img_t = self.t*self.imgs.length;
+    var img_i = floor(img_t);
+    img_t -= img_i;
+    var pad = 100;
+    offx = lerp(-pad,pad,img_t);
+    offy = lerp(-pad,pad,img_t);
+    if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
+    ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
+    ctx.globalAlpha = 1;
   }
 }
 

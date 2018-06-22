@@ -56,6 +56,14 @@ tmp_wildcard.reqs = [[
     "name",
     "",
   ];
+  self.img_srcs = [
+    "assets/data/levels/tunic/animcycles/avatar_idle/0.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/1.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/2.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
+  ];
+  self.imgs = [
+  ];
 
   self.resize = function()
   {
@@ -67,6 +75,11 @@ tmp_wildcard.reqs = [[
   {
     self = wildcard;
     self.t = 0;
+    for(var i = 0; i < self.img_srcs.length; i++)
+    {
+      self.imgs[i] = new Image();
+      self.imgs[i].src = self.img_srcs[i];
+    }
   }
 
   self.dismiss = function()
@@ -108,6 +121,17 @@ tmp_wildcard.reqs = [[
     }
     ctx.fillStyle = black;
     ctx.fillRect(0,0,canv.width,canv.height);
+    ctx.globalAlpha = 1;
+
+    var img_t = self.t*self.imgs.length;
+    var img_i = floor(img_t);
+    img_t -= img_i;
+    var pad = 100;
+    offx = lerp(-pad,pad,img_t);
+    offy = lerp(-pad,pad,img_t);
+    if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
+    if(img_t > 0.9) ctx.globalAlpha = 1-((img_t-0.9)/0.1);
+    ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
     ctx.globalAlpha = 1;
 
     var bottom = canv.height;

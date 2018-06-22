@@ -42,6 +42,7 @@ tmp_level.loading_animcycle_reqs = [
 ];
 tmp_level.deck_animcycle_ids = [
 ];
+tmp_level.stack_animcycle_t = 100;
 tmp_level.cursor_w = 27;
 tmp_level.cursor_h = 31;
 tmp_level.hover_w = 56;

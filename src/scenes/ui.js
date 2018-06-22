@@ -3069,12 +3069,12 @@ var personview = function()
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
     }
@@ -3112,12 +3112,12 @@ var personview = function()
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
       if(self.cur_speak.notifications.length && queryreqs(self.cur_speak, self.cur_speak.notification_reqs)) my_notificationview.consume_notification(self.cur_speak);
@@ -3147,12 +3147,12 @@ var personview = function()
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
       if(self.cur_speak.notifications.length && queryreqs(self.cur_speak, self.cur_speak.notification_reqs)) my_notificationview.consume_notification(self.cur_speak);
@@ -3779,7 +3779,7 @@ var cutsceneview = function()
         if(c.animcycle_id && c.animcycle_id != CUTSCENE_COMMAND_IGNORE)
         {
           e.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          e.stack_animcycle_t = 50;
+          e.stack_animcycle_t = cur_level.stack_animcycle_t;
           if(c.animcycle_offset_t != CUTSCENE_COMMAND_IGNORE) e.stack_animcycle_inst.frame_t += c.animcycle_offset_t;
         }
         self.waiting = 1;
