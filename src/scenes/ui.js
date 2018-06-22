@@ -3730,8 +3730,9 @@ var cutsceneview = function()
         c.command_state_t = 0;
         if(c.animcycle_id && c.animcycle_id != CUTSCENE_COMMAND_IGNORE)
         {
-          e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          if(c.animcycle_offset_t != CUTSCENE_COMMAND_IGNORE) e.animcycle_inst.frame_t += c.animcycle_offset_t;
+          e.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+          e.stack_animcycle_t = 50;
+          if(c.animcycle_offset_t != CUTSCENE_COMMAND_IGNORE) e.stack_animcycle_inst.frame_t += c.animcycle_offset_t;
         }
         self.waiting = 1;
         self.running_commands.push(c);
