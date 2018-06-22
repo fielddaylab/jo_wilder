@@ -14,6 +14,8 @@ var loader = function()
   self.loading = false;
   self.loading_q = [];
 
+  self.loading_animcycle_inst;
+
   self.resize = function()
   {
 
@@ -79,7 +81,9 @@ var loader = function()
     self.load_animcycle(find_animcycle(level.icon_notebook_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ui_hover_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.ripple_click_animcycle_id,level.animcycles));
-    for(var i = 0; i < level.deck_animcycle_ids; i++)
+    for(var i = 0; i < level.loading_animcycle_ids.length; i++)
+      self.load_animcycle(find_animcycle(level.loading_animcycle_ids[i],level.animcycles));
+    for(var i = 0; i < level.deck_animcycle_ids.length; i++)
       self.load_animcycle(find_animcycle(level.deck_animcycle_ids[i],level.animcycles));
 
     for(var i = 0; i < level.scenes.length; i++)
@@ -103,21 +107,21 @@ var loader = function()
       self.load_animcycle_inst(person.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(person.hover_icon_animcycle_inst);
       self.load_animcycle_inst(person.notice_icon_animcycle_inst);
-      for(var i = 0; i < person.deck_animcycle_ids; i++)
+      for(var i = 0; i < person.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(person.deck_animcycle_ids[i],cur_level.animcycles));
       var speak;
       for(var l = 0; l < person.speaks.length; l++)
       {
         speak = person.speaks[l];
         self.load_animcycle_inst(speak.animcycle_inst);
-        for(var i = 0; i < speak.deck_animcycle_ids; i++)
+        for(var i = 0; i < speak.deck_animcycle_ids.length; i++)
           self.load_animcycle(find_animcycle(speak.deck_animcycle_ids[i],cur_level.animcycles));
         var speak_command;
         for(var m = 0; m < speak.commands.length; m++)
         {
           speak_command = speak.commands[m];
           self.load_animcycle(find_animcycle(speak_command.animcycle_id,cur_level.animcycles));
-          for(var i = 0; i < speak_command.deck_animcycle_ids; i++)
+          for(var i = 0; i < speak_command.deck_animcycle_ids.length; i++)
             self.load_animcycle(find_animcycle(speak_command.deck_animcycle_ids[i],cur_level.animcycles));
         }
       }
@@ -131,21 +135,21 @@ var loader = function()
       self.load_animcycle_inst(object.hover_icon_animcycle_inst);
       self.load_animcycle_inst(object.notice_icon_animcycle_inst);
       self.load_animcycle_inst(object.view_overlay_animcycle_inst);
-      for(var i = 0; i < object.deck_animcycle_ids; i++)
+      for(var i = 0; i < object.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(object.deck_animcycle_ids[i],cur_level.animcycles));
       var view;
       for(var l = 0; l < object.views.length; l++)
       {
         view = object.views[l];
         self.load_animcycle_inst(view.animcycle_inst);
-        for(var i = 0; i < view.deck_animcycle_ids; i++)
+        for(var i = 0; i < view.deck_animcycle_ids.length; i++)
           self.load_animcycle(find_animcycle(view.deck_animcycle_ids[i],cur_level.animcycles));
         var zone;
         for(var m = 0; m < view.zones.length; m++)
         {
           zone = view.zones[m];
           self.load_animcycle_inst(zone.animcycle_inst);
-          for(var i = 0; i < zone.deck_animcycle_ids; i++)
+          for(var i = 0; i < zone.deck_animcycle_ids.length; i++)
             self.load_animcycle(find_animcycle(zone.deck_animcycle_ids[i],cur_level.animcycles));
         }
       }
@@ -158,7 +162,7 @@ var loader = function()
       self.load_animcycle_inst(observation.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(observation.hover_icon_animcycle_inst);
       self.load_animcycle_inst(observation.notice_icon_animcycle_inst);
-      for(var i = 0; i < observation.deck_animcycle_ids; i++)
+      for(var i = 0; i < observation.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(observation.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var porthole;
@@ -169,7 +173,7 @@ var loader = function()
       self.load_animcycle_inst(porthole.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(porthole.hover_icon_animcycle_inst);
       self.load_animcycle_inst(porthole.notice_icon_animcycle_inst);
-      for(var i = 0; i < porthole.deck_animcycle_ids; i++)
+      for(var i = 0; i < porthole.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(porthole.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var wildcard;
@@ -180,7 +184,7 @@ var loader = function()
       self.load_animcycle_inst(wildcard.hover_cursor_animcycle_inst);
       self.load_animcycle_inst(wildcard.hover_icon_animcycle_inst);
       self.load_animcycle_inst(wildcard.notice_icon_animcycle_inst);
-      for(var i = 0; i < wildcard.deck_animcycle_ids; i++)
+      for(var i = 0; i < wildcard.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(wildcard.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var cutscene;
@@ -193,7 +197,7 @@ var loader = function()
       self.load_animcycle_inst(cutscene.notice_icon_animcycle_inst);
       for(var l = 0; l < cutscene.commands.length; l++)
         if(cutscene.commands[l].animcycle_id && cutscene.commands[l].animcycle_id != "null") self.load_animcycle(find_animcycle(cutscene.commands[l].animcycle_id,cur_level.animcycles));
-      for(var i = 0; i < cutscene.deck_animcycle_ids; i++)
+      for(var i = 0; i < cutscene.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(cutscene.deck_animcycle_ids[i],cur_level.animcycles));
     }
     var inert;
@@ -201,8 +205,39 @@ var loader = function()
     {
       inert = room.inerts[k];
       self.load_animcycle_inst(inert.animcycle_inst);
-      for(var i = 0; i < room.deck_animcycle_ids; i++)
+      for(var i = 0; i < room.deck_animcycle_ids.length; i++)
         self.load_animcycle(find_animcycle(room.deck_animcycle_ids[i],cur_level.animcycles));
+    }
+  }
+
+  self.unlock_content = function()
+  {
+    self.loading_animcycle_inst = 0;
+    for(var i = cur_level.loading_animcycle_ids.length-1; !self.loading_animcycle_inst && i >= 0; i--)
+    {
+      if(!cur_level.loading_animcycle_reqs[i] || queryreqs(cur_level, cur_level.loading_animcycle_reqs[i]))
+        self.loading_animcycle_inst = gen_animcycle_inst(cur_level.loading_animcycle_ids[i], cur_level.animcycles);
+    }
+  }
+
+  self.tick = function()
+  {
+    if(self.loading_animcycle_inst) self.loading_animcycle_inst.tick();
+  }
+
+  self.draw = function()
+  {
+    if(self.loading_animcycle_inst)
+      ctx.drawImage(self.loading_animcycle_inst.img,0,0,canv.width,canv.height);
+    else
+    {
+      ctx.fillStyle = black;
+      ctx.fillRect(0,0,canv.width,canv.height);
+    }
+    if(self.loading)
+    {
+      ctx.fillStyle = white;
+      ctx.fillText("loading...",canv.width-100,canv.height-20);
     }
   }
 }
@@ -365,6 +400,7 @@ var avatar = function()
         cur_act = my_navigable.selected_act;
         state_from = state_cur;
         state_cur = STATE_TRANSITION;
+        my_loader.unlock_content();
         switch(cur_act.act)
         {
           case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
@@ -1231,6 +1267,7 @@ var navigable = function()
             cur_act = cutscene;
             state_from = state_cur;
             state_cur = STATE_TRANSITION;
+            my_loader.unlock_content();
             state_stack = STATE_CUTSCENE;
             state_act = cur_act;
             state_to = state_stack;
@@ -1241,6 +1278,7 @@ var navigable = function()
           {
             cur_act = cutscene;
             state_cur = STATE_TRANSITION;
+            my_loader.unlock_content();
             state_stack = STATE_CUTSCENE;
             state_act = cur_act;
             state_to = state_stack;
@@ -1817,6 +1855,7 @@ var toolbar = function()
       state_from = state_cur;
       state_to = STATE_MAP;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
       my_mapview.unlock_content();
     }
@@ -1827,6 +1866,7 @@ var toolbar = function()
       state_from = state_cur;
       state_to = STATE_NOTEBOOK;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
     }
   }
@@ -2004,6 +2044,7 @@ var mapview = function()
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
     }
     for(var i = 0; i < self.cache_available_scenes.length; i++)
@@ -2015,6 +2056,7 @@ var mapview = function()
         state_from = state_cur;
         state_to = state_stack;
         state_cur = STATE_TRANSITION;
+        my_loader.unlock_content();
         state_t = 0;
       }
     }
@@ -2222,6 +2264,7 @@ var notebookview = function()
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
     }
     else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
@@ -2659,6 +2702,7 @@ var objectview = function()
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
       if(my_notificationview.clickthrough) my_notificationview.click();
     }
@@ -2914,6 +2958,7 @@ var observationview = function()
           state_from = state_cur;
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
+          my_loader.unlock_content();
           state_t = 0;
         }
         break;
@@ -3048,6 +3093,7 @@ var personview = function()
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
     }
     else //option exists w/ valid target
@@ -3527,6 +3573,7 @@ var wildcardview = function()
   {
     self.w = canv.width;
     self.h = canv.height;
+    if(self.wildcard) self.wildcard.resize();
   }
   self.resize();
 
@@ -3713,6 +3760,7 @@ var cutsceneview = function()
         cur_act = e;
         state_from = state_cur;
         state_cur = STATE_TRANSITION;
+        my_loader.unlock_content();
         state_t = 0;
         switch(e.act)
         {
@@ -4010,6 +4058,7 @@ var cutsceneview = function()
       act_stack = 0;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
+      my_loader.unlock_content();
       state_t = 0;
 
       if(self.scene_to)

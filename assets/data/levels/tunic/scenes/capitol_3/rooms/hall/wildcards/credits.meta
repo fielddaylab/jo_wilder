@@ -57,6 +57,12 @@ tmp_wildcard.reqs = [[
     "",
   ];
 
+  self.resize = function()
+  {
+
+  }
+  self.resize();
+
   self.consume_self = function(wildcard)
   {
     self = wildcard;

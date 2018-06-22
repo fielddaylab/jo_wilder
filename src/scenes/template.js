@@ -884,6 +884,7 @@ var speak = function()
   self.id = "null"
   self.fqid = "null"
   self.primary = false;
+  self.deck_animcycle_ids = [];
   self.commands = [];
   self.options_wx = 0;
   self.options_wy = 0;

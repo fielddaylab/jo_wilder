@@ -30,6 +30,7 @@ var GamePlayScene = function(game, stage)
     if(my_personview) my_personview.resize();
     if(my_cutsceneview) my_cutsceneview.resize();
     if(my_notificationview) my_notificationview.resize();
+    if(my_wildcardview) my_wildcardview.resize();
   }
   self.resize(stage);
 
@@ -679,6 +680,8 @@ var GamePlayScene = function(game, stage)
 
   var transition_tick = function()
   {
+    my_loader.tick();
+
     var old_state_t = state_t;
     switch(state_from)
     {
@@ -872,13 +875,9 @@ var GamePlayScene = function(game, stage)
           my_toolbar.draw(1);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
-          ctx.fillStyle = "rgba(0,0,0,"+blur+")";
-          ctx.fillRect(0,0,canv.width,canv.height);
-          if(my_loader.loading)
-          {
-            ctx.fillStyle = white;
-            ctx.fillText("loading...",canv.width-100,canv.height-20);
-          }
+          ctx.globalAlpha = blur;
+          my_loader.draw();
+          ctx.globalAlpha = 1;
         }
         else if(state_from == STATE_CUTSCENE && state_to == STATE_NAV && my_cutsceneview.scene_to)
         {
@@ -886,13 +885,9 @@ var GamePlayScene = function(game, stage)
           my_toolbar.draw(1);
           var blur = (state_t*2)-1;
           blur = 1-(blur*blur);
-          ctx.fillStyle = "rgba(0,0,0,"+blur+")";
-          ctx.fillRect(0,0,canv.width,canv.height);
-          if(my_loader.loading)
-          {
-            ctx.fillStyle = white;
-            ctx.fillText("loading...",canv.width-100,canv.height-20);
-          }
+          ctx.globalAlpha = blur;
+          my_loader.draw();
+          ctx.globalAlpha = 1;
         }
         else if(state_to == STATE_MAP)
         {
@@ -949,10 +944,9 @@ var GamePlayScene = function(game, stage)
           {
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
-            ctx.fillStyle = "rgba(0,0,0,"+blur+")";
-            ctx.fillRect(0,0,canv.width,canv.height);
-            ctx.fillStyle = white;
-            ctx.fillText("loading...",canv.width-100,canv.height-20);
+            ctx.globalAlpha = blur;
+            my_loader.draw();
+            ctx.globalAlpha = 1;
           }
         }
         break;
@@ -966,8 +960,9 @@ var GamePlayScene = function(game, stage)
             var blur = (state_t*2)-1;
             blur = 1-(blur*blur);
             my_mapview.draw(1);
-            ctx.fillStyle = "rgba(0,0,0,"+blur+")";
-            ctx.fillRect(0,0,canv.width,canv.height);
+            ctx.globalAlpha = blur;
+            my_loader.draw();
+            ctx.globalAlpha = 1;
           }
           else
           {
@@ -975,13 +970,9 @@ var GamePlayScene = function(game, stage)
             my_toolbar.draw(state_t);
             my_mapview.draw(1-state_t);
             var blur = 1-((state_t*2)-1);
-            ctx.fillStyle = "rgba(0,0,0,"+blur+")";
-            ctx.fillRect(0,0,canv.width,canv.height);
-          }
-          if(my_loader.loading)
-          {
-            ctx.fillStyle = white;
-            ctx.fillText("loading...",canv.width-100,canv.height-20);
+            ctx.globalAlpha = blur;
+            my_loader.draw();
+            ctx.globalAlpha = 1;
           }
         }
         break;
