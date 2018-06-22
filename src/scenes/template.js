@@ -1722,7 +1722,8 @@ var print_cutscene_meta = function(l)
         if(c.wy != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
         if(c.w  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.w = "+c.w+";\n";
         if(c.h  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.h = "+c.h+";\n";
-        str += "tmp_cutscene_command.raw_text = \""+c.raw_text.replace(/"/g,"\\\"")+"\";\n";
+        str += "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
+        "tmp_cutscene_command.raw_text = \""+c.raw_text.replace(/"/g,"\\\"")+"\";\n";
         if(c.t  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
       case CUTSCENE_COMMAND_ACT:

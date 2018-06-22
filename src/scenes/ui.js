@@ -3728,6 +3728,8 @@ var cutsceneview = function()
         c.text = stextToLines(c.raw_text, c.w);
         c.command_state = 0;
         c.command_state_t = 0;
+        e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+        if(c.animcycle_offset_t != CUTSCENE_COMMAND_IGNORE) e.animcycle_inst.frame_t += c.animcycle_offset_t;
         self.waiting = 1;
         self.running_commands.push(c);
         break;
