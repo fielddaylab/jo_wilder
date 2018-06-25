@@ -247,8 +247,6 @@ var cursor = function()
   var self = this;
   self.x = 0;
   self.y = 0;
-  self.w = canv.width;
-  self.h = canv.height;
   self.known_x = 0;
   self.known_y = 0;
   self.mode_prev = CURSOR_NULL;
@@ -265,7 +263,8 @@ var cursor = function()
 
   self.resize = function()
   {
-
+    self.w = canv.width;
+    self.h = canv.height;
   }
   self.resize();
 
@@ -3212,15 +3211,15 @@ var personview = function()
     self.w = 0;
     self.h = 0;
     self.cur_speak_command;
-    self.consume_speak_command = function(s)
+    self.src;
+    self.consume_speak_command = function(src,s)
     {
       self.cur_speak_command = s;
+      self.src = src;
       self.x = self.cur_speak_command.x;
       self.y = self.cur_speak_command.y;
       self.w = self.cur_speak_command.w;
       self.h = self.cur_speak_command.h;
-      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
-      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
     }
     self.edit = function()
     {
@@ -3228,10 +3227,20 @@ var personview = function()
       self.cur_speak_command.y = self.y;
       self.cur_speak_command.w = self.w;
       self.cur_speak_command.h = self.h;
-      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
-      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
 
       self.cur_speak_command.atext = stextToLines(self.cur_speak_command.raw_atext, self.cur_speak_command.w);
+
+      var x = self.cur_speak_command.x;
+      var y = self.cur_speak_command.y;
+
+      if(self.cur_speak_command.x + self.cur_speak_command.w/2 > self.src.x + self.src.w/2)
+        x += tail_w/2;
+      else
+        x += self.cur_speak_command.w-tail_w/2;
+      y += tail_h+self.cur_speak_command.atext.length*self.cur_speak_command.h+bubble_pad;
+
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,y);
     }
   })();
   self.options_editor = new (function()
@@ -3242,15 +3251,17 @@ var personview = function()
     self.w = 0;
     self.h = 0;
     self.cur_speak;
-    self.consume_speak = function(s)
+    self.src;
+    self.e;
+    self.consume_speak = function(e,src,s)
     {
       self.cur_speak = s;
+      self.src = src;
+      self.e = e;
       self.x = self.cur_speak.options_x;
       self.y = self.cur_speak.options_y;
       self.w = self.cur_speak.options_w;
       self.h = self.cur_speak.options_h;
-      self.cur_speak.options_wx = worldSpaceXpt(my_camera,canv,self.cur_speak.options_x);
-      self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,self.cur_speak.options_y);
     }
     self.edit = function()
     {
@@ -3258,19 +3269,37 @@ var personview = function()
       self.cur_speak.options_y = self.y;
       self.cur_speak.options_w = self.w;
       self.cur_speak.options_h = self.h;
-      self.cur_speak.options_wx = worldSpaceXpt(my_camera,canv,self.cur_speak.options_x);
-      self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,self.cur_speak.options_y);
 
-      var s = self.cur_speak;
       for(var i = 0; i < s.options.length; i++)
         s.options[i].qtext = stextToLines(s.options[i].raw_qtext, s.options_w);
+
+      var s = self.cur_speak;
+      var n_option_lines = 0;
+      for(var i = 0; i < self.e.cache_available_options.length; i++)
+        n_option_lines += self.e.cache_available_options[i].qtext.length;
+
+      var x = self.cur_speak.options_x;
+      var y = self.cur_speak.options_y;
+
+      if(self.cur_speak.options_x + self.cur_speak.options_w/2 > self.src.x + self.src.w/2)
+        x += tail_w/2;
+      else
+        x += self.cur_speak.options_w-tail_w/2;
+      y += tail_h+n_option_lines*self.cur_speak.options_h+bubble_pad;
+
+      self.cur_speak.options_wx = worldSpaceXpt(my_camera,canv,x);
+      self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,y);
     }
   })();
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
-    if(!self.edit_o && ptWithinBox(self.cur_speak.commands[self.cur_speak_command_i],evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(self.cur_speak.commands[self.cur_speak_command_i]); self.cur_speak.dirty = true; }
-    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self.cur_speak); self.cur_speak.dirty = true; }
+    var cur_speak_command = self.cur_speak.commands[self.cur_speak_command_i];
+    var src;
+    if(cur_speak_command.speaker == SPEAKER_PERSON) src = self.person;
+    else                                            src = my_avatar;
+    if(!self.edit_o && ptWithinBox(cur_speak_command,evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(src,cur_speak_command); self.cur_speak.dirty = true; }
+    if(!self.edit_o && ptWithin(self.cur_speak.options_x,self.cur_speak.options_y,self.cur_speak.options_w,self.cur_speak.options_h,evt.doX,evt.doY)) { self.edit_o = self.options_editor; self.options_editor.consume_speak(self,my_avatar,self.cur_speak); self.cur_speak.dirty = true; }
 
     if(!self.edit_o) return;
 
@@ -3411,10 +3440,27 @@ var personview = function()
     var speak = self.cur_speak;
     var speak_command = self.cur_speak.commands[self.cur_speak_command_i];
     speak.animcycle_inst.tick();
+
     speak_command.x = screenSpaceXpt(my_camera,canv,speak_command.wx);
     speak_command.y = screenSpaceYpt(my_camera,canv,speak_command.wy);
+
+    var src;
+    if(speak_command.speaker == SPEAKER_PERSON) src = self.person;
+    else                                        src = my_avatar;
+    if(speak_command.wx > src.wx) speak_command.x += -tail_w/2;
+    else                          speak_command.x += -speak_command.w+tail_w/2;
+    speak_command.y += -tail_h-speak_command.atext.length*speak_command.h-bubble_pad;
+
     speak.options_x = screenSpaceXpt(my_camera,canv,speak.options_wx);
     speak.options_y = screenSpaceYpt(my_camera,canv,speak.options_wy);
+
+    var n_option_lines = 0;
+    for(var i = 0; i < self.cache_available_options.length; i++)
+      n_option_lines += option.qtext.length;
+
+    if(speak.options_wx > my_avatar.wx) speak.options_x += -tail_w/2;
+    else                                speak.options_x += -speak.options_w+tail_w/2;
+    speak.options_y += -tail_h-n_option_lines*speak.options_h-bubble_pad;
 
     self.ui_state_t++;
     self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
@@ -3451,12 +3497,11 @@ var personview = function()
     }
     ctx.globalAlpha = a;
 
-    var b = 10;
     ctx.fillStyle = self.bubble_color;
-    fillRRect(speak_command.x-b-5,speak_command.y-b+5+yoff,speak_command.w+b*2+10,speak_command.h*speak_command.atext.length+b*2+5,b,ctx);
+    fillRRect(speak_command.x-bubble_pad-5,speak_command.y-bubble_pad+5+yoff,speak_command.w+bubble_pad*2+10,speak_command.h*speak_command.atext.length+bubble_pad*2+5,bubble_pad,ctx);
 
     //tail
-    var y = speak_command.y-b+5+yoff+speak_command.h*speak_command.atext.length+b*2+5-0.5;
+    var y = speak_command.y-bubble_pad+5+yoff+speak_command.h*speak_command.atext.length+bubble_pad*2+5-0.5;
     var x;
     var w = 20;
     var h = 20;
@@ -3497,10 +3542,10 @@ var personview = function()
       var h = 0;
       for(var i = 0; i < self.cache_available_options.length; i++) h += self.cache_available_options[i].qtext.length*speak.options_h;
       ctx.fillStyle = self.bubble_color;
-      fillRRect(speak.options_x-b-5,speak.options_y-b+5+yoff,speak.options_w+b*2+10,h+b*2+5,b,ctx);
+      fillRRect(speak.options_x-bubble_pad-5,speak.options_y-bubble_pad+5+yoff,speak.options_w+bubble_pad*2+10,h+bubble_pad*2+5,bubble_pad,ctx);
 
       //tail
-      var y = speak.options_y-b+5+yoff+h+b*2+5-0.5;
+      var y = speak.options_y-bubble_pad+5+yoff+h+bubble_pad*2+5-0.5;
       var x = clamp(speak.options_x, speak.options_x+speak.options_w-w, my_avatar.x + my_avatar.w/2-w/2);
       var w = 20;
       var h = 20;
@@ -3533,6 +3578,7 @@ var personview = function()
           drawLine(speak.options_x,yoff+oyoff+5,speak.options_x+speak.options_w,yoff+oyoff+5,ctx);
         }
       }
+
     }
 
     ctx.globalAlpha = 1;
@@ -3559,6 +3605,10 @@ var personview = function()
           oyoff += speak.options_h;
         }
       }
+
+      ctx.fillStyle = red;
+      ctx.fillRect(screenSpaceXpt(my_camera,canv,speak_command.wx)-2,screenSpaceYpt(my_camera,canv,speak_command.wy)-2,4,4);
+      ctx.fillRect(screenSpaceXpt(my_camera,canv,speak.options_wx)-2,screenSpaceYpt(my_camera,canv,speak.options_wy)-2,4,4);
     }
   }
 }
@@ -3870,8 +3920,6 @@ var cutsceneview = function()
       self.y = self.cur_speak.y;
       self.w = self.cur_speak.w;
       self.h = self.cur_speak.h;
-      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
-      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
     }
     self.edit = function()
     {
@@ -3879,9 +3927,19 @@ var cutsceneview = function()
       self.cur_speak.y = self.y;
       self.cur_speak.w = self.w;
       self.cur_speak.h = self.h;
-      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,self.cur_speak.x);
-      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,self.cur_speak.y);
       self.cur_speak.text = stextToLines(self.cur_speak.raw_text, self.w);
+
+      var x = self.cur_speak.x;
+      var y = self.cur_speak.y;
+
+      if(self.cur_speak.x + self.cur_speak.w/2 > self.cur_speak.cutscene_entity.x + self.cur_speak.cutscene_entity.w/2)
+        x += tail_w/2;
+      else
+        x += self.cur_speak.w-tail_w/2;
+      y += tail_h+self.cur_speak.text.length*self.cur_speak.h+bubble_pad;
+
+      self.cur_speak.wx = worldSpaceXpt(my_camera,canv,x);
+      self.cur_speak.wy = worldSpaceYpt(my_camera,canv,y);
     }
   })();
   self.dragStart = function(evt)
@@ -4024,6 +4082,11 @@ var cutsceneview = function()
       {
         c.x = screenSpaceXpt(my_camera,canv,c.wx);
         c.y = screenSpaceYpt(my_camera,canv,c.wy);
+
+        if(c.wx > c.cutscene_entity.wx) c.x += -tail_w/2;
+        else                            c.x += -c.w+tail_w/2;
+        c.y += -tail_h-c.text.length*c.h-bubble_pad;
+
         c.command_t++;
         if(c.command_state != 1 && c.command_t > 30) c.command_state++;
         if(c.command_state == 3)
@@ -4132,22 +4195,19 @@ var cutsceneview = function()
         }
         ctx.globalAlpha = a;
 
-        var b = 10;
         ctx.fillStyle = self.bubble_color;
-        fillRRect(c.x-b-5,c.y-b+5+yoff,c.w+b*2+10,c.h*c.text.length+b*2+5,b,ctx);
+        fillRRect(c.x-bubble_pad-5,c.y-bubble_pad+5+yoff,c.w+bubble_pad*2+10,c.h*c.text.length+bubble_pad*2+5,bubble_pad,ctx);
 
         //tail
-        var y = c.y-b+5+yoff+c.h*c.text.length+b*2+5-0.5;
+        var y = c.y-bubble_pad+5+yoff+c.h*c.text.length+bubble_pad*2+5-0.5;
         var x;
-        var w = 20;
-        var h = 20;
         var e = c.cutscene_entity;
-        x = clamp(c.x, c.x+c.w-w, e.x + e.w/2-w/2);
+        x = clamp(c.x, c.x+c.w-tail_w, e.x + e.w/2-tail_w/2);
         ctx.beginPath();
         ctx.moveTo(x,y);
-        ctx.lineTo(x+w/2-2,y+h-2);
-        ctx.quadraticCurveTo(x+w/2,y+h,x+w/2+2,y+h-2);
-        ctx.lineTo(x+w,y);
+        ctx.lineTo(x+tail_w/2-2,y+tail_h-2);
+        ctx.quadraticCurveTo(x+tail_w/2,y+tail_h,x+tail_w/2+2,y+tail_h-2);
+        ctx.lineTo(x+tail_w,y);
         ctx.closePath();
         ctx.fill();
 
@@ -4180,6 +4240,8 @@ var cutsceneview = function()
             ctx.strokeRect(c.x,c.y+yoff,c.w,c.h);
             oyoff += c.h;
           }
+          ctx.fillStyle = red;
+          ctx.fillRect(screenSpaceXpt(my_camera,canv,c.wx)-2,screenSpaceYpt(my_camera,canv,c.wy)-2,4,4);
         }
       }
 

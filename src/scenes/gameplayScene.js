@@ -11,10 +11,10 @@ var GamePlayScene = function(game, stage)
     canvas = canv.canvas;
     ctx = canv.context;
 
-    if(clicker) { clicker = new Clicker({source:canvas}); }
-    if(dragger) { dragger = new Dragger({source:canvas}); }
-    if(hoverer) { hoverer = new PersistentHoverer({source:canvas}); }
-    if(keyer)   { keyer = new Keyer({source:canvas}); }
+    if(clicker) { clicker.detach(); clicker = new Clicker({source:canvas}); }
+    if(dragger) { dragger.detach(); dragger = new Dragger({source:canvas}); }
+    if(hoverer) { hoverer.detach(); hoverer = new PersistentHoverer({source:canvas}); }
+    if(keyer)   { keyer.detach();   keyer   = new Keyer({source:canvas}); }
 
     ctx.font = text_font;
     if(my_real_camera)  { my_real_camera.ww  = canv.width*660/canv.height; my_real_camera.wh  = 660; }
@@ -226,6 +226,48 @@ var GamePlayScene = function(game, stage)
             }
           }
 
+        }
+      }
+    }
+
+    var PHIL_HACK = false;
+    if(PHIL_HACK)
+    {
+      var scene;
+      for(var i = 0; i < cur_level.scenes.length; i++)
+      {
+        scene = cur_level.scenes[i];
+        var room;
+        for(var j = 0; j < scene.rooms.length; j++)
+        {
+          room = scene.rooms[j];
+          var person;
+          for(var k = 0; k < room.persons.length; k++)
+          {
+            person = room.persons[k];
+            var speak;
+            for(var l = 0; l < person.speaks.length; l++)
+            {
+              speak = person.speaks[l];
+              var command;
+              for(var m = 0; m < speak.commands.length; m++)
+              {
+                command = speak.commands[m];
+                if(command.wx + command.w/2 > person.wx)
+                  command.wx += 20;
+                else
+                  command.wx += command.w-20;
+                command.wy += command.h*(command.atext.length+1);
+              }
+
+              if(speak.options_wx + speak.options_w/2 > person.wx)
+                speak.options_wx += 20;
+              else
+                speak.options_wx += speak.options_w-20;
+              speak.options_wy += speak.options_h*3;
+              speak.dirty = true;
+            }
+          }
         }
       }
     }
@@ -1030,6 +1072,12 @@ var GamePlayScene = function(game, stage)
   {
     clicker.detach();
     clicker = null;
+    dragger.detach();
+    dragger = null;
+    hoverer.detach();
+    hoverer = null;
+    keyer.detach();
+    keyer = null;
   };
 
 };
