@@ -14,8 +14,8 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -172.92223104626729;
-tmp_speak_command.wy = 69.33461620414951;
+tmp_speak_command.wx = -113.8746119986483;
+tmp_speak_command.wy = -41.14157427204097;
 tmp_speak_command.w = 72.32794189453125;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -27,8 +27,8 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -350.6244026338402;
-tmp_speak_command.wy = 70.00107756869986;
+tmp_speak_command.wx = -110.62440263384018;
+tmp_speak_command.wy = -40.475112907490576;
 tmp_speak_command.w = 190.76785278320312;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -40,8 +40,8 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -565.7681441726156;
-tmp_speak_command.wy = 71.51574670020713;
+tmp_speak_command.wx = -108.62528702975852;
+tmp_speak_command.wy = -38.00806282360243;
 tmp_speak_command.w = 333.5916748046875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -53,8 +53,8 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -400.61662013957095;
-tmp_speak_command.wy = 118.48544311876992;
+tmp_speak_command.wx = -112.04519156814241;
+tmp_speak_command.wy = -38.657414024087245;
 tmp_speak_command.w = 223;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -66,8 +66,8 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 141.21211008351605;
-tmp_speak_command.wy = 320.8181822054117;
+tmp_speak_command.wx = 151.68830055970648;
+tmp_speak_command.wy = 148.43722982445928;
 tmp_speak_command.w = 147;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";

@@ -193,7 +193,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_cur = STATE_TRANSITION;
           state_t = 0;
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
-            my_notebookview.cache_available_entrys[i].hovering = 1;
+            my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
         }
       }
