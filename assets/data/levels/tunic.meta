@@ -27,18 +27,8 @@ tmp_level.icon_notebook_animcycle_id = "icon_notebook";
 tmp_level.ui_hover_animcycle_id = "hover_ui";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.loading_animcycle_ids = [
-"loading_0",
-"loading_1",
-"loading_2",
-"loading_3",
-"loading_4",
 ];
 tmp_level.loading_animcycle_reqs = [
-[["tunic.historicalsociety.closet.notebook",]],
-[["tunic.capitol_0.hall.chap1_finale_c",]],
-[["tunic.capitol_1.hall.chap2_finale_c"]],
-[["tunic.historicalsociety.basement.savedteddy"]],
-[["tunic.capitol_2.hall.chap4_finale_c"]],
 ];
 tmp_level.deck_animcycle_ids = [
 ];

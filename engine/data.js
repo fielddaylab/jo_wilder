@@ -55,18 +55,8 @@ tmp_level.icon_notebook_animcycle_id = "icon_notebook";
 tmp_level.ui_hover_animcycle_id = "hover_ui";
 tmp_level.ripple_click_animcycle_id = "click_ripple";
 tmp_level.loading_animcycle_ids = [
-"loading_0",
-"loading_1",
-"loading_2",
-"loading_3",
-"loading_4",
 ];
 tmp_level.loading_animcycle_reqs = [
-[["tunic.historicalsociety.closet.notebook",]],
-[["tunic.capitol_0.hall.chap1_finale_c",]],
-[["tunic.capitol_1.hall.chap2_finale_c"]],
-[["tunic.historicalsociety.basement.savedteddy"]],
-[["tunic.capitol_2.hall.chap4_finale_c"]],
 ];
 tmp_level.deck_animcycle_ids = [
 ];
@@ -8465,6 +8455,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     self.cur_command = self.commands[self.cur_command_i];
     self.consume_command();
 
+    my_notebookview.page = 0;
     my_notebookview.unlock_content();
   }
 
@@ -8521,6 +8512,8 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+            my_notebookview.cache_available_entrys[i].hovering = 1;
           my_notebookview.exit_available = 1;
         }
       }
@@ -9783,13 +9776,6 @@ tmp_cutscene_command.wx = 999999;
 tmp_cutscene_command.wy = 999999;
 tmp_cutscene_command.t = 602;
 tmp_cutscene_command.end_t = 602;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_LOAD_SCENE;
-tmp_cutscene_command.cutscene_entity_id = "historicalsociety";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SPECIAL;
-tmp_cutscene_command.t = 602;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
@@ -11808,6 +11794,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     self.cur_command = self.commands[self.cur_command_i];
     self.consume_command();
 
+    my_notebookview.page = 0;
     my_notebookview.unlock_content();
   }
 
@@ -11864,6 +11851,8 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+            my_notebookview.cache_available_entrys[i].hovering = 1;
           my_notebookview.exit_available = 1;
         }
       }
@@ -12408,6 +12397,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     self.cur_command = self.commands[self.cur_command_i];
     self.consume_command();
 
+    my_notebookview.page = 0;
     my_notebookview.unlock_content();
   }
 
@@ -12464,6 +12454,8 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+            my_notebookview.cache_available_entrys[i].hovering = 1;
           my_notebookview.exit_available = 1;
         }
       }
@@ -14149,6 +14141,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     self.cur_command = self.commands[self.cur_command_i];
     self.consume_command();
 
+    my_notebookview.page = 0;
     my_notebookview.unlock_content();
   }
 
@@ -14205,6 +14198,8 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+            my_notebookview.cache_available_entrys[i].hovering = 1;
           my_notebookview.exit_available = 1;
         }
       }
@@ -22254,9 +22249,6 @@ tmp_room.raw_notification_ws = [
 tmp_room.notification_reqs = [[
 ]];
 tmp_room.reqs = [[
-"!_tunic.capitol_1.hall.chap2_finale_c",
-],[
-"tunic.historicalsociety.basement.ch3start",
 ]];
 //SUGGEST_H:1.8
 

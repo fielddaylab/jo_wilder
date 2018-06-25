@@ -738,13 +738,6 @@ tmp_cutscene_command.end_t = 602;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_LOAD_SCENE;
-tmp_cutscene_command.cutscene_entity_id = "historicalsociety";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SPECIAL;
-tmp_cutscene_command.t = 602;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = 603;
 tmp_cutscene.commands.push(tmp_cutscene_command);
