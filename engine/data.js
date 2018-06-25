@@ -27505,7 +27505,7 @@ tmp_person.hover_icon_wy = 143.3360981848623;
 tmp_person.animcycle_id = "librarian";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
-tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "notice";
 tmp_person.audio_id = "null";
 tmp_person.deck_animcycle_ids = [
 ];
@@ -27515,6 +27515,8 @@ tmp_person.raw_notifications = [
 tmp_person.raw_notification_ws = [
 ];
 tmp_person.notice_reqs = [[
+"tunic.library.frontdesk.wellsbadge",
+"!tunic.library.frontdesk.worker.wells",
 ]];
 tmp_person.notification_reqs = [[
 ]];
