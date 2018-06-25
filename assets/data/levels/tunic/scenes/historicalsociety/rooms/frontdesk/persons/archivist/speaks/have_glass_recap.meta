@@ -16,8 +16,8 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -243.99999999999997;
-tmp_speak_command.wy = 254.00000000000003;
+tmp_speak_command.wx = -92.00409416581365;
+tmp_speak_command.wy = 141.86079836233372;
 tmp_speak_command.w = 210;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "archivist";
@@ -29,8 +29,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -243.99999999999997;
-tmp_speak_command.wy = 254.00000000000003;
+tmp_speak_command.wx = -90.65301944728759;
+tmp_speak_command.wy = 139.83418628454456;
 tmp_speak_command.w = 210;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "archivist";
@@ -41,10 +41,9 @@ tmp_speak_command.raw_atext = "Run along to the university.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
-
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -202.99999999999994;
-tmp_speak_command.wy = 255;
+tmp_speak_command.wx = -96.26509723643802;
+tmp_speak_command.wy = 139.48311156601844;
 tmp_speak_command.w = 190;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "archivist";

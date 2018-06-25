@@ -3270,8 +3270,8 @@ var personview = function()
       self.cur_speak.options_w = self.w;
       self.cur_speak.options_h = self.h;
 
-      for(var i = 0; i < s.options.length; i++)
-        s.options[i].qtext = stextToLines(s.options[i].raw_qtext, s.options_w);
+      for(var i = 0; i < self.cur_speak.options.length; i++)
+        self.cur_speak.options[i].qtext = stextToLines(self.cur_speak.options[i].raw_qtext, self.cur_speak.options_w);
 
       var s = self.cur_speak;
       var n_option_lines = 0;

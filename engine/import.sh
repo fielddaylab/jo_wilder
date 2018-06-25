@@ -16,6 +16,7 @@ while IFS='' read -r LINE || [[ -n "$LINE" ]]; do
         echo -n "" > $FILE
         BLOCK=1;
       else
+        if [ ! -z "`echo $LINE | grep '^template.js'`" ]; then LINE=`echo $LINE | sed 's/^[^ ]* //'`; fi
         if [ "@$LINE" == "@" ]; then
           echo "" >> $FILE
           BLOCK=0;
