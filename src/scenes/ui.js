@@ -3122,6 +3122,7 @@ var personview = function()
       self.ui_state_p = 0;
       self.cur_speak = 0;
       self.cur_speak_command_i = 0;
+      my_avatar.stack_animcycle_t = 0;
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -4155,6 +4156,7 @@ var cutsceneview = function()
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
+      my_avatar.stack_animcycle_t = 0;
       state_t = 0;
 
       if(self.scene_to)
