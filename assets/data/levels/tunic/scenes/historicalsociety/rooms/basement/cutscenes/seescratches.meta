@@ -83,7 +83,8 @@ tmp_cutscene_command.wx = -558.121212121212;
 tmp_cutscene_command.wy = 24.242424242424125;
 tmp_cutscene_command.w = 147;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Why isn't the button working?";
+tmp_cutscene_command.raw_text = "Why doesn't this button EVER work?";
+tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -95,7 +96,7 @@ tmp_cutscene_command.wx = 35.69696969696976;
 tmp_cutscene_command.wy = 158.06060606060598;
 tmp_cutscene_command.w = 201;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You'll need a key card. Wish I had mine...Teddy chewed it up.";
+tmp_cutscene_command.raw_text = "You need a key card. Wish I had mine...Teddy chewed it up.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -132,6 +133,7 @@ tmp_cutscene_command.wy = 152.48484848484853;
 tmp_cutscene_command.w = 240;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "But I need to take the artifact upstairs...";
+tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

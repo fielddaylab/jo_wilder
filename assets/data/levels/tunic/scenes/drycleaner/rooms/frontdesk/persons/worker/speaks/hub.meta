@@ -36,7 +36,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Uh...I'm sort of working a case right now.";
+tmp_speak_command.raw_atext = "I'm sort of working a case right now.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -58,7 +58,7 @@ tmp_speak_command.wx = -73.00000000000419;
 tmp_speak_command.wy = 282.99999999999994;
 tmp_speak_command.w = 252;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_cleaner_recall";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -71,7 +71,7 @@ tmp_speak_command.wx = 68.99999999999993;
 tmp_speak_command.wy = 91;
 tmp_speak_command.w = 41.12794494628906;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -84,7 +84,7 @@ tmp_speak_command.wx = -84.99999999999997;
 tmp_speak_command.wy = 228.99999999999994;
 tmp_speak_command.w = 125.67988586425781;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_cleaner_recall";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -110,7 +110,7 @@ tmp_speak_command.wx = 18.02479392984866;
 tmp_speak_command.wy = 95.99999999999996;
 tmp_speak_command.w = 101.48789978027344;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -136,7 +136,7 @@ tmp_speak_command.wx = -74;
 tmp_speak_command.wy = 258.99999999999994;
 tmp_speak_command.w = 224;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_cleaner_think";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

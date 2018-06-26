@@ -31,7 +31,7 @@ tmp_speak_command.wx = -493.7904170707336;
 tmp_speak_command.wy = 285.98010910074703;
 tmp_speak_command.w = 293.69814225923324;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_wells_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -57,11 +57,11 @@ tmp_speak_command.wx = 300.40212891322835;
 tmp_speak_command.wy = 270.1545469415655;
 tmp_speak_command.w = 177.69814225923324;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_boss_frown";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Heck, I stop at Bean Town every morning!";
+tmp_speak_command.raw_atext = "I stop at Bean Town every morning.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -70,7 +70,7 @@ tmp_speak_command.wx = -306.4579028113834;
 tmp_speak_command.wy = 73.28799563623446;
 tmp_speak_command.w = 162.9998321533203;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

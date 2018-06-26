@@ -110,7 +110,7 @@ tmp_cutscene_command.wx = -97.47199997844655;
 tmp_cutscene_command.wy = 378.0101818439836;
 tmp_cutscene_command.w = 168;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Besides, I'm already almost done!";
+tmp_cutscene_command.raw_text = "Ha. Told you so. Besides, I'm already done!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -84,7 +84,6 @@ tmp_cutscene_command.wy = 23.432993457894135;
 tmp_cutscene_command.w = 316;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I think he's in trouble!";
-tmp_cutscene_command.animcycle_id = "emote_jo_worried";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

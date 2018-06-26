@@ -105,7 +105,7 @@ tmp_cutscene_command.wx = -436.8939393939392;
 tmp_cutscene_command.wy = 282.80303030303014;
 tmp_cutscene_command.w = 163;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I got a note from your teacher...you're missing 7 out of 10 assignments.";
+tmp_cutscene_command.raw_text = "I got a note from your teacher. You missed 7 assignments in a row!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -117,7 +117,7 @@ tmp_cutscene_command.wx = 232.42169398639513;
 tmp_cutscene_command.wy = 138.86391658206227;
 tmp_cutscene_command.w = 151;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Well, I did SOME of those...I just couldn't find them!";
+tmp_cutscene_command.raw_text = "Well, I did SOME of those. I just couldn't find them!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -142,6 +142,7 @@ tmp_cutscene_command.wy = 138.86391658206227;
 tmp_cutscene_command.w = 151;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "No...because history is boring!";
+tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -153,7 +154,7 @@ tmp_cutscene_command.wx = -491.5909090909091;
 tmp_cutscene_command.wy = 279.9242424242424;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I suppose historians are boring too, then?";
+tmp_cutscene_command.raw_text = "I suppose historians are boring too?";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -189,7 +190,19 @@ tmp_cutscene_command.wx = -491.5909090909091;
 tmp_cutscene_command.wy = 279.9242424242424;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Take a look at the artifact. See what you think!";
+tmp_cutscene_command.raw_text = "Your teacher said you could help me for extra credit.";
+tmp_cutscene_command.t = 100;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = -491.5909090909091;
+tmp_cutscene_command.wy = 279.9242424242424;
+tmp_cutscene_command.w = 200;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Go ahead, take a peek at the shirt!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

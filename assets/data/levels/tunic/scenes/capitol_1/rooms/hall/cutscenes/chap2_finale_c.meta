@@ -170,6 +170,7 @@ tmp_cutscene_command.wy = 224.60606063171858;
 tmp_cutscene_command.w = 200.4878387451172;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Who on earth is Teddy?";
+tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -181,7 +182,7 @@ tmp_cutscene_command.wx = -68.121212124908;
 tmp_cutscene_command.wy = 230.66666666685768;
 tmp_cutscene_command.w = 182.48785400390625;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "And where's Leopold?";
+tmp_cutscene_command.raw_text = "And where's your grampa?";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -248,6 +249,7 @@ tmp_cutscene_command.wy = 326.1212121212122;
 tmp_cutscene_command.w = 224;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "There was a bit of a...situation...in my office.";
+tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -260,6 +262,7 @@ tmp_cutscene_command.wy = 76.12121212121198;
 tmp_cutscene_command.w = 236.7518310546875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Wells sabotaged Gramps!";
+tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -279,23 +282,11 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -146.90909090909085;
-tmp_cutscene_command.wy = 276.121212121212;
-tmp_cutscene_command.w = 134.2478790283203;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Whoa there, Jo.";
-tmp_cutscene_command.t = 50;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = -207.5151515151514;
 tmp_cutscene_command.wy = 273.09090909090907;
 tmp_cutscene_command.w = 170;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "One step at a time.";
+tmp_cutscene_command.raw_text = "One step at a time, Jo.";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -339,6 +330,7 @@ tmp_cutscene_command.wy = 138.2424242424242;
 tmp_cutscene_command.w = 145;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "But wait, it gets even better!";
+tmp_cutscene_command.animcycle_id = "emote_jo_happy";
 tmp_cutscene_command.t = 52;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -396,6 +388,7 @@ tmp_cutscene_command.wy = 247.3333333333332;
 tmp_cutscene_command.w = 351;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "You wouldn't BELIEVE the day I've had...";
+tmp_cutscene_command.animcycle_id = "emote_wells_annoyed";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -408,6 +401,7 @@ tmp_cutscene_command.wy = 70.06060606060595;
 tmp_cutscene_command.w = 44.07997131347656;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "YOU!";
+tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -432,6 +426,7 @@ tmp_cutscene_command.wy = 73.09090909090907;
 tmp_cutscene_command.w = 165.49586486816406;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "YOU STOLE TEDDY!";
+tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -444,6 +439,7 @@ tmp_cutscene_command.wy = 239.75757575757564;
 tmp_cutscene_command.w = 168.72784423828125;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I did no such thing!";
+tmp_cutscene_command.animcycle_id = "emote_wells_angry";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -468,6 +464,7 @@ tmp_cutscene_command.wy = 73.09090909090907;
 tmp_cutscene_command.w = 143.223876953125;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Don't play dumb!";
+tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -588,7 +585,19 @@ tmp_cutscene_command.wx = 300.060606060606;
 tmp_cutscene_command.wy = 276.121212121212;
 tmp_cutscene_command.w = 146;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Leopold, I need you to run to your office.";
+tmp_cutscene_command.raw_text = "Nice work on the shirt, Jolie!";
+tmp_cutscene_command.t = 483;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 300.060606060606;
+tmp_cutscene_command.wy = 276.121212121212;
+tmp_cutscene_command.w = 146;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Leopold, can you run back to your office?";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -600,7 +609,7 @@ tmp_cutscene_command.wx = 298.5454545454544;
 tmp_cutscene_command.wy = 277.63636363636357;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "The next artifact should have arrived by now.";
+tmp_cutscene_command.raw_text = "The next artifact should've arrived by now.";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -612,7 +621,7 @@ tmp_cutscene_command.wx = 145.5151515151517;
 tmp_cutscene_command.wy = 276.121212121212;
 tmp_cutscene_command.w = 113.67988586425781;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Alright, boss!";
+tmp_cutscene_command.raw_text = "Sure thing, boss!";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -636,7 +645,7 @@ tmp_cutscene_command.wx = 156.12121212121227;
 tmp_cutscene_command.wy = 323.090909090909;
 tmp_cutscene_command.w = 177;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "We'll take a gander at the next artifact, and then we'll keep looking for Teddy!";
+tmp_cutscene_command.raw_text = "I need to grab the next artifact. Then we'll keep looking for Teddy!";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

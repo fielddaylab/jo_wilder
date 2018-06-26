@@ -21,12 +21,11 @@ tmp_speak_command.wx = -705.8258726395065;
 tmp_speak_command.wy = 122.20798104315023;
 tmp_speak_command.w = 261.15972900390625;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_gramps_sad";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "Oy...where'd my papers get to?";
-tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

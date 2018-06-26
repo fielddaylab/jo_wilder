@@ -89,6 +89,7 @@ tmp_cutscene_command.wy = 133.35014185840885;
 tmp_cutscene_command.w = 39;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Hey!";
+tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -125,6 +126,7 @@ tmp_cutscene_command.wy = 188.2231404958726;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "GAH! And what is THAT doing out of its cage?!";
+tmp_cutscene_command.animcycle_id = "emote_archivist_scared";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -137,6 +139,7 @@ tmp_cutscene_command.wy = 95.57851239669398;
 tmp_cutscene_command.w = 301;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "You stole Teddy! How could you?!";
+tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -158,6 +161,7 @@ tmp_cutscene_command.wy = 162.3153240850475;
 tmp_cutscene_command.w = 288;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Okay, I'm here. What's going on?";
+tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -170,6 +174,7 @@ tmp_cutscene_command.wy = 158.30313705628805;
 tmp_cutscene_command.w = 97;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I told you!";
+tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -194,6 +199,7 @@ tmp_cutscene_command.wy = 198.66115702491604;
 tmp_cutscene_command.w = 221;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "He's been eating my lunch every day this week!";
+tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -206,6 +212,7 @@ tmp_cutscene_command.wy = 97.72727773595138;
 tmp_cutscene_command.w = 117;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "No he hasn't!";
+tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
 tmp_cutscene_command.t = 60;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -299,6 +306,7 @@ tmp_cutscene_command.wy = 148.3856749311294;
 tmp_cutscene_command.w = 41;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "See?!";
+tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -320,6 +328,20 @@ tmp_cutscene_command.wy = 143.4738292011018;
 tmp_cutscene_command.w = 205;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "That thing's a monster!";
+tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
+tmp_cutscene_command.t = 61;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.wx = -1268.6033057851241;
+tmp_cutscene_command.wy = 175.3471074380165;
+tmp_cutscene_command.w = 143;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "Hoo boy.";
+tmp_cutscene_command.animcycle_id = "emote_boss_angry";
 tmp_cutscene_command.t = 61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
