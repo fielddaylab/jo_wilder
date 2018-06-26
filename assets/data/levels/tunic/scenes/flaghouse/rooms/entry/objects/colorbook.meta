@@ -1,0 +1,33 @@
+tmp_object.ww = 87.98534996738672;
+tmp_object.wh = 72.00177749957291;
+tmp_object.wx = -49.87389794193018;
+tmp_object.wy = -87.2622840552314;
+tmp_object.wz = 3;
+tmp_object.act_wx = 117.99183704899941;
+tmp_object.act_wy = 21.00031032693539;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = 35.711280829471036;
+tmp_object.hover_icon_wy = 33.67962457212013;
+tmp_object.animcycle_id = "flaghouse_book";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [];
+tmp_object.notifications_persistent = 0;
+tmp_object.raw_notifications = [
+"Huh... \"The ecology symbol, by Ron Cobb.\"",
+];
+tmp_object.notification_reqs = [[
+"!self",
+]];
+tmp_object.view_overlay_reqs = [[
+]];
+tmp_object.notice_reqs = [[
+"!self",
+]];
+tmp_object.reqs = [[
+"tunic.flaghouse.entry.flag_girl.hello",
+]];
+
