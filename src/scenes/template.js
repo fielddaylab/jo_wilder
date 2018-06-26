@@ -357,6 +357,7 @@ var level = function()
   self.loading_animcycle_ids = [];
   self.loading_animcycle_reqs = [];
   self.deck_animcycle_ids = [];
+  self.stack_animcycle_t = 50;
   self.cursor_w = 0;
   self.cursor_h = 0;
   self.hover_w = 0;
@@ -862,8 +863,8 @@ var speak_command = function()
   self.animcycle_id = "null";
   self.audio_id = "null";
   self.deck_animcycle_ids = [];
-  self.wx = 0; //defines top-left
-  self.wy = 0; //defines top-left
+  self.wx = 0; //defines tip of carat
+  self.wy = 0; //defines tip of carat
   self.w = 0;
   self.h = 0;
   self.raw_atext = "null";
@@ -875,7 +876,7 @@ var speak_command = function()
   self.stack_animcycle_inst;
   self.x = 0;
   self.y = 0;
-  self.text;
+  self.atext;
 }
 
 var speak = function()
@@ -1121,6 +1122,12 @@ var get_requirements_strings = function(reqs)
   return str;
 }
 
+var get_animcycle_id = function(id)
+{
+  if(id == CUTSCENE_COMMAND_IGNORE) return "CUTSCENE_COMMAND_IGNORE";
+  else return "\""+id+"\"";
+}
+
 var get_animcycle_ids = function(ids)
 {
   var str = "[\n";
@@ -1138,35 +1145,36 @@ var print_level_meta = function(l)
   var str = "SAVE level "+l.fqid+"\n"+
   "tmp_level.primary = "+l.primary+";\n"+
   "tmp_level.intro_room_id = \""+l.intro_room_id+"\";\n"+
-  "tmp_level.avatar_walk_animcycle_id = \""+l.avatar_walk_animcycle_id+"\";\n"+
-  "tmp_level.avatar_idle_animcycle_id = \""+l.avatar_idle_animcycle_id+"\";\n"+
-  "tmp_level.avatar_act_animcycle_id = \""+l.avatar_act_animcycle_id+"\";\n"+
+  "tmp_level.avatar_walk_animcycle_id = "+get_animcycle_id(l.avatar_walk_animcycle_id)+";\n"+
+  "tmp_level.avatar_idle_animcycle_id = "+get_animcycle_id(l.avatar_idle_animcycle_id)+";\n"+
+  "tmp_level.avatar_act_animcycle_id = "+get_animcycle_id(l.avatar_act_animcycle_id)+";\n"+
   "tmp_level.avatar_ww = "+l.avatar_ww+";\n"+
   "tmp_level.avatar_wh = "+l.avatar_wh+";\n"+
-  "tmp_level.familiar_walk_animcycle_id = \""+l.familiar_walk_animcycle_id+"\";\n"+
-  "tmp_level.familiar_idle_animcycle_id = \""+l.familiar_idle_animcycle_id+"\";\n"+
-  "tmp_level.familiar_act_animcycle_id = \""+l.familiar_act_animcycle_id+"\";\n"+
+  "tmp_level.familiar_walk_animcycle_id = "+get_animcycle_id(l.familiar_walk_animcycle_id)+";\n"+
+  "tmp_level.familiar_idle_animcycle_id = "+get_animcycle_id(l.familiar_idle_animcycle_id)+";\n"+
+  "tmp_level.familiar_act_animcycle_id = "+get_animcycle_id(l.familiar_act_animcycle_id)+";\n"+
   "tmp_level.familiar_ww = "+l.familiar_ww+";\n"+
   "tmp_level.familiar_wh = "+l.familiar_wh+";\n"+
   "tmp_level.familiar_off_wx = "+l.familiar_off_wx+";\n"+
   "tmp_level.familiar_off_wy = "+l.familiar_off_wy+";\n"+
   "tmp_level.audio_id = \""+l.audio_id+"\";\n"+
-  "tmp_level.exit_animcycle_id = \""+l.exit_animcycle_id+"\";\n"+
-  "tmp_level.toolbar_animcycle_id = \""+l.toolbar_animcycle_id+"\";\n"+
+  "tmp_level.exit_animcycle_id = "+get_animcycle_id(l.exit_animcycle_id)+";\n"+
+  "tmp_level.toolbar_animcycle_id = "+get_animcycle_id(l.toolbar_animcycle_id)+";\n"+
   "tmp_level.toolbar_audio_id = \""+l.toolbar_audio_id+"\";\n"+
-  "tmp_level.map_animcycle_id = \""+l.map_animcycle_id+"\";\n"+
+  "tmp_level.map_animcycle_id = "+get_animcycle_id(l.map_animcycle_id)+";\n"+
   "tmp_level.map_audio_id = \""+l.map_audio_id+"\";\n"+
-  "tmp_level.notebook_animcycle_id = \""+l.notebook_animcycle_id+"\";\n"+
+  "tmp_level.notebook_animcycle_id = "+get_animcycle_id(l.notebook_animcycle_id)+";\n"+
   "tmp_level.notebook_audio_id = \""+l.notebook_audio_id+"\";\n"+
-  "tmp_level.notebook_next_animcycle_id = \""+l.notebook_next_animcycle_id+"\";\n"+
-  "tmp_level.notebook_prev_animcycle_id = \""+l.notebook_prev_animcycle_id+"\";\n"+
-  "tmp_level.icon_map_animcycle_id = \""+l.icon_map_animcycle_id+"\";\n"+
-  "tmp_level.icon_notebook_animcycle_id = \""+l.icon_notebook_animcycle_id+"\";\n"+
-  "tmp_level.ui_hover_animcycle_id = \""+l.ui_hover_animcycle_id+"\";\n"+
-  "tmp_level.ripple_click_animcycle_id = \""+l.ripple_click_animcycle_id+"\";\n"+
+  "tmp_level.notebook_next_animcycle_id = "+get_animcycle_id(l.notebook_next_animcycle_id)+";\n"+
+  "tmp_level.notebook_prev_animcycle_id = "+get_animcycle_id(l.notebook_prev_animcycle_id)+";\n"+
+  "tmp_level.icon_map_animcycle_id = "+get_animcycle_id(l.icon_map_animcycle_id)+";\n"+
+  "tmp_level.icon_notebook_animcycle_id = "+get_animcycle_id(l.icon_notebook_animcycle_id)+";\n"+
+  "tmp_level.ui_hover_animcycle_id = "+get_animcycle_id(l.ui_hover_animcycle_id)+";\n"+
+  "tmp_level.ripple_click_animcycle_id = "+get_animcycle_id(l.ripple_click_animcycle_id)+";\n"+
   "tmp_level.loading_animcycle_ids = "+get_animcycle_ids(l.loading_animcycle_ids)+
   "tmp_level.loading_animcycle_reqs = "+get_requirements_strings(l.loading_animcycle_reqs)+
   "tmp_level.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
+  "tmp_level.stack_animcycle_t = "+l.stack_animcycle_t+";\n"+
   "tmp_level.cursor_w = "+l.cursor_w+";\n"+
   "tmp_level.cursor_h = "+l.cursor_h+";\n"+
   "tmp_level.hover_w = "+l.hover_w+";\n"+
@@ -1201,7 +1209,7 @@ var print_entry_meta = function(l)
   "tmp_entry.wy = "+l.wy+";\n"+
   "tmp_entry.wz = "+l.wz+";\n"+
   "tmp_entry.page = "+l.page+";\n"+
-  "tmp_entry.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_entry.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
   "tmp_entry.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_entry.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_entry.notifications_persistent = "+l.notifications_persistent+";\n"+
@@ -1229,8 +1237,8 @@ var print_scene_meta = function(l)
   "tmp_scene.wy = "+l.wy+";\n"+
   "tmp_scene.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_scene.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_scene.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_scene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_scene.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_scene.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
   "tmp_scene.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_scene.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_scene.notifications_persistent = "+l.notifications_persistent+";\n"+
@@ -1258,7 +1266,7 @@ var print_room_meta = function(l)
   "tmp_room.wh = "+l.wh+";\n"+
   "tmp_room.wx = "+l.wx+";\n"+
   "tmp_room.wy = "+l.wy+";\n"+
-  "tmp_room.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_room.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
   "tmp_room.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_room.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_room.cam_wh = "+l.cam_wh+";\n"+
@@ -1313,10 +1321,10 @@ var print_person_meta = function(l)
   "tmp_person.act_anim = "+l.act_anim+";\n"+
   "tmp_person.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_person.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_person.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_person.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
-  "tmp_person.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
-  "tmp_person.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_person.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_person.hover_cursor_animcycle_id = "+get_animcycle_id(l.hover_cursor_animcycle_id)+";\n"+
+  "tmp_person.hover_icon_animcycle_id = "+get_animcycle_id(l.hover_icon_animcycle_id)+";\n"+
+  "tmp_person.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
   "tmp_person.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_person.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_person.notifications_persistent = "+l.notifications_persistent+";\n"+
@@ -1366,7 +1374,7 @@ var print_speak_meta = function(l)
     "tmp_speak_command.wy = "+c.wy+";\n"+
     "tmp_speak_command.w = "+c.w+";\n"+
     "tmp_speak_command.h = "+c.h+";\n"+
-    "tmp_speak_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
+    "tmp_speak_command.animcycle_id = "+get_animcycle_id(c.animcycle_id)+";\n"+
     "tmp_speak_command.audio_id = \""+c.audio_id+"\";\n"+
     "tmp_speak_command.deck_animcycle_ids = "+get_animcycle_ids(c.deck_animcycle_ids)+
     "tmp_speak_command.raw_atext = \""+c.raw_atext.replace(/"/g,"\\\"")+"\";\n"+
@@ -1421,11 +1429,11 @@ var print_object_meta = function(l)
   "tmp_object.act_anim = "+l.act_anim+";\n"+
   "tmp_object.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_object.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_object.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_object.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
-  "tmp_object.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
-  "tmp_object.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
-  "tmp_object.view_overlay_animcycle_id = \""+l.view_overlay_animcycle_id+"\";\n"+
+  "tmp_object.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_object.hover_cursor_animcycle_id = "+get_animcycle_id(l.hover_cursor_animcycle_id)+";\n"+
+  "tmp_object.hover_icon_animcycle_id = "+get_animcycle_id(l.hover_icon_animcycle_id)+";\n"+
+  "tmp_object.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
+  "tmp_object.view_overlay_animcycle_id = "+get_animcycle_id(l.view_overlay_animcycle_id)+";\n"+
   "tmp_object.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_object.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_object.notifications_persistent = "+l.notifications_persistent+";\n"+
@@ -1458,10 +1466,10 @@ var print_observation_meta = function(l)
   "tmp_observation.act_anim = "+l.act_anim+";\n"+
   "tmp_observation.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_observation.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_observation.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_observation.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
-  "tmp_observation.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
-  "tmp_observation.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_observation.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_observation.hover_cursor_animcycle_id = "+get_animcycle_id(l.hover_cursor_animcycle_id)+";\n"+
+  "tmp_observation.hover_icon_animcycle_id = "+get_animcycle_id(l.hover_icon_animcycle_id)+";\n"+
+  "tmp_observation.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
   "tmp_observation.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_observation.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_observation.raw_text = \""+l.raw_text.replace(/"/g,"\\\"")+"\";\n"+
@@ -1489,7 +1497,7 @@ var print_view_meta = function(l)
 {
   var str = "SAVE view "+l.fqid+"\n"+
   "tmp_view.primary = "+l.primary+";\n"+
-  "tmp_view.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_view.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
   "tmp_view.magnify = "+l.magnify+";\n"+
   "tmp_view.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_view.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
@@ -1516,7 +1524,7 @@ var print_zone_meta = function(l)
   "tmp_zone.wh = "+l.wh+";\n"+
   "tmp_zone.wx = "+l.wx+";\n"+
   "tmp_zone.wy = "+l.wy+";\n"+
-  "tmp_zone.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_zone.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
   "tmp_zone.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_zone.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_zone.target_view = \""+l.target_view+"\";\n"+
@@ -1548,10 +1556,10 @@ var print_porthole_meta = function(l)
   "tmp_porthole.act_anim = "+l.act_anim+";\n"+
   "tmp_porthole.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_porthole.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_porthole.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_porthole.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
-  "tmp_porthole.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
-  "tmp_porthole.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_porthole.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_porthole.hover_cursor_animcycle_id = "+get_animcycle_id(l.hover_cursor_animcycle_id)+";\n"+
+  "tmp_porthole.hover_icon_animcycle_id = "+get_animcycle_id(l.hover_icon_animcycle_id)+";\n"+
+  "tmp_porthole.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
   "tmp_porthole.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_porthole.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_porthole.target_room = \""+l.target_room+"\";\n"+
@@ -1586,10 +1594,10 @@ var print_wildcard_meta = function(l)
   "tmp_wildcard.act_anim = "+l.act_anim+";\n"+
   "tmp_wildcard.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_wildcard.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_wildcard.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_wildcard.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
-  "tmp_wildcard.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
-  "tmp_wildcard.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_wildcard.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_wildcard.hover_cursor_animcycle_id = "+get_animcycle_id(l.hover_cursor_animcycle_id)+";\n"+
+  "tmp_wildcard.hover_icon_animcycle_id = "+get_animcycle_id(l.hover_icon_animcycle_id)+";\n"+
+  "tmp_wildcard.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
   "tmp_wildcard.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_wildcard.audio_id = \""+l.audio_id+"\";\n"+
   "tmp_wildcard.notifications_persistent = "+l.notifications_persistent+";\n"+
@@ -1622,10 +1630,10 @@ var print_cutscene_meta = function(l)
   "tmp_cutscene.act_anim = "+l.act_anim+";\n"+
   "tmp_cutscene.hover_icon_wx = "+l.hover_icon_wx+";\n"+
   "tmp_cutscene.hover_icon_wy = "+l.hover_icon_wy+";\n"+
-  "tmp_cutscene.animcycle_id = \""+l.animcycle_id+"\";\n"+
-  "tmp_cutscene.hover_cursor_animcycle_id = \""+l.hover_cursor_animcycle_id+"\";\n"+
-  "tmp_cutscene.hover_icon_animcycle_id = \""+l.hover_icon_animcycle_id+"\";\n"+
-  "tmp_cutscene.notice_icon_animcycle_id = \""+l.notice_icon_animcycle_id+"\";\n"+
+  "tmp_cutscene.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
+  "tmp_cutscene.hover_cursor_animcycle_id = "+get_animcycle_id(l.hover_cursor_animcycle_id)+";\n"+
+  "tmp_cutscene.hover_icon_animcycle_id = "+get_animcycle_id(l.hover_icon_animcycle_id)+";\n"+
+  "tmp_cutscene.notice_icon_animcycle_id = "+get_animcycle_id(l.notice_icon_animcycle_id)+";\n"+
   "tmp_cutscene.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_cutscene.notifications_persistent = "+l.notifications_persistent+";\n"+
   "tmp_cutscene.raw_notifications = "+get_notifications_string(l.raw_notifications)+
@@ -1677,7 +1685,7 @@ var print_cutscene_meta = function(l)
         if(c.wz != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
         if(c.a  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.a = "+c.a+";\n";
         str +=
-        "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
+        "tmp_cutscene_command.animcycle_id = "+get_animcycle_id(c.animcycle_id)+";\n"+
         "tmp_cutscene_command.deck_animcycle_ids = "+get_animcycle_ids(c.deck_animcycle_ids)+
         "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n";
         if(c.t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
@@ -1704,7 +1712,7 @@ var print_cutscene_meta = function(l)
         if(c.wy != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
         if(c.wz != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wz = "+c.wz+";\n";
         str +=
-        "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
+        "tmp_cutscene_command.animcycle_id = "+get_animcycle_id(c.animcycle_id)+";\n"+
         "tmp_cutscene_command.deck_animcycle_ids = "+get_animcycle_ids(c.deck_animcycle_ids)+
         "tmp_cutscene_command.animcycle_offset_t = "+c.animcycle_offset_t+";\n";
         if(c.t != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
@@ -1723,7 +1731,7 @@ var print_cutscene_meta = function(l)
         if(c.wy != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.wy = "+c.wy+";\n";
         if(c.w  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.w = "+c.w+";\n";
         if(c.h  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.h = "+c.h+";\n";
-        str += "tmp_cutscene_command.animcycle_id = \""+c.animcycle_id+"\";\n"+
+        str += "tmp_cutscene_command.animcycle_id = "+get_animcycle_id(c.animcycle_id)+";\n"+
         "tmp_cutscene_command.raw_text = \""+c.raw_text.replace(/"/g,"\\\"")+"\";\n";
         if(c.t  != CUTSCENE_COMMAND_IGNORE) str += "tmp_cutscene_command.t = "+c.t+";\n";
         break;
@@ -1859,7 +1867,7 @@ var print_inert_meta = function(l)
   "tmp_inert.wy = "+l.wy+";\n"+
   "tmp_inert.wz = "+l.wz+";\n"+
   "tmp_inert.g = "+l.g+";\n"+
-  "tmp_inert.animcycle_id = \""+l.animcycle_id+"\";\n"+
+  "tmp_inert.animcycle_id = "+get_animcycle_id(l.animcycle_id)+";\n"+
   "tmp_inert.deck_animcycle_ids = "+get_animcycle_ids(l.deck_animcycle_ids)+
   "tmp_inert.reqs = "+get_requirements_string(l.reqs);
   console.log(str);

@@ -2515,6 +2515,13 @@ all:
 code:"20788517455200425594890812648828689977273475064102375935986299440828330336863832043899605833431963121926096"
 };
 
+/*
+var str = "";
+for(var i = 0; i < save_codes.length; i++)
+  str += save_codes[i]+"\n";
+console.log(str);
+*/
+
 var url_json = jsonFromURL();
 var cookie;
 if(url_json.save)

@@ -27,6 +27,7 @@ tmp_level.icon_notebook_animcycle_id = "null";
 tmp_level.ui_hover_animcycle_id = "null";
 tmp_level.ripple_click_animcycle_id = "null";
 tmp_level.deck_animcycle_ids = [];
+tmp_level.stack_animcycle_t = 50;
 tmp_level.cursor_w = 40;
 tmp_level.cursor_h = 40;
 tmp_level.hover_w = 40;

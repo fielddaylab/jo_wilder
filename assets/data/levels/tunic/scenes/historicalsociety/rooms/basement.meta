@@ -1,4 +1,4 @@
-tmp_room.primary = false;
+tmp_room.primary = 1;
 tmp_room.ww = 1600;
 tmp_room.wh = 980;
 tmp_room.wx = 0;

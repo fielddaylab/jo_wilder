@@ -127,6 +127,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     self.cur_command = self.commands[self.cur_command_i];
     self.consume_command();
 
+    my_notebookview.page = 0;
     my_notebookview.unlock_content();
   }
 
@@ -145,12 +146,12 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
         if(c.speaker == SPEAKER_PERSON)
         {
           self.person.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          self.person.stack_animcycle_t = 50;
+          self.person.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
         else
         {
           my_avatar.stack_animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-          my_avatar.stack_animcycle_t = 50;
+          my_avatar.stack_animcycle_t = cur_level.stack_animcycle_t;
         }
       }
 
@@ -183,6 +184,8 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           state_to = state_stack;
           state_cur = STATE_TRANSITION;
           state_t = 0;
+          for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+            my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
         }
       }
@@ -208,15 +211,15 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
     self.w = 0;
     self.h = 0;
     self.cur_speak_command;
-    self.consume_speak_command = function(s)
+    self.src;
+    self.consume_speak_command = function(src,s)
     {
       self.cur_speak_command = s;
+      self.src = src;
       self.x = self.cur_speak_command.x;
       self.y = self.cur_speak_command.y;
       self.w = self.cur_speak_command.w;
       self.h = self.cur_speak_command.h;
-      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
-      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
     }
     self.edit = function()
     {
@@ -224,17 +227,30 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
       self.cur_speak_command.y = self.y;
       self.cur_speak_command.w = self.w;
       self.cur_speak_command.h = self.h;
-      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,self.cur_speak_command.x);
-      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,self.cur_speak_command.y);
-
       self.cur_speak_command.atext = stextToLines(self.cur_speak_command.raw_atext, self.cur_speak_command.w);
+
+      var x = self.cur_speak_command.x;
+      var y = self.cur_speak_command.y;
+
+      if(self.cur_speak_command.x + self.cur_speak_command.w/2 > self.src.x + self.src.w/2)
+        x += tail_w/2;
+      else
+        x += self.cur_speak_command.w-tail_w/2;
+      y += tail_h+self.cur_speak_command.atext.length*self.cur_speak_command.h+bubble_pad;
+
+      self.cur_speak_command.wx = worldSpaceXpt(my_camera,canv,x);
+      self.cur_speak_command.wy = worldSpaceYpt(my_camera,canv,y);
     }
   })();
   self.dragStart = function(evt)
   {
     self.edit_o = 0;
     if(self.cur_command.command != FINALE_WILDCARD_COMMAND_SPEAK) return;
-    if(!self.edit_o && ptWithinBox(self.cur_speak.commands[self.cur_speak_command_i],evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(self.cur_speak.commands[self.cur_speak_command_i]); self.cur_speak.dirty = true; }
+    var cur_speak_command = self.cur_speak.commands[self.cur_speak_command_i];
+    var src;
+    if(cur_speak_command.speaker == SPEAKER_PERSON) src = self.person;
+    else                                            src = my_avatar;
+    if(!self.edit_o && ptWithinBox(cur_speak_command,evt.doX,evt.doY)) { self.edit_o = self.speak_editor; self.speak_editor.consume_speak_command(src,cur_speak_command); self.cur_speak.dirty = true; }
 
     if(!self.edit_o) return;
 
@@ -389,6 +405,13 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
       speak_command.x = screenSpaceXpt(my_camera,canv,speak_command.wx);
       speak_command.y = screenSpaceYpt(my_camera,canv,speak_command.wy);
 
+      var src;
+      if(speak_command.speaker == SPEAKER_PERSON) src = self.person;
+      else                                        src = my_avatar;
+      if(speak_command.wx > src.wx) speak_command.x += -tail_w/2;
+      else                          speak_command.x += -speak_command.w+tail_w/2;
+      speak_command.y += -tail_h-speak_command.atext.length*speak_command.h-bubble_pad;
+
       self.ui_state_t++;
       self.ui_state_p = self.ui_state_t/self.ui_state_t_max[self.ui_state];
       switch(self.ui_state)
@@ -522,6 +545,9 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           ctx.strokeRect(speak_command.x,speak_command.y+yoff,speak_command.w,speak_command.h);
           oyoff += speak_command.h;
         }
+
+        ctx.fillStyle = red;
+        ctx.fillRect(screenSpaceXpt(my_camera,canv,speak_command.wx)-2,screenSpaceYpt(my_camera,canv,speak_command.wy)-2,4,4);
       }
     }
 
