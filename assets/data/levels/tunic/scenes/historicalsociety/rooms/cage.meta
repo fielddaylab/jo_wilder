@@ -8,7 +8,7 @@ tmp_room.audio_id = "null";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 749.0909090909091;
-tmp_room.nav_min_wz = 1;
+tmp_room.nav_min_wz = 0;
 tmp_room.nav_max_wz = 1;
 tmp_room.navs = [
 {wx:-1068, wy:-216.0454545454547, ww:1771.2727272727273, wh:229.54545454545416 },

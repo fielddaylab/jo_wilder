@@ -1743,12 +1743,42 @@ var navigable = function()
 
     var avi_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_avatar.wy);
     var i = 0;
-    for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
-      draw_junk(self.cache_available_drawables[i]);
-    if(my_familiar.available) my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
-    my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
-    for(; i < self.cache_available_drawables.length; i++)
-      draw_junk(self.cache_available_drawables[i]);
+
+    //essentially "switch sort"
+    if(my_familiar.available)
+    {
+      var fami_wz = mapVal(self.room.nav_min_wz_wy, self.room.nav_max_wz_wy, self.room.nav_min_wz, self.room.nav_max_wz, my_familiar.wy)
+      if(fami_wz > avi_wz)
+      {
+        for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
+          draw_junk(self.cache_available_drawables[i]);
+        my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < fami_wz; i++)
+          draw_junk(self.cache_available_drawables[i]);
+        my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        for(; i < self.cache_available_drawables.length; i++)
+          draw_junk(self.cache_available_drawables[i]);
+      }
+      else
+      {
+        for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < fami_wz; i++)
+          draw_junk(self.cache_available_drawables[i]);
+        my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
+          draw_junk(self.cache_available_drawables[i]);
+        my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        for(; i < self.cache_available_drawables.length; i++)
+          draw_junk(self.cache_available_drawables[i]);
+      }
+    }
+    else
+    {
+      for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
+        draw_junk(self.cache_available_drawables[i]);
+      my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+      for(; i < self.cache_available_drawables.length; i++)
+        draw_junk(self.cache_available_drawables[i]);
+    }
 
     if(SHOW_GROUNDS && QUALITY) for(var i = 0; i < self.cache_available_fg_drawables.length; i++) { var d = self.cache_available_fg_drawables[i]; drawCanvMaskedImage(d.animcycle_inst.img, d.dx, d.dy, d.dw, d.dh, canv, ctx); }
 
