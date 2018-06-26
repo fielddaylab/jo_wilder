@@ -20,7 +20,7 @@ tmp_speak_command.wx = -95.66042028132485;
 tmp_speak_command.wy = 144.8556806550665;
 tmp_speak_command.w = 186;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_archivist_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -111,7 +111,7 @@ tmp_speak_command.wx = 125.59107570479308;
 tmp_speak_command.wy = 15.877175025588492;
 tmp_speak_command.w = 142.26388549804688;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -124,7 +124,7 @@ tmp_speak_command.wx = -90.98210750912718;
 tmp_speak_command.wy = 142.8290685772773;
 tmp_speak_command.w = 211;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -141,7 +141,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Nevermind! I mean-yes!";
+tmp_speak_command.raw_atext = "Never mind! I mean-yes!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -202,7 +202,7 @@ tmp_speak_command.wx = 127.29322514184513;
 tmp_speak_command.wy = 15.477993858751235;
 tmp_speak_command.w = 125;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

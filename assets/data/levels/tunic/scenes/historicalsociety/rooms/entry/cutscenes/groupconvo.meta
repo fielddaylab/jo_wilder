@@ -112,8 +112,7 @@ tmp_cutscene_command.wx = 68.84590253062348;
 tmp_cutscene_command.wy = 187.69654863976103;
 tmp_cutscene_command.w = 168;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Besides, I'm already almost done!";
+tmp_cutscene_command.raw_text = "Ha. Told you so. Besides, I'm already done!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

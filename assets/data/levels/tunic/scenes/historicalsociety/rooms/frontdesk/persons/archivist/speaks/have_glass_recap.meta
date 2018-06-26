@@ -20,7 +20,7 @@ tmp_speak_command.wx = -92.00409416581365;
 tmp_speak_command.wy = 141.86079836233372;
 tmp_speak_command.w = 210;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "archivist";
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -33,7 +33,7 @@ tmp_speak_command.wx = -90.65301944728759;
 tmp_speak_command.wy = 139.83418628454456;
 tmp_speak_command.w = 210;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "archivist";
+tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

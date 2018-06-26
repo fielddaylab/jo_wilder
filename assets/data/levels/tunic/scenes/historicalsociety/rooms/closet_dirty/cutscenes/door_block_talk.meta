@@ -48,8 +48,7 @@ tmp_cutscene_command.wx = -403.3477843611658;
 tmp_cutscene_command.wy = 110.10426686331333;
 tmp_cutscene_command.w = 248;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I should talk to Gramps again.";
+tmp_cutscene_command.raw_text = "Poor Gramps! I should make sure he's okay.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -63,7 +63,20 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Here, let me look it up.";
+tmp_speak_command.raw_atext = "Not sure. Here, let me look it up.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -350.5480893924234;
+tmp_speak_command.wy = 340.008685622624;
+tmp_speak_command.w = 198.1357879638672;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_librarian_surprised";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Oh my!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -85,7 +98,7 @@ tmp_speak_command.wx = -175.94202878636287;
 tmp_speak_command.wy = 106.95240856634692;
 tmp_speak_command.w = 122.27189636230469;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -115,7 +128,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I think he gets coffee with the archivist sometimes. You could try him.";
+tmp_speak_command.raw_atext = "You could try the archivist. He knows everybody!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

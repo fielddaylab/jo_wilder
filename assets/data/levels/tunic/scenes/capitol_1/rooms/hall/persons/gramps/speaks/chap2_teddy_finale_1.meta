@@ -44,7 +44,7 @@ tmp_speak_command.wx = 313.39573011541387;
 tmp_speak_command.wy = 131.82426494490278;
 tmp_speak_command.w = 239.17579650878906;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_boss_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -57,7 +57,7 @@ tmp_speak_command.wx = 311.31780803749155;
 tmp_speak_command.wy = 136.49958962022743;
 tmp_speak_command.w = 239.69814225923326;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_boss_frown";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -70,7 +70,7 @@ tmp_speak_command.wx = -109.63457291488939;
 tmp_speak_command.wy = -44.01989089925324;
 tmp_speak_command.w = 348.39971923828125;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

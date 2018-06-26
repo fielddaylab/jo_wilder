@@ -9,7 +9,7 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "page";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"The number matches the slip.",
+"It's a match!",
 "Theodora Youmans must be the owner!",
 ];
 tmp_zone.raw_notification_ws = [

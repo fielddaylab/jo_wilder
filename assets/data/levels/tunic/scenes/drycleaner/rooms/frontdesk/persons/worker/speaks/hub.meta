@@ -36,7 +36,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Uh...I'm sort of working a case right now.";
+tmp_speak_command.raw_atext = "I'm sort of working a case right now.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -58,7 +58,7 @@ tmp_speak_command.wx = -69.22857142857566;
 tmp_speak_command.wy = 159.79999999999993;
 tmp_speak_command.w = 252;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_cleaner_recall";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -71,7 +71,7 @@ tmp_speak_command.wx = 205.94814889090395;
 tmp_speak_command.wy = 35.05714285714286;
 tmp_speak_command.w = 41.12794494628906;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -84,7 +84,7 @@ tmp_speak_command.wx = -68.65714285714282;
 tmp_speak_command.wy = 155.45714285714283;
 tmp_speak_command.w = 125.67988586425781;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_cleaner_recall";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -110,7 +110,7 @@ tmp_speak_command.wx = 203.14668549653393;
 tmp_speak_command.wy = 32.514285714285656;
 tmp_speak_command.w = 101.48789978027344;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -136,7 +136,7 @@ tmp_speak_command.wx = -66.45714285714283;
 tmp_speak_command.wy = 167.22857142857134;
 tmp_speak_command.w = 224;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_cleaner_think";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
