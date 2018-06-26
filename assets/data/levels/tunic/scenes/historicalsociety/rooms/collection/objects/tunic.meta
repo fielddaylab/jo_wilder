@@ -22,8 +22,8 @@ tmp_object.raw_notifications = [
 "Guess I should look for clues.",
 ];
 tmp_object.raw_notification_ws = [
-242.7038116455078,
-138,
+241.04774475097656,
+133,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.collection.tunic.slip",

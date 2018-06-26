@@ -21,6 +21,7 @@ tmp_object.raw_notifications = [
 "Found it!",
 ];
 tmp_object.raw_notification_ws = [
+78.08793640136719,
 ];
 tmp_object.notification_reqs = [[
 ]];
