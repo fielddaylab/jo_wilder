@@ -31789,15 +31789,16 @@ tmp_inert.id = "crane";
 tmp_inert.fqid = "tunic.wildlife.center.crane";
 {
 tmp_inert.ww = 234.81590909090923;
-tmp_inert.wh = 252.1000000000001;
-tmp_inert.wx = 896.7965909090916;
-tmp_inert.wy = -608.6477272727266;
+tmp_inert.wh = 252.10000000000014;
+tmp_inert.wx = 483.4956200353053;
+tmp_inert.wy = -535.589474845542;
 tmp_inert.wz = 0;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "wildlife_animal_crane";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
+"tunic.wildlife.center.expert.gps",
 ]];
 
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
@@ -31818,6 +31819,7 @@ tmp_inert.animcycle_id = "wildlife_animal_crane_cup";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
+"!tunic.wildlife.center.expert.gps",
 ]];
 
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
