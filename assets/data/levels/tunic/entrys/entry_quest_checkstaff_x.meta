@@ -17,5 +17,7 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.historicalsociety.entry.directory.closeup.archivist",
+],[
+"tunic.historicalsociety.frontdesk.key",
 ]];
 

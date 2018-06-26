@@ -5800,6 +5800,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.entry.directory.closeup.archivist",
 "tunic.historicalsociety.frontdesk.key",
 ]];
 
@@ -6149,6 +6150,8 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.historicalsociety.entry.directory.closeup.archivist",
+],[
+"tunic.historicalsociety.frontdesk.key",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -26292,10 +26295,10 @@ tmp_observation = new observation();
 tmp_observation.id = "outtolunch";
 tmp_observation.fqid = "tunic.historicalsociety.stacks.outtolunch";
 {
-tmp_observation.ww = 84.99786545329361;
-tmp_observation.wh = 152.0000521325957;
-tmp_observation.wx = -11.17981401021931;
-tmp_observation.wy = 157.98339672352802;
+tmp_observation.ww = 133.40775432666263;
+tmp_observation.wh = 258.85864130612373;
+tmp_observation.wx = -8.346298144963598;
+tmp_observation.wy = 110.8398164224784;
 tmp_observation.wz = -1;
 tmp_observation.act_wx = 41.00000000693774;
 tmp_observation.act_wy = -90;
