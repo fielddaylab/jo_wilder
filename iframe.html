@@ -75,6 +75,7 @@ var game_height = 660;
 var game_first_audio_played = 0;
 function fullscreen()
 {
+  return; //for debugging, disable fullscreen
   var el = document.body;
   var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;
   if(requestMethod) requestMethod.call(el);

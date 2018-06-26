@@ -5029,7 +5029,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_entry.interactive = 1;
 
@@ -5219,8 +5219,8 @@ tmp_entry.fqid = "tunic.entry_ecologyflag";
 {
 tmp_entry.ww = 371;
 tmp_entry.wh = 173.00000000000003;
-tmp_entry.wx = -218.5;
-tmp_entry.wy = 43.500000000000014;
+tmp_entry.wx = -215.5;
+tmp_entry.wy = 195.49999999999994;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_ecologyflag_img";
@@ -5237,7 +5237,6 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.flaghouse.entry.flag_girl.symbol",
 ]];
-tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -6983,8 +6982,8 @@ tmp_entry.fqid = "tunic.entry_theta";
 {
 tmp_entry.ww = 371;
 tmp_entry.wh = 173.00000000000003;
-tmp_entry.wx = -215.5;
-tmp_entry.wy = 194.5;
+tmp_entry.wx = -217.5;
+tmp_entry.wy = 20.4999999999999;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_theta_img";
@@ -7001,7 +7000,6 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.flaghouse.entry.flag_girl.symbol",
 ]];
-tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -10975,7 +10973,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That is definitely no slip...";
+tmp_speak_command.raw_atext = "I don't think that's relevant here...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13433,7 +13431,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That is definitely no slip...";
+tmp_speak_command.raw_atext = "I don't think that's relevant here...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -26359,39 +26357,6 @@ tmp_view.reqs = [[
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
-tmp_zone = new zone();
-tmp_zone.id = "bingo";
-tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_2_old.bingo";
-{
-tmp_zone.ww = 107.00000000000001;
-tmp_zone.wh = 156;
-tmp_zone.wx = -172.09999999999988;
-tmp_zone.wy = -138.51428571428573;
-tmp_zone.animcycle_id = "null";
-tmp_zone.audio_id = "null";
-tmp_zone.deck_animcycle_ids = [
-];
-tmp_zone.target_view = "pic_2";
-tmp_zone.notifications_persistent = 0;
-tmp_zone.raw_notifications = [
-"Hey, this is Youmans!",
-"And look! She's wearing the shirt!",
-"I should go to the Capitol and tell everyone!",
-];
-tmp_zone.raw_notification_ws = [
-178.0958251953125,
-291.999755859375,
-227,
-];
-tmp_zone.notification_reqs = [[
-]];
-tmp_zone.reqs = [[
-]];
-
-tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
-for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
-}
-tmp_view.zones.push(tmp_zone);
 tmp_zone = new zone();
 tmp_zone.id = "next";
 tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_2_old.next";
