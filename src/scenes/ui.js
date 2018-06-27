@@ -100,7 +100,7 @@ var loader = function()
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
     get_audio(level.audio_id,level.audios).aud.loop = true;
-    get_audio(level.audio_id,level.audios).aud.play();
+    if(AUDIO) get_audio(level.audio_id,level.audios).aud.play();
   }
 
   self.consume_room = function(room)
@@ -409,26 +409,26 @@ var avatar = function()
         my_loader.unlock_content();
         switch(cur_act.act)
         {
-          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_PORTHOLE:
           {
             if(cur_act.target_room_found)
             {
               state_to = state_stack;
-              get_audio(cur_act.audio_id,cur_level.audios).aud.play();
+              if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play();
             }
             else //go to map
             {
               my_navigable.selected_act = 0;
               state_to = STATE_MAP;
               my_mapview.unlock_content();
-              get_audio(level.map_audio_id,cur_level.audios).aud.play();
+              if(AUDIO) get_audio(level.map_audio_id,cur_level.audios).aud.play();
             }
           }
           break;
-          case ACT_WILDCARD: state_to = STATE_WILDCARD; my_wildcardview.consume_wildcard(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_WILDCARD: state_to = STATE_WILDCARD; my_wildcardview.consume_wildcard(cur_act); if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_CUTSCENE:
           {
             state_stack = STATE_CUTSCENE;
@@ -1894,7 +1894,7 @@ var toolbar = function()
       my_loader.unlock_content();
       state_t = 0;
       my_mapview.unlock_content();
-      get_audio(level.map_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(level.map_audio_id,cur_level.audios).aud.play();
     }
     if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
@@ -1905,7 +1905,7 @@ var toolbar = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
-      get_audio(level.notebook_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(level.notebook_audio_id,cur_level.audios).aud.play();
     }
   }
 
@@ -2307,16 +2307,16 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
-      get_audio(level.notebook_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(level.notebook_audio_id,cur_level.audios).aud.play();
     }
     else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
     {
-      get_audio(level.notebook_turn_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(level.notebook_turn_audio_id,cur_level.audios).aud.play();
       self.page--;
     }
     else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
     {
-      get_audio(level.notebook_turn_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(level.notebook_turn_audio_id,cur_level.audios).aud.play();
       self.page++;
     }
   }
@@ -3864,10 +3864,10 @@ var cutsceneview = function()
         state_t = 0;
         switch(e.act)
         {
-          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_WILDCARD:    state_to = STATE_WILDCARD;    my_wildcardview.consume_wildcard(cur_act);       get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_WILDCARD:    state_to = STATE_WILDCARD;    my_wildcardview.consume_wildcard(cur_act);       if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
         }
         break;
       case CUTSCENE_COMMAND_SPEAK:
