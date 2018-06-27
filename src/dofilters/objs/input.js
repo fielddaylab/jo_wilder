@@ -129,7 +129,7 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
   self.h = h;
   self.canv = canv;
 
-  self.bg_color = white;
+  self.bg_color = "rgba(255,255,255,0.1)";
 
   self.txt = txt;
   self.box = document.createElement('input');
@@ -178,7 +178,7 @@ function DomTextBox(x,y,w,h,canv,txt,callback)
     canv.context.fillRect(self.x,self.y,self.w,self.h);
     canv.context.strokeStyle = black;
     canv.context.strokeRect(self.x,self.y,self.w,self.h);
-    canv.context.fillStyle = black;
+    canv.context.fillStyle = white;
     if(self.box_on)
     {
       //
