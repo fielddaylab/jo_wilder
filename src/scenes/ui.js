@@ -2174,11 +2174,11 @@ var notebookview = function()
     screenSpace(my_ui_camera,canv,self.notebook);
     self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
-    var prev_x_edge = 25;
-    var prev_y_edge = canv.height-20;
-    var next_x_edge = canv.width-35;
-    var next_y_edge = canv.height-20;
-    var page_s = 100;
+    var prev_x_edge = 10;
+    var prev_y_edge = canv.height-10;
+    var next_x_edge = canv.width-10;
+    var next_y_edge = canv.height-10;
+    var page_s = 50;
     self.prev_box = {x:prev_x_edge,        y:prev_y_edge-page_s, w:page_s, h:page_s };
     self.next_box = {x:next_x_edge-page_s, y:prev_y_edge-page_s, w:page_s, h:page_s };
   }
