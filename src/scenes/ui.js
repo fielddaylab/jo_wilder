@@ -424,7 +424,7 @@ var avatar = function()
               my_navigable.selected_act = 0;
               state_to = STATE_MAP;
               my_mapview.unlock_content();
-              if(AUDIO) get_audio(level.map_audio_id,cur_level.audios).aud.play();
+              if(AUDIO) get_audio(cur_level.map_audio_id,cur_level.audios).aud.play();
             }
           }
           break;
@@ -1894,7 +1894,7 @@ var toolbar = function()
       my_loader.unlock_content();
       state_t = 0;
       my_mapview.unlock_content();
-      if(AUDIO) get_audio(level.map_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(cur_level.map_audio_id,cur_level.audios).aud.play();
     }
     if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
@@ -1905,7 +1905,7 @@ var toolbar = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
-      if(AUDIO) get_audio(level.notebook_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(cur_level.notebook_audio_id,cur_level.audios).aud.play();
     }
   }
 
@@ -2307,16 +2307,16 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
-      if(AUDIO) get_audio(level.notebook_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(cur_level.notebook_audio_id,cur_level.audios).aud.play();
     }
     else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
     {
-      if(AUDIO) get_audio(level.notebook_turn_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud.play();
       self.page--;
     }
     else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
     {
-      if(AUDIO) get_audio(level.notebook_turn_audio_id,cur_level.audios).aud.play();
+      if(AUDIO) get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud.play();
       self.page++;
     }
   }
