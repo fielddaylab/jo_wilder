@@ -65,6 +65,12 @@ var loader = function()
 
   self.consume_level = function(level)
   {
+    get_audio(level.audio_id,level.audios).aud.load();
+    get_audio(level.toolbar_audio_id,level.audios).aud.load();
+    get_audio(level.map_audio_id,level.audios).aud.load();
+    get_audio(level.notebook_audio_id,level.audios).aud.load();
+    get_audio(level.notebook_turn_audio_id,level.audios).aud.load();
+
     self.load_animcycle(find_animcycle(level.avatar_walk_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_idle_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
@@ -93,8 +99,8 @@ var loader = function()
     }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
-    get_audio(level.audio_id,cur_level.audios).aud.loop = true;;
-    get_audio(level.audio_id,cur_level.audios).aud.play();
+    get_audio(level.audio_id,level.audios).aud.loop = true;
+    get_audio(level.audio_id,level.audios).aud.play();
   }
 
   self.consume_room = function(room)
