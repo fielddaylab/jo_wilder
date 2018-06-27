@@ -131,7 +131,7 @@ tmp_wildcard.reqs = [[
     offy = lerp(-pad,pad,img_t);
     if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
     if(img_t > 0.9) ctx.globalAlpha = 1-((img_t-0.9)/0.1);
-    ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
+    if(img_i < self.imgs.length) ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
     ctx.globalAlpha = 1;
 
     var bottom = canv.height;
