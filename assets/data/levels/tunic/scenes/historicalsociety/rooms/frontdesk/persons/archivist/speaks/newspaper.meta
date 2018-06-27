@@ -50,46 +50,20 @@ tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "YOU calm down. Wells took my badger!";
+tmp_speak_command.raw_atext = "How can I find him???";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -2.2142857127970856;
-tmp_speak_command.wy = 139.02857142857133;
-tmp_speak_command.w = 246.19180297851562;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "You have a badger for a pet?! Sounds terrifying.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 128.15714285714287;
-tmp_speak_command.wy = 14.771428571428578;
-tmp_speak_command.w = 239.3197784423828;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Teddy's my friend! I won't stop until he's safe.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -4.985714285714238;
-tmp_speak_command.wy = 140.39999999999998;
-tmp_speak_command.w = 154.47994995117188;
+tmp_speak_command.wx = -0.354261001317802;
+tmp_speak_command.wy = 137.20000000000005;
+tmp_speak_command.w = 192;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You're just a kid. What can you do?";
+tmp_speak_command.raw_atext = "No idea.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -102,7 +76,20 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "A lot! Look at Theodora Youmans. She was just one lady, but she changed the world!";
+tmp_speak_command.raw_atext = "Ugh. Fine.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 130.41428571428582;
+tmp_speak_command.wy = 11.314285714285703;
+tmp_speak_command.w = 280;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Oh...do you have any info on Theodora Youmans?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -115,9 +102,23 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Youmans? Is that who owned the shirt?";
+tmp_speak_command.raw_atext = "Theodora Youmans? Is that who owned the shirt?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 130.41428571428582;
+tmp_speak_command.wy = 11.314285714285703;
+tmp_speak_command.w = 280;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Yep.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 0.3857142857142435;
@@ -141,7 +142,33 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Youmans was a super important suffragist here in Wisconsin. She had a big part in getting support for women's rights!";
+tmp_speak_command.raw_atext = "Youmans was a suffragist here in Wisconsin. She led marches and fought for women's suffrage- the right to vote!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 130.41428571428582;
+tmp_speak_command.wy = 11.314285714285703;
+tmp_speak_command.w = 280;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Wait a sec...women couldn't vote?!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -2.1000000000000583;
+tmp_speak_command.wy = 138.94285714285706;
+tmp_speak_command.w = 316;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Youmans worked hard to change that. Thanks to women like her, Wisconsin was the first state to approve votes for women...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -154,7 +181,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Thanks to her, Wisconsin became the first state to sign a women's rights bill, right at our own Capitol.";
+tmp_speak_command.raw_atext = "...And we were also the first to sign a women's rights bill, right at the Capitol.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -163,11 +190,24 @@ tmp_speak_command.wx = 129.67142857142875;
 tmp_speak_command.wy = 9.94285714285714;
 tmp_speak_command.w = 266;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_jo_happy";
+tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "HA! I bet she didn't listen when people told her to calm down.";
+tmp_speak_command.raw_atext = "Wow!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 129.67142857142875;
+tmp_speak_command.wy = 9.94285714285714;
+tmp_speak_command.w = 266;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Good thing she didn't listen when people told her to calm down.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

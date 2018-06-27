@@ -61,6 +61,7 @@ tmp_cutscene_command.wy = 369.9138658861873;
 tmp_cutscene_command.w = 301;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Nonsense. I want live animals at the exhibit, not stuffed ones.";
+tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -96,7 +97,7 @@ tmp_cutscene_command.wx = 301.17250217844617;
 tmp_cutscene_command.wy = 366.65672714326064;
 tmp_cutscene_command.w = 225;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Make sure to get lots of photos, like last time!";
+tmp_cutscene_command.raw_text = "Make sure to get lots of photos for the exhibit, like last time!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -164,11 +165,10 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "boss";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 361.42195672391887;
-tmp_cutscene_command.wy = 412.2509089614257;
-tmp_cutscene_command.w = 315;
+tmp_cutscene_command.wx = 293.03068399664625;
+tmp_cutscene_command.wy = 368.2850907796075;
+tmp_cutscene_command.w = 205;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Your gramps and I will be at the Capitol getting things set up.";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-

@@ -72,6 +72,7 @@ tmp_cutscene_command.wy = 119.030303030303;
 tmp_cutscene_command.w = 116;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Great Scott! You’re right!";
+tmp_cutscene_command.animcycle_id = "emote_gramps_worried";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -112,7 +112,19 @@ tmp_cutscene_command.wx = 68.84590253062348;
 tmp_cutscene_command.wy = 187.69654863976103;
 tmp_cutscene_command.w = 168;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Ha. Told you so. Besides, I'm already done!";
+tmp_cutscene_command.raw_text = "Ha. Told you so. Besides, I'm already done.";
+tmp_cutscene_command.t = 0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 68.84590253062348;
+tmp_cutscene_command.wy = 187.69654863976103;
+tmp_cutscene_command.w = 168;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.raw_text = "It's a women's basketball jersey!";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

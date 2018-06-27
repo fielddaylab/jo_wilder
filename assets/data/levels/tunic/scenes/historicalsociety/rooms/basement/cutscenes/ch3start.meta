@@ -111,7 +111,7 @@ tmp_cutscene_command.wx = -326.7269256585187;
 tmp_cutscene_command.wy = 112.06060460793029;
 tmp_cutscene_command.w = 192;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Some kind of flag! Pretty spiffy, isn't it?";
+tmp_cutscene_command.raw_text = "Some kind of flag! Pretty spiffy, huh?";
 tmp_cutscene_command.t = 142;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

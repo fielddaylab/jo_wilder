@@ -78,6 +78,7 @@ tmp_cutscene_command.wy = 15.27272727272719;
 tmp_cutscene_command.w = 100;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Wow!";
+tmp_cutscene_command.animcycle_id = "emote_jo_happy";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -125,19 +126,7 @@ tmp_cutscene_command.wx = -1377;
 tmp_cutscene_command.wy = 148.24999999999994;
 tmp_cutscene_command.w = 213;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Ordinary people come together to speak out,";
-tmp_cutscene_command.t = 50;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -1377;
-tmp_cutscene_command.wy = 149.24999999999994;
-tmp_cutscene_command.w = 196;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "get excited, and even change the laws!";
+tmp_cutscene_command.raw_text = "Ordinary people come together to speak out, get excited, and even change the laws!";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -161,19 +150,7 @@ tmp_cutscene_command.wx = -1380;
 tmp_cutscene_command.wy = 123.24999999999994;
 tmp_cutscene_command.w = 143;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Hmm. You know,";
-tmp_cutscene_command.t = 50;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -1371;
-tmp_cutscene_command.wy = 148.24999999999994;
-tmp_cutscene_command.w = 198;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "There's a nice little display down the path.";
+tmp_cutscene_command.raw_text = "Hmmm. You know, there's a nice little Earth Day display down the path.";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -197,7 +174,7 @@ tmp_cutscene_command.wx = -1629.0227272727273;
 tmp_cutscene_command.wy = 49.27272727272719;
 tmp_cutscene_command.w = 100;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Aren't you coming?";
+tmp_cutscene_command.raw_text = "Aren't you coming too?";
 tmp_cutscene_command.t = 50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

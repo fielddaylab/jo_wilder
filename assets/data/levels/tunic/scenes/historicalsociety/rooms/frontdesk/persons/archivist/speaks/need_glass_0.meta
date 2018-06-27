@@ -20,7 +20,7 @@ tmp_speak_command.wx = -93.50973381047295;
 tmp_speak_command.wy = 137.8556806550665;
 tmp_speak_command.w = 181;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

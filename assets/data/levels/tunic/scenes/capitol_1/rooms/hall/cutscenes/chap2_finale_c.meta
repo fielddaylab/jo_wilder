@@ -621,7 +621,7 @@ tmp_cutscene_command.wx = 300.060606060606;
 tmp_cutscene_command.wy = 276.121212121212;
 tmp_cutscene_command.w = 146;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Leopold, can you run back to your office?";
+tmp_cutscene_command.raw_text = "Leopold, can you run back to the museum?";
 tmp_cutscene_command.t = 483;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

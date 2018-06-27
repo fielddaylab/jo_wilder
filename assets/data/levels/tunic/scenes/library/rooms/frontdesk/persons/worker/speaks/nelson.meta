@@ -33,7 +33,7 @@ tmp_speak_command.wx = -353.45720813308867;
 tmp_speak_command.wy = 339.7578695305402;
 tmp_speak_command.w = 212.727783203125;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_librarian_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -50,7 +50,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Now I just need some old photos for the display.";
+tmp_speak_command.raw_atext = "Now I just need some old photos, like last time.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -59,11 +59,11 @@ tmp_speak_command.wx = -181.48424944959567;
 tmp_speak_command.wy = 225.09106232402596;
 tmp_speak_command.w = 164;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "My exhibit is gonna be the BEST!";
+tmp_speak_command.raw_atext = "The boss is gonna love it!!!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -76,7 +76,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Try the archives. They've got everything!";
+tmp_speak_command.raw_atext = "You could try the archives.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -98,7 +98,7 @@ tmp_speak_command.wx = -178.84848484848533;
 tmp_speak_command.wy = 187.30303030303037;
 tmp_speak_command.w = 252.7117462158203;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

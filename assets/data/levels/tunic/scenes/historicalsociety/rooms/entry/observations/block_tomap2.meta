@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "I should talk to Gramps in the collection!";
+tmp_observation.raw_text = "I should go talk to Gramps!";
 tmp_observation.blip_wx = 416.0839371996251;
 tmp_observation.blip_wy = 230.30721467924008;
 tmp_observation.blip_w = 213;

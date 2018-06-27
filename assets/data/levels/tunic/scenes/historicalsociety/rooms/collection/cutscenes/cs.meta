@@ -108,7 +108,7 @@ tmp_cutscene_command.wx = -207.98917748917728;
 tmp_cutscene_command.wy = 155.2316017316015;
 tmp_cutscene_command.w = 220;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I got a note from your teacher. You missed 7 assignments in a row!";
+tmp_cutscene_command.raw_text = "Your teacher said you missed 7 assignments in a row!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -159,7 +159,7 @@ tmp_cutscene_command.wx = -208.40043290043292;
 tmp_cutscene_command.wy = 155.06709956709943;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "I suppose historians are boring too?";
+tmp_cutscene_command.raw_text = "I suppose historians are boring, too?";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -185,7 +185,7 @@ tmp_cutscene_command.wy = 153.2575757575757;
 tmp_cutscene_command.w = 151;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Then why don't you do it for me?";
+tmp_cutscene_command.raw_text = "Then do it for me!";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -97,7 +97,7 @@ tmp_cutscene_command.wx = -31.855493141268603;
 tmp_cutscene_command.wy = 271.5796080578542;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "Wells just got in trouble for littering at the Wildlife Refuge. I need to go bail him out.";
+tmp_cutscene_command.raw_text = "Wells just got in trouble for littering at the Wildlife Center.";
 tmp_cutscene_command.t = 1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -165,6 +165,7 @@ tmp_cutscene_command.wy = 276.12121212121195;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "I'm glad I put you on the case.";
+tmp_cutscene_command.animcycle_id = "emote_boss_happy";
 tmp_cutscene_command.t = 52;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -189,6 +190,7 @@ tmp_cutscene_command.wy = 68.54545454545446;
 tmp_cutscene_command.w = 72;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.raw_text = "Thanks!";
+tmp_cutscene_command.animcycle_id = "emote_jo_happy";
 tmp_cutscene_command.t = 100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -200,7 +202,7 @@ tmp_cutscene_command.wx = -71.15151515151518;
 tmp_cutscene_command.wy = 309.45454545454527;
 tmp_cutscene_command.w = 220;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.raw_text = "You better go get some rest before the big day. I'll see you tomorrow at the exhibit!";
+tmp_cutscene_command.raw_text = "Looks like your work here is done. I'll see you tomorrow at the exhibit!";
 tmp_cutscene_command.t = 102;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

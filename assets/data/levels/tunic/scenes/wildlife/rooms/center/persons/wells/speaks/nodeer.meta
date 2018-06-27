@@ -45,11 +45,11 @@ tmp_speak_command.wx = -739.5363623195609;
 tmp_speak_command.wy = -239.1269426616855;
 tmp_speak_command.w = 162.7118377685547;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_wells_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Great. Just great. Could this day get any worse?";
+tmp_speak_command.raw_atext = "Great. Just great. Could this day get any worse?!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -84,7 +84,7 @@ tmp_speak_command.wx = -836.667424242445;
 tmp_speak_command.wy = -264.9939393939134;
 tmp_speak_command.w = 163.74383544921875;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_wells_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -97,7 +97,7 @@ tmp_speak_command.wx = -653.9924242424242;
 tmp_speak_command.wy = -318.7689393939392;
 tmp_speak_command.w = 296;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

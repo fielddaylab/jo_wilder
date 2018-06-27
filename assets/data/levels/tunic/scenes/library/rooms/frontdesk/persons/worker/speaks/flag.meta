@@ -20,7 +20,7 @@ tmp_speak_command.wx = -354.6243052736595;
 tmp_speak_command.wy = 378.897387637073;
 tmp_speak_command.w = 178;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_librarian_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
