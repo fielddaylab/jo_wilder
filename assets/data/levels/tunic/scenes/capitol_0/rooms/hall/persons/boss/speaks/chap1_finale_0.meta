@@ -40,7 +40,7 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 203.81961640648768;
+tmp_speak_command.wx = -55.271292684421496;
 tmp_speak_command.wy = 136.3634366848344;
 tmp_speak_command.w = 243.35177612304688;
 tmp_speak_command.h = 30;

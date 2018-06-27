@@ -54,6 +54,9 @@ var MenuScene = function(game, stage)
 
   var realtime_click = function(evt)
   {
+    doSetPosOnEvent(evt);
+    if(fullscreen_toggle && doEvtWithinBB(evt,fullscreen_toggle))
+      fullscreen_toggle.toggle();
   }
   var realtime_click_registered_to = 0;
 
@@ -102,7 +105,7 @@ var MenuScene = function(game, stage)
         }
       }
     ); x += 200;
-    fullscreen_toggle = new ToggleBox(x,y,w,h,0,function(o){ if(o) fullscreen(); }); x += 200;
+    fullscreen_toggle = new ToggleBox(x,y,w,h,0,function(o){ /*hijack me from realtime!*/ if(o) fullscreen(); else unfullscreen(); }); x += 200;
 
     //THIS IS RIDICULOUS (the only way I could figure out how to ensure keyboard focus through iframe)
     code_txt.focus();
@@ -137,7 +140,7 @@ var MenuScene = function(game, stage)
         !clicker.filter(code_button) &&
         !clicker.filter(audio_toggle) &&
         !clicker.filter(hq_toggle) &&
-        !clicker.filter(fullscreen_toggle) &&
+        //!clicker.filter(fullscreen_toggle) && //must hijack from realtime listener!
         false)
         ;
     }
