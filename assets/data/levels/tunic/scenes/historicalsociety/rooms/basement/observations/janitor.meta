@@ -16,9 +16,9 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "This button never works!";
-tmp_observation.blip_wx = -420.2421164205936;
-tmp_observation.blip_wy = 59.758475447343294;
-tmp_observation.blip_w = 195;
+tmp_observation.blip_wx = -420.2422883969137;
+tmp_observation.blip_wy = 59.758475447343244;
+tmp_observation.blip_w = 226;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [

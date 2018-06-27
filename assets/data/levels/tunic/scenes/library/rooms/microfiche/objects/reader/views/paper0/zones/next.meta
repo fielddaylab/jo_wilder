@@ -3,7 +3,7 @@ tmp_zone.wh = 50.00000000000003;
 tmp_zone.wx = 33.00000000000011;
 tmp_zone.wy = -224;
 tmp_zone.animcycle_id = "null";
-tmp_zone.audio_id = "null";
+tmp_zone.audio_id = "microfiche";
 tmp_zone.deck_animcycle_ids = [
 ];
 tmp_zone.target_view = "paper1";

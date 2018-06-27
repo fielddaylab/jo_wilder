@@ -38,7 +38,7 @@ var MenuScene = function(game, stage)
   {
     if(!clicker) clicker = new Clicker({source:canvas});
     if(!blurer)  blurer  = new Blurer({source:canvas});
-    if(!audio) audio = GenAudio("assets/data/levels/tunic/audios/music.mp3");
+    if(!audio) audio = GenAudio("assets/data/levels/tunic/audios/music_menu.mp3");
 
     var x = 20;
     var y = 20;
