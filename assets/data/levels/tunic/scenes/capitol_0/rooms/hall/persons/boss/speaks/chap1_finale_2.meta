@@ -66,6 +66,33 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 53.75810015910787;
+tmp_speak_command.wy = 141.96438847617767;
+tmp_speak_command.w = 57.13594055175781;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "How 'bout it, Jo? Want to help me work on this?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 53.75810015910787;
+tmp_speak_command.wy = 141.96438847617767;
+tmp_speak_command.w = 57.13594055175781;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_jo_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Not really...";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+
+tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 200.9799914176963;
 tmp_speak_command.wy = 138.35026559599964;
 tmp_speak_command.w = 233.69814225923324;
@@ -74,7 +101,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Jolie, you help your grampa get to the bottom of this.";
+tmp_speak_command.raw_atext = "Let me know when you figure it out.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

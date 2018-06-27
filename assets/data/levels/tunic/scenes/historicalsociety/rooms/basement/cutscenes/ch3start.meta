@@ -124,7 +124,7 @@ tmp_cutscene_command.wy = -17.699621192573762;
 tmp_cutscene_command.w = 192;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Some kind of flag! Pretty spiffy, isn't it?";
+tmp_cutscene_command.raw_text = "Some kind of flag! Pretty spiffy, huh?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

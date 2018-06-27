@@ -667,7 +667,7 @@ tmp_cutscene_command.wy = 136.72727272727263;
 tmp_cutscene_command.w = 146;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Leopold, can you run back to your office?";
+tmp_cutscene_command.raw_text = "Leopold, can you run back to the museum?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
