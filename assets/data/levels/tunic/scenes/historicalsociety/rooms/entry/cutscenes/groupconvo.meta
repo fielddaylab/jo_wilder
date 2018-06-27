@@ -224,7 +224,7 @@ tmp_cutscene_command.animcycle_id = "gramps_walk";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+-1;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;

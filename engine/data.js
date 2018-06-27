@@ -7530,10 +7530,10 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "toentry";
+tmp_cutscene_command.wx = 800;
+tmp_cutscene_command.wy = -100;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+98;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -7545,7 +7545,7 @@ tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+98;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9209,8 +9209,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "toentry";
+tmp_cutscene_command.wx = 800;
+tmp_cutscene_command.wy = -100;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -9232,8 +9232,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "wells";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "toentry";
+tmp_cutscene_command.wx = 800;
+tmp_cutscene_command.wy = -100;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -9380,7 +9380,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 100;
 tmp_cutscene_command.wy = 10;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+49;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9392,7 +9392,7 @@ tmp_cutscene_command.animcycle_id = "gramps";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+48;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9561,7 +9561,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 0;
 tmp_cutscene_command.wy = 0;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+48;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9573,7 +9573,7 @@ tmp_cutscene_command.animcycle_id = "wells";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+47;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9899,10 +9899,10 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "gramps";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "toentry";
+tmp_cutscene_command.wx = 800;
+tmp_cutscene_command.wy = -100;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+59;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9914,7 +9914,7 @@ tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+59;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9961,10 +9961,10 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "wells";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.cutscene_target_entity_id = "toentry";
+tmp_cutscene_command.wx = 800;
+tmp_cutscene_command.wy = -100;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+57;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -9976,7 +9976,7 @@ tmp_cutscene_command.animcycle_id = "null";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+57;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -23020,7 +23020,7 @@ tmp_cutscene_command.animcycle_id = "gramps_walk";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+-1;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+10;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
