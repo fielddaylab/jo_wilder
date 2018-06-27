@@ -24,8 +24,10 @@ tmp_object.raw_notification_ws = [
 169,
 ];
 tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_0",
 ]];
 tmp_object.notice_reqs = [[
 ]];

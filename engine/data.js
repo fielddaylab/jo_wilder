@@ -26245,8 +26245,10 @@ tmp_object.raw_notification_ws = [
 169,
 ];
 tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_0",
 ]];
 tmp_object.notice_reqs = [[
 ]];
@@ -26279,7 +26281,6 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
-"tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
 ]];
@@ -26360,7 +26361,7 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
-"tunic.historicalsociety.stacks.journals.pic_2.bingo",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
 ]];
@@ -26468,7 +26469,7 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
-"tunic.historicalsociety.stacks.journals.pic_2.bingo",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
 ]];
@@ -26576,7 +26577,7 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
-"tunic.historicalsociety.stacks.journals.pic_2.bingo",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
 ]];
