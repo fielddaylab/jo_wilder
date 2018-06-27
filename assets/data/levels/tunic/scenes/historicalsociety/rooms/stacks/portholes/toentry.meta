@@ -12,7 +12,7 @@ tmp_porthole.animcycle_id = "door";
 tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
-tmp_porthole.audio_id = "door";
+tmp_porthole.audio_id = "stairs";
 tmp_porthole.deck_animcycle_ids = [
 ];
 tmp_porthole.target_room = "entry";

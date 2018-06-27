@@ -113,7 +113,11 @@ var LoadingScene = function(game, stage)
     loadingImageLoaded(); //call once to prevent 0/0 != 100% bug
 
     //put asset paths in img_srcs
-    //img_srcs.push("assets/man.png");
+    img_srcs.push("assets/poster.jpg");
+    img_srcs.push("assets/logo.png");
+    img_srcs.push("assets/check.png");
+    img_srcs.push("assets/uncheck.png");
+    img_srcs.push("assets/play.png");
     for(var i = 0; i < img_srcs.length; i++)
     {
       imgs[i] = new Image();
@@ -141,7 +145,7 @@ var LoadingScene = function(game, stage)
     fontLoaded(); //call once to prevent 0/0 != 100% bug
 
     //put asset paths in audio_srcs
-    //audio_srcs.push("assets/sound.mp3");
+    audio_srcs.push("assets/music_menu.mp3");
     for(var i = 0; i < audio_srcs.length; i++)
     {
       audios[i] = new Audio();
