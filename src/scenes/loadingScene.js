@@ -189,7 +189,8 @@ var LoadingScene = function(game, stage)
     if(percent_loaded >= 1.0) ticks_since_ready++;
     if(ticks_since_ready >= post_load_countdown)
     {
-      if(ticks_since_loading_ready > 550) game.nextScene();
+      //if(ticks_since_loading_ready > 550) game.nextScene();
+      game.nextScene();
     }
   };
 

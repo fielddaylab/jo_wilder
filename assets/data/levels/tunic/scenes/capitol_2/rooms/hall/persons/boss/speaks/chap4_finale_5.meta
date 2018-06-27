@@ -14,80 +14,67 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -111.97223525255184;
-tmp_speak_command.wy = -53.41383029319246;
-tmp_speak_command.w = 195.3038330078125;
+tmp_speak_command.wx = -110.20393169283219;
+tmp_speak_command.wy = -51.057574270555676;
+tmp_speak_command.w = 315.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's a theta symbol.";
+tmp_speak_command.raw_atext = "People made their own ecology flags for protests and marches! This symbol helped unite the movement.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -118.03284131315795;
-tmp_speak_command.wy = -59.474436353798566;
-tmp_speak_command.w = 142.05577087402344;
+tmp_speak_command.wx = -111.97223525255191;
+tmp_speak_command.wy = -56.444133323495514;
+tmp_speak_command.w = 250.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "It looks sort of like the Earth.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -119.5479928283094;
-tmp_speak_command.wy = -59.474436353798566;
-tmp_speak_command.w = 215.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "But it's also the letters \"e\" and \"o\" combined.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -116.51768979800654;
-tmp_speak_command.wy = -54.928981808343934;
-tmp_speak_command.w = 275.69814225923324;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "That stands for \"ecology\" and \"organism\"- the earth is a living thing we need to care about!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 203.17927989896324;
-tmp_speak_command.wy = 137.4952606158985;
-tmp_speak_command.w = 106.16792297363281;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Fascinating!";
+tmp_speak_command.raw_atext = "Here are some pictures of people holding ecology flags and marching on the Capitol!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 199.3885863523473;
-tmp_speak_command.wy = 138.40435152498947;
-tmp_speak_command.w = 191.69814225923324;
+tmp_speak_command.wx = 201.66412838381177;
+tmp_speak_command.wy = 139.01041213104997;
+tmp_speak_command.w = 141.9038543701172;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Do you have any context for how that symbol was used?";
+tmp_speak_command.raw_atext = "Nice work, Jolie!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 200.600707564468;
+tmp_speak_command.wy = 140.82859394923165;
+tmp_speak_command.w = 180.69814225923326;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Those are the true Wisconsin Wonders...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 206.05525301901352;
+tmp_speak_command.wy = 137.4952606158985;
+tmp_speak_command.w = 281.69814225923324;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Ordinary Wisconsin folks taking a stand and changing the world!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -16,26 +16,39 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -111.71908320798359;
 tmp_speak_command.wy = -58.63333184631336;
-tmp_speak_command.w = 178.2638397216797;
+tmp_speak_command.w = 153.2638397216797;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "It's an ecology flag!";
+tmp_speak_command.raw_atext = "I found some deer tracks- they're a bit different.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 198.08755173407144;
+tmp_speak_command.wy = 133.89405624229482;
+tmp_speak_command.w = 133;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Well, if it isn't a deer hoof...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 196.57240021891997;
 tmp_speak_command.wy = 141.46981381805244;
-tmp_speak_command.w = 195;
+tmp_speak_command.w = 92.77590942382812;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Interesting! I wonder what it was used for...";
+tmp_speak_command.raw_atext = "What is it?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
