@@ -121,7 +121,7 @@ function begin()
   }
   if(platform == "PC")          stage_container.addEventListener('mousedown', play_first_audio);
   else if(platform == "MOBILE") stage_container.addEventListener('touchstart', play_first_audio);
-  //play_first_audio(); //comment this out if loaded _not_ through click-to-init iframe
+  game_first_audio_played = 1; first_audio.play(); //comment this out if loaded _not_ through click-to-init iframe
 
 /*
   var try_fullscreen = function()
