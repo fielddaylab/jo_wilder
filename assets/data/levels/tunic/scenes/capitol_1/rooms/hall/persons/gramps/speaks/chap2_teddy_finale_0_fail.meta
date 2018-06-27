@@ -14,15 +14,15 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -22.57829585861238;
-tmp_speak_command.wy = 379.91950304014085;
-tmp_speak_command.w = 147.69814225923326;
+tmp_speak_command.wx = 61.231227950911276;
+tmp_speak_command.wy = 144.68140780204556;
+tmp_speak_command.w = 142.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That is definitely no slip...";
+tmp_speak_command.raw_atext = "I don't think that's relevant here...";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

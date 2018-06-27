@@ -14,8 +14,8 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -1375.7271743433314;
-tmp_speak_command.wy = 145.01686717826985;
+tmp_speak_command.wx = -1369.7271601307675;
+tmp_speak_command.wy = 60.01686470012355;
 tmp_speak_command.w = 216;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -27,8 +27,8 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -1385.1137123327096;
-tmp_speak_command.wy = 133.29545434441133;
+tmp_speak_command.wx = -1366.1137123327096;
+tmp_speak_command.wy = 59.29545434441137;
 tmp_speak_command.w = 257.87176513671875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -38,4 +38,3 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "I'll stay here with the sunset.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-

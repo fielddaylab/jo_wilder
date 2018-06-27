@@ -8,5 +8,6 @@ tmp_inert.animcycle_id = "wildlife_animal_crane_cup";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
+"!tunic.wildlife.center.expert.gps",
 ]];
 

@@ -75,9 +75,18 @@ var game_height = 660;
 var game_first_audio_played = 0;
 function fullscreen()
 {
+  return; //for debugging, disable fullscreen
   var el = document.body;
   var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;
   if(requestMethod) requestMethod.call(el);
+}
+
+function size_containers(w,h)
+{
+  var stage_container_container = document.getElementById("stage_container_container_because_javascript_is_terrible");
+  stage_container_container.style.width = w; stage_container_container.style.height = h;
+  var stage_container = document.getElementById("stage_container");
+  stage_container.style.width = w; stage_container.style.height = h;
 }
 
 function resize()
@@ -89,14 +98,13 @@ function resize()
   //if(h < game_height) w = h/game_height*game_width;
   w = h/game_height*game_width;
   if(g) g.resize({width:w,height:h});
-  stage_container.style.width = w; stage_container.style.height = h;
+  size_containers(w,h);
 }
 function begin()
 {
   var w = game_width;
   var h = game_height;
-  var stage_container  = document.getElementById("stage_container");
-  stage_container.style.width  = w; stage_container.style.height  = h;
+  size_containers(w,h);
 
   var first_audio = new Audio("assets/silence.mp3");
   var play_first_audio = function()
@@ -108,7 +116,7 @@ function begin()
   }
   if(platform == "PC")          stage_container.addEventListener('mousedown', play_first_audio);
   else if(platform == "MOBILE") stage_container.addEventListener('touchstart', play_first_audio);
-  play_first_audio(); //comment this out if loaded _not_ through click-to-init iframe
+  //play_first_audio(); //comment this out if loaded _not_ through click-to-init iframe
 
   var try_fullscreen = function()
   {
@@ -131,7 +139,9 @@ window.addEventListener("resize",resize,false);
 </head>
 <body id="body" style="width:100%; background-color:#052427;">
 
-<div id="stage_container" style="margin:0px; padding:0px; position:absolute; top:0px; left:0px; user-select:none; background-color:#FFFFFF;"> </div>
+<div id="stage_container_container_because_javascript_is_terrible" style="position:relative; margin:0px auto; padding:0px; user-select:none; background-color:#FFFFFF;">
+<div id="stage_container" style="position:absolute; top:0px; left:0px; margin:0px; padding:0px; user-select:none; background-color:#FFFFFF;"> </div>
+</div>
 
 </body>
 </html>

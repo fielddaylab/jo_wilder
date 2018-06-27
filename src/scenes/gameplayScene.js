@@ -105,10 +105,14 @@ var GamePlayScene = function(game, stage)
           }
           else
           {
-            while(bogus_lines.length <= ob.notifications[i].length && bogus_w > 0)
+            var keep_shrinking = (bogus_lines.length <= ob.notifications[i].length && bogus_w > 0);
+            while(keep_shrinking)
             {
               bogus_w -= 1;
               bogus_lines = stextToLines(ob.raw_notifications[i],bogus_w);
+              keep_shrinking = (bogus_lines.length <= ob.notifications[i].length && bogus_w > 0);
+              for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
+                if(ctx.measureText(bogus_lines[j]).width > bogus_w) keep_shrinking = 0;
             }
             bogus_w += 1;
             if(bogus_w == 1) bogus_w = ob.raw_notification_ws[i];
@@ -131,10 +135,14 @@ var GamePlayScene = function(game, stage)
         }
         else
         {
-          while(bogus_lines.length <= text.length && bogus_w > 0)
+          var keep_shrinking = (bogus_lines.length <= text.length && bogus_w > 0);
+          while(keep_shrinking)
           {
             bogus_w -= 1;
             bogus_lines = stextToLines(raw,bogus_w);
+            keep_shrinking = (bogus_lines.length <= text.length && bogus_w > 0);
+            for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
+              if(ctx.measureText(bogus_lines[j]).width > bogus_w) keep_shrinking = 0;
           }
           bogus_w += 1;
           if(bogus_w == 1) bogus_w = w;

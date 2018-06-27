@@ -11,13 +11,13 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
-"tunic.drycleaner.frontdesk.worker.leo",
+"tunic.drycleaner.frontdesk.worker.hub",
 "!tunic.drycleaner.frontdesk.logbook.page.bingo",
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -130.0252834610024;
-tmp_speak_command.wy = 259;
+tmp_speak_command.wx = -173.396712032431;
+tmp_speak_command.wy = 170.3714285714286;
 tmp_speak_command.w = 109.83990478515625;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
