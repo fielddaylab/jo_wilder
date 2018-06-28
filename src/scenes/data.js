@@ -13323,6 +13323,7 @@ tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 "!self",
 ]];
 tmp_cutscene.commands = [];
@@ -14355,13 +14356,12 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
-"tunic.historicalsociety.closet_dirty",
-"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
-
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -175.35544692962122;
-tmp_speak_command.wy = 329.24545603639;
+tmp_speak_command.wx = 195.8566742821788;
+tmp_speak_command.wy = 139.85151664245177;
 tmp_speak_command.w = 278.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -14371,10 +14371,10 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Jolie! I was hoping you'd stop by. Any news on the flag artifact?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -369.29484086901516;
-tmp_speak_command.wy = 103.48788027881426;
+tmp_speak_command.wx = -134.44635602053035;
+tmp_speak_command.wy = -70.7545439636099;
 tmp_speak_command.w = 195.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
@@ -14384,11 +14384,11 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "I haven't quite figured it out just yet...";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-
+//
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -90.50696208113642;
-tmp_speak_command.wy = 374.70000149093556;
-tmp_speak_command.w = 160.69814225923324;
+tmp_speak_command.wx = 208.28091670674195;
+tmp_speak_command.wy = 148.63939543032956;
+tmp_speak_command.w = 248.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -14397,7 +14397,6 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Well, get on it. I'm counting on you to figure this out!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);

@@ -26,6 +26,7 @@ tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 "!self",
 ]];
 tmp_cutscene.commands = [];
