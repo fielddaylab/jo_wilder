@@ -489,6 +489,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cage_fence/0
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "cage_fence_front";
+tmp_animcycle.fqid = "tunic.cage_fence_front";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/cage_fence_front/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "cage_fg";
 tmp_animcycle.fqid = "tunic.cage_fg";
 {
@@ -905,6 +920,21 @@ tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay_theta/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "clueoverlay_yumansclues";
+tmp_animcycle.fqid = "tunic.clueoverlay_yumansclues";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/clueoverlay_yumansclues/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -13630,7 +13660,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Is the flag a picture of a deer hoof?";
+tmp_speak_command.raw_atext = "Is it an early Wisconsin flag with a deer hoof symbol?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13704,7 +13734,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I found some deer tracks- they're a bit different.";
+tmp_speak_command.raw_atext = "I checked at the Wildlife Center. It's not a deer hoof!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13717,20 +13747,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Well, if it isn't a deer hoof...";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 196.57240021891997;
-tmp_speak_command.wy = 141.46981381805244;
-tmp_speak_command.w = 92.77590942382812;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "What is it?";
+tmp_speak_command.raw_atext = "Hmmm. Then what is our flag?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13904,20 +13921,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's a theta symbol.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -118.03284131315795;
-tmp_speak_command.wy = -59.474436353798566;
-tmp_speak_command.w = 142.05577087402344;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "It looks sort of like the Earth.";
+tmp_speak_command.raw_atext = "That's a theta symbol!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13943,7 +13947,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That stands for \"ecology\" and \"organism\"- the earth is a living thing we need to care about!";
+tmp_speak_command.raw_atext = "That stands for \"environment\" and \"organism\"- the earth is a living thing we need to care about!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -17316,7 +17320,7 @@ tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 0;
 tmp_object.raw_notifications = [
-"Ooh... \"The ecology flag, by Ron Cobb.\"",
+"Ooh... \"Ecology flag, by Ron Cobb.\"",
 ];
 tmp_object.raw_notification_ws = [
 165,
@@ -19461,8 +19465,8 @@ tmp_person.fqid = "tunic.historicalsociety.cage.teddy";
 {
 tmp_person.ww = 122.48764972620297;
 tmp_person.wh = 129.38881101761731;
-tmp_person.wx = 57.11383264600901;
-tmp_person.wy = -153.61047468212485;
+tmp_person.wx = 31.00914945041672;
+tmp_person.wy = -152.47548845622953;
 tmp_person.wz = 0;
 tmp_person.act_wx = -146.29687625848175;
 tmp_person.act_wy = 29.395068590892784;
@@ -19567,8 +19571,8 @@ tmp_observation.fqid = "tunic.historicalsociety.cage.lockeddoor";
 {
 tmp_observation.ww = 164.82808103888618;
 tmp_observation.wh = 484.0303030290258;
-tmp_observation.wx = -125.83458081984895;
-tmp_observation.wy = -51.984848473282256;
+tmp_observation.wx = -128.1465389571049;
+tmp_observation.wy = -24.74680164948208;
 tmp_observation.wz = 0;
 tmp_observation.act_wx = -54;
 tmp_observation.act_wy = -20.999999999999996;
@@ -19656,8 +19660,8 @@ tmp_inert.fqid = "tunic.historicalsociety.cage.door";
 {
 tmp_inert.ww = 132.13794897840634;
 tmp_inert.wh = 458.58677685806566;
-tmp_inert.wx = -124.57780814390468;
-tmp_inert.wy = -47.514874239673304;
+tmp_inert.wx = -115.49943505913701;
+tmp_inert.wy = -46.379946629713885;
 tmp_inert.wz = -0.05;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "cage_door";
@@ -19677,11 +19681,31 @@ tmp_inert.fqid = "tunic.historicalsociety.cage.fence";
 {
 tmp_inert.ww = 1548.1818181818187;
 tmp_inert.wh = 770.9090909090911;
-tmp_inert.wx = -487.62799980762736;
-tmp_inert.wy = -12.48570187647141;
+tmp_inert.wx = -476.7189088985366;
+tmp_inert.wy = -7.031156421925914;
 tmp_inert.wz = -0.1;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "cage_fence";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+
+if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
+tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
+}
+tmp_room.inerts.push(tmp_inert);
+tmp_inert = new inert();
+tmp_inert.id = "fence_front";
+tmp_inert.fqid = "tunic.historicalsociety.cage.fence_front";
+{
+tmp_inert.ww = 1501.8181818181815;
+tmp_inert.wh = 776.3636363636359;
+tmp_inert.wx = -465.0667680625379;
+tmp_inert.wy = -8.291629226297914;
+tmp_inert.wz = 1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "cage_fence_front";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
@@ -19717,8 +19741,8 @@ tmp_inert.fqid = "tunic.historicalsociety.cage.pipes";
 {
 tmp_inert.ww = 2382.727272727273;
 tmp_inert.wh = 465.4545454545453;
-tmp_inert.wx = -843.3411594009792;
-tmp_inert.wy = 198.80804348941118;
+tmp_inert.wx = -828.0256917790734;
+tmp_inert.wy = 126.47377448937172;
 tmp_inert.wz = 2;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "cage_pipes";
