@@ -5619,7 +5619,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.wildlife.center.coffee",
+"tunic.wildlife.center.expert.gps",
 ]];
 tmp_entry.interactive = 1;
 
