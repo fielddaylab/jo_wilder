@@ -7405,8 +7405,8 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "chapter2";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.ww = 880;
-tmp_cutscene_command.wh = 660;
+tmp_cutscene_command.ww = 880/660*1000;
+tmp_cutscene_command.wh = 660/660*1000;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter2";
@@ -9288,8 +9288,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "chapter3";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.ww = 880;
-tmp_cutscene_command.wh = 660;
+tmp_cutscene_command.ww = 880/660*1000;
+tmp_cutscene_command.wh = 660/660*1000;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter3";
@@ -13271,8 +13271,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "chapter5";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.ww = 880;
-tmp_cutscene_command.wh = 660;
+tmp_cutscene_command.ww = 880/660*1000;
+tmp_cutscene_command.wh = 660/660*1000;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter5";
@@ -15126,6 +15126,17 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_FAMILIAR;
+tmp_cutscene_command.wx = 999;
+tmp_cutscene_command.wy = 999;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "midblack";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
@@ -15138,16 +15149,6 @@ tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_id = "midblack";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -15206,6 +15207,16 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "midblack";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "midblack";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene_command.end_t = tmp_cutscene_command.t+50;
@@ -15244,7 +15255,17 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "midblack";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.a = 0.2;
+tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "midblack";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.a = 0.7;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene_command.end_t = tmp_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -15508,7 +15529,7 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_ACT;
 tmp_cutscene_command.cutscene_entity_id = "credits";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+200;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -15867,8 +15888,20 @@ tmp_wildcard.reqs = [[
     "assets/data/levels/tunic/animcycles/avatar_idle/1.png",
     "assets/data/levels/tunic/animcycles/avatar_idle/2.png",
     "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
+    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
   ];
   self.imgs = [
+  ];
+  self.captions_raw = [
+    "Parade tunic worn by Wisconsin suffrage supporter, 1916.\n Source: Wisconsin Historical Museum #1956.1450",
+    "Portrait of Theodora Youmans (Mrs. Henry), President of the Wisconsin Woman Suffrage Association, holding a Wisconsin flag and standing in front of a painted backdrop. Source: Wisconsin Historical Museum #1927",
+    "Governor John J. Blaine (left) shakes the hand of a woman surrounded by other women of who have come to see the governor sign the Women's Rights Bill. The lady shaking the governor's hand is holding a large feather in her left hand. They are standing in front of an entrance to the Wisconsin State Capitol. 1921. Source: Wisconsin Historical Museum #118142",
+    "Gaylord Nelson speaking at a podium during Earth Week with an American flag in the foreground, and the Earth Day flag behind it. 1970. Source: Wisconsin Historical Museum #48017",
+    "View looking down at a crowd of people holding the first Earth Day March as they arrive at the Wisconsin State Capitol at the top of State Street. A marcher at the front of the parade is carrying the ecology flag. 1970. Source: Wisconsin Historical Museum #48103",
+    "People walking near a bus before the first Earth Day march. One man is holding up an ecology flag. In the background people are standing on the sidewalk under street signs for Lake and State Streets. 1970. Source: Wisconsin Historical Museum #48104",
+  ];
+  self.captions = [
   ];
 
   self.resize = function()
@@ -15885,6 +15918,10 @@ tmp_wildcard.reqs = [[
     {
       self.imgs[i] = new Image();
       self.imgs[i].src = self.img_srcs[i];
+    }
+    for(var i = 0; i < self.captions_raw.length; i++)
+    {
+      self.captions[i] = stextToLines(self.captions_raw[i],canv.width/3);
     }
   }
 
@@ -15937,7 +15974,18 @@ tmp_wildcard.reqs = [[
     offy = lerp(-pad,pad,img_t);
     if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
     if(img_t > 0.9) ctx.globalAlpha = 1-((img_t-0.9)/0.1);
-    if(img_i < self.imgs.length) ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
+    if(img_i < self.imgs.length)
+    {
+      ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
+
+      ctx.fillStyle = white;
+      var y = canv.height-30-self.captions[img_i].length*30;
+      for(var i = 0; i < self.captions[img_i].length; i++)
+      {
+        ctx.fillText(self.captions[img_i][i],canv.width/2,y);
+        y += 30;
+      }
+    }
     ctx.globalAlpha = 1;
 
     var bottom = canv.height;
@@ -15947,7 +15995,7 @@ tmp_wildcard.reqs = [[
     for(var i = 0; i < self.lines.length; i++)
     {
       if(p > -self.spacing && p < canv.height+self.spacing)
-        ctx.fillText(self.lines[i],canv.width/2,p);
+        ctx.fillText(self.lines[i],40,p);
       p += self.spacing;
     }
   }
@@ -17692,8 +17740,8 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "chapter4";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.ww = 880;
-tmp_cutscene_command.wh = 660;
+tmp_cutscene_command.ww = 880/660*920;
+tmp_cutscene_command.wh = 660/660*920;
 tmp_cutscene_command.wz = 999;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.animcycle_id = "chapter4";
