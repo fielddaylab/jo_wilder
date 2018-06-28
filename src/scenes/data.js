@@ -13434,7 +13434,7 @@ tmp_cutscene_command.wx = 195.72026443448922;
 tmp_cutscene_command.wy = 132.79172926997546;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_boss_angry";
+tmp_cutscene_command.animcycle_id = "emote_boss_annoyed";
 tmp_cutscene_command.raw_text = "PLEASE tell me you're doing better than he is.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -16006,42 +16006,162 @@ tmp_wildcard.reqs = [[
   self.t = 0;
   self.spacing = 30;
   self.lines = [
-    "role",
-    "name",
     "",
-    "role",
-    "name",
+    "Field Day",
     "",
-    "role",
-    "name",
+    "Producer",
+    "David Gagnon",
     "",
-    "role",
-    "name",
+    "Creative Direction",
+    "Sarah Gagnon",
     "",
-    "role",
-    "name",
+    "Art Direction",
+    "Eric Lang",
     "",
-    "role",
-    "name",
+    "Software Development",
+    "Phil Dougherty",
     "",
-    "role",
-    "name",
+    "Content Scripting",
+    "Mike Tolly",
     "",
-    "role",
-    "name",
+    "Writing",
+    "Lindy Biller",
+    "",
+    "2d Illustration",
+    "Reyna Groff",
+    "",
+    "Fellowship and Testing Coordination",
+    "Jim Mathews",
+    "",
+    "Music and Sound",
+    "Cyril Peck",
+    "",
+    "QA",
+    "Daniel Hying",
+    "Concept Art",
+    "Jennifer Leaver",
+    "",
+    "",
+    "Wisconsin Public Television",
+    "",
+    "Executive Producer",
+    "Alyssa Tsagong",
+    "",
+    "Producer",
+    "John Dollar",
+    "",
+    "Animation and Concept Art",
+    "Rodney Lambright II",
+    "",
+    "",
+    "Wisconsin Historical Society",
+    "",
+    "Subject Expert",
+    "Michael Edmonds",
+    "",
+    "Archival Consultant",
+    "Simone Munson",
+    "",
+    "History Education Expert",
+    "Jennifer Kalvaitis",
+    "",
+    "",
+    "Field Day Fellows",
+    "",
+    "Andrea Bell-Myers",
+    "Angela Bies",
+    "Matthew Daniels",
+    "Jennifer Guckenberger",
+    "Valisa Harmon",
+    "Tera Hollfelder",
+    "Jodi Kardin",
+    "George Klink",
+    "Nicole Lutzke",
+    "Jonathan Mason",
+    "Peter Michaud",
+    "Rachel Nolan",
+    "Kasey Rachu",
+    "Mary Roberts",
+    "Boyd Roessler",
+    "Mike Scoville",
+    "Lisa Sorlie",
+    "Jim Tellstrom",
+    "Kati Walsh",
+    "Julie Young",
+    "",
+    "",
+    "Testing Provided By Students of",
+    "",
+    "Arena Community Elementary School, Arena WI",
+    "Augusta Elementary School, Augusta WI",
+    "Bonduel School District",
+    "Brillion Elementary School, Brillion WI",
+    "Eagle School, Madison WI",
+    "Edgar Elementary School, Edgar WI",
+    "Elementary School, Elmwood WI",
+    "Gibraltar Area School District",
+    "Hadfield Elementary School, Waukesha WI",
+    "Hillcrest Elementary School, Waukesha WI",
+    "Kenosha Unified School District",
+    "KM Explore Elementary School, Wales WI",
+    "Minocqua J1 School District",
+    "Pardeeville Elementary School, Pardeeville WI",
+    "Parkview Elementary School, Orfordville, WI",
+    "Reagan Elementary School, New Berlin WI",
+    "Sheboygan Falls Elementary School",
+    "Wadewitz Elementary School, Racine WI",
+    "Waller Elementary School, Burlington WI",
+    "",
+    "",
+    "Funding Provided By",
+    "",
+    "Wisconsin Department of Public Instruction",
+    "Wisconsin Center for Education Research",
+    "Ron and Colleen Weyers",
+    "Francis A. and Georgia F. Ariens Fund within the Brillion Area Family of Funds",
+    "Ruth St. John and John Dunham West Foundation, Inc.",
+    "Conney Family in loving memory of Mildred Conney",
+    "Edvest College Savings Plan",
+    "Eleanor and Thomas Wildrick Family",
+    "Roger and Lynn Van Vreede",
+    "American Transmission Company",
+    "National Guardian Life Insurance Company",
+    "BMO Harris Bank",
+    "Timothy William Trout Education Fund",
+    "Friends of Wisconsin Public Television",
+    "",
+    "",
+    "Special Thanks",
+    "",
+    "Philip Ashby",
+    "Eric Greiling",
+    "Jone Kiefer",
+    "Kurt Kiefer",
+    "Bobbie Malone",
+    "Robert Mathieu",
+    "Kris McDaniels",
+    "David McHugh",
+    "Keith Polkinghorne",
+    "Brandon Ribordy",
+    "Ken Rosenberg",
+    "BrainPop",
+    "",
+    "",
     "",
   ];
   self.img_srcs = [
-    "assets/data/levels/tunic/animcycles/avatar_idle/0.png",
-    "assets/data/levels/tunic/animcycles/avatar_idle/1.png",
-    "assets/data/levels/tunic/animcycles/avatar_idle/2.png",
-    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
-    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
-    "assets/data/levels/tunic/animcycles/avatar_idle/3.png",
+    "assets/data/levels/tunic/animcycles/null/0.png",
+    "assets/credits/credits_tunic.jpg",
+    "assets/credits/credits_youmans.jpg",
+    "assets/credits/credits_signing.jpg",
+    "assets/credits/credits_nelson.jpg",
+    "assets/credits/credits_march_0.jpg",
+    "assets/credits/credits_march_1.jpg",
   ];
   self.imgs = [
   ];
   self.captions_raw = [
+    "",
     "Parade tunic worn by Wisconsin suffrage supporter, 1916.\n Source: Wisconsin Historical Museum #1956.1450",
     "Portrait of Theodora Youmans (Mrs. Henry), President of the Wisconsin Woman Suffrage Association, holding a Wisconsin flag and standing in front of a painted backdrop. Source: Wisconsin Historical Museum #1927",
     "Governor John J. Blaine (left) shakes the hand of a woman surrounded by other women of who have come to see the governor sign the Women's Rights Bill. The lady shaking the governor's hand is holding a large feather in her left hand. They are standing in front of an entrance to the Wisconsin State Capitol. 1921. Source: Wisconsin Historical Museum #118142",
@@ -16051,6 +16171,9 @@ tmp_wildcard.reqs = [[
   ];
   self.captions = [
   ];
+
+  var bg_img;
+  var logo_img;
 
   self.resize = function()
   {
@@ -16069,8 +16192,12 @@ tmp_wildcard.reqs = [[
     }
     for(var i = 0; i < self.captions_raw.length; i++)
     {
-      self.captions[i] = stextToLines(self.captions_raw[i],canv.width/3);
+      self.captions[i] = stextToLines(self.captions_raw[i],canv.width/2-100);
     }
+    bg_img = new Image();
+    bg_img.src = "assets/logo.png";
+    logo_img = new Image();
+    logo_img.src = "assets/logo.png";
   }
 
   self.dismiss = function()
@@ -16100,16 +16227,14 @@ tmp_wildcard.reqs = [[
 
   self.tick = function()
   {
-    self.t += 0.001;
+    self.t += 0.0001;
+    if(self.t > 1.05) g.setScene(1);
   }
 
   self.draw = function(yoff)
   {
-    var faded_in = 0.05;
-    if(self.t < faded_in)
-    {
-      ctx.globalAlpha = self.t/faded_in;
-    }
+    var faded_in = 0.01;
+    if(self.t < faded_in) ctx.globalAlpha = self.t/faded_in;
     ctx.fillStyle = black;
     ctx.fillRect(0,0,canv.width,canv.height);
     ctx.globalAlpha = 1;
@@ -16117,20 +16242,21 @@ tmp_wildcard.reqs = [[
     var img_t = self.t*self.imgs.length;
     var img_i = floor(img_t);
     img_t -= img_i;
-    var pad = 100;
+    var pad = 50;
     offx = lerp(-pad,pad,img_t);
     offy = lerp(-pad,pad,img_t);
-    if(img_t < 0.1) ctx.globalAlpha = img_t/0.1;
-    if(img_t > 0.9) ctx.globalAlpha = 1-((img_t-0.9)/0.1);
+    var buffer = 0.05;
+    if(img_t < buffer) ctx.globalAlpha = img_t/buffer;
+    if(img_t > 1-buffer) ctx.globalAlpha = 1-((img_t-(1-buffer))/buffer);
     if(img_i < self.imgs.length)
     {
-      ctx.drawImage(self.imgs[img_i],offx,offy,canv.width+pad,canv.height+pad);
+      drawImageHeightCentered(self.imgs[img_i],2*canv.width/3+offx,canv.height/2+offy,canv.height-400,ctx);
 
       ctx.fillStyle = white;
       var y = canv.height-30-self.captions[img_i].length*30;
       for(var i = 0; i < self.captions[img_i].length; i++)
       {
-        ctx.fillText(self.captions[img_i][i],canv.width/2,y);
+        ctx.fillText(self.captions[img_i][i],canv.width/2+50,y);
         y += 30;
       }
     }
@@ -16142,9 +16268,20 @@ tmp_wildcard.reqs = [[
     ctx.fillStyle = white;
     for(var i = 0; i < self.lines.length; i++)
     {
-      if(p > -self.spacing && p < canv.height+self.spacing)
+      if(p > 200 && p < canv.height+self.spacing)
+      {
+        if(p < 300) ctx.globalAlpha = (p-200)/100;
         ctx.fillText(self.lines[i],40,p);
+        ctx.globalAlpha = 1;
+      }
       p += self.spacing;
+    }
+
+    if(self.t > faded_in)
+    {
+      if(self.t < faded_in*2) ctx.globalAlpha = (self.t-faded_in)/faded_in;
+      ctx.drawImage(logo_img,20,20,300,130);
+      ctx.globalAlpha = 1;
     }
   }
 }
@@ -19097,7 +19234,7 @@ tmp_cutscene_command.wx = -1198.2341597796144;
 tmp_cutscene_command.wy = 62.98347107438014;
 tmp_cutscene_command.w = 143;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_boss_angry";
+tmp_cutscene_command.animcycle_id = "emote_boss_annoyed";
 tmp_cutscene_command.raw_text = "I don't have time for this.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
