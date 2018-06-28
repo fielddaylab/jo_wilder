@@ -21,7 +21,7 @@ tmp_object.raw_notifications = [
 "Ooh... \"Ecology flag, by Ron Cobb.\"",
 ];
 tmp_object.raw_notification_ws = [
-186,
+165,
 ];
 tmp_object.notification_reqs = [[
 "!self",
