@@ -158,7 +158,7 @@ tmp_cutscene_command.wy = 129.15501374207662;
 tmp_cutscene_command.w = 227;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "And for our next artifact, the spectacular women's suffrage tunic!";
+tmp_cutscene_command.raw_text = "...And for our next artifact, the spectacular women's suffrage tunic!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -172,7 +172,7 @@ tmp_cutscene_command.wy = 126.12203865811055;
 tmp_cutscene_command.w = 232;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "This was worn by Theodora Youmans- an important figure in the fight for...";
+tmp_cutscene_command.raw_text = "This was worn by Theodora Youmans, an important figure in the fight for...";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -236,7 +236,7 @@ tmp_cutscene_command.wy = 20.064080359025237;
 tmp_cutscene_command.w = 210;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I still say taxidermy would have been better.";
+tmp_cutscene_command.raw_text = "I still say taxidermy would've been better.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -362,7 +362,21 @@ tmp_cutscene_command.wy = 21.579231874176763;
 tmp_cutscene_command.w = 295;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "No really, you are super awesome. Let's credential you and celebrate one last time before credits roll.";
+tmp_cutscene_command.raw_text = "Ha. Good luck.";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.wx = -54.77120229168442;
+tmp_cutscene_command.wy = 21.579231874176763;
+tmp_cutscene_command.w = 295;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.raw_text = "By the way... I've got a badge for you. It's from the boss.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -390,7 +404,7 @@ tmp_cutscene_command.wy = 17.033777328722188;
 tmp_cutscene_command.w = 220;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Junior History Detective. It's from the boss.";
+tmp_cutscene_command.raw_text = "Junior History Detective. It's official now... try not to mess it up.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -460,7 +474,7 @@ tmp_cutscene_command.wy = -75.39311285704109;
 tmp_cutscene_command.w = 130;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Stole is such a strong word...";
+tmp_cutscene_command.raw_text = "I didn't STEAL it! I just borrowed it for a while...";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
