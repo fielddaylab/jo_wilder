@@ -23590,7 +23590,8 @@ tmp_speak_command.wx = 60.203553596054434;
 tmp_speak_command.wy = 197.60776474097224;
 tmp_speak_command.w = 284;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_wells_annoyed";
+tmp_speak_command.animcycle_id = "null";
+// above used to be "emote_wells_annoyed" but needs to be cutscene
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
