@@ -5108,6 +5108,20 @@ tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/music_main.mp3");
 }
 tmp_level.audios.push(tmp_audio);
 tmp_audio = new audio();
+tmp_audio.id = "music_teddy_gone";
+tmp_audio.fqid = "tunic.music_teddy_gone";
+{
+tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/music_teddy_gone.mp3");
+}
+tmp_level.audios.push(tmp_audio);
+tmp_audio = new audio();
+tmp_audio.id = "music_win";
+tmp_audio.fqid = "tunic.music_win";
+{
+tmp_audio.aud = GenAudio("assets/data/levels/tunic/audios/music_win.mp3");
+}
+tmp_level.audios.push(tmp_audio);
+tmp_audio = new audio();
 tmp_audio.id = "notebook_open";
 tmp_audio.fqid = "tunic.notebook_open";
 {
@@ -31123,7 +31137,7 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.entry.groupconvo_flag",
+"tunic.historicalsociety.entry.boss.flag",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);

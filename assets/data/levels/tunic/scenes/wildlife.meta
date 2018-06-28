@@ -21,6 +21,6 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.entry.groupconvo_flag",
+"tunic.historicalsociety.entry.boss.flag",
 ]];
 
