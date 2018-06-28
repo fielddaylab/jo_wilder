@@ -1086,7 +1086,7 @@ var GamePlayScene = function(game, stage)
     if(cur_level)
     {
       for(var i = 0; i < cur_level.audios.length; i++)
-        if(cur_level.audios[i].aud && cur_level.audios[i].aud.playing) cur_level.audios[i].aud.pause();
+        if(cur_level.audios[i].aud && !cur_level.audios[i].aud.paused) cur_level.audios[i].aud.pause();
     }
   };
 
