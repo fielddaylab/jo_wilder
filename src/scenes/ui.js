@@ -4211,13 +4211,17 @@ var cutsceneview = function()
     {
       var entity = self.cutscene_entitys[i];
       screenSpace(my_camera,canv,entity);
+      if(entity.stack_animcycle_t) entity.stack_animcycle_t--;
       if(entity.a == CUTSCENE_COMMAND_IGNORE || entity.a > 0)
       {
         ctx.save();
         if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
         ctx.translate(entity.x+entity.w/2,entity.y+entity.h/2);
         if(entity.flip) ctx.scale(-1,1);
-        ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+        if(entity.stack_animcycle_t && entity.stack_animcycle_t > 0 && entity.stack_animcycle_inst)
+          ctx.drawImage(entity.stack_animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+        else
+          ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
         ctx.restore();
       }
     }
