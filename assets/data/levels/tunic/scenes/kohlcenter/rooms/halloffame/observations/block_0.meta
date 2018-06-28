@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "Grandpa said to look for clues. Better look around.";
+tmp_observation.raw_text = "Gramps said to look for clues. Better look around.";
 tmp_observation.blip_wx = -818.3862029221006;
 tmp_observation.blip_wy = 176.3533393169813;
 tmp_observation.blip_w = 181;
