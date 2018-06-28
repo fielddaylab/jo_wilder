@@ -389,7 +389,7 @@ tmp_cutscene_command.wy = 62.98347107438014;
 tmp_cutscene_command.w = 143;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_boss_angry";
-tmp_cutscene_command.raw_text = "Hoo boy.";
+tmp_cutscene_command.raw_text = "I don't have time for this.";
 tmp_cutscene_command.animcycle_id = "emote_boss_angry";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);

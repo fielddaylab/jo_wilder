@@ -334,7 +334,7 @@ tmp_cutscene_command.wy = -73.8779613418895;
 tmp_cutscene_command.w = 141;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wow! No more disposalbe cups.";
+tmp_cutscene_command.raw_text = "Wow! No more disposable cups.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -348,7 +348,7 @@ tmp_cutscene_command.wy = -78.42341588734402;
 tmp_cutscene_command.w = 164;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Maybe Jolie's Park will happen sooner.";
+tmp_cutscene_command.raw_text = "Maybe Jolie's Park will happen sooner than I thought!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -362,7 +362,7 @@ tmp_cutscene_command.wy = 21.579231874176763;
 tmp_cutscene_command.w = 295;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "No really, you are super awesome. Let's credential you and celerate one last time before credits roll.";
+tmp_cutscene_command.raw_text = "No really, you are super awesome. Let's credential you and celebrate one last time before credits roll.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -425,6 +425,20 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "-927345892";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -41.13483865532075;
+tmp_cutscene_command.wy = 12.48832278326767;
+tmp_cutscene_command.w = 133;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.raw_text = "Here you go!";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "wells";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.wx = -41.13483865532075;
@@ -432,7 +446,7 @@ tmp_cutscene_command.wy = 12.48832278326767;
 tmp_cutscene_command.w = 110;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "What??? You stole my ID?";
+tmp_cutscene_command.raw_text = "What??? You stole my ID badge?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
