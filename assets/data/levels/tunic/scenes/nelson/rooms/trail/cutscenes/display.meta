@@ -171,7 +171,7 @@ tmp_cutscene_command.wy = -154.15909090909068;
 tmp_cutscene_command.w = 124;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "(Sleepy emoji)";
+tmp_cutscene_command.raw_text = "(😴)";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
