@@ -3,6 +3,7 @@ var MenuScene = function(game, stage)
   var self = this;
 
   var clicker;
+  var hoverer;
   var blurer;
   var audio;
 
@@ -19,6 +20,7 @@ var MenuScene = function(game, stage)
     ctx = canv.context;
 
     if(clicker) { clicker.detach(); clicker = new Clicker({source:canvas}); }
+    if(hoverer) { hoverer.detach(); hoverer = new Hoverer({source:canvas}); }
     if(blurer)  { blurer.detach(); blurer  = new Blurer({source:canvas}); }
     if(realtime_click_registered_to) { realtime_click_registered_to.removeEventListener("click",realtime_click); canv.canvas.addEventListener("click",realtime_click); realtime_click_registered_to = canv.canvas; }
 
@@ -63,6 +65,7 @@ var MenuScene = function(game, stage)
   self.ready = function()
   {
     if(!clicker) clicker = new Clicker({source:canvas});
+    if(!hoverer) hoverer = new Hoverer({source:canvas});
     if(!blurer)  blurer  = new Blurer({source:canvas});
     if(!audio) audio = GenAudio("assets/music_menu.mp3");
     audio.loop = true;
@@ -82,6 +85,11 @@ var MenuScene = function(game, stage)
     y += h+10;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = "rgba(255,255,255,0.1)"; code_valid = 0; return; } if(save_table[txt]) { code_txt.bg_color = "rgba(0,255,0,0.1)"; code_valid = 1; } else { code_txt.bg_color = "rgba(255,0,0,0.1)"; code_valid = 0; } }); x += w+10;
     code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_table_code = code_txt.txt; save_code = save_table[save_table_code].code; next = 1; } });
+
+    continue_button.hover = function(evt) { continue_button.hovering = 1; }
+    continue_button.unhover = function(evt) { continue_button.hovering = 0; }
+    new_button.hover = function(evt) { new_button.hovering = 1; }
+    new_button.unhover = function(evt) { new_button.hovering = 0; }
 
     w = 30;
     h = 30;
@@ -133,6 +141,8 @@ var MenuScene = function(game, stage)
     else
     {
       blurer.filter(code_txt);
+      hoverer.filter(continue_button);
+      hoverer.filter(new_button);
       if(
         !clicker.filter(continue_button) &&
         !clicker.filter(new_button) &&
@@ -145,6 +155,7 @@ var MenuScene = function(game, stage)
         ;
     }
     clicker.flush();
+    hoverer.flush();
     blurer.flush();
   };
 
@@ -165,8 +176,10 @@ var MenuScene = function(game, stage)
     ctx.fillStyle = white;
     if(!continuable) ctx.fillStyle = "rgba(255,255,255,0.1)";
     ctx.fillText("Continue",continue_button.x+15,continue_button.y+continue_button.h-10);
+    if(continue_button.hovering) ctx.fillRect(continue_button.x+10,continue_button.y+continue_button.h,continue_button.w-30,3);
     ctx.fillStyle = white;
     ctx.fillText("New Game",new_button.x+15,new_button.y+new_button.h-10);
+    if(new_button.hovering) ctx.fillRect(new_button.x+10,new_button.y+new_button.h,new_button.w-30,3);
     code_txt.draw(canv);
     ctx.fillText("Enter Code:",new_button.x+15,new_button.y+new_button.h-10+10+new_button.h);
     if(!code_valid) ctx.fillStyle = "rgba(255,255,255,0.1)";
@@ -202,6 +215,8 @@ var MenuScene = function(game, stage)
   {
     clicker.detach();
     clicker = null;
+    hoverer.detach();
+    hoverer = null;
     blurer.detach();
     blurer = null;
     audio.pause();
