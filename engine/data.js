@@ -20317,9 +20317,9 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 542.9199971972279;
-tmp_speak_command.wy = -122.09617335165777;
-tmp_speak_command.w = 98.19989013671875;
+tmp_speak_command.wx = 530.7201070605091;
+tmp_speak_command.wy = -118.09617335165774;
+tmp_speak_command.w = 28.19989013671875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
