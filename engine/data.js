@@ -31157,7 +31157,7 @@ tmp_scene.notice_reqs = [[
 "!self",
 ]];
 tmp_scene.reqs = [[
-"tunic.historicalsociety.entry.groupconvo_flag",
+"tunic.historicalsociety.entry.boss.flag",
 ]];
 
 tmp_scene.animcycle_inst = gen_animcycle_inst(tmp_scene.animcycle_id,tmp_level.animcycles);
