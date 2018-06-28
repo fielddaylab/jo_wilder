@@ -16,6 +16,7 @@ tmp_zone.raw_notification_ws = [
 tmp_zone.notification_reqs = [[
 ]];
 tmp_zone.reqs = [[
-"tunic.wildlife.center.expert.gps",
+"tunic.wildlife.center.expert.removed_cup",
+"!tunic.wildlife.center.tracks.hub.deer",
 ]];
 

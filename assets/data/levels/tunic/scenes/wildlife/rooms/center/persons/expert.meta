@@ -22,6 +22,9 @@ tmp_person.raw_notification_ws = [
 ];
 tmp_person.notice_reqs = [[
 "!self",
+],[
+"tunic.wildlife.center.remove_cup",
+"!tunic.wildlife.center.expert.removed_cup",
 ]];
 tmp_person.notification_reqs = [[
 ]];

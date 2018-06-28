@@ -1,0 +1,36 @@
+tmp_observation.ww = 234.81590909090923;
+tmp_observation.wh = 252.10000000000014;
+tmp_observation.wx = 483.4956200353053;
+tmp_observation.wy = -535.589474845542;
+tmp_observation.wz = 5;
+tmp_observation.act_wx = -158.969696969697;
+tmp_observation.act_wy = -110.75757575757575;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 110.75757575757575;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "notice";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "Easy now...";
+tmp_observation.blip_wx = 186.03178003257472;
+tmp_observation.blip_wy = -428.1818282553504;
+tmp_observation.blip_w = 100;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"tunic.wildlife.center.expert.crane",
+"!self",
+]];
+
