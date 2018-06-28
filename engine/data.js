@@ -4506,13 +4506,20 @@ tmp_animcycle.fqid = "tunic.teddy_noscarf";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
+tmp_animcycle.frame_t = 30;
 tmp_animcycle.offset_t = 0;
 tmp_animcycle.loop = 1;
-
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_noscarf/8.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -19452,10 +19459,10 @@ tmp_person = new person();
 tmp_person.id = "teddy";
 tmp_person.fqid = "tunic.historicalsociety.cage.teddy";
 {
-tmp_person.ww = 192.54554082386383;
-tmp_person.wh = 136.21212197790402;
-tmp_person.wx = 98.95089017041023;
-tmp_person.wy = -200.15168443355955;
+tmp_person.ww = 122.48764972620297;
+tmp_person.wh = 129.38881101761731;
+tmp_person.wx = 57.11383264600901;
+tmp_person.wy = -153.61047468212485;
 tmp_person.wz = 0;
 tmp_person.act_wx = -146.29687625848175;
 tmp_person.act_wy = 29.395068590892784;

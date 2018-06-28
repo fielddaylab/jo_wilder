@@ -32,6 +32,5 @@ var QUALITY = 1;
 var LOFI = 1;
 var CUTSCENE_ADVANCE = 0;
 var COMPRESS_SPEAKS = 0;
-var TIGHTEN_BUBBLES = 1;
+var TIGHTEN_BUBBLES = 0;
 var AUDIO = 1;
-
