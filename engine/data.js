@@ -1540,6 +1540,21 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_basket
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "entry_capitolfinal";
+tmp_animcycle.fqid = "tunic.entry_capitolfinal";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/entry_capitolfinal/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "entry_cleanercard_img";
 tmp_animcycle.fqid = "tunic.entry_cleanercard_img";
 {
@@ -5173,7 +5188,7 @@ tmp_entry.fqid = "tunic.entry_activists";
 tmp_entry.ww = 393.9999999999999;
 tmp_entry.wh = 208.99999999999994;
 tmp_entry.wx = 202.99999999999994;
-tmp_entry.wy = -119.49999999999996;
+tmp_entry.wy = -100.50000000000001;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_activists_img";
@@ -5709,7 +5724,7 @@ tmp_entry.fqid = "tunic.entry_nelson";
 tmp_entry.ww = 394;
 tmp_entry.wh = 170;
 tmp_entry.wx = 203.99999999999997;
-tmp_entry.wy = 160;
+tmp_entry.wy = 172;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_nelson_img";
@@ -5857,7 +5872,7 @@ tmp_entry.fqid = "tunic.entry_quest_backbackbacktoarchivist";
 tmp_entry.ww = 389;
 tmp_entry.wh = 74.99999999999999;
 tmp_entry.wx = 202.49999999999994;
-tmp_entry.wy = 31.499999999999908;
+tmp_entry.wy = 48.49999999999991;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_quest_backbackbacktoarchivist_img";
@@ -5885,8 +5900,8 @@ tmp_entry.fqid = "tunic.entry_quest_backbackbacktoarchivist_x";
 {
 tmp_entry.ww = 35.99999999999999;
 tmp_entry.wh = 37.00000000000006;
-tmp_entry.wx = 25.000000000000178;
-tmp_entry.wy = 30.499999999999957;
+tmp_entry.wx = 26.000000000000146;
+tmp_entry.wy = 47.49999999999996;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_x_img";
@@ -6019,6 +6034,35 @@ tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.newspaper",
+]];
+
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_backtocapitol";
+tmp_entry.fqid = "tunic.entry_quest_backtocapitol";
+{
+tmp_entry.ww = 389;
+tmp_entry.wh = 74.99999999999999;
+tmp_entry.wx = 200.5;
+tmp_entry.wy = -245.50000000000003;
+tmp_entry.wz = 100;
+tmp_entry.page = 6;
+tmp_entry.animcycle_id = "entry_capitolfinal";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
