@@ -18,7 +18,7 @@ tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 0;
 tmp_object.raw_notifications = [
-"Ooh... \"The ecology flag, by Ron Cobb.\"",
+"Ooh... \"Ecology flag, by Ron Cobb.\"",
 ];
 tmp_object.raw_notification_ws = [
 186,
