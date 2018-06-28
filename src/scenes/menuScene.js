@@ -87,7 +87,7 @@ var MenuScene = function(game, stage)
     h = 30;
     x = 100;
     y = canv.height-100;
-    audio_toggle      = new ToggleBox(x,y,w,h,AUDIO,function(o){ audio.pause(); AUDIO = o; if(!o && audio.playing) audio.pause(); if(o && !audio.playing) audio.play(); }); x += 200;
+    audio_toggle      = new ToggleBox(x,y,w,h,AUDIO,function(o){ audio.pause(); AUDIO = o; if(!o && !audio.paused) audio.pause(); if(o && audio.paused) audio.play(); }); x += 200;
     hq_toggle         = new ToggleBox(x,y,w,h,!LOFI,function(o)
       {
         LOFI = !o;
@@ -123,7 +123,7 @@ var MenuScene = function(game, stage)
 
   self.tick = function()
   {
-    if(AUDIO && audio && game_first_audio_played && !audio.playing) audio.play();
+    if(AUDIO && audio && game_first_audio_played && audio.paused) audio.play();
 
     if(next)
     {

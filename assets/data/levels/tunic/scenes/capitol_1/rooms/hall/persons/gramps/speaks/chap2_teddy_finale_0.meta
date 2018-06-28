@@ -27,41 +27,15 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -110.62440263384018;
-tmp_speak_command.wy = -40.475112907490576;
-tmp_speak_command.w = 190.76785278320312;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "I first noticed Teddy-";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -108.62528702975852;
-tmp_speak_command.wy = -38.00806282360243;
-tmp_speak_command.w = 333.5916748046875;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "(Teddy is the name of my pet badger...)";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -112.04519156814241;
 tmp_speak_command.wy = -38.657414024087245;
-tmp_speak_command.w = 223;
+tmp_speak_command.w = 319;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "was stolen when Gramps's office was ransacked.";
+tmp_speak_command.raw_atext = "I first noticed Teddy was stolen when Gramps's office was ransacked.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

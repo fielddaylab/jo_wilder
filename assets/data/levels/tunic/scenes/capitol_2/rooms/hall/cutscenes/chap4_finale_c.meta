@@ -26,6 +26,7 @@ tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 "!self",
 ]];
 tmp_cutscene.commands = [];
@@ -83,6 +84,24 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
+tmp_cutscene_command.cutscene_entity_id = "badge";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.wx = -150;
+tmp_cutscene_command.wy = -220;
+tmp_cutscene_command.ww = 230;
+tmp_cutscene_command.wh = 230;
+tmp_cutscene_command.wz = 1000;
+tmp_cutscene_command.a = 0;
+tmp_cutscene_command.animcycle_id = "badge_3";
+tmp_cutscene_command.deck_animcycle_ids = [
+];
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "boss";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
@@ -118,7 +137,7 @@ tmp_cutscene_command.wx = 195.72026443448922;
 tmp_cutscene_command.wy = 132.79172926997546;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_boss_angry";
+tmp_cutscene_command.animcycle_id = "emote_boss_annoyed";
 tmp_cutscene_command.raw_text = "PLEASE tell me you're doing better than he is.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
@@ -262,10 +281,30 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "badge";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.a = 1;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+50;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+50;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter5";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+200;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+50;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "badge";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.a = 0;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+10;
 tmp_cutscene_command.end_t = tmp_cutscene_command.t+50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -289,7 +328,7 @@ tmp_cutscene_command.wy = 133.6969696969695;
 tmp_cutscene_command.w = 220;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Alright Jolie- I'll see you tomorrow at the exhibit!";
+tmp_cutscene_command.raw_text = "Better get some rest before the big day!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+30;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
