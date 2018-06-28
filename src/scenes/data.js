@@ -31087,10 +31087,10 @@ tmp_person = new person();
 tmp_person.id = "gramps";
 tmp_person.fqid = "tunic.nelson.trail.gramps";
 {
-tmp_person.ww = 220;
-tmp_person.wh = 327.00000000000006;
-tmp_person.wx = -1433.7954545454543;
-tmp_person.wy = -96.90909090909082;
+tmp_person.ww = 207.53036437246982;
+tmp_person.wh = 327.89068825910937;
+tmp_person.wx = -1440.0302723592197;
+tmp_person.wy = -97.3544350386455;
 tmp_person.wz = 4;
 tmp_person.act_wx = -231.99999999909573;
 tmp_person.act_wy = -58;
