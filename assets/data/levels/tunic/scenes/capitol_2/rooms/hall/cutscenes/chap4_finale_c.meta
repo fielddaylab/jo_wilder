@@ -257,8 +257,8 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter5";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 1;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+49;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+99;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+50;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -267,8 +267,8 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter5";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+199;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+249;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+200;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+250;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;

@@ -13481,8 +13481,8 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter5";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 1;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+49;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+99;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+50;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -13491,8 +13491,8 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "chapter5";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+199;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+249;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+200;
+tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+250;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -13631,7 +13631,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Is the flag a picture of a deer hoof?";
+tmp_speak_command.raw_atext = "Is it an early Wisconsin flag with a deer hoof symbol?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13705,7 +13705,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I found some deer tracks- they're a bit different.";
+tmp_speak_command.raw_atext = "I checked at the Wildlife Center. It's not a deer hoof!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13718,20 +13718,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Well, if it isn't a deer hoof...";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 196.57240021891997;
-tmp_speak_command.wy = 141.46981381805244;
-tmp_speak_command.w = 92.77590942382812;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "What is it?";
+tmp_speak_command.raw_atext = "Hmmm. Then what is our flag?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13905,20 +13892,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That's a theta symbol.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -118.03284131315795;
-tmp_speak_command.wy = -59.474436353798566;
-tmp_speak_command.w = 142.05577087402344;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "It looks sort of like the Earth.";
+tmp_speak_command.raw_atext = "That's a theta symbol!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -13944,7 +13918,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "That stands for \"ecology\" and \"organism\"- the earth is a living thing we need to care about!";
+tmp_speak_command.raw_atext = "That stands for \"environment\" and \"organism\"- the earth is a living thing we need to care about!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -17317,7 +17291,7 @@ tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 0;
 tmp_object.raw_notifications = [
-"Ooh... \"The ecology flag, by Ron Cobb.\"",
+"Ooh... \"Ecology flag, by Ron Cobb.\"",
 ];
 tmp_object.raw_notification_ws = [
 165,
