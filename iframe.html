@@ -75,10 +75,15 @@ var game_height = 660;
 var game_first_audio_played = 0;
 function fullscreen()
 {
-  return; //for debugging, disable fullscreen
   var el = document.body;
-  var requestMethod = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;
+  var requestMethod = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
   if(requestMethod) requestMethod.call(el);
+}
+function unfullscreen()
+{
+  var el = document;
+  var exitMethod = el.exitFullscreen || el.webkitExitFullscreen || el.mozCancelFullScreen || el.msExitFullscreen;
+  if(exitMethod) exitMethod.call(el);
 }
 
 function size_containers(w,h)
@@ -116,8 +121,9 @@ function begin()
   }
   if(platform == "PC")          stage_container.addEventListener('mousedown', play_first_audio);
   else if(platform == "MOBILE") stage_container.addEventListener('touchstart', play_first_audio);
-  //play_first_audio(); //comment this out if loaded _not_ through click-to-init iframe
+  game_first_audio_played = 1; first_audio.play(); //comment this out if loaded _not_ through click-to-init iframe
 
+/*
   var try_fullscreen = function()
   {
     fullscreen();
@@ -126,6 +132,7 @@ function begin()
   }
   if(platform == "PC")          stage_container.addEventListener('mousedown', try_fullscreen);
   else if(platform == "MOBILE") stage_container.addEventListener('touchstart', try_fullscreen);
+*/
 
   g = new Game({width:w,height:h,container:"stage_container"});
   resize();

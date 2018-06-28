@@ -12,10 +12,10 @@ tmp_porthole.animcycle_id = "null";
 tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
 tmp_porthole.hover_icon_animcycle_id = "hblip_door";
 tmp_porthole.notice_icon_animcycle_id = "null";
-tmp_porthole.audio_id = "door";
+tmp_porthole.audio_id = "null";
 tmp_porthole.deck_animcycle_ids = [
 ];
-tmp_porthole.target_room = "entry";
+tmp_porthole.target_room = "null";
 tmp_porthole.target_start_wx = 0;
 tmp_porthole.target_start_wy = 330;
 tmp_porthole.notifications_persistent = 0;

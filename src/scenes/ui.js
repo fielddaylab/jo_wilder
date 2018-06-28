@@ -65,6 +65,12 @@ var loader = function()
 
   self.consume_level = function(level)
   {
+    get_audio(level.audio_id,level.audios).aud.load();
+    get_audio(level.toolbar_audio_id,level.audios).aud.load();
+    get_audio(level.map_audio_id,level.audios).aud.load();
+    get_audio(level.notebook_audio_id,level.audios).aud.load();
+    get_audio(level.notebook_turn_audio_id,level.audios).aud.load();
+
     self.load_animcycle(find_animcycle(level.avatar_walk_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_idle_animcycle_id,level.animcycles));
     self.load_animcycle(find_animcycle(level.avatar_act_animcycle_id,level.animcycles));
@@ -93,7 +99,8 @@ var loader = function()
     }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
-    get_audio(level.audio_id,cur_level.audios).aud.play();
+    get_audio(level.audio_id,level.audios).aud.loop = true;
+    if(AUDIO) get_audio(level.audio_id,level.audios).aud.play();
   }
 
   self.consume_room = function(room)
@@ -402,26 +409,26 @@ var avatar = function()
         my_loader.unlock_content();
         switch(cur_act.act)
         {
-          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_PORTHOLE:
           {
             if(cur_act.target_room_found)
             {
               state_to = state_stack;
-              get_audio(cur_act.audio_id,cur_level.audios).aud.play();
+              if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play();
             }
             else //go to map
             {
               my_navigable.selected_act = 0;
               state_to = STATE_MAP;
               my_mapview.unlock_content();
-              get_audio(cur_level.map_audio_id,cur_level.audios).aud.play();
+              if(AUDIO) get_audio(cur_level.map_audio_id,cur_level.audios).aud.play();
             }
           }
           break;
-          case ACT_WILDCARD: state_to = STATE_WILDCARD; my_wildcardview.consume_wildcard(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_WILDCARD: state_to = STATE_WILDCARD; my_wildcardview.consume_wildcard(cur_act); if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
           case ACT_CUTSCENE:
           {
             state_stack = STATE_CUTSCENE;
@@ -1887,6 +1894,7 @@ var toolbar = function()
       my_loader.unlock_content();
       state_t = 0;
       my_mapview.unlock_content();
+      if(AUDIO) get_audio(cur_level.map_audio_id,cur_level.audios).aud.play();
     }
     if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
@@ -1897,6 +1905,7 @@ var toolbar = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
+      if(AUDIO) get_audio(cur_level.notebook_audio_id,cur_level.audios).aud.play();
     }
   }
 
@@ -2165,11 +2174,11 @@ var notebookview = function()
     screenSpace(my_ui_camera,canv,self.notebook);
     self.exit_box = {x:canv.width-100, y:10, w:90, h:90};
 
-    var prev_x_edge = 25;
-    var prev_y_edge = canv.height-20;
-    var next_x_edge = canv.width-35;
-    var next_y_edge = canv.height-20;
-    var page_s = 100;
+    var prev_x_edge = 10;
+    var prev_y_edge = canv.height-10;
+    var next_x_edge = canv.width-10;
+    var next_y_edge = canv.height-10;
+    var page_s = 50;
     self.prev_box = {x:prev_x_edge,        y:prev_y_edge-page_s, w:page_s, h:page_s };
     self.next_box = {x:next_x_edge-page_s, y:prev_y_edge-page_s, w:page_s, h:page_s };
   }
@@ -2298,11 +2307,18 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
+      if(AUDIO) get_audio(cur_level.notebook_audio_id,cur_level.audios).aud.play();
     }
     else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
+    {
+      if(AUDIO) get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud.play();
       self.page--;
+    }
     else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
+    {
+      if(AUDIO) get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud.play();
       self.page++;
+    }
   }
 
   self.tick = function()
@@ -3848,10 +3864,10 @@ var cutsceneview = function()
         state_t = 0;
         switch(e.act)
         {
-          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
-          case ACT_WILDCARD:    state_to = STATE_WILDCARD;    my_wildcardview.consume_wildcard(cur_act);       get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_PERSON:      state_to = STATE_PERSON;      my_personview.consume_person(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBJECT:      state_to = STATE_OBJECT;      my_objectview.consume_object(cur_act);           if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_OBSERVATION: state_to = STATE_OBSERVATION; my_observationview.consume_observation(cur_act); if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
+          case ACT_WILDCARD:    state_to = STATE_WILDCARD;    my_wildcardview.consume_wildcard(cur_act);       if(AUDIO) get_audio(cur_act.audio_id,cur_level.audios).aud.play(); break;
         }
         break;
       case CUTSCENE_COMMAND_SPEAK:

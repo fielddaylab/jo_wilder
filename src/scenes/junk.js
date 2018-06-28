@@ -25,8 +25,5 @@ var my_cutsceneview;
 var my_notificationview;
 var my_wildcardview;
 
-var init_audio = false;
-var canv_clicker;
-
 var my_keyable;
 

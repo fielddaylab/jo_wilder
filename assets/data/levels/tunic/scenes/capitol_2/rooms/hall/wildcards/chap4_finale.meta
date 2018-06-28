@@ -41,15 +41,17 @@ var FINALE_WILDCARD_COMMAND_COUNT    = ENUM; ENUM++;
 
 tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_0" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_ecologyflag", prompt_raw:"What is this flag?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_2.hall.boss.chap4_finale_0_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_tracks", prompt_raw:"How do I know it isn't a deer hoof?", prompt_w:165, fail:["tunic.capitol_2.hall.boss.chap4_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_nelson", prompt_raw:"What was the flag for?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_2.hall.boss.chap4_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_ecologyflag", prompt_raw:"What flag is it?", prompt_w:150, fail:["tunic.capitol_2.hall.boss.chap4_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_2" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theta", prompt_raw:"What do I know about the symbols?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_2.hall.boss.chap4_finale_2_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_theta", prompt_raw:"What do I know about the symbol?", prompt_w:180, fail:["tunic.capitol_2.hall.boss.chap4_finale_2_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_3" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_activists", prompt_raw:"What else can I show her about how ecology flags were used?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_2.hall.boss.chap4_finale_3_fail"] },
-{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_4" },
 
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_nelson", prompt_raw:"How was the flag used?", prompt_w:220, fail:["tunic.capitol_2.hall.boss.chap4_finale_3_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_4" },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_activists", prompt_raw:"What else can I show her about how ecology flags were used?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_2.hall.boss.chap4_finale_4_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_2.hall.boss.chap4_finale_5" },
 ];
 
 for(var i = 0; i < tmp_wildcard.commands.length; i++)

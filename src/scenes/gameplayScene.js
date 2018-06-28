@@ -101,7 +101,7 @@ var GamePlayScene = function(game, stage)
           var bogus_w = ob.raw_notification_ws[i];
           if(bogus_lines.length == 1)
           {
-            bogus_w = ctx.measureText(bogus_lines[0]).width+1;
+            bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
           }
           else
           {
@@ -112,7 +112,7 @@ var GamePlayScene = function(game, stage)
               bogus_lines = stextToLines(ob.raw_notifications[i],bogus_w);
               keep_shrinking = (bogus_lines.length <= ob.notifications[i].length && bogus_w > 0);
               for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
-                if(ctx.measureText(bogus_lines[j]).width > bogus_w) keep_shrinking = 0;
+                if(ctx.measureText(bogus_lines[j].trim()).width > bogus_w) keep_shrinking = 0;
             }
             bogus_w += 1;
             if(bogus_w == 1) bogus_w = ob.raw_notification_ws[i];
@@ -131,7 +131,7 @@ var GamePlayScene = function(game, stage)
         var bogus_w = w;
         if(bogus_lines.length == 1)
         {
-          bogus_w = ctx.measureText(bogus_lines[0]).width+1;
+          bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
         }
         else
         {
@@ -142,7 +142,7 @@ var GamePlayScene = function(game, stage)
             bogus_lines = stextToLines(raw,bogus_w);
             keep_shrinking = (bogus_lines.length <= text.length && bogus_w > 0);
             for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
-              if(ctx.measureText(bogus_lines[j]).width > bogus_w) keep_shrinking = 0;
+              if(ctx.measureText(bogus_lines[j].trim()).width > bogus_w) keep_shrinking = 0;
           }
           bogus_w += 1;
           if(bogus_w == 1) bogus_w = w;
@@ -411,7 +411,6 @@ var GamePlayScene = function(game, stage)
       if(evt.key == "e") { my_keyable.eup = 1; dragger.force_end(); }
     }
 
-    canv_clicker = {x:0,y:0,w:canv.width,h:canv.height,click:function(evt){ if(!init_audio) null_audio.aud.play(); init_audio = true; }};
     ctx.font = text_font;
 
     state_cur = STATE_TRANSITION;
@@ -439,7 +438,6 @@ var GamePlayScene = function(game, stage)
   self.tick = function()
   {
     keyer.filter(my_keyable);
-    if(!init_audio) clicker.filter(canv_clicker);
     hoverer.filter(my_cursor);
 
     my_notificationview.tick();
@@ -473,7 +471,6 @@ var GamePlayScene = function(game, stage)
           (!my_notificationview.note.length || my_notificationview.clickthrough) &&
           !clicker.filter(my_toolbar) &&
           !clicker.filter(my_navigable) &&
-          !clicker.filter(canv_clicker) &&
           false) ;
         }
         my_navigable.tick();

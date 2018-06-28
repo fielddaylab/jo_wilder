@@ -31,5 +31,8 @@ tmp_observation.notification_reqs = [[
 ]];
 tmp_observation.reqs = [[
 "!tunic.historicalsociety.closet_dirty",
+],[
+"tunic.capitol_1.hall.chap2_finale_c",
+"!tunic.historicalsociety.cage",
 ]];
 
