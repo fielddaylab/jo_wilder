@@ -71,7 +71,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = -850;
 tmp_cutscene_command.wy = -110;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345891;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -82,7 +82,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.wx = -630;
 tmp_cutscene_command.wy = -110;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345891;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -96,7 +96,6 @@ tmp_cutscene_command.w = 39;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.raw_text = "Hey!";
-tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+61;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -139,7 +138,6 @@ tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_scared";
 tmp_cutscene_command.raw_text = "GAH! And what is THAT doing out of its cage?!";
-tmp_cutscene_command.animcycle_id = "emote_archivist_scared";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -154,7 +152,6 @@ tmp_cutscene_command.w = 301;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.raw_text = "You stole Teddy! How could you?!";
-tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -166,7 +163,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.wx = -872.797037129337;
 tmp_cutscene_command.wy = -0.12429706896413606;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+-11;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345952;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -180,7 +177,6 @@ tmp_cutscene_command.w = 288;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.raw_text = "Okay, I'm here. What's going on?";
-tmp_cutscene_command.animcycle_id = "emote_boss_frown";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+11;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -195,7 +191,6 @@ tmp_cutscene_command.w = 97;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.raw_text = "I told you!";
-tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -224,7 +219,6 @@ tmp_cutscene_command.w = 221;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.raw_text = "He's been eating my lunch every day this week!";
-tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -239,7 +233,6 @@ tmp_cutscene_command.w = 117;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
 tmp_cutscene_command.raw_text = "No he hasn't!";
-tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -265,7 +258,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = -843;
 tmp_cutscene_command.wy = -110;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345952;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -349,7 +342,6 @@ tmp_cutscene_command.w = 41;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.raw_text = "See?!";
-tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -361,7 +353,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = -850;
 tmp_cutscene_command.wy = -110;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345953;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -375,7 +367,6 @@ tmp_cutscene_command.w = 205;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.raw_text = "That thing's a monster!";
-tmp_cutscene_command.animcycle_id = "emote_archivist_angry";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -389,8 +380,7 @@ tmp_cutscene_command.wy = 62.98347107438014;
 tmp_cutscene_command.w = 143;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_boss_angry";
-tmp_cutscene_command.raw_text = "Hoo boy.";
-tmp_cutscene_command.animcycle_id = "emote_boss_angry";
+tmp_cutscene_command.raw_text = "I don't have time for this.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -515,9 +505,8 @@ tmp_cutscene_command.wx = -1000.1795063081127;
 tmp_cutscene_command.wy = 69.7093294789152;
 tmp_cutscene_command.w = 112;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Ugh. Fine.";
 tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
+tmp_cutscene_command.raw_text = "Ugh. Fine.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -571,7 +560,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.wx = -460;
 tmp_cutscene_command.wy = -110;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345953;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -582,7 +571,7 @@ tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = -843;
 tmp_cutscene_command.wy = -110;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene_command.end_t = tmp_prev_cutscene_command.t+-927345954;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;

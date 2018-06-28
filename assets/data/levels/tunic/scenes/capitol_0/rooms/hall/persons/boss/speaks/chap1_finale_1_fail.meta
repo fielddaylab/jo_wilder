@@ -16,13 +16,13 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 199.75936647904987;
 tmp_speak_command.wy = 131.43465455529244;
-tmp_speak_command.w = 162.69814225923326;
+tmp_speak_command.w = 138.69814225923326;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I'm not sure that's relevant here...";
+tmp_speak_command.raw_atext = "That doesn't make your case.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -18,39 +18,39 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 80.60777874667382;
 tmp_speak_command.wy = 51.02564825772507;
-tmp_speak_command.w = 133;
+tmp_speak_command.w = 116;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "This must be an ecology flag!";
+tmp_speak_command.raw_atext = "It's an ecology flag!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 79.44033824989899;
 tmp_speak_command.wy = 48.00851172706814;
-tmp_speak_command.w = 188;
+tmp_speak_command.w = 144;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Do you know anything about Earth Day?";
+tmp_speak_command.raw_atext = "Do you know why it was made?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 202.00013494149752;
 tmp_speak_command.wy = 166.00000198907304;
-tmp_speak_command.w = 135.25584411621094;
+tmp_speak_command.w = 82.25584411621094;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_flag_thinking";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hmm...not much.";
+tmp_speak_command.raw_atext = "Hmm... not sure.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

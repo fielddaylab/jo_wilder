@@ -14,15 +14,28 @@ tmp_speak.reqs = [[
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 194.8379253149744;
-tmp_speak_command.wy = 135.15210978543647;
-tmp_speak_command.w = 137.255859375;
+tmp_speak_command.wx = 202.80134861042896;
+tmp_speak_command.wy = 136.66726130058797;
+tmp_speak_command.w = 146.43988037109375;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "What does the flag stand for?";
+tmp_speak_command.raw_atext = "Was Wells right?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 202.80134861042896;
+tmp_speak_command.wy = 133.636958270285;
+tmp_speak_command.w = 176.255859375;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Is it an early Wisconsin flag with a deer hoof symbol?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

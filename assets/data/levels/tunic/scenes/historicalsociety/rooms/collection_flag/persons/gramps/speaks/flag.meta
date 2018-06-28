@@ -95,13 +95,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 139.8159930516183;
 tmp_speak_command.wy = 61.552549472154624;
-tmp_speak_command.w = 257.94378662109375;
+tmp_speak_command.w = 129.94378662109375;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Well...it looks hand-stitched.";
+tmp_speak_command.raw_atext = "Well... it looks hand-stitched.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

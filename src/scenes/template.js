@@ -1901,7 +1901,7 @@ var print_whole_level = function(level, full)
   for(var i = 0; i < level.entrys.length; i++)
   {
     entry = level.entrys[i];
-    if(full || entry.dirty) print_entry_meta(entry);
+    if(entry.dirty) print_entry_meta(entry); //don't print on 'full'
   }
   var scene;
   for(var i = 0; i < level.scenes.length; i++)
@@ -1965,7 +1965,7 @@ var print_whole_level = function(level, full)
       for(var k = 0; k < room.wildcards.length; k++)
       {
         wildcard = room.wildcards[k];
-        if(full || wildcard.dirty) print_wildcard_meta(wildcard);
+        if(wildcard.dirty) print_wildcard_meta(wildcard); //don't print on 'full'
       }
       var cutscene;
       for(var k = 0; k < room.cutscenes.length; k++)

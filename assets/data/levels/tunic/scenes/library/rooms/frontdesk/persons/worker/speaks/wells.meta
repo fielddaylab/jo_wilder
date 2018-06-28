@@ -97,13 +97,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -175.94202878636287;
 tmp_speak_command.wy = 106.95240856634692;
-tmp_speak_command.w = 122.27189636230469;
+tmp_speak_command.w = 65.27189636230469;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Oh no...Teddy!";
+tmp_speak_command.raw_atext = "Oh no... Teddy!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

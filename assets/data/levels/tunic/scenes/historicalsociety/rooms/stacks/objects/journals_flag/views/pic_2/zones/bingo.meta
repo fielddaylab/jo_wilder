@@ -10,12 +10,12 @@ tmp_zone.target_view = "pic_2";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "Look at all these activists!",
-"I think this is enough for an exhibit.",
-"I should go to the Capitol and tell everyone!",
+"This is perfect for the exhibit.",
+"I should go to the Capitol and tell the boss!",
 ];
 tmp_zone.raw_notification_ws = [
 139,
-179,
+131,
 227,
 ];
 tmp_zone.notification_reqs = [[

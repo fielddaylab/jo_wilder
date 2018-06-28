@@ -1,8 +1,8 @@
 tmp_inert.ww = 1548.1818181818187;
 tmp_inert.wh = 770.9090909090911;
-tmp_inert.wx = -487.62799980762736;
-tmp_inert.wy = -12.48570187647141;
-tmp_inert.wz = 0;
+tmp_inert.wx = -476.7189088985366;
+tmp_inert.wy = -7.031156421925914;
+tmp_inert.wz = -0.1;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "cage_fence";
 tmp_inert.deck_animcycle_ids = [

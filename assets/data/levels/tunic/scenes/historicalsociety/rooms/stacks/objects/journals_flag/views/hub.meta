@@ -12,7 +12,6 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
-"tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
 ]];
