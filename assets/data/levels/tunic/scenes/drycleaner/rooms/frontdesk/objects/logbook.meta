@@ -21,7 +21,7 @@ tmp_object.raw_notifications = [
 "Gotta find the entry for this slip.",
 ];
 tmp_object.raw_notification_ws = [
-107,
+162,
 ];
 tmp_object.notification_reqs = [[
 "!tunic.drycleaner.frontdesk.logbook.page.bingo",

@@ -618,6 +618,7 @@ var avatar = function()
     {
       if(self.state != AVATAR_WALK)
         self.anim.swapAnim(ANIM_WALK);
+      if(self.stack_animcycle_t) self.stack_animcycle_t = 0;
       self.state = AVATAR_WALK;
     }
     else if(wd <= act_dist)

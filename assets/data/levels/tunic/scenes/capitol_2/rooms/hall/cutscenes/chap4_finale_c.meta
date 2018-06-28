@@ -26,6 +26,7 @@ tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 "!self",
 ]];
 tmp_cutscene.commands = [];
@@ -136,7 +137,7 @@ tmp_cutscene_command.wx = 195.72026443448922;
 tmp_cutscene_command.wy = 132.79172926997546;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_boss_angry";
+tmp_cutscene_command.animcycle_id = "emote_boss_annoyed";
 tmp_cutscene_command.raw_text = "PLEASE tell me you're doing better than he is.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);

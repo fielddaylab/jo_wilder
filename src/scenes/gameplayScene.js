@@ -651,10 +651,10 @@ var GamePlayScene = function(game, stage)
 
     if(state_stack == STATE_CUTSCENE) my_cutsceneview.tick();
 
-    clicker.flush();
-    dragger.flush();
-    hoverer.flush();
-    keyer.flush();
+    if(clicker) clicker.flush();
+    if(dragger) dragger.flush();
+    if(hoverer) hoverer.flush();
+    if(keyer) keyer.flush();
 
     my_cursor.tick();
     if(my_keyable.eup) my_keyable.e = 0;
@@ -1083,6 +1083,11 @@ var GamePlayScene = function(game, stage)
     hoverer = null;
     keyer.detach();
     keyer = null;
+    if(cur_level)
+    {
+      for(var i = 0; i < cur_level.audios.length; i++)
+        if(cur_level.audios[i].aud && !cur_level.audios[i].aud.paused) cur_level.audios[i].aud.pause();
+    }
   };
 
 };
