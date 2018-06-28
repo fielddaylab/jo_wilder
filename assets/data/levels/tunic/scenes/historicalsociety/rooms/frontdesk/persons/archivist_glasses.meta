@@ -8,7 +8,7 @@ tmp_person.act_wy = -49.00000000000001;
 tmp_person.act_anim = true;
 tmp_person.hover_icon_wx = 71.999999218332;
 tmp_person.hover_icon_wy = 140;
-tmp_person.animcycle_id = "archivist";
+tmp_person.animcycle_id = "archivist_glasses";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
 tmp_person.notice_icon_animcycle_id = "null";
@@ -25,6 +25,6 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
-"!tunic.historicalsociety.cage",
+"tunic.library.frontdesk.worker.flag",
 ]];
 

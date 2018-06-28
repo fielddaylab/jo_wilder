@@ -20,7 +20,7 @@ tmp_speak_command.wx = -2.2580849830046006;
 tmp_speak_command.wy = 139.99999999999994;
 tmp_speak_command.w = 281.91973876953125;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_scared";
+tmp_speak_command.animcycle_id = "emote_archivist_glasses_scared";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -33,7 +33,7 @@ tmp_speak_command.wx = 20.374008045024354;
 tmp_speak_command.wy = -252.11428571428578;
 tmp_speak_command.w = 26;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.animcycle_id = "emote_archivist_glasses_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -98,7 +98,7 @@ tmp_speak_command.wx = -0.9999999999201634;
 tmp_speak_command.wy = 141.99999999999991;
 tmp_speak_command.w = 52.911956787109375;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.animcycle_id = "emote_archivist_glasses_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
