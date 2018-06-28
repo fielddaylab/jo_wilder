@@ -11559,7 +11559,7 @@ tmp_speak_command.animcycle_id = "emote_wells_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I mean, I WAS there, but that doesn't mean I stole your badger!";
+tmp_speak_command.raw_atext = "I mean, I DID get coffee, but that doesn't mean I stole your badger!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -18889,7 +18889,7 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "archivist";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.ww = 120;
+tmp_cutscene_command.ww = 140;
 tmp_cutscene_command.wh = 300;
 tmp_cutscene_command.wx = -1050;
 tmp_cutscene_command.wy = -80;
@@ -30923,7 +30923,7 @@ tmp_cutscene_command.wy = -156.67337662337638;
 tmp_cutscene_command.w = 51;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "(😴)";
+tmp_cutscene_command.raw_text = "😴";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -35,7 +35,7 @@ tmp_speak_command.animcycle_id = "emote_wells_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I mean, I WAS there, but that doesn't mean I stole your badger!";
+tmp_speak_command.raw_atext = "I mean, I DID get coffee, but that doesn't mean I stole your badger!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
