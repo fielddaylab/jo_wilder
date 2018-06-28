@@ -5529,7 +5529,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.cage.glasses",
+"tunic.historicalsociety.cage.glasses.afterteddy",
 ]];
 tmp_entry.interactive = 1;
 
@@ -6264,7 +6264,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.historicalsociety.cage.glasses",
+"tunic.historicalsociety.cage.glasses.afterteddy",
 ]];
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
