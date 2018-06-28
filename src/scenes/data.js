@@ -24015,6 +24015,8 @@ tmp_object.raw_notification_ws = [
 tmp_object.notification_reqs = [[
 ]];
 tmp_object.view_overlay_reqs = [[
+"tunic.historicalsociety.cage.glasses.afterteddy",
+"!tunic.historicalsociety.entry.directory.closeup.archivist",
 ]];
 tmp_object.notice_reqs = [[
 ]];
