@@ -99,8 +99,7 @@ var loader = function()
     }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
-    get_audio(level.audio_id,level.audios).aud.loop = true;
-    if(AUDIO) get_audio(level.audio_id,level.audios).aud.play();
+    my_music.consume_aud(get_audio(level.audio_id,level.audios));
   }
 
   self.consume_room = function(room)
@@ -246,6 +245,16 @@ var loader = function()
       ctx.fillStyle = white;
       ctx.fillText("loading...",canv.width-100,canv.height-20);
     }
+  }
+}
+
+var music = function()
+{
+  var self = this;
+  self.consume_music = function(music)
+  {
+    music.aud.loop = true;
+    if(AUDIO) music.aud.play();
   }
 }
 

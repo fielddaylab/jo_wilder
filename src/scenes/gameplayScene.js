@@ -304,6 +304,7 @@ var GamePlayScene = function(game, stage)
     my_debug_camera = {wx:0,wy:0,ww:my_real_camera.ww,wh:my_real_camera.wh};
     my_ui_camera = {wx:0,wy:0,ww:canv.width*660/canv.height,wh:660};
     my_camera = my_real_camera;
+    my_music = new music();
     my_cursor = new cursor();
     my_cursor.consume_level(cur_level);
     my_avatar = new avatar();
