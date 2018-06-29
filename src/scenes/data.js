@@ -40,7 +40,7 @@ tmp_level.familiar_ww = 153;
 tmp_level.familiar_wh = 90;
 tmp_level.familiar_off_wx = 0;
 tmp_level.familiar_off_wy = -80;
-tmp_level.audio_id = "music_main";
+tmp_level.audio_ids = ["music_main","music_close_inspect","music_challenge","music_teddy_gone",];
 tmp_level.exit_animcycle_id = "exit";
 tmp_level.toolbar_animcycle_id = "null";
 tmp_level.toolbar_audio_id = "null";
@@ -8754,6 +8754,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
 
     my_notebookview.page = 0;
     my_notebookview.unlock_content();
+    my_music.consume_music(get_audio(cur_level.audio_ids[2],cur_level.audios));
   }
 
   self.dismiss = function()
@@ -8812,6 +8813,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
             my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
+          my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
         }
       }
       else
@@ -12214,6 +12216,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
 
     my_notebookview.page = 0;
     my_notebookview.unlock_content();
+    my_music.consume_music(get_audio(cur_level.audio_ids[2],cur_level.audios));
   }
 
   self.dismiss = function()
@@ -12272,6 +12275,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
             my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
+          my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
         }
       }
       else
@@ -12817,6 +12821,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
 
     my_notebookview.page = 0;
     my_notebookview.unlock_content();
+    my_music.consume_music(get_audio(cur_level.audio_ids[2],cur_level.audios));
   }
 
   self.dismiss = function()
@@ -12875,6 +12880,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
             my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
+          my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
         }
       }
       else
@@ -14696,6 +14702,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
 
     my_notebookview.page = 0;
     my_notebookview.unlock_content();
+    my_music.consume_music(get_audio(cur_level.audio_ids[2],cur_level.audios));
   }
 
   self.dismiss = function()
@@ -14754,6 +14761,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
             my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
+          my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
         }
       }
       else
