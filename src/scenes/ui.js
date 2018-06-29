@@ -1688,19 +1688,19 @@ var navigable = function()
     {
       var d = self.cache_available_bg_drawables[i];
       var m = (d.g*d.g)/5;
-      d.dx = d.x + (my_camera.wx-d.wx)*m;
-      d.dy = d.y - (my_camera.wy-d.wy)*m;
       d.dw = d.w;
       d.dh = d.h;
+      d.dx = d.x + (my_camera.wx-d.wx)*m;
+      d.dy = d.y - (my_camera.wy-d.wy)*m;
     }
     for(var i = 0; i < self.cache_available_fg_drawables.length;    i++)
     {
       var d = self.cache_available_fg_drawables[i];
       var m = (d.g*d.g);
-      d.dx = d.x - (my_camera.wx-d.wx)*m;
-      d.dy = d.y + (my_camera.wy-d.wy)*m;
       d.dw = d.w;
       d.dh = d.h;
+      d.dx = d.x - (my_camera.wx-d.wx)*m;
+      d.dy = d.y + (my_camera.wy-d.wy)*m;
     }
 
     if(DEBUG)
