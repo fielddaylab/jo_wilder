@@ -24533,6 +24533,9 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "tunic.historicalsociety.collection_flag.gramps.flag",
 "!self",
+],[
+"tunic.historicalsociety.collection_flag.gramps.flag",
+"!tunic.historicalsociety.entry.boss.flag",
 ]];
 
 tmp_speak_command = new speak_command();
@@ -32282,19 +32285,6 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 472.1133110452395;
-tmp_speak_command.wy = -609.7961485538799;
-tmp_speak_command.w = 26;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "😭";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 536.4700979036999;
 tmp_speak_command.wy = -393.7411687025633;
 tmp_speak_command.w = 92.10392761230469;
@@ -32407,19 +32397,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "Nice work!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 485.9667480263038;
-tmp_speak_command.wy = -618.4633245104683;
-tmp_speak_command.w = 26;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "🎉";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

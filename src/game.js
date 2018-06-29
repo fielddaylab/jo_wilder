@@ -636,7 +636,7 @@ all:
 ],
 code:"18157576600000000000000812646403932304063232826459100083802310192000115378643207467263075700900000030000000"
 };
-save_codes.push("blowthisthingwideopen");
+save_codes.push("wellsdidit");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
 "tunic.historicalsociety.stacks.journals.pic_2.bingo",
@@ -743,7 +743,7 @@ all:
 ],
 code:"15786722200000000000000812646403932304063232826459100083802310192104768978643207467263075700900000030000000"
 };
-save_codes.push("mustsaveteddy");
+save_codes.push("saveteddy");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
 "tunic.capitol_1.hall.chap2_finale_c",
