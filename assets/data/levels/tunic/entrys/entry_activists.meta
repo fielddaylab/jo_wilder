@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
+tmp_entry.interactive = 1;
 
