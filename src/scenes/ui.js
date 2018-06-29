@@ -99,7 +99,7 @@ var loader = function()
     }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
-    my_music.consume_aud(get_audio(level.audio_id,level.audios));
+    my_music.consume_music(get_audio(level.audio_id,level.audios));
   }
 
   self.consume_room = function(room)
