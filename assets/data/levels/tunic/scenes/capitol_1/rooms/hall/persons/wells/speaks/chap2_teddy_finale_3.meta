@@ -57,7 +57,6 @@ tmp_speak_command.wx = 313.7354622465618;
 tmp_speak_command.wy = 134.91645170347022;
 tmp_speak_command.w = 175.69814225923324;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_boss_frown";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
