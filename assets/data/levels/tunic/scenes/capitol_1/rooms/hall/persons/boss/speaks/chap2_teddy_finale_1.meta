@@ -68,13 +68,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -109.63457291488939;
 tmp_speak_command.wy = -44.01989089925324;
-tmp_speak_command.w = 348.39971923828125;
+tmp_speak_command.w = 331.2157287597656;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "WE'LL DEAL WITH THAT LATER, MERRIAM.";
+tmp_speak_command.raw_atext = "WE'LL DEAL WITH THAT LATER, MRS. M.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -87,20 +87,20 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hmmm.";
+tmp_speak_command.raw_atext = "Watch it, Jo.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 152.5666310777307;
 tmp_speak_command.wy = 144.52684131385968;
-tmp_speak_command.w = 179.69814225923324;
+tmp_speak_command.w = 136.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "What other evidence do you have?";
+tmp_speak_command.raw_atext = "Did you find any other clues?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

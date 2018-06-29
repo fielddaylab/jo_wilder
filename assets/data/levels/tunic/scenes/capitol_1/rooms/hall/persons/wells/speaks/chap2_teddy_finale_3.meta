@@ -16,13 +16,13 @@ tmp_speak.reqs = [[
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -109.37483265514913;
 tmp_speak_command.wy = -42.98092986029207;
-tmp_speak_command.w = 268.69814225923324;
+tmp_speak_command.w = 231.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "The archivist said he saw Wells at Bean Town this morning!";
+tmp_speak_command.raw_atext = "The archivist saw Wells at Bean Town this morning!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -35,20 +35,20 @@ tmp_speak_command.animcycle_id = "emote_wells_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I mean, I DID get coffee, but that doesn't mean I stole your badger!";
+tmp_speak_command.raw_atext = "I DID get coffee, but that doesn't mean I stole your badger!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 155.20732371842303;
 tmp_speak_command.wy = 146.43160321862177;
-tmp_speak_command.w = 255.69814225923324;
+tmp_speak_command.w = 233.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Sounds like the archivist was spotted at Bean Town too...";
+tmp_speak_command.raw_atext = "You just said the archivist was at Bean Town, too.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -57,6 +57,7 @@ tmp_speak_command.wx = 313.7354622465618;
 tmp_speak_command.wy = 134.91645170347022;
 tmp_speak_command.w = 175.69814225923324;
 tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
@@ -67,13 +68,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -109.31504566852612;
 tmp_speak_command.wy = -36.235813887575084;
-tmp_speak_command.w = 162.9998321533203;
+tmp_speak_command.w = 113.99983215332031;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "But...there's more!";
+tmp_speak_command.raw_atext = "But... there's more!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

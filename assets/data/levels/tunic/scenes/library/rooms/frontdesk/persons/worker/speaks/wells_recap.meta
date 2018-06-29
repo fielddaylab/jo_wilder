@@ -32,13 +32,13 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -347.3056651499994;
 tmp_speak_command.wy = 259.4485124624508;
-tmp_speak_command.w = 246.0000018198219;
+tmp_speak_command.w = 203.0000018198219;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You could try the archivist. He knows everybody!";
+tmp_speak_command.raw_atext = "You could try the archivist. Maybe he can help you find Wells!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -43,7 +43,7 @@ tmp_wildcard.commands = [
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_1.hall.boss.chap2_finale_0" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanerslip", prompt_raw:"I need to show her the slip I found on the shirt.", prompt_w:230, fail:["tunic.capitol_1.hall.boss.chap2_finale_0_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_1.hall.boss.chap2_finale_1" },
-{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_expert", prompt_raw:"How did I learn it was from a dry cleaner?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_1.hall.boss.chap2_finale_1_fail"] },
+{ command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_expert", prompt_raw:"Who told me this was a dry cleaning slip?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_1.hall.boss.chap2_finale_1_fail"] },
 { command:FINALE_WILDCARD_COMMAND_SPEAK, speak_fqid:"tunic.capitol_1.hall.boss.chap2_finale_2" },
 { command:FINALE_WILDCARD_COMMAND_NOTEBOOK, entry_fqid:"tunic.entry_cleanercard", prompt_raw:"How did I learn which dry cleaner to go to?", prompt_w:tmp_level.notifications_w, fail:["tunic.capitol_1.hall.boss.chap2_finale_2_fail"] },
 
@@ -137,7 +137,6 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
 
     my_notebookview.page = 0;
     my_notebookview.unlock_content();
-    my_music.consume_music(get_audio(cur_level.audio_ids[2],cur_level.audios));
   }
 
   self.dismiss = function()
@@ -196,7 +195,6 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
             my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
-          my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
         }
       }
       else
