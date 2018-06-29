@@ -4226,7 +4226,7 @@ var cutsceneview = function()
     }
 
     for(var i = 0; i < self.cutscene_entitys.length; i++)
-      if(self.cutscene_entitys.animcycle_inst) self.cutscene_entitys[i].animcycle_inst.tick();
+      if(self.cutscene_entitys[i].animcycle_inst) self.cutscene_entitys[i].animcycle_inst.tick();
 
     if((!DEBUG || CUTSCENE_ADVANCE) && state_cur == STATE_CUTSCENE && !self.waiting)
     {
