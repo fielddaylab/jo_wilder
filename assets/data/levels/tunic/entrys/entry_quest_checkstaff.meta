@@ -1,7 +1,7 @@
 tmp_entry.ww = 370.0000000000001;
 tmp_entry.wh = 63.99999999999998;
-tmp_entry.wx = -202;
-tmp_entry.wy = -216.00000000000009;
+tmp_entry.wx = -198;
+tmp_entry.wy = -233.00000000000009;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_quest_checkstaff_img";

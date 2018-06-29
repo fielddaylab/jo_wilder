@@ -1,7 +1,7 @@
 tmp_entry.ww = 382;
 tmp_entry.wh = 178;
 tmp_entry.wx = -207;
-tmp_entry.wy = -176;
+tmp_entry.wy = -194;
 tmp_entry.wz = 100;
 tmp_entry.page = 5;
 tmp_entry.animcycle_id = "entry_tracks_img";
@@ -18,5 +18,4 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.wildlife.center.tracks.hub.deer",
 ]];
-tmp_entry.interactive = 1;
 
