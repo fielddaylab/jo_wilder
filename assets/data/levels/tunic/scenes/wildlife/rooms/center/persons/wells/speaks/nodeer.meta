@@ -171,19 +171,6 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -819.1340909090912;
-tmp_speak_command.wy = -350.54696969696965;
-tmp_speak_command.w = 255.3037567138672;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "I'll probably get a promotion!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -631.8128787878787;
 tmp_speak_command.wy = -443.34166666666664;
 tmp_speak_command.w = 147.063720703125;

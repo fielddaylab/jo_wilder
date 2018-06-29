@@ -16,18 +16,6 @@ tmp_speak.reqs = [[
 "!tunic.historicalsociety.closet_dirty.trigger_scarf",
 ]];
 
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -701.4308218097377;
-tmp_speak_command.wy = 66.30938264894152;
-tmp_speak_command.w = 133.15972900390625;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_gramps_sad";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Oy... where'd my papers get to?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -701.6135384450001;

@@ -155,7 +155,35 @@ tmp_cutscene_command.wy = -40.417947312631775;
 tmp_cutscene_command.w = 199.52780151367188;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I figured out the shirt!";
+tmp_cutscene_command.raw_text = "Ooh, nice decorations!";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "boss";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 201.18614668975383;
+tmp_cutscene_command.wy = 133.17748920314716;
+tmp_cutscene_command.w = 200.4878387451172;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = "emote_boss_frown";
+tmp_cutscene_command.raw_text = "Thanks. Do you have news for me?";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = -109.31149962014413;
+tmp_cutscene_command.wy = -40.417947312631775;
+tmp_cutscene_command.w = 199.52780151367188;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.raw_text = "Yes! I figured out the shirt!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -709,7 +737,7 @@ tmp_cutscene_command.wy = 148.50216450216436;
 tmp_cutscene_command.w = 94.67988586425781;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Sure thing, boss!";
+tmp_cutscene_command.raw_text = "Sure thing, Boss!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
