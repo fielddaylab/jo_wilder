@@ -16427,7 +16427,8 @@ tmp_wildcard.reqs = [[
     "Ron and Colleen Weyers",
     "Francis A. and Georgia F. Ariens Fund",
     "within the Brillion Area Family of Funds",
-    "Ruth St. John and John Dunham West Foundation, Inc.",
+    "Ruth St. John and",
+    "John Dunham West Foundation, Inc.",
     "Conney Family in loving memory of Mildred Conney",
     "Edvest College Savings Plan",
     "Eleanor and Thomas Wildrick Family",
@@ -18043,7 +18044,7 @@ tmp_room.wh = 980;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
-tmp_room.audio_id = "music_main";
+tmp_room.audio_id = "music_teddy_gone";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 920;
@@ -33198,4 +33199,3 @@ levels.push(tmp_level);
     }
   }
 }
-
