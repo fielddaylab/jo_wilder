@@ -16,9 +16,9 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "I should go talk to Gramps!";
-tmp_observation.blip_wx = 546.0740726653751;
-tmp_observation.blip_wy = 174.0123864027104;
-tmp_observation.blip_w = 213;
+tmp_observation.blip_wx = 513.5067999381024;
+tmp_observation.blip_wy = 244.03202276634676;
+tmp_observation.blip_w = 140;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [

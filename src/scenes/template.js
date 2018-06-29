@@ -340,7 +340,6 @@ var level = function()
   self.familiar_wh = 0;
   self.familiar_off_wx = 0;
   self.familiar_off_wy = 0;
-  self.audio_ids = [];
   self.exit_animcycle_id = "null";
   self.toolbar_animcycle_id = "null";
   self.toolbar_audio_id = "null";
@@ -1141,18 +1140,6 @@ var get_animcycle_ids = function(ids)
   return str;
 }
 
-var get_audio_ids = function(ids)
-{
-  var str = "[\n";
-  for(var i = 0; i < ids.length; i++)
-  {
-    for(var j = 0; j < ids[i].length; j++)
-      str += "\""+ids[i][j]+"\",\n";
-  }
-  str += "];\n";
-  return str;
-}
-
 var print_level_meta = function(l)
 {
   var str = "SAVE level "+l.fqid+"\n"+
@@ -1170,7 +1157,6 @@ var print_level_meta = function(l)
   "tmp_level.familiar_wh = "+l.familiar_wh+";\n"+
   "tmp_level.familiar_off_wx = "+l.familiar_off_wx+";\n"+
   "tmp_level.familiar_off_wy = "+l.familiar_off_wy+";\n"+
-  "tmp_level.audio_ids = "+get_audio_ids(l.audio_ids)+";\n"+
   "tmp_level.exit_animcycle_id = "+get_animcycle_id(l.exit_animcycle_id)+";\n"+
   "tmp_level.toolbar_animcycle_id = "+get_animcycle_id(l.toolbar_animcycle_id)+";\n"+
   "tmp_level.toolbar_audio_id = \""+l.toolbar_audio_id+"\";\n"+

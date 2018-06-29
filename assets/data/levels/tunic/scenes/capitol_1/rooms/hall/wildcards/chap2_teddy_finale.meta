@@ -129,7 +129,6 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
 
     my_notebookview.page = 0;
     my_notebookview.unlock_content();
-    my_music.consume_music(get_audio(cur_level.audio_ids[2],cur_level.audios));
   }
 
   self.dismiss = function()
@@ -188,7 +187,6 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
             my_notebookview.cache_available_entrys[i].hovering = 0;
           my_notebookview.exit_available = 1;
-          my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
         }
       }
       else

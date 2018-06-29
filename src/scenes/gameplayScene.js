@@ -229,7 +229,7 @@ var GamePlayScene = function(game, stage)
               {
                 if(command.w == CUTSCENE_COMMAND_IGNORE) command.w = cur_level.notifications_w;
                 command.text = stextToLines(command.raw_text, command.w); //for some reason, this isn't done in gen.sh
-                command.w = tighten_text_bubbles(command.text,command.raw_text,command.w,command);
+                command.w = tighten_text_bubbles(command.text,command.raw_text,command.w,cutscene);
               }
             }
           }

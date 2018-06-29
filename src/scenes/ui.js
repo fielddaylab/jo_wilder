@@ -65,8 +65,6 @@ var loader = function()
 
   self.consume_level = function(level)
   {
-    for(var i = 0; i < level.audio_ids.length; i++)
-      get_audio(level.audio_ids[i],level.audios).aud.load();
     get_audio(level.toolbar_audio_id,level.audios).aud.load();
     get_audio(level.map_audio_id,level.audios).aud.load();
     get_audio(level.notebook_audio_id,level.audios).aud.load();
@@ -1221,7 +1219,7 @@ var navigable = function()
       my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
     else
       my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
-    my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
+    my_music.consume_music(get_audio(self.room.audio_id,cur_level.audios));
     ga('send', 'pageview', self.room.fqid);
   }
 
@@ -2718,7 +2716,7 @@ var objectview = function()
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
     self.view_overlay_t = 0;
-    my_music.consume_music(get_audio(cur_level.audio_ids[1],cur_level.audios));
+    if(self.object.audio_id && self.object.audio_id != "null") my_music.consume_music(get_audio(self.object.audio_id,cur_level.audios));
   }
 
   self.unlock_content = function()
@@ -2811,7 +2809,7 @@ var objectview = function()
       my_loader.unlock_content();
       state_t = 0;
       if(my_notificationview.clickthrough) my_notificationview.click();
-      my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
+      my_music.consume_music(get_audio(cur_room.audio_id,cur_level.audios));
     }
     var zone;
     for(var i = 0; i < self.cache_available_zones.length; i++)
