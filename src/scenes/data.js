@@ -4767,6 +4767,27 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells/4.png"
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wells_coffee";
+tmp_animcycle.fqid = "tunic.wells_coffee";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/6.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "wellsbadge_big";
 tmp_animcycle.fqid = "tunic.wellsbadge_big";
 {
@@ -5977,6 +5998,62 @@ tmp_entry.reqs = [[
 "tunic.historicalsociety.frontdesk.key",
 ]];
 
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_backbacktooffice";
+tmp_entry.fqid = "tunic.entry_quest_backbacktooffice";
+{
+tmp_entry.ww = 390;
+tmp_entry.wh = 67.99999999999994;
+tmp_entry.wx = 203.99999999999991;
+tmp_entry.wy = -173.00000000000003;
+tmp_entry.wz = 100;
+tmp_entry.page = 3;
+tmp_entry.animcycle_id = "entry_quest_backtooffice_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.capitol_1.hall.chap2_finale_c",
+]];
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_backbacktooffice_x";
+tmp_entry.fqid = "tunic.entry_quest_backbacktooffice_x";
+{
+tmp_entry.ww = 42.99999999999999;
+tmp_entry.wh = 38.99999999999999;
+tmp_entry.wx = 29.999999999999986;
+tmp_entry.wy = -172.99999999999991;
+tmp_entry.wz = 101;
+tmp_entry.page = 3;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.basement.ch3start",
+]];
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
 }
@@ -15475,6 +15552,21 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE_BLUR;
+tmp_cutscene_command.cutscene_entity_id = "blur";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
+tmp_cutscene_command.ww = 1760;
+tmp_cutscene_command.wh = 1320;
+tmp_cutscene_command.wz = 9998;
+tmp_cutscene_command.a = 0;
+tmp_cutscene_command.deck_animcycle_ids = [
+];
+tmp_cutscene_command.animcycle_offset_t = 0;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_CREATE;
 tmp_cutscene_command.cutscene_entity_id = "balcony";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
@@ -15540,7 +15632,7 @@ tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
 tmp_cutscene_command.cutscene_entity_id = "midblack";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0;
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene_command.end_t = tmp_cutscene_command.t+50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -15575,7 +15667,7 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_id = "midblack";
+tmp_cutscene_command.cutscene_entity_id = "blur";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.cutscene_target_entity_type = CUTSCENE_ENTITY_CAMERA;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
@@ -15585,7 +15677,7 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
-tmp_cutscene_command.cutscene_entity_id = "midblack";
+tmp_cutscene_command.cutscene_entity_id = "blur";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.a = 0.7;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
@@ -15901,7 +15993,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
 tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
@@ -16254,6 +16345,7 @@ tmp_wildcard.reqs = [[
     "",
     "QA",
     "Daniel Hying",
+    "",
     "Concept Art",
     "Jennifer Leaver",
     "",
@@ -16308,25 +16400,39 @@ tmp_wildcard.reqs = [[
     "",
     "Testing Provided By Students of",
     "",
-    "Arena Community Elementary School, Arena WI",
-    "Augusta Elementary School, Augusta WI",
+    "Arena Community Elementary School",
+    "Arena WI",
+    "Augusta Elementary School",
+    "Augusta WI",
     "Bonduel School District",
-    "Brillion Elementary School, Brillion WI",
-    "Eagle School, Madison WI",
-    "Edgar Elementary School, Edgar WI",
-    "Elementary School, Elmwood WI",
+    "Brillion Elementary School",
+    "Brillion WI",
+    "Eagle School",
+    "Madison WI",
+    "Edgar Elementary School",
+    "Edgar WI",
+    "Elementary School",
+    "Elmwood WI",
     "Gibraltar Area School District",
-    "Hadfield Elementary School, Waukesha WI",
-    "Hillcrest Elementary School, Waukesha WI",
+    "Hadfield Elementary School",
+    "Waukesha WI",
+    "Hillcrest Elementary School",
+    "Waukesha WI",
     "Kenosha Unified School District",
-    "KM Explore Elementary School, Wales WI",
+    "KM Explore Elementary School",
+    "Wales WI",
     "Minocqua J1 School District",
-    "Pardeeville Elementary School, Pardeeville WI",
-    "Parkview Elementary School, Orfordville, WI",
-    "Reagan Elementary School, New Berlin WI",
+    "Pardeeville Elementary School",
+    "Pardeeville WI",
+    "Parkview Elementary School",
+    "Orfordville WI",
+    "Reagan Elementary School",
+    "New Berlin WI",
     "Sheboygan Falls Elementary School",
-    "Wadewitz Elementary School, Racine WI",
-    "Waller Elementary School, Burlington WI",
+    "Wadewitz Elementary School",
+    "Racine WI",
+    "Waller Elementary School",
+    "Burlington WI",
     "",
     "",
     "Funding Provided By",
@@ -16334,8 +16440,10 @@ tmp_wildcard.reqs = [[
     "Wisconsin Department of Public Instruction",
     "Wisconsin Center for Education Research",
     "Ron and Colleen Weyers",
-    "Francis A. and Georgia F. Ariens Fund within the Brillion Area Family of Funds",
-    "Ruth St. John and John Dunham West Foundation, Inc.",
+    "Francis A. and Georgia F. Ariens Fund",
+    "within the Brillion Area Family of Funds",
+    "Ruth St. John and",
+    "John Dunham West Foundation, Inc.",
     "Conney Family in loving memory of Mildred Conney",
     "Edvest College Savings Plan",
     "Eleanor and Thomas Wildrick Family",
@@ -16458,15 +16566,12 @@ tmp_wildcard.reqs = [[
     var img_t = self.t*self.imgs.length;
     var img_i = floor(img_t);
     img_t -= img_i;
-    var pad = 50;
-    offx = lerp(-pad,pad,img_t);
-    offy = lerp(-pad,pad,img_t);
     var buffer = 0.05;
     if(img_t < buffer) ctx.globalAlpha = img_t/buffer;
     if(img_t > 1-buffer) ctx.globalAlpha = 1-((img_t-(1-buffer))/buffer);
     if(img_i < self.imgs.length)
     {
-      drawImageHeightCentered(self.imgs[img_i],2*canv.width/3+offx,canv.height/2+offy,canv.height-400,ctx);
+      drawImageWidthCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,canv.width/2-140,ctx);
 
       ctx.fillStyle = white;
       var y = canv.height-30-self.captions[img_i].length*30;
@@ -19062,7 +19167,7 @@ tmp_room.wh = 800;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "scene_historicalsociety_cage";
-tmp_room.audio_id = "music_main";
+tmp_room.audio_id = "music_teddy_gone";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 749.0909090909091;
@@ -20138,6 +20243,53 @@ tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.bl
 for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_observation.raw_notification_ws[i] ? tmp_observation.raw_notification_ws[i] : tmp_level.notifications_w);
 }
 tmp_room.observations.push(tmp_observation);
+tmp_observation = new observation();
+tmp_observation.id = "need_glasses";
+tmp_observation.fqid = "tunic.historicalsociety.cage.need_glasses";
+{
+tmp_observation.ww = 180.7272727272729;
+tmp_observation.wh = 438.818181818182;
+tmp_observation.wx = -1898.4545454545453;
+tmp_observation.wy = -27.681818181817988;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 77.88042590123327;
+tmp_observation.act_wy = -96.28074721972771;
+tmp_observation.act_anim = 1;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_door";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "I should check out that pair of glasses.";
+tmp_observation.blip_wx = -1812.1879756901858;
+tmp_observation.blip_wy = 76.90347718678517;
+tmp_observation.blip_w = 183;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"tunic.historicalsociety.cage.teddy.trapped",
+"!tunic.historicalsociety.cage.glasses.afterteddy",
+]];
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_observation.raw_notification_ws[i] ? tmp_observation.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
 tmp_porthole = new porthole();
 tmp_porthole.id = "tobasement";
 tmp_porthole.fqid = "tunic.historicalsociety.cage.tobasement";
@@ -20147,8 +20299,8 @@ tmp_porthole.wh = 438.818181818182;
 tmp_porthole.wx = -1898.4545454545453;
 tmp_porthole.wy = -27.681818181817988;
 tmp_porthole.wz = -1;
-tmp_porthole.act_wx = 0;
-tmp_porthole.act_wy = 0;
+tmp_porthole.act_wx = 77.88042590123327;
+tmp_porthole.act_wy = -96.28074721972771;
 tmp_porthole.act_anim = 1;
 tmp_porthole.hover_icon_wx = 0;
 tmp_porthole.hover_icon_wy = 0;
@@ -28575,7 +28727,7 @@ tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
-tmp_object.audio_id = "null";
+tmp_object.audio_id = "music_close_inspect";
 tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 0;

@@ -3767,6 +3767,7 @@ var cutscene_entity = function()
   self.ww = 0;
   self.wh = 0;
   self.animcycle_inst;
+  self.blur = 0; //canvas
   self.x = 0;
   self.y = 0;
   self.w = 0;
@@ -3873,6 +3874,7 @@ var cutsceneview = function()
         if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL) break;
       case CUTSCENE_COMMAND_ANIMATE:
       case CUTSCENE_COMMAND_CREATE:
+      case CUTSCENE_COMMAND_CREATE_BLUR:
       case CUTSCENE_COMMAND_SPEAK:
         self.editable_frame_commands.push(c);
         break;
@@ -3900,6 +3902,27 @@ var cutsceneview = function()
             e.wy = te.wy;
           }
         }
+        self.cutscene_entitys.push(e);
+        break;
+      case CUTSCENE_COMMAND_CREATE_BLUR:
+        var e = new cutscene_entity();
+        e.id = c.cutscene_entity_id;
+        e.wx = c.wx;
+        e.wy = c.wy;
+        e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+        e.wh = c.wh;
+        e.a = c.a;
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        {
+          var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+          if(te)
+          {
+            e.wx = te.wx;
+            e.wy = te.wy;
+          }
+        }
+        screenSpace(my_camera,canv,e); //to get true width/height
+        e.blur = GenIcon(e.w,e.h);
         self.cutscene_entitys.push(e);
         break;
       case CUTSCENE_COMMAND_DESTROY:
@@ -4205,7 +4228,7 @@ var cutsceneview = function()
     }
 
     for(var i = 0; i < self.cutscene_entitys.length; i++)
-      self.cutscene_entitys[i].animcycle_inst.tick();
+      if(self.cutscene_entitys.animcycle_inst) self.cutscene_entitys[i].animcycle_inst.tick();
 
     if((!DEBUG || CUTSCENE_ADVANCE) && state_cur == STATE_CUTSCENE && !self.waiting)
     {
@@ -4271,15 +4294,24 @@ var cutsceneview = function()
       if(entity.stack_animcycle_t) entity.stack_animcycle_t--;
       if(entity.a == CUTSCENE_COMMAND_IGNORE || entity.a > 0)
       {
-        ctx.save();
-        if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
-        ctx.translate(entity.x+entity.w/2,entity.y+entity.h/2);
-        if(entity.flip) ctx.scale(-1,1);
-        if(entity.stack_animcycle_t && entity.stack_animcycle_t > 0 && entity.stack_animcycle_inst)
-          ctx.drawImage(entity.stack_animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+        if(entity.blur)
+        {
+          entity.blur.context.filter = "blur("+(entity.a*10)+"px)";
+          drawCanvMaskedImage(canv.canvas, -entity.x, -entity.y, canv.width, canv.height, entity.blur, entity.blur.context);
+          ctx.drawImage(entity.blur,entity.x,entity.y,entity.w,entity.h);
+        }
         else
-          ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
-        ctx.restore();
+        {
+          ctx.save();
+          if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
+          ctx.translate(entity.x+entity.w/2,entity.y+entity.h/2);
+          if(entity.flip) ctx.scale(-1,1);
+          if(entity.stack_animcycle_t && entity.stack_animcycle_t > 0 && entity.stack_animcycle_inst)
+            ctx.drawImage(entity.stack_animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+          else
+            ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+          ctx.restore();
+        }
       }
     }
 
