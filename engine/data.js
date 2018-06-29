@@ -24524,8 +24524,8 @@ tmp_observation.fqid = "tunic.historicalsociety.entry.block_tomap1";
 {
 tmp_observation.ww = 224.87620708397372;
 tmp_observation.wh = 623.2132295249676;
-tmp_observation.wx = 565.8306246676015;
-tmp_observation.wy = -18.34456453887867;
+tmp_observation.wx = 936.5041170754102;
+tmp_observation.wy = 79.56918817261794;
 tmp_observation.wz = 2;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
@@ -24571,8 +24571,8 @@ tmp_observation.fqid = "tunic.historicalsociety.entry.block_tomap2";
 {
 tmp_observation.ww = 211.2842557213455;
 tmp_observation.wh = 608.0459522137528;
-tmp_observation.wx = 749.0331977176467;
-tmp_observation.wy = -24.723001321753657;
+tmp_observation.wx = 933.2043040083188;
+tmp_observation.wy = 80.1845908691356;
 tmp_observation.wz = 1;
 tmp_observation.act_wx = 0;
 tmp_observation.act_wy = 0;
