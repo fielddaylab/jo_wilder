@@ -283,15 +283,13 @@ var music = function()
       self.t++;
       if(self.t >= self.t_max)
       {
-        self.t = self.t_max;
         if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.pause();
         self.cur_music = self.next_music;
-        self.t = 0;
         self.next_music = 0;
+        self.t = 0;
         if(self.cur_music && self.cur_music.aud.paused) { self.cur_music.aud.volume = 0; self.cur_music.aud.play(); }
-        return;
       }
-      if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.volume = 1-(self.t/self.t_max);
+      else if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.volume = 1-(self.t/self.t_max);
     }
     else
     {
