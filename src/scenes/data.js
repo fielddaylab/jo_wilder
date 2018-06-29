@@ -16555,7 +16555,7 @@ tmp_wildcard.reqs = [[
     if(img_t > 1-buffer) ctx.globalAlpha = 1-((img_t-(1-buffer))/buffer);
     if(img_i < self.imgs.length)
     {
-      drawImageHeightCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,200,ctx);
+      drawImageWidthCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,canv.width/2-100,ctx);
 
       ctx.fillStyle = white;
       var y = canv.height-30-self.captions[img_i].length*30;
