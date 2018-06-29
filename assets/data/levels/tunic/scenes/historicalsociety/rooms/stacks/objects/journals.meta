@@ -27,7 +27,7 @@ tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.stacks.journals.pic_0",
 ]];
 tmp_object.view_overlay_reqs = [[
-"!tunic.historicalsociety.stacks.journals.pic_0",
+"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 tmp_object.notice_reqs = [[
 ]];

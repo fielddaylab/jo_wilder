@@ -1,4 +1,4 @@
-tmp_speak.primary = 999;
+tmp_speak.primary = 998;
 tmp_speak.options_wx = 100;
 tmp_speak.options_wy = 100;
 tmp_speak.options_w = 100;
@@ -11,19 +11,20 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
-"tunic.historicalsociety.frontdesk.archivist.have_glass",
+"tunic.historicalsociety.frontdesk.archivist.newspaper",
+"!tunic.flaghouse.entry.flag_girl.symbol",
 ]];
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -699.3903499691717;
-tmp_speak_command.wy = 60.169156112957225;
-tmp_speak_command.w = 217.50376892089844;
+tmp_speak_command.wx = -343.71521436456857;
+tmp_speak_command.wy = 269.806478546164;
+tmp_speak_command.w = 114;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_librarian_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "So much cleaning to do...";
+tmp_speak_command.raw_atext = "It's such a nice fall day.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
