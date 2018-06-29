@@ -65,7 +65,8 @@ var loader = function()
 
   self.consume_level = function(level)
   {
-    get_audio(level.audio_id,level.audios).aud.load();
+    for(var i = 0; i < level.audio_ids.length; i++)
+      get_audio(level.audio_ids[i],level.audios).aud.load();
     get_audio(level.toolbar_audio_id,level.audios).aud.load();
     get_audio(level.map_audio_id,level.audios).aud.load();
     get_audio(level.notebook_audio_id,level.audios).aud.load();
@@ -99,7 +100,6 @@ var loader = function()
     }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
-    my_music.consume_music(get_audio(level.audio_id,level.audios));
   }
 
   self.consume_room = function(room)
@@ -251,10 +251,56 @@ var loader = function()
 var music = function()
 {
   var self = this;
+  self.t = 0;
+  self.t_max = 100;
+  self.cur_music = 0;
+  self.next_music = 0;
+
   self.consume_music = function(music)
   {
-    music.aud.loop = true;
-    if(AUDIO) music.aud.play();
+    if(self.cur_music && self.cur_music.id == music.id) //already playing
+    {
+      self.next_music = 0;
+      return;
+    }
+    if(self.next_music && self.next_music.id == music.id) return; //already transitioning
+
+    if(self.next_music) //mid transition- pretend next music = cur_music that's been playing for a while
+    {
+      if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.pause();
+      self.cur_music = self.next_music;
+      if(self.cur_music.aud.paused && AUDIO) self.cur_music.aud.play();
+    }
+    self.next_music = music;
+    self.next_music.aud.loop = true;
+    self.t = 0;
+  }
+
+  self.tick = function()
+  {
+    if(self.t >= self.t_max) return;
+
+    if(self.next_music)
+    {
+      self.t++;
+      if(self.t >= self.t_max)
+      {
+        self.t = self.t_max;
+        if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.pause();
+        self.cur_music = self.next_music;
+        self.t = 0;
+        self.next_music = 0;
+        if(self.cur_music && self.cur_music.aud.paused) { self.cur_music.aud.volume = 0; self.cur_music.aud.play(); }
+        return;
+      }
+      if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.volume = 1-(self.t/self.t_max);
+    }
+    else
+    {
+      self.t++;
+      if(self.t >= self.t_max) self.t = self.t_max;
+      if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.volume = self.t/self.t_max;
+    }
   }
 }
 
@@ -1175,6 +1221,7 @@ var navigable = function()
       my_debug_camera.wh = canv.height*my_debug_camera.ww/canv.width;
     else
       my_debug_camera.ww = canv.width*my_debug_camera.wh/canv.height;
+    my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
     ga('send', 'pageview', self.room.fqid);
   }
 
@@ -2671,6 +2718,7 @@ var objectview = function()
     self.unlock_content();
     self.exit_animcycle_inst = gen_animcycle_inst(cur_level.exit_animcycle_id, cur_level.animcycles);
     self.view_overlay_t = 0;
+    my_music.consume_music(get_audio(cur_level.audio_ids[1],cur_level.audios));
   }
 
   self.unlock_content = function()
@@ -2763,6 +2811,7 @@ var objectview = function()
       my_loader.unlock_content();
       state_t = 0;
       if(my_notificationview.clickthrough) my_notificationview.click();
+      my_music.consume_music(get_audio(cur_level.audio_ids[0],cur_level.audios));
     }
     var zone;
     for(var i = 0; i < self.cache_available_zones.length; i++)
