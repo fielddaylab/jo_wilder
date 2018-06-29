@@ -16254,6 +16254,7 @@ tmp_wildcard.reqs = [[
     "",
     "QA",
     "Daniel Hying",
+    "",
     "Concept Art",
     "Jennifer Leaver",
     "",
@@ -16308,25 +16309,39 @@ tmp_wildcard.reqs = [[
     "",
     "Testing Provided By Students of",
     "",
-    "Arena Community Elementary School, Arena WI",
-    "Augusta Elementary School, Augusta WI",
+    "Arena Community Elementary School",
+    "Arena WI",
+    "Augusta Elementary School",
+    "Augusta WI",
     "Bonduel School District",
-    "Brillion Elementary School, Brillion WI",
-    "Eagle School, Madison WI",
-    "Edgar Elementary School, Edgar WI",
-    "Elementary School, Elmwood WI",
+    "Brillion Elementary School",
+    "Brillion WI",
+    "Eagle School",
+    "Madison WI",
+    "Edgar Elementary School",
+    "Edgar WI",
+    "Elementary School",
+    "Elmwood WI",
     "Gibraltar Area School District",
-    "Hadfield Elementary School, Waukesha WI",
-    "Hillcrest Elementary School, Waukesha WI",
+    "Hadfield Elementary School",
+    "Waukesha WI",
+    "Hillcrest Elementary School",
+    "Waukesha WI",
     "Kenosha Unified School District",
-    "KM Explore Elementary School, Wales WI",
+    "KM Explore Elementary School",
+    "Wales WI",
     "Minocqua J1 School District",
-    "Pardeeville Elementary School, Pardeeville WI",
-    "Parkview Elementary School, Orfordville, WI",
-    "Reagan Elementary School, New Berlin WI",
+    "Pardeeville Elementary School",
+    "Pardeeville WI",
+    "Parkview Elementary School",
+    "Orfordville WI",
+    "Reagan Elementary School",
+    "New Berlin WI",
     "Sheboygan Falls Elementary School",
-    "Wadewitz Elementary School, Racine WI",
-    "Waller Elementary School, Burlington WI",
+    "Wadewitz Elementary School",
+    "Racine WI",
+    "Waller Elementary School",
+    "Burlington WI",
     "",
     "",
     "Funding Provided By",
@@ -16334,7 +16349,8 @@ tmp_wildcard.reqs = [[
     "Wisconsin Department of Public Instruction",
     "Wisconsin Center for Education Research",
     "Ron and Colleen Weyers",
-    "Francis A. and Georgia F. Ariens Fund within the Brillion Area Family of Funds",
+    "Francis A. and Georgia F. Ariens Fund",
+    "within the Brillion Area Family of Funds",
     "Ruth St. John and John Dunham West Foundation, Inc.",
     "Conney Family in loving memory of Mildred Conney",
     "Edvest College Savings Plan",
@@ -16458,15 +16474,12 @@ tmp_wildcard.reqs = [[
     var img_t = self.t*self.imgs.length;
     var img_i = floor(img_t);
     img_t -= img_i;
-    var pad = 50;
-    offx = lerp(-pad,pad,img_t);
-    offy = lerp(-pad,pad,img_t);
     var buffer = 0.05;
     if(img_t < buffer) ctx.globalAlpha = img_t/buffer;
     if(img_t > 1-buffer) ctx.globalAlpha = 1-((img_t-(1-buffer))/buffer);
     if(img_i < self.imgs.length)
     {
-      drawImageHeightCentered(self.imgs[img_i],2*canv.width/3+offx,canv.height/2+offy,canv.height-400,ctx);
+      drawImageHeightCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,200,ctx);
 
       ctx.fillStyle = white;
       var y = canv.height-30-self.captions[img_i].length*30;
@@ -28575,7 +28588,7 @@ tmp_object.hover_cursor_animcycle_id = "hover_ui";
 tmp_object.hover_icon_animcycle_id = "hblip_interact";
 tmp_object.notice_icon_animcycle_id = "notice";
 tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
-tmp_object.audio_id = "null";
+tmp_object.audio_id = "music_close_inspect";
 tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 0;
