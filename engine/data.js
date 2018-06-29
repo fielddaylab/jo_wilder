@@ -5982,6 +5982,62 @@ for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notificati
 }
 tmp_level.entrys.push(tmp_entry);
 tmp_entry = new entry();
+tmp_entry.id = "entry_quest_backbacktooffice";
+tmp_entry.fqid = "tunic.entry_quest_backbacktooffice";
+{
+tmp_entry.ww = 390;
+tmp_entry.wh = 67.99999999999994;
+tmp_entry.wx = 203.99999999999991;
+tmp_entry.wy = -173.00000000000003;
+tmp_entry.wz = 100;
+tmp_entry.page = 3;
+tmp_entry.animcycle_id = "entry_quest_backtooffice_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.capitol_1.hall.chap2_finale_c",
+]];
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_backbacktooffice_x";
+tmp_entry.fqid = "tunic.entry_quest_backbacktooffice_x";
+{
+tmp_entry.ww = 42.99999999999999;
+tmp_entry.wh = 38.99999999999999;
+tmp_entry.wx = 29.999999999999986;
+tmp_entry.wy = -172.99999999999991;
+tmp_entry.wz = 101;
+tmp_entry.page = 3;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.basement.ch3start",
+]];
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
 tmp_entry.id = "entry_quest_backtoarchivist";
 tmp_entry.fqid = "tunic.entry_quest_backtoarchivist";
 {
