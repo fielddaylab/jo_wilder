@@ -13,7 +13,7 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 195.8566742821788;
 tmp_speak_command.wy = 139.85151664245177;
@@ -26,7 +26,7 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Jolie! I was hoping you'd stop by. Any news on the flag artifact?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -134.44635602053035;
 tmp_speak_command.wy = -70.7545439636099;
@@ -39,11 +39,11 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "I haven't quite figured it out just yet...";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 208.28091670674195;
 tmp_speak_command.wy = 148.63939543032956;
-tmp_speak_command.w = 248.69814225923324;
+tmp_speak_command.w = 239.69814225923324;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -52,3 +52,4 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Well, get on it. I'm counting on you to figure this out!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+

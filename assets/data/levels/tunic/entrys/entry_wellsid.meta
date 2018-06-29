@@ -1,7 +1,7 @@
-tmp_entry.ww = 392;
+tmp_entry.ww = 370;
 tmp_entry.wh = 192.00000000000006;
-tmp_entry.wx = -209;
-tmp_entry.wy = 40;
+tmp_entry.wx = -220;
+tmp_entry.wy = 46;
 tmp_entry.wz = 100;
 tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_wellsid_img";

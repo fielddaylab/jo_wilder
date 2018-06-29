@@ -306,6 +306,7 @@ var GamePlayScene = function(game, stage)
     my_camera = my_real_camera;
     my_cursor = new cursor();
     my_cursor.consume_level(cur_level);
+    my_music = new music();
     my_avatar = new avatar();
     my_familiar = new familiar();
     my_navigable = new navigable();
@@ -657,6 +658,7 @@ var GamePlayScene = function(game, stage)
     if(keyer) keyer.flush();
 
     my_cursor.tick();
+    my_music.tick();
     if(my_keyable.eup) my_keyable.e = 0;
     my_keyable.eup = 0;
   };
