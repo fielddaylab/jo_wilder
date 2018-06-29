@@ -1,9 +1,9 @@
 tmp_entry.ww = 35;
 tmp_entry.wh = 32.99999999999998;
-tmp_entry.wx = 24.499999999999986;
-tmp_entry.wy = -147.5;
+tmp_entry.wx = -384.5;
+tmp_entry.wy = -92.49999999999996;
 tmp_entry.wz = 100;
-tmp_entry.page = 2;
+tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [

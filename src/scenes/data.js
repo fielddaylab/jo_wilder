@@ -441,6 +441,7 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/1.png")
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/2.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/3.png");
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/boss/5.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -5988,10 +5989,10 @@ tmp_entry.fqid = "tunic.entry_quest_backtoarchivist";
 {
 tmp_entry.ww = 390.99999999999994;
 tmp_entry.wh = 69.99999999999997;
-tmp_entry.wx = 202.50000000000006;
-tmp_entry.wy = -148;
+tmp_entry.wx = -207.49999999999991;
+tmp_entry.wy = -91.99999999999994;
 tmp_entry.wz = 100;
-tmp_entry.page = 2;
+tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_quest_backtoarchivist_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -6017,10 +6018,10 @@ tmp_entry.fqid = "tunic.entry_quest_backtoarchivist_x";
 {
 tmp_entry.ww = 35;
 tmp_entry.wh = 32.99999999999998;
-tmp_entry.wx = 24.499999999999986;
-tmp_entry.wy = -147.5;
+tmp_entry.wx = -384.5;
+tmp_entry.wy = -92.49999999999996;
 tmp_entry.wz = 100;
-tmp_entry.page = 2;
+tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_x_img";
 tmp_entry.audio_id = "null";
 tmp_entry.deck_animcycle_ids = [
@@ -6974,10 +6975,10 @@ tmp_entry = new entry();
 tmp_entry.id = "entry_stacks_slip";
 tmp_entry.fqid = "tunic.entry_stacks_slip";
 {
-tmp_entry.ww = 391;
-tmp_entry.wh = 170;
-tmp_entry.wx = -201.5;
-tmp_entry.wy = -158.99999999999994;
+tmp_entry.ww = 368;
+tmp_entry.wh = 157;
+tmp_entry.wx = -202;
+tmp_entry.wy = -213.50000000000003;
 tmp_entry.wz = 100;
 tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_stacks_slip_img";
@@ -6994,7 +6995,6 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.newspaper",
 ]];
-tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -7037,7 +7037,7 @@ tmp_entry.fqid = "tunic.entry_taxidermy";
 tmp_entry.ww = 387;
 tmp_entry.wh = 110.99999999999996;
 tmp_entry.wx = -208.5;
-tmp_entry.wy = 206.49999999999997;
+tmp_entry.wy = 212.49999999999997;
 tmp_entry.wz = 100;
 tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_taxidermy_img";
@@ -7054,7 +7054,6 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.library.frontdesk.worker.wells",
 ]];
-tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -7337,7 +7336,7 @@ tmp_entry.fqid = "tunic.entry_wellsid";
 tmp_entry.ww = 392;
 tmp_entry.wh = 192.00000000000006;
 tmp_entry.wx = -209;
-tmp_entry.wy = 40;
+tmp_entry.wy = 46.99999999999997;
 tmp_entry.wz = 100;
 tmp_entry.page = 3;
 tmp_entry.animcycle_id = "entry_wellsid_img";
@@ -7354,7 +7353,6 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.library.frontdesk.wellsbadge.hub",
 ]];
-tmp_entry.interactive = 1;
 
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -32724,8 +32722,8 @@ tmp_inert.fqid = "tunic.wildlife.center.foreground";
 {
 tmp_inert.ww = 2976.633181818181;
 tmp_inert.wh = 573.8377272727266;
-tmp_inert.wx = -0.9997814775470033;
-tmp_inert.wy = -673.1868067765106;
+tmp_inert.wx = -22.124055712386962;
+tmp_inert.wy = -669.2313646768869;
 tmp_inert.wz = 10;
 tmp_inert.g = 0.5;
 tmp_inert.animcycle_id = "wildlife_fg";
@@ -32804,8 +32802,8 @@ tmp_inert.fqid = "tunic.wildlife.center.tree";
 {
 tmp_inert.ww = 966.1477272727275;
 tmp_inert.wh = 870.5145454545452;
-tmp_inert.wx = 62.05107570331734;
-tmp_inert.wy = -322.01981003195914;
+tmp_inert.wx = -95.85160050238312;
+tmp_inert.wy = -282.79424090251536;
 tmp_inert.wz = 4;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "wildlife_tree";
