@@ -1690,8 +1690,8 @@ var navigable = function()
       var m = (d.g*d.g)/5;
       d.dw = d.w;
       d.dh = d.h;
-      d.dx = d.x + (my_camera.wx-d.wx)*m;
-      d.dy = d.y - (my_camera.wy-d.wy)*m;
+      d.dx = d.x + ((my_camera.wx-d.wx)*m)/880*canv.width; //this is a pretty bogus space transition
+      d.dy = d.y - ((my_camera.wy-d.wy)*m)/660*canv.height; //this is a pretty bogus space transition
     }
     for(var i = 0; i < self.cache_available_fg_drawables.length;    i++)
     {
@@ -1699,8 +1699,8 @@ var navigable = function()
       var m = (d.g*d.g);
       d.dw = d.w;
       d.dh = d.h;
-      d.dx = d.x - (my_camera.wx-d.wx)*m;
-      d.dy = d.y + (my_camera.wy-d.wy)*m;
+      d.dx = d.x - (my_camera.wx-d.wx)*m/880*canv.width; //this is a pretty bogus space transition
+      d.dy = d.y + (my_camera.wy-d.wy)*m/660*canv.height; //this is a pretty bogus space transition
     }
 
     if(DEBUG)
