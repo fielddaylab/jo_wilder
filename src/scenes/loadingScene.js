@@ -130,6 +130,7 @@ var LoadingScene = function(game, stage)
     //put font paths in font_srcs
     //font_srcs.push("FontName"); //NEEDS DEFINITION IN index.html CSS!!
     font_srcs.push("Patrick");
+    font_srcs.push("Boogaloo");
     font_canv_s = 25;
     font_canv = GenIcon(font_canv_s,font_canv_s);
     // uncomment below for preview
