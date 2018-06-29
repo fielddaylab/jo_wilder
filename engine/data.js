@@ -15609,7 +15609,7 @@ tmp_cutscene_command.wh = 500;
 tmp_cutscene_command.wx = -80;
 tmp_cutscene_command.wy = -800;
 tmp_cutscene_command.wz = 10000;
-tmp_cutscene_command.animcycle_id = "wells";
+tmp_cutscene_command.animcycle_id = "wells_coffee";
 tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
@@ -15927,8 +15927,8 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "-927345892";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.cutscene_entity_id = "jolie";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.wx = 154.10325658277438;
 tmp_cutscene_command.wy = -69.4164391214942;
 tmp_cutscene_command.w = 108.639892578125;
@@ -31842,6 +31842,53 @@ for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notification
 tmp_object.views.push(tmp_view);
 }
 tmp_room.objects.push(tmp_object);
+tmp_observation = new observation();
+tmp_observation.id = "coffee";
+tmp_observation.fqid = "tunic.nelson.trail.coffee";
+{
+tmp_observation.ww = 91.33333333333336;
+tmp_observation.wh = 77.03030303030292;
+tmp_observation.wx = 121.15738657281551;
+tmp_observation.wy = -153.41970191134757;
+tmp_observation.wz = 4.91;
+tmp_observation.act_wx = -83.0959427598143;
+tmp_observation.act_wy = 15.667402529198512;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 17.611271584883976;
+tmp_observation.hover_icon_wy = 26.253815052530722;
+tmp_observation.animcycle_id = "coffeecup";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "Another cup?! Find a garbage can, people!";
+tmp_observation.blip_wx = -203.32979705538716;
+tmp_observation.blip_wy = 40.01419018234438;
+tmp_observation.blip_w = 185;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!self",
+]];
+
+tmp_observation.animcycle_inst = gen_animcycle_inst(tmp_observation.animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_cursor_animcycle_id,tmp_level.animcycles);
+tmp_observation.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.hover_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.notice_icon_animcycle_inst = gen_animcycle_inst(tmp_observation.notice_icon_animcycle_id,tmp_level.animcycles);
+tmp_observation.text = stextToLines(tmp_observation.raw_text, tmp_observation.blip_w);
+for(var i = 0; i < tmp_observation.raw_notifications.length; i++) tmp_observation.notifications[i] = stextToLines(tmp_observation.raw_notifications[i], tmp_observation.raw_notification_ws[i] ? tmp_observation.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_room.observations.push(tmp_observation);
 tmp_inert = new inert();
 tmp_inert.id = "city";
 tmp_inert.fqid = "tunic.nelson.trail.city";
@@ -33054,8 +33101,8 @@ tmp_observation.act_anim = 0;
 tmp_observation.hover_icon_wx = 22.724907948520354;
 tmp_observation.hover_icon_wy = 21.140178688894366;
 tmp_observation.animcycle_id = "coffeecup";
-tmp_observation.hover_cursor_animcycle_id = "null";
-tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
 tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
