@@ -25,7 +25,7 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "I found the flag! Governor Nelson used it on the first Earth Day!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
@@ -51,7 +51,7 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "Now I just need some old photos, like last time.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
