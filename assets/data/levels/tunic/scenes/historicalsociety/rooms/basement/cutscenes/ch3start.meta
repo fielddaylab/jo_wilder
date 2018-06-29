@@ -60,7 +60,7 @@ tmp_cutscene_command.wy = -16.311436778635514;
 tmp_cutscene_command.w = 156.20785522460938;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "There you are, Jo!";
+tmp_cutscene_command.raw_text = "Jo!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -74,8 +74,21 @@ tmp_cutscene_command.wy = -13.421404090984495;
 tmp_cutscene_command.w = 162;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Take a look at the next artifact!";
+tmp_cutscene_command.raw_text = "I'm excited to see the next artifact!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 36.992279285688454;
+tmp_cutscene_command.wy = -16.311436778635514;
+tmp_cutscene_command.w = 156.20785522460938;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.raw_text = "Take a look.";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -124,7 +137,7 @@ tmp_cutscene_command.wy = -17.699621192573762;
 tmp_cutscene_command.w = 162;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Some kind of flag! Pretty spiffy, huh?";
+tmp_cutscene_command.raw_text = "I think it is a flag! Pretty spiffy, huh?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -152,7 +165,7 @@ tmp_cutscene_command.wy = 0.22891823703452374;
 tmp_cutscene_command.w = 113;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_worried";
-tmp_cutscene_command.raw_text = "Teddy is still out there!";
+tmp_cutscene_command.raw_text = "Teddy is still missing!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -180,7 +193,7 @@ tmp_cutscene_command.wy = -14.384835662691788;
 tmp_cutscene_command.w = 183;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "We just need to keep vigilant for clues!";
+tmp_cutscene_command.raw_text = "Want to look for some more clues?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

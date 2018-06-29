@@ -22,7 +22,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Whoever dropped these is probably the culprit!";
+tmp_speak_command.raw_atext = "Whoever owns these glasses probably the kidnapped Teddy!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -35,20 +35,46 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "There are a bunch of pictures in the entryway.";
+tmp_speak_command.raw_atext = "How can I find out who they belong to?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -727.3097818536941;
-tmp_speak_command.wy = -78.11825546572861;
-tmp_speak_command.w = 181;
+tmp_speak_command.wx = -730.4934446407244;
+tmp_speak_command.wy = -76.98864260174646;
+tmp_speak_command.w = 218;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I should check who wears these glasses!";
+tmp_speak_command.raw_atext = "I can look at the Staff Director in the entryway.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -730.4934446407244;
+tmp_speak_command.wy = -76.98864260174646;
+tmp_speak_command.w = 218;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I'll go look at the pictures of everyone in Staff Directory in the entryway.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -730.4934446407244;
+tmp_speak_command.wy = -76.98864260174646;
+tmp_speak_command.w = 218;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I inspect the photos to find out who owns these glasses!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
