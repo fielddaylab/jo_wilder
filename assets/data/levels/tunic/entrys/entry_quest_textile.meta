@@ -1,7 +1,7 @@
 tmp_entry.ww = 384;
 tmp_entry.wh = 60.000000000000036;
-tmp_entry.wx = 201.00000000000023;
-tmp_entry.wy = -25.999999999999957;
+tmp_entry.wx = 199.00000000000017;
+tmp_entry.wy = -34.99999999999994;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_quest_textile_img";

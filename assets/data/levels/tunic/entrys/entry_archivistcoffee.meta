@@ -1,7 +1,7 @@
 tmp_entry.ww = 382;
 tmp_entry.wh = 178;
 tmp_entry.wx = 199.99999999999991;
-tmp_entry.wy = 98.00000000000011;
+tmp_entry.wy = 92.00000000000011;
 tmp_entry.wz = 100;
 tmp_entry.page = 1;
 tmp_entry.animcycle_id = "entry_archivistcoffee_img";
@@ -18,5 +18,4 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist.have_glass",
 ]];
-tmp_entry.interactive = 1;
 

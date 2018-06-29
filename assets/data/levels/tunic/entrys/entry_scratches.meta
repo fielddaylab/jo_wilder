@@ -1,7 +1,7 @@
 tmp_entry.ww = 389;
 tmp_entry.wh = 192.00000000000006;
-tmp_entry.wx = -195.5;
-tmp_entry.wy = 194.00000000000014;
+tmp_entry.wx = -201.5;
+tmp_entry.wy = 183.00000000000014;
 tmp_entry.wz = 100;
 tmp_entry.page = 4;
 tmp_entry.animcycle_id = "entry_scratches_img";
@@ -18,5 +18,4 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.basement.seescratches",
 ]];
-tmp_entry.interactive = 1;
 
