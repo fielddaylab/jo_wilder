@@ -167,9 +167,9 @@ var MenuScene = function(game, stage)
 
     var w = 300;
     var h = 150;
-    ctx.drawImage(logo_img,20,20,w,h);
+    ctx.drawImage(logo_img,30,30,w,h);
 
-    ctx.font = "40px Boogaloo";
+    ctx.font = "32px Boogaloo";
     /*
     if(continuable) continue_button.draw(canv);
     new_button.draw(canv);
@@ -178,10 +178,10 @@ var MenuScene = function(game, stage)
     ctx.fillStyle = white;
     if(!continuable) ctx.fillStyle = "rgba(255,255,255,0.1)";
     ctx.fillText("CONTINUE",continue_button.x+15,continue_button.y+continue_button.h-10);
-    if(continue_button.hovering) ctx.fillRect(continue_button.x+10,continue_button.y+continue_button.h,continue_button.w-30,3);
+    if(continue_button.hovering) ctx.fillRect(continue_button.x+10,continue_button.y+continue_button.h,continue_button.w-110,3);
     ctx.fillStyle = white;
     ctx.fillText("NEW GAME",new_button.x+15,new_button.y+new_button.h-10);
-    if(new_button.hovering) ctx.fillRect(new_button.x+10,new_button.y+new_button.h,new_button.w-30,3);
+    if(new_button.hovering) ctx.fillRect(new_button.x+10,new_button.y+new_button.h,new_button.w-105,3);
     code_txt.draw(canv);
     ctx.fillText("ENTER CODE:",code_txt.x+15,code_txt.y-20);
     if(!code_valid) ctx.globalAlpha = 0.1;
@@ -199,7 +199,7 @@ var MenuScene = function(game, stage)
     else                     drawImageBox(uncheck_img,hq_toggle,ctx);
     if(fullscreen_toggle.on) drawImageBox(  check_img,fullscreen_toggle,ctx);
     else                     drawImageBox(uncheck_img,fullscreen_toggle,ctx);
-    ctx.font = text_font;
+    ctx.font = "24px Boogaloo";
     ctx.fillText("MUSIC FX",audio_toggle.x+audio_toggle.w+5,audio_toggle.y+audio_toggle.h-5);
     ctx.fillText("HQ GRAPHICS",hq_toggle.x+hq_toggle.w+5,hq_toggle.y+hq_toggle.h-5);
     ctx.fillText("FULLSCREEN",fullscreen_toggle.x+fullscreen_toggle.w+5,fullscreen_toggle.y+fullscreen_toggle.h-5);

@@ -4767,6 +4767,27 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells/4.png"
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wells_coffee";
+tmp_animcycle.fqid = "tunic.wells_coffee";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee/6.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "wellsbadge_big";
 tmp_animcycle.fqid = "tunic.wellsbadge_big";
 {
@@ -15957,7 +15978,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
 tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
@@ -16536,7 +16556,7 @@ tmp_wildcard.reqs = [[
     if(img_t > 1-buffer) ctx.globalAlpha = 1-((img_t-(1-buffer))/buffer);
     if(img_i < self.imgs.length)
     {
-      drawImageWidthCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,canv.width/2-140,ctx);
+      drawImageWidthCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,canv.width/2-100,ctx);
 
       ctx.fillStyle = white;
       var y = canv.height-30-self.captions[img_i].length*30;
@@ -33226,4 +33246,3 @@ levels.push(tmp_level);
     }
   }
 }
-
