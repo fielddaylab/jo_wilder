@@ -24496,6 +24496,9 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "tunic.historicalsociety.collection_flag.gramps.flag",
 "!self",
+],[
+"tunic.historicalsociety.collection_flag.gramps.flag",
+"!tunic.historicalsociety.entry.boss.flag",
 ]];
 
 tmp_speak_command = new speak_command();
