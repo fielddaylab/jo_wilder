@@ -25929,9 +25929,9 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -2.2142857127970856;
-tmp_speak_command.wy = 139.02857142857133;
-tmp_speak_command.w = 55.063934326171875;
+tmp_speak_command.wx = -23.214147305962197;
+tmp_speak_command.wy = 152.0285714285713;
+tmp_speak_command.w = 197.06393432617188;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
@@ -26161,7 +26161,6 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Right outside the door.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -26937,7 +26936,7 @@ tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.stacks.journals.pic_0",
 ]];
 tmp_object.view_overlay_reqs = [[
-"!tunic.historicalsociety.stacks.journals.pic_0",
+"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
 ]];
 tmp_object.notice_reqs = [[
 ]];
