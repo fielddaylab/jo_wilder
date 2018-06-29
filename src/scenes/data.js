@@ -6045,8 +6045,8 @@ tmp_entry.fqid = "tunic.entry_quest_backtocapitol";
 {
 tmp_entry.ww = 389;
 tmp_entry.wh = 65.99999999999999;
-tmp_entry.wx = 200.5;
-tmp_entry.wy = -198.99999999999997;
+tmp_entry.wx = 204.5;
+tmp_entry.wy = -186.99999999999997;
 tmp_entry.wz = 100;
 tmp_entry.page = 6;
 tmp_entry.animcycle_id = "entry_capitolfinal";
@@ -6063,7 +6063,34 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
-
+tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_level.entrys.push(tmp_entry);
+tmp_entry = new entry();
+tmp_entry.id = "entry_quest_backtocapitol_x";
+tmp_entry.fqid = "tunic.entry_quest_backtocapitol_x";
+{
+tmp_entry.ww = 39.99999999999999;
+tmp_entry.wh = 39.99999999999993;
+tmp_entry.wx = 28.499999999999986;
+tmp_entry.wy = -186.00000000000003;
+tmp_entry.wz = 100;
+tmp_entry.page = 6;
+tmp_entry.animcycle_id = "entry_x_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.capitol_2.hall.chap4_finale_c",
+]];
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_entry.raw_notifications.length; i++) tmp_entry.notifications[i] = stextToLines(tmp_entry.raw_notifications[i], tmp_entry.raw_notification_ws[i] ? tmp_entry.raw_notification_ws[i] : tmp_level.notifications_w);
 }
@@ -11715,7 +11742,7 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "Wha... but...";
-tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
