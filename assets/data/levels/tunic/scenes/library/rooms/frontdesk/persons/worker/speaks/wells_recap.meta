@@ -12,7 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.frontdesk.wellsbadge.hub",
-"!tunic.flaghouse.entry.flag_girl.symbol",
+"!tunic.historicalsociety.frontdesk.archivist.newspaper",
 "tunic.library.frontdesk.worker.wells",
 ]];
 

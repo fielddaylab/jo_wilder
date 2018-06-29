@@ -29797,6 +29797,45 @@ for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notificati
 }
 tmp_person.speaks.push(tmp_speak);
 tmp_speak = new speak();
+tmp_speak.id = "preflag";
+tmp_speak.fqid = "tunic.library.frontdesk.worker.preflag";
+{
+tmp_speak.primary = 998;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist.newspaper",
+"!tunic.flaghouse.entry.flag_girl.symbol",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -343.71521436456857;
+tmp_speak_command.wy = 269.806478546164;
+tmp_speak_command.w = 178;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_librarian_happy";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "It's such a nice fall day.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
 tmp_speak.id = "wells";
 tmp_speak.fqid = "tunic.library.frontdesk.worker.wells";
 {
@@ -29814,7 +29853,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.frontdesk.wellsbadge.hub",
-"!tunic.flaghouse.entry.flag_girl.symbol",
+"!tunic.historicalsociety.frontdesk.archivist.newspaper",
 "!self",
 ]];
 
@@ -29958,7 +29997,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.library.frontdesk.wellsbadge.hub",
-"!tunic.flaghouse.entry.flag_girl.symbol",
+"!tunic.historicalsociety.frontdesk.archivist.newspaper",
 "tunic.library.frontdesk.worker.wells",
 ]];
 
