@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 124.99999999999999;
-tmp_scene.wh = 94.99999999999997;
-tmp_scene.wx = 155.50000000000003;
-tmp_scene.wy = -11.499999999999972;
+tmp_scene.ww = 70;
+tmp_scene.wh = 90.99999999999994;
+tmp_scene.wx = 294.99999999999994;
+tmp_scene.wy = 102.5;
 tmp_scene.hover_icon_wx = 21;
 tmp_scene.hover_icon_wy = 34;
 tmp_scene.animcycle_id = "scene_flaghouse";

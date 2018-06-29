@@ -1,8 +1,8 @@
 tmp_scene.primary = true;
-tmp_scene.ww = 119.0000000000001;
-tmp_scene.wh = 144.00000000000003;
-tmp_scene.wx = 117.49999999999977;
-tmp_scene.wy = 162.99999999999983;
+tmp_scene.ww = 99.00000000000007;
+tmp_scene.wh = 108.00000000000004;
+tmp_scene.wx = 119.49999999999969;
+tmp_scene.wy = 143.9999999999999;
 tmp_scene.hover_icon_wx = 27;
 tmp_scene.hover_icon_wy = 41.99999999999999;
 tmp_scene.animcycle_id = "scene_historicalsociety";

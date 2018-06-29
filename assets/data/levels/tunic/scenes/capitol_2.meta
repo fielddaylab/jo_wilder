@@ -1,8 +1,8 @@
 tmp_scene.primary = false;
-tmp_scene.ww = 130;
-tmp_scene.wh = 142.99999999999997;
-tmp_scene.wx = 24.999999999999986;
-tmp_scene.wy = 21.499999999999986;
+tmp_scene.ww = 110;
+tmp_scene.wh = 122.99999999999994;
+tmp_scene.wx = 22.00000000000002;
+tmp_scene.wy = 18.5;
 tmp_scene.hover_icon_wx = 20;
 tmp_scene.hover_icon_wy = 41.99999999999999;
 tmp_scene.animcycle_id = "scene_capitol";
