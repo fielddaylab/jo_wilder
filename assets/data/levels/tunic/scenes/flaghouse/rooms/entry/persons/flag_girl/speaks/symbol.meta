@@ -67,3 +67,16 @@ tmp_speak_command.raw_atext = "If I were you, I'd go to the library and do some 
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 79.44033824989899;
+tmp_speak_command.wy = 48.00851172706814;
+tmp_speak_command.w = 144;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Thanks for your help!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

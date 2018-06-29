@@ -134,7 +134,7 @@ tmp_cutscene_command.wy = 199.3004486460007;
 tmp_cutscene_command.w = 206;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_wells_worried";
-tmp_cutscene_command.raw_text = "That symbol looks sort of like a deer hoof...";
+tmp_cutscene_command.raw_text = "The symbol on the flag looks sort of like a deer hoof.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

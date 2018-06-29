@@ -97,7 +97,7 @@ tmp_cutscene_command.wy = -45.72727272727283;
 tmp_cutscene_command.w = 152;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "How have I never been here before?";
+tmp_cutscene_command.raw_text = "The Capitol looks so pretty from here!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -125,7 +125,7 @@ tmp_cutscene_command.wy = 58.24999999999994;
 tmp_cutscene_command.w = 129;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "That's where it all happens...";
+tmp_cutscene_command.raw_text = "That's where it all happens.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -139,21 +139,7 @@ tmp_cutscene_command.wy = 58.24999999999994;
 tmp_cutscene_command.w = 185;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Ordinary people come together to speak out, get excited...";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "gramps";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -1370;
-tmp_cutscene_command.wy = 58.24999999999994;
-tmp_cutscene_command.w = 144;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "And even change the laws!";
+tmp_cutscene_command.raw_text = "Ordinary people come together at the Capitol to speak out and even change the laws!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -167,7 +153,7 @@ tmp_cutscene_command.wy = -39.7272727272728;
 tmp_cutscene_command.w = 179;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I wish I could change things like that.";
+tmp_cutscene_command.raw_text = "Like they did with Earth Day!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -181,7 +167,7 @@ tmp_cutscene_command.wy = 51.24999999999993;
 tmp_cutscene_command.w = 319;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Hmmm. You know, there's a nice little Earth Day display down the path.";
+tmp_cutscene_command.raw_text = "You know, there's a nice little Earth Day display down the path.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -195,7 +181,7 @@ tmp_cutscene_command.wy = 55.24999999999996;
 tmp_cutscene_command.w = 168.11181640625;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I think you'd like it.";
+tmp_cutscene_command.raw_text = "Go check it out!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

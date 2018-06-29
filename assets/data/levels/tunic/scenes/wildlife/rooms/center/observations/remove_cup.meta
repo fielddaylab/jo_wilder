@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "notice";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "Easy now...";
+tmp_observation.raw_text = "Here you go, a nice yummy cricket!";
 tmp_observation.blip_wx = 186.03178003257472;
 tmp_observation.blip_wy = -428.1818282553504;
 tmp_observation.blip_w = 100;
