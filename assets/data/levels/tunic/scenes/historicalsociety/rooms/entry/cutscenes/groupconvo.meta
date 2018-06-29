@@ -105,7 +105,7 @@ tmp_cutscene_command.wy = 114.45003359764459;
 tmp_cutscene_command.w = 195;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "It's true, they do keep disappearing lately...";
+tmp_cutscene_command.raw_text = "It's true, they do keep going missing lately...";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -478,7 +478,7 @@ tmp_cutscene_command.wy = 68.32527091662863;
 tmp_cutscene_command.w = 346;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Besides, he looks pretty friendly to me.";
+tmp_cutscene_command.raw_text = "Besides, he looks friendly to me.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
