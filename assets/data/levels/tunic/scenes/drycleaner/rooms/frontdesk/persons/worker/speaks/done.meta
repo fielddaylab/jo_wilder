@@ -12,6 +12,7 @@ tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
 "tunic.drycleaner.frontdesk.logbook.page.bingo",
+"!tunic.library.frontdesk.worker.hello",
 ]];
 
 tmp_speak_command = new speak_command();
