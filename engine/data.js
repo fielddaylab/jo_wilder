@@ -16407,7 +16407,8 @@ tmp_wildcard.reqs = [[
     "Ron and Colleen Weyers",
     "Francis A. and Georgia F. Ariens Fund",
     "within the Brillion Area Family of Funds",
-    "Ruth St. John and John Dunham West Foundation, Inc.",
+    "Ruth St. John and",
+    "John Dunham West Foundation, Inc.",
     "Conney Family in loving memory of Mildred Conney",
     "Edvest College Savings Plan",
     "Eleanor and Thomas Wildrick Family",
@@ -16535,7 +16536,7 @@ tmp_wildcard.reqs = [[
     if(img_t > 1-buffer) ctx.globalAlpha = 1-((img_t-(1-buffer))/buffer);
     if(img_i < self.imgs.length)
     {
-      drawImageHeightCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,200,ctx);
+      drawImageWidthCentered(self.imgs[img_i],3*canv.width/4,canv.height/3,canv.width/2-140,ctx);
 
       ctx.fillStyle = white;
       var y = canv.height-30-self.captions[img_i].length*30;
@@ -18023,7 +18024,7 @@ tmp_room.wh = 980;
 tmp_room.wx = 0;
 tmp_room.wy = 0;
 tmp_room.animcycle_id = "room_historicalsociety_hallway";
-tmp_room.audio_id = "music_main";
+tmp_room.audio_id = "music_teddy_gone";
 tmp_room.deck_animcycle_ids = [
 ];
 tmp_room.cam_wh = 920;
