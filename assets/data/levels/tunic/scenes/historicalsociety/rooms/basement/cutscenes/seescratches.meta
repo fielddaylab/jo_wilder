@@ -53,7 +53,7 @@ tmp_cutscene_command.wy = -104.41287344531355;
 tmp_cutscene_command.w = 178;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Maybe someone took him on the elevator!";
+tmp_cutscene_command.raw_text = "His kidnapper probably escaped on the elevator!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -119,7 +119,7 @@ tmp_cutscene_command.wy = -13.222891823738106;
 tmp_cutscene_command.w = 167;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wish I had mine... Teddy chewed it up.";
+tmp_cutscene_command.raw_text = "Wish I had mine but Teddy chewed it up.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -161,7 +161,20 @@ tmp_cutscene_command.wy = -14.905842629396892;
 tmp_cutscene_command.w = 197;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "But I need to take the artifact upstairs...";
+tmp_cutscene_command.raw_text = "Jo! I can't go with you. I need to take the artifact upstairs.";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "gramps";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.wx = 43.67525751164695;
+tmp_cutscene_command.wy = -14.905842629396892;
+tmp_cutscene_command.w = 197;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
+tmp_cutscene_command.raw_text = "You go ahead on by yourself.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -189,7 +202,7 @@ tmp_cutscene_command.wy = -104.80412018634863;
 tmp_cutscene_command.w = 163.7678680419922;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Teddy, here I come!";
+tmp_cutscene_command.raw_text = "Teddy! Here I come!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
