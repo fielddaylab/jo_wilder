@@ -18,4 +18,5 @@ tmp_entry.notification_reqs = [[
 tmp_entry.reqs = [[
 "tunic.humanecology.frontdesk.worker.intro",
 ]];
+tmp_entry.interactive = 1;
 

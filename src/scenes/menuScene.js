@@ -53,6 +53,7 @@ var MenuScene = function(game, stage)
   var check_img;
   var uncheck_img;
   var play_img;
+  var go_img;
 
   var realtime_click = function(evt)
   {
@@ -75,6 +76,7 @@ var MenuScene = function(game, stage)
     check_img   = GenImg("assets/check.png");
     uncheck_img = GenImg("assets/uncheck.png");
     play_img    = GenImg("assets/play.png");
+    go_img      = GenImg("assets/go.png");
 
     var w = 240;
     var h = 50;
@@ -82,9 +84,9 @@ var MenuScene = function(game, stage)
     var y = 220;
     continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
     new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
-    y += h+10;
+    y += h+50;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = "rgba(255,255,255,0.1)"; code_valid = 0; return; } if(save_table[txt]) { code_txt.bg_color = "rgba(0,255,0,0.1)"; code_valid = 1; } else { code_txt.bg_color = "rgba(255,0,0,0.1)"; code_valid = 0; } }); x += w+10;
-    code_button     = new ButtonBox(x,y,w,h,function(evt){ if(save_table[code_txt.txt]) { save_table_code = code_txt.txt; save_code = save_table[save_table_code].code; next = 1; } });
+    code_button     = new ButtonBox(x,y,70,h,function(evt){ if(save_table[code_txt.txt]) { save_table_code = code_txt.txt; save_code = save_table[save_table_code].code; next = 1; } });
 
     continue_button.hover = function(evt) { continue_button.hovering = 1; }
     continue_button.unhover = function(evt) { continue_button.hovering = 0; }
@@ -167,7 +169,7 @@ var MenuScene = function(game, stage)
     var h = 150;
     ctx.drawImage(logo_img,20,20,w,h);
 
-    ctx.font = "48px Patrick";
+    ctx.font = "40px Boogaloo";
     /*
     if(continuable) continue_button.draw(canv);
     new_button.draw(canv);
@@ -175,16 +177,16 @@ var MenuScene = function(game, stage)
     */
     ctx.fillStyle = white;
     if(!continuable) ctx.fillStyle = "rgba(255,255,255,0.1)";
-    ctx.fillText("Continue",continue_button.x+15,continue_button.y+continue_button.h-10);
+    ctx.fillText("CONTINUE",continue_button.x+15,continue_button.y+continue_button.h-10);
     if(continue_button.hovering) ctx.fillRect(continue_button.x+10,continue_button.y+continue_button.h,continue_button.w-30,3);
     ctx.fillStyle = white;
-    ctx.fillText("New Game",new_button.x+15,new_button.y+new_button.h-10);
+    ctx.fillText("NEW GAME",new_button.x+15,new_button.y+new_button.h-10);
     if(new_button.hovering) ctx.fillRect(new_button.x+10,new_button.y+new_button.h,new_button.w-30,3);
     code_txt.draw(canv);
-    ctx.fillText("Enter Code:",new_button.x+15,new_button.y+new_button.h-10+10+new_button.h);
-    if(!code_valid) ctx.fillStyle = "rgba(255,255,255,0.1)";
-    ctx.fillText("Go",code_button.x+15,code_button.y+code_button.h-10);
-    ctx.fillStyle = white;
+    ctx.fillText("ENTER CODE:",code_txt.x+15,code_txt.y-20);
+    if(!code_valid) ctx.globalAlpha = 0.1;
+    ctx.drawImage(go_img,code_button.x,code_button.y,code_button.w,code_button.h);
+    ctx.globalAlpha = 1;
 
     /*
     audio_toggle.draw(canv);
@@ -198,9 +200,9 @@ var MenuScene = function(game, stage)
     if(fullscreen_toggle.on) drawImageBox(  check_img,fullscreen_toggle,ctx);
     else                     drawImageBox(uncheck_img,fullscreen_toggle,ctx);
     ctx.font = text_font;
-    ctx.fillText("Music FX",audio_toggle.x+audio_toggle.w+5,audio_toggle.y+audio_toggle.h-5);
-    ctx.fillText("HQ Graphics",hq_toggle.x+hq_toggle.w+5,hq_toggle.y+hq_toggle.h-5);
-    ctx.fillText("Fullscreen",fullscreen_toggle.x+fullscreen_toggle.w+5,fullscreen_toggle.y+fullscreen_toggle.h-5);
+    ctx.fillText("MUSIC FX",audio_toggle.x+audio_toggle.w+5,audio_toggle.y+audio_toggle.h-5);
+    ctx.fillText("HQ GRAPHICS",hq_toggle.x+hq_toggle.w+5,hq_toggle.y+hq_toggle.h-5);
+    ctx.fillText("FULLSCREEN",fullscreen_toggle.x+fullscreen_toggle.w+5,fullscreen_toggle.y+fullscreen_toggle.h-5);
 
     if(next)
     {

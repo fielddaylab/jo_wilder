@@ -99,8 +99,7 @@ var loader = function()
     }
     for(var i = 0; i < level.entrys.length; i++)
       self.load_animcycle_inst(level.entrys[i].animcycle_inst);
-    get_audio(level.audio_id,level.audios).aud.loop = true;
-    if(AUDIO) get_audio(level.audio_id,level.audios).aud.play();
+    my_music.consume_music(get_audio(level.audio_id,level.audios));
   }
 
   self.consume_room = function(room)
@@ -246,6 +245,16 @@ var loader = function()
       ctx.fillStyle = white;
       ctx.fillText("loading...",canv.width-100,canv.height-20);
     }
+  }
+}
+
+var music = function()
+{
+  var self = this;
+  self.consume_music = function(music)
+  {
+    music.aud.loop = true;
+    if(AUDIO) music.aud.play();
   }
 }
 
@@ -1688,19 +1697,19 @@ var navigable = function()
     {
       var d = self.cache_available_bg_drawables[i];
       var m = (d.g*d.g)/5;
-      d.dx = d.x + (my_camera.wx-d.wx)*m;
-      d.dy = d.y - (my_camera.wy-d.wy)*m;
       d.dw = d.w;
       d.dh = d.h;
+      d.dx = d.x + ((my_camera.wx-d.wx)*m)/880*canv.width; //this is a pretty bogus space transition
+      d.dy = d.y - ((my_camera.wy-d.wy)*m)/660*canv.height; //this is a pretty bogus space transition
     }
     for(var i = 0; i < self.cache_available_fg_drawables.length;    i++)
     {
       var d = self.cache_available_fg_drawables[i];
       var m = (d.g*d.g);
-      d.dx = d.x - (my_camera.wx-d.wx)*m;
-      d.dy = d.y + (my_camera.wy-d.wy)*m;
       d.dw = d.w;
       d.dh = d.h;
+      d.dx = d.x - (my_camera.wx-d.wx)*m/880*canv.width; //this is a pretty bogus space transition
+      d.dy = d.y + (my_camera.wy-d.wy)*m/660*canv.height; //this is a pretty bogus space transition
     }
 
     if(DEBUG)

@@ -296,6 +296,8 @@ var GamePlayScene = function(game, stage)
     hoverer = new PersistentHoverer({source:canvas});
     keyer = new Keyer({source:canvas});
 
+    my_music = new music();
+
     my_loader = new loader();
     my_loader.consume_level(cur_level);
     my_loader.consume_room(cur_room);
