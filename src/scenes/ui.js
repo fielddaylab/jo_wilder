@@ -2360,7 +2360,6 @@ var notebookview = function()
       state_cur = STATE_TRANSITION;
       my_loader.unlock_content();
       state_t = 0;
-      if(AUDIO) get_audio(cur_level.notebook_audio_id,cur_level.audios).aud.play();
     }
     else if(self.page > 0              && ptWithinBox(self.prev_box,evt.doX,evt.doY))
     {
