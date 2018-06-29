@@ -16,7 +16,7 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
-"tunic.wildlife.center.expert.removed_cup",
+"tunic.wildlife.center.remove_cup",
 ]];
 tmp_entry.interactive = 1;
 
