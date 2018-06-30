@@ -64,8 +64,6 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "I'll go look at everyone's pictures!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-<<<<<<< HEAD
-=======
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -730.4934446407244;
@@ -80,4 +78,3 @@ tmp_speak_command.raw_atext = "I inspect the photos to find out who owns these g
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
->>>>>>> 296e85df33d016ea257f3d1fcc7d5eec4f25738a

@@ -20191,8 +20191,6 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "I'll go look at everyone's pictures!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
-<<<<<<< HEAD
-=======
 
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -730.4934446407244;
@@ -20207,7 +20205,6 @@ tmp_speak_command.raw_atext = "I inspect the photos to find out who owns these g
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
->>>>>>> 296e85df33d016ea257f3d1fcc7d5eec4f25738a
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
