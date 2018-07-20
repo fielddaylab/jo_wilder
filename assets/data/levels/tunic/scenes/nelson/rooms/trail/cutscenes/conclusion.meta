@@ -111,7 +111,7 @@ tmp_cutscene_command.wy = 57.24999999999993;
 tmp_cutscene_command.w = 183.75982666015625;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Pretty neat, isn't it?";
+tmp_cutscene_command.raw_text = "Neat, isn't it?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -139,7 +139,7 @@ tmp_cutscene_command.wy = 58.24999999999994;
 tmp_cutscene_command.w = 185;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Ordinary people come together at the Capitol to speak out and even change the laws!";
+tmp_cutscene_command.raw_text = "Wisconsin folks come together at the Capitol to make their voices heard.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -26,17 +26,3 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "The Stacks are right outside the door. Go find some photos!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 3.552713678800501e-14;
-tmp_speak_command.wy = 144.99999999999997;
-tmp_speak_command.w = 193;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Just please, don't let your badger eat them!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-

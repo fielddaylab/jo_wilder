@@ -179,7 +179,7 @@ tmp_cutscene_command.wy = 133.17748920314716;
 tmp_cutscene_command.w = 156.4878387451172;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Thanks. Do you have news for me?";
+tmp_cutscene_command.raw_text = "Thanks. Did you figure out the shirt?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -193,7 +193,7 @@ tmp_cutscene_command.wy = -40.417947312631775;
 tmp_cutscene_command.w = 120.52780151367188;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Yes! I figured out the shirt!";
+tmp_cutscene_command.raw_text = "Yes!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -388,7 +388,7 @@ tmp_cutscene_command.wy = 145.21212121212113;
 tmp_cutscene_command.w = 146;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I knew you could do it, Jolie!";
+tmp_cutscene_command.raw_text = "I knew you could do it, Jo!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -467,7 +467,7 @@ tmp_cutscene_command.wy = 149.23809523809507;
 tmp_cutscene_command.w = 339.2557373046875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_wells_annoyed";
-tmp_cutscene_command.raw_text = "You wouldn't BELIEVE the day I've had!";
+tmp_cutscene_command.raw_text = "You won't BELIEVE the day I've had!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

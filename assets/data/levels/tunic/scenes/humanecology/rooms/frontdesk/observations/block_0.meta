@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "I have a feeling there's a clue to be found in here...";
+tmp_observation.raw_text = "I should stay and look for clues!";
 tmp_observation.blip_wx = 300.84173327858684;
 tmp_observation.blip_wy = -11.000000000000034;
 tmp_observation.blip_w = 231;

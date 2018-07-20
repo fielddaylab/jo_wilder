@@ -101,7 +101,7 @@ tmp_cutscene_command.wy = 154.53246753259452;
 tmp_cutscene_command.w = 163;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "Hmmm. Shouldn't you be doing homework instead?";
+tmp_cutscene_command.raw_text = "Hmmm. Don't forget about your homework.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -185,7 +185,7 @@ tmp_cutscene_command.wy = 10.38772610587177;
 tmp_cutscene_command.w = 166;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "No way, Gramps. YOU'RE not boring!";
+tmp_cutscene_command.raw_text = "No way, Gramps. You're the best!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

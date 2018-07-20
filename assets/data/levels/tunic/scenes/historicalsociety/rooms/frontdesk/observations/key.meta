@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "This must be the key for Teddy's cage!";
+tmp_observation.raw_text = "Yes! It's the key for Teddy's cage!";
 tmp_observation.blip_wx = 42.01813806071581;
 tmp_observation.blip_wy = 57;
 tmp_observation.blip_w = 185;

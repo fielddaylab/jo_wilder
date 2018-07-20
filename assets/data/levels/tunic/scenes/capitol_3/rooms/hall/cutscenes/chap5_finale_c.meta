@@ -173,7 +173,7 @@ tmp_cutscene_command.wy = 129.15501374207662;
 tmp_cutscene_command.w = 227;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "The next artifact is this spectacular women's suffrage tunic!";
+tmp_cutscene_command.raw_text = "Our next artifact is this spectacular women's suffrage tunic!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+50;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -187,7 +187,7 @@ tmp_cutscene_command.wy = 126.12203865811055;
 tmp_cutscene_command.w = 232;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "This shirt was worn by Theodora Youmans...";
+tmp_cutscene_command.raw_text = "This shirt belonged to Theodora Youmans...";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -293,7 +293,7 @@ tmp_cutscene_command.wy = 12.48832278326767;
 tmp_cutscene_command.w = 126;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Sure, for an oversized rat.";
+tmp_cutscene_command.raw_text = "Sure, for a weasel.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -350,7 +350,7 @@ tmp_cutscene_command.wy = 21.579231874176763;
 tmp_cutscene_command.w = 127.38386535644531;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Oh, that reminds me.";
+tmp_cutscene_command.raw_text = "That reminds me.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -392,7 +392,7 @@ tmp_cutscene_command.wy = 17.033777328722188;
 tmp_cutscene_command.w = 220;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Junior History Detective.";
+tmp_cutscene_command.raw_text = "History Detective.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -406,7 +406,7 @@ tmp_cutscene_command.wy = 17.033777328722188;
 tmp_cutscene_command.w = 220;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "That means you'll be helping out around here more often.";
+tmp_cutscene_command.raw_text = "I guess you'll be helping out around here more often.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -448,7 +448,7 @@ tmp_cutscene_command.wy = -70.84501055006565;
 tmp_cutscene_command.w = 216;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I'm gonna need an office, and a flashlight, and a magnifying glass...";
+tmp_cutscene_command.raw_text = "I'm gonna need an office, and a flashlight, and night vision goggles...";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

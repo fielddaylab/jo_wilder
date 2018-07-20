@@ -39,7 +39,7 @@ tmp_cutscene_command.wy = 258.1184450090208;
 tmp_cutscene_command.w = 258;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Did you drop something, Dear? There's a card on the floor.";
+tmp_cutscene_command.raw_text = "Did you drop something, Dear?";
 tmp_cutscene_command.t = 0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 //

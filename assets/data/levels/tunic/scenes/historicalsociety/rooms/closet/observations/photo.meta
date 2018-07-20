@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "I love these photos of me and Teddy.";
+tmp_observation.raw_text = "I love these photos of me and Teddy!";
 tmp_observation.blip_wx = 141.0757818219442;
 tmp_observation.blip_wy = 3.4127062912952084;
 tmp_observation.blip_w = 175;

@@ -124,7 +124,7 @@ tmp_cutscene_command.wy = 130.97354745179362;
 tmp_cutscene_command.w = 278;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wells just got in trouble for littering at the Wildlife Center.";
+tmp_cutscene_command.raw_text = "Wells got in trouble for littering at the Wildlife Center.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -204,20 +204,6 @@ tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_boss_happy";
 tmp_cutscene_command.raw_text = "I'm glad I put you on the case.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "boss";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = 198.24242424242416;
-tmp_cutscene_command.wy = 139.15151515151507;
-tmp_cutscene_command.w = 174;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "You're certainly following in your grampa's footsteps.";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -342,7 +328,7 @@ tmp_cutscene_command.wy = -58.72727272727285;
 tmp_cutscene_command.w = 160;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Gramps and I are gonna walk to the park by my house.";
+tmp_cutscene_command.raw_text = "Gramps and I are going to the park by my house.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -412,7 +398,7 @@ tmp_cutscene_command.wy = -58.72727272727285;
 tmp_cutscene_command.w = 140;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wow! The state named a park after him? Cool!";
+tmp_cutscene_command.raw_text = "He got a park named after him? Cool!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

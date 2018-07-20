@@ -116,7 +116,7 @@ tmp_cutscene_command.wy = -14.272727272726634;
 tmp_cutscene_command.w = 173;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I should have a march or something.";
+tmp_cutscene_command.raw_text = "We should have a march, Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -139,12 +139,26 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
 tmp_cutscene_command.cutscene_entity_id = "null";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
+tmp_cutscene_command.wx = 1299.2181818181816;
+tmp_cutscene_command.wy = -156.67337662337638;
+tmp_cutscene_command.w = 26;
+tmp_cutscene_command.h = 30;
+tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.raw_text = "💚";
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
+tmp_cutscene_command.cutscene_entity_id = "null";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
 tmp_cutscene_command.wx = 1326.5909090909092;
 tmp_cutscene_command.wy = -18.499999999999893;
 tmp_cutscene_command.w = 189;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_happy";
-tmp_cutscene_command.raw_text = "Maybe they'll even name a park after me!";
+tmp_cutscene_command.raw_text = "Maybe they'll even name a park after us!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -158,7 +172,7 @@ tmp_cutscene_command.wy = -15.159090909090686;
 tmp_cutscene_command.w = 179;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Except my park will have roller coasters, and cute animals, and snacks.";
+tmp_cutscene_command.raw_text = "Except our park will have roller coasters, and cute animals, and snacks.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -172,7 +186,7 @@ tmp_cutscene_command.wy = -10.15909090909069;
 tmp_cutscene_command.w = 207.85581970214844;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Teddy, you must be exhausted!";
+tmp_cutscene_command.raw_text = "You must be exhausted, Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

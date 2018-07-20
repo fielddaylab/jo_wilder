@@ -61,7 +61,7 @@ tmp_cutscene_command.wy = 5.28104804034216;
 tmp_cutscene_command.w = 170.58384704589844;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I've got you, Teddy!";
+tmp_cutscene_command.raw_text = "I found the key!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

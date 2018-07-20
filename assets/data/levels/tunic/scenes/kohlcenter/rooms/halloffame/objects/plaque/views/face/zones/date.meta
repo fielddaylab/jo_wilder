@@ -10,7 +10,7 @@ tmp_zone.target_view = "face";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
 "That's it!",
-"The slip says 1916 but the team didn't start until 1974!",
+"The slip is from 1916 but the team didn't start until 1974!",
 ];
 tmp_zone.raw_notification_ws = [
 81.13592529296875,

@@ -9,9 +9,9 @@ tmp_zone.deck_animcycle_ids = [
 tmp_zone.target_view = "pic_2";
 tmp_zone.notifications_persistent = 0;
 tmp_zone.raw_notifications = [
-"Look at all these activists!",
+"Look at all those activists!",
 "This is perfect for the exhibit.",
-"I should go to the Capitol and tell the boss!",
+"I should go to the Capitol and tell Mrs. M!",
 ];
 tmp_zone.raw_notification_ws = [
 139,

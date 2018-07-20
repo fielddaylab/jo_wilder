@@ -171,7 +171,7 @@ tmp_cutscene_command.wy = 133.6473434446823;
 tmp_cutscene_command.w = 125;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "There's no time to waste!";
+tmp_cutscene_command.raw_text = "Come on, Jo!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+31;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

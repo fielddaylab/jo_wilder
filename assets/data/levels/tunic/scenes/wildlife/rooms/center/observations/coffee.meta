@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "Ugh. People need to pick up their trash!";
+tmp_observation.raw_text = "People sure drink a lot of coffee around here.";
 tmp_observation.blip_wx = -333.7364960044172;
 tmp_observation.blip_wy = -491.9522120071983;
 tmp_observation.blip_w = 176;

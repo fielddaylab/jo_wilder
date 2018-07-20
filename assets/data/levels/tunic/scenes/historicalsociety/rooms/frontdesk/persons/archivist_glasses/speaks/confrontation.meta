@@ -141,7 +141,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "What kind of photos are you looking for?";
+tmp_speak_command.raw_atext = "What kind of photos do you need?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -167,19 +167,19 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Here's a call number for the Stacks.";
+tmp_speak_command.raw_atext = "Here's a call number for the Stacks. Go find some photos.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 133.00000000000003;
-tmp_speak_command.wy = 13.00000000000001;
-tmp_speak_command.w = 68.79995727539062;
+tmp_speak_command.wx = 3.552713678800501e-14;
+tmp_speak_command.wy = 141;
+tmp_speak_command.w = 319.8397216796875;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Thanks!";
+tmp_speak_command.raw_atext = "Just please, don't let your badger eat them!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);

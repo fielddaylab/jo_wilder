@@ -15,7 +15,7 @@ tmp_observation.notice_icon_animcycle_id = "null";
 tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
-tmp_observation.raw_text = "Another cup?! Find a recycle bin, people!";
+tmp_observation.raw_text = "Ugh! Somebody needs to do something about all these cups!";
 tmp_observation.blip_wx = -203.32979705538716;
 tmp_observation.blip_wy = 40.01419018234438;
 tmp_observation.blip_w = 185;

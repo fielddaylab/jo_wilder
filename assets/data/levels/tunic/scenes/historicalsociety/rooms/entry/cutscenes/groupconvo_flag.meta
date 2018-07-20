@@ -92,7 +92,7 @@ tmp_cutscene_command.wy = 193.7998408761096;
 tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I'd like you to take the lead on the flag case.";
+tmp_cutscene_command.raw_text = "I'm putting you in charge of the flag case.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -106,7 +106,7 @@ tmp_cutscene_command.wy = 192.33683997823957;
 tmp_cutscene_command.w = 195;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Make sure to get lots of photos for the exhibit, like last time!";
+tmp_cutscene_command.raw_text = "Make sure to get some old photos for the exhibit, like last time!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
