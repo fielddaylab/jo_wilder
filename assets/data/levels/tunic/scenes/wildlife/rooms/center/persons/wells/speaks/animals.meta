@@ -82,7 +82,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -638.4596888659489;
 tmp_speak_command.wy = -437.4371875546082;
-tmp_speak_command.w = 157.68792724609375;
+tmp_speak_command.w = 158;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";

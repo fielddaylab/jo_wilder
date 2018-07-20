@@ -98,7 +98,7 @@ var GamePlayScene = function(game, stage)
         {
           var bogus_lines = ob.notifications[i];
           if(!ob.raw_notification_ws[i]) ob.raw_notification_ws[i] = cur_level.notifications_w;
-          var bogus_w = ob.raw_notification_ws[i];
+          var bogus_w = 1000;//ob.raw_notification_ws[i];
           if(bogus_lines.length == 1)
           {
             bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
@@ -128,7 +128,7 @@ var GamePlayScene = function(game, stage)
       var tighten_text_bubbles = function(text,raw,w,ob)
       {
         var bogus_lines = text;
-        var bogus_w = w;
+        var bogus_w = 1000;//w;
         if(bogus_lines.length == 1)
         {
           bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;

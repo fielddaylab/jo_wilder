@@ -22,7 +22,7 @@ tmp_object.raw_notifications = [
 "Guess I should look for clues.",
 ];
 tmp_object.raw_notification_ws = [
-241.04774475097656,
+230.77577209472656,
 133,
 ];
 tmp_object.notification_reqs = [[

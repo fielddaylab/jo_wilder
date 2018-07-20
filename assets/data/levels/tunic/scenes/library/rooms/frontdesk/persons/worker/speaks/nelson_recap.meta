@@ -13,11 +13,11 @@ tmp_speak.notification_reqs = [[
 tmp_speak.reqs = [[
 "tunic.library.frontdesk.worker.nelson",
 ]];
-//
+
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -346.93939624848997;
 tmp_speak_command.wy = 249.84848486151736;
-tmp_speak_command.w = 256.18365478515625;
+tmp_speak_command.w = 184;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -26,3 +26,4 @@ tmp_speak_command.deck_animcycle_ids = [
 tmp_speak_command.raw_atext = "Check out the archives. They've got tons of old photos!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
+
