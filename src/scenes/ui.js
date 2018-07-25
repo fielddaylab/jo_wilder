@@ -391,10 +391,10 @@ var cursor = function()
     }
     else if(self.mode == CURSOR_UI && (!DEBUG || !my_keyable.e))
     {
-      var w = cur_level.cursor_w;
-      var h = cur_level.cursor_h;
-      var hw = cur_level.cursor_w/2;
-      var hh = cur_level.cursor_h/2;
+      w = cur_level.cursor_w;
+      h = cur_level.cursor_h;
+      hw = cur_level.cursor_w/2;
+      hh = cur_level.cursor_h/2;
       ctx.drawImage(self.ui_animcycle_inst.img, self.known_x-hw,self.known_y-hh,w,h)
     }
     if(self.icon_o && (!DEBUG || !my_keyable.e))
@@ -483,7 +483,6 @@ var avatar = function()
           case ACT_CUTSCENE:
           {
             state_stack = STATE_CUTSCENE;
-            state_act = cur_act;
             state_to = state_stack;
             my_cutsceneview.consume_cutscene(cur_act);
           }
@@ -1328,7 +1327,6 @@ var navigable = function()
             state_cur = STATE_TRANSITION;
             my_loader.unlock_content();
             state_stack = STATE_CUTSCENE;
-            state_act = cur_act;
             state_to = state_stack;
             my_cutsceneview.consume_cutscene(cur_act);
             state_t = 0;
@@ -1339,7 +1337,6 @@ var navigable = function()
             state_cur = STATE_TRANSITION;
             my_loader.unlock_content();
             state_stack = STATE_CUTSCENE;
-            state_act = cur_act;
             state_to = state_stack;
             my_cutsceneview.consume_cutscene(cur_act);
             state_t = 0.5;
@@ -1371,7 +1368,7 @@ var navigable = function()
       if(wx > self.room.navs[i].wx+self.room.navs[i].ww/2) try_wx = self.room.navs[i].wx+self.room.navs[i].ww/2;
       if(wy < self.room.navs[i].wy-self.room.navs[i].wh/2) try_wy = self.room.navs[i].wy-self.room.navs[i].wh/2;
       if(wy > self.room.navs[i].wy+self.room.navs[i].wh/2) try_wy = self.room.navs[i].wy+self.room.navs[i].wh/2;
-      trydist = distsqr(try_wx, try_wy, wx, wy);
+      var trydist = distsqr(try_wx, try_wy, wx, wy);
       if(trydist < dist)
       {
         obj.wx = try_wx;
@@ -1716,10 +1713,10 @@ var navigable = function()
     if(my_camera == my_real_camera && state_stack != STATE_CUTSCENE)
     {
       //move camera
-      var target_cam_wx = self.cam_target_wx(my_avatar.wx);
+      var target_cam_wx = self.cam_target_wx(window.my_avatar.wx); //NEEDS window. ON SAFARI TO PREVENT NONSENSE OPTIMIZATIONS THAT DUPLICATES MY_AVATAR STATE (?)
       my_real_camera.wx = lerp(my_real_camera.wx,target_cam_wx,cur_level.target_lerp_s);
 
-      var target_cam_wy = self.cam_target_wy(my_avatar.wy);
+      var target_cam_wy = self.cam_target_wy(window.my_avatar.wy); //NEEDS window. ON SAFARI TO PREVENT NONSENSE OPTIMIZATIONS THAT DUPLICATES MY_AVATAR STATE (?)
       my_real_camera.wy = lerp(my_real_camera.wy,target_cam_wy,cur_level.target_lerp_s);
     }
 
@@ -1777,8 +1774,8 @@ var navigable = function()
     ctx.restore();
     if(state_cur == STATE_NAV && d.notice)
     {
-      hw = cur_level.hover_w/2;
-      hh = cur_level.hover_h/2;
+      var hw = cur_level.hover_w/2;
+      var hh = cur_level.hover_h/2;
       d.hover_icon_x =  screenSpaceW(my_camera,canv,d.hover_icon_wx);
       d.hover_icon_y = -screenSpaceH(my_camera,canv,d.hover_icon_wy);
       ctx.drawImage(d.notice_icon_animcycle_inst.img, d.x+d.w/2+d.hover_icon_x-hw, d.y+d.h/2+d.hover_icon_y-hh, cur_level.hover_w, cur_level.hover_h);
@@ -2173,8 +2170,8 @@ var mapview = function()
       ctx.drawImage(o.animcycle_inst.img, o.x, o.y+yoff, o.w, o.h);
       if(o.notice)
       {
-        hw = cur_level.hover_w/2;
-        hh = cur_level.hover_h/2;
+        var hw = cur_level.hover_w/2;
+        var hh = cur_level.hover_h/2;
         o.hover_icon_x =  screenSpaceW(my_ui_camera,canv,o.hover_icon_wx);
         o.hover_icon_y = -screenSpaceH(my_ui_camera,canv,o.hover_icon_wy);
         ctx.drawImage(o.notice_icon_animcycle_inst.img, o.x+o.w/2+o.hover_icon_x-hw, o.y+o.h/2+o.hover_icon_y-hh+yoff, cur_level.hover_w, cur_level.hover_h);

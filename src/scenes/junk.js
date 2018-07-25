@@ -15,6 +15,7 @@ var my_music;
 var my_cursor;
 var my_loader;
 var my_avatar;
+var my_familiar;
 var my_navigable;
 var my_toolbar;
 var my_mapview;
