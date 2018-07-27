@@ -16,9 +16,9 @@ tmp_observation.audio_id = "null";
 tmp_observation.deck_animcycle_ids = [
 ];
 tmp_observation.raw_text = "Here you go, a nice yummy cricket!";
-tmp_observation.blip_wx = 186.03178003257472;
-tmp_observation.blip_wy = -428.1818282553504;
-tmp_observation.blip_w = 100;
+tmp_observation.blip_wx = 56.58516738011258;
+tmp_observation.blip_wy = -432.2088498656967;
+tmp_observation.blip_w = 170;
 tmp_observation.blip_h = 30;
 tmp_observation.notifications_persistent = 0;
 tmp_observation.raw_notifications = [
