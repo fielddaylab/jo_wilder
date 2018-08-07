@@ -2380,7 +2380,7 @@ var notebookview = function()
     self.notebook_animcycle_inst.tick();
   }
 
-  self.draw = function(t,hoverexpand=0)
+  self.draw = function(t)
   {
     var yoff = (1-t)*self.h;
     ctx.drawImage(self.notebook_animcycle_inst.img, self.notebook.x, self.notebook.y+yoff, self.notebook.w, self.notebook.h);
