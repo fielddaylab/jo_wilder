@@ -1809,10 +1809,10 @@ var navigable = function()
       {
         for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
           draw_junk(self.cache_available_drawables[i]);
-        my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color);
         for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < fami_wz; i++)
           draw_junk(self.cache_available_drawables[i]);
-        my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color);
         for(; i < self.cache_available_drawables.length; i++)
           draw_junk(self.cache_available_drawables[i]);
       }
@@ -1820,10 +1820,10 @@ var navigable = function()
       {
         for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < fami_wz; i++)
           draw_junk(self.cache_available_drawables[i]);
-        my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        my_familiar.draw(self.pt_shade(my_familiar.wx,my_familiar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color);
         for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
           draw_junk(self.cache_available_drawables[i]);
-        my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+        my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color);
         for(; i < self.cache_available_drawables.length; i++)
           draw_junk(self.cache_available_drawables[i]);
       }
@@ -1832,7 +1832,7 @@ var navigable = function()
     {
       for(; i < self.cache_available_drawables.length && self.cache_available_drawables[i].wz < avi_wz; i++)
         draw_junk(self.cache_available_drawables[i]);
-      my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color,);
+      my_avatar.draw(self.pt_shade(my_avatar.wx,my_avatar.wy),self.room.light_color,self.room.shadow_color,self.room.ambient_color);
       for(; i < self.cache_available_drawables.length; i++)
         draw_junk(self.cache_available_drawables[i]);
     }

@@ -396,6 +396,7 @@ var GenAudio = function(src)
 {
   var aud = new Audio();
   aud.src = src;
+  aud.load();
   return aud;
 }
 
