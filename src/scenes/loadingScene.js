@@ -5,8 +5,9 @@ var LoadingScene = function(game, stage)
   var canv;
   var canvas;
   var ctx;
-  self.resize = function(stage)
+  self.resize = function(s)
   {
+    stage = s;
     canv = stage.canv;
     canvas = canv.canvas;
     ctx = canv.context;
@@ -153,6 +154,7 @@ var LoadingScene = function(game, stage)
       audios[i] = new Audio();
       audios[i].addEventListener('canplaythrough', audioLoaded, false);
       audios[i].src = audio_srcs[i];
+      audios[i].load();
     }
     audioLoaded(); //call once to prevent 0/0 != 100% bug
   };
@@ -249,6 +251,40 @@ var LoadingScene = function(game, stage)
       }
       ctx.globalAlpha = 1;
     }
+
+/*
+    ctx.fillStyle = blue;
+    var x = 10;
+    var y = 30;
+    for(var i = 0; i < loading_img_srcs.length; i++)
+    {
+      ctx.fillText(loading_img_srcs[i],x,y);
+      y += 20;
+    }
+    ctx.fillText(n_loading_imgs_loaded,x,y);
+    y += 20;
+    for(var i = 0; i < img_srcs.length; i++)
+    {
+      ctx.fillText(img_srcs[i],x,y);
+      y += 20;
+    }
+    ctx.fillText(n_imgs_loaded,x,y);
+    y += 20;
+    for(var i = 0; i < font_srcs.length; i++)
+    {
+      ctx.fillText(font_srcs[i],x,y);
+      y += 20;
+    }
+    ctx.fillText(n_fonts_loaded,x,y);
+    y += 20;
+    for(var i = 0; i < audio_srcs.length; i++)
+    {
+      ctx.fillText(audio_srcs[i],x,y);
+      y += 20;
+    }
+    ctx.fillText(n_audios_loaded,x,y);
+    y += 20;
+*/
   };
 
   self.cleanup = function()
