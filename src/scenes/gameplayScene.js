@@ -434,6 +434,10 @@ var GamePlayScene = function(game, stage)
 
     my_navigable.unlock_content();
     my_navigable.trigger_cutscenes();
+
+    window.onbeforeunload = function(){
+      return "To retain progress, use Save Code: "+my_notebookview.current_code;
+    };
   };
 
   self.tick = function()

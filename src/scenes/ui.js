@@ -3801,6 +3801,18 @@ var cutsceneview = function()
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
+    //analytics hack
+    switch(self.cutscene.fqid)
+    {
+      case "tunic.capitol_0.hall.chap1_finale_c":
+      case "tunic.capitol_1.hall.chap2_finale_c":
+      case "tunic.capitol_2.hall.chap4_finale_c":
+      case "tunic.capitol_3.hall.chap5_finale_c":
+        ga('send', 'event', 'finale', 'reached', self.cutscene.fqid);
+        break;
+      default:
+        break;
+    }
     if(self.cutscene.notifications.length && queryreqs(self.cutscene, self.cutscene.notification_reqs)) my_notificationview.consume_notification(self.cutscene);
     self.cutscene.pre_met = true;
     my_navigable.unlock_content();
