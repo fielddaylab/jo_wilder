@@ -287,7 +287,7 @@ var music = function()
         self.cur_music = self.next_music;
         self.next_music = 0;
         self.t = 0;
-        if(self.cur_music && self.cur_music.aud.paused) { self.cur_music.aud.volume = 0; self.cur_music.aud.play(); }
+        if(self.cur_music && self.cur_music.aud.paused && AUDIO) { self.cur_music.aud.volume = 0; self.cur_music.aud.play(); }
       }
       else if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.volume = 1-(self.t/self.t_max);
     }
@@ -2253,7 +2253,7 @@ var notebookview = function()
     {
       var l = self.entrys[i].available;
       self.entrys[i].available = queryreqs(self.entrys[i], self.entrys[i].reqs);
-      if(l && self.entrys[i].available) ga('send', 'event', 'capitol_entry', 'available', self.entrys[i].fqid, self.n_available_entrys+1);
+      if(!l && self.entrys[i].available) ga('send', 'event', 'capitol_entry', 'available', self.entrys[i].fqid, self.n_available_entrys+1);
       if(self.entrys[i].available)
       {
         self.entrys[i].hoverexpand = 0;

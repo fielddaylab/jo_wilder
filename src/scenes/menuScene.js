@@ -97,8 +97,8 @@ var MenuScene = function(game, stage)
     h = 30;
     x = 100;
     y = canv.height-100;
-    audio_toggle      = new ToggleBox(x,y,w,h,AUDIO,function(o){ audio.pause(); AUDIO = o; if(!o && !audio.paused) audio.pause(); if(o && audio.paused) audio.play(); }); x += 200;
-    hq_toggle         = new ToggleBox(x,y,w,h,!LOFI,function(o)
+    audio_toggle = new ToggleBox(x,y,w,h,AUDIO,function(o){ audio.pause(); AUDIO = o; if(!o && !audio.paused) audio.pause(); if(o && audio.paused) audio.play(); }); x += 200;
+    hq_toggle = new ToggleBox(x,y,w,h,!LOFI,function(o)
       {
         LOFI = !o;
         QUALITY = !LOFI;
@@ -183,7 +183,7 @@ var MenuScene = function(game, stage)
     ctx.fillText("NEW GAME",new_button.x+15,new_button.y+new_button.h-10);
     if(new_button.hovering) ctx.fillRect(new_button.x+10,new_button.y+new_button.h,new_button.w-105,3);
     code_txt.draw(canv);
-    ctx.fillText("ENTER CODE:",code_txt.x+15,code_txt.y-20);
+    ctx.fillText("ENTER SAVE CODE:",code_txt.x+15,code_txt.y-20);
     if(!code_valid) ctx.globalAlpha = 0.1;
     ctx.drawImage(go_img,code_button.x,code_button.y,code_button.w,code_button.h);
     ctx.globalAlpha = 1;

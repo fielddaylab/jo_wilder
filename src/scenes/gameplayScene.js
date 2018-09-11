@@ -38,7 +38,7 @@ var GamePlayScene = function(game, stage)
   self.ready = function()
   {
     init_levels();
-    cur_level = levels[0];         for(var i = 1; i < levels.length;          i++) if(levels[i].primary)          cur_level = levels[i];
+    cur_level = levels[0]; for(var i = 1; i < levels.length; i++) if(levels[i].primary) cur_level = levels[i]; //relic of plan to initially include multiple levels: in practice, there's only 1
 
     if(COMPRESS_SPEAKS) //NOTE- DOES NOT HANDLE REQUIREMENTS
     {
