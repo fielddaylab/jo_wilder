@@ -19,6 +19,11 @@ var MenuScene = function(game, stage)
     canvas = canv.canvas;
     ctx = canv.context;
 
+    var minw = 440;
+    var maxw = 680;
+    text_h = floor(mapVal(minw, maxw, 18, 24, clamp(minw,maxw,canv.width)));
+    text_font = text_h+"px Patrick"
+    ctx.font = text_font;
     if(clicker) { clicker.detach(); clicker = new Clicker({source:canvas}); }
     if(hoverer) { hoverer.detach(); hoverer = new Hoverer({source:canvas}); }
     if(blurer)  { blurer.detach(); blurer  = new Blurer({source:canvas}); }
@@ -169,7 +174,7 @@ var MenuScene = function(game, stage)
     var h = 150;
     ctx.drawImage(logo_img,30,30,w,h);
 
-    ctx.font = "32px Boogaloo";
+    ctx.font = floor(text_h*1.3)+"px Boogaloo";
     /*
     if(continuable) continue_button.draw(canv);
     new_button.draw(canv);
@@ -199,7 +204,7 @@ var MenuScene = function(game, stage)
     else                     drawImageBox(uncheck_img,hq_toggle,ctx);
     if(fullscreen_toggle.on) drawImageBox(  check_img,fullscreen_toggle,ctx);
     else                     drawImageBox(uncheck_img,fullscreen_toggle,ctx);
-    ctx.font = "24px Boogaloo";
+    ctx.font = text_h+"px Boogaloo";
     ctx.fillText("MUSIC FX",audio_toggle.x+audio_toggle.w+5,audio_toggle.y+audio_toggle.h-5);
     ctx.fillText("HQ GRAPHICS",hq_toggle.x+hq_toggle.w+5,hq_toggle.y+hq_toggle.h-5);
     ctx.fillText("FULLSCREEN",fullscreen_toggle.x+fullscreen_toggle.w+5,fullscreen_toggle.y+fullscreen_toggle.h-5);
@@ -223,7 +228,9 @@ var MenuScene = function(game, stage)
     blurer = null;
     audio.pause();
     audio = null;
+    break_unplayed_audio();
     if(realtime_click_registered_to) realtime_click_registered_to.removeEventListener("click",realtime_click);
     realtime_click_registered_to = 0;
   };
 };
+

@@ -4,6 +4,175 @@ var GamePlayScene = function(game, stage)
 
   var clicker;
 
+  var bubble_tighten_t = -1;
+  self.tighten_bubbles = function()
+  {
+    ctx.font = text_font;
+
+    var max_bogus_w = 1000;
+    var max_bogus_w_decrement = 10;
+
+    var tighten_notification_bubbles = function(ob)
+    {
+      for(var i = 0; i < ob.raw_notifications.length; i++)
+      {
+        var bogus_lines = ob.notifications[i];
+        var n_lines = ob.notifications[i].length;
+        var bogus_w = max_bogus_w;
+        if(n_lines == 1)
+        {
+          bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
+        }
+        else
+        {
+          var keep_shrinking = 1;
+          var bogus_w_decrement = max_bogus_w_decrement;
+          while(keep_shrinking)
+          {
+            bogus_w -= bogus_w_decrement;
+            bogus_lines = stextToLines(ob.raw_notifications[i],bogus_w);
+            keep_shrinking = (bogus_lines.length <= n_lines && bogus_w > 0);
+            for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
+              if(ctx.measureText(bogus_lines[j].trim()).width > bogus_w) keep_shrinking = 0;
+
+            if(!keep_shrinking && bogus_w_decrement > 1)
+            {
+              bogus_w += bogus_w_decrement;
+              bogus_w_decrement = 1;
+              keep_shrinking = 1;
+            }
+          }
+          bogus_w += 1;
+        }
+        if(bogus_w != ob.raw_notification_ws[i])
+        {
+          ob.dirty = 1;
+          ob.raw_notification_ws[i] = bogus_w;
+        }
+      }
+    }
+
+    var tighten_text_bubbles = function(text,raw,w,ob)
+    {
+      var bogus_lines = text;
+      var n_lines = text.length;
+      var bogus_w = max_bogus_w;
+      if(n_lines == 1)
+      {
+        bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
+      }
+      else
+      {
+        var keep_shrinking = 1;
+        var bogus_w_decrement = max_bogus_w_decrement;
+        while(keep_shrinking)
+        {
+          bogus_w -= bogus_w_decrement;
+          bogus_lines = stextToLines(raw,bogus_w);
+          keep_shrinking = (bogus_lines.length <= n_lines && bogus_w > 0);
+          for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
+            if(ctx.measureText(bogus_lines[j].trim()).width > bogus_w) keep_shrinking = 0;
+          if(!keep_shrinking && bogus_w_decrement > 1)
+          {
+            bogus_w += bogus_w_decrement;
+            bogus_w_decrement = 1;
+            keep_shrinking = 1;
+          }
+        }
+        bogus_w += 1;
+      }
+      if(bogus_w != w) ob.dirty = 1;
+      return bogus_w;
+    }
+
+    var scene;
+    for(var i = 0; i < cur_level.scenes.length; i++)
+    {
+      scene = cur_level.scenes[i];
+      tighten_notification_bubbles(scene);
+      var room;
+      for(var j = 0; j < scene.rooms.length; j++)
+      {
+        room = scene.rooms[j];
+        tighten_notification_bubbles(room);
+
+        var person;
+        for(var k = 0; k < room.persons.length; k++)
+        {
+          person = room.persons[k];
+          tighten_notification_bubbles(person);
+          var speak;
+          for(var l = 0; l < person.speaks.length; l++)
+          {
+            speak = person.speaks[l];
+            tighten_notification_bubbles(speak);
+            var command;
+            for(var m = 0; m < speak.commands.length; m++)
+            {
+              command = speak.commands[m];
+              command.w = tighten_text_bubbles(command.atext,command.raw_atext,command.w,speak);
+              command.h = floor(text_h*1.25);
+            }
+
+            var option;
+            if(speak.options.length == 1)
+            {
+              option = speak.options[0];
+            }
+          }
+        }
+
+        var object;
+        for(var k = 0; k < room.objects.length; k++)
+        {
+          object = room.objects[k];
+          tighten_notification_bubbles(object);
+
+          var view;
+          for(var l = 0; l < object.views.length; l++)
+          {
+            view = object.views[l];
+            tighten_notification_bubbles(view);
+
+            var zone;
+            for(var m = 0; m < view.zones.length; m++)
+            {
+              zone = view.zones[m];
+              tighten_notification_bubbles(zone);
+            }
+          }
+        }
+
+        var observation;
+        for(var k = 0; k < room.observations.length; k++)
+        {
+          observation = room.observations[k];
+          tighten_notification_bubbles(observation);
+        }
+
+        var cutscene;
+        for(var k = 0; k < room.cutscenes.length; k++)
+        {
+          cutscene = room.cutscenes[k];
+          tighten_notification_bubbles(cutscene);
+
+          var command;
+          for(var l = 0; l < cutscene.commands.length; l++)
+          {
+            command = cutscene.commands[l];
+            if(command.command == CUTSCENE_COMMAND_SPEAK)
+            {
+              if(command.w == CUTSCENE_COMMAND_IGNORE) command.w = cur_level.notifications_w;
+              command.w = tighten_text_bubbles(command.text,command.raw_text,command.w,cutscene);
+              command.h = floor(text_h*1.25);
+            }
+          }
+        }
+
+      }
+    }
+  }
+
   self.resize = function(st)
   {
     stage = st;
@@ -16,6 +185,10 @@ var GamePlayScene = function(game, stage)
     if(hoverer) { hoverer.detach(); hoverer = new PersistentHoverer({source:canvas}); }
     if(keyer)   { keyer.detach();   keyer   = new Keyer({source:canvas}); }
 
+    var minw = 440;
+    var maxw = 680;
+    text_h = floor(mapVal(minw, maxw, 18, 24, clamp(minw,maxw,canv.width)));
+    text_font = text_h+"px Patrick"
     ctx.font = text_font;
     if(my_real_camera)  { my_real_camera.ww  = canv.width*660/canv.height; my_real_camera.wh  = 660; }
     if(my_debug_camera) { my_debug_camera.ww = my_real_camera.ww;          my_debug_camera.wh = my_real_camera.wh; }
@@ -32,6 +205,8 @@ var GamePlayScene = function(game, stage)
     if(my_cutsceneview) my_cutsceneview.resize();
     if(my_notificationview) my_notificationview.resize();
     if(my_wildcardview) my_wildcardview.resize();
+
+    if(bubble_tighten_t != -1) bubble_tighten_t = 100;
   }
   self.resize(stage);
 
@@ -88,197 +263,34 @@ var GamePlayScene = function(game, stage)
       }
     }
 
-    if(TIGHTEN_BUBBLES)
+    //all this just to pre-set command.text! SHOULD HAVE BEEN DONE IN GEN.SH!!!
+    var scene;
+    for(var i = 0; i < cur_level.scenes.length; i++)
     {
-      ctx.font = text_font;
-
-      var tighten_notification_bubbles = function(ob)
+      scene = cur_level.scenes[i];
+      var room;
+      for(var j = 0; j < scene.rooms.length; j++)
       {
-        for(var i = 0; i < ob.raw_notifications.length; i++)
+        room = scene.rooms[j];
+        var cutscene;
+        for(var k = 0; k < room.cutscenes.length; k++)
         {
-          var bogus_lines = ob.notifications[i];
-          if(!ob.raw_notification_ws[i]) ob.raw_notification_ws[i] = cur_level.notifications_w;
-          var bogus_w = 1000;//ob.raw_notification_ws[i];
-          if(bogus_lines.length == 1)
+          cutscene = room.cutscenes[k];
+          var command;
+          for(var l = 0; l < cutscene.commands.length; l++)
           {
-            bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
-          }
-          else
-          {
-            var keep_shrinking = (bogus_lines.length <= ob.notifications[i].length && bogus_w > 0);
-            while(keep_shrinking)
+            command = cutscene.commands[l];
+            if(command.command == CUTSCENE_COMMAND_SPEAK)
             {
-              bogus_w -= 1;
-              bogus_lines = stextToLines(ob.raw_notifications[i],bogus_w);
-              keep_shrinking = (bogus_lines.length <= ob.notifications[i].length && bogus_w > 0);
-              for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
-                if(ctx.measureText(bogus_lines[j].trim()).width > bogus_w) keep_shrinking = 0;
-            }
-            bogus_w += 1;
-            if(bogus_w == 1) bogus_w = ob.raw_notification_ws[i];
-          }
-          if(bogus_w != ob.raw_notification_ws[i])
-          {
-            ob.dirty = 1;
-            ob.raw_notification_ws[i] = bogus_w;
-          }
-        }
-      }
-
-      var tighten_text_bubbles = function(text,raw,w,ob)
-      {
-        var bogus_lines = text;
-        var bogus_w = 1000;//w;
-        if(bogus_lines.length == 1)
-        {
-          bogus_w = ctx.measureText(bogus_lines[0].trim()).width+1;
-        }
-        else
-        {
-          var keep_shrinking = (bogus_lines.length <= text.length && bogus_w > 0);
-          while(keep_shrinking)
-          {
-            bogus_w -= 1;
-            bogus_lines = stextToLines(raw,bogus_w);
-            keep_shrinking = (bogus_lines.length <= text.length && bogus_w > 0);
-            for(var j = 0; keep_shrinking && j < bogus_lines.length; j++)
-              if(ctx.measureText(bogus_lines[j].trim()).width > bogus_w) keep_shrinking = 0;
-          }
-          bogus_w += 1;
-          if(bogus_w == 1) bogus_w = w;
-        }
-        if(bogus_w != w) ob.dirty = 1;
-        return bogus_w;
-      }
-
-      var scene;
-      for(var i = 0; i < cur_level.scenes.length; i++)
-      {
-        scene = cur_level.scenes[i];
-        tighten_notification_bubbles(scene);
-        var room;
-        for(var j = 0; j < scene.rooms.length; j++)
-        {
-          room = scene.rooms[j];
-          tighten_notification_bubbles(room);
-
-          var person;
-          for(var k = 0; k < room.persons.length; k++)
-          {
-            person = room.persons[k];
-            tighten_notification_bubbles(person);
-            var speak;
-            for(var l = 0; l < person.speaks.length; l++)
-            {
-              speak = person.speaks[l];
-              tighten_notification_bubbles(speak);
-              var command;
-              for(var m = 0; m < speak.commands.length; m++)
-              {
-                command = speak.commands[m];
-                command.w = tighten_text_bubbles(command.atext,command.raw_atext,command.w,speak);
-              }
-
-              var option;
-              if(speak.options.length == 1)
-              {
-                option = speak.options[0];
-              }
-            }
-          }
-
-          var object;
-          for(var k = 0; k < room.objects.length; k++)
-          {
-            object = room.objects[k];
-            tighten_notification_bubbles(object);
-
-            var view;
-            for(var l = 0; l < object.views.length; l++)
-            {
-              view = object.views[l];
-              tighten_notification_bubbles(view);
-
-              var zone;
-              for(var m = 0; m < view.zones.length; m++)
-              {
-                zone = view.zones[m];
-                tighten_notification_bubbles(zone);
-              }
-            }
-          }
-
-          var observation;
-          for(var k = 0; k < room.observations.length; k++)
-          {
-            observation = room.observations[k];
-            tighten_notification_bubbles(observation);
-          }
-
-          var cutscene;
-          for(var k = 0; k < room.cutscenes.length; k++)
-          {
-            cutscene = room.cutscenes[k];
-            tighten_notification_bubbles(cutscene);
-
-            var command;
-            for(var l = 0; l < cutscene.commands.length; l++)
-            {
-              command = cutscene.commands[l];
-              if(command.command == CUTSCENE_COMMAND_SPEAK)
-              {
-                if(command.w == CUTSCENE_COMMAND_IGNORE) command.w = cur_level.notifications_w;
-                command.text = stextToLines(command.raw_text, command.w); //for some reason, this isn't done in gen.sh
-                command.w = tighten_text_bubbles(command.text,command.raw_text,command.w,cutscene);
-              }
-            }
-          }
-
-        }
-      }
-    }
-
-    var PHIL_HACK = false;
-    if(PHIL_HACK)
-    {
-      var scene;
-      for(var i = 0; i < cur_level.scenes.length; i++)
-      {
-        scene = cur_level.scenes[i];
-        var room;
-        for(var j = 0; j < scene.rooms.length; j++)
-        {
-          room = scene.rooms[j];
-          var person;
-          for(var k = 0; k < room.persons.length; k++)
-          {
-            person = room.persons[k];
-            var speak;
-            for(var l = 0; l < person.speaks.length; l++)
-            {
-              speak = person.speaks[l];
-              var command;
-              for(var m = 0; m < speak.commands.length; m++)
-              {
-                command = speak.commands[m];
-                if(command.wx + command.w/2 > person.wx)
-                  command.wx += 20;
-                else
-                  command.wx += command.w-20;
-                command.wy += command.h*(command.atext.length+1);
-              }
-
-              if(speak.options_wx + speak.options_w/2 > person.wx)
-                speak.options_wx += 20;
-              else
-                speak.options_wx += speak.options_w-20;
-              speak.options_wy += speak.options_h*3;
-              speak.dirty = true;
+              if(command.w == CUTSCENE_COMMAND_IGNORE) command.w = cur_level.notifications_w;
+              command.text = stextToLines(command.raw_text, command.w); //for some reason, this isn't done in gen.sh
             }
           }
         }
       }
     }
+
+    if(TIGHTEN_BUBBLES) self.tighten_bubbles();
 
     cur_room = find(cur_level.intro_room_id);
     if(cur_room)
@@ -442,6 +454,9 @@ var GamePlayScene = function(game, stage)
 
   self.tick = function()
   {
+    bubble_tighten_t--;
+    if(bubble_tighten_t == 0) { self.tighten_bubbles(); bubble_tighten_t = -1; }
+
     keyer.filter(my_keyable);
     hoverer.filter(my_cursor);
 
