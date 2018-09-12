@@ -4552,12 +4552,18 @@ tmp_animcycle.fqid = "tunic.teddy_idle";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
+tmp_animcycle.frame_t = 20;
 tmp_animcycle.offset_t = 0;
-tmp_animcycle.loop = 0;
+tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/teddy_idle/6.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
