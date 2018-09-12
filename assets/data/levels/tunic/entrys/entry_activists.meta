@@ -16,6 +16,10 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_entry.interactive = 1;

@@ -26,6 +26,14 @@ tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!self",
+],[
+"tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+"!self",
+],[
+"tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 "!self",
 ]];
