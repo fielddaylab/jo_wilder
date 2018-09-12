@@ -82,11 +82,12 @@ var game_width  = 880;
 var game_height = 660;
 var game_first_audio_played = 0;
 var unplayed_audio_queue = [];
-var playHandlePromise = function(audio)
+var playHandlePromise = function(audio,q)
 {
   r = audio.play();
   if(!r) return;
   r.catch(function(err){
+    if(!q) return;
     for(var i = 0; i < unplayed_audio_queue.length; i++)
       if(unplayed_audio_queue[i] == audio) return;
     unplayed_audio_queue.push(audio);

@@ -267,7 +267,7 @@ var music = function()
     {
       if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.pause();
       self.cur_music = self.next_music;
-      if(self.cur_music.aud.paused && AUDIO) playHandlePromise(self.cur_music.aud);
+      if(self.cur_music.aud.paused && AUDIO) playHandlePromise(self.cur_music.aud,1);
     }
     self.next_music = music;
     self.next_music.aud.loop = true;
@@ -287,7 +287,7 @@ var music = function()
         self.cur_music = self.next_music;
         self.next_music = 0;
         self.t = 0;
-        if(self.cur_music && self.cur_music.aud.paused && AUDIO) { self.cur_music.aud.volume = 0; playHandlePromise(self.cur_music.aud); }
+        if(self.cur_music && self.cur_music.aud.paused && AUDIO) { self.cur_music.aud.volume = 0; playHandlePromise(self.cur_music.aud,1); }
       }
       else if(self.cur_music && !self.cur_music.aud.paused) self.cur_music.aud.volume = 1-(self.t/self.t_max);
     }
