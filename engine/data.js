@@ -137,10 +137,9 @@ tmp_animcycle.fqid = "tunic.archivist";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
+tmp_animcycle.frame_t = 30;
 tmp_animcycle.offset_t = 0;
 tmp_animcycle.loop = 1;
-
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/archivist/0.png");
@@ -28852,14 +28851,13 @@ tmp_inert.ww = 248.00000000000003;
 tmp_inert.wh = 169.99999999999991;
 tmp_inert.wx = -159.72357885626178;
 tmp_inert.wy = -322.99999999999994;
-tmp_inert.wz = 5;
+tmp_inert.wz = 10;
 tmp_inert.g = 0;
 tmp_inert.animcycle_id = "fgtextile";
 tmp_inert.deck_animcycle_ids = [
 ];
 tmp_inert.reqs = [[
 ]];
-
 if(tmp_inert.ww < 0) { tmp_inert.ww *= -1; tmp_inert.flip = 1; }
 tmp_inert.animcycle_inst = gen_animcycle_inst(tmp_inert.animcycle_id,tmp_level.animcycles);
 }

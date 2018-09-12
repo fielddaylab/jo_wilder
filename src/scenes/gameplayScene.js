@@ -111,6 +111,7 @@ var GamePlayScene = function(game, stage)
             {
               command = speak.commands[m];
               command.w = tighten_text_bubbles(command.atext,command.raw_atext,command.w,speak);
+              command.h = floor(text_h*1.25);
             }
 
             var option;
@@ -163,6 +164,7 @@ var GamePlayScene = function(game, stage)
             {
               if(command.w == CUTSCENE_COMMAND_IGNORE) command.w = cur_level.notifications_w;
               command.w = tighten_text_bubbles(command.text,command.raw_text,command.w,cutscene);
+              command.h = floor(text_h*1.25);
             }
           }
         }
