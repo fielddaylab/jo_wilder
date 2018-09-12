@@ -2014,6 +2014,10 @@ code:"19788514252865700001810393216008967978271840736825304745996160883837531400
 save_codes.push("donethework");
 save_table[save_codes[save_codes.length-1]] = {
 reqs:[[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ],],
 all:

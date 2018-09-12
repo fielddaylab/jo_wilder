@@ -5230,6 +5230,10 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_entry.interactive = 1;
@@ -6144,6 +6148,10 @@ tmp_entry.raw_notification_ws = [
 tmp_entry.notification_reqs = [[
 ]];
 tmp_entry.reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_entry.animcycle_inst = gen_animcycle_inst(tmp_entry.animcycle_id,tmp_level.animcycles);
@@ -13522,6 +13530,14 @@ tmp_cutscene.notice_reqs = [[
 ]];
 tmp_cutscene.reqs = [[
 "tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!self",
+],[
+"tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+"!self",
+],[
+"tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 "!self",
 ]];
@@ -14599,6 +14615,8 @@ tmp_speak.raw_notification_ws = [
 tmp_speak.notification_reqs = [[
 ]];
 tmp_speak.reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
 "!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 
@@ -27320,10 +27338,14 @@ tmp_object.raw_notification_ws = [
 169,
 ];
 tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
 "!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
 "!tunic.historicalsociety.stacks.journals_flag.pic_0",
+"!tunic.historicalsociety.stacks.journals_flag.pic_1",
+"!tunic.historicalsociety.stacks.journals_flag.pic_2",
 ]];
 tmp_object.notice_reqs = [[
 ]];
@@ -27436,6 +27458,10 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
@@ -27443,6 +27469,39 @@ tmp_view.reqs = [[
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "bingo";
+tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_0.bingo";
+{
+tmp_zone.ww = 334;
+tmp_zone.wh = 272;
+tmp_zone.wx = -85.99999999999989;
+tmp_zone.wy = -8.999999999999986;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "pic_0";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+"Look at all those activists!",
+"This is perfect for the exhibit.",
+"I should go to the Capitol and tell Mrs. M!",
+];
+tmp_zone.raw_notification_ws = [
+86,
+131,
+211,
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
 tmp_zone = new zone();
 tmp_zone.id = "next";
 tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_0.next";
@@ -27544,6 +27603,10 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
@@ -27551,6 +27614,39 @@ tmp_view.reqs = [[
 
 tmp_view.animcycle_inst = gen_animcycle_inst(tmp_view.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_view.raw_notifications.length; i++) tmp_view.notifications[i] = stextToLines(tmp_view.raw_notifications[i], tmp_view.raw_notification_ws[i] ? tmp_view.raw_notification_ws[i] : tmp_level.notifications_w);
+tmp_zone = new zone();
+tmp_zone.id = "bingo";
+tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_1.bingo";
+{
+tmp_zone.ww = 334;
+tmp_zone.wh = 272;
+tmp_zone.wx = -85.99999999999989;
+tmp_zone.wy = -8.999999999999986;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "pic_1";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+"Look at all those activists!",
+"This is perfect for the exhibit.",
+"I should go to the Capitol and tell Mrs. M!",
+];
+tmp_zone.raw_notification_ws = [
+86,
+131,
+211,
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+]];
+
+tmp_zone.animcycle_inst = gen_animcycle_inst(tmp_zone.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_zone.raw_notifications.length; i++) tmp_zone.notifications[i] = stextToLines(tmp_zone.raw_notifications[i], tmp_zone.raw_notification_ws[i] ? tmp_zone.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_view.zones.push(tmp_zone);
 tmp_zone = new zone();
 tmp_zone.id = "next";
 tmp_zone.fqid = "tunic.historicalsociety.stacks.journals_flag.pic_1.next";
@@ -27652,6 +27748,10 @@ tmp_view.raw_notification_ws = [
 tmp_view.notification_reqs = [[
 ]];
 tmp_view.exit_reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
 "tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_view.reqs = [[
