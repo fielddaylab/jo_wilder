@@ -10,7 +10,8 @@ var GamePlayScene = function(game, stage)
     ctx.font = text_font;
 
     var max_bogus_w = 1000;
-    var max_bogus_w_decrement = 10;
+    var max_bogus_w_decrement = 100;
+    var med_bogus_w_decrement = floor(max_bogus_w_decrement/10);
 
     var tighten_notification_bubbles = function(ob)
     {
@@ -38,7 +39,16 @@ var GamePlayScene = function(game, stage)
             if(!keep_shrinking && bogus_w_decrement > 1)
             {
               bogus_w += bogus_w_decrement;
-              bogus_w_decrement = 1;
+              switch(bogus_w_decrement)
+              {
+                case max_bogus_w_decrement:
+                  bogus_w_decrement = med_bogus_w_decrement;
+                  break;
+                case med_bogus_w_decrement:
+                default:
+                  bogus_w_decrement = 1;
+                  break;
+              }
               keep_shrinking = 1;
             }
           }
@@ -75,7 +85,16 @@ var GamePlayScene = function(game, stage)
           if(!keep_shrinking && bogus_w_decrement > 1)
           {
             bogus_w += bogus_w_decrement;
-            bogus_w_decrement = 1;
+            switch(bogus_w_decrement)
+            {
+              case max_bogus_w_decrement:
+                bogus_w_decrement = med_bogus_w_decrement;
+                break;
+              case med_bogus_w_decrement:
+              default:
+                bogus_w_decrement = 1;
+                break;
+            }
             keep_shrinking = 1;
           }
         }
@@ -206,7 +225,7 @@ var GamePlayScene = function(game, stage)
     if(my_notificationview) my_notificationview.resize();
     if(my_wildcardview) my_wildcardview.resize();
 
-    if(bubble_tighten_t != -1) bubble_tighten_t = 100;
+    if(bubble_tighten_t != -1) bubble_tighten_t = 10;
   }
   self.resize(stage);
 
