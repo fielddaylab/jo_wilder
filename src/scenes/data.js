@@ -4792,6 +4792,32 @@ tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_coffee
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
+tmp_animcycle.id = "wells_walk";
+tmp_animcycle.fqid = "tunic.wells_walk";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
+
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/0.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/1.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/2.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/3.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/4.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/5.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/6.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/7.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/8.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/9.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/10.png");
+tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/11.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+tmp_animcycle = new animcycle();
 tmp_animcycle.id = "wellsbadge_big";
 tmp_animcycle.fqid = "tunic.wellsbadge_big";
 {
@@ -33916,3 +33942,4 @@ levels.push(tmp_level);
     }
   }
 }
+
