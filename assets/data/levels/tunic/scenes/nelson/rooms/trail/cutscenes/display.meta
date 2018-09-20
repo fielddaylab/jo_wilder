@@ -102,7 +102,7 @@ tmp_cutscene_command.wy = -14.15909090682726;
 tmp_cutscene_command.w = 167;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "And he created something that changed the world!";
+tmp_cutscene_command.raw_text = "And he changed the world!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -186,21 +186,7 @@ tmp_cutscene_command.wy = -10.15909090909069;
 tmp_cutscene_command.w = 158;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "You must be exhausted, Teddy.";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = 1299.2181818181816;
-tmp_cutscene_command.wy = -156.67337662337638;
-tmp_cutscene_command.w = 26;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "😴";
+tmp_cutscene_command.raw_text = "Make sure to get plenty of rest tonight, Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -214,7 +200,7 @@ tmp_cutscene_command.wy = -12.159090909090702;
 tmp_cutscene_command.w = 120.51986694335938;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Let's go home.";
+tmp_cutscene_command.raw_text = "We've got work to do!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
