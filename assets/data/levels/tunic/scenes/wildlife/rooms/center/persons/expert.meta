@@ -29,5 +29,6 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
+"tunic.wildlife.center.remove_cup",
 ]];
 

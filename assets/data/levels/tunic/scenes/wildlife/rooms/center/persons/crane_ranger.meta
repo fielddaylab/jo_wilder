@@ -3,11 +3,11 @@ tmp_person.wh = 328.15000000000015;
 tmp_person.wx = 628.8931818181824;
 tmp_person.wy = -480.7454545454549;
 tmp_person.wz = 2;
-tmp_person.act_wx = 0;
-tmp_person.act_wy = 0;
+tmp_person.act_wx = -130.50146372106957;
+tmp_person.act_wy = -89.30522819046848;
 tmp_person.act_anim = 1;
-tmp_person.hover_icon_wx = -17.28409090909091;
-tmp_person.hover_icon_wy = 20.74090909090909;
+tmp_person.hover_icon_wx = 34.8371212122208;
+tmp_person.hover_icon_wy = 124.98333333330316;
 tmp_person.animcycle_id = "crane_ranger";
 tmp_person.hover_cursor_animcycle_id = "hover_ui";
 tmp_person.hover_icon_animcycle_id = "hblip_person";
@@ -25,4 +25,6 @@ tmp_person.notice_reqs = [[
 tmp_person.notification_reqs = [[
 ]];
 tmp_person.reqs = [[
+"!tunic.wildlife.center.remove_cup",
 ]];
+
