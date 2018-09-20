@@ -4841,7 +4841,7 @@ tmp_animcycle.fqid = "tunic.wells_walk";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 30;
+tmp_animcycle.frame_t = 5;
 tmp_animcycle.offset_t = 0;
 tmp_animcycle.loop = 1;
 tmp_animcycle.frame_files = [];
@@ -10334,6 +10334,16 @@ tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+20;
+tmp_cutscene.commands.push(tmp_cutscene_command);
+
+tmp_prev_cutscene_command = tmp_cutscene_command;
+tmp_cutscene_command = new cutscene_command();
+tmp_cutscene_command.command = CUTSCENE_COMMAND_TWEEN;
+tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
+tmp_cutscene_command.ww = -188.1818181653637;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene_command.end_t = tmp_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
