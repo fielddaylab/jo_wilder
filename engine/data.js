@@ -4797,10 +4797,9 @@ tmp_animcycle.fqid = "tunic.wells_walk";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
-tmp_animcycle.frame_t = 10;
+tmp_animcycle.frame_t = 30;
 tmp_animcycle.offset_t = 0;
 tmp_animcycle.loop = 1;
-
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
 tmp_animcycle.frame_files.push("assets/data/levels/tunic/animcycles/wells_walk/0.png");
@@ -9889,7 +9888,7 @@ tmp_cutscene.commands.push(tmp_cutscene_command);
 tmp_prev_cutscene_command = tmp_cutscene_command;
 tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "wells";
+tmp_cutscene_command.cutscene_entity_id = "wells_walk";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
 tmp_cutscene_command.wx = 583.134199134199;
 tmp_cutscene_command.wy = -0.15584415584414302;
@@ -10332,7 +10331,6 @@ tmp_cutscene_command = new cutscene_command();
 tmp_cutscene_command.command = CUTSCENE_COMMAND_END;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
-
 tmp_cutscene.animcycle_inst = gen_animcycle_inst(tmp_cutscene.animcycle_id,tmp_level.animcycles);
 tmp_cutscene.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_cutscene.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_cutscene.hover_icon_animcycle_id,tmp_level.animcycles);
