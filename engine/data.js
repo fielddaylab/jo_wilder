@@ -17892,7 +17892,7 @@ tmp_speak.commands.push(tmp_speak_command);
 tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 192.11363636363643;
 tmp_speak_command.wy = 164.97727272727272;
-tmp_speak_command.w = 201;
+tmp_speak_command.w = 251;
 tmp_speak_command.h = 30;
 tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
@@ -27405,9 +27405,9 @@ tmp_object.notification_reqs = [[
 "!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_object.view_overlay_reqs = [[
-"!tunic.historicalsociety.stacks.journals_flag.pic_0",
-"!tunic.historicalsociety.stacks.journals_flag.pic_1",
-"!tunic.historicalsociety.stacks.journals_flag.pic_2",
+"!tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
 ]];
 tmp_object.notice_reqs = [[
 ]];
