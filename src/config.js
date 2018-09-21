@@ -9,5 +9,5 @@ if(navigator.userAgent.match(/Android/i) ||
   platform = "MOBILE";
 else
   platform = "PC";
-var debug = true;
+var debug = false;
 

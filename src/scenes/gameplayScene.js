@@ -362,28 +362,28 @@ var GamePlayScene = function(game, stage)
     my_keyable = new keyable({});
     my_keyable.key = function(evt)
     {
-      if(evt.key == " ") print_whole_level(cur_level,false);
-      if(evt.key == "f") print_whole_level(cur_level,true);
-      if(evt.key == "c")
+      if(debug && evt.key == " ") print_whole_level(cur_level,false);
+      if(debug && evt.key == "f") print_whole_level(cur_level,true);
+      if(debug && evt.key == "c")
       {
         console.log(get_save_code_module());
         var c = get_save_code();
         console.log(c);
         console.log((window.location.href+"?").substring(0,(window.location.href+"?").indexOf("?"))+"?save="+c);
       }
-      if(evt.key == "m")
+      if(debug && evt.key == "m")
       {
         console.log(save_modules_str);
       }
-      if(evt.key == "d") DEBUG = !DEBUG;
-      if(evt.key == "u") UNLOCK = !UNLOCK;
-      if(evt.key == "t") DOUBLETIME = !DOUBLETIME;
-      if(evt.key == "v")
+      if(debug && evt.key == "d") DEBUG = !DEBUG;
+      if(debug && evt.key == "u") UNLOCK = !UNLOCK;
+      if(debug && evt.key == "t") DOUBLETIME = !DOUBLETIME;
+      if(debug && evt.key == "v")
       {
         if(my_camera == my_real_camera) my_camera = my_debug_camera;
         else                            my_camera = my_real_camera;
       }
-      if(evt.key == "g") SHOW_GROUNDS = !SHOW_GROUNDS;
+      if(debug && evt.key == "g") SHOW_GROUNDS = !SHOW_GROUNDS;
       if(evt.key == "q")
       {
         QUALITY = !QUALITY;
@@ -431,7 +431,7 @@ var GamePlayScene = function(game, stage)
     }
     my_keyable.key_down = function(evt)
     {
-      if(evt.key == "e")
+      if(debug && evt.key == "e")
       {
         canvas.style.cursor = 'auto';
         my_keyable.e = 1;
@@ -440,7 +440,7 @@ var GamePlayScene = function(game, stage)
     }
     my_keyable.key_up = function(evt)
     {
-      if(evt.key == "e") { my_keyable.eup = 1; dragger.force_end(); }
+      if(debug && evt.key == "e") { my_keyable.eup = 1; dragger.force_end(); }
     }
 
     ctx.font = text_font;
