@@ -16329,7 +16329,7 @@ tmp_wildcard.reqs = [[
     "Sarah Gagnon",
     "",
     "",
-    "Graphic Design & User Interface",
+    "Art Direction and Graphic Design",
     "",
     "Eric Lang",
     "",
@@ -16562,7 +16562,7 @@ tmp_wildcard.reqs = [[
     "Wisconsin State Capitol",
     "",
     "Allisyn Levy",
-    "BrainPop",
+    "BrainPOP",
     "",
     "Michael Gi",
     "BrainPop",
@@ -16733,7 +16733,6 @@ tmp_wildcard.reqs = [[
     }
   }
 }
-
 tmp_wildcard.animcycle_inst = gen_animcycle_inst(tmp_wildcard.animcycle_id,tmp_level.animcycles);
 tmp_wildcard.hover_cursor_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_cursor_animcycle_id,tmp_level.animcycles);
 tmp_wildcard.hover_icon_animcycle_inst = gen_animcycle_inst(tmp_wildcard.hover_icon_animcycle_id,tmp_level.animcycles);
