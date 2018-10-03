@@ -91,7 +91,7 @@ var MenuScene = function(game, stage)
     new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
     y += h+50;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = "rgba(255,255,255,0.1)"; code_valid = 0; return; } if(save_table[txt]) { code_txt.bg_color = "rgba(0,255,0,0.1)"; code_valid = 1; } else { code_txt.bg_color = "rgba(255,0,0,0.1)"; code_valid = 0; } }); x += w+10;
-    code_button     = new ButtonBox(x,y,70,h,function(evt){ if(save_table[code_txt.txt]) { save_table_code = code_txt.txt; save_code = save_table[save_table_code].code; next = 1; } });
+    code_button     = new ButtonBox(x,y,70,h,function(evt){ if(save_table[code_txt.txt.toLowerCase()]) { save_table_code = code_txt.txt.toLowerCase(); ga('send', 'event', 'savecode', 'used', save_table_code); save_code = save_table[save_table_code].code; next = 1; } });
 
     continue_button.hover = function(evt) { continue_button.hovering = 1; }
     continue_button.unhover = function(evt) { continue_button.hovering = 0; }
