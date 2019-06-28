@@ -1,3 +1,57 @@
+//ADDLOG write logging functions here
+window.mySlog = new slog("JOWILDER",1);
+var get_log_data = function(event_type, type_data, event_subtype, subtype_data, event_name, fqid=0){
+  if(fqid){
+    fqid = fqid.replace(my_navigable.room.fqid+'.','');
+  };
+  log_data =
+  {
+    //time: Date.now(), unnecessary because logged in simplelog
+    room_fqid: my_navigable.room.fqid,
+    curr_state: state_cur,
+    type: event_type,//CLICK, HOVER, CHECKPOINT, STARTGAME
+    type_data: type_data,
+    subtype: event_subtype, //navigate, notebook, map, notification, object, observation, person, wildcard
+    fqid: fqid,
+    subtype_data: subtype_data
+  };
+  log_data.subtype_data.name = event_name;
+  return log_data;
+}
+var get_log_data_click = function(evt, event_subtype, subtype_data, event_name, fqid){
+  //TODO slight chance of a null event parameter
+  type_data = {
+    screen_coor: [evt.doX, evt.doY],
+    room_coor: [worldSpaceXpt(my_camera,canv,evt.doX), worldSpaceYpt(my_camera, canv, evt.doY)],
+  };
+  log_data = get_log_data('CLICK', type_data, event_subtype, subtype_data, event_name, fqid);
+  return log_data;
+  //TODO: is room okay??
+  //also, how to get next mandatory action? Maybe do in wrapped function?
+}
+
+var get_log_data_hover = function(hover_start_time, event_subtype, fqid, subtype_data={}, event_name='basic'){
+  type_data = {
+    hover_start_time: hover_start_time,
+    hover_end_time: Date.now()
+  }
+  log_data = get_log_data('HOVER', type_data, event_subtype, subtype_data, event_name, fqid);
+  return log_data;
+}
+
+var send_log = function(log_data){
+  console.log(log_data);
+  var formatted_log_data = {
+    level: 1, //TODO: make this not one
+    event: "CUSTOM",
+    event_custom: 0, //TODO: custom event type indices
+    event_data_complex: JSON.stringify(log_data)
+  }
+  window.mySlog.log(formatted_log_data);
+}
+
+
+
 var bubble_in_a = function(t) { return t; }
 var bubble_out_a = function(t) { return 1-t; }
 var bubble_in_y = function(t) { return sin(t*twopi*2)*(1-t)*5 }
@@ -583,7 +637,7 @@ var avatar = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = self;
 
@@ -600,7 +654,7 @@ var avatar = function()
 
     cur_level.dirty = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -625,7 +679,7 @@ var avatar = function()
     cur_level.avatar_ww = self.edit_o.ww;
     cur_level.avatar_wh = self.edit_o.wh;
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -886,7 +940,7 @@ var familiar = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = self;
 
@@ -903,7 +957,7 @@ var familiar = function()
 
     cur_level.dirty = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -928,7 +982,7 @@ var familiar = function()
     cur_level.familiar_ww = self.edit_o.ww;
     cur_level.familiar_wh = self.edit_o.wh;
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -1542,7 +1596,7 @@ var navigable = function()
       cur_room.dirty = true;
     }
   })();
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
 
@@ -1593,7 +1647,7 @@ var navigable = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -1619,16 +1673,18 @@ var navigable = function()
     else if(self.edit_o == self.camera_editor) self.camera_editor.edit();
     else worldSpace(my_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
     self.edit_cur_resizing = false;
   };
   //DRAG DEBUG EDIT STUFF END
-
+  self.hover_log_started = false;
   self.hover = function(evt)
   {
+    //ADDLOG - X hover navigate
+    self.o_found = false;
     my_cursor.mode = CURSOR_NORMAL;
     my_cursor.cursor_o = 0;
     my_cursor.icon_o = 0;
@@ -1653,18 +1709,33 @@ var navigable = function()
         o = l[j];
         if(ptWithinBox(o,evt.doX,evt.doY))
         {
+          self.o_found = true;
+          if(!self.hover_log_started){
+            self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - navigate_hover
+            self.hover_log_started = true;
+            self.hover_log_data.fqid = o.fqid; //acquisition
+          }
           if(o.wz > cursor_z && o.hover_cursor_animcycle_inst.animcycle != null_animcycle) { my_cursor.cursor_o = o; cursor_z = o.wz; my_cursor.mode = CURSOR_O; }
           if(o.wz > icon_z   && o.hover_icon_animcycle_inst.animcycle   != null_animcycle) { my_cursor.icon_o = o;   icon_z = o.wz; }
         }
       }
     }
+    if(self.hover_log_started && !self.o_found){
+
+      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'navigate', self.hover_log_data.fqid));
+      self.hover_log_started = false;
+    }
   }
   self.unhover = function(evt)
   {
+
   }
 
   self.click = function(evt)
   {
+    //ADDLOG - X navigable
+    
+    
     if(!(DEBUG && my_keyable.e))
     {
       self.last_click.x = evt.doX;
@@ -1695,6 +1766,10 @@ var navigable = function()
       for(var i = 0; i < self.cache_available_cutscenes.length; i++)
         if(ptWithinBox(self.cache_available_cutscenes[i],self.last_click.x,self.last_click.y) && (!self.selected_act || self.selected_act.wz < self.cache_available_cutscenes[i].wz))
           self.selected_act = self.cache_available_cutscenes[i];
+    
+
+      var logfqid = (self.selected_act ? self.selected_act.fqid : 0); // acquisition
+      self.log_data = get_log_data_click(evt, 'navigate',{},'basic',logfqid); //acquisition - navigate_click
 
       if(self.selected_act)
       {
@@ -1705,6 +1780,12 @@ var navigable = function()
       self.wpt_in_navigable(self.nav_click.wx,self.nav_click.wy,self.nav_click);
       my_avatar.to_wx = self.nav_click.wx;
       my_avatar.to_wy = self.nav_click.wy;
+    }
+    send_log(self.log_data);
+    //handle case where hover log data has not been sent before click
+    if(self.hover_log_started){
+      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'navigate', self.hover_log_data.fqid));
+      self.hover_log_started = false;
     }
   }
 
@@ -1935,6 +2016,8 @@ var toolbar = function()
 
   self.click = function(evt)
   {
+    //ADDLOG - X notebook button
+    
     if(MAP_ENABLED && self.map_available && ptWithinBox(self.map,evt.doX,evt.doY))
     {
       my_navigable.selected_act = 0;
@@ -1948,6 +2031,7 @@ var toolbar = function()
     }
     if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
+      self.log_data = get_log_data_click(evt,'notebook',{page: my_notebookview.page},'open',0); //acquisition - opennotebook_click
       my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
       state_from = state_cur;
@@ -1956,7 +2040,9 @@ var toolbar = function()
       my_loader.unlock_content();
       state_t = 0;
       if(AUDIO) playHandlePromise(get_audio(cur_level.notebook_audio_id,cur_level.audios).aud);
+      send_log(self.log_data);
     }
+    
   }
 
   self.tick = function()
@@ -2064,7 +2150,7 @@ var mapview = function()
       self.hover.hover_icon_wy = -worldSpaceH(my_ui_camera,canv,self.hover.hover_icon_y);
     }
   })();
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
     for(var i = 0; i < self.cache_available_scenes.length; i++) if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY)) { self.edit_o = self.cache_available_scenes[i]; self.cache_available_scenes[i].dirty = true; }
@@ -2083,7 +2169,7 @@ var mapview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -2106,20 +2192,40 @@ var mapview = function()
     if(self.edit_o == self.hover_editor) self.hover_editor.edit();
     else worldSpace(my_ui_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
     self.edit_cur_resizing = false;
   };
   //DRAG DEBUG EDIT STUFF END
-
+  
+  self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
+    //ADDLOG - X hover mapview
+    self.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
-    for(var i = 0; i < self.cache_available_scenes.length; i++)
-      if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY))
+
+    for(var i = 0; i < self.cache_available_scenes.length; i++){
+      if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY)){
         my_cursor.mode = CURSOR_UI;
+
+        //log hover
+        self.o_found = true;
+          if(!self.hover_log_started){
+            self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - map_hover
+            self.hover_log_started = true;
+            self.hover_log_data.fqid = self.cache_available_scenes[i].fqid; //acquisition
+          }
+        }
+      }
+    //push hover log
+    if(self.hover_log_started && !self.o_found){
+
+      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'map',self.hover_log_data.fqid));
+      self.hover_log_started = false;
+    }
   }
   self.unhover = function(evt)
   {
@@ -2127,8 +2233,12 @@ var mapview = function()
 
   self.click = function(evt)
   {
+    //ADDLOG - X map close selectscene
+    var log_event_name = 'basic';
+    var log_fqid = 0;
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
+      log_event_name = 'close'; //acquisition - closemap_click
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -2140,6 +2250,9 @@ var mapview = function()
       if(ptWithinBox(self.cache_available_scenes[i],evt.doX,evt.doY))
       {
         self.selected_scene = self.cache_available_scenes[i];
+
+        log_event_name = 'selectScene'; //acquisition - selectmapscene_click
+        log_fqid = self.selected_scene.fqid; //acquisition
         self.selected_scene.pre_met = true;
         state_from = state_cur;
         state_to = state_stack;
@@ -2148,6 +2261,7 @@ var mapview = function()
         state_t = 0;
       }
     }
+    send_log(get_log_data_click(evt,'map',{},log_event_name, log_fqid));
   }
 
   self.tick = function()
@@ -2290,7 +2404,7 @@ var notebookview = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
     for(var i = 0; !self.edit_o && i < self.cache_available_entrys.length; i++)
@@ -2312,7 +2426,7 @@ var notebookview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -2333,7 +2447,7 @@ var notebookview = function()
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
     worldSpace(my_ui_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -2350,8 +2464,12 @@ var notebookview = function()
 
   self.click = function(evt)
   {
+    //ADDLOG - X notebook view
+    var log_page = self.page;
+    var log_name = 'basic';
     if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
+      log_name = 'exit';
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -2362,12 +2480,18 @@ var notebookview = function()
     {
       if(AUDIO) playHandlePromise(get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud);
       self.page--;
+      log_name = 'prev_page';
     }
     else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
     {
       if(AUDIO) playHandlePromise(get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud);
       self.page++;
+      log_name = 'next_page';
     }
+    log_subtype_data = {
+      page: log_page
+    };
+    send_log(get_log_data_click(evt, 'notebook',log_subtype_data,log_name));
   }
 
   self.tick = function()
@@ -2529,7 +2653,7 @@ var notificationview = function()
       self.nv.note[self.nv.note_i] = stextToLines(self.nv.c.raw_notifications[self.nv.c_note_i], self.w);
     }
   })();
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
 
@@ -2555,7 +2679,7 @@ var notificationview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -2571,7 +2695,7 @@ var notificationview = function()
 
     if(self.edit_o == self.nv_editor) self.nv_editor.edit();
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -2585,6 +2709,7 @@ var notificationview = function()
   }
   self.click = function(evt)
   {
+    //ADDLOG - X notificationview (This is a ...! type notifications. Put an event there just in case)
     if(self.ui_state == UI_STATE_NULL) return;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
@@ -2595,6 +2720,9 @@ var notificationview = function()
         self.ui_state = UI_STATE_NEXT;
       else
         self.ui_state = UI_STATE_OUT;
+    }
+    if(typeof evt !== 'undefined'){
+      send_log(get_log_data_click(evt,'notification',{},'basic'));
     }
   }
 
@@ -2728,7 +2856,7 @@ var objectview = function()
   self.edit_offX;
   self.edit_offY;
   self.edit_o = 0;
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
     var zone;
@@ -2751,7 +2879,7 @@ var objectview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -2772,7 +2900,7 @@ var objectview = function()
     self.edit_offY = evt.doY-(self.edit_o.y+(self.edit_o.h/2));
     worldSpace(my_ui_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -2780,12 +2908,31 @@ var objectview = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
+  self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
+    //ADDLOG - X hover objectview
+    self.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
-    for(var i = 0; i < self.cache_available_zones.length; i++)
-      if(ptWithinBox(self.cache_available_zones[i],evt.doX,evt.doY))
+    for(var i = 0; i < self.cache_available_zones.length; i++){
+      if(ptWithinBox(self.cache_available_zones[i],evt.doX,evt.doY)){
         my_cursor.mode = CURSOR_UI;
+        //log hover
+        self.o_found = true;
+        if(!self.hover_log_started){
+          self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - object_hover
+          self.hover_log_started = true;
+          self.hover_log_data.fqid = self.cache_available_zones[i].fqid; //acquisition
+        }
+      }
+    }
+    // push log to server
+    if(self.hover_log_started && !self.o_found){
+
+      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'object', self.hover_log_data.fqid));
+      self.hover_log_started = false;
+    }
+
   }
   self.unhover = function(evt)
   {
@@ -2793,8 +2940,13 @@ var objectview = function()
 
   self.click = function(evt)
   {
+    //ADDLOG - X object view
+    self.log_data = {fqid: self.object.fqid}; //acquisition
+    self.log_data.name = 'basic';
+    self.log_data.subtype_data = {};
     if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
+      self.log_data.name = 'close'; //acquisition - closeObject_click
       self.cur_view.met = true;
       self.object.met = true;
       state_from = state_cur;
@@ -2811,6 +2963,9 @@ var objectview = function()
       zone = self.cache_available_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
+        self.log_data.name = 'name'; //acquisition interactObject_click
+        self.log_data.subtype_data.zone_fqid = zone.fqid; //acquisition
+        //ADDLOG - X self.log_data for clicks in objects
         if(zone.notifications.length && queryreqs(zone, zone.notification_reqs)) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
@@ -2827,6 +2982,7 @@ var objectview = function()
         return;
       }
     }
+    send_log(get_log_data_click(evt, 'object',self.log_data.subtype_data,self.log_data.name,self.log_data.fqid));
   }
 
   self.tick = function()
@@ -2971,7 +3127,7 @@ var observationview = function()
       self.blip.text = stextToLines(self.blip.raw_text, self.blip.blip_w);
     }
   })();
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
 
@@ -2989,7 +3145,7 @@ var observationview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -3011,7 +3167,7 @@ var observationview = function()
     if(self.edit_o == self.blip_editor) self.blip_editor.edit();
     worldSpace(my_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -3028,6 +3184,7 @@ var observationview = function()
 
   self.click = function(evt)
   {
+    //ADDLOG - X observation view
     self.observation.met = true;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
@@ -3036,6 +3193,7 @@ var observationview = function()
       self.ui_state_p = 0;
       self.ui_state = UI_STATE_OUT;
     }
+    send_log(get_log_data_click(evt, 'observation',{},'basic',self.observation.fqid));
   }
 
   self.tick = function()
@@ -3390,7 +3548,7 @@ var personview = function()
       self.cur_speak.options_wy = worldSpaceYpt(my_camera,canv,y);
     }
   })();
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
     var cur_speak_command = self.cur_speak.commands[self.cur_speak_command_i];
@@ -3413,7 +3571,7 @@ var personview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -3436,7 +3594,7 @@ var personview = function()
     if(self.edit_o == self.speak_editor)   self.speak_editor.edit();
     else worldSpace(my_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -3444,8 +3602,11 @@ var personview = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
+  self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
+    //ADDLOG - X hover personview
+    self.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
 
     var speak = self.cur_speak;
@@ -3461,6 +3622,15 @@ var personview = function()
       var h = speak_command.h*speak_command.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
         my_cursor.mode = CURSOR_UI;
+        self.o_found = true;
+        //log hover no options
+        if(!self.hover_log_started){
+          self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - person hover
+          self.hover_log_data.name = 'no_options'
+          self.hover_log_started = true;
+          //TODO: person hover info
+          //self.log_data.type.fqid = speak_command.fqid; //acquisition
+        }
     }
     else
     {
@@ -3475,11 +3645,28 @@ var personview = function()
           {
             self.hovered_option = option;
             my_cursor.mode = CURSOR_UI;
+            //log hover options
+            if(!self.hover_log_started){
+              self.o_found = true;
+              self.hover_log_data.name = 'options'
+              self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - personOptions_hover
+              self.hover_log_started = true;
+              self.hover_log_data.subtype_data.option = option; //acquisition
+              //TODO: person hover info
+            }
           }
           oyoff += speak.options_h;
         }
       }
     }
+    // push log to server
+    if(self.hover_log_started && !self.o_found){
+
+      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'person', self.hover_log_data.fqid,
+      self.hover_log_data.subtype_data,self.hover_log_data.name));
+      self.hover_log_started = false;
+    }
+
   }
   self.unhover = function(evt)
   {
@@ -3488,6 +3675,8 @@ var personview = function()
 
   self.click = function(evt)
   {
+    //ADDLOG - X person view
+    self.log_data = get_log_data_click(evt,'person',{},'basic',self.person.fqid); //acquisition -person click
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
 
     var speak = self.cur_speak;
@@ -3532,6 +3721,7 @@ var personview = function()
         self.ui_state = UI_STATE_OUT;
       }
     }
+    send_log(self.log_data);
   }
 
   self.tick = function()
@@ -3739,14 +3929,24 @@ var wildcardview = function()
   }
 
   //DRAG DEBUG EDIT STUFF
-  self.dragStart  = function(evt) { if(self.wildcard.dragStart)  self.wildcard.dragStart(evt); };
-  self.drag       = function(evt) { if(self.wildcard.drag)       self.wildcard.drag(evt);      };
-  self.dragFinish = function()    { if(self.wildcard.dragFinish) self.wildcard.dragFinish();   };
+    self.dragStart  = function(evt) { if(self.wildcard.dragStart)  self.wildcard.dragStart(evt); };
+    self.drag       = function(evt) { if(self.wildcard.drag)       self.wildcard.drag(evt);      };
+    self.dragFinish = function()    { if(self.wildcard.dragFinish) self.wildcard.dragFinish();   };
   //DRAG DEBUG EDIT STUFF END
 
   self.hover   = function(evt) { if(self.wildcard.hover)   self.wildcard.hover(evt);   };
   self.unhover = function(evt) { if(self.wildcard.unhover) self.wildcard.unhover(evt); };
-  self.click   = function(evt) { if(self.wildcard.click)   self.wildcard.click(evt);   };
+  //ADDLOG - X wildcard view
+  //TODO - hovering for wildcards -- where is this??
+  self.click   = function(evt) { 
+    self.log_data = get_log_data_click(evt, 'wildcard',{},'basic',self.wildcard.fqid); //acquisition - wildcard click
+    if(self.wildcard.click)   self.wildcard.click(evt); 
+    self.log_data.subtype_data.failed = self.wildcard.failed; //acquisition
+    self.log_data.subtype_data.answer = self.wildcard.cur_command.entry_fqid; //acquisition
+    //TODO: wildcard correct choice
+    send_log(self.log_data);  
+    
+  };
   self.tick    = function()    { if(self.wildcard.tick)    self.wildcard.tick();       };
   self.draw    = function(t)   { if(self.wildcard.draw)    self.wildcard.draw(t);      };
 }
@@ -3798,7 +3998,8 @@ var cutsceneview = function()
     self.h = canv.height;
   }
   self.resize();
-
+  //log checkpoint
+  self.finale_reached = false;
   self.consume_cutscene = function(cutscene)
   {
     self.cutscene = cutscene;
@@ -3810,6 +4011,11 @@ var cutsceneview = function()
       case "tunic.capitol_2.hall.chap4_finale_c":
       case "tunic.capitol_3.hall.chap5_finale_c":
         ga('send', 'event', 'finale', 'reached', self.cutscene.fqid);
+        if(!self.finale_reached){
+          self.checkpoint_log_data = get_log_data('CHECKPOINT',{},'basic',{},'start',self.cutscene.fqid);
+          self.finale_reached = true;
+        }
+        
         break;
       default:
         break;
@@ -4025,6 +4231,14 @@ var cutsceneview = function()
         break;
       case CUTSCENE_COMMAND_END:
         self.end = 1;
+        //ADDLOG checkpoint
+        if(self.finale_reached){
+          //checkpoint log
+          self.checkpoint_log_data = get_log_data('CHECKPOINT',{},'basic',{},'end',self.cutscene.fqid); //acquisition - checkpoint
+          //finish checkpoint logs on monday TODO
+          self.finale_reached = false;
+          send_log(self.checkpoint_log_data)
+        }
         break;
       case CUTSCENE_COMMAND_LOAD_SCENE:
         self.scene_to = c.cutscene_entity_id;
@@ -4078,7 +4292,7 @@ var cutsceneview = function()
       self.cur_speak.wy = worldSpaceYpt(my_camera,canv,y);
     }
   })();
-  self.dragStart = function(evt)
+    self.dragStart = function(evt)
   {
     self.edit_o = 0;
 
@@ -4112,7 +4326,7 @@ var cutsceneview = function()
     else
       self.edit_cur_dragging = true;
   };
-  self.drag = function(evt)
+    self.drag = function(evt)
   {
     if(!self.edit_o) return;
     self.deltaX = (evt.doX-(self.edit_o.x+(self.edit_o.w/2)))-self.edit_offX;
@@ -4135,7 +4349,7 @@ var cutsceneview = function()
     if(self.edit_o == self.speak_editor)   self.speak_editor.edit();
     else worldSpace(my_camera,canv,self.edit_o);
   };
-  self.dragFinish = function()
+    self.dragFinish = function()
   {
     self.edit_o = 0;
     self.edit_cur_dragging = false;
@@ -4145,6 +4359,8 @@ var cutsceneview = function()
 
   self.click = function(evt)
   {
+    self.log_data = get_log_data_click(evt,'cutscene',{},'basic',self.cutscene.fqid); //acquisition - cutscene_click
+    //ADDLOG - X cutscene view
     self.waiting = 0;
     for(var i = 0; i < self.running_commands.length; i++)
     {
@@ -4158,6 +4374,7 @@ var cutsceneview = function()
         }
       }
     }
+    send_log(self.log_data);
   }
 
   self.hover = function(evt)

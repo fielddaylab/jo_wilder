@@ -1,5 +1,24 @@
 var MenuScene = function(game, stage)
 {
+  var game_start_log_data = function()
+  {
+    var log_data =
+    {
+      save_code: save_code,
+      fullscreen: fullscreen_toggle.on,
+      music: audio_toggle.on,
+      hq: hq_toggle.on
+    };
+    return log_data;
+    // for(var i = 0; i < levels.length; i++)
+    // {
+    //   log_data.event_data_complex["stars_"+i] = (levels[i].stars);
+    // }
+    
+    // log_data.event_data_complex = JSON.stringify(log_data.event_data_complex);
+    //console.log(log_data);
+    //window.mySlog.log(log_data);
+  }
   var self = this;
 
   var clicker;
@@ -90,8 +109,28 @@ var MenuScene = function(game, stage)
     continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
     new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
     y += h+50;
-    code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ if(txt == "") { code_txt.bg_color = "rgba(255,255,255,0.1)"; code_valid = 0; return; } if(save_table[txt.toLowerCase()]) { code_txt.bg_color = "rgba(0,255,0,0.1)"; code_valid = 1; } else { code_txt.bg_color = "rgba(255,0,0,0.1)"; code_valid = 0; } }); x += w+10;
-    code_button     = new ButtonBox(x,y,70,h,function(evt){ if(save_table[code_txt.txt.toLowerCase()]) { save_table_code = code_txt.txt.toLowerCase(); ga('send', 'event', 'savecode', 'used', save_table_code); save_code = save_table[save_table_code].code; next = 1; } });
+    code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ 
+      if(txt == "") { 
+        code_txt.bg_color = "rgba(255,255,255,0.1)"; 
+        code_valid = 0; return; 
+      } 
+      if(save_table[txt.toLowerCase()]) {
+        code_txt.bg_color = "rgba(0,255,0,0.1)"; 
+        code_valid = 1; 
+        } 
+      else {
+          code_txt.bg_color = "rgba(255,0,0,0.1)"; 
+          code_valid = 0; 
+      } 
+    }); 
+      x += w+10;
+    code_button     = new ButtonBox(x,y,70,h,function(evt){ 
+      if(save_table[code_txt.txt.toLowerCase()]) { 
+        save_table_code = code_txt.txt.toLowerCase(); 
+        ga('send', 'event', 'savecode', 'used', save_table_code); 
+        save_code = save_table[save_table_code].code; next = 1; 
+      } 
+    });
 
     continue_button.hover = function(evt) { continue_button.hovering = 1; }
     continue_button.unhover = function(evt) { continue_button.hovering = 0; }
@@ -143,7 +182,13 @@ var MenuScene = function(game, stage)
     if(next)
     {
       next_t += 0.01;
-      if(next_t >= 1) { game.nextScene(); return; /*avoid flush*/ }
+      if(next_t >= 1) { 
+        //ADDLOG - wrote data func
+        send_log(game_start_log_data())
+        game.nextScene(); 
+        return; 
+        /*avoid flush*/ 
+      }
     }
     else
     {
