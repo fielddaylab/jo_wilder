@@ -467,6 +467,7 @@ var GamePlayScene = function(game, stage)
     my_navigable.trigger_cutscenes();
 
     window.onbeforeunload = function(){
+      send_log(get_log_data('ENDGAME',{},'basic',{},'basic'));
       return "To retain progress, use Save Code: "+my_notebookview.current_code;
     };
   };

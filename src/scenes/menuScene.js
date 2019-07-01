@@ -184,7 +184,8 @@ var MenuScene = function(game, stage)
       next_t += 0.01;
       if(next_t >= 1) { 
         //ADDLOG - wrote data func
-        send_log(game_start_log_data())
+        log_data = get_log_data('GAMESTART',game_start_log_data(),'basic',{},{},{});
+        send_log(log_data);
         game.nextScene(); 
         return; 
         /*avoid flush*/ 

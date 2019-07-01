@@ -1,13 +1,19 @@
 //ADDLOG write logging functions here
 window.mySlog = new slog("JOWILDER",1);
-var get_log_data = function(event_type, type_data, event_subtype, subtype_data, event_name, fqid=0){
-  if(fqid){
+get_log_data = function(event_type, type_data, event_subtype, subtype_data, event_name, fqid=0){
+  if(fqid && my_navigable){
     fqid = fqid.replace(my_navigable.room.fqid+'.','');
   };
+  if(my_navigable){
+    room_fqid = my_navigable.room.fqid;
+  }
+  else{
+    room_fqid = 0;
+  }
   log_data =
   {
     //time: Date.now(), unnecessary because logged in simplelog
-    room_fqid: my_navigable.room.fqid,
+    room_fqid: room_fqid,
     curr_state: state_cur,
     type: event_type,//CLICK, HOVER, CHECKPOINT, STARTGAME
     type_data: type_data,
@@ -19,15 +25,12 @@ var get_log_data = function(event_type, type_data, event_subtype, subtype_data, 
   return log_data;
 }
 var get_log_data_click = function(evt, event_subtype, subtype_data, event_name, fqid){
-  //TODO slight chance of a null event parameter
   type_data = {
     screen_coor: [evt.doX, evt.doY],
     room_coor: [worldSpaceXpt(my_camera,canv,evt.doX), worldSpaceYpt(my_camera, canv, evt.doY)],
   };
   log_data = get_log_data('CLICK', type_data, event_subtype, subtype_data, event_name, fqid);
   return log_data;
-  //TODO: is room okay??
-  //also, how to get next mandatory action? Maybe do in wrapped function?
 }
 
 var get_log_data_hover = function(hover_start_time, event_subtype, fqid, subtype_data={}, event_name='basic'){
@@ -40,9 +43,9 @@ var get_log_data_hover = function(hover_start_time, event_subtype, fqid, subtype
 }
 
 var send_log = function(log_data){
-  console.log(log_data);
+  //console.log(log_data);
   var formatted_log_data = {
-    level: 1, //TODO: make this not one
+    level: 1, //TODO: make this not 1
     event: "CUSTOM",
     event_custom: 0, //TODO: custom event type indices
     event_data_complex: JSON.stringify(log_data)
@@ -1683,7 +1686,7 @@ var navigable = function()
   self.hover_log_started = false;
   self.hover = function(evt)
   {
-    //ADDLOG - X hover navigate
+    //log hover navigate
     self.o_found = false;
     my_cursor.mode = CURSOR_NORMAL;
     my_cursor.cursor_o = 0;
@@ -1733,7 +1736,7 @@ var navigable = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X navigable
+    //log navigable
     
     
     if(!(DEBUG && my_keyable.e))
@@ -2016,7 +2019,7 @@ var toolbar = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X notebook button
+    //log notebook button
     
     if(MAP_ENABLED && self.map_available && ptWithinBox(self.map,evt.doX,evt.doY))
     {
@@ -2203,7 +2206,7 @@ var mapview = function()
   self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
-    //ADDLOG - X hover mapview
+    //log hover mapview
     self.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
 
@@ -2233,7 +2236,7 @@ var mapview = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X map close selectscene
+    //log map close selectscene
     var log_event_name = 'basic';
     var log_fqid = 0;
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
@@ -2464,7 +2467,7 @@ var notebookview = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X notebook view
+    //log notebook view
     var log_page = self.page;
     var log_name = 'basic';
     if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
@@ -2709,7 +2712,7 @@ var notificationview = function()
   }
   self.click = function(evt)
   {
-    //ADDLOG - X notificationview (This is a ...! type notifications. Put an event there just in case)
+    //log notificationview (This is a ...! type notifications. Put an event there just in case)
     if(self.ui_state == UI_STATE_NULL) return;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
@@ -2911,7 +2914,7 @@ var objectview = function()
   self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
-    //ADDLOG - X hover objectview
+    //log hover objectview
     self.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
     for(var i = 0; i < self.cache_available_zones.length; i++){
@@ -2940,7 +2943,7 @@ var objectview = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X object view
+    //log object view
     self.log_data = {fqid: self.object.fqid}; //acquisition
     self.log_data.name = 'basic';
     self.log_data.subtype_data = {};
@@ -2965,7 +2968,7 @@ var objectview = function()
       {
         self.log_data.name = 'name'; //acquisition interactObject_click
         self.log_data.subtype_data.zone_fqid = zone.fqid; //acquisition
-        //ADDLOG - X self.log_data for clicks in objects
+        //log self.log_data for clicks in objects
         if(zone.notifications.length && queryreqs(zone, zone.notification_reqs)) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
@@ -3184,7 +3187,7 @@ var observationview = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X observation view
+    //log observation view
     self.observation.met = true;
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
     if(self.ui_state != UI_STATE_OUT)
@@ -3605,7 +3608,7 @@ var personview = function()
   self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
-    //ADDLOG - X hover personview
+    //log hover personview
     self.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
 
@@ -3628,7 +3631,6 @@ var personview = function()
           self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - person hover
           self.hover_log_data.name = 'no_options'
           self.hover_log_started = true;
-          //TODO: person hover info
           //self.log_data.type.fqid = speak_command.fqid; //acquisition
         }
     }
@@ -3648,11 +3650,10 @@ var personview = function()
             //log hover options
             if(!self.hover_log_started){
               self.o_found = true;
-              self.hover_log_data.name = 'options'
               self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - personOptions_hover
+              self.hover_log_data.name = 'options'
               self.hover_log_started = true;
-              self.hover_log_data.subtype_data.option = option; //acquisition
-              //TODO: person hover info
+              self.hover_log_data.subtype_data = {option: option}; //acquisition
             }
           }
           oyoff += speak.options_h;
@@ -3675,7 +3676,7 @@ var personview = function()
 
   self.click = function(evt)
   {
-    //ADDLOG - X person view
+    //log person view
     self.log_data = get_log_data_click(evt,'person',{},'basic',self.person.fqid); //acquisition -person click
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
 
@@ -3926,6 +3927,7 @@ var wildcardview = function()
     self.wildcard.pre_met = true;
     self.wildcard.met = true; //technically should wait for dismiss, but can't guarantee dismiss by custom code. needs solution.
     self.wildcard.consume_self(self.wildcard);
+    self.hover_log_started = false;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -3933,20 +3935,54 @@ var wildcardview = function()
     self.drag       = function(evt) { if(self.wildcard.drag)       self.wildcard.drag(evt);      };
     self.dragFinish = function()    { if(self.wildcard.dragFinish) self.wildcard.dragFinish();   };
   //DRAG DEBUG EDIT STUFF END
+  self.hover   = function(evt) 
+  { if(self.wildcard.hover)
+    {
+      self.o_found = false;
+      self.wildcard.hover(evt);
+      for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+      {
+        if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+        {
+          self.o_found = true;
+          if(!self.hover_log_started)
+          {
+            self.hover_log_data = {hover_start_time: Date.now()}; 
+            self.hover_log_data.name = 'basic';
+            self.log_data.subtype_data = {answer: self.wildcard.cur_command.entry_fqid}; //acquisition 
+            self.hover_log_started = true;
+            self.hover_log_data.subtype_data.choice = my_notebookview.cache_available_entrys[i].fqid;
+          }
+        }
+      }
+      if(self.hover_log_started && !self.o_found){
 
-  self.hover   = function(evt) { if(self.wildcard.hover)   self.wildcard.hover(evt);   };
+        send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'wildcard', self.wildcard.fqid, self.log_data.subtype_data, self.hover_log_data.name));
+        self.hover_log_started = false;
+      }
+    }
+  }
   self.unhover = function(evt) { if(self.wildcard.unhover) self.wildcard.unhover(evt); };
-  //ADDLOG - X wildcard view
-  //TODO - hovering for wildcards -- where is this??
+  //log wildcard view
   self.click   = function(evt) { 
-    self.log_data = get_log_data_click(evt, 'wildcard',{},'basic',self.wildcard.fqid); //acquisition - wildcard click
-    if(self.wildcard.click)   self.wildcard.click(evt); 
-    self.log_data.subtype_data.failed = self.wildcard.failed; //acquisition
-    self.log_data.subtype_data.answer = self.wildcard.cur_command.entry_fqid; //acquisition
-    //TODO: wildcard correct choice
-    send_log(self.log_data);  
+
+    if(self.wildcard.click) 
+    {
+      self.log_data = get_log_data_click(evt, 'wildcard',{},'basic',self.wildcard.fqid);
+      self.wildcard.click(evt);
+      for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
+        {
+          if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
+          {
+            self.log_data = get_log_data_click(evt, 'wildcard',{},'choice',self.wildcard.fqid); //acquisition - wildcard click
+            self.log_data.subtype_data.choice = my_notebookview.cache_available_entrys[i].fqid;
+            self.log_data.subtype_data.answer = self.wildcard.cur_command.entry_fqid; //acquisition 
+          }
+        }
+      send_log(self.log_data);
+    }
     
-  };
+  }
   self.tick    = function()    { if(self.wildcard.tick)    self.wildcard.tick();       };
   self.draw    = function(t)   { if(self.wildcard.draw)    self.wildcard.draw(t);      };
 }
@@ -4011,10 +4047,11 @@ var cutsceneview = function()
       case "tunic.capitol_2.hall.chap4_finale_c":
       case "tunic.capitol_3.hall.chap5_finale_c":
         ga('send', 'event', 'finale', 'reached', self.cutscene.fqid);
-        if(!self.finale_reached){
-          self.checkpoint_log_data = get_log_data('CHECKPOINT',{},'basic',{},'start',self.cutscene.fqid);
-          self.finale_reached = true;
-        }
+   //     if(!self.finale_reached){
+        self.checkpoint_log_data = get_log_data('CHECKPOINT',{},'basic',{},'start',self.cutscene.fqid);
+        send_log(self.checkpoint_log_data);
+ //         self.finale_reached = true;
+  //      }
         
         break;
       default:
@@ -4231,14 +4268,6 @@ var cutsceneview = function()
         break;
       case CUTSCENE_COMMAND_END:
         self.end = 1;
-        //ADDLOG checkpoint
-        if(self.finale_reached){
-          //checkpoint log
-          self.checkpoint_log_data = get_log_data('CHECKPOINT',{},'basic',{},'end',self.cutscene.fqid); //acquisition - checkpoint
-          //finish checkpoint logs on monday TODO
-          self.finale_reached = false;
-          send_log(self.checkpoint_log_data)
-        }
         break;
       case CUTSCENE_COMMAND_LOAD_SCENE:
         self.scene_to = c.cutscene_entity_id;
@@ -4360,7 +4389,7 @@ var cutsceneview = function()
   self.click = function(evt)
   {
     self.log_data = get_log_data_click(evt,'cutscene',{},'basic',self.cutscene.fqid); //acquisition - cutscene_click
-    //ADDLOG - X cutscene view
+    //log cutscene view
     self.waiting = 0;
     for(var i = 0; i < self.running_commands.length; i++)
     {
