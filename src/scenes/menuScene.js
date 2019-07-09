@@ -169,7 +169,7 @@ var MenuScene = function(game, stage)
         save_code: save_code,
         fullscreen: fullscreen_toggle.on,
         music: audio_toggle.on,
-        hq: hq_toggle.on
+        hq: hq_toggle.on ? 1 : 0
         };
         log_gamestart_type_data = my_logger.get_startgame_type_data(
           gamestart_data.save_code, gamestart_data.fullscreen,
