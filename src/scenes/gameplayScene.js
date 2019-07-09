@@ -467,7 +467,11 @@ var GamePlayScene = function(game, stage)
     my_navigable.trigger_cutscenes();
 
     window.onbeforeunload = function(){
-      send_log(get_log_data('ENDGAME',{},'basic',{},'basic'));
+      log_endgame_subtype_data = my_logger.get_endgame_subtype_data();
+      log_endgame_type_data = my_logger.get_endgame_type_data();
+      my_logger.send_log(my_logger.get_log_data(
+        LOG_TYPE_ENDGAME, log_endgame_type_data,
+        LOG_SUBTYPE_BASIC, log_endgame_subtype_data));
       return "To retain progress, use Save Code: "+my_notebookview.current_code;
     };
   };

@@ -1,24 +1,5 @@
 var MenuScene = function(game, stage)
 {
-  var game_start_log_data = function()
-  {
-    var log_data =
-    {
-      save_code: save_code,
-      fullscreen: fullscreen_toggle.on,
-      music: audio_toggle.on,
-      hq: hq_toggle.on
-    };
-    return log_data;
-    // for(var i = 0; i < levels.length; i++)
-    // {
-    //   log_data.event_data_complex["stars_"+i] = (levels[i].stars);
-    // }
-    
-    // log_data.event_data_complex = JSON.stringify(log_data.event_data_complex);
-    //console.log(log_data);
-    //window.mySlog.log(log_data);
-  }
   var self = this;
 
   var clicker;
@@ -184,8 +165,19 @@ var MenuScene = function(game, stage)
       next_t += 0.01;
       if(next_t >= 1) { 
         //ADDLOG - wrote data func
-        log_data = get_log_data('GAMESTART',game_start_log_data(),'basic',{},{},{});
-        send_log(log_data);
+        var gamestart_data = {
+        save_code: save_code,
+        fullscreen: fullscreen_toggle.on,
+        music: audio_toggle.on,
+        hq: hq_toggle.on
+        };
+        log_gamestart_type_data = my_logger.get_startgame_type_data(
+          gamestart_data.save_code, gamestart_data.fullscreen,
+          gamestart_data.music, gamestart_data.hq
+        );
+        log_gamestart_subtype_data = my_logger.get_startgame_subtype_data();
+        log_data = my_logger.get_log_data(LOG_TYPE_STARTGAME,log_gamestart_type_data,LOG_SUBTYPE_BASIC,log_gamestart_subtype_data);
+        my_logger.send_log(log_data);
         game.nextScene(); 
         return; 
         /*avoid flush*/ 

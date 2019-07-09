@@ -1,60 +1,3 @@
-//ADDLOG write logging functions here
-window.mySlog = new slog("JOWILDER",1);
-get_log_data = function(event_type, type_data, event_subtype, subtype_data, event_name, fqid=0){
-  if(fqid && my_navigable){
-    fqid = fqid.replace(my_navigable.room.fqid+'.','');
-  };
-  if(my_navigable){
-    room_fqid = my_navigable.room.fqid;
-  }
-  else{
-    room_fqid = 0;
-  }
-  log_data =
-  {
-    //time: Date.now(), unnecessary because logged in simplelog
-    room_fqid: room_fqid,
-    curr_state: state_cur,
-    type: event_type,//CLICK, HOVER, CHECKPOINT, STARTGAME
-    type_data: type_data,
-    subtype: event_subtype, //navigate, notebook, map, notification, object, observation, person, wildcard
-    fqid: fqid,
-    subtype_data: subtype_data
-  };
-  log_data.subtype_data.name = event_name;
-  return log_data;
-}
-var get_log_data_click = function(evt, event_subtype, subtype_data, event_name, fqid){
-  type_data = {
-    screen_coor: [evt.doX, evt.doY],
-    room_coor: [worldSpaceXpt(my_camera,canv,evt.doX), worldSpaceYpt(my_camera, canv, evt.doY)],
-  };
-  log_data = get_log_data('CLICK', type_data, event_subtype, subtype_data, event_name, fqid);
-  return log_data;
-}
-
-var get_log_data_hover = function(hover_start_time, event_subtype, fqid, subtype_data={}, event_name='basic'){
-  type_data = {
-    hover_start_time: hover_start_time,
-    hover_end_time: Date.now()
-  }
-  log_data = get_log_data('HOVER', type_data, event_subtype, subtype_data, event_name, fqid);
-  return log_data;
-}
-
-var send_log = function(log_data){
-  //console.log(log_data);
-  var formatted_log_data = {
-    level: 1, //TODO: make this not 1
-    event: "CUSTOM",
-    event_custom: 0, //TODO: custom event type indices
-    event_data_complex: JSON.stringify(log_data)
-  }
-  window.mySlog.log(formatted_log_data);
-}
-
-
-
 var bubble_in_a = function(t) { return t; }
 var bubble_out_a = function(t) { return 1-t; }
 var bubble_in_y = function(t) { return sin(t*twopi*2)*(1-t)*5 }
@@ -1683,11 +1626,10 @@ var navigable = function()
     self.edit_cur_resizing = false;
   };
   //DRAG DEBUG EDIT STUFF END
-  self.hover_log_started = false;
   self.hover = function(evt)
   {
     //log hover navigate
-    self.o_found = false;
+    my_logger.current_hover_info.o_found = false;
     my_cursor.mode = CURSOR_NORMAL;
     my_cursor.cursor_o = 0;
     my_cursor.icon_o = 0;
@@ -1712,21 +1654,24 @@ var navigable = function()
         o = l[j];
         if(ptWithinBox(o,evt.doX,evt.doY))
         {
-          self.o_found = true;
-          if(!self.hover_log_started){
-            self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - navigate_hover
-            self.hover_log_started = true;
-            self.hover_log_data.fqid = o.fqid; //acquisition
+          my_logger.current_hover_info.o_found = true;
+          if(!my_logger.current_hover_info.start_time){
+            my_logger.current_hover_info.start_time = Date.now(); //acquisition - navigate_hover
+            my_logger.current_hover_info.subtype_data = my_logger.get_navigate_subtype_data();
+            my_logger.current_hover_info.fqid = o.fqid; //acquisition
           }
           if(o.wz > cursor_z && o.hover_cursor_animcycle_inst.animcycle != null_animcycle) { my_cursor.cursor_o = o; cursor_z = o.wz; my_cursor.mode = CURSOR_O; }
           if(o.wz > icon_z   && o.hover_icon_animcycle_inst.animcycle   != null_animcycle) { my_cursor.icon_o = o;   icon_z = o.wz; }
         }
       }
     }
-    if(self.hover_log_started && !self.o_found){
-
-      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'navigate', self.hover_log_data.fqid));
-      self.hover_log_started = false;
+    if(my_logger.should_log_hover()){
+      if(typeof(my_logger.current_hover_info.fqid) != "string" || my_logger.current_hover_info.fqid.includes(my_navigable.room.fqid)){
+        my_logger.send_log_data_hover(LOG_SUBTYPE_NAVIGATE);   
+      }
+      else {
+        my_logger.reset_current_hover_log_info();
+      }
     }
   }
   self.unhover = function(evt)
@@ -1772,7 +1717,13 @@ var navigable = function()
     
 
       var logfqid = (self.selected_act ? self.selected_act.fqid : 0); // acquisition
-      self.log_data = get_log_data_click(evt, 'navigate',{},'basic',logfqid); //acquisition - navigate_click
+      self.log_data = my_logger.get_log_data(
+        LOG_TYPE_CLICK,
+        my_logger.get_click_type_data(evt), 
+        LOG_SUBTYPE_NAVIGATE,
+        my_logger.get_navigate_subtype_data,
+        logfqid
+        );
 
       if(self.selected_act)
       {
@@ -1784,11 +1735,12 @@ var navigable = function()
       my_avatar.to_wx = self.nav_click.wx;
       my_avatar.to_wy = self.nav_click.wy;
     }
-    send_log(self.log_data);
-    //handle case where hover log data has not been sent before click
-    if(self.hover_log_started){
-      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'navigate', self.hover_log_data.fqid));
-      self.hover_log_started = false;
+    my_logger.send_log(self.log_data);
+    //handle case where hover log data has not been sent before click 
+    // Something might be a bit strange here - not sure
+    if(my_logger.current_hover_info.start_time){
+      my_logger.send_log_data_hover(LOG_SUBTYPE_NAVIGATE);
+      
     }
   }
 
@@ -2034,7 +1986,13 @@ var toolbar = function()
     }
     if(self.notebook_available && ptWithinBox(self.notebook,evt.doX,evt.doY))
     {
-      self.log_data = get_log_data_click(evt,'notebook',{page: my_notebookview.page},'open',0); //acquisition - opennotebook_click
+      self.log_data = my_logger.get_log_data(
+        LOG_TYPE_CLICK,
+        my_logger.get_click_type_data(evt), 
+        LOG_SUBTYPE_NOTEBOOK,
+        my_logger.get_notebook_subtype_data(LOG_NAME_OPEN, my_notebookview.page),
+        0
+        );
       my_notebookview.unlock_content();
       my_navigable.selected_act = 0;
       state_from = state_cur;
@@ -2043,7 +2001,7 @@ var toolbar = function()
       my_loader.unlock_content();
       state_t = 0;
       if(AUDIO) playHandlePromise(get_audio(cur_level.notebook_audio_id,cur_level.audios).aud);
-      send_log(self.log_data);
+      my_logger.send_log(self.log_data);
     }
     
   }
@@ -2203,11 +2161,10 @@ var mapview = function()
   };
   //DRAG DEBUG EDIT STUFF END
   
-  self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
     //log hover mapview
-    self.o_found = false; //logging parameter
+    my_logger.current_hover_info.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
 
     for(var i = 0; i < self.cache_available_scenes.length; i++){
@@ -2215,19 +2172,19 @@ var mapview = function()
         my_cursor.mode = CURSOR_UI;
 
         //log hover
-        self.o_found = true;
-          if(!self.hover_log_started){
-            self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - map_hover
-            self.hover_log_started = true;
-            self.hover_log_data.fqid = self.cache_available_scenes[i].fqid; //acquisition
+        my_logger.current_hover_info.o_found = true;
+          if(!my_logger.current_hover_info.start_time){
+            my_logger.current_hover_info.start_time = Date.now(); //acquisition - map_hover
+            my_logger.current_hover_info.subtype_data = my_logger.get_map_subtype_data(LOG_NAME_BASIC);
+            my_logger.current_hover_info.fqid = self.cache_available_scenes[i].fqid; //acquisition
           }
         }
       }
     //push hover log
-    if(self.hover_log_started && !self.o_found){
+    if(my_logger.should_log_hover()){
 
-      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'map',self.hover_log_data.fqid));
-      self.hover_log_started = false;
+      my_logger.send_log_data_hover(LOG_SUBTYPE_MAP);
+      
     }
   }
   self.unhover = function(evt)
@@ -2237,11 +2194,11 @@ var mapview = function()
   self.click = function(evt)
   {
     //log map close selectscene
-    var log_event_name = 'basic';
+    var log_event_name = LOG_NAME_BASIC;
     var log_fqid = 0;
     if(ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      log_event_name = 'close'; //acquisition - closemap_click
+      log_event_name = LOG_NAME_CLOSE; //acquisition - closemap_click
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -2264,7 +2221,12 @@ var mapview = function()
         state_t = 0;
       }
     }
-    send_log(get_log_data_click(evt,'map',{},log_event_name, log_fqid));
+    my_logger.send_log(my_logger.get_log_data(
+      LOG_TYPE_CLICK,
+      my_logger.get_click_type_data(evt),
+      LOG_SUBTYPE_MAP,
+      my_logger.get_map_subtype_data(log_event_name),
+      log_fqid));
   }
 
   self.tick = function()
@@ -2469,10 +2431,10 @@ var notebookview = function()
   {
     //log notebook view
     var log_page = self.page;
-    var log_name = 'basic';
+    var log_name = LOG_NAME_BASIC;
     if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      log_name = 'exit';
+      log_name = LOG_NAME_CLOSE;
       state_from = state_cur;
       state_to = state_stack;
       state_cur = STATE_TRANSITION;
@@ -2483,18 +2445,20 @@ var notebookview = function()
     {
       if(AUDIO) playHandlePromise(get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud);
       self.page--;
-      log_name = 'prev_page';
+      log_name = LOG_NAME_PREV;
     }
     else if(self.page < self.last_page && ptWithinBox(self.next_box,evt.doX,evt.doY))
     {
       if(AUDIO) playHandlePromise(get_audio(cur_level.notebook_turn_audio_id,cur_level.audios).aud);
       self.page++;
-      log_name = 'next_page';
+      log_name = LOG_NAME_NEXT;
     }
-    log_subtype_data = {
-      page: log_page
-    };
-    send_log(get_log_data_click(evt, 'notebook',log_subtype_data,log_name));
+    my_logger.send_log(my_logger.get_log_data(
+      LOG_TYPE_CLICK,
+      my_logger.get_click_type_data(evt),
+      LOG_SUBTYPE_NOTEBOOK,
+      my_logger.get_notebook_subtype_data(log_name,log_page),
+      0));
   }
 
   self.tick = function()
@@ -2725,7 +2689,12 @@ var notificationview = function()
         self.ui_state = UI_STATE_OUT;
     }
     if(typeof evt !== 'undefined'){
-      send_log(get_log_data_click(evt,'notification',{},'basic'));
+      my_logger.send_log(my_logger.get_log_data(
+        LOG_TYPE_CLICK,
+        my_logger.get_click_type_data(evt),
+        LOG_SUBTYPE_NOTIFICATION,
+        my_logger.get_notification_subtype_data(),
+        0));
     }
   }
 
@@ -2911,29 +2880,28 @@ var objectview = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
-  self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
     //log hover objectview
-    self.o_found = false; //logging parameter
+    my_logger.current_hover_info.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
     for(var i = 0; i < self.cache_available_zones.length; i++){
       if(ptWithinBox(self.cache_available_zones[i],evt.doX,evt.doY)){
         my_cursor.mode = CURSOR_UI;
         //log hover
-        self.o_found = true;
-        if(!self.hover_log_started){
-          self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - object_hover
-          self.hover_log_started = true;
-          self.hover_log_data.fqid = self.cache_available_zones[i].fqid; //acquisition
+        my_logger.current_hover_info.o_found = true;
+        if(!my_logger.current_hover_info.start_time){
+          my_logger.current_hover_info.start_time = Date.now(); //acquisition - object_hover
+          my_logger.current_hover_info.subtype_data = my_logger.get_object_subtype_data();
+          my_logger.current_hover_info.fqid = self.cache_available_zones[i].fqid; //acquisition
         }
       }
     }
     // push log to server
-    if(self.hover_log_started && !self.o_found){
+    if(my_logger.should_log_hover()){
 
-      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'object', self.hover_log_data.fqid));
-      self.hover_log_started = false;
+      my_logger.send_log_data_hover(LOG_SUBTYPE_OBJECT);
+      
     }
 
   }
@@ -2943,13 +2911,10 @@ var objectview = function()
 
   self.click = function(evt)
   {
-    //log object view
-    self.log_data = {fqid: self.object.fqid}; //acquisition
-    self.log_data.name = 'basic';
-    self.log_data.subtype_data = {};
+    var log_name;
     if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
-      self.log_data.name = 'close'; //acquisition - closeObject_click
+      log_name = LOG_NAME_CLOSE;
       self.cur_view.met = true;
       self.object.met = true;
       state_from = state_cur;
@@ -2960,15 +2925,24 @@ var objectview = function()
       if(my_notificationview.clickthrough) my_notificationview.click();
       my_music.consume_music(get_audio(cur_room.audio_id,cur_level.audios));
     }
+    else{
+      log_name = LOG_NAME_BASIC;
+      self.log_data = my_logger.get_log_data(
+        LOG_TYPE_CLICK,
+        my_logger.get_click_type_data(evt), 
+        LOG_SUBTYPE_OBJECT,
+        my_logger.get_object_subtype_data(LOG_NAME_BASIC),
+        self.object.fqid
+      );
+    }
     var zone;
     for(var i = 0; i < self.cache_available_zones.length; i++)
     {
       zone = self.cache_available_zones[i];
       if(ptWithinBox(zone,evt.doX,evt.doY))
       {
-        self.log_data.name = 'name'; //acquisition interactObject_click
-        self.log_data.subtype_data.zone_fqid = zone.fqid; //acquisition
-        //log self.log_data for clicks in objects
+        // self.log_data.name = 'name'; 
+        // self.log_data.subtype_data.zone_fqid = zone.fqid;
         if(zone.notifications.length && queryreqs(zone, zone.notification_reqs)) my_notificationview.consume_notification(zone);
         zone.pre_met = true;
         zone.met = true;
@@ -2985,7 +2959,14 @@ var objectview = function()
         return;
       }
     }
-    send_log(get_log_data_click(evt, 'object',self.log_data.subtype_data,self.log_data.name,self.log_data.fqid));
+    self.log_data = my_logger.get_log_data(
+      LOG_TYPE_CLICK,
+      my_logger.get_click_type_data(evt), 
+      LOG_SUBTYPE_OBJECT,
+      my_logger.get_object_subtype_data(LOG_NAME_CLOSE),
+      self.object.fqid
+    );
+    my_logger.send_log(self.log_data);
   }
 
   self.tick = function()
@@ -3196,7 +3177,12 @@ var observationview = function()
       self.ui_state_p = 0;
       self.ui_state = UI_STATE_OUT;
     }
-    send_log(get_log_data_click(evt, 'observation',{},'basic',self.observation.fqid));
+    my_logger.send_log(my_logger.get_log_data(
+      LOG_TYPE_CLICK,
+      my_logger.get_click_type_data(evt),
+      LOG_SUBTYPE_OBSERVATION,
+      my_logger.get_observation_subtype_data(),
+      self.observation.fqid));
   }
 
   self.tick = function()
@@ -3605,11 +3591,10 @@ var personview = function()
   };
   //DRAG DEBUG EDIT STUFF END
 
-  self.hover_log_started = false; //logging parameter
   self.hover = function(evt)
   {
     //log hover personview
-    self.o_found = false; //logging parameter
+    my_logger.current_hover_info.o_found = false; //logging parameter
     my_cursor.mode = CURSOR_NORMAL;
 
     var speak = self.cur_speak;
@@ -3625,14 +3610,11 @@ var personview = function()
       var h = speak_command.h*speak_command.atext.length;
       if(ptWithin(x,y,w,h,evt.doX,evt.doY))
         my_cursor.mode = CURSOR_UI;
-        self.o_found = true;
+        my_logger.current_hover_info.o_found = true;
         //log hover no options
-        if(!self.hover_log_started){
-          self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - person hover
-          self.hover_log_data.name = 'no_options'
-          self.hover_log_started = true;
-          //self.log_data.type.fqid = speak_command.fqid; //acquisition
-        }
+        if(!my_logger.current_hover_info.start_time){
+          my_logger.current_hover_info.start_time = Date.now(); //acquisition - person hover
+          my_logger.current_hover_info.subtype_data = my_logger.get_person_subtype_data();        }
     }
     else
     {
@@ -3648,24 +3630,19 @@ var personview = function()
             self.hovered_option = option;
             my_cursor.mode = CURSOR_UI;
             //log hover options
-            if(!self.hover_log_started){
-              self.o_found = true;
-              self.hover_log_data = {hover_start_time: Date.now()}; //acquisition - personOptions_hover
-              self.hover_log_data.name = 'options'
-              self.hover_log_started = true;
-              self.hover_log_data.subtype_data = {option: option}; //acquisition
+            if(!my_logger.current_hover_info.start_time){
+              my_logger.current_hover_info.o_found = true;
+              my_logger.current_hover_info.start_time = Date.now(); //acquisition - personOptions_hover    
             }
           }
           oyoff += speak.options_h;
         }
       }
     }
+    // TODO
     // push log to server
-    if(self.hover_log_started && !self.o_found){
-
-      send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'person', self.hover_log_data.fqid,
-      self.hover_log_data.subtype_data,self.hover_log_data.name));
-      self.hover_log_started = false;
+    if(my_logger.should_log_hover()){
+      my_logger.send_log_data_hover(LOG_SUBTYPE_PERSON);
     }
 
   }
@@ -3677,7 +3654,13 @@ var personview = function()
   self.click = function(evt)
   {
     //log person view
-    self.log_data = get_log_data_click(evt,'person',{},'basic',self.person.fqid); //acquisition -person click
+    self.log_data = my_logger.get_log_data(
+      LOG_TYPE_CLICK,
+      my_logger.get_click_type_data(evt), 
+      LOG_SUBTYPE_PERSON,
+      my_logger.get_person_subtype_data(),
+      self.person.fqid
+    );
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
 
     var speak = self.cur_speak;
@@ -3722,7 +3705,7 @@ var personview = function()
         self.ui_state = UI_STATE_OUT;
       }
     }
-    send_log(self.log_data);
+    my_logger.send_log(self.log_data);
   }
 
   self.tick = function()
@@ -3927,7 +3910,6 @@ var wildcardview = function()
     self.wildcard.pre_met = true;
     self.wildcard.met = true; //technically should wait for dismiss, but can't guarantee dismiss by custom code. needs solution.
     self.wildcard.consume_self(self.wildcard);
-    self.hover_log_started = false;
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -3938,48 +3920,51 @@ var wildcardview = function()
   self.hover   = function(evt) 
   { if(self.wildcard.hover)
     {
-      self.o_found = false;
+      my_logger.current_hover_info.o_found = false;
       self.wildcard.hover(evt);
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
       {
         if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
         {
-          self.o_found = true;
-          if(!self.hover_log_started)
+          my_logger.current_hover_info.o_found = true;
+          if(!my_logger.current_hover_info.start_time)
           {
-            self.hover_log_data = {hover_start_time: Date.now()}; 
-            self.hover_log_data.name = 'basic';
-            self.log_data.subtype_data = {answer: self.wildcard.cur_command.entry_fqid}; //acquisition 
-            self.hover_log_started = true;
-            self.hover_log_data.subtype_data.choice = my_notebookview.cache_available_entrys[i].fqid;
+            my_logger.current_hover_info.start_time = Date.now(); 
+            my_logger.current_hover_info.subtype_data = my_logger.get_wildcard_subtype_data(LOG_NAME_CHOICE, self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid);
+            my_logger.current_hover_info.fqid = self.wildcard.fqid;
           }
         }
       }
-      if(self.hover_log_started && !self.o_found){
+      if(my_logger.should_log_hover()){
 
-        send_log(get_log_data_hover(self.hover_log_data.hover_start_time, 'wildcard', self.wildcard.fqid, self.log_data.subtype_data, self.hover_log_data.name));
-        self.hover_log_started = false;
+        my_logger.send_log_data_hover(LOG_SUBTYPE_WILDCARD);
+        
       }
     }
   }
   self.unhover = function(evt) { if(self.wildcard.unhover) self.wildcard.unhover(evt); };
   //log wildcard view
   self.click   = function(evt) { 
-
     if(self.wildcard.click) 
     {
-      self.log_data = get_log_data_click(evt, 'wildcard',{},'basic',self.wildcard.fqid);
+      self.log_name = LOG_NAME_BASIC;
+      self.log_subtype_data = my_logger.get_wildcard_subtype_data(self.log_name,null,null);
       self.wildcard.click(evt);
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
           if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
-            self.log_data = get_log_data_click(evt, 'wildcard',{},'choice',self.wildcard.fqid); //acquisition - wildcard click
-            self.log_data.subtype_data.choice = my_notebookview.cache_available_entrys[i].fqid;
-            self.log_data.subtype_data.answer = self.wildcard.cur_command.entry_fqid; //acquisition 
-          }
+            self.log_name = LOG_NAME_CHOICE;
+            self.log_subtype_data = my_logger.get_wildcard_subtype_data(self.log_name,   self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid)       }
         }
-      send_log(self.log_data);
+      self.log_data = my_logger.get_log_data(
+        LOG_TYPE_CLICK,
+        my_logger.get_click_type_data(evt), 
+        LOG_SUBTYPE_WILDCARD,
+        self.log_subtype_data,
+        self.wildcard.fqid
+      );
+      my_logger.send_log(self.log_data);
     }
     
   }
@@ -4047,11 +4032,11 @@ var cutsceneview = function()
       case "tunic.capitol_2.hall.chap4_finale_c":
       case "tunic.capitol_3.hall.chap5_finale_c":
         ga('send', 'event', 'finale', 'reached', self.cutscene.fqid);
-   //     if(!self.finale_reached){
-        self.checkpoint_log_data = get_log_data('CHECKPOINT',{},'basic',{},'start',self.cutscene.fqid);
-        send_log(self.checkpoint_log_data);
- //         self.finale_reached = true;
-  //      }
+        checkpoint_log_data = my_logger.get_log_data(
+          LOG_TYPE_CHECKPOINT, my_logger.get_checkpoint_type_data(),
+          LOG_SUBTYPE_BASIC, my_logger.get_checkpoint_subtype_data(),
+          self.cutscene.fqid);
+        my_logger.send_log(checkpoint_log_data);
         
         break;
       default:
@@ -4388,8 +4373,13 @@ var cutsceneview = function()
 
   self.click = function(evt)
   {
-    self.log_data = get_log_data_click(evt,'cutscene',{},'basic',self.cutscene.fqid); //acquisition - cutscene_click
-    //log cutscene view
+    self.log_data = my_logger.get_log_data(
+      LOG_TYPE_CLICK,
+      my_logger.get_click_type_data(evt), 
+      LOG_SUBTYPE_CUTSCENE,
+      my_logger.get_cutscene_subtype_data(),
+      self.cutscene.fqid
+    );
     self.waiting = 0;
     for(var i = 0; i < self.running_commands.length; i++)
     {
@@ -4403,7 +4393,7 @@ var cutsceneview = function()
         }
       }
     }
-    send_log(self.log_data);
+    my_logger.send_log(self.log_data);
   }
 
   self.hover = function(evt)
