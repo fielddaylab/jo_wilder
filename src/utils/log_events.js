@@ -2,14 +2,15 @@
 var ENUM;
 
 ENUM = 0;
-var LOG_TYPE_CLICK              = ENUM; ENUM++;
-var LOG_TYPE_HOVER              = ENUM; ENUM++;
 var LOG_TYPE_CHECKPOINT         = ENUM; ENUM++;
 var LOG_TYPE_STARTGAME          = ENUM; ENUM++;
 var LOG_TYPE_ENDGAME            = ENUM; ENUM++;
+var LOG_TYPE_CLICK              = ENUM; ENUM++;
+var LOG_TYPE_HOVER              = ENUM; ENUM++;
 var LOG_TYPE_COUNT              = ENUM; ENUM++;
 
 ENUM = 0;
+var LOG_SUBTYPE_BASIC           = ENUM; ENUM++;
 var LOG_SUBTYPE_NAVIGATE        = ENUM; ENUM++;
 var LOG_SUBTYPE_NOTEBOOK        = ENUM; ENUM++;
 var LOG_SUBTYPE_MAP             = ENUM; ENUM++;
@@ -19,7 +20,6 @@ var LOG_SUBTYPE_OBSERVATION     = ENUM; ENUM++;
 var LOG_SUBTYPE_PERSON          = ENUM; ENUM++;
 var LOG_SUBTYPE_CUTSCENE        = ENUM; ENUM++;
 var LOG_SUBTYPE_WILDCARD        = ENUM; ENUM++;
-var LOG_SUBTYPE_BASIC           = ENUM; ENUM++;
 var LOG_SUBTYPE_COUNT           = ENUM; ENUM++;
 
 ENUM = 0;
@@ -30,6 +30,30 @@ var LOG_NAME_CHOICE             = ENUM; ENUM++;
 var LOG_NAME_NEXT               = ENUM; ENUM++;
 var LOG_NAME_PREV               = ENUM; ENUM++;
 var LOG_NAME_COUNT              = ENUM; ENUM++;
+
+ENUM = 0;
+var LOG_CHECKPOINT            = ENUM; ENUM++;
+var LOG_STARTGAME             = ENUM; ENUM++;
+var LOG_ENDGAME               = ENUM; ENUM++;
+var LOG_NAVIGATE_CLICK        = ENUM; ENUM++;
+var LOG_NOTEBOOK_CLICK        = ENUM; ENUM++;
+var LOG_MAP_CLICK             = ENUM; ENUM++;
+var LOG_NOTIFICATION_CLICK    = ENUM; ENUM++;
+var LOG_OBJECT_CLICK          = ENUM; ENUM++;
+var LOG_OBSERVATION_CLICK     = ENUM; ENUM++;
+var LOG_PERSON_CLICK          = ENUM; ENUM++;
+var LOG_CUTSCENE_CLICK        = ENUM; ENUM++;
+var LOG_WILDCARD_CLICK        = ENUM; ENUM++;
+var LOG_NAVIGATE_HOVER        = ENUM; ENUM++;
+var LOG_NOTEBOOK_HOVER        = ENUM; ENUM++;
+var LOG_MAP_HOVER             = ENUM; ENUM++;
+var LOG_NOTIFICATION_HOVER    = ENUM; ENUM++;
+var LOG_OBJECT_HOVER          = ENUM; ENUM++;
+var LOG_OBSERVATION_HOVER     = ENUM; ENUM++;
+var LOG_PERSON_HOVER          = ENUM; ENUM++;
+var LOG_CUTSCENE_HOVER        = ENUM; ENUM++;
+var LOG_WILDCARD_HOVER        = ENUM; ENUM++;
+var LOG_COUNT                 = ENUM; ENUM++;
 
 var Logger = function(init){
   self = this;
@@ -42,7 +66,7 @@ var Logger = function(init){
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",1);
+  self.mySlog = new slog("JOWILDER",1.1);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }
@@ -165,16 +189,43 @@ var Logger = function(init){
     return (self.current_hover_info.start_time && !self.current_hover_info.o_found);
   }
 
+  self.flatten_log = function(log){
+    type_data = log.type_data;
+    subtype_data = log.subtype_data;
+    delete log.type_data;
+    delete log.subtype_data;
+    for(var key in type_data) {
+        log[key] = type_data[key];
+    }
+    for(var key in subtype_data) {
+      log[key] = subtype_data[key];
+  }
+    return log;
+  }
+
+  self.log_enum = function(type, subtype){
+    if(type < LOG_TYPE_CLICK) return type;
+    type -= LOG_TYPE_CLICK;
+    return LOG_ENDGAME + 9*type + subtype;
+  }
+  self.get_save_number = function(){
+    save_codes.indexof(my_notebookview.current_code)
+  }
+
 
   self.send_log = function(log_data){
     //console.log(log_data);
-    var formatted_log_data = {
-      level: 1, //TODO: make this not 1
+    log_data.event_custom = self.log_enum(log_data.type, log_data.subtype);
+    log_data = self.flatten_log(log_data);
+    log_data.level = my_notebookview ? save_codes.indexOf(my_notebookview.current_code) : null;
+    console.log(log_data)
+    formatted_log_data = {
+      level: log_data.level,
       event: "CUSTOM",
-      event_custom: 0, //TODO: custom event type indices
+      event_custom: log_data.event_custom,
       event_data_complex: JSON.stringify(log_data)
-    }
-    window.mySlog.log(formatted_log_data);
+    };
+    //window.mySlog.log(formatted_log_data);
   }
 }
 

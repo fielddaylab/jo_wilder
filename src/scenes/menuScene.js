@@ -166,7 +166,7 @@ var MenuScene = function(game, stage)
       if(next_t >= 1) { 
         //ADDLOG - wrote data func
         var gamestart_data = {
-        save_code: save_code,
+        save_code: save_table_code,
         fullscreen: fullscreen_toggle.on,
         music: audio_toggle.on,
         hq: hq_toggle.on ? 1 : 0
