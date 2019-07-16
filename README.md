@@ -1,26 +1,26 @@
 # jo_wilder
 
-### Logging
+### Logging version 2
 Each event is comprised of:
 1. Event Type (int):
+   - checkpoint (0)
+   - startgame (1)
+   - endgame (2)
    - click (0)
    - hover (1)
-   - checkpoint (2)
-   - startgame (3)
-   - endgame (4)
-2. Type Data (JSON Object)
+2. Fields for Type Data
 3. Event Subtype (int):
-   - navigate (0)
-   - notebook (1)
-   - map (2)
-   - notification (3)
-   - object (4)
-   - observation (5)
-   - person (6)
-   - cutscene (7)
-   - wildcard (8) (assessments)
-   - basic (9)
-4. Subtype Data (JSON Object)
+   - basic (1)
+   - navigate (1)
+   - notebook (2)
+   - map (3)
+   - notification (4)
+   - object (5)
+   - observation (6)
+   - person (7)
+   - cutscene (8)
+   - wildcard (9) (assessments)
+4. Fields for Subtype Data
 5. Event Name (int) (contained within subtype data):
    - basic  (0) (default name)
    - open (1) (only used for the notebook/map)
@@ -39,4 +39,28 @@ Data is as follows (none if not listed):
 - wildcard: correct (string, the correct answer to the problem), answer (string, the selected answer)
 
 Note: Each element in the game has a unique FQID.
+
+When sent to the server, each log also contains a level (index of current save code, range 0-23).
+Each log also gets its specific enumerator:
+ - LOG_CHECKPOINT            = 0
+ - LOG_STARTGAME             = 1
+ - LOG_ENDGAME               = 2
+ - LOG_NAVIGATE_CLICK        = 3
+ - LOG_NOTEBOOK_CLICK        = 4
+ - LOG_MAP_CLICK             = 5
+ - LOG_NOTIFICATION_CLICK    = 6
+ - LOG_OBJECT_CLICK          = 7
+ - LOG_OBSERVATION_CLICK     = 8
+ - LOG_PERSON_CLICK          = 9
+ - LOG_CUTSCENE_CLICK        = 10
+ - LOG_WILDCARD_CLICK        = 11
+ - LOG_NAVIGATE_HOVER        = 12
+ - LOG_NOTEBOOK_HOVER        = 13
+ - LOG_MAP_HOVER             = 14
+ - LOG_NOTIFICATION_HOVER    = 15
+ - LOG_OBJECT_HOVER          = 16
+ - LOG_OBSERVATION_HOVER     = 17
+ - LOG_PERSON_HOVER          = 18
+ - LOG_CUTSCENE_HOVER        = 19
+ - LOG_WILDCARD_HOVER        = 20
 
