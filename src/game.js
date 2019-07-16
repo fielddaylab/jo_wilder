@@ -1,4 +1,4 @@
-window.mySlog = new slog("JOWILDER",1);
+
 var save_code = 0;
 var save_table_code = 0;
 var save_codes = [];

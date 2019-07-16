@@ -66,7 +66,7 @@ var Logger = function(init){
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",1.1);
+  self.mySlog = new slog("JOWILDER",2);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }
@@ -225,7 +225,7 @@ var Logger = function(init){
       event_custom: log_data.event_custom,
       event_data_complex: JSON.stringify(log_data)
     };
-    //window.mySlog.log(formatted_log_data);
+    self.mySlog.log(formatted_log_data);
   }
 }
 
