@@ -1,7 +1,7 @@
 var slog = function(app_id,app_version)
 {
   var self = this;
-
+  self.flushing = false;
   self.accrued_log = [];
   self.flushed_to = 0;
   self.flush_index = 0;
@@ -28,6 +28,8 @@ var slog = function(app_id,app_version)
   }
   self.flush = function()
   {
+    if(self.flushing) return;
+    self.flushing = true;
     //HACK
     //self.accrued_log = []; return;
 
@@ -41,9 +43,10 @@ var slog = function(app_id,app_version)
         var cutoff = self.accrued_log.length-1;
         for(var i = self.accrued_log.length-1; i >= 0 && self.accrued_log[i].session_n > xhr.flushed; i--) cutoff = i-1;
         if(cutoff >= 0) self.accrued_log.splice(0,cutoff+1);
+        self.flushing = false;
       }
     }
-
+    //console.log(JSON.stringify(self.accrued_log));
     var post = "data="+encodeURIComponent(btoa(JSON.stringify(self.accrued_log)));
 
     xhr.open("POST", self.req_url+"&req_id="+encodeURIComponent(UUIDint()), true);
