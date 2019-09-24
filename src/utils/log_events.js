@@ -66,7 +66,7 @@ var Logger = function(init){
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",2);
+  self.mySlog = new slog("JOWILDER",3);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }

@@ -1,6 +1,19 @@
-# jo_wilder
+# JOWILDER
 
-### Logging version 2
+## Logging Events
+Each log is sent with a number of fields required by [simplelog](https://github.com/fielddaylab/simplelog). Simple log allows for a custom field called event_data_complex along with its category enumerator:
+  event_custom: category enumerator
+  event_data_complex: JSON.stringify(log_data)
+Each log_data is a JSON object for that specific category as defined below.
+Note: Note: event_custom will always map to a string of the event name. For example, if an event called FOO had a field of "event_custom", its value would be a string "FOO". Not all events have this field.
+
+#### Change Log
+Versions:
+1. Original
+2. Restructured to flatten logging objects (which originally contained many sub-objects)
+3. Simple log now sends player_id (if present) from the URL to log.php (9/24/2019)
+
+### Logging 
 Each event is comprised of:
 1. Event Type (int):
    - checkpoint (0)
