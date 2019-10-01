@@ -21,8 +21,8 @@ var slog = function(app_id,app_version)
     self.persistent_session_id = self.session_id;
     setCookie("persistent_session_id",self.persistent_session_id,100);
   }
-
-  self.req_url = "https://fielddaylab.wisc.edu/logger/log.php?app_id="+encodeURIComponent(self.app_id)+"&app_version="+encodeURIComponent(self.app_version)+"&session_id="+encodeURIComponent(self.session_id)+"&persistent_session_id="+encodeURIComponent(self.persistent_session_id)+"&player_id="+encodeURIComponent(self.player_id);
+  player_id_str = self.player_id !== null ? "&player_id="+encodeURIComponent(self.player_id) : "";
+  self.req_url = "https://fielddaylab.wisc.edu/logger/log.php?app_id="+encodeURIComponent(self.app_id)+"&app_version="+encodeURIComponent(self.app_version)+"&session_id="+encodeURIComponent(self.session_id)+"&persistent_session_id="+encodeURIComponent(self.persistent_session_id)+player_id_str;
 
   self.log = function(data)
   {
