@@ -1,4 +1,377 @@
 # JOWILDER
+## Logging Events
+Each log is sent with a number of fields required by [simplelog](https://github.com/fielddaylab/simplelog). Simple log allows for a custom field called event_data_complex along with its category enumerator:
+  event_custom: category enumerator
+  event_data_complex: JSON.stringify(log_data)
+Each log_data is a JSON object for that specific category as defined below.
+Note: Note: event_custom will always map to a string of the event name. For example, if an event called FOO had a field of "event_custom", its value would be a string "FOO". Not all events have this field.
+
+#### Change Log
+Versions:
+1. Original
+2. Restructured to flatten logging objects (which originally contained many sub-objects)
+3. Simple log now sends player_id (if present) from the URL to log.php (9/24/2019)
+
+### Event Categories
+- [CHECKPOINT](#CHECKPOINT)
+- [STARTGAME](#STARTGAME)
+- [ENDGAME](#ENDGAME)
+- [NAVIGATE_CLICK](#NAVIGATE_CLICK)
+- [NOTEBOOK_CLICK](#NOTEBOOK_CLICK)
+- [MAP_CLICK](#MAP_CLICK)
+- [NOTIFICATION_CLICK](#NOTIFICATION_CLICK)
+- [OBJECT_CLICK](#OBJECT_CLICK)
+- [OBSERVATION_CLICK](#OBSERVATION_CLICK)
+- [PERSON_CLICK](#PERSON_CLICK)
+- [CUTSCENE_CLICK](#CUTSCENE_CLICK)
+- [WILDCARD_CLICK](#WILDCARD_CLICK)
+- [NAVIGATE_HOVER](#NAVIGATE_HOVER)
+- [NOTEBOOK_HOVER](#NOTEBOOK_HOVER)
+- [MAP_HOVER](#MAP_HOVER)
+- [NOTIFICATION_HOVER](#NOTIFICATION_HOVER)
+- [OBJECT_HOVER](#OBJECT_HOVER)
+- [OBSERVATION_HOVER](#OBSERVATION_HOVER)
+- [PERSON_HOVER](#PERSON_HOVER)
+- [CUTSCENE_HOVER](#CUTSCENE_HOVER)
+- [WILDCARD_HOVER](#WILDCARD_HOVER)
+
+<a name="CHECKPOINT"/>
+
+#### CHECKPOINT
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="STARTGAME"/>
+
+#### STARTGAME
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|save_code | | |
+|fullscreen | | |
+|music | | |
+|hq | | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="ENDGAME"/>
+
+#### ENDGAME
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="NAVIGATE_CLICK"/>
+
+#### NAVIGATE_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="NOTEBOOK_CLICK"/>
+
+#### NOTEBOOK_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|page | | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="MAP_CLICK"/>
+
+#### MAP_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="NOTIFICATION_CLICK"/>
+
+#### NOTIFICATION_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="OBJECT_CLICK"/>
+
+#### OBJECT_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="OBSERVATION_CLICK"/>
+
+#### OBSERVATION_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="PERSON_CLICK"/>
+
+#### PERSON_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="CUTSCENE_CLICK"/>
+
+#### CUTSCENE_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="WILDCARD_CLICK"/>
+
+#### WILDCARD_CLICK
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|screen_coor |x,y integer array of where the mouse is in current room | |
+|room_coor |x,y integer array of where the mouse is in the game screen | |
+|name |event name enum | |
+|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesnt exist?? | |
+|answer |selected answer (only exists for event name CHOICE) | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="NAVIGATE_HOVER"/>
+
+#### NAVIGATE_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|start_time |client side timestamp for the time the hover started | |
+|end_time |client side timestamp for the time the hover ended | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+|answer |selected answer (only exists for event name CHOICE)- sometimes doesnt exist?? | |
+|correct |correct answer to the problem (only exists for event name CHOICE)- sometimes doesnt exist?? | |
+
+
+
+
+<a name="NOTEBOOK_HOVER"/>
+
+#### NOTEBOOK_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+
+
+
+
+<a name="MAP_HOVER"/>
+
+#### MAP_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|start_time |client side timestamp for the time the hover started | |
+|end_time |client side timestamp for the time the hover ended | |
+|name |event name enum | |
+|level |enum for current checkpoint | |
+
+
+
+
+<a name="NOTIFICATION_HOVER"/>
+
+#### NOTIFICATION_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+
+
+
+
+<a name="OBJECT_HOVER"/>
+
+#### OBJECT_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|start_time |client side timestamp for the time the hover started | |
+|end_time |client side timestamp for the time the hover ended | |
+|level |enum for current checkpoint | |
+|name |event name enum- sometimes doesnt exist?? | |
+
+
+
+
+<a name="OBSERVATION_HOVER"/>
+
+#### OBSERVATION_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+
+
+
+
+<a name="PERSON_HOVER"/>
+
+#### PERSON_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+
+
+
+
+<a name="CUTSCENE_HOVER"/>
+
+#### CUTSCENE_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+
+
+
+
+<a name="WILDCARD_HOVER"/>
+
+#### WILDCARD_HOVER
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid |fully qualified id of the room | |
+|type |type enum | |
+|subtype |subtype enum | |
+|fqid |fqid of the interaction, with the room_fqid subtracted | |
+|event_custom |event enum | |
+|start_time |client side timestamp for the time the hover started | |
+|end_time |client side timestamp for the time the hover ended | |
+|name |event name enum- sometimes doesnt exist?? | |
+|correct |correct answer to the problem (only exists for event name CHOICE)- sometimes doesnt exist?? | |
+|answer |selected answer (only exists for event name CHOICE)- sometimes doesnt exist?? | |
+|level |enum for current checkpoint | |
+
+
+
+-- OLD README --
 
 ## Logging Events
 Each log is sent with a number of fields required by [simplelog](https://github.com/fielddaylab/simplelog). Simple log allows for a custom field called event_data_complex along with its category enumerator:
