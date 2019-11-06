@@ -13,31 +13,37 @@ Versions:
 3. Simple log now sends player_id (if present) from the URL to log.php (9/24/2019)
 
 ### Event Categories
-- [CHECKPOINT](#CHECKPOINT)
-- [STARTGAME](#STARTGAME)
-- [ENDGAME](#ENDGAME)
-- [NAVIGATE_CLICK](#NAVIGATE_CLICK)
-- [NOTEBOOK_CLICK](#NOTEBOOK_CLICK)
-- [MAP_CLICK](#MAP_CLICK)
-- [NOTIFICATION_CLICK](#NOTIFICATION_CLICK)
-- [OBJECT_CLICK](#OBJECT_CLICK)
-- [OBSERVATION_CLICK](#OBSERVATION_CLICK)
-- [PERSON_CLICK](#PERSON_CLICK)
-- [CUTSCENE_CLICK](#CUTSCENE_CLICK)
-- [WILDCARD_CLICK](#WILDCARD_CLICK)
-- [NAVIGATE_HOVER](#NAVIGATE_HOVER)
-- [NOTEBOOK_HOVER](#NOTEBOOK_HOVER)
-- [MAP_HOVER](#MAP_HOVER)
-- [NOTIFICATION_HOVER](#NOTIFICATION_HOVER)
-- [OBJECT_HOVER](#OBJECT_HOVER)
-- [OBSERVATION_HOVER](#OBSERVATION_HOVER)
-- [PERSON_HOVER](#PERSON_HOVER)
-- [CUTSCENE_HOVER](#CUTSCENE_HOVER)
-- [WILDCARD_HOVER](#WILDCARD_HOVER)
+0. [checkpoint](#checkpoint)
+1. [startgame](#startgame)
+1. [endgame](#endgame)
+1. [navigate_click](#navigate_click)
+1. [notebook_click](#notebook_click)
+1. [map_click](#map_click)
+1. [notification_click](#notification_click)
+1. [object_click](#object_click)
+1. [observation_click](#observation_click)
+1. [person_click](#person_click)
+1. [cutscene_click](#cutscene_click)
+1. [wildcard_click](#wildcard_click)
+1. [navigate_hover](#navigate_hover)
+1. [notebook_hover](#notebook_hover)
+1. [map_hover](#map_hover)
+1. [notification_hover](#notification_hover)
+1. [object_hover](#object_hover)
+1. [observation_hover](#observation_hover)
+1. [person_hover](#person_hover)
+1. [cutscene_hover](#cutscene_hover)
+1. [wildcard_hover](#wildcard_hover)
 
-<a name="CHECKPOINT"/>
+### Enumerators and Constants
+1. [Event Categories](#EventCategories)
+1. [Log Types](#Types)
+1. [Log Subtypes](#Subtypes)
+1. [Log Names](#Names)
 
-#### CHECKPOINT
+<a name="checkpoint"/>
+
+#### checkpoint (index=0)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -51,9 +57,9 @@ Versions:
 
 
 
-<a name="STARTGAME"/>
+<a name="startgame"/>
 
-#### STARTGAME
+#### startgame (index=1)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -71,9 +77,9 @@ Versions:
 
 
 
-<a name="ENDGAME"/>
+<a name="endgame"/>
 
-#### ENDGAME
+#### endgame (index=2)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -87,9 +93,9 @@ Versions:
 
 
 
-<a name="NAVIGATE_CLICK"/>
+<a name="navigate_click"/>
 
-#### NAVIGATE_CLICK
+#### navigate_click (index=3)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -104,9 +110,9 @@ Versions:
 
 
 
-<a name="NOTEBOOK_CLICK"/>
+<a name="notebook_click"/>
 
-#### NOTEBOOK_CLICK
+#### notebook_click (index=4)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -123,9 +129,9 @@ Versions:
 
 
 
-<a name="MAP_CLICK"/>
+<a name="map_click"/>
 
-#### MAP_CLICK
+#### map_click (index=5)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -141,9 +147,9 @@ Versions:
 
 
 
-<a name="NOTIFICATION_CLICK"/>
+<a name="notification_click"/>
 
-#### NOTIFICATION_CLICK
+#### notification_click (index=6)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -159,9 +165,9 @@ Versions:
 
 
 
-<a name="OBJECT_CLICK"/>
+<a name="object_click"/>
 
-#### OBJECT_CLICK
+#### object_click (index=7)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -177,9 +183,9 @@ Versions:
 
 
 
-<a name="OBSERVATION_CLICK"/>
+<a name="observation_click"/>
 
-#### OBSERVATION_CLICK
+#### observation_click (index=8)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -195,9 +201,9 @@ Versions:
 
 
 
-<a name="PERSON_CLICK"/>
+<a name="person_click"/>
 
-#### PERSON_CLICK
+#### person_click (index=9)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -213,9 +219,9 @@ Versions:
 
 
 
-<a name="CUTSCENE_CLICK"/>
+<a name="cutscene_click"/>
 
-#### CUTSCENE_CLICK
+#### cutscene_click (index=10)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -231,9 +237,9 @@ Versions:
 
 
 
-<a name="WILDCARD_CLICK"/>
+<a name="wildcard_click"/>
 
-#### WILDCARD_CLICK
+#### wildcard_click (index=11)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -244,16 +250,16 @@ Versions:
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
 |name |event name enum | |
-|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesnt exist?? | |
+|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | |
 |answer |selected answer (only exists for event name CHOICE) | |
 |level |enum for current checkpoint | |
 
 
 
 
-<a name="NAVIGATE_HOVER"/>
+<a name="navigate_hover"/>
 
-#### NAVIGATE_HOVER
+#### navigate_hover (index=12)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -265,24 +271,24 @@ Versions:
 |end_time |client side timestamp for the time the hover ended | |
 |name |event name enum | |
 |level |enum for current checkpoint | |
-|answer |selected answer (only exists for event name CHOICE)- sometimes doesnt exist?? | |
-|correct |correct answer to the problem (only exists for event name CHOICE)- sometimes doesnt exist?? | |
+|answer |selected answer (only exists for event name CHOICE) - sometimes doesn't exist?? | |
+|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | |
 
 
 
 
-<a name="NOTEBOOK_HOVER"/>
+<a name="notebook_hover"/>
 
-#### NOTEBOOK_HOVER
+#### notebook_hover (index=13)
 | event Name | Description | Note |
 | --- | --- | --- |
 
 
 
 
-<a name="MAP_HOVER"/>
+<a name="map_hover"/>
 
-#### MAP_HOVER
+#### map_hover (index=14)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -298,18 +304,18 @@ Versions:
 
 
 
-<a name="NOTIFICATION_HOVER"/>
+<a name="notification_hover"/>
 
-#### NOTIFICATION_HOVER
+#### notification_hover (index=15)
 | event Name | Description | Note |
 | --- | --- | --- |
 
 
 
 
-<a name="OBJECT_HOVER"/>
+<a name="object_hover"/>
 
-#### OBJECT_HOVER
+#### object_hover (index=16)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -320,41 +326,41 @@ Versions:
 |start_time |client side timestamp for the time the hover started | |
 |end_time |client side timestamp for the time the hover ended | |
 |level |enum for current checkpoint | |
-|name |event name enum- sometimes doesnt exist?? | |
+|name |event name enum - sometimes doesn't exist?? | |
 
 
 
 
-<a name="OBSERVATION_HOVER"/>
+<a name="observation_hover"/>
 
-#### OBSERVATION_HOVER
+#### observation_hover (index=17)
 | event Name | Description | Note |
 | --- | --- | --- |
 
 
 
 
-<a name="PERSON_HOVER"/>
+<a name="person_hover"/>
 
-#### PERSON_HOVER
+#### person_hover (index=18)
 | event Name | Description | Note |
 | --- | --- | --- |
 
 
 
 
-<a name="CUTSCENE_HOVER"/>
+<a name="cutscene_hover"/>
 
-#### CUTSCENE_HOVER
+#### cutscene_hover (index=19)
 | event Name | Description | Note |
 | --- | --- | --- |
 
 
 
 
-<a name="WILDCARD_HOVER"/>
+<a name="wildcard_hover"/>
 
-#### WILDCARD_HOVER
+#### wildcard_hover (index=20)
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -364,10 +370,79 @@ Versions:
 |event_custom |event enum | |
 |start_time |client side timestamp for the time the hover started | |
 |end_time |client side timestamp for the time the hover ended | |
-|name |event name enum- sometimes doesnt exist?? | |
-|correct |correct answer to the problem (only exists for event name CHOICE)- sometimes doesnt exist?? | |
-|answer |selected answer (only exists for event name CHOICE)- sometimes doesnt exist?? | |
+|name |event name enum - sometimes doesn't exist?? | |
+|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | |
+|answer |selected answer (only exists for event name CHOICE) - sometimes doesn't exist?? | |
 |level |enum for current checkpoint | |
+
+## Enumerators and Constants
+
+<a name="EventCategories"/>
+
+#### Event Categories 
+| Index | Name | Description |
+| --- | --- | --- | 
+|0|checkpoint| |
+|1|startgame| |
+|2|endgame| |
+|3|navigate_click| |
+|4|notebook_click| |
+|5|map_click| |
+|6|notification_click| |
+|7|object_click| |
+|8|observation_click| |
+|9|person_click| |
+|10|cutscene_click| |
+|11|wildcard_click| |
+|12|navigate_hover| |
+|13|notebook_hover| |
+|14|map_hover| |
+|15|notification_hover| |
+|16|object_hover| |
+|17|observation_hover| |
+|18|person_hover| |
+|19|cutscene_hover| |
+|20|wildcard_hover| |
+
+<a name="Types"/>
+
+#### Log Types 
+| Index | Name | Description |
+| --- | --- | --- | 
+|0| checkpoint | |
+|1| startgame |  |
+|2| endgame |  |
+|3| click |  |
+|4| hover | |
+
+
+<a name="Subtypes"/>
+
+#### Log Subtypes 
+| Index | Name | Description |
+| --- | --- | --- | 
+|0| basic| |
+|1| navigate| |
+|2| notebook| |
+|3| map| |
+|4| notification| |
+|5| object| |
+|6| observation| |
+|7| person  | |
+|8| cutscene| |
+|9| wildcard| |
+
+<a name="Names"/>
+
+#### Log Names 
+| Index | Name | Description |
+| --- | --- | --- | 
+| 0 | basic  | |
+| 1 | open  | |
+| 2 | close | |
+| 3 | choice| |
+| 4 | next| |
+| 5 | prev| |
 
 
 
