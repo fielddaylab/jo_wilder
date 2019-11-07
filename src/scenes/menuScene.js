@@ -52,6 +52,8 @@ var MenuScene = function(game, stage)
 
   var next = 0;
   var next_t = 0;
+  var hackquiz = 0;
+  var hackquiz_t = 0;
 
   var poster_img;
   var logo_img;
@@ -88,9 +90,9 @@ var MenuScene = function(game, stage)
     var x = 20;
     var y = 220;
     continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
-    new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); next = 1; }); y += h+10;
+    new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); hackquiz = 1; reset_quiz(); }); y += h+10;
     y += h+50;
-    code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){ 
+    code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){
       if(txt == "") {
         code_txt.bg_color = "rgba(255,255,255,0.1)";
         code_valid = 0; return;
@@ -105,12 +107,14 @@ var MenuScene = function(game, stage)
       }
     });
     x += w+10;
-    code_button     = new ButtonBox(x,y,70,h,function(evt){ 
-      if(save_table[code_txt.txt.toLowerCase()]) { 
-        save_table_code = code_txt.txt.toLowerCase(); 
-        ga('send', 'event', 'savecode', 'used', save_table_code); 
-        save_code = save_table[save_table_code].code; next = 1; 
-      } 
+    code_button = new ButtonBox(x,y,70,h,function(evt){
+      if(save_table[code_txt.txt.toLowerCase()])
+      {
+        save_table_code = code_txt.txt.toLowerCase();
+        ga('send', 'event', 'savecode', 'used', save_table_code);
+        save_code = save_table[save_table_code].code;
+        next = 1;
+      }
     });
 
     continue_button.hover = function(evt) { continue_button.hovering = 1; }
@@ -148,6 +152,8 @@ var MenuScene = function(game, stage)
 
     next = 0;
     next_t = 0;
+    hackquiz = 0;
+    hackquiz_t = 0;
     continuable = save_code;
     code_valid = 0;
 
@@ -156,14 +162,41 @@ var MenuScene = function(game, stage)
     realtime_click_registered_to = canv.canvas;
   };
 
+  var quizcontinue = function()
+  {
+    next = 1;
+  }
   self.tick = function()
   {
     if(AUDIO && audio && game_first_audio_played && audio.paused) playHandlePromise(audio,1);
 
+    if(hackquiz)
+    {
+      hackquiz_t += 0.01;
+      if(hackquiz_t >= 1) //keep in sync with draw!
+      {
+        var qh = canv.height/(quiz.questions.length+1);
+        var y = qh-qh/2;
+        for(var i = 0; i < quiz.questions.length; i++)
+        {
+          var q = quiz.questions[i];
+          var aw = canv.width/(q.a.length+1);
+          var x = aw;
+          for(var j = 0; j < q.a.length; j++)
+          {
+            clicker.consumeif(x-aw/2,y-text_h/2,aw,text_h*2,q.aclick[j]);
+            x += aw;
+          }
+          y += qh;
+        }
+        clicker.consumeif(10,canv.height-10-text_h,text_h*10,text_h,quizcontinue);
+      }
+    }
     if(next)
     {
       next_t += 0.01;
-      if(next_t >= 1) {
+      if(next_t >= 1)
+      {
         //ADDLOG - wrote data func
         var gamestart_data = {
         save_code: save_table_code,
@@ -178,9 +211,9 @@ var MenuScene = function(game, stage)
         log_gamestart_subtype_data = my_logger.get_startgame_subtype_data();
         log_data = my_logger.get_log_data(LOG_TYPE_STARTGAME,log_gamestart_type_data,LOG_SUBTYPE_BASIC,log_gamestart_subtype_data);
         my_logger.send_log(log_data);
-        game.nextScene(); 
-        return; 
-        /*avoid flush*/ 
+        game.nextScene();
+        return;
+        /*avoid flush*/
       }
     }
     else
@@ -213,6 +246,7 @@ var MenuScene = function(game, stage)
     ctx.drawImage(logo_img,30,30,w,h);
 
     ctx.font = floor(text_h*1.3)+"px Boogaloo";
+    ctx.textAlign = "left";
     /*
     if(continuable) continue_button.draw(canv);
     new_button.draw(canv);
@@ -247,6 +281,47 @@ var MenuScene = function(game, stage)
     ctx.fillText("HQ GRAPHICS",hq_toggle.x+hq_toggle.w+5,hq_toggle.y+hq_toggle.h-5);
     ctx.fillText("FULLSCREEN",fullscreen_toggle.x+fullscreen_toggle.w+5,fullscreen_toggle.y+fullscreen_toggle.h-5);
 
+    if(hackquiz)
+    {
+      ctx.fillStyle = black;
+      ctx.globalAlpha = min(1,hackquiz_t);
+      ctx.fillRect(0,0,canv.width,canv.height);
+      ctx.globalAlpha = 1;
+      if(hackquiz_t >= 1)
+      {
+        ctx.textAlign = "center";
+        var qh = canv.height/(quiz.questions.length+1);
+        var y = qh-qh/2;
+        for(var i = 0; i < quiz.questions.length; i++)
+        {
+          var q = quiz.questions[i];
+          var aw = canv.width/(q.a.length+1);
+          var x = aw;
+          ctx.fillStyle = white;
+          ctx.fillText(q.q,canv.width/2,y-text_h/2);
+          for(var j = 0; j < q.a.length; j++)
+          {
+            if(q.response == j) ctx.fillStyle = gray;
+            else                ctx.fillStyle = white;
+            ctx.fillText(q.a[j],x,y+text_h);
+            //ctx.strokeStyle = green; ctx.strokeRect(x-aw/2,y-text_h/2,aw,text_h*2); //debug hitboxes
+            x += aw;
+          }
+          y += qh;
+        }
+        ctx.fillStyle = white;
+        ctx.textAlign = "left";
+        ctx.fillText("Continue",10,canv.height-10);
+        //ctx.strokeStyle = green; ctx.strokeRect(10,canv.height-10-text_h,text_h*10,text_h); //debug continue hitbox
+        ctx.fillStyle = black;
+        if(hackquiz_t < 2)
+        {
+          ctx.globalAlpha = 1-(hackquiz_t-1);
+          ctx.fillRect(0,0,canv.width,canv.height);
+          ctx.globalAlpha = 1;
+        }
+      }
+    }
     if(next)
     {
       ctx.fillStyle = black;

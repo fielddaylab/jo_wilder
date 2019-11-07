@@ -40,6 +40,21 @@ var Clicker = function(init)
     }
     return hit;
   }
+  self.consumeif = function(x,y,w,h,click)
+  {
+    var hit = false;
+    var evt;
+    for(var i = 0; i < evts.length; i++)
+    {
+      evt = evts[i];
+      if(doEvtWithin(evt, x,y,w,h))
+      {
+        click(evt);
+        hit = true;
+      }
+    }
+    return hit;
+  }
   self.flush = function()
   {
     evts = [];
