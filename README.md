@@ -11,6 +11,7 @@ Versions:
 1. Original
 2. Restructured to flatten logging objects (which originally contained many sub-objects)
 3. Simple log now sends player_id (if present) from the URL to log.php (9/24/2019)
+4. Change name, type, and subtype to representitive strings instead of numbers (11/12/2019)
 
 ### Event Categories
 0. [checkpoint](#checkpoint)
@@ -271,8 +272,7 @@ Versions:
 |end_time |client side timestamp for the time the hover ended | |
 |name |event name enum | |
 |level |enum for current checkpoint | |
-|answer |selected answer (only exists for event name CHOICE) - sometimes doesn't exist?? | |
-|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | |
+
 
 
 

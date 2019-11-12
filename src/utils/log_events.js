@@ -57,6 +57,33 @@ var LOG_COUNT                 = ENUM; ENUM++;
 
 var Logger = function(init){
   self = this;
+  self.type_to_str = {
+    0: "checkpoint",
+    1: "startgame",
+    2: "endgame",
+    3: "click",
+    4: "hover"
+}
+self.subtype_to_str = {
+    0: "basic",
+    1: "navigate",
+    2: "notebook",
+    3: "map",
+    4: "notification",
+    5: "object",
+    6: "observation",
+    7: "person",
+    8: "cutscene",
+    9: "wildcard"
+}
+self.names_to_str = {
+    0: "basic",
+    1: "open",
+    2: "close",
+    3: "choice",
+    4: "next",
+    5: "prev"
+}
   self.current_click_info = null;
   self.current_hover_info = {
     start_time: null,
@@ -66,7 +93,7 @@ var Logger = function(init){
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",3);
+  self.mySlog = new slog("JOWILDER",4);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }
@@ -199,7 +226,10 @@ var Logger = function(init){
     }
     for(var key in subtype_data) {
       log[key] = subtype_data[key];
-  }
+    }
+    log['type'] = self.type_to_str[log['type']] || 'undefined';
+    log['subtype'] = self.subtype_to_str[log['subtype']] || 'undefined';
+    log['name'] = self.names_to_str[log['name']] || 'undefined';
     return log;
   }
 
