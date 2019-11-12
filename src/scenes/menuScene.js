@@ -90,7 +90,7 @@ var MenuScene = function(game, stage)
     var x = 20;
     var y = 220;
     continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
-    new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); hackquiz = 1; reset_quiz(); }); y += h+10;
+    new_button      = new ButtonBox(x,y,w,h,function(evt){ save_code = 0; setCookie("save", 0, 0); hackquiz = 0; reset_quiz(); next = 1; }); y += h+10;
     y += h+50;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){
       if(txt == "") {
