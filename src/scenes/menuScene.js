@@ -204,6 +204,14 @@ var MenuScene = function(game, stage)
         music: audio_toggle.on,
         hq: hq_toggle.on ? 1 : 0
         };
+
+        // Log the quiz data
+        log_quiz_type_data = my_logger.get_quiz_type_data(quiz.questions);
+        log_quiz_subtype_data = my_logger.get_quiz_subtype_data();
+        log_data = my_logger.get_log_data(LOG_TYPE_QUIZ,log_quiz_type_data,LOG_SUBTYPE_BASIC,log_quiz_subtype_data);
+        my_logger.send_log(log_data);
+
+        // Log the gamestart data
         log_gamestart_type_data = my_logger.get_startgame_type_data(
           gamestart_data.save_code, gamestart_data.fullscreen,
           gamestart_data.music, gamestart_data.hq

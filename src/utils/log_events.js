@@ -7,6 +7,7 @@ var LOG_TYPE_STARTGAME          = ENUM; ENUM++;
 var LOG_TYPE_ENDGAME            = ENUM; ENUM++;
 var LOG_TYPE_CLICK              = ENUM; ENUM++;
 var LOG_TYPE_HOVER              = ENUM; ENUM++;
+var LOG_TYPE_QUIZ               = ENUM; ENUM++;
 var LOG_TYPE_COUNT              = ENUM; ENUM++;
 
 ENUM = 0;
@@ -53,6 +54,7 @@ var LOG_OBSERVATION_HOVER     = ENUM; ENUM++;
 var LOG_PERSON_HOVER          = ENUM; ENUM++;
 var LOG_CUTSCENE_HOVER        = ENUM; ENUM++;
 var LOG_WILDCARD_HOVER        = ENUM; ENUM++;
+var LOG_QUIZ                  = ENUM; ENUM++;
 var LOG_COUNT                 = ENUM; ENUM++;
 
 var Logger = function(init){
@@ -62,7 +64,8 @@ var Logger = function(init){
     1: "startgame",
     2: "endgame",
     3: "click",
-    4: "hover"
+    4: "hover",
+    5: "quiz"
 }
 self.subtype_to_str = {
     0: "basic",
@@ -154,6 +157,16 @@ self.names_to_str = {
     return {};
   }
 
+  self.get_quiz_type_data = function(quiz_questions){
+    return {questions: quiz_questions.map(
+      (ques) => {return {
+        question: ques.q,
+        response: ques.a[ques.response],
+        response_index: ques.response
+      }}
+    )};
+  }
+
   self.get_navigate_subtype_data = function(){
     return {name: LOG_NAME_BASIC};
   }
@@ -186,6 +199,9 @@ self.names_to_str = {
     }
   }
   self.get_checkpoint_subtype_data = function(){
+    return {name: LOG_NAME_BASIC};
+  }
+  self.get_quiz_subtype_data = function(){
     return {name: LOG_NAME_BASIC};
   }
   self.get_startgame_subtype_data = function(){
@@ -234,6 +250,7 @@ self.names_to_str = {
   }
 
   self.log_enum = function(type, subtype){
+    if(type == LOG_TYPE_QUIZ) return LOG_QUIZ;
     if(type < LOG_TYPE_CLICK) return type;
     type -= LOG_TYPE_CLICK;
     return LOG_ENDGAME + 9*type + subtype;
