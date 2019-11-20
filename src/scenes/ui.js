@@ -2693,7 +2693,7 @@ var notificationview = function()
         LOG_TYPE_CLICK,
         my_logger.get_click_type_data(evt),
         LOG_SUBTYPE_NOTIFICATION,
-        my_logger.get_notification_subtype_data(),
+        my_logger.get_notification_subtype_data(self.c, self.c_note_i),
         0));
     }
   }
@@ -3614,7 +3614,8 @@ var personview = function()
         //log hover no options
         if(!my_logger.current_hover_info.start_time){
           my_logger.current_hover_info.start_time = Date.now(); //acquisition - person hover
-          my_logger.current_hover_info.subtype_data = my_logger.get_person_subtype_data();        }
+          my_logger.current_hover_info.subtype_data = my_logger.get_person_subtype_data(self.cur_speak, self.cur_speak_command_i);
+        }
     }
     else
     {
@@ -3658,7 +3659,7 @@ var personview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_PERSON,
-      my_logger.get_person_subtype_data(),
+      my_logger.get_person_subtype_data(self.cur_speak, self.cur_speak_command_i),
       self.person.fqid
     );
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
@@ -4377,7 +4378,7 @@ var cutsceneview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_CUTSCENE,
-      my_logger.get_cutscene_subtype_data(),
+      my_logger.get_cutscene_subtype_data(self.cutscene, self.command_i-1),
       self.cutscene.fqid
     );
     self.waiting = 0;

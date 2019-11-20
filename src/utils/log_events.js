@@ -176,8 +176,12 @@ self.names_to_str = {
   self.get_map_subtype_data = function(event_name){
     return {name: event_name};
   }
-  self.get_notification_subtype_data = function(){
-    return {name: LOG_NAME_BASIC};
+  self.get_notification_subtype_data = function(c, c_index){
+    return {
+      name: LOG_NAME_BASIC,
+      text_fqid: c.fqid,
+      text_index: c_index
+    };
   }
   self.get_object_subtype_data = function(event_name){
     return {name: event_name};
@@ -185,11 +189,19 @@ self.names_to_str = {
   self.get_observation_subtype_data = function(){
     return {name: LOG_NAME_BASIC};
   }
-  self.get_person_subtype_data = function(){
-    return {name: LOG_NAME_BASIC};
+  self.get_person_subtype_data = function(speak, speak_index){
+    return {
+      name: LOG_NAME_BASIC,
+      text_fqid: speak.fqid,
+      text_index: speak_index
+    };
   }
-  self.get_cutscene_subtype_data = function(){
-    return {name: LOG_NAME_BASIC};
+  self.get_cutscene_subtype_data = function(cutscene, cutscene_index){
+    return {
+      name: LOG_NAME_BASIC,
+      text_fqid: cutscene.fqid,
+      text_index: cutscene_index
+    };
   }
   self.get_wildcard_subtype_data = function(name, correct, answer){
     return {
