@@ -2693,7 +2693,7 @@ var notificationview = function()
         LOG_TYPE_CLICK,
         my_logger.get_click_type_data(evt),
         LOG_SUBTYPE_NOTIFICATION,
-        my_logger.get_notification_subtype_data(self.c, self.c_note_i),
+        my_logger.get_notification_subtype_data(self.c, self.c.notifications[self.c_note_i][0]),
         0));
     }
   }
@@ -2963,7 +2963,7 @@ var objectview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_OBJECT,
-      my_logger.get_object_subtype_data(LOG_NAME_CLOSE),
+      my_logger.get_object_subtype_data(log_name),
       self.object.fqid
     );
     my_logger.send_log(self.log_data);
@@ -3181,7 +3181,7 @@ var observationview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt),
       LOG_SUBTYPE_OBSERVATION,
-      my_logger.get_observation_subtype_data(),
+      my_logger.get_observation_subtype_data(self.observation.fqid, self.observation.raw_text),
       self.observation.fqid));
   }
 
@@ -3614,7 +3614,7 @@ var personview = function()
         //log hover no options
         if(!my_logger.current_hover_info.start_time){
           my_logger.current_hover_info.start_time = Date.now(); //acquisition - person hover
-          my_logger.current_hover_info.subtype_data = my_logger.get_person_subtype_data(self.cur_speak, self.cur_speak_command_i);
+          my_logger.current_hover_info.subtype_data = my_logger.get_person_subtype_data(self.cur_speak, self.cur_speak.commands[self.cur_speak_command_i].raw_atext);
         }
     }
     else
@@ -3659,7 +3659,7 @@ var personview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_PERSON,
-      my_logger.get_person_subtype_data(self.cur_speak, self.cur_speak_command_i),
+      my_logger.get_person_subtype_data(self.cur_speak, self.cur_speak.commands[self.cur_speak_command_i].raw_atext),
       self.person.fqid
     );
     self.ui_state_t = self.ui_state_t_max[self.ui_state];
@@ -3931,7 +3931,7 @@ var wildcardview = function()
           if(!my_logger.current_hover_info.start_time)
           {
             my_logger.current_hover_info.start_time = Date.now(); 
-            my_logger.current_hover_info.subtype_data = my_logger.get_wildcard_subtype_data(LOG_NAME_CHOICE, self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid);
+            my_logger.current_hover_info.subtype_data = my_logger.get_wildcard_question_subtype_data(LOG_NAME_CHOICE, self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid);
             my_logger.current_hover_info.fqid = self.wildcard.fqid;
           }
         }
@@ -3949,14 +3949,22 @@ var wildcardview = function()
     if(self.wildcard.click) 
     {
       self.log_name = LOG_NAME_BASIC;
-      self.log_subtype_data = my_logger.get_wildcard_subtype_data(self.log_name,null,null);
+      if (self.wildcard.cur_speak)
+      {
+        self.log_subtype_data = my_logger.get_wildcard_speech_subtype_data(self.log_name,self.wildcard.cur_speak,self.wildcard.cur_speak.commands[self.wildcard.cur_speak_command_i].raw_atext);
+      }
+      else
+      {
+            self.log_subtype_data = my_logger.get_wildcard_question_subtype_data(self.log_name, null, null)
+      }
       self.wildcard.click(evt);
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
           if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
             self.log_name = LOG_NAME_CHOICE;
-            self.log_subtype_data = my_logger.get_wildcard_subtype_data(self.log_name,   self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid)       }
+            self.log_subtype_data = my_logger.get_wildcard_question_subtype_data(self.log_name,   self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid)
+          }
         }
       self.log_data = my_logger.get_log_data(
         LOG_TYPE_CLICK,
@@ -4378,7 +4386,7 @@ var cutsceneview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_CUTSCENE,
-      my_logger.get_cutscene_subtype_data(self.cutscene, self.command_i-1),
+      my_logger.get_cutscene_subtype_data(self.cutscene, self.cutscene.commands[self.command_i].raw_text),
       self.cutscene.fqid
     );
     self.waiting = 0;

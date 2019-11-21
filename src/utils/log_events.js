@@ -176,34 +176,54 @@ self.names_to_str = {
   self.get_map_subtype_data = function(event_name){
     return {name: event_name};
   }
-  self.get_notification_subtype_data = function(c, c_index){
+  self.get_notification_subtype_data = function(c, c_text){
     return {
       name: LOG_NAME_BASIC,
       text_fqid: c.fqid,
-      text_index: c_index
+      text: c_text
     };
   }
   self.get_object_subtype_data = function(event_name){
     return {name: event_name};
   }
-  self.get_observation_subtype_data = function(){
-    return {name: LOG_NAME_BASIC};
+  self.get_observation_subtype_data = function(obs_fqid, obs_text){
+    return {
+      name: LOG_NAME_BASIC,
+      text_fqid: obs_fqid,
+      text: obs_text
+    };
   }
-  self.get_person_subtype_data = function(speak, speak_index){
+  self.get_person_subtype_data = function(speak, speak_text){
     return {
       name: LOG_NAME_BASIC,
       text_fqid: speak.fqid,
-      text_index: speak_index
+      text: speak_text
     };
   }
-  self.get_cutscene_subtype_data = function(cutscene, cutscene_index){
+  self.get_cutscene_subtype_data = function(cutscene, cutscene_text){
+    var txt;
+    if (typeof cutscene_text == "string")
+    {
+      txt = cutscene_text;
+    }
+    else
+    {
+      txt = null;
+    }
     return {
       name: LOG_NAME_BASIC,
       text_fqid: cutscene.fqid,
-      text_index: cutscene_index
+      text: txt
     };
   }
-  self.get_wildcard_subtype_data = function(name, correct, answer){
+  self.get_wildcard_speech_subtype_data = function(name, speech_fqid, speech_text){
+    return {
+      name: name,
+      text_fqid: speech_fqid,
+      text: speech_text
+    }
+  }
+  self.get_wildcard_question_subtype_data = function(name, correct, answer){
     return {
       name: name,
       correct: correct,
