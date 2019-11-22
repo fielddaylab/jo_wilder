@@ -2693,7 +2693,7 @@ var notificationview = function()
         LOG_TYPE_CLICK,
         my_logger.get_click_type_data(evt),
         LOG_SUBTYPE_NOTIFICATION,
-        my_logger.get_notification_subtype_data(self.c, self.c.notifications[self.c_note_i][0]),
+        my_logger.get_notification_subtype_data(self.c, self.c.raw_notifications[self.c_note_i]),
         0));
     }
   }
