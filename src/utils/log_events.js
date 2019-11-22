@@ -220,11 +220,11 @@ self.names_to_str = {
     let wc = my_wildcardview.wildcard;
     let cur_cmd = wc.cur_command;
     let cmd_type = wc.cur_command.command;
-    let next_txt_i = wc.cur_speak && wc.cur_speak_command_i+1 < wc.cur_speak.commands.length ? wc.cur_speak.commands[wc.cur_speak_command_i+1] : '';
+    let cmd_txt = wc.cur_speak ? wc.cur_speak.commands[wc.cur_speak_command_i] : '';
     return {
       cur_cmd_fqid: cmd_type == 1 ? cur_cmd.speak_fqid : wc.cur_command.entry_fqid,
       cur_cmd_type: cmd_type,
-      next_txt_i: next_txt_i,
+      txt: cmd_txt,
       name: wc.cmd_type == 1 ? LOG_NAME_BASIC : LOG_NAME_CHOICE,
       interacted_fqid: clicked_fqid
     }
