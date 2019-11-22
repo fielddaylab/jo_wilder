@@ -216,18 +216,17 @@ self.names_to_str = {
       text: txt
     };
   }
-  self.get_wildcard_speech_subtype_data = function(name, speech_fqid, speech_text){
+  self.get_wildcard_subtype_data = function(clicked_fqid){
+    let wc = my_wildcardview.wildcard;
+    let cur_cmd = wc.cur_command;
+    let cmd_type = wc.cur_command.command;
+    let next_txt_i = wc.cur_speak && wc.cur_speak_command_i+1 < wc.cur_speak.commands.length ? wc.cur_speak.commands[wc.cur_speak_command_i+1] : '';
     return {
-      name: name,
-      text_fqid: speech_fqid,
-      text: speech_text
-    }
-  }
-  self.get_wildcard_question_subtype_data = function(name, correct, answer){
-    return {
-      name: name,
-      correct: correct,
-      answer: answer
+      cur_cmd_fqid: cmd_type == 1 ? cur_cmd.speak_fqid : wc.cur_command.entry_fqid,
+      cur_cmd_type: cmd_type,
+      next_txt_i: next_txt_i,
+      name: wc.cmd_type == 1 ? LOG_NAME_BASIC : LOG_NAME_CHOICE,
+      interacted_fqid: clicked_fqid
     }
   }
   self.get_checkpoint_subtype_data = function(){

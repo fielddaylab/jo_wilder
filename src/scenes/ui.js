@@ -3931,7 +3931,7 @@ var wildcardview = function()
           if(!my_logger.current_hover_info.start_time)
           {
             my_logger.current_hover_info.start_time = Date.now(); 
-            my_logger.current_hover_info.subtype_data = my_logger.get_wildcard_question_subtype_data(LOG_NAME_CHOICE, self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid);
+            my_logger.current_hover_info.subtype_data = my_logger.get_wildcard_subtype_data(my_notebookview.cache_available_entrys[i].fqid);
             my_logger.current_hover_info.fqid = self.wildcard.fqid;
           }
         }
@@ -3948,29 +3948,20 @@ var wildcardview = function()
   self.click   = function(evt) { 
     if(self.wildcard.click) 
     {
-      self.log_name = LOG_NAME_BASIC;
-      if (self.wildcard.cur_speak)
-      {
-        self.log_subtype_data = my_logger.get_wildcard_speech_subtype_data(self.log_name,self.wildcard.cur_speak,self.wildcard.cur_speak.commands[self.wildcard.cur_speak_command_i].raw_atext);
-      }
-      else
-      {
-            self.log_subtype_data = my_logger.get_wildcard_question_subtype_data(self.log_name, null, null)
-      }
       self.wildcard.click(evt);
+      let selected_fqid = '';
       for(var i = 0; i < my_notebookview.cache_available_entrys.length; i++)
         {
           if(my_notebookview.page == my_notebookview.cache_available_entrys[i].page && my_notebookview.cache_available_entrys[i].interactive && ptWithinBox(my_notebookview.cache_available_entrys[i],evt.doX,evt.doY))
           {
-            self.log_name = LOG_NAME_CHOICE;
-            self.log_subtype_data = my_logger.get_wildcard_question_subtype_data(self.log_name,   self.wildcard.cur_command.entry_fqid,my_notebookview.cache_available_entrys[i].fqid)
+            selected_fqid = my_notebookview.cache_available_entrys[i].fqid;
           }
         }
       self.log_data = my_logger.get_log_data(
         LOG_TYPE_CLICK,
         my_logger.get_click_type_data(evt), 
         LOG_SUBTYPE_WILDCARD,
-        self.log_subtype_data,
+        my_logger.get_wildcard_subtype_data(selected_fqid),
         self.wildcard.fqid
       );
       my_logger.send_log(self.log_data);
