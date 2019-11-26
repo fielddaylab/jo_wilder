@@ -4377,7 +4377,8 @@ var cutsceneview = function()
       LOG_TYPE_CLICK,
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_CUTSCENE,
-      my_logger.get_cutscene_subtype_data(self.cutscene, self.cutscene.commands[self.command_i].raw_text),
+      // use command_i-1 below, since the index is for the text about to be displayed
+      my_logger.get_cutscene_subtype_data(self.cutscene, self.cutscene.commands[self.command_i-1].raw_text),
       self.cutscene.fqid
     );
     self.waiting = 0;
