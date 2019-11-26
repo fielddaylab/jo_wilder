@@ -2911,7 +2911,8 @@ var objectview = function()
 
   self.click = function(evt)
   {
-    var log_name;
+    let log_name;
+    let log_fqid = self.object.fqid
     if(self.exit_available && ptWithinBox(self.exit_box,evt.doX,evt.doY))
     {
       log_name = LOG_NAME_CLOSE;
@@ -2927,13 +2928,6 @@ var objectview = function()
     }
     else{
       log_name = LOG_NAME_BASIC;
-      self.log_data = my_logger.get_log_data(
-        LOG_TYPE_CLICK,
-        my_logger.get_click_type_data(evt), 
-        LOG_SUBTYPE_OBJECT,
-        my_logger.get_object_subtype_data(LOG_NAME_BASIC),
-        self.object.fqid
-      );
     }
     var zone;
     for(var i = 0; i < self.cache_available_zones.length; i++)
@@ -2951,11 +2945,20 @@ var objectview = function()
         self.cur_view.met = true;
         var old_view = self.cur_view;
         self.cur_view = find(self.object.fqid+"."+zone.target_view);
+        log_fqid = zone.fqid
         if(self.cur_view != old_view) self.cur_view.animcycle_inst.ready();
         if(self.cur_view.notifications.length && queryreqs(self.cur_view, self.cur_view.notification_reqs)) my_notificationview.consume_notification(self.cur_view);
         self.cur_view.pre_met = true;
         self.cur_view.met = true;
         self.unlock_content();
+        self.log_data = my_logger.get_log_data(
+          LOG_TYPE_CLICK,
+          my_logger.get_click_type_data(evt), 
+          LOG_SUBTYPE_OBJECT,
+          my_logger.get_object_subtype_data(log_name),
+          log_fqid
+        );
+        my_logger.send_log(self.log_data);
         return;
       }
     }
@@ -2964,7 +2967,7 @@ var objectview = function()
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_OBJECT,
       my_logger.get_object_subtype_data(log_name),
-      self.object.fqid
+      log_fqid
     );
     my_logger.send_log(self.log_data);
   }
@@ -4378,7 +4381,8 @@ var cutsceneview = function()
       my_logger.get_click_type_data(evt), 
       LOG_SUBTYPE_CUTSCENE,
       // use command_i-1 below, since the index is for the text about to be displayed
-      my_logger.get_cutscene_subtype_data(self.cutscene, self.cutscene.commands[self.command_i-1].raw_text),
+      
+      my_logger.get_cutscene_subtype_data(self.cutscene, self.cutscene.commands[self.command_i ? self.command_i - 1 : 0].raw_text),
       self.cutscene.fqid
     );
     self.waiting = 0;

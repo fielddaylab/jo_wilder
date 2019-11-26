@@ -1,6 +1,12 @@
 var slog = function(app_id,app_version)
 {
   var self = this;
+  self.stringify_and_ensure_ascii = function(obj){
+    let json = JSON.stringify(obj)
+    return json.replace(/[\u007F-\uFFFF]/g, function(chr) {
+        return "\\u" + ("0000" + chr.charCodeAt(0).toString(16)).substr(-4)
+    })
+  }
   urlparams = new URLSearchParams(window.location.search);
   self.player_id = urlparams.get('player_id');
   if(self.player_id && !/^([a-zA-Z][0-9]{3})$/.test(self.player_id)){
@@ -22,7 +28,7 @@ var slog = function(app_id,app_version)
     setCookie("persistent_session_id",self.persistent_session_id,100);
   }
   player_id_str = self.player_id !== null ? "&player_id="+encodeURIComponent(self.player_id) : "";
-  self.req_url = "https://fielddaylab.wisc.edu/logger/log2.php?app_id="+encodeURIComponent(self.app_id)+"&app_version="+encodeURIComponent(self.app_version)+"&session_id="+encodeURIComponent(self.session_id)+"&persistent_session_id="+encodeURIComponent(self.persistent_session_id)+player_id_str;
+  self.req_url = "https://fielddaylab.wisc.edu/logger/log.php?app_id="+encodeURIComponent(self.app_id)+"&app_version="+encodeURIComponent(self.app_version)+"&session_id="+encodeURIComponent(self.session_id)+"&persistent_session_id="+encodeURIComponent(self.persistent_session_id)+player_id_str;
 
   self.log = function(data)
   {
@@ -53,11 +59,14 @@ var slog = function(app_id,app_version)
       }
     }
     //console.log(JSON.stringify(self.accrued_log));
-    var post = "data="+encodeURIComponent(btoa(JSON.stringify(self.accrued_log)));
+
+    var post = "data="+encodeURIComponent(btoa(self.stringify_and_ensure_ascii(self.accrued_log)));
 
     xhr.open("POST", self.req_url+"&req_id="+encodeURIComponent(UUIDint()), true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send(post);
   }
 }
+
+
 

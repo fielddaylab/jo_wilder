@@ -12,6 +12,8 @@ Versions:
 2. Restructured to flatten logging objects (which originally contained many sub-objects)
 3. Simple log now sends player_id (if present) from the URL to log.php (9/24/2019)
 4. Change name, type, and subtype to representitive strings instead of numbers (11/12/2019)
+5. Intermediate Change. (11/26/2019)
+6. Big Change. Will update readme later with all that has been changed (11/26/2019).
 
 ### Event Categories
 0. [checkpoint](#checkpoint)
