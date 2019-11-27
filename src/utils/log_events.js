@@ -96,7 +96,7 @@ self.names_to_str = {
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",4);
+  self.mySlog = new slog("JOWILDER",6);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }
@@ -208,7 +208,7 @@ self.names_to_str = {
     }
     else
     {
-      txt = null;
+      txt = 'undefined';
     }
     return {
       name: LOG_NAME_BASIC,
@@ -219,12 +219,15 @@ self.names_to_str = {
   self.get_wildcard_subtype_data = function(clicked_fqid){
     let wc = my_wildcardview.wildcard;
     let cur_cmd = wc.cur_command;
+    if(!cur_cmd){
+      return {}
+    }
     let cmd_type = wc.cur_command.command;
     let cmd_txt = wc.cur_speak ? wc.cur_speak.commands[wc.cur_speak_command_i].raw_atext : '';
     return {
       cur_cmd_fqid: cmd_type == 1 ? cur_cmd.speak_fqid : wc.cur_command.entry_fqid,
       cur_cmd_type: cmd_type,
-      txt: cmd_txt,
+      text: cmd_txt,
       name: wc.cmd_type == 1 ? LOG_NAME_BASIC : LOG_NAME_CHOICE,
       interacted_fqid: clicked_fqid
     }
@@ -297,6 +300,7 @@ self.names_to_str = {
     log_data = self.flatten_log(log_data);
     log_data.level = my_notebookview ? save_codes.indexOf(my_notebookview.current_code) : null;
     console.log(log_data)
+    console.log(log_data.text)
     formatted_log_data = {
       level: log_data.level,
       event: "CUSTOM",
