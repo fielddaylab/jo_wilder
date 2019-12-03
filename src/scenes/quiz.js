@@ -46,7 +46,18 @@ var gen_callbacks = function()
   {
     var q = quiz.questions[i];
     for(var j = 0; j < q.a.length; j++)
-      q.aclick[j] = (function(i,j){return function(){if(quiz.questions[i].response == j) quiz.questions[i].response = -1; else quiz.questions[i].response = j;}})(i,j); //javascript is ridiculous
+      q.aclick[j] = (function(i, selection){
+        return function() {
+          if(quiz.questions[i].response == selection) {
+            // if player re-clicks, deselect.
+            quiz.questions[i].response = -1;
+          }
+          else {
+            // else, select newly chosen item.
+            quiz.questions[i].response = selection;
+          }
+        }
+      })(i,j); //javascript is ridiculous
   }
 }
 gen_callbacks();
