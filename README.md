@@ -37,6 +37,7 @@ Versions:
 1. [person_hover](#person_hover)
 1. [cutscene_hover](#cutscene_hover)
 1. [wildcard_hover](#wildcard_hover)
+1. [quiz](#log_type_quiz)
 
 ### Enumerators and Constants
 1. [Event Categories](#EventCategories)
@@ -50,11 +51,11 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -66,15 +67,15 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |save_code | | |
 |fullscreen | | |
 |music | | |
 |hq | | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -86,11 +87,11 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -102,8 +103,8 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
@@ -119,13 +120,13 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |page | | |
 |level |enum for current checkpoint | |
 
@@ -138,13 +139,13 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -156,14 +157,17 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
+|text_fqid |c.fqid|Text fqid (v6+)|
+|text|c_text|Text  (v6+)|
+
 
 
 
@@ -174,13 +178,13 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -192,14 +196,16 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
+|text_fqid |obs_fqid|Text fqid (v6+)|
+|text|obs_text|Text  (v6+)|
 
 
 
@@ -210,14 +216,16 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
+|text_fqid |speak.fqid|Text fqid (v6+)|
+|text|speak_text| (v6+) |
 
 
 
@@ -228,14 +236,16 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
+|text_fqid |cutscene.fqid|Text fqid (v6+)|
+|text|txt| Either cutscene text or 'undefined' (v6+)|
 
 
 
@@ -246,16 +256,22 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |screen_coor |x,y integer array of where the mouse is in current room | |
 |room_coor |x,y integer array of where the mouse is in the game screen | |
-|name |event name enum | |
-|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | |
-|answer |selected answer (only exists for event name CHOICE) | |
+|name |event name | |
 |level |enum for current checkpoint | |
+
+|correct | correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | Only exists in versions 1-4. (v4-)|
+|answer | selected answer (only exists for event name CHOICE) | Only exists in versions 1-4. (v4-)|
+|cur_cmd_fqid| cmd_type == 1 ? cur_cmd.speak_fqid : wc.cur_command.entry_fqid|Only exists in versions 6+ (v6+)|
+|cur_cmd_type|  cmd_type| Only exists in versions 6+ (v6+)|
+|text|  cmd_txt| Only exists in versions 6+ (v6+)|
+|name|  wc.cmd_type == 1 ? LOG_NAME_BASIC : LOG_NAME_CHOICE| Only exists in versions 6+ (v6+)|
+|interacted_fqid|  clicked_fqid| Only exists in versions 6+ (v6+)|
 
 
 
@@ -266,13 +282,13 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |start_time |client side timestamp for the time the hover started | |
 |end_time |client side timestamp for the time the hover ended | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -294,13 +310,13 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |start_time |client side timestamp for the time the hover started | |
 |end_time |client side timestamp for the time the hover ended | |
-|name |event name enum | |
+|name |event name | |
 |level |enum for current checkpoint | |
 
 
@@ -321,14 +337,14 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |start_time |client side timestamp for the time the hover started | |
 |end_time |client side timestamp for the time the hover ended | |
 |level |enum for current checkpoint | |
-|name |event name enum - sometimes doesn't exist?? | |
+|name |event name - sometimes doesn't exist?? | |
 
 
 
@@ -366,16 +382,37 @@ Versions:
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
-|type |type enum | |
-|subtype |subtype enum | |
+|type |type name | |
+|subtype |subtype name | |
 |fqid |fqid of the interaction, with the room_fqid subtracted | |
 |event_custom |event enum | |
 |start_time |client side timestamp for the time the hover started | |
 |end_time |client side timestamp for the time the hover ended | |
-|name |event name enum - sometimes doesn't exist?? | |
-|correct |correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | |
-|answer |selected answer (only exists for event name CHOICE) - sometimes doesn't exist?? | |
+|name |event name - sometimes doesn't exist?? | |
 |level |enum for current checkpoint | |
+|correct | correct answer to the problem (only exists for event name CHOICE) - sometimes doesn't exist?? | Only exists in versions 1-4. (v4-)|
+|answer |selected answer (only exists for event name CHOICE) | Only exists in versions 1-4. (v4-)|
+|cur_cmd_fqid| cmd_type == 1 ? cur_cmd.speak_fqid : wc.cur_command.entry_fqid|Only exists in versions 6+ (v6+)|
+|cur_cmd_type|  cmd_type| Only exists in versions 6+ (v6+)|
+|text|  cmd_txt| Only exists in versions 6+ (v6+)|
+|name|  wc.cmd_type == 1 ? LOG_NAME_BASIC : LOG_NAME_CHOICE| Only exists in versions 6+ (v6+)|
+|interacted_fqid|  clicked_fqid| Only exists in versions 6+ (v6+)|
+
+<a name="log_type_quiz"/>
+
+#### quiz (index=21)
+Only exists in logs v6+.
+
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid|fully qualified id of the room| |
+|type|type enum| |
+|subtype|subtype enum| |
+|fqid|fqid of the interaction, with the room_fqid subtracted| |
+|event_custom|event enum| |
+|questions|array of question objects, each has question, response, and response_index| |
+|name|event name enum| |
+|level|enum for current checkpoint| |
 
 ## Enumerators and Constants
 
