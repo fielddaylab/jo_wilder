@@ -105,7 +105,7 @@ var MenuScene = function(game, stage)
                       let scale = 0.25;
                       w = scale*490;
                       h = scale*158;
-                      quiz_cont_button = new ButtonBox(canvas.width-20-w,canvas.height-20-h,w,h,function(evt){
+                      quiz_cont_button = new ButtonBox(canv.width-20-w,canv.height-20-h,w,h,function(evt){
                         next = 1;
                       });
                       quiz_cont_button.hover = function(evt) { quiz_cont_button.hovering = 1; }
