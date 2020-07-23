@@ -1,0 +1,12 @@
+tmp_inert.ww = 870.0000000000002;
+tmp_inert.wh = 214;
+tmp_inert.wx = -7.516386663286482;
+tmp_inert.wy = -276.94782228966415;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.1;
+tmp_inert.animcycle_id = "fgcarts";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

@@ -1,0 +1,12 @@
+tmp_inert.ww = 917.8841312272183;
+tmp_inert.wh = 853.8504981773996;
+tmp_inert.wx = 576.950123603211;
+tmp_inert.wy = 7.512205523404077;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.2;
+tmp_inert.animcycle_id = "room_historicalsociety_closet_fgpipes";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

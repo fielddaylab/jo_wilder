@@ -1,0 +1,32 @@
+tmp_person.ww = 190.54957914795222;
+tmp_person.wh = 330.63532085676064;
+tmp_person.wx = -158.42170868243684;
+tmp_person.wy = 0.5156729049530497;
+tmp_person.wz = 0;
+tmp_person.act_wx = 245.29136436273882;
+tmp_person.act_wy = -41.78567838584007;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 68.2683979920638;
+tmp_person.hover_icon_wy = 152.20562775816032;
+tmp_person.animcycle_id = "gramps";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"tunic.historicalsociety.collection.tunic.slip",
+"!tunic.historicalsociety.collection.gramps.found",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+]];
+

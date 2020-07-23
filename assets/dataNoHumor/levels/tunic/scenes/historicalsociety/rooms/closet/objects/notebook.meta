@@ -1,0 +1,35 @@
+tmp_object.ww = 99.99999999999999;
+tmp_object.wh = 99.99999999999999;
+tmp_object.wx = -906.1699383473281;
+tmp_object.wy = -261.8594471586292;
+tmp_object.wz = 0.12;
+tmp_object.act_wx = 63;
+tmp_object.act_wy = 7;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = 35.84897967830983;
+tmp_object.hover_icon_wy = 43.00093435578584;
+tmp_object.animcycle_id = "notebook_object";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 0;
+tmp_object.raw_notifications = [
+"Found it!",
+];
+tmp_object.raw_notification_ws = [
+78.08793640136719,
+];
+tmp_object.notification_reqs = [[
+]];
+tmp_object.view_overlay_reqs = [[
+]];
+tmp_object.notice_reqs = [[
+]];
+tmp_object.reqs = [[
+"!tunic.historicalsociety.closet.notebook",
+]];
+

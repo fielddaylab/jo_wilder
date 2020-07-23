@@ -1,0 +1,33 @@
+tmp_person.ww = 75.87868469126526;
+tmp_person.wh = 32.51513234444093;
+tmp_person.wx = -677.3887525887745;
+tmp_person.wy = -247.9888500364154;
+tmp_person.wz = 0;
+tmp_person.act_wx = -94.15980017432396;
+tmp_person.act_wy = 56.30831848259591;
+tmp_person.act_anim = 0;
+tmp_person.hover_icon_wx = 36.48788766557281;
+tmp_person.hover_icon_wy = 24.359381199249835;
+tmp_person.animcycle_id = "glasses";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "null";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"tunic.historicalsociety.cage.teddy.trapped",
+"!tunic.historicalsociety.cage.glasses.afterteddy",
+"!tunic.historicalsociety.frontdesk.key",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"!tunic.historicalsociety.cage.glasses.afterteddy",
+]];
+

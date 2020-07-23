@@ -1,0 +1,14 @@
+tmp_inert.ww = 180.84848484848473;
+tmp_inert.wh = 130.66666666666669;
+tmp_inert.wx = 155.7575757575757;
+tmp_inert.wy = -160.6666666666668;
+tmp_inert.wz = -1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "flagbox";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+"tunic.capitol_1.hall.chap2_finale_c",
+"!tunic.historicalsociety.cage",
+]];
+

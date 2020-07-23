@@ -1,0 +1,12 @@
+tmp_inert.ww = 155.30909090909086;
+tmp_inert.wh = 155.30909090909094;
+tmp_inert.wx = -446.17727272727257;
+tmp_inert.wy = -339.01590909090925;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_fox";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

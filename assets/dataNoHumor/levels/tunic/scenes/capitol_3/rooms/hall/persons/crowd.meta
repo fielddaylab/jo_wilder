@@ -1,0 +1,29 @@
+tmp_person.ww = 112.20022811292858;
+tmp_person.wh = 137.87887705163976;
+tmp_person.wx = -79.13860342518365;
+tmp_person.wy = 284.40653920914866;
+tmp_person.wz = 1;
+tmp_person.act_wx = 0;
+tmp_person.act_wy = 0;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 119.69696969696969;
+tmp_person.hover_icon_wy = 63.63636363636363;
+tmp_person.animcycle_id = "null";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "null";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+]];
+

@@ -1,0 +1,34 @@
+tmp_object.ww = 98.15753142028846;
+tmp_object.wh = 64.99999999999997;
+tmp_object.wx = 676.6810968540632;
+tmp_object.wy = 85.50000000000004;
+tmp_object.wz = -1;
+tmp_object.act_wx = -116.20669261312605;
+tmp_object.act_wy = -107.00000000000003;
+tmp_object.act_anim = true;
+tmp_object.hover_icon_wx = 35.33503385781535;
+tmp_object.hover_icon_wy = 29.99999999999997;
+tmp_object.animcycle_id = "plaque";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
+tmp_object.audio_id = "music_close_inspect";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 0;
+tmp_object.raw_notifications = [
+];
+tmp_object.raw_notification_ws = [
+];
+tmp_object.notification_reqs = [[
+]];
+tmp_object.view_overlay_reqs = [[
+"!tunic.kohlcenter.halloffame.togrampa",
+]];
+tmp_object.notice_reqs = [[
+"!tunic.kohlcenter.halloffame.plaque.face.date",
+]];
+tmp_object.reqs = [[
+]];
+

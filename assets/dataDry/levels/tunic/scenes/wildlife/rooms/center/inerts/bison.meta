@@ -1,0 +1,12 @@
+tmp_inert.ww = 428.3977272727273;
+tmp_inert.wh = 338.5204545454546;
+tmp_inert.wx = 188.1488636363643;
+tmp_inert.wy = -240.4965909090915;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_bison";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

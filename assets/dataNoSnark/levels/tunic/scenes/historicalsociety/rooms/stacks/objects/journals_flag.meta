@@ -1,0 +1,41 @@
+tmp_object.ww = 67.97395230899636;
+tmp_object.wh = 110.99211147207005;
+tmp_object.wx = 336.18183768103177;
+tmp_object.wy = 132.10402224800836;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.hover_icon_wx = -0.09659067927304932;
+tmp_object.hover_icon_wy = 47.03587341510541;
+tmp_object.animcycle_id = "journals";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_stacksflag";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 1;
+tmp_object.raw_notifications = [
+"I need more context about how the flag was used.",
+];
+tmp_object.raw_notification_ws = [
+169,
+];
+tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
+]];
+tmp_object.view_overlay_reqs = [[
+"!tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+"!tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
+]];
+tmp_object.notice_reqs = [[
+]];
+tmp_object.reqs = [[
+"tunic.historicalsociety.frontdesk.archivist_glasses.confrontation",
+]];
+

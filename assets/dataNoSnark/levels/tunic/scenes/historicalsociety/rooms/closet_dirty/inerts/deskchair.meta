@@ -1,0 +1,12 @@
+tmp_inert.ww = 120.37433778857837;
+tmp_inert.wh = 117.46371810449574;
+tmp_inert.wx = -687.4557037913441;
+tmp_inert.wy = 65.42417994362171;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "closet_chair";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

@@ -1,0 +1,19 @@
+tmp_zone.ww = 60;
+tmp_zone.wh = 60;
+tmp_zone.wx = 350;
+tmp_zone.wy = -80;
+tmp_zone.animcycle_id = "nextarrow";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "pic_2_old";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+]];
+

@@ -1,0 +1,12 @@
+tmp_inert.ww = 229.75552787093255;
+tmp_inert.wh = 90.87501277407634;
+tmp_inert.wx = 617.1677055847106;
+tmp_inert.wy = 363.95069071784263;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "microfichesign";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

@@ -1,0 +1,38 @@
+tmp_object.ww = 100;
+tmp_object.wh = 100;
+tmp_object.wx = 28.999999999999986;
+tmp_object.wy = 39.00000000000003;
+tmp_object.wz = 0;
+tmp_object.act_wx = 0;
+tmp_object.act_wy = 0;
+tmp_object.act_anim = true;
+tmp_object.hover_icon_wx = 39;
+tmp_object.hover_icon_wy = 41;
+tmp_object.animcycle_id = "logbook";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 1;
+tmp_object.raw_notifications = [
+"Gotta find the entry for this slip.",
+];
+tmp_object.raw_notification_ws = [
+162,
+];
+tmp_object.notification_reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
+]];
+tmp_object.view_overlay_reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
+]];
+tmp_object.notice_reqs = [[
+"!tunic.drycleaner.frontdesk.logbook.page.bingo",
+]];
+tmp_object.reqs = [[
+"tunic.drycleaner.frontdesk.worker.hub",
+]];
+

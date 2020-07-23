@@ -1,0 +1,30 @@
+tmp_speak.primary = true;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.flaghouse.entry.flag_girl.hello",
+"!tunic.flaghouse.entry.colorbook",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -40.000000001586585;
+tmp_speak_command.wy = 250.00000000002393;
+tmp_speak_command.w = 260;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "There should be some info about that symbol in my book.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

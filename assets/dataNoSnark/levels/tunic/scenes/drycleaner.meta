@@ -1,0 +1,26 @@
+tmp_scene.primary = false;
+tmp_scene.ww = 102.00000000000003;
+tmp_scene.wh = 91.99999999999996;
+tmp_scene.wx = 135.9999999999999;
+tmp_scene.wy = 38.000000000000234;
+tmp_scene.hover_icon_wx = 21;
+tmp_scene.hover_icon_wy = 29;
+tmp_scene.animcycle_id = "scene_drycleaner";
+tmp_scene.notice_icon_animcycle_id = "notice";
+tmp_scene.audio_id = "null";
+tmp_scene.deck_animcycle_ids = [
+];
+tmp_scene.notifications_persistent = 0;
+tmp_scene.raw_notifications = [
+];
+tmp_scene.raw_notification_ws = [
+];
+tmp_scene.notification_reqs = [[
+]];
+tmp_scene.notice_reqs = [[
+"!self",
+]];
+tmp_scene.reqs = [[
+"tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
+]];
+

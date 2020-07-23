@@ -1,0 +1,32 @@
+tmp_porthole.ww = 180.7272727272729;
+tmp_porthole.wh = 438.818181818182;
+tmp_porthole.wx = -1898.4545454545453;
+tmp_porthole.wy = -27.681818181817988;
+tmp_porthole.wz = -1;
+tmp_porthole.act_wx = 77.88042590123327;
+tmp_porthole.act_wy = -96.28074721972771;
+tmp_porthole.act_anim = 1;
+tmp_porthole.hover_icon_wx = 0;
+tmp_porthole.hover_icon_wy = 0;
+tmp_porthole.animcycle_id = "null";
+tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
+tmp_porthole.hover_icon_animcycle_id = "hblip_door";
+tmp_porthole.notice_icon_animcycle_id = "null";
+tmp_porthole.audio_id = "elevator";
+tmp_porthole.deck_animcycle_ids = [
+];
+tmp_porthole.target_room = "basement";
+tmp_porthole.target_start_wx = -331.75757575757575;
+tmp_porthole.target_start_wy = -202.12121212121215;
+tmp_porthole.notifications_persistent = 0;
+tmp_porthole.raw_notifications = [
+];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
+tmp_porthole.notice_reqs = [[
+]];
+tmp_porthole.reqs = [[
+]];
+

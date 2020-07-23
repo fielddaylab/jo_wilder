@@ -1,0 +1,12 @@
+tmp_inert.ww = 1019.7274168712107;
+tmp_inert.wh = 267.73319864195986;
+tmp_inert.wx = 30.234019141953524;
+tmp_inert.wy = -442.418249480281;
+tmp_inert.wz = 999;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "capitol_rotunda";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

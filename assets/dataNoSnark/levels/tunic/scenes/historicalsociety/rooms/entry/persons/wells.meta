@@ -1,0 +1,35 @@
+tmp_person.ww = 238.5309962113206;
+tmp_person.wh = 318.20187527320775;
+tmp_person.wx = 146.1054384440385;
+tmp_person.wy = 50.259126419431624;
+tmp_person.wz = 0;
+tmp_person.act_wx = 87.93042270960882;
+tmp_person.act_wy = -86.30340465538065;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 38.653835797763755;
+tmp_person.hover_icon_wy = 157.02667635949427;
+tmp_person.animcycle_id = "wells";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"tunic.historicalsociety.entry.groupconvo_flag",
+"!tunic.historicalsociety.entry.wells.flag",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"!tunic.historicalsociety.collection.tunic.slip",
+],[
+"tunic.historicalsociety.collection_flag.gramps.flag",
+"!tunic.wildlife",
+]];
+

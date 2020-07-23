@@ -1,0 +1,31 @@
+tmp_person.ww = 184.99878922602898;
+tmp_person.wh = 306;
+tmp_person.wx = -114.21617098486826;
+tmp_person.wy = 24.99999999999997;
+tmp_person.wz = 1;
+tmp_person.act_wx = 271.17109843124683;
+tmp_person.act_wy = -61;
+tmp_person.act_anim = true;
+tmp_person.hover_icon_wx = 58.954396174418434;
+tmp_person.hover_icon_wy = 135;
+tmp_person.animcycle_id = "cleaner";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"tunic.drycleaner.frontdesk.logbook.page.bingo",
+"!tunic.drycleaner.frontdesk.worker.done",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+]];
+

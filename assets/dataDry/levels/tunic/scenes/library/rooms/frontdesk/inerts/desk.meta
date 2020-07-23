@@ -1,0 +1,12 @@
+tmp_inert.ww = 618.0298311330639;
+tmp_inert.wh = 231.72727272727278;
+tmp_inert.wx = -223.80576038861352;
+tmp_inert.wy = 29.227467960796005;
+tmp_inert.wz = 10;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "librarydesk";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

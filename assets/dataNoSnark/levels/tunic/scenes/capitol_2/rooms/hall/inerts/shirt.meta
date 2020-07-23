@@ -1,0 +1,12 @@
+tmp_inert.ww = 90.9026520504204;
+tmp_inert.wh = 236.3652956905717;
+tmp_inert.wx = 437.75643408748755;
+tmp_inert.wy = 43.907862739232;
+tmp_inert.wz = -100;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "capitol_tunic";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

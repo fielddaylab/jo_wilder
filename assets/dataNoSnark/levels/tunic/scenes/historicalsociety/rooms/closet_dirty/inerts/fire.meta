@@ -1,0 +1,12 @@
+tmp_inert.ww = 41.269118963430955;
+tmp_inert.wh = 106.98909580510868;
+tmp_inert.wx = 712.5234599034269;
+tmp_inert.wy = -146.93013383125256;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "boilerfire";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

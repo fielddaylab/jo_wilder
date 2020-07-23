@@ -1,0 +1,12 @@
+tmp_inert.ww = 75.80227272727272;
+tmp_inert.wh = 124.19772727272732;
+tmp_inert.wx = 851.8579545454552;
+tmp_inert.wy = -268.1511363636364;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_owl";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

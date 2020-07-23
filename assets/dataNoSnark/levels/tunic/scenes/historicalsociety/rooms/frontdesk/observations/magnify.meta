@@ -1,0 +1,36 @@
+tmp_observation.ww = 50.146372131457355;
+tmp_observation.wh = 35.99999999999997;
+tmp_observation.wx = 213.07926091128468;
+tmp_observation.wy = 174;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 45.74081256558395;
+tmp_observation.act_wy = -264;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = -0.19702019410135563;
+tmp_observation.hover_icon_wy = 32;
+tmp_observation.animcycle_id = "magnifyingglass";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "I bet the archivist could use this!";
+tmp_observation.blip_wx = 248.47276520583677;
+tmp_observation.blip_wy = 111.99999999999999;
+tmp_observation.blip_w = 160;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"tunic.historicalsociety.collection.tunic.slip",
+"!tunic.historicalsociety.frontdesk.magnify",
+]];
+

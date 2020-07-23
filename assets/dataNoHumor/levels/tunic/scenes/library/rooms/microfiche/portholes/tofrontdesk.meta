@@ -1,0 +1,32 @@
+tmp_porthole.ww = 755;
+tmp_porthole.wh = 86;
+tmp_porthole.wx = 10.5;
+tmp_porthole.wy = -282;
+tmp_porthole.wz = -1;
+tmp_porthole.act_wx = 5.502011283149329;
+tmp_porthole.act_wy = -10;
+tmp_porthole.act_anim = true;
+tmp_porthole.hover_icon_wx = -15.40224497171863;
+tmp_porthole.hover_icon_wy = 12;
+tmp_porthole.animcycle_id = "door";
+tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
+tmp_porthole.hover_icon_animcycle_id = "hblip_door";
+tmp_porthole.notice_icon_animcycle_id = "null";
+tmp_porthole.audio_id = "door";
+tmp_porthole.deck_animcycle_ids = [
+];
+tmp_porthole.target_room = "frontdesk";
+tmp_porthole.target_start_wx = 566.6043398295117;
+tmp_porthole.target_start_wy = 33.70785839485907;
+tmp_porthole.notifications_persistent = 0;
+tmp_porthole.raw_notifications = [
+];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
+tmp_porthole.notice_reqs = [[
+]];
+tmp_porthole.reqs = [[
+]];
+

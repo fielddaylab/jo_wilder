@@ -1,0 +1,34 @@
+tmp_person.ww = 137.45986985831794;
+tmp_person.wh = 291.1649614886817;
+tmp_person.wx = -389.6118248165218;
+tmp_person.wy = 125.26571906196261;
+tmp_person.wz = 9;
+tmp_person.act_wx = 168.23728337043983;
+tmp_person.act_wy = -47.27953871995158;
+tmp_person.act_anim = true;
+tmp_person.hover_icon_wx = 64.62729385380858;
+tmp_person.hover_icon_wy = 143.3360981848623;
+tmp_person.animcycle_id = "librarian";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"tunic.library.frontdesk.wellsbadge",
+"!tunic.library.frontdesk.worker.wells",
+],[
+"tunic.library.microfiche.reader_flag.paper2.bingo",
+"!tunic.library.frontdesk.worker.nelson",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+]];
+

@@ -1,0 +1,12 @@
+tmp_inert.ww = 996.8776306620208;
+tmp_inert.wh = 130.055331010453;
+tmp_inert.wx = -37.96991189093427;
+tmp_inert.wy = -264.43477351916385;
+tmp_inert.wz = 999;
+tmp_inert.g = 0.1;
+tmp_inert.animcycle_id = "fgoffice";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

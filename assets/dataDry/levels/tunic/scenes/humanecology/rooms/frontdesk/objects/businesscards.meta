@@ -1,0 +1,37 @@
+tmp_object.ww = 48.06871334920727;
+tmp_object.wh = 29.00000000000004;
+tmp_object.wx = 176.31279522143834;
+tmp_object.wy = -43.32857142857158;
+tmp_object.wz = 0;
+tmp_object.act_wx = -42.239844649089264;
+tmp_object.act_wy = -18;
+tmp_object.act_anim = 1;
+tmp_object.hover_icon_wx = -0.29508815856570436;
+tmp_object.hover_icon_wy = 36;
+tmp_object.animcycle_id = "businesscards";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "null";
+tmp_object.notice_icon_animcycle_id = "null";
+tmp_object.view_overlay_animcycle_id = "clueoverlay_logbook";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 1;
+tmp_object.raw_notifications = [
+"Which place might know about the slip?",
+];
+tmp_object.raw_notification_ws = [
+180,
+];
+tmp_object.notification_reqs = [[
+"!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
+]];
+tmp_object.view_overlay_reqs = [[
+"!tunic.humanecology.frontdesk.businesscards.card_bingo.bingo",
+]];
+tmp_object.notice_reqs = [[
+]];
+tmp_object.reqs = [[
+"tunic.humanecology.frontdesk.worker.intro",
+]];
+

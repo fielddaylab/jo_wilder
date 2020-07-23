@@ -1,0 +1,31 @@
+tmp_person.ww = 122.48764972620297;
+tmp_person.wh = 129.38881101761731;
+tmp_person.wx = 31.00914945041672;
+tmp_person.wy = -152.47548845622953;
+tmp_person.wz = 0;
+tmp_person.act_wx = -146.29687625848175;
+tmp_person.act_wy = 29.395068590892784;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 51.96969698838423;
+tmp_person.hover_icon_wy = 73.4242424246125;
+tmp_person.animcycle_id = "teddy_noscarf";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"!tunic.historicalsociety.cage.teddy.trapped",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"!tunic.historicalsociety.cage.unlockdoor",
+]];
+

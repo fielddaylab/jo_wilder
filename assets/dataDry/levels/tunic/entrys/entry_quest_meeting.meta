@@ -1,0 +1,20 @@
+tmp_entry.ww = 390.00000000000006;
+tmp_entry.wh = 69.99999999999999;
+tmp_entry.wx = -208.00000000000009;
+tmp_entry.wy = 215.00000000000006;
+tmp_entry.wz = 100;
+tmp_entry.page = 0;
+tmp_entry.animcycle_id = "entry_quest_meeting_img";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+]];
+

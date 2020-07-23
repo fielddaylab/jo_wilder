@@ -1,0 +1,12 @@
+tmp_inert.ww = 49.99999999999998;
+tmp_inert.wh = 56.999999999999986;
+tmp_inert.wx = -108.00000000000004;
+tmp_inert.wy = -12.500000000000036;
+tmp_inert.wz = 4.9;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "coffeecupup";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

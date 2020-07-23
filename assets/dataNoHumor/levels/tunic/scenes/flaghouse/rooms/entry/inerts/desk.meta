@@ -1,0 +1,12 @@
+tmp_inert.ww = 195.99856189644183;
+tmp_inert.wh = 275;
+tmp_inert.wx = -76.36995026821269;
+tmp_inert.wy = -138.49997934118434;
+tmp_inert.wz = 1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "flaghouse_desk";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

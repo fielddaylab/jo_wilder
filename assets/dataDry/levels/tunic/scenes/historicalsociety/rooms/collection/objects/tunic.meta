@@ -1,0 +1,38 @@
+tmp_object.ww = 137.78787878787867;
+tmp_object.wh = 212.04545454545456;
+tmp_object.wx = 7.617966210281686;
+tmp_object.wy = 170.51545454545473;
+tmp_object.wz = 0;
+tmp_object.act_wx = 99.54719920102725;
+tmp_object.act_wy = -29.687272727272703;
+tmp_object.act_anim = true;
+tmp_object.hover_icon_wx = 48.93939393939394;
+tmp_object.hover_icon_wy = 102.1969696969697;
+tmp_object.animcycle_id = "null";
+tmp_object.hover_cursor_animcycle_id = "hover_ui";
+tmp_object.hover_icon_animcycle_id = "hblip_interact";
+tmp_object.notice_icon_animcycle_id = "notice";
+tmp_object.view_overlay_animcycle_id = "null";
+tmp_object.audio_id = "null";
+tmp_object.deck_animcycle_ids = [
+];
+tmp_object.notifications_persistent = 1;
+tmp_object.raw_notifications = [
+"Hooray, a boring old shirt.",
+"Guess I should look for clues.",
+];
+tmp_object.raw_notification_ws = [
+230.77577209472656,
+133,
+];
+tmp_object.notification_reqs = [[
+"!tunic.historicalsociety.collection.tunic.slip",
+]];
+tmp_object.view_overlay_reqs = [[
+]];
+tmp_object.notice_reqs = [[
+"!tunic.historicalsociety.collection.tunic.slip",
+]];
+tmp_object.reqs = [[
+]];
+

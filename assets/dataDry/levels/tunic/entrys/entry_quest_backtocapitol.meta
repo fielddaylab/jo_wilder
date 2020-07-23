@@ -1,0 +1,24 @@
+tmp_entry.ww = 389;
+tmp_entry.wh = 65.99999999999999;
+tmp_entry.wx = 204.5;
+tmp_entry.wy = -186.99999999999997;
+tmp_entry.wz = 100;
+tmp_entry.page = 6;
+tmp_entry.animcycle_id = "entry_capitolfinal";
+tmp_entry.audio_id = "null";
+tmp_entry.deck_animcycle_ids = [
+];
+tmp_entry.notifications_persistent = 0;
+tmp_entry.raw_notifications = [
+];
+tmp_entry.raw_notification_ws = [
+];
+tmp_entry.notification_reqs = [[
+]];
+tmp_entry.reqs = [[
+"tunic.historicalsociety.stacks.journals_flag.pic_0.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_1.bingo",
+],[
+"tunic.historicalsociety.stacks.journals_flag.pic_2.bingo",
+]];

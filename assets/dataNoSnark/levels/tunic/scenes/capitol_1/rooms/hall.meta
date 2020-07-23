@@ -1,0 +1,35 @@
+tmp_room.primary = false;
+tmp_room.ww = 2000;
+tmp_room.wh = 1162;
+tmp_room.wx = 0;
+tmp_room.wy = 0;
+tmp_room.animcycle_id = "room_capitol_hall_1";
+tmp_room.audio_id = "music_challenge";
+tmp_room.deck_animcycle_ids = [
+];
+tmp_room.cam_wh = 1000;
+tmp_room.nav_min_wz = 0;
+tmp_room.nav_max_wz = 1;
+tmp_room.navs = [
+{wx:112.16666666666663, wy:-217.46969696969683, ww:1129.4848484848485, wh:217.6666666666667 },
+];
+tmp_room.lights = [
+];
+tmp_room.shadows = [
+];
+tmp_room.light_color = "rgba(255,255,255,0.2)";
+tmp_room.shadow_color = "rgba(0,0,0,0.2)";
+tmp_room.ambient_color = "rgba(0,0,0,0)";
+tmp_room.target_start_wx = 648.2945573024847;
+tmp_room.target_start_wy = -253.58367957138657;
+tmp_room.notifications_persistent = 0;
+tmp_room.raw_notifications = [
+];
+tmp_room.raw_notification_ws = [
+];
+tmp_room.notification_reqs = [[
+]];
+tmp_room.reqs = [[
+]];
+//SUGGEST_H:1.7606060606060605
+

@@ -1,0 +1,24 @@
+tmp_zone.ww = 197;
+tmp_zone.wh = 136.00000000000003;
+tmp_zone.wx = -8.500000000000043;
+tmp_zone.wy = -222;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "closeup";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+"Those are the same glasses!",
+"The archivist must've taken Teddy!",
+];
+tmp_zone.raw_notification_ws = [
+243.27980041503906,
+305.00775146484375,
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+"tunic.historicalsociety.cage.glasses.afterteddy",
+]];
+

@@ -1,0 +1,12 @@
+tmp_inert.ww = 189.87727272727264;
+tmp_inert.wh = 162.22272727272718;
+tmp_inert.wx = -1078.7749999999999;
+tmp_inert.wy = -294.07727272727277;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "wildlife_animal_lynx";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

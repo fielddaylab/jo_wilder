@@ -1,0 +1,11 @@
+tmp_inert.ww = 248.00000000000003;
+tmp_inert.wh = 169.99999999999991;
+tmp_inert.wx = -159.72357885626178;
+tmp_inert.wy = -322.99999999999994;
+tmp_inert.wz = 10;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "fgtextile";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];

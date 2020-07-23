@@ -1,0 +1,35 @@
+tmp_observation.ww = 91.33333333333336;
+tmp_observation.wh = 77.03030303030292;
+tmp_observation.wx = 121.15738657281551;
+tmp_observation.wy = -153.41970191134757;
+tmp_observation.wz = 4.91;
+tmp_observation.act_wx = -83.0959427598143;
+tmp_observation.act_wy = 15.667402529198512;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 17.611271584883976;
+tmp_observation.hover_icon_wy = 26.253815052530722;
+tmp_observation.animcycle_id = "coffeecup";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "Ugh! Somebody needs to do something about all these cups!";
+tmp_observation.blip_wx = -203.32979705538716;
+tmp_observation.blip_wy = 40.01419018234438;
+tmp_observation.blip_w = 185;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"!self",
+]];
+
