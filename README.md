@@ -14,6 +14,7 @@ Versions:
 4. Change name, type, and subtype to representitive strings instead of numbers (11/12/2019)
 5. Intermediate Change. (11/26/2019)
 6. Big Change. Will update readme later with all that has been changed (11/26/2019).
+7. Add "script_type" and "script_version" to [startgame](#startgame).
 
 ### Event Categories
 0. [checkpoint](#checkpoint)
@@ -75,6 +76,8 @@ Versions:
 |fullscreen | | |
 |music | | |
 |hq | | |
+|script_type | enum of which script is being used. See [script_types](#script_types) for details and mappings from enum to type. | |
+|script_version | Version of the script | |
 |name |event name | |
 |level |enum for current checkpoint | |
 
@@ -482,6 +485,18 @@ Only exists in logs v6+.
 | 3 | choice| |
 | 4 | next| |
 | 5 | prev| |
+
+<a name="script_types"/>
+
+#### script_types (index=2)
+Starting in v7, multiple scripts were added to the game for AB tests on snark and humor. The game will randomly choose between 4 different data files: data_dry.js, data_nohumor.js, data_nosnark.js, and the original data.js. They are each built from their respective data folder in assets. The type of script used is only logged once, in [startgame](#startgame).
+
+| Index | Name | Description |
+| --- | --- | --- |
+|0 | dry  | no humor or snark |
+|1 | nohumor  |no humor (includes snark) |
+|2 | nosnark  | no snark (includes humor). No snark can also be thought of as "obedient" |
+|3 | normal | base script (includes snark and humor) |
 
 
 
