@@ -45,6 +45,7 @@ Versions:
 1. [Log Types](#Types)
 1. [Log Subtypes](#Subtypes)
 1. [Log Names](#Names)
+1. [Script Types](#script_types)
 
 <a name="checkpoint"/>
 
@@ -488,7 +489,7 @@ Only exists in logs v6+.
 
 <a name="script_types"/>
 
-#### script_types
+#### Script Types
 Starting in v7, multiple scripts were added to the game for AB tests on snark and humor. The game will randomly choose between 4 different data files: data_dry.js, data_nohumor.js, data_nosnark.js, and the original data.js. They are each built from their respective data folder in assets. The type of script used is only logged once, in [startgame](#startgame).
 
 | Index | Name | Description |
