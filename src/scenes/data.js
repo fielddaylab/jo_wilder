@@ -15112,7 +15112,7 @@ for(var i = 0; i < tmp_wildcard.commands.length; i++)
           my_cursor.mode = CURSOR_UI;
           if(!my_notebookview.cache_available_entrys[i].hoverexpand) my_notebookview.cache_available_entrys[i].hoverexpand = 0;
           my_notebookview.cache_available_entrys[i].hovering = 1;
-          //TODO
+          //TODO - here would be where hovering
         }
         else my_notebookview.cache_available_entrys[i].hovering = 0;
     }
