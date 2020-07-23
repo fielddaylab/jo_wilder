@@ -1,4 +1,9 @@
 //ADDLOG write logging functions here
+LOG_SCRIPT_VERSION_DRY       = 0;
+LOG_SCRIPT_VERSION_NOHUMOR   = 0;
+LOG_SCRIPT_VERSION_NOSNARK   = 0;
+LOG_SCRIPT_VERSION_NORMAL    = 0;
+
 var ENUM;
 
 ENUM = 0;
@@ -57,6 +62,12 @@ var LOG_WILDCARD_HOVER        = ENUM; ENUM++;
 var LOG_QUIZ                  = ENUM; ENUM++;
 var LOG_COUNT                 = ENUM; ENUM++;
 
+ENUM = 0;
+var LOG_DATA_DRY              = ENUM; ENUM++;
+var LOG_DATA_NOHUMOR          = ENUM; ENUM++;
+var LOG_DATA_NOSNARK          = ENUM; ENUM++;
+var LOG_DATA_NORMAL           = ENUM; ENUM++;
+
 var Logger = function(init){
   self = this;
   self.type_to_str = {
@@ -96,7 +107,7 @@ self.names_to_str = {
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",6);
+  self.mySlog = new slog("JOWILDER",7);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }
@@ -143,12 +154,27 @@ self.names_to_str = {
 
   self.get_startgame_type_data = function(save_code, fullscreen, music, hq)
   {
+    let script_version = -1;
+    if (LOAD_DATA_TYPE == LOG_DATA_DRY) {
+        script_version = LOG_SCRIPT_VERSION_DRY;
+    }
+    else if (LOAD_DATA_TYPE == LOG_DATA_NOHUMOR) {
+        script_version = LOG_SCRIPT_VERSION_NOHUMOR;
+    }
+    else if (LOAD_DATA_TYPE == LOG_DATA_NOSNARK) {
+        script_version = LOG_SCRIPT_VERSION_NOSNARK;
+    }
+    else if (LOAD_DATA_TYPE == LOG_DATA_NORMAL) {
+        script_version = LOG_SCRIPT_VERSION_NORMAL;
+    }
     var type_data =
     {
       save_code: save_code,
       fullscreen: fullscreen,
       music: music,
-      hq: hq
+      hq: hq,
+      script_type: LOAD_DATA_TYPE,
+      script_version: script_version
     };
     return type_data;
   }
