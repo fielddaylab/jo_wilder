@@ -4012,6 +4012,31 @@ var cutsceneview = function()
   self.running_commands = [];
   self.frame_commands = [];
   self.editable_frame_commands = [];
+  self.use_quiz = 0;
+  self.quiz_state = 0;
+  self.hackquiz_t = 0;
+  self.quiz_bg_img = GenImg("assets/blank_bg.jpg");
+  self.contin_img  = GenImg("assets/continue-button.png");
+  let w = 240;
+  let h = 50;
+  let x = 20;
+  let y = 220;
+  let scale = 0.25;
+  w = scale*490;
+  h = scale*158;
+  self.quiz_cont_button = new ButtonBox(canv.width-20-w,canv.height-20-h,w,h,function(evt){
+    self.reset_quiz();
+    log_quiz(self.quiz)
+  });
+  self.quiz_cont_button.hover = function(evt) { self.quiz_cont_button.hovering = 1; }
+  self.quiz_cont_button.unhover = function(evt) { self.quiz_cont_button.hovering = 0; }
+  self.reset_quiz = function(){
+    self.use_quiz = 0;
+    self.waiting = 0;
+    console.log('Finished quiz!')
+    log_quiz(self.quiz)
+  }
+
 
   self.bubble_color = "#242224";
   self.text_color = white;
@@ -4100,6 +4125,7 @@ var cutsceneview = function()
   {
     var c = self.cutscene.commands[self.command_i];
     self.frame_commands.push(c);
+    console.log(self.cutscene.fqid, c.command)
     switch(c.command)
     {
       case CUTSCENE_COMMAND_DESTROY:
@@ -4118,30 +4144,63 @@ var cutsceneview = function()
         self.editable_frame_commands.push(c);
         break;
     }
-
     switch(c.command)
     {
       case CUTSCENE_COMMAND_NULL: break;
       case CUTSCENE_COMMAND_CREATE:
-        var e = new cutscene_entity();
-        e.id = c.cutscene_entity_id;
-        e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-        e.animcycle_inst.frame_t += c.animcycle_offset_t;
-        e.wx = c.wx;
-        e.wy = c.wy;
-        e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
-        e.wh = c.wh;
-        e.a = c.a;
-        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        // hijack here for quizzes
+        switch(c.cutscene_entity_id)
         {
-          var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
-          if(te)
-          {
-            e.wx = te.wx;
-            e.wy = te.wy;
-          }
+          // case "chapter1":
+          case "chapter2":
+          case "chapter3":
+          case "chapter4":
+          case "chapter5":
+            console.log('CREATING', c.cutscene_entity_id)
+            self.waiting = 1;
+            self.use_quiz = 1;
+            self.quiz_state = 0;
+            self.hackquiz_t = 0;
+            switch(c.cutscene_entity_id)
+            {
+              case "chapter1":
+                self.quiz = quiz1
+                break;
+              case "chapter2":
+                self.quiz = quiz2
+                break;
+              case "chapter3":
+                self.quiz = quiz3
+                break;
+              case "chapter4":
+                self.quiz = quiz4
+                break;
+              case "chapter5":
+                self.quiz = quiz5
+                break;
+            }
+          default:
+            var e = new cutscene_entity();
+            e.id = c.cutscene_entity_id;
+            e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+            e.animcycle_inst.frame_t += c.animcycle_offset_t;
+            e.wx = c.wx;
+            e.wy = c.wy;
+            e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+            e.wh = c.wh;
+            e.a = c.a;
+            if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+            {
+              var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+              if(te)
+              {
+                e.wx = te.wx;
+                e.wy = te.wy;
+              }
+            }
+            self.cutscene_entitys.push(e);
+            break;
         }
-        self.cutscene_entitys.push(e);
         break;
       case CUTSCENE_COMMAND_CREATE_BLUR:
         var e = new cutscene_entity();
@@ -4385,16 +4444,52 @@ var cutsceneview = function()
       my_logger.get_cutscene_subtype_data(self.cutscene, self.cutscene.commands[self.command_i ? self.command_i - 1 : 0].raw_text),
       self.cutscene.fqid
     );
-    self.waiting = 0;
-    for(var i = 0; i < self.running_commands.length; i++)
-    {
-      var c = self.running_commands[i];
-      if(c.command == CUTSCENE_COMMAND_SPEAK)
+    if(self.use_quiz){
+      if(self.hackquiz_t >= 1) //keep in sync with draw!
       {
-        if(c.command_state != 2)
+        var qh = canv.height/(self.quiz.questions.length+1);
+        var y = qh-qh/2;
+        for(var i = 0; i <= self.quiz_state && i < self.quiz.questions.length; i++)
         {
-          c.command_state = 2;
-          c.command_t = 0;
+          var q = self.quiz.questions[i];
+          var aw = canv.width/(q.a.length+1);
+          var x = aw;
+          for(var j = 0; j < q.a.length; j++)
+          {
+            let box = {
+              x: x-aw/2,
+              y: y-text_h/2,
+              w: aw,
+              h: text_h*2
+            }
+            if(ptWithinBox(box, evt.doX, evt.doY)){
+              q.aclick[j]();
+            }
+            if (q.response != -1) {
+              self.quiz_state = Math.max(self.quiz_state, i+1); // if the question got a response, make sure state points to at least the next question.
+            }
+            x += aw;
+          }
+          y += qh;
+        }
+      }
+      if(ptWithinBox(self.quiz_cont_button, evt.doX, evt.doY)){
+        console.log('continue!');
+        self.reset_quiz();
+      }
+    }
+    else{
+      self.waiting = 0;
+      for(var i = 0; i < self.running_commands.length; i++)
+      {
+        var c = self.running_commands[i];
+        if(c.command == CUTSCENE_COMMAND_SPEAK)
+        {
+          if(c.command_state != 2)
+          {
+            c.command_state = 2;
+            c.command_t = 0;
+          }
         }
       }
     }
@@ -4512,6 +4607,10 @@ var cutsceneview = function()
         state_to = STATE_NAV; //force nav- unreliable to use stack. WONKY
         state_t = 0.499999; //skip fadeout, but needs 1 tick < 0.5. WONKY
       }
+    }
+    if(self.use_quiz)
+    {
+      self.hackquiz_t += 0.01;
     }
   }
 
@@ -4762,135 +4861,186 @@ var cutsceneview = function()
 
   self.draw = function(t)
   {
-    ctx.fillStyle = "#4c4c4c";
-
-    //bubble sort on z
-    var sorted = false;
-    while(!sorted)
+    let drawQuizQuestion = function(q, y) {
+      var aw = canv.width/(q.a.length+1);
+      var x = aw;
+      ctx.fillStyle = white;
+      ctx.fillText(q.q,canv.width/2,y-text_h/2);
+      for(var j = 0; j < q.a.length; j++)
+      {
+        if(q.response == j) ctx.fillStyle = gray;
+        else                ctx.fillStyle = white;
+        ctx.fillText(q.a[j],x,y+text_h);
+        //ctx.strokeStyle = green; ctx.strokeRect(x-aw/2,y-text_h/2,aw,text_h*2); //debug hitboxes
+        x += aw;
+      }
+    }
+  
+    if(self.use_quiz)
     {
-      sorted = true;
-      for(var i = 0; i < self.cutscene_entitys.length-1; i++)
+      ctx.fillStyle = black;
+      ctx.globalAlpha = min(1,self.hackquiz_t);
+      // ctx.fillRect(0,0,canv.width,canv.height);
+      // ctx.drawImage()
+      ctx.drawImage(self.quiz_bg_img,0,0,canv.width,canv.height);
+      ctx.globalAlpha = 1;
+      if(self.hackquiz_t >= 1)
+      {
+        ctx.textAlign = "center";
+        var qh = canv.height/(self.quiz.questions.length+1);
+        var y = qh-qh/2;
+        for(var i = 0; i <= self.quiz_state && i < self.quiz.questions.length; i++)
+        {
+          var q = self.quiz.questions[i];
+          drawQuizQuestion(q, y);
+          y += qh;
+        }
+        ctx.fillStyle = white;
+        ctx.textAlign = "left";
+        // ctx.fillText("Continue",10,canv.height-10);
+        // if (self.quiz_state >= quiz.questions.length) {
+        drawImageBox(self.contin_img,self.quiz_cont_button,ctx);
+        // }
+        //ctx.strokeStyle = green; ctx.strokeRect(10,canv.height-10-text_h,text_h*10,text_h); //debug continue hitbox
+        ctx.fillStyle = black;
+        if(self.hackquiz_t < 2)
+        {
+          ctx.globalAlpha = 1-(self.hackquiz_t-1);
+          ctx.fillRect(0,0,canv.width,canv.height);
+          ctx.globalAlpha = 1;
+        }
+      }
+    }
+
+    else{
+      //bubble sort on z
+      var sorted = false;
+      while(!sorted)
+      {
+        sorted = true;
+        for(var i = 0; i < self.cutscene_entitys.length-1; i++)
+        {
+          var entity = self.cutscene_entitys[i];
+          var nentity = self.cutscene_entitys[i+1];
+          if(entity.wz > nentity.wz)
+          {
+            self.cutscene_entitys[i] = nentity;
+            self.cutscene_entitys[i+1] = entity;
+            sorted = false;
+          }
+        }
+      }
+
+      for(var i = 0; i < self.cutscene_entitys.length; i++)
       {
         var entity = self.cutscene_entitys[i];
-        var nentity = self.cutscene_entitys[i+1];
-        if(entity.wz > nentity.wz)
+        screenSpace(my_camera,canv,entity);
+        if(entity.stack_animcycle_t) entity.stack_animcycle_t--;
+        if(entity.a == CUTSCENE_COMMAND_IGNORE || entity.a > 0)
         {
-          self.cutscene_entitys[i] = nentity;
-          self.cutscene_entitys[i+1] = entity;
-          sorted = false;
-        }
-      }
-    }
-
-    for(var i = 0; i < self.cutscene_entitys.length; i++)
-    {
-      var entity = self.cutscene_entitys[i];
-      screenSpace(my_camera,canv,entity);
-      if(entity.stack_animcycle_t) entity.stack_animcycle_t--;
-      if(entity.a == CUTSCENE_COMMAND_IGNORE || entity.a > 0)
-      {
-        if(entity.blur)
-        {
-          if(entity.blur_t == 0)
+          if(entity.blur)
           {
-            entity.blur.context.filter = "blur("+(entity.a*10)+"px)";
-            drawCanvMaskedImage(canv.canvas, -entity.x, -entity.y, canv.width, canv.height, entity.blur, entity.blur.context);
-            //blur(entity.blur,round(entity.a*5));
+            if(entity.blur_t == 0)
+            {
+              entity.blur.context.filter = "blur("+(entity.a*10)+"px)";
+              drawCanvMaskedImage(canv.canvas, -entity.x, -entity.y, canv.width, canv.height, entity.blur, entity.blur.context);
+              //blur(entity.blur,round(entity.a*5));
+            }
+            ctx.drawImage(entity.blur,entity.x,entity.y,entity.w,entity.h);
+            entity.blur_t = (entity.blur_t+1)%2;
           }
-          ctx.drawImage(entity.blur,entity.x,entity.y,entity.w,entity.h);
-          entity.blur_t = (entity.blur_t+1)%2;
-        }
-        else
-        {
-          ctx.save();
-          if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
-          ctx.translate(entity.x+entity.w/2,entity.y+entity.h/2);
-          if(entity.flip) ctx.scale(-1,1);
-          if(entity.stack_animcycle_t && entity.stack_animcycle_t > 0 && entity.stack_animcycle_inst)
-            ctx.drawImage(entity.stack_animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
           else
-            ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
-          ctx.restore();
+          {
+            ctx.save();
+            if(entity.a != CUTSCENE_COMMAND_IGNORE) ctx.globalAlpha = entity.a;
+            ctx.translate(entity.x+entity.w/2,entity.y+entity.h/2);
+            if(entity.flip) ctx.scale(-1,1);
+            if(entity.stack_animcycle_t && entity.stack_animcycle_t > 0 && entity.stack_animcycle_inst)
+              ctx.drawImage(entity.stack_animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+            else
+              ctx.drawImage(entity.animcycle_inst.img,-entity.w/2,-entity.h/2,entity.w,entity.h);
+            ctx.restore();
+          }
         }
       }
-    }
 
-    for(var i = 0; i < self.running_commands.length; i++)
-    {
-      var c = self.running_commands[i];
-      if(c.command == CUTSCENE_COMMAND_SPEAK)
+      for(var i = 0; i < self.running_commands.length; i++)
       {
-        var a = 1;
-        var yoff = 0;
-        if(c.command_state == 0)
+        var c = self.running_commands[i];
+        if(c.command == CUTSCENE_COMMAND_SPEAK)
         {
-          var t = c.command_t/30;
-          a = bubble_in_a(t);
-          yoff = bubble_in_y(t);
-        }
-        if(c.command_state == 2)
-        {
-          var t = c.command_t/30;
-          a = bubble_out_a(t);
-          yoff = bubble_out_y(t);
-        }
-        ctx.globalAlpha = a;
-
-        ctx.fillStyle = self.bubble_color;
-        fillRRect(c.x-bubble_pad-5,c.y-bubble_pad+5+yoff,c.w+bubble_pad*2+10,c.h*c.text.length+bubble_pad*2+5,bubble_pad,ctx);
-
-        //tail
-        var y = c.y-bubble_pad+5+yoff+c.h*c.text.length+bubble_pad*2+5-0.5;
-        var x;
-        var e = c.cutscene_entity;
-        x = clamp(c.x, c.x+c.w-tail_w, e.x + e.w/2-tail_w/2);
-        ctx.beginPath();
-        ctx.moveTo(x,y);
-        ctx.lineTo(x+tail_w/2-2,y+tail_h-2);
-        ctx.quadraticCurveTo(x+tail_w/2,y+tail_h,x+tail_w/2+2,y+tail_h-2);
-        ctx.lineTo(x+tail_w,y);
-        ctx.closePath();
-        ctx.fill();
-
-        ctx.fillStyle = self.text_color;
-        var oyoff = 0;
-        for(var j = 0; j < c.text.length; j++)
-        {
-          ctx.fillText(c.text[j],c.x,c.y+yoff+oyoff+c.h);
-          oyoff += c.h;
-        }
-
-        ctx.globalAlpha = 1;
-      }
-    }
-
-    if(DEBUG)
-    {
-      for(var i = 0; i < self.editable_frame_commands.length; i++)
-      {
-        var c = self.editable_frame_commands[i];
-        ctx.strokeStyle = magenta;
-        if(c.command != CUTSCENE_COMMAND_SPEAK)
-          strokeBox(c,ctx);
-        else
-        {
-          ctx.strokeStyle = white;
+          var a = 1;
           var yoff = 0;
+          if(c.command_state == 0)
+          {
+            var t = c.command_t/30;
+            a = bubble_in_a(t);
+            yoff = bubble_in_y(t);
+          }
+          if(c.command_state == 2)
+          {
+            var t = c.command_t/30;
+            a = bubble_out_a(t);
+            yoff = bubble_out_y(t);
+          }
+          ctx.globalAlpha = a;
+
+          ctx.fillStyle = self.bubble_color;
+          fillRRect(c.x-bubble_pad-5,c.y-bubble_pad+5+yoff,c.w+bubble_pad*2+10,c.h*c.text.length+bubble_pad*2+5,bubble_pad,ctx);
+
+          //tail
+          var y = c.y-bubble_pad+5+yoff+c.h*c.text.length+bubble_pad*2+5-0.5;
+          var x;
+          var e = c.cutscene_entity;
+          x = clamp(c.x, c.x+c.w-tail_w, e.x + e.w/2-tail_w/2);
+          ctx.beginPath();
+          ctx.moveTo(x,y);
+          ctx.lineTo(x+tail_w/2-2,y+tail_h-2);
+          ctx.quadraticCurveTo(x+tail_w/2,y+tail_h,x+tail_w/2+2,y+tail_h-2);
+          ctx.lineTo(x+tail_w,y);
+          ctx.closePath();
+          ctx.fill();
+
+          ctx.fillStyle = self.text_color;
+          var oyoff = 0;
           for(var j = 0; j < c.text.length; j++)
           {
-            ctx.strokeRect(c.x,c.y+yoff,c.w,c.h);
+            ctx.fillText(c.text[j],c.x,c.y+yoff+oyoff+c.h);
             oyoff += c.h;
           }
-          ctx.fillStyle = red;
-          ctx.fillRect(screenSpaceXpt(my_camera,canv,c.wx)-2,screenSpaceYpt(my_camera,canv,c.wy)-2,4,4);
+
+          ctx.globalAlpha = 1;
         }
       }
 
-      ctx.strokeStyle = magenta;
-      for(var i = 0; i < self.cutscene_entitys.length; i++)
-        strokeBox(self.cutscene_entitys[i],ctx);
-    }
+      if(DEBUG)
+      {
+        for(var i = 0; i < self.editable_frame_commands.length; i++)
+        {
+          var c = self.editable_frame_commands[i];
+          ctx.strokeStyle = magenta;
+          if(c.command != CUTSCENE_COMMAND_SPEAK)
+            strokeBox(c,ctx);
+          else
+          {
+            ctx.strokeStyle = white;
+            var yoff = 0;
+            for(var j = 0; j < c.text.length; j++)
+            {
+              ctx.strokeRect(c.x,c.y+yoff,c.w,c.h);
+              oyoff += c.h;
+            }
+            ctx.fillStyle = red;
+            ctx.fillRect(screenSpaceXpt(my_camera,canv,c.wx)-2,screenSpaceYpt(my_camera,canv,c.wy)-2,4,4);
+          }
+        }
 
+        ctx.strokeStyle = magenta;
+        for(var i = 0; i < self.cutscene_entitys.length; i++)
+          strokeBox(self.cutscene_entitys[i],ctx);
+      }
+
+    }
   }
 
   //playback vars

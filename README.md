@@ -15,6 +15,7 @@ Versions:
 5. Intermediate Change. (11/26/2019)
 6. Big Change. Will update readme later with all that has been changed (11/26/2019).
 7. Add "script_type" and "script_version" to [startgame](#startgame) (7/22/2020).
+8. Add "quiz_number" to [quiz](#log_type_quiz) (7/23/2020). Quiz questions subject to change, but now there is a quiz after each chapter end.
 
 ### Event Categories
 0. [checkpoint](#checkpoint)
@@ -406,6 +407,7 @@ Versions:
 
 #### quiz (index=21)
 Only exists in logs v6+.
+quiz_number only exists in logs v8+.
 
 | event Name | Description | Note |
 | --- | --- | --- |
@@ -415,6 +417,7 @@ Only exists in logs v6+.
 |fqid|fqid of the interaction, with the room_fqid subtracted| |
 |event_custom|event enum| |
 |questions|array of question objects, each has question, response, and response_index| |
+|quiz_number|number of the quiz sent (default startgame quiz is number 0) | |
 |name|event name enum| |
 |level|enum for current checkpoint| |
 

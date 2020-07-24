@@ -107,7 +107,7 @@ self.names_to_str = {
   };
   self.current_checkpoint_info = null;
 
-  self.mySlog = new slog("JOWILDER",7);
+  self.mySlog = new slog("JOWILDER",8);
   // self.get_null_log = function(){
   //   return get_log_data(null, {}, null, {}, null, null)
   // }
@@ -183,14 +183,16 @@ self.names_to_str = {
     return {};
   }
 
-  self.get_quiz_type_data = function(quiz_questions){
-    return {questions: quiz_questions.map(
+  self.get_quiz_type_data = function(quiz){
+    return {questions: quiz.questions.map(
       (ques) => {return {
         question: ques.q,
         response: ques.a[ques.response],
         response_index: ques.response
       }}
-    )};
+    ),
+            quiz_number: quiz.quizn };
+
   }
 
   self.get_navigate_subtype_data = function(){
