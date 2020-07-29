@@ -4017,25 +4017,30 @@ var cutsceneview = function()
   self.hackquiz_t = 0;
   self.quiz_bg_img = GenImg("assets/blank_bg.jpg");
   self.contin_img  = GenImg("assets/continue-button.png");
+  self.skip_img = GenImg("assets/skip-button.png");
+  self.quiz_btn_img = self.skip_img;
   let w = 240;
   let h = 50;
   let x = 20;
   let y = 220;
-  let scale = 0.25;
-  w = scale*490;
-  h = scale*158;
-  self.quiz_cont_button = new ButtonBox(canv.width-20-w,canv.height-20-h,w,h,function(evt){
+  let scale = (490*.25)/264;
+  // w = scale*490;
+  // h = scale*158;
+  w = scale*264 + 20;
+  h = scale*156 - 10;
+  self.quiz_next_button = new ButtonBox(canv.width-20-w,canv.height-20-h,w,h,function(evt){
     self.reset_quiz();
-    log_quiz(self.quiz)
+    // log_quiz(self.quiz) deprecated
   });
-  self.quiz_cont_button.hover = function(evt) { self.quiz_cont_button.hovering = 1; }
-  self.quiz_cont_button.unhover = function(evt) { self.quiz_cont_button.hovering = 0; }
+  self.quiz_next_button.hover = function(evt) { self.quiz_next_button.hovering = 1; }
+  self.quiz_next_button.unhover = function(evt) { self.quiz_next_button.hovering = 0; }
   self.reset_quiz = function(){
     self.use_quiz = 0;
     self.waiting = 0;
     console.log('Finished quiz!')
-    log_quiz(self.quiz)
   }
+  self.watch_quiz = false;
+  self.next_start_quiz = false;
 
 
   self.bubble_color = "#242224";
@@ -4156,16 +4161,12 @@ var cutsceneview = function()
           case "chapter3":
           case "chapter4":
           case "chapter5":
-            console.log('CREATING', c.cutscene_entity_id)
-            self.waiting = 1;
-            self.use_quiz = 1;
-            self.quiz_state = 0;
-            self.hackquiz_t = 0;
+            self.watch_quiz = true;
             switch(c.cutscene_entity_id)
             {
-              case "chapter1":
-                self.quiz = quiz1
-                break;
+              // case "chapter1":
+              //   self.quiz = quiz1
+              //   break;
               case "chapter2":
                 self.quiz = quiz2
                 break;
@@ -4323,6 +4324,17 @@ var cutsceneview = function()
     }
     self.command_i++;
     if(self.command_i >= self.cutscene.commands.length) self.end = 1;
+    if(self.watch_quiz && c.command == CUTSCENE_COMMAND_TWEEN && c.cutscene_entity_id == 'black'){
+      self.next_start_quiz = true
+    }
+    if(self.next_start_quiz){
+      self.waiting = 1;
+      self.use_quiz = 1;
+      self.quiz_state = 0;
+      self.hackquiz_t = 0;
+      self.watch_quiz = false;
+      self.next_start_quiz = false;
+    }
   }
 
   //DRAG DEBUG EDIT STUFF
@@ -4464,6 +4476,11 @@ var cutsceneview = function()
             }
             if(ptWithinBox(box, evt.doX, evt.doY)){
               q.aclick[j]();
+              if(self.quiz.questions[self.quiz.questions.length - 1].response != -1){
+                // if answered the last question
+                  // self.quiz_next_button.w = 290;
+                  self.quiz_btn_img = self.contin_img;
+              }
             }
             if (q.response != -1) {
               self.quiz_state = Math.max(self.quiz_state, i+1); // if the question got a response, make sure state points to at least the next question.
@@ -4473,7 +4490,7 @@ var cutsceneview = function()
           y += qh;
         }
       }
-      if(ptWithinBox(self.quiz_cont_button, evt.doX, evt.doY)){
+      if(ptWithinBox(self.quiz_next_button, evt.doX, evt.doY)){
         console.log('continue!');
         self.reset_quiz();
       }
@@ -4899,16 +4916,16 @@ var cutsceneview = function()
         ctx.textAlign = "left";
         // ctx.fillText("Continue",10,canv.height-10);
         // if (self.quiz_state >= quiz.questions.length) {
-        drawImageBox(self.contin_img,self.quiz_cont_button,ctx);
+        drawImageBox(self.quiz_btn_img,self.quiz_next_button,ctx);
         // }
         //ctx.strokeStyle = green; ctx.strokeRect(10,canv.height-10-text_h,text_h*10,text_h); //debug continue hitbox
-        ctx.fillStyle = black;
-        if(self.hackquiz_t < 2)
-        {
-          ctx.globalAlpha = 1-(self.hackquiz_t-1);
-          ctx.fillRect(0,0,canv.width,canv.height);
-          ctx.globalAlpha = 1;
-        }
+        // ctx.fillStyle = black;
+        // if(self.hackquiz_t < 2)
+        // {
+        //   ctx.globalAlpha = 1-(self.hackquiz_t-1);
+        //   ctx.fillRect(0,0,canv.width,canv.height);
+        //   ctx.globalAlpha = 1;
+        // }
       }
     }
 

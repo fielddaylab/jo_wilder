@@ -15,7 +15,8 @@ Versions:
 5. Intermediate Change. (11/26/2019)
 6. Big Change. Will update readme later with all that has been changed (11/26/2019).
 7. Add "script_type" and "script_version" to [startgame](#startgame) (7/22/2020).
-8. Add "quiz_number" to [quiz](#log_type_quiz) (7/23/2020). Quiz questions subject to change, but now there is a quiz after each chapter end.
+8. Add "quiz_number" to [quiz](#quiz) (7/23/2020). Quiz questions subject to change, but now there is a quiz after each chapter end.
+9. Add [quizquestion](#quizquestion) log (#22) (7/29/2020).
 
 ### Event Categories
 0. [checkpoint](#checkpoint)
@@ -39,7 +40,8 @@ Versions:
 1. [person_hover](#person_hover)
 1. [cutscene_hover](#cutscene_hover)
 1. [wildcard_hover](#wildcard_hover)
-1. [quiz](#log_type_quiz)
+1. [quiz](#quiz)
+1. [quizquestion](#quizquestion)
 
 ### Enumerators and Constants
 1. [Event Categories](#EventCategories)
@@ -403,11 +405,12 @@ Versions:
 |name|  wc.cmd_type == 1 ? LOG_NAME_BASIC : LOG_NAME_CHOICE| Only exists in versions 6+ (v6+)|
 |interacted_fqid|  clicked_fqid| Only exists in versions 6+ (v6+)|
 
-<a name="log_type_quiz"/>
+<a name="quiz"/>
 
 #### quiz (index=21)
 Only exists in logs v6+.
 quiz_number only exists in logs v8+.
+Replaced by quizquestion in v9+
 
 | event Name | Description | Note |
 | --- | --- | --- |
@@ -418,6 +421,26 @@ quiz_number only exists in logs v8+.
 |event_custom|event enum| |
 |questions|array of question objects, each has question, response, and response_index| |
 |quiz_number|number of the quiz sent (default startgame quiz is number 0) | |
+|name|event name enum| |
+|level|enum for current checkpoint| |
+
+<a name="quizquestion">
+
+#### quizquestion (index=22)
+Only exists in logs v9+.
+Replaces quiz.
+
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid|fully qualified id of the room| |
+|type|type enum| |
+|subtype|subtype enum| |
+|fqid|fqid of the interaction, with the room_fqid subtracted| |
+|event_custom|event enum| |
+|question|ques.q|text of the question|
+|question_index|question_index|index of the question within the quiz|
+|response|ques.a\[ques.response]|question response text|
+|response_index|ques.response|index of the response|
 |name|event name enum| |
 |level|enum for current checkpoint| |
 
@@ -449,6 +472,8 @@ quiz_number only exists in logs v8+.
 |18|person_hover| |
 |19|cutscene_hover| |
 |20|wildcard_hover| |
+|21|quiz| |
+|22|quizquestion| |
 
 <a name="Types"/>
 
@@ -460,6 +485,8 @@ quiz_number only exists in logs v8+.
 |2| endgame |  |
 |3| click |  |
 |4| hover | |
+|5| quiz| |
+|6|quizquestion| |
 
 
 <a name="Subtypes"/>

@@ -99,9 +99,10 @@ var MenuScene = function(game, stage)
     new_button      = new ButtonBox(x,y,w,h,function(evt){
                       save_code = 0;
                       setCookie("save", 0, 0);
-                      use_quiz = 1;
+                      // use_quiz = 1; toggle quiz
+                      next = 1; // toggle quiz
                       reset_quiz(quiz);
-                      next=0;
+                      // next=0;
                       let scale = 0.25;
                       w = scale*490;
                       h = scale*158;
@@ -230,7 +231,7 @@ var MenuScene = function(game, stage)
         };
 
         // Log the quiz data
-        log_quiz(quiz);
+        // log_quiz(quiz);
 
         // Log the gamestart data
         log_gamestart_type_data = my_logger.get_startgame_type_data(
