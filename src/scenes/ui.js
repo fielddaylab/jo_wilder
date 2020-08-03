@@ -4038,6 +4038,7 @@ var cutsceneview = function()
     self.use_quiz = 0;
     self.waiting = 0;
     console.log('Finished quiz!')
+    my_logger.log_quizend(quiz);
   }
   self.watch_quiz = false;
   self.next_start_quiz = false;
@@ -4330,6 +4331,7 @@ var cutsceneview = function()
     if(self.next_start_quiz){
       self.waiting = 1;
       self.use_quiz = 1;
+      my_logger.log_quizstart(self.quiz)
       self.quiz_state = 0;
       self.hackquiz_t = 0;
       self.watch_quiz = false;

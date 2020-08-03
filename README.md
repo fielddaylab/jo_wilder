@@ -17,6 +17,7 @@ Versions:
 7. Add "script_type" and "script_version" to [startgame](#startgame) (7/22/2020).
 8. Add "quiz_number" to [quiz](#quiz) (7/23/2020). Quiz questions subject to change, but now there is a quiz after each chapter end.
 9. Add [quizquestion](#quizquestion) log (#22) (7/29/2020).
+9. Add [quizstart](#quizstart) and [quizend](#quizend) logs (#23,#24) (8/03/2020).
 
 ### Event Categories
 0. [checkpoint](#checkpoint)
@@ -42,6 +43,8 @@ Versions:
 1. [wildcard_hover](#wildcard_hover)
 1. [quiz](#quiz)
 1. [quizquestion](#quizquestion)
+1. [quizstart](#quizstart)
+1. [quizend](#quizend)
 
 ### Enumerators and Constants
 1. [Event Categories](#EventCategories)
@@ -69,7 +72,6 @@ Versions:
 <a name="startgame"/>
 
 #### startgame (index=1)
-
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -419,11 +421,11 @@ Replaced by quizquestion in v9+
 |type|type enum| |
 |subtype|subtype enum| |
 |fqid|fqid of the interaction, with the room_fqid subtracted| |
-|event_custom|event enum| |
-|questions|array of question objects, each has question, response, and response_index| |
-|quiz_number|number of the quiz sent (default startgame quiz is number 0) | |
 |name|event name enum| |
 |level|enum for current checkpoint| |
+|event_custom|event enum| |
+|questions|array of question objects, each has question, response, and response_index| |
+|quiz_number|numerical id of the quiz sent (default startgame quiz is number 0) | |
 
 <a name="quizquestion">
 
@@ -437,14 +439,51 @@ Replaces quiz.
 |type|type enum| |
 |subtype|subtype enum| |
 |fqid|fqid of the interaction, with the room_fqid subtracted| |
+|name|event name enum| |
+|level|enum for current checkpoint| |
 |event_custom|event enum| |
-|quiz_number|number of the quiz sent (default startgame quiz is number 0) | |
+|quiz_number|numerical id of the quiz sent | |
 |question|ques.q|text of the question|
 |question_index|question_index|index of the question within the quiz|
 |response|ques.a\[ques.response]|question response text|
 |response_index|ques.response|index of the response|
+
+<a name="quizstart">
+
+
+#### quizstart (index=23)
+Only exists in logs v10+.
+Logs when a player starts a given quiz.
+
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid|fully qualified id of the room| |
+|type|type enum| |
+|subtype|subtype enum| |
+|fqid|fqid of the interaction, with the room_fqid subtracted| |
+|event_custom|event enum| |
 |name|event name enum| |
 |level|enum for current checkpoint| |
+|quiz_number|numerical id of the quiz sent | |
+
+<a name="quizend">
+
+
+#### quizend (index=24)
+Only exists in logs v10+.
+Logs when a player ends a given quiz.
+
+| event Name | Description | Note |
+| --- | --- | --- |
+|room_fqid|fully qualified id of the room| |
+|type|type enum| |
+|subtype|subtype enum| |
+|fqid|fqid of the interaction, with the room_fqid subtracted| |
+|event_custom|event enum| |
+|name|event name enum| |
+|level|enum for current checkpoint| |
+|quiz_number|numerical id of the quiz sent | |
+
 
 ## Enumerators and Constants
 
@@ -476,6 +515,8 @@ Replaces quiz.
 |20|wildcard_hover| |
 |21|quiz| |
 |22|quizquestion| |
+|23|quizstart| |
+|24|quizend| |
 
 <a name="Types"/>
 
@@ -489,7 +530,8 @@ Replaces quiz.
 |4| hover | |
 |5| quiz| |
 |6|quizquestion| |
-
+|7|quizstart| |
+|8|quizend| |
 
 <a name="Subtypes"/>
 
