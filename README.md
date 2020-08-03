@@ -69,6 +69,7 @@ Versions:
 <a name="startgame"/>
 
 #### startgame (index=1)
+
 | event Name | Description | Note |
 | --- | --- | --- |
 |room_fqid |fully qualified id of the room | |
@@ -80,8 +81,8 @@ Versions:
 |fullscreen | | |
 |music | | |
 |hq | | |
-|script_type | enum of which script is being used. See [script_types](#script_types) for details and mappings from enum to type. | |
-|script_version | Version of the script | |
+|script_type | enum of which script is being used. See [script_types](#script_types) for details and mappings from enum to type. |v7+ |
+|script_version | Version of the script |v7+ |
 |name |event name | |
 |level |enum for current checkpoint | |
 
@@ -437,6 +438,7 @@ Replaces quiz.
 |subtype|subtype enum| |
 |fqid|fqid of the interaction, with the room_fqid subtracted| |
 |event_custom|event enum| |
+|quiz_number|number of the quiz sent (default startgame quiz is number 0) | |
 |question|ques.q|text of the question|
 |question_index|question_index|index of the question within the quiz|
 |response|ques.a\[ques.response]|question response text|
