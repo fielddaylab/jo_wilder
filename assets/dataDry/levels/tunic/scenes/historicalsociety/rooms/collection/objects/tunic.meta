@@ -18,7 +18,6 @@ tmp_object.deck_animcycle_ids = [
 ];
 tmp_object.notifications_persistent = 1;
 tmp_object.raw_notifications = [
-"Hooray, a boring old shirt.",
 "Guess I should look for clues.",
 ];
 tmp_object.raw_notification_ws = [

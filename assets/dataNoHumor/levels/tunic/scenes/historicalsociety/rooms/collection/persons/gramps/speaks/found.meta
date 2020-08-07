@@ -50,7 +50,7 @@ tmp_speak_command.animcycle_id = "emote_gramps_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Hot Dog! I knew it!";
+tmp_speak_command.raw_atext = "I knew it!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -115,7 +115,7 @@ tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ooh, I like clues!";
+tmp_speak_command.raw_atext = "Do I have to?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

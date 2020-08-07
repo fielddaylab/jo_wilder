@@ -1,22 +1,2 @@
-tmp_entry.ww = 366;
-tmp_entry.wh = 158.00000000000006;
-tmp_entry.wx = -208.0000000000001;
-tmp_entry.wy = 91.00000000000003;
-tmp_entry.wz = 100;
-tmp_entry.page = 0;
-tmp_entry.animcycle_id = "entry_voteforgramps_img";
-tmp_entry.audio_id = "null";
-tmp_entry.deck_animcycle_ids = [
-];
-tmp_entry.notifications_persistent = 0;
-tmp_entry.raw_notifications = [
-];
-tmp_entry.raw_notification_ws = [
-];
-tmp_entry.notification_reqs = [[
-]];
-tmp_entry.reqs = [[
-"tunic.historicalsociety.closet.retirement_letter.hub",
-]];
-tmp_entry.interactive = 1;
+
 
