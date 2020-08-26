@@ -52,6 +52,7 @@ Versions:
 1. [Log Subtypes](#Subtypes)
 1. [Log Names](#Names)
 1. [Script Types](#script_types)
+1. [Script Versions](#script_versions)
 
 <a name="checkpoint"/>
 
@@ -573,7 +574,16 @@ Starting in v7, multiple scripts were added to the game for AB tests on snark an
 |2 | nosnark  | no snark (includes humor). No snark can also be thought of as "obedient" |
 |3 | normal | base script (includes snark and humor) |
 
+<a name="script_versions"/>
 
+#### Script Versions
+Starting in v7. The version of script used is only logged once, in [startgame](#startgame). Different script types may have different versions, but for now they are all uniform.
+
+| Version | Description |
+| --- | --- |
+|0 | Base game, all script types were the same as the original script (type 3: normal).  |
+|1 | Changed the script for Chapter 1 to reflect the different types. Type 3 stays the same. |
+|2 | Updated survey questions (8/26/2020). |
 
 -- OLD README --
 
