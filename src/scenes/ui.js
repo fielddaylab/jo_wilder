@@ -4019,6 +4019,7 @@ var cutsceneview = function()
   self.contin_img  = GenImg("assets/continue-button.png");
   self.skip_img = GenImg("assets/skip-button.png");
   self.quiz_btn_img = self.skip_img;
+  self.quiz_next_text = "SKIP"
   let w = 240;
   let h = 50;
   let x = 20;
@@ -4039,6 +4040,7 @@ var cutsceneview = function()
     self.waiting = 0;
     console.log('Finished quiz!')
     my_logger.log_quizend(quiz);
+    self.quiz_next_text = "SKIP"
   }
   self.watch_quiz = false;
   self.next_start_quiz = false;
@@ -4482,6 +4484,7 @@ var cutsceneview = function()
                 // if answered the last question
                   // self.quiz_next_button.w = 290;
                   self.quiz_btn_img = self.contin_img;
+                  self.quiz_next_text = "CONTINUE"
               }
             }
             if (q.response != -1) {
@@ -4918,7 +4921,8 @@ var cutsceneview = function()
         ctx.textAlign = "left";
         // ctx.fillText("Continue",10,canv.height-10);
         // if (self.quiz_state >= quiz.questions.length) {
-        drawImageBox(self.quiz_btn_img,self.quiz_next_button,ctx);
+        // drawImageBox(self.quiz_btn_img,self.quiz_next_button,ctx); // image graphic
+        ctx.fillText(self.quiz_next_text, canv.width-20-w,canv.height-20)
         // }
         //ctx.strokeStyle = green; ctx.strokeRect(10,canv.height-10-text_h,text_h*10,text_h); //debug continue hitbox
         // ctx.fillStyle = black;
