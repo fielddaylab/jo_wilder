@@ -90,6 +90,7 @@ var MenuScene = function(game, stage)
     go_img      = GenImg("assets/go.png");
     quiz_bg_img = GenImg("assets/blank_bg.jpg");
     contin_img  = GenImg("assets/continue-button.png");
+    quiz_next_text = "SKIP"
 
     var w = 240;
     var h = 50;
@@ -99,8 +100,8 @@ var MenuScene = function(game, stage)
     new_button      = new ButtonBox(x,y,w,h,function(evt){
                       save_code = 0;
                       setCookie("save", 0, 0);
-                      // use_quiz = 1; toggle quiz
-                      next = 1; // toggle quiz
+                      use_quiz = 1; // toggle quiz
+                      next = 0; // toggle quiz
                       reset_quiz(quiz);
                       // next=0;
                       let scale = 0.25;
@@ -211,9 +212,10 @@ var MenuScene = function(game, stage)
           }
           y += qh;
         }
-        // if (quiz.questions[quiz.questions.length-1].response != -1) {
-        //   quiz_state = 1;
-        // }
+        if (quiz.questions[quiz.questions.length-1].response != -1) {
+              // if answered the last question
+                quiz_next_text = "CONTINUE"
+        }
         // clicker.consumeif(10,canv.height-10-text_h,text_h*10,text_h,quizcontinue);
       }
     }
@@ -353,10 +355,11 @@ var MenuScene = function(game, stage)
           y += qh;
         }
         ctx.fillStyle = white;
-        ctx.textAlign = "left";
+        ctx.textAlign = "right";
         // ctx.fillText("Continue",10,canv.height-10);
         // if (quiz_state >= quiz.questions.length) {
-        drawImageBox(contin_img,quiz_cont_button,ctx);
+        // drawImageBox(contin_img,quiz_cont_button,ctx);
+        ctx.fillText(quiz_next_text, canv.width-20,canv.height-20)
         // }
         //ctx.strokeStyle = green; ctx.strokeRect(10,canv.height-10-text_h,text_h*10,text_h); //debug continue hitbox
         ctx.fillStyle = black;
