@@ -4918,11 +4918,11 @@ var cutsceneview = function()
           y += qh;
         }
         ctx.fillStyle = white;
-        ctx.textAlign = "left";
+        ctx.textAlign = "right";
         // ctx.fillText("Continue",10,canv.height-10);
         // if (self.quiz_state >= quiz.questions.length) {
         // drawImageBox(self.quiz_btn_img,self.quiz_next_button,ctx); // image graphic
-        ctx.fillText(self.quiz_next_text, canv.width-20-w,canv.height-20)
+        ctx.fillText(self.quiz_next_text, canv.width-20,canv.height-20)
         // }
         //ctx.strokeStyle = green; ctx.strokeRect(10,canv.height-10-text_h,text_h*10,text_h); //debug continue hitbox
         // ctx.fillStyle = black;
