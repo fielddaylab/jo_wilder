@@ -151,7 +151,7 @@ tmp_cutscene_command.wy = 2.6024898296981824;
 tmp_cutscene_command.w = 294.03973388671875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_angry";
-tmp_cutscene_command.raw_text = "You stole Teddy! How could you?!";
+tmp_cutscene_command.raw_text = "I'm here to rescue my friend!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -246,7 +246,7 @@ tmp_cutscene_command.wy = 3.6947094579670483;
 tmp_cutscene_command.w = 113.87190246582031;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
-tmp_cutscene_command.raw_text = "No he hasn't!";
+tmp_cutscene_command.raw_text = "What?!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -626,7 +626,7 @@ tmp_cutscene_command.wy = 4.041508080879861;
 tmp_cutscene_command.w = 181.0718231201172;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Let's go find Gramps!";
+tmp_cutscene_command.raw_text = "Let's go help Gramps!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

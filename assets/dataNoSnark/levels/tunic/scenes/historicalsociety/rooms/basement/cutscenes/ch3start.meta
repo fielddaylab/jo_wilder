@@ -138,7 +138,7 @@ tmp_cutscene_command.wy = 1.6228575963952299;
 tmp_cutscene_command.w = 145;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I don't have time for this, Gramps.";
+tmp_cutscene_command.raw_text = "It's really cool, Gramps. But I'm worried about Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -152,7 +152,7 @@ tmp_cutscene_command.wy = 0.22891823703452374;
 tmp_cutscene_command.w = 108;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_worried";
-tmp_cutscene_command.raw_text = "Teddy is still missing!";
+tmp_cutscene_command.raw_text = "He's still missing!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

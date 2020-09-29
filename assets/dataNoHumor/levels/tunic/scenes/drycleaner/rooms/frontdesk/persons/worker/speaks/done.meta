@@ -42,32 +42,6 @@ tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -72.62525170095279;
-tmp_speak_command.wy = 160.4285714285714;
-tmp_speak_command.w = 182;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_cleaner_think";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Unless you're too busy horsing around.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 206.15464222075457;
-tmp_speak_command.wy = 31.628571428571355;
-tmp_speak_command.w = 119.05589294433594;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Ha! Good one.";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 206.15464222075457;
 tmp_speak_command.wy = 31.628571428571355;
 tmp_speak_command.w = 97;

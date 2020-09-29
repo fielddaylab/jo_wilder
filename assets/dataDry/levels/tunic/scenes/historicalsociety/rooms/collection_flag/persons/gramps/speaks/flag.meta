@@ -23,7 +23,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Teddy! I'm sure glad to see you.";
+tmp_speak_command.raw_atext = "Teddy! I'm glad to see you.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -49,7 +49,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Gadzooks! Poor critter.";
+tmp_speak_command.raw_atext = "Poor badger.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -101,7 +101,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Aha! Good catch, Jo.";
+tmp_speak_command.raw_atext = "Good catch!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

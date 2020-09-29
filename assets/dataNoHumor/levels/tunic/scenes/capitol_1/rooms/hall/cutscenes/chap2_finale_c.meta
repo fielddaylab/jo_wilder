@@ -165,7 +165,7 @@ tmp_cutscene_command.wy = -40.417947312631775;
 tmp_cutscene_command.w = 196.47982788085938;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Ooh, nice decorations!";
+tmp_cutscene_command.raw_text = "Nice decorations.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -221,7 +221,7 @@ tmp_cutscene_command.wy = 133.17748920314716;
 tmp_cutscene_command.w = 200.4878387451172;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_boss_frown";
-tmp_cutscene_command.raw_text = "Who on earth is Teddy?";
+tmp_cutscene_command.raw_text = "Who is Teddy?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -310,7 +310,7 @@ tmp_cutscene_command.wy = 147.07359307359314;
 tmp_cutscene_command.w = 204;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "There was a bit of a... situation... in my office.";
+tmp_cutscene_command.raw_text = "I had some cleaning up to do in my office.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -338,7 +338,7 @@ tmp_cutscene_command.wy = -39.46320346320338;
 tmp_cutscene_command.w = 187.09585571289062;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "AND he stole Teddy!!!";
+tmp_cutscene_command.raw_text = "AND he stole Teddy!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -430,7 +430,7 @@ tmp_cutscene_command.wy = -0.15584415584414302;
 tmp_cutscene_command.w = 51.15997314453125;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Whew.";
+tmp_cutscene_command.raw_text = "Sorry I'm late.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -455,20 +455,6 @@ tmp_cutscene_command.deck_animcycle_ids = [
 ];
 tmp_cutscene_command.animcycle_offset_t = 0;
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "wells";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -67.47186147186154;
-tmp_cutscene_command.wy = 149.23809523809507;
-tmp_cutscene_command.w = 310.69573974609375;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_wells_annoyed";
-tmp_cutscene_command.raw_text = "You won't BELIEVE the day I've had!";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
@@ -510,48 +496,6 @@ tmp_cutscene_command.w = 165.49586486816406;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_angry";
 tmp_cutscene_command.raw_text = "YOU STOLE TEDDY!";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "wells";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -58.38095238095251;
-tmp_cutscene_command.wy = 151.18614718614708;
-tmp_cutscene_command.w = 164.72784423828125;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_wells_angry";
-tmp_cutscene_command.raw_text = "I did no such thing!";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "wells";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_SCENE;
-tmp_cutscene_command.wx = -62.01731601731594;
-tmp_cutscene_command.wy = 149.84415584415575;
-tmp_cutscene_command.w = 165.8798828125;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wait- who's Teddy?";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = -111.10822510822508;
-tmp_cutscene_command.wy = -44.05194805194819;
-tmp_cutscene_command.w = 143.223876953125;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
-tmp_cutscene_command.raw_text = "Don't play dumb!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -601,7 +545,7 @@ tmp_cutscene_command.wy = 147.29004329004317;
 tmp_cutscene_command.w = 126;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Keep your chin up, Jo. We'll find Teddy!";
+tmp_cutscene_command.raw_text = "It'll be okay, Jo. We'll find Teddy!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -737,7 +681,7 @@ tmp_cutscene_command.wy = 148.50216450216436;
 tmp_cutscene_command.w = 95;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Sure thing, Boss!";
+tmp_cutscene_command.raw_text = "Sounds good, Boss.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -811,7 +755,7 @@ tmp_cutscene_command.wy = 155.08225108225093;
 tmp_cutscene_command.w = 175;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I hope you find your skunk, or whatever.";
+tmp_cutscene_command.raw_text = "I hope you find your badger, kid.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

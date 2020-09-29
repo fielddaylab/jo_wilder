@@ -38,7 +38,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I have an idea.";
+tmp_speak_command.raw_atext = "It must've been Wells.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -51,7 +51,7 @@ tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "He's wrong about old shirts and his name rhymes with \"smells\"...";
+tmp_speak_command.raw_atext = "He's always trying to get you in trouble, and he doesn't like animals!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -77,7 +77,7 @@ tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "BUT WELLS STOLE TEDDY!";
+tmp_speak_command.raw_atext = "But what if Wells kidnapped Teddy?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -90,7 +90,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Could be. But we need evidence.";
+tmp_speak_command.raw_atext = "Then we need evidence.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -103,7 +103,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Fine. Let's investigate!";
+tmp_speak_command.raw_atext = "You're right, Gramps. Let's investigate!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -142,7 +142,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Don't worry, Gramps. I'll find Teddy!";
+tmp_speak_command.raw_atext = "Okay. I'll find Teddy!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

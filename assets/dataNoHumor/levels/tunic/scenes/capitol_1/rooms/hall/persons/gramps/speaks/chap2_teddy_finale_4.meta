@@ -100,7 +100,7 @@ tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Wha... but...";
+tmp_speak_command.raw_atext = "What?!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -113,7 +113,7 @@ tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Then who took Teddy???";
+tmp_speak_command.raw_atext = "Then who took Teddy?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

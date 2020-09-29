@@ -63,7 +63,7 @@ tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I'll ride with you!";
+tmp_speak_command.raw_atext = "Can I ride with you?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -89,7 +89,7 @@ tmp_speak_command.animcycle_id = "emote_jo_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "He's a badger!";
+tmp_speak_command.raw_atext = "Don't worry, he won't! (And he's a badger, by the way.)";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

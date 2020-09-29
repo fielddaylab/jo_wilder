@@ -28,19 +28,6 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -89.83874385236948;
-tmp_speak_command.wy = 140.55271238485147;
-tmp_speak_command.w = 161.75186157226562;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "*grumble grumble*";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = -91.83630238851185;
 tmp_speak_command.wy = 142.5527123848516;
 tmp_speak_command.w = 113.70390319824219;
@@ -49,7 +36,7 @@ tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "And you are?";
+tmp_speak_command.raw_atext = "Who are you?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -75,7 +62,7 @@ tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I don't have time for kids.";
+tmp_speak_command.raw_atext = "Sorry, I'm too busy for kids right now.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -88,7 +75,7 @@ tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Now if only I could read this thing. Blasted tiny letters...";
+tmp_speak_command.raw_atext = "Now if only I could read this thing.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

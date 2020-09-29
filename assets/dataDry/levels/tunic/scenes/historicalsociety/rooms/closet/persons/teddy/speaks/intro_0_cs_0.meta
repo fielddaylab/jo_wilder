@@ -23,7 +23,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "See you later, Teddy.";
+tmp_speak_command.raw_atext = "Hang tight, Teddy.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -36,7 +36,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I get to go to Gramps's meeting!";
+tmp_speak_command.raw_atext = "I'll hurry back and then we can go exploring!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

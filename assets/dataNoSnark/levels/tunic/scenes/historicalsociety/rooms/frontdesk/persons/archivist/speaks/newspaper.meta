@@ -24,7 +24,7 @@ tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I need to find Wells!!!";
+tmp_speak_command.raw_atext = "Can you help me? I need to find Wells!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -50,7 +50,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I can't calm down. This is important!";
+tmp_speak_command.raw_atext = "Please? This is really important.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -76,7 +76,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ugh. Fine.";
+tmp_speak_command.raw_atext = "Okay. Thanks anyway.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

@@ -50,7 +50,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ugh. I have to head over there and check out the animals.";
+tmp_speak_command.raw_atext = "I have to head over there and check out the animals.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -64,32 +64,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "I'll ride with you!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 60.203553596054434;
-tmp_speak_command.wy = 197.60776474097224;
-tmp_speak_command.w = 258;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "FINE. That possum better not scratch my leather seats...";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 175.4889430053958;
-tmp_speak_command.wy = 44.872308400729445;
-tmp_speak_command.w = 121.93589782714844;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_jo_annoyed";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "He's a badger!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

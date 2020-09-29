@@ -120,45 +120,6 @@ tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -90.98210750912718;
-tmp_speak_command.wy = 142.8290685772773;
-tmp_speak_command.w = 101.58393859863281;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Knew what?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -90.98210750912718;
-tmp_speak_command.wy = 142.8290685772773;
-tmp_speak_command.w = 150;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Did you have a question or not?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 125.18677683068852;
-tmp_speak_command.wy = 16.5312180143296;
-tmp_speak_command.w = 36.25596618652344;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Yes!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
 tmp_speak_command.wx = 126.29322514184506;
 tmp_speak_command.wy = 12.451381780962144;
 tmp_speak_command.w = 132;

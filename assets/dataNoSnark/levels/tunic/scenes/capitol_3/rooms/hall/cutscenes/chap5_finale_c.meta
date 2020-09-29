@@ -265,7 +265,7 @@ tmp_cutscene_command.wy = -72.36280982673793;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Admit it, you think Teddy's cute.";
+tmp_cutscene_command.raw_text = "What? But Teddy's the cutest!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -279,21 +279,7 @@ tmp_cutscene_command.wy = 12.48832278326767;
 tmp_cutscene_command.w = 80;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Sure, for a weasel.";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "jolie";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.wx = 160.59854298849885;
-tmp_cutscene_command.wy = -66.30220376613171;
-tmp_cutscene_command.w = 52.791961669921875;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = "emote_jo_annoyed";
-tmp_cutscene_command.raw_text = "*sigh*";
+tmp_cutscene_command.raw_text = "Sure. For a weasel.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -406,20 +392,6 @@ tmp_cutscene_command.w = 184;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.raw_text = "Don't get carried away.";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "jolie";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
-tmp_cutscene_command.wx = 167.95607043558837;
-tmp_cutscene_command.wy = -70.84501055006565;
-tmp_cutscene_command.w = 213;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Ha! Carried away? I'm just getting started.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

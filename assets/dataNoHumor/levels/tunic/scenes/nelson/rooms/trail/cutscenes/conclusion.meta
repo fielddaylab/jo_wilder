@@ -209,21 +209,7 @@ tmp_cutscene_command.wy = 46.249999999999936;
 tmp_cutscene_command.w = 151.52786254882812;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Oh, you go ahead.";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
-tmp_cutscene.commands.push(tmp_cutscene_command);
-
-tmp_prev_cutscene_command = tmp_cutscene_command;
-tmp_cutscene_command = new cutscene_command();
-tmp_cutscene_command.command = CUTSCENE_COMMAND_SPEAK;
-tmp_cutscene_command.cutscene_entity_id = "null";
-tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_AVATAR;
-tmp_cutscene_command.wx = -1371.0227272727273;
-tmp_cutscene_command.wy = 55.27272727272719;
-tmp_cutscene_command.w = 158;
-tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I'll stay here and watch the sunset.";
+tmp_cutscene_command.raw_text = "Oh, you go ahead. I'll wait for you here.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -63,7 +63,7 @@ tmp_speak_command.animcycle_id = "emote_jo_happy";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "The boss is gonna love it!!!";
+tmp_speak_command.raw_atext = "The boss is gonna love it!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 

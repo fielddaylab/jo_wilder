@@ -35,7 +35,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Teddy would NEVER leave without his scarf!";
+tmp_speak_command.raw_atext = "Teddy would never leave without his scarf.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -48,7 +48,7 @@ tmp_speak_command.animcycle_id = "emote_boss_annoyed";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Alright, everybody hold up-";
+tmp_speak_command.raw_atext = "Wait a minute.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -61,7 +61,7 @@ tmp_speak_command.animcycle_id = "emote_boss_frown";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Are you telling me there's a LIVE badger in MY museum?";
+tmp_speak_command.raw_atext = "Are you telling me there's a live badger in my museum?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

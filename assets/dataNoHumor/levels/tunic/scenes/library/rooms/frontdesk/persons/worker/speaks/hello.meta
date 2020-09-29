@@ -36,21 +36,8 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You look like you're on a mission.";
+tmp_speak_command.raw_atext = "How can I help you?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -171.17668624279023;
-tmp_speak_command.wy = 107.58531229710285;
-tmp_speak_command.w = 202.28782653808594;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Two missions, actually!";
-tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();

@@ -112,7 +112,7 @@ tmp_cutscene_command.wy = 71.62821976440163;
 tmp_cutscene_command.w = 210;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_worried";
-tmp_cutscene_command.raw_text = "I got here and the whole place was ransacked!";
+tmp_cutscene_command.raw_text = "I got here and the whole place was a mess!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

@@ -77,7 +77,7 @@ tmp_cutscene_command.wy = -12.027524896354262;
 tmp_cutscene_command.w = 115;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_worried";
-tmp_cutscene_command.raw_text = "Great Scott, you’re right!";
+tmp_cutscene_command.raw_text = "You're right, Jo!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -161,7 +161,7 @@ tmp_cutscene_command.wy = -14.905842629396892;
 tmp_cutscene_command.w = 192;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "Jo! I can't go with you. I need to take the artifact upstairs.";
+tmp_cutscene_command.raw_text = "I can't go with you. I need to take the artifact upstairs.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

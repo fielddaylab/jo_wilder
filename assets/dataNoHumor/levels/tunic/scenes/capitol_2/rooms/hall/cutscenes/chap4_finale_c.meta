@@ -132,7 +132,7 @@ tmp_cutscene_command.wy = 130.97354745179362;
 tmp_cutscene_command.w = 278;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wells got in trouble for littering at the Wildlife Center.";
+tmp_cutscene_command.raw_text = "The exhibit opens tomorrow.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -146,7 +146,7 @@ tmp_cutscene_command.wy = 132.79172926997546;
 tmp_cutscene_command.w = 152;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_boss_annoyed";
-tmp_cutscene_command.raw_text = "PLEASE tell me you're doing better than he is.";
+tmp_cutscene_command.raw_text = "How's the investigation going?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -160,7 +160,7 @@ tmp_cutscene_command.wy = -58.72727272727285;
 tmp_cutscene_command.w = 134.3438720703125;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_happy";
-tmp_cutscene_command.raw_text = "I'm doing great!";
+tmp_cutscene_command.raw_text = "Great!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -174,7 +174,7 @@ tmp_cutscene_command.wy = -52.666666666666636;
 tmp_cutscene_command.w = 193.52781677246094;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I figured out the flag!";
+tmp_cutscene_command.raw_text = "I figured out the flag.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

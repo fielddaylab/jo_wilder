@@ -24,20 +24,7 @@ tmp_speak_command.animcycle_id = "emote_archivist_glasses_scared";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "You again! Don't let him hurt me!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 20.374008045024354;
-tmp_speak_command.wy = -252.11428571428578;
-tmp_speak_command.w = 26;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_glasses_annoyed";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "🙄";
+tmp_speak_command.raw_atext = "What are you doing here?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -50,7 +37,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Actually, we're just here for some photos.";
+tmp_speak_command.raw_atext = "We're looking for some photos.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -90,32 +77,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "YOU'RE the new history detective everybody's talking about?";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 129.00000000291226;
-tmp_speak_command.wy = 13.00000000000001;
-tmp_speak_command.w = 83.4879150390625;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Guess so!";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = -0.9999999999201634;
-tmp_speak_command.wy = 141.99999999999991;
-tmp_speak_command.w = 52.911956787109375;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "emote_archivist_glasses_annoyed";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "YOU?!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -168,19 +129,6 @@ tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
 tmp_speak_command.raw_atext = "Here's a call number for the Stacks. Go find some photos.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 3.552713678800501e-14;
-tmp_speak_command.wy = 141;
-tmp_speak_command.w = 193;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Just please, don't let your badger eat them!";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 

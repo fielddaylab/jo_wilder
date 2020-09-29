@@ -35,7 +35,7 @@ tmp_speak_command.animcycle_id = "emote_jo_angry";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "HE WANTS TO KILL TEDDY!";
+tmp_speak_command.raw_atext = "What if he wants to have Teddy stuffed?!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
