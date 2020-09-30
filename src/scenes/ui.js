@@ -4932,6 +4932,8 @@ var cutsceneview = function()
         //   ctx.fillRect(0,0,canv.width,canv.height);
         //   ctx.globalAlpha = 1;
         // }
+        ctx.textAlign = "left";
+
       }
     }
 

@@ -19289,7 +19289,7 @@ tmp_cutscene_command.cutscene_entity_id = "archivist";
 tmp_cutscene_command.cutscene_entity_type = CUTSCENE_ENTITY_CUTSCENE;
 tmp_cutscene_command.wx = -1002.4167200923196;
 tmp_cutscene_command.wy = 67.03165518500806;
-tmp_cutscene_command.w = 45.015960693359375;
+tmp_cutscene_command.w = 200;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
 tmp_cutscene_command.raw_text = "I've seen him eating homework and important papers, too.";
@@ -32052,6 +32052,19 @@ tmp_speak.reqs = [[
 "!self",
 ]];
 
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -824.287582103238;
+tmp_speak_command.wy = -352.3562509745111;
+tmp_speak_command.w = 207.80780029296875;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_wells_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I can't believe this.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
@@ -32061,6 +32074,34 @@ tmp_speak = new speak();
 tmp_speak.id = "animals2";
 tmp_speak.fqid = "tunic.wildlife.center.wells.animals2";
 {
+tmp_speak.primary = 2;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"!tunic.wildlife.center.tracks.hub.deer",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -816.4916346185126;
+tmp_speak_command.wy = -352.71436034722586;
+tmp_speak_command.w = 155;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Ugh...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
