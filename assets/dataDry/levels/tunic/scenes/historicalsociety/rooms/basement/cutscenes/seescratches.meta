@@ -147,7 +147,7 @@ tmp_cutscene_command.wy = -103.50651792964905;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Let's follow those scratch marks!";
+tmp_cutscene_command.raw_text = "What should we do next?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -161,7 +161,7 @@ tmp_cutscene_command.wy = -14.905842629396892;
 tmp_cutscene_command.w = 192;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "I can't go with you. I need to take the artifact upstairs.";
+tmp_cutscene_command.raw_text = "I need to take the artifact upstairs. Why don't you investigate those scratch marks?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -175,7 +175,7 @@ tmp_cutscene_command.wy = -101.8176689319144;
 tmp_cutscene_command.w = 154;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "It's okay, Gramps. I'll go by myself.";
+tmp_cutscene_command.raw_text = "Okay. I'll try.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

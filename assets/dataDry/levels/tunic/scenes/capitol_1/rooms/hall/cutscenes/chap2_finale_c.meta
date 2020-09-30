@@ -165,7 +165,7 @@ tmp_cutscene_command.wy = -40.417947312631775;
 tmp_cutscene_command.w = 196.47982788085938;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Nice decorations.";
+tmp_cutscene_command.raw_text = "Hi, Mrs. M.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -179,7 +179,7 @@ tmp_cutscene_command.wy = 133.17748920314716;
 tmp_cutscene_command.w = 123;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Thanks. Did you figure out the shirt?";
+tmp_cutscene_command.raw_text = "Welcome back, Jolie. Did you figure out the shirt?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -324,7 +324,7 @@ tmp_cutscene_command.wy = -40.0692640692641;
 tmp_cutscene_command.w = 218.7518310546875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wells sabotaged Gramps!";
+tmp_cutscene_command.raw_text = "Mrs. M, I think Wells kidnapped Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -338,7 +338,7 @@ tmp_cutscene_command.wy = -39.46320346320338;
 tmp_cutscene_command.w = 187.09585571289062;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "AND he stole Teddy!";
+tmp_cutscene_command.raw_text = "And he messed up Gramps's office, too!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -402,7 +402,7 @@ tmp_cutscene_command.wy = -40.0692640692641;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_happy";
-tmp_cutscene_command.raw_text = "Now can I tell you about Teddy??";
+tmp_cutscene_command.raw_text = "Now can I tell you what happened to Teddy?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -416,7 +416,7 @@ tmp_cutscene_command.wy = -42.53679653679661;
 tmp_cutscene_command.w = 177.9518585205078;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "We need to save him!";
+tmp_cutscene_command.raw_text = "He needs our help!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -467,7 +467,7 @@ tmp_cutscene_command.wy = -42.32034632034649;
 tmp_cutscene_command.w = 44.07997131347656;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "YOU!";
+tmp_cutscene_command.raw_text = "Wells! Where's Teddy? Is he okay?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -495,7 +495,7 @@ tmp_cutscene_command.wy = -46.90909090909096;
 tmp_cutscene_command.w = 165.49586486816406;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "YOU STOLE TEDDY!";
+tmp_cutscene_command.raw_text = "I figured out that you kidnapped him!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
