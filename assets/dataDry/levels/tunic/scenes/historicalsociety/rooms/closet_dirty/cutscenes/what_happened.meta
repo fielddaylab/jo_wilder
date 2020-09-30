@@ -48,7 +48,7 @@ tmp_cutscene_command.wy = 73.45832280437457;
 tmp_cutscene_command.w = 89.55995178222656;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_worried";
-tmp_cutscene_command.raw_text = "What the-";
+tmp_cutscene_command.raw_text = "Oh no!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

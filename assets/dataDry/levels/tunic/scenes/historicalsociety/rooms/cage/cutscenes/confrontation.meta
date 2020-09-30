@@ -137,7 +137,7 @@ tmp_cutscene_command.wy = 2.6024898296981824;
 tmp_cutscene_command.w = 294.03973388671875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "You stole Teddy! How could you?!";
+tmp_cutscene_command.raw_text = "I'm here to rescue my friend!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -232,7 +232,7 @@ tmp_cutscene_command.wy = 3.6947094579670483;
 tmp_cutscene_command.w = 113.87190246582031;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "No he hasn't!";
+tmp_cutscene_command.raw_text = "He has??";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -246,7 +246,7 @@ tmp_cutscene_command.wy = 67.03165518500806;
 tmp_cutscene_command.w = 45.015960693359375;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
-tmp_cutscene_command.raw_text = "Yes, he has. I've seen him eating homework and important papers, too.";
+tmp_cutscene_command.raw_text = "I've seen him eating homework and important papers, too.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -377,7 +377,7 @@ tmp_cutscene_command.wy = 4.872434078343103;
 tmp_cutscene_command.w = 138.56788635253906;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Come on, Teddy.";
+tmp_cutscene_command.raw_text = "Come on, Teddy. Let's go help Gramps!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 

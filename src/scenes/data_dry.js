@@ -3521,8 +3521,8 @@ tmp_animcycle.frame_files.push("assets/dataDry/levels/tunic/animcycles/notebook/
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
-tmp_animcycle.id = "notebook_baked_no_monster";
-tmp_animcycle.fqid = "tunic.notebook_baked_no_monster";
+tmp_animcycle.id = "notebook_baked";
+tmp_animcycle.fqid = "tunic.notebook_baked";
 {
 tmp_animcycle.w = 0;
 tmp_animcycle.h = 0;
@@ -3532,7 +3532,7 @@ tmp_animcycle.loop = 1;
 
 tmp_animcycle.frame_files = [];
 tmp_animcycle.frames = [];
-tmp_animcycle.frame_files.push("assets/dataDry/levels/tunic/animcycles/notebook_baked_no_monster/0.png");
+tmp_animcycle.frame_files.push("assets/dataDry/levels/tunic/animcycles/notebook_baked/0.png");
 }
 tmp_level.animcycles.push(tmp_animcycle);
 tmp_animcycle = new animcycle();
@@ -8599,7 +8599,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Well? What are you still doing here?";
+tmp_speak_command.raw_atext = "What are you still doing here,  Jolie?";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -9636,7 +9636,7 @@ tmp_cutscene_command.wy = -40.417947312631775;
 tmp_cutscene_command.w = 196.47982788085938;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Nice decorations.";
+tmp_cutscene_command.raw_text = "Hi, Mrs. M.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+2;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9650,7 +9650,7 @@ tmp_cutscene_command.wy = 133.17748920314716;
 tmp_cutscene_command.w = 123;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Thanks. Did you figure out the shirt?";
+tmp_cutscene_command.raw_text = "Welcome back, Jolie. Did you figure out the shirt?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9795,7 +9795,7 @@ tmp_cutscene_command.wy = -40.0692640692641;
 tmp_cutscene_command.w = 218.7518310546875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Wells sabotaged Gramps!";
+tmp_cutscene_command.raw_text = "Mrs. M, I think Wells kidnapped Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9809,7 +9809,7 @@ tmp_cutscene_command.wy = -39.46320346320338;
 tmp_cutscene_command.w = 187.09585571289062;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "AND he stole Teddy!";
+tmp_cutscene_command.raw_text = "And he messed up Gramps's office, too!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9873,7 +9873,7 @@ tmp_cutscene_command.wy = -40.0692640692641;
 tmp_cutscene_command.w = 171;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_happy";
-tmp_cutscene_command.raw_text = "Now can I tell you about Teddy??";
+tmp_cutscene_command.raw_text = "Now can I tell you what happened to Teddy?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9887,7 +9887,7 @@ tmp_cutscene_command.wy = -42.53679653679661;
 tmp_cutscene_command.w = 177.9518585205078;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "We need to save him!";
+tmp_cutscene_command.raw_text = "He needs our help!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9938,7 +9938,7 @@ tmp_cutscene_command.wy = -42.32034632034649;
 tmp_cutscene_command.w = 44.07997131347656;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "YOU!";
+tmp_cutscene_command.raw_text = "Wells! Where's Teddy? Is he okay?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -9966,7 +9966,7 @@ tmp_cutscene_command.wy = -46.90909090909096;
 tmp_cutscene_command.w = 165.49586486816406;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "YOU STOLE TEDDY!";
+tmp_cutscene_command.raw_text = "I figured out that you kidnapped him!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -11235,21 +11235,8 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "WE'LL DEAL WITH THAT LATER, MRS. M.";
+tmp_speak_command.raw_atext = "Um.... yeah. Sorry, Mrs. M.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
-tmp_speak.commands.push(tmp_speak_command);
-
-tmp_speak_command = new speak_command();
-tmp_speak_command.wx = 55.51694223662594;
-tmp_speak_command.wy = 150.22253334317122;
-tmp_speak_command.w = 114;
-tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
-tmp_speak_command.audio_id = "null";
-tmp_speak_command.deck_animcycle_ids = [
-];
-tmp_speak_command.raw_atext = "Watch it, Jo.";
-tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
 tmp_speak_command = new speak_command();
@@ -11735,7 +11722,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "HE WANTS TO KILL TEDDY!";
+tmp_speak_command.raw_atext = "What if he wants to have Teddy stuffed?!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -18089,7 +18076,7 @@ tmp_cutscene_command.wy = 1.6228575963952299;
 tmp_cutscene_command.w = 145;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "I don't have time for this, Gramps.";
+tmp_cutscene_command.raw_text = "It's really cool, Gramps. But I'm worried about Teddy.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -18103,7 +18090,7 @@ tmp_cutscene_command.wy = 0.22891823703452374;
 tmp_cutscene_command.w = 108;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_worried";
-tmp_cutscene_command.raw_text = "Teddy is still missing!";
+tmp_cutscene_command.raw_text = "He's still missing!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -18497,7 +18484,7 @@ tmp_cutscene_command.wy = -103.50651792964905;
 tmp_cutscene_command.w = 159;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Let's follow those scratch marks!";
+tmp_cutscene_command.raw_text = "What should we do next?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -18511,7 +18498,7 @@ tmp_cutscene_command.wy = -14.905842629396892;
 tmp_cutscene_command.w = 192;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_gramps_sad";
-tmp_cutscene_command.raw_text = "I can't go with you. I need to take the artifact upstairs.";
+tmp_cutscene_command.raw_text = "I need to take the artifact upstairs. Why don't you investigate those scratch marks?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -18525,7 +18512,7 @@ tmp_cutscene_command.wy = -101.8176689319144;
 tmp_cutscene_command.w = 154;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "It's okay, Gramps. I'll go by myself.";
+tmp_cutscene_command.raw_text = "Okay. I'll try.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -19196,7 +19183,7 @@ tmp_cutscene_command.wy = 2.6024898296981824;
 tmp_cutscene_command.w = 294.03973388671875;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "You stole Teddy! How could you?!";
+tmp_cutscene_command.raw_text = "I'm here to rescue my friend!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -19291,7 +19278,7 @@ tmp_cutscene_command.wy = 3.6947094579670483;
 tmp_cutscene_command.w = 113.87190246582031;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "No he hasn't!";
+tmp_cutscene_command.raw_text = "He has??";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -19305,7 +19292,7 @@ tmp_cutscene_command.wy = 67.03165518500806;
 tmp_cutscene_command.w = 45.015960693359375;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_archivist_annoyed";
-tmp_cutscene_command.raw_text = "Yes, he has. I've seen him eating homework and important papers, too.";
+tmp_cutscene_command.raw_text = "I've seen him eating homework and important papers, too.";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -19436,7 +19423,7 @@ tmp_cutscene_command.wy = 4.872434078343103;
 tmp_cutscene_command.w = 138.56788635253906;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
-tmp_cutscene_command.raw_text = "Come on, Teddy.";
+tmp_cutscene_command.raw_text = "Come on, Teddy. Let's go help Gramps!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -21416,7 +21403,7 @@ tmp_cutscene_command.wy = 73.45832280437457;
 tmp_cutscene_command.w = 89.55995178222656;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = "emote_jo_worried";
-tmp_cutscene_command.raw_text = "What the-";
+tmp_cutscene_command.raw_text = "Oh no!";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+1;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
@@ -21674,7 +21661,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I have an idea.";
+tmp_speak_command.raw_atext = "It must've been Wells.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -21687,7 +21674,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "He's wrong about old shirts and his name rhymes with \"smells\"...";
+tmp_speak_command.raw_atext = "He’s always trying to get you in trouble, and he doesn't like animals!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -21713,7 +21700,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "BUT WELLS STOLE TEDDY!";
+tmp_speak_command.raw_atext = "But what if Wells kidnapped Teddy?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -21726,7 +21713,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Could be. But we need evidence.";
+tmp_speak_command.raw_atext = "Then we need evidence.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -21739,7 +21726,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Fine. Let's investigate!";
+tmp_speak_command.raw_atext = "You're right, Gramps. Let's investigate! ";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -21778,7 +21765,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Don't worry, Gramps. I'll find Teddy!";
+tmp_speak_command.raw_atext = "Okay. I'll find Teddy!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -25305,7 +25292,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I need to find Wells!!!";
+tmp_speak_command.raw_atext = "Can you help me? I need to find Wells!";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -25331,7 +25318,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I can't calm down. This is important!";
+tmp_speak_command.raw_atext = "Please? This is really important.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -25357,7 +25344,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Ugh. Fine.";
+tmp_speak_command.raw_atext = "Okay. Thanks anyway.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -27447,7 +27434,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Yeah. Thanks anyway.";
+tmp_speak_command.raw_atext = "Okay. Thanks anyway.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -28895,7 +28882,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "Please let me know if you do. It's important!";
+tmp_speak_command.raw_atext = "Please let me know if you do.";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -29297,7 +29284,7 @@ tmp_speak_command.animcycle_id = "null";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];
-tmp_speak_command.raw_atext = "I need to find Wells right away! Do you know where he is?";
+tmp_speak_command.raw_atext = "Can you help me find Wells?";
 tmp_speak_command.speaker = SPEAKER_AVATAR;
 tmp_speak.commands.push(tmp_speak_command);
 
@@ -32065,6 +32052,15 @@ tmp_speak.reqs = [[
 "!self",
 ]];
 
+tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
+for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
+for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
+}
+tmp_person.speaks.push(tmp_speak);
+tmp_speak = new speak();
+tmp_speak.id = "animals2";
+tmp_speak.fqid = "tunic.wildlife.center.wells.animals2";
+{
 tmp_speak.animcycle_inst = gen_animcycle_inst(tmp_speak.animcycle_id,tmp_level.animcycles);
 for(var i = 0; i < tmp_speak.commands.length; i++) tmp_speak.commands[i].atext = stextToLines(tmp_speak.commands[i].raw_atext, tmp_speak.commands[i].w);
 for(var i = 0; i < tmp_speak.raw_notifications.length; i++) tmp_speak.notifications[i] = stextToLines(tmp_speak.raw_notifications[i], tmp_speak.raw_notification_ws[i] ? tmp_speak.raw_notification_ws[i] : tmp_level.notifications_w);
