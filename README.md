@@ -627,7 +627,7 @@ OUT=data_dry.js
 #### Generating Script
 1. In terminal, navigate to `/engine`.
 1. Run `. quickgen.sh` (Windows users: run `sh quickgen.sh`). If you get an error about `\r` characters, run dos2unix on the erroring file and retry.
-1. For the `nosnark` and `dry` versions, replace the code:
+1. If generating the `nosnark`, `nohumor`, and `dry` versions, replace the code in `/src/data_nosnark`, `/src/data_nohumor`,  and `/src/data_dry` respectively:
 ```
 tmp_animcycle = new animcycle();
 tmp_animcycle.id = "notebook_baked";
@@ -663,6 +663,7 @@ tmp_animcycle.frame_files.push("assets/dataDry/levels/tunic/animcycles/notebook_
 }
 tmp_level.animcycles.push(tmp_animcycle);
 ```
+if necessary.
 
 4. Optionally, delete any data files generated in the engine folder.
 5. If you changed the script, please increment the versions of the script in `/src/log_events.js`, and add a comment of what the version changes. Also add similar documetation to `/README.md` in the `Script Versions` section.
