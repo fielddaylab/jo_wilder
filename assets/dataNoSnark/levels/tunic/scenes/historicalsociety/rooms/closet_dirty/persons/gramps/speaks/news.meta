@@ -73,7 +73,7 @@ tmp_speak_command.wx = -567.559439022812;
 tmp_speak_command.wy = -33.2413424975357;
 tmp_speak_command.w = 122;
 tmp_speak_command.h = 30;
-tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.animcycle_id = "emote_jo_worried";
 tmp_speak_command.audio_id = "null";
 tmp_speak_command.deck_animcycle_ids = [
 ];

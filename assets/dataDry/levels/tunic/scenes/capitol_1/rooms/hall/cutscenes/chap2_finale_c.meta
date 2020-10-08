@@ -466,7 +466,7 @@ tmp_cutscene_command.wx = -114.26839826839823;
 tmp_cutscene_command.wy = -42.32034632034649;
 tmp_cutscene_command.w = 44.07997131347656;
 tmp_cutscene_command.h = 30;
-tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
+tmp_cutscene_command.animcycle_id = "emote_jo_worried";
 tmp_cutscene_command.raw_text = "Wells! Where's Teddy? Is he okay?";
 tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
 tmp_cutscene.commands.push(tmp_cutscene_command);
