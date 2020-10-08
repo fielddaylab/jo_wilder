@@ -20,6 +20,12 @@ window.onload = function()
   {
     iframe.style.display = "block";
     iframe.src = "iframe.html";
+    // forward the script_version param
+    let current_url = new URL(window.location.href);
+    let script_type = current_url.searchParams.get("script_type")
+    iframe.src += '?script_type='+script_type
+
+
     clickload.removeEventListener("click",loadiframe);
     clickload.parentNode.removeChild(clickload);
     clickload = null;

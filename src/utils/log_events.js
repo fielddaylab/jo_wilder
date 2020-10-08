@@ -3,9 +3,9 @@
 // script v1s are with the first chapter implemented
 // script v2 involves a slight change in the wording of the survey questions.
 // I should document this better.
-LOG_SCRIPT_VERSION_DRY       = 2;
-LOG_SCRIPT_VERSION_NOHUMOR   = 2;
-LOG_SCRIPT_VERSION_NOSNARK   = 2;
+LOG_SCRIPT_VERSION_DRY       = 3;
+LOG_SCRIPT_VERSION_NOHUMOR   = 3;
+LOG_SCRIPT_VERSION_NOSNARK   = 3;
 LOG_SCRIPT_VERSION_NORMAL    = 2;
 
 var ENUM;

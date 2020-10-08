@@ -9,6 +9,27 @@ function loadScriptSync(src) {
     console.log('Loaded script data from: '+src)
 }
 
+let current_url = new URL(window.location.href);
+let script_type = current_url.searchParams.get("script_type")
+console.log(script_type)
+if (script_type !== null) {
+    console.log("Loading custom script "+script_type)
+    if (script_type === "dry") {
+        LOAD_DATA_TYPE = LOG_DATA_DRY
+    }
+    else if (script_type === "nohumor") {
+        LOAD_DATA_TYPE = LOG_DATA_NOHUMOR
+    }
+    else if (script_type === "nosnark") {
+        LOAD_DATA_TYPE = LOG_DATA_NOSNARK
+    }
+    else if (script_type === "original") {
+        LOAD_DATA_TYPE = LOG_DATA_NORMAL
+    }
+    else {
+        console.log("Invalid script_type "+script_type)
+    }
+}
 if (LOAD_DATA_TYPE == LOG_DATA_DRY) {
     loadScriptSync('src/scenes/data_dry.js')
 }
