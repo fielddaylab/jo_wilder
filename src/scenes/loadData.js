@@ -9,11 +9,19 @@ function loadScriptSync(src) {
     console.log('Loaded script data from: '+src)
 }
 
+let referrer = new URL(document.referrer);
 let current_url = new URL(window.location.href);
-let script_type = current_url.searchParams.get("script_type")
-console.log(script_type)
-if (script_type !== null) {
-    console.log("Loading custom script "+script_type)
+let script_type = current_url.searchParams.get("script_type");
+
+
+if(referrer.host === "pbswisconsineducation.org"){
+    QUIZ_GLOBAL_SHOW = false;
+    LOAD_DATA_TYPE = LOG_DATA_NORMAL;
+    console.log("Loading from pbswisconsineducation.org. Original script. No surveys.");
+}
+else if (script_type !== null) {
+    console.log(script_type);
+    console.log("Loading custom script "+script_type);
     if (script_type === "dry") {
         LOAD_DATA_TYPE = LOG_DATA_DRY
     }

@@ -4327,7 +4327,7 @@ var cutsceneview = function()
     }
     self.command_i++;
     if(self.command_i >= self.cutscene.commands.length) self.end = 1;
-    if(self.watch_quiz && c.command == CUTSCENE_COMMAND_TWEEN && c.cutscene_entity_id == 'black'){
+    if(self.watch_quiz && c.command == CUTSCENE_COMMAND_TWEEN && c.cutscene_entity_id == 'black' && QUIZ_GLOBAL_SHOW){
       self.next_start_quiz = true
     }
     if(self.next_start_quiz){

@@ -100,9 +100,11 @@ var MenuScene = function(game, stage)
     new_button      = new ButtonBox(x,y,w,h,function(evt){
                       save_code = 0;
                       setCookie("save", 0, 0);
-                      use_quiz = 1; // toggle quiz
-                      next = 0; // toggle quiz
-                      reset_quiz(quiz);
+                      if (QUIZ_GLOBAL_SHOW){
+                        use_quiz = 1; // toggle quiz
+                        next = 0; // toggle quiz
+                        reset_quiz(quiz);
+                    }
                       // next=0;
                       let scale = 0.25;
                       w = scale*490;

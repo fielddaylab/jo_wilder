@@ -1,3 +1,5 @@
+var QUIZ_GLOBAL_SHOW = true;
+
 var quiz0 = {
   quizn: 0,
   questions: [
