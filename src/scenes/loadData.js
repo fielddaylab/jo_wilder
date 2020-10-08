@@ -6,7 +6,7 @@ function loadScriptSync(src) {
     s.type = "text/javascript";
     s.async = false;
     document.getElementsByTagName('head')[0].appendChild(s);
-    console.log('Loaded script data from: '+src)
+    console.log('Loaded script data from: '+src);
 }
 
 let referrer = new URL(document.referrer);
@@ -23,31 +23,31 @@ else if (script_type !== null) {
     console.log(script_type);
     console.log("Loading custom script "+script_type);
     if (script_type === "dry") {
-        LOAD_DATA_TYPE = LOG_DATA_DRY
+        LOAD_DATA_TYPE = LOG_DATA_DRY;
     }
     else if (script_type === "nohumor") {
-        LOAD_DATA_TYPE = LOG_DATA_NOHUMOR
+        LOAD_DATA_TYPE = LOG_DATA_NOHUMOR;
     }
     else if (script_type === "nosnark") {
-        LOAD_DATA_TYPE = LOG_DATA_NOSNARK
+        LOAD_DATA_TYPE = LOG_DATA_NOSNARK;
     }
     else if (script_type === "original") {
-        LOAD_DATA_TYPE = LOG_DATA_NORMAL
+        LOAD_DATA_TYPE = LOG_DATA_NORMAL;
     }
     else {
-        console.log("Invalid script_type "+script_type)
+        console.log("Invalid script_type "+script_type);
     }
 }
 if (LOAD_DATA_TYPE == LOG_DATA_DRY) {
-    loadScriptSync('src/scenes/data_dry.js')
+    loadScriptSync('src/scenes/data_dry.js');
 }
 else if (LOAD_DATA_TYPE == LOG_DATA_NOHUMOR) {
-    loadScriptSync('src/scenes/data_nohumor.js')
+    loadScriptSync('src/scenes/data_nohumor.js');
 }
 else if (LOAD_DATA_TYPE == LOG_DATA_NOSNARK) {
-    loadScriptSync('src/scenes/data_nosnark.js')
+    loadScriptSync('src/scenes/data_nosnark.js');
 }
 else if (LOAD_DATA_TYPE == LOG_DATA_NORMAL) {
-    loadScriptSync('src/scenes/data.js')
+    loadScriptSync('src/scenes/data.js');
 }
 
