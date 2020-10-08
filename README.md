@@ -54,6 +54,9 @@ Versions:
 1. [Script Types](#script_types)
 1. [Script Versions](#script_versions)
 
+### Generating Scripts
+1. [Generating Scripts](#GeneratingScripts)
+
 <a name="checkpoint"/>
 
 #### checkpoint (index=0)
@@ -584,83 +587,82 @@ Starting in v7. The version of script used is only logged once, in [startgame](#
 |0 | Base game, all script types were the same as the original script (type 3: normal).  |
 |1 | Changed the script for Chapter 1 to reflect the different types. Type 3 stays the same. |
 |2 | Updated survey questions (8/26/2020). |
+|3 | Changed the script of rest of chapters to reflect the different types (10/8/2020). |
 
--- OLD README --
+<a name="GeneratingScripts"/>
 
-## Logging Events
-Each log is sent with a number of fields required by [simplelog](https://github.com/fielddaylab/simplelog). Simple log allows for a custom field called event_data_complex along with its category enumerator:
-  event_custom: category enumerator
-  event_data_complex: JSON.stringify(log_data)
-Each log_data is a JSON object for that specific category as defined below.
-Note: Note: event_custom will always map to a string of the event name. For example, if an event called FOO had a field of "event_custom", its value would be a string "FOO". Not all events have this field.
+### Generating Scripts
 
-#### Change Log
-Versions:
-1. Original
-2. Restructured to flatten logging objects (which originally contained many sub-objects)
-3. Simple log now sends player_id (if present) from the URL to log.php (9/24/2019)
+#### Configuring the Script Generator File
+In `/engine`, edit the first few lines of `gen_data.sh` based on the script you want to edit:
+1. original (data)
+```
+ENGINE_DD=../assets/data
+GAME_DD=assets/data
+STUB_D=stubs
+OUT=data.js
+```
+2. no humor (nohumor)
+```
+ENGINE_DD=../assets/dataNoHumor
+GAME_DD=assets/dataNoHumor
+STUB_D=stubs
+OUT=data_nohumor.js
+```
+3. no snark (nosnark)
+```
+ENGINE_DD=../assets/dataNoSnark
+GAME_DD=assets/dataNoSnark
+STUB_D=stubs
+OUT=data_nosnark.js
+```
+4. no snark and no humor (dry)
+```
+ENGINE_DD=../assets/dataDry
+GAME_DD=assets/dataDry
+STUB_D=stubs
+OUT=data_dry.js
+```
 
-### Logging 
-Each event is comprised of:
-1. Event Type (int):
-   - checkpoint (0)
-   - startgame (1)
-   - endgame (2)
-   - click (0)
-   - hover (1)
-2. Fields for Type Data
-3. Event Subtype (int):
-   - basic (1)
-   - navigate (1)
-   - notebook (2)
-   - map (3)
-   - notification (4)
-   - object (5)
-   - observation (6)
-   - person (7)
-   - cutscene (8)
-   - wildcard (9) (assessments)
-4. Fields for Subtype Data
-5. Event Name (int) (contained within subtype data):
-   - basic  (0) (default name)
-   - open (1) (only used for the notebook/map)
-   - close (2) (only used for the closeable items)
-   - choice (3) (only used for the assessments)
-   - next (4) (only used for the notebook)
-   - prev (5) (only used for the notebook)
-6. room fqid (Fully Qualified ID) (string, or 0 if not applicable e.g. for startgame)
-7. id (fqid minus the room fqid) (string, or 0 if not applicable e.g. for startgame)
+#### Generating Script
+1. In terminal, navigate to `/engine`.
+1. Run `. quickgen.sh` (Windows users: run `sh quickgen.sh`). If you get an error about `\r` characters, run dos2unix on the erroring file and retry.
+1. For the `nosnark` and `dry` versions, replace the code:
+```
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "notebook_baked";
+tmp_animcycle.fqid = "tunic.notebook_baked";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
-Data is as follows (none if not listed):
-- Click: screen coordinates (int array), room coordinates (int array)
-- Hover: start_time (int), end_time (int) (client-side time)
-- Startgame: save code (int, 0 if not used), fullscreen mode on/off (bool), music on/off (bool), high quality graphics on/off (bool)
-- notebook: page_number (int)
-- wildcard: correct (string, the correct answer to the problem), answer (string, the selected answer)
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/dataDry/levels/tunic/animcycles/notebook_baked/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+```
+with
+```
+tmp_animcycle = new animcycle();
+tmp_animcycle.id = "notebook_baked_no_monster";
+tmp_animcycle.fqid = "tunic.notebook_baked_no_monster";
+{
+tmp_animcycle.w = 0;
+tmp_animcycle.h = 0;
+tmp_animcycle.frame_t = 10;
+tmp_animcycle.offset_t = 0;
+tmp_animcycle.loop = 1;
 
-Note: Each element in the game has a unique FQID.
+tmp_animcycle.frame_files = [];
+tmp_animcycle.frames = [];
+tmp_animcycle.frame_files.push("assets/dataDry/levels/tunic/animcycles/notebook_baked_no_monster/0.png");
+}
+tmp_level.animcycles.push(tmp_animcycle);
+```
 
-When sent to the server, each log also contains a level (index of current save code, range 0-23).
-Each log also gets its specific enumerator:
- - LOG_CHECKPOINT            = 0
- - LOG_STARTGAME             = 1
- - LOG_ENDGAME               = 2
- - LOG_NAVIGATE_CLICK        = 3
- - LOG_NOTEBOOK_CLICK        = 4
- - LOG_MAP_CLICK             = 5
- - LOG_NOTIFICATION_CLICK    = 6
- - LOG_OBJECT_CLICK          = 7
- - LOG_OBSERVATION_CLICK     = 8
- - LOG_PERSON_CLICK          = 9
- - LOG_CUTSCENE_CLICK        = 10
- - LOG_WILDCARD_CLICK        = 11
- - LOG_NAVIGATE_HOVER        = 12
- - LOG_NOTEBOOK_HOVER        = 13
- - LOG_MAP_HOVER             = 14
- - LOG_NOTIFICATION_HOVER    = 15
- - LOG_OBJECT_HOVER          = 16
- - LOG_OBSERVATION_HOVER     = 17
- - LOG_PERSON_HOVER          = 18
- - LOG_CUTSCENE_HOVER        = 19
- - LOG_WILDCARD_HOVER        = 20
-
+4. Optionally, delete any data files generated in the engine folder.
+5. If you changed the script, please increment the versions of the script in `/src/log_events.js`, and add a comment of what the version changes. Also add similar documetation to `/README.md` in the `Script Versions` section.

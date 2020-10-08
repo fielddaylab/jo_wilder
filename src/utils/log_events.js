@@ -2,6 +2,7 @@
 // script v0s are original game
 // script v1s are with the first chapter implemented
 // script v2 involves a slight change in the wording of the survey questions.
+// script v3 implements  the whole game script
 // I should document this better.
 LOG_SCRIPT_VERSION_DRY       = 3;
 LOG_SCRIPT_VERSION_NOHUMOR   = 3;
