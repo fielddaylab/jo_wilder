@@ -1,4 +1,14 @@
 # JOWILDER
+
+Links:
+
+| key | description | link |
+| original | base game | https://jowilder-master.netlify.app/?script_type=original |
+| nohumor | no humor | https://jowilder-master.netlify.app/?script_type=nohumor |
+| nosnark | no snark| https://jowilder-master.netlify.app/?script_type=nosnark |
+| dry | no snark or humor | https://jowilder-master.netlify.app/?script_type=dry |
+
+
 ## Logging Events
 Each log is sent with a number of fields required by [simplelog](https://github.com/fielddaylab/simplelog). Simple log allows for a custom field called event_data_complex along with its category enumerator:
   event_custom: category enumerator
