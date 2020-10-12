@@ -3,6 +3,7 @@
 Links:
 
 | key | description | link |
+| --- | --- | --- |
 | original | base game | https://jowilder-master.netlify.app/?script_type=original |
 | nohumor | no humor | https://jowilder-master.netlify.app/?script_type=nohumor |
 | nosnark | no snark| https://jowilder-master.netlify.app/?script_type=nosnark |
