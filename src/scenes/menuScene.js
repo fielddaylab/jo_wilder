@@ -97,25 +97,31 @@ var MenuScene = function(game, stage)
     var x = 20;
     var y = 220;
     continue_button = new ButtonBox(x,y,w,h,function(evt){ if(!continuable) return; next = 1; }); y += h+10;
-    new_button      = new ButtonBox(x,y,w,h,function(evt){
-                      save_code = 0;
-                      setCookie("save", 0, 0);
-                      if (QUIZ_GLOBAL_SHOW){
-                        use_quiz = 1; // toggle quiz
-                        next = 0; // toggle quiz
-                        reset_quiz(quiz);
-                    }
-                      // next=0;
-                      let scale = 0.25;
-                      w = scale*490;
-                      h = scale*158;
-                      quiz_cont_button = new ButtonBox(canv.width-20-w,canv.height-20-h,w,h,function(evt){
-                        next = 1;
-                        use_quiz = 0;
-                      });
-                      quiz_cont_button.hover = function(evt) { quiz_cont_button.hovering = 1; }
-                      quiz_cont_button.unhover = function(evt) { quiz_cont_button.hovering = 0; }
-                    }); y += h+10;
+    new_button      = new ButtonBox(x,y,w,h,function(evt)
+    {
+      save_code = 0;
+      setCookie("save", 0, 0);
+      if(QUIZ_GLOBAL_SHOW)
+      {
+        use_quiz = 1; // toggle quiz
+        next=0;
+        reset_quiz(quiz);
+      }
+      else
+      {
+        use_quiz = 0;
+        next=1;
+      }
+    }); y += h+10;
+
+    let scale = 0.25;
+    w = scale*490;
+    h = scale*158;
+    quiz_cont_button = new ButtonBox(canv.width-20-w,canv.height-20-h,w,h,function(evt)
+      {
+        next = 1;
+        use_quiz = 0;
+      });
   
     y += h+50;
     code_txt        = new DomTextBox(x,y,w,h,canv,"",function(txt){
@@ -133,6 +139,7 @@ var MenuScene = function(game, stage)
       }
     });
     x += w+10;
+
     code_button = new ButtonBox(x,y,70,h,function(evt){
       if(save_table[code_txt.txt.toLowerCase()])
       {
@@ -147,6 +154,8 @@ var MenuScene = function(game, stage)
     continue_button.unhover = function(evt) { continue_button.hovering = 0; }
     new_button.hover = function(evt) { new_button.hovering = 1; }
     new_button.unhover = function(evt) { new_button.hovering = 0; }
+    quiz_cont_button.hover = function(evt) { quiz_cont_button.hovering = 1; }
+    quiz_cont_button.unhover = function(evt) { quiz_cont_button.hovering = 0; }
 
     w = 30;
     h = 30;
@@ -252,12 +261,14 @@ var MenuScene = function(game, stage)
     }
     else
     {
-      if (use_quiz) {
+      if(use_quiz)
+      {
         hoverer.filter(quiz_cont_button);
-        if (!clicker.filter(quiz_cont_button))
+        if(!clicker.filter(quiz_cont_button))
           ;
       }
-      else {
+      else
+      {
         blurer.filter(code_txt);
         hoverer.filter(continue_button);
         hoverer.filter(new_button);

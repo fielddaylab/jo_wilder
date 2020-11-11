@@ -4043,8 +4043,6 @@ var cutsceneview = function()
     self.quiz_next_text = "SKIP"
   }
   self.watch_quiz = false;
-  self.next_start_quiz = false;
-
 
   self.bubble_color = "#242224";
   self.text_color = white;
@@ -4156,55 +4154,37 @@ var cutsceneview = function()
     {
       case CUTSCENE_COMMAND_NULL: break;
       case CUTSCENE_COMMAND_CREATE:
+      {
         // hijack here for quizzes
         switch(c.cutscene_entity_id)
         {
-          // case "chapter1":
-          case "chapter2":
-          case "chapter3":
-          case "chapter4":
-          case "chapter5":
-            self.watch_quiz = true;
-            switch(c.cutscene_entity_id)
-            {
-              // case "chapter1":
-              //   self.quiz = quiz1
-              //   break;
-              case "chapter2":
-                self.quiz = quiz2
-                break;
-              case "chapter3":
-                self.quiz = quiz3
-                break;
-              case "chapter4":
-                self.quiz = quiz4
-                break;
-              case "chapter5":
-                self.quiz = quiz5
-                break;
-            }
-          default:
-            var e = new cutscene_entity();
-            e.id = c.cutscene_entity_id;
-            e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
-            e.animcycle_inst.frame_t += c.animcycle_offset_t;
-            e.wx = c.wx;
-            e.wy = c.wy;
-            e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
-            e.wh = c.wh;
-            e.a = c.a;
-            if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
-            {
-              var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
-              if(te)
-              {
-                e.wx = te.wx;
-                e.wy = te.wy;
-              }
-            }
-            self.cutscene_entitys.push(e);
-            break;
+          case "chapter2": self.quiz = quiz2; self.watch_quiz = true; break;
+          case "chapter3": self.quiz = quiz3; self.watch_quiz = true; break;
+          case "chapter4": self.quiz = quiz4; self.watch_quiz = true; break;
+          case "chapter5": self.quiz = quiz5; self.watch_quiz = true; break;
+          default: ;
         }
+            
+        var e = new cutscene_entity();
+        e.id = c.cutscene_entity_id;
+        e.animcycle_inst = gen_animcycle_inst(c.animcycle_id,cur_level.animcycles);
+        e.animcycle_inst.frame_t += c.animcycle_offset_t;
+        e.wx = c.wx;
+        e.wy = c.wy;
+        e.ww = c.ww; if(e.ww < 0) { e.flip = 1; e.ww *= -1; } else e.flip = 0;
+        e.wh = c.wh;
+        e.a = c.a;
+        if(c.cutscene_target_entity_type != CUTSCENE_ENTITY_NULL)
+        {
+          var te = self.find_cutscene_entity(c.cutscene_target_entity_type, c.cutscene_target_entity_id);
+          if(te)
+          {
+            e.wx = te.wx;
+            e.wy = te.wy;
+          }
+        }
+        self.cutscene_entitys.push(e);
+      }
         break;
       case CUTSCENE_COMMAND_CREATE_BLUR:
         var e = new cutscene_entity();
@@ -4327,17 +4307,16 @@ var cutsceneview = function()
     }
     self.command_i++;
     if(self.command_i >= self.cutscene.commands.length) self.end = 1;
-    if(self.watch_quiz && c.command == CUTSCENE_COMMAND_TWEEN && c.cutscene_entity_id == 'black' && QUIZ_GLOBAL_SHOW){
-      self.next_start_quiz = true
-    }
-    if(self.next_start_quiz){
+
+    if(self.watch_quiz && c.command == CUTSCENE_COMMAND_TWEEN && c.cutscene_entity_id == 'black' && QUIZ_GLOBAL_SHOW)
+    {
+      //start next quiz
       self.waiting = 1;
       self.use_quiz = 1;
       my_logger.log_quizstart(self.quiz)
       self.quiz_state = 0;
       self.hackquiz_t = 0;
       self.watch_quiz = false;
-      self.next_start_quiz = false;
     }
   }
 
