@@ -14,7 +14,12 @@ let current_url = new URL(window.location.href);
 let script_type = current_url.searchParams.get("script_type");
 
 
-if(referrer.host === "www3.pbswisconsineducation.org"){
+if(
+  referrer.host === "www3.pbswisconsineducation.org" ||
+  referrer.host ===  "www.pbswisconsineducation.org" ||
+  referrer.host ===      "pbswisconsineducation.org"
+  )
+{
     QUIZ_GLOBAL_SHOW = false;
     LOAD_DATA_TYPE = LOG_DATA_NORMAL;
     console.log("Loading from pbswisconsineducation.org. Original script. No surveys.");
