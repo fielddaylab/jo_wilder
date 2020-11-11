@@ -15676,7 +15676,7 @@ tmp_cutscene_command.w = 96;
 tmp_cutscene_command.h = 30;
 tmp_cutscene_command.animcycle_id = CUTSCENE_COMMAND_IGNORE;
 tmp_cutscene_command.raw_text = "Hey, I almost forgot.";
-tmp_cutscene_command.t = tmp_prev_cutscene_command.t+0;
+tmp_cutscene_command.t = tmp_prev_cutscene_command.t+100;
 tmp_cutscene.commands.push(tmp_cutscene_command);
 
 tmp_prev_cutscene_command = tmp_cutscene_command;
