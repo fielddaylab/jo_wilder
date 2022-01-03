@@ -18,25 +18,26 @@ Each log_data is a JSON object for that specific category as defined below.
 Note: Note: event_custom will always map to a string of the event name. For example, if an event called FOO had a field of "event_custom", its value would be a string "FOO". Not all events have this field.
 
 ## Survey
-Survey questions are listed below, where each question is mapped to an index:
-    0: 'What grade are you in?',
-    1: 'How well do you read in English?',
-    2: 'The game grabs my attention.',
-    3: 'I like watching TV shows about history.',
-    4: 'Jo is friendly.',
-    5: 'I think the characters are funny.',
-    6: 'The characters say things that make me laugh.',
-    7: 'Time flies while I\'m playing the game.',
-    8: 'I like reading about history.',
-    9: 'I like Jo.',
-    10: 'Jo is kind.',
-    11: 'The characters say funny things.',
-    12: 'I forget what\'s around me while playing the game.',
-    13: 'I like learning history very much.',
-    14: 'I think learning history is fun.',
-    15: 'I can relate to Jo.',
-    16: 'The characters are entertaining.',
-    17: 'I feel emotionally involved in the game.'
+Survey questions are listed below, where each question is mapped to an index:\
+\
+0: 'What grade are you in?',\
+1: 'How well do you read in English?',\
+2: 'The game grabs my attention.',\
+3: 'I like watching TV shows about history.',\
+4: 'Jo is friendly.',\
+5: 'I think the characters are funny.',\
+6: 'The characters say things that make me laugh.',\
+7: 'Time flies while I\'m playing the game.',\
+8: 'I like reading about history.',\
+9: 'I like Jo.',\
+10: 'Jo is kind.',\
+11: 'The characters say funny things.',\
+12: 'I forget what\'s around me while playing the game.',\
+13: 'I like learning history very much.',\
+14: 'I think learning history is fun.',\
+15: 'I can relate to Jo.',\
+16: 'The characters are entertaining.',\
+17: 'I feel emotionally involved in the game.'
 
 #### Change Log
 Versions:
