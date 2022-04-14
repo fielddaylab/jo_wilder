@@ -23,13 +23,13 @@ else if (script_type !== null) {
     console.log(script_type);
     console.log("Loading custom script "+script_type);
     if (script_type === "dry") {
-        LOAD_DATA_TYPE = LOG_DATA_DRY;
+        LOAD_DATA_TYPE = LOG_DATA_SCAFFOLD;
     }
     else if (script_type === "nohumor") {
-        LOAD_DATA_TYPE = LOG_DATA_NOHUMOR;
+        LOAD_DATA_TYPE = LOG_DATA_SCAFFOLD;
     }
     else if (script_type === "nosnark") {
-        LOAD_DATA_TYPE = LOG_DATA_NOSNARK;
+        LOAD_DATA_TYPE = LOG_DATA_NORMAL;
     }
     else if (script_type === "original") {
         LOAD_DATA_TYPE = LOG_DATA_NORMAL;
@@ -46,6 +46,9 @@ else if (LOAD_DATA_TYPE == LOG_DATA_NOHUMOR) {
 }
 else if (LOAD_DATA_TYPE == LOG_DATA_NOSNARK) {
     loadScriptSync('src/scenes/data_nosnark.js');
+}
+else if (LOAD_DATA_TYPE == LOG_DATA_SCAFFOLD) {
+    loadScriptSync('src/scenes/data_scaffold.js');
 }
 else if (LOAD_DATA_TYPE == LOG_DATA_NORMAL) {
     loadScriptSync('src/scenes/data.js');
