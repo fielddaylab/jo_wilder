@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ENGINE_DD=../assets/dataDry
-GAME_DD=assets/dataDry
+ENGINE_DD=../assets/dataScaffolding
+GAME_DD=assets/dataScaffolding
 STUB_D=stubs
-OUT=data_dry.js
+OUT=data_scaffold.js
 FINAL=../src/scenes
 TTY=`tty`
 AUTOFIX="0"
