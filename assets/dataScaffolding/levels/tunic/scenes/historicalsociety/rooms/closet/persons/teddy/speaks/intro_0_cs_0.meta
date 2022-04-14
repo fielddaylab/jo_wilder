@@ -1,0 +1,68 @@
+tmp_speak.primary = 10;
+tmp_speak.options_wx = -304.576136087485;
+tmp_speak.options_wy = -68.81594167679211;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"!tunic.historicalsociety.closet.teddy.intro_0_cs_0",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 347.1628116087481;
+tmp_speak_command.wy = -91.70116639863073;
+tmp_speak_command.w = 158.4878692626953;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Hang tight, Teddy.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 347.08011754453304;
+tmp_speak_command.wy = -92.4336980412173;
+tmp_speak_command.w = 207;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I'll hurry back and then we can go exploring!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 347.19511737328924;
+tmp_speak_command.wy = -91.46336555951127;
+tmp_speak_command.w = 154;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Now where did I put my notebook?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 530.7201070605091;
+tmp_speak_command.wy = -118.09617335165774;
+tmp_speak_command.w = 26;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "😴";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

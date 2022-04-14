@@ -1,0 +1,36 @@
+tmp_observation.ww = 234.81590909090923;
+tmp_observation.wh = 252.10000000000014;
+tmp_observation.wx = 553.8592563989415;
+tmp_observation.wy = -509.52886878493587;
+tmp_observation.wz = 5;
+tmp_observation.act_wx = -162.8787878787879;
+tmp_observation.act_wy = -49.515151515151516;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = -15.636363636363637;
+tmp_observation.hover_icon_wy = 106.84848484848484;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "hover_ui";
+tmp_observation.hover_icon_animcycle_id = "hblip_interact";
+tmp_observation.notice_icon_animcycle_id = "notice";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "It's OK, girl! Look, I found you a cricket!";
+tmp_observation.blip_wx = 110.96370861174185;
+tmp_observation.blip_wy = -344.09886045333184;
+tmp_observation.blip_w = 170;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"tunic.wildlife.center.crane_ranger",
+"!self",
+]];
+

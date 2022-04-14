@@ -1,0 +1,251 @@
+tmp_speak.primary = 99;
+tmp_speak.options_wx = 210.5;
+tmp_speak.options_wy = 16.999999999999986;
+tmp_speak.options_w = 161;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.library.microfiche.reader.paper2.bingo",
+"!self",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 127.67099489902017;
+tmp_speak_command.wy = 12.7714285714286;
+tmp_speak_command.w = 188.0078582763672;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_jo_angry";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I need to find Wells!!!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -0.354261001317802;
+tmp_speak_command.wy = 137.20000000000005;
+tmp_speak_command.w = 144;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Calm down, kid. I haven't seen him.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 128.1571451931714;
+tmp_speak_command.wy = 12.085714285714264;
+tmp_speak_command.w = 158;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I can't calm down. This is important!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 0.7858526940377999;
+tmp_speak_command.wy = 140.0285714285713;
+tmp_speak_command.w = 188.89581298828125;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Sorry, can't help you.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 128.15714285714287;
+tmp_speak_command.wy = 14.771428571428578;
+tmp_speak_command.w = 81.471923828125;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Ugh. Fine.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 130.41428571428582;
+tmp_speak_command.wy = 11.314285714285703;
+tmp_speak_command.w = 148;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Do you have any info on Theodora Youmans?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -5.757142857142945;
+tmp_speak_command.wy = 138.77142857142857;
+tmp_speak_command.w = 227;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Theodora Youmans? Is that who owned the shirt?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 130.41428571428582;
+tmp_speak_command.wy = 11.314285714285703;
+tmp_speak_command.w = 34.74395751953125;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Yep.";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 0.3857142857142435;
+tmp_speak_command.wy = 139.0285714285714;
+tmp_speak_command.w = 194.871826171875;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_happy";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Why didn't you say so?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -3.871428571428588;
+tmp_speak_command.wy = 135.05714285714288;
+tmp_speak_command.w = 225;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Youmans was a suffragist here in Wisconsin.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -3.871428571428588;
+tmp_speak_command.wy = 135.05714285714288;
+tmp_speak_command.w = 251;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "She led marches and helped women get the right to vote!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 127.41428571428581;
+tmp_speak_command.wy = 17.314285714285706;
+tmp_speak_command.w = 159;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Wait a sec. Women couldn't vote?!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -2.1000000000000583;
+tmp_speak_command.wy = 138.94285714285706;
+tmp_speak_command.w = 224;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Nope. But Youmans and other suffragists worked hard to change that.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -2.1000000000000583;
+tmp_speak_command.wy = 138.94285714285706;
+tmp_speak_command.w = 229;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Thanks to them, Wisconsin was the first state to approve votes for women!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 129.67142857142875;
+tmp_speak_command.wy = 9.94285714285714;
+tmp_speak_command.w = 44.51197814941406;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Wow!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -2.7285714285713496;
+tmp_speak_command.wy = 136.97142857142862;
+tmp_speak_command.w = 242;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Here's a call number to find more info in the Stacks.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 133.18571428571425;
+tmp_speak_command.wy = 12.000000000000078;
+tmp_speak_command.w = 199.07183837890625;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Where are the Stacks?";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 0.8999999999999986;
+tmp_speak_command.wy = 136.25714285714284;
+tmp_speak_command.w = 201.83180236816406;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Right outside the door.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

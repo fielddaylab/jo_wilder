@@ -1,0 +1,41 @@
+tmp_speak.primary = 0;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -111.71908320798359;
+tmp_speak_command.wy = -58.63333184631336;
+tmp_speak_command.w = 140;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I checked at the Wildlife Center. It's not a deer hoof!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 198.08755173407144;
+tmp_speak_command.wy = 133.89405624229482;
+tmp_speak_command.w = 97;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Hmmm. Then what is our flag?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

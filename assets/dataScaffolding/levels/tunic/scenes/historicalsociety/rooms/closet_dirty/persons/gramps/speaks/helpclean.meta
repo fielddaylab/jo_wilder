@@ -1,0 +1,32 @@
+tmp_speak.primary = 1;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"!tunic.historicalsociety.closet_dirty.trigger_coffee",
+],[
+"!tunic.historicalsociety.closet_dirty.trigger_scarf",
+]];
+
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -701.6135384450001;
+tmp_speak_command.wy = 61.08328437966023;
+tmp_speak_command.w = 210.66380310058594;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Can you help me tidy up?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

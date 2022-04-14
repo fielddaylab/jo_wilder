@@ -1,0 +1,29 @@
+tmp_speak.primary = 98;
+tmp_speak.options_wx = -279.9644806234643;
+tmp_speak.options_wy = 299.0676710642626;
+tmp_speak.options_w = 257;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"!tunic.library.frontdesk.wellsbadge.hub",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -440.3409573303454;
+tmp_speak_command.wy = 265.7532743672127;
+tmp_speak_command.w = 203;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Did you drop something, Dear? There's a card on the floor.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

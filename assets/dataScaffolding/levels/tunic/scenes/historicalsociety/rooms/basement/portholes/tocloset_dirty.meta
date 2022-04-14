@@ -1,0 +1,35 @@
+tmp_porthole.ww = 176.7878787878788;
+tmp_porthole.wh = 254.24242424242425;
+tmp_porthole.wx = 161.89882103462503;
+tmp_porthole.wy = -17.911441762352183;
+tmp_porthole.wz = -1;
+tmp_porthole.act_wx = 14.854463191345499;
+tmp_porthole.act_wy = -103.91054119884059;
+tmp_porthole.act_anim = 1;
+tmp_porthole.hover_icon_wx = 5.090909090909119;
+tmp_porthole.hover_icon_wy = 97.09090909090912;
+tmp_porthole.animcycle_id = "null";
+tmp_porthole.hover_cursor_animcycle_id = "hover_ui";
+tmp_porthole.hover_icon_animcycle_id = "hblip_door";
+tmp_porthole.notice_icon_animcycle_id = "null";
+tmp_porthole.audio_id = "door";
+tmp_porthole.deck_animcycle_ids = [
+];
+tmp_porthole.target_room = "closet_dirty";
+tmp_porthole.target_start_wx = -374.75951624996645;
+tmp_porthole.target_start_wy = -34.4078948742569;
+tmp_porthole.notifications_persistent = 0;
+tmp_porthole.raw_notifications = [
+];
+tmp_porthole.raw_notification_ws = [
+];
+tmp_porthole.notification_reqs = [[
+]];
+tmp_porthole.notice_reqs = [[
+]];
+tmp_porthole.reqs = [[
+"!tunic.capitol_1.hall.chap2_finale_c",
+],[
+"tunic.historicalsociety.cage",
+]];
+

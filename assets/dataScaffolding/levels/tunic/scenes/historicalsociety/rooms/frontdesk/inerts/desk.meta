@@ -1,0 +1,12 @@
+tmp_inert.ww = 423.94524295076604;
+tmp_inert.wh = 241.7588850174216;
+tmp_inert.wx = -16.65715515853961;
+tmp_inert.wy = -47.879442508710795;
+tmp_inert.wz = 4;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "frontdesk";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

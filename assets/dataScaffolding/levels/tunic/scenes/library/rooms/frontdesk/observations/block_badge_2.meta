@@ -1,0 +1,35 @@
+tmp_observation.ww = 136.51146018325016;
+tmp_observation.wh = 307.1814585388915;
+tmp_observation.wx = -832.0059884636182;
+tmp_observation.wy = 75.87016258595946;
+tmp_observation.wz = 0;
+tmp_observation.act_wx = 0;
+tmp_observation.act_wy = 0;
+tmp_observation.act_anim = 0;
+tmp_observation.hover_icon_wx = 0;
+tmp_observation.hover_icon_wy = 0;
+tmp_observation.animcycle_id = "null";
+tmp_observation.hover_cursor_animcycle_id = "null";
+tmp_observation.hover_icon_animcycle_id = "null";
+tmp_observation.notice_icon_animcycle_id = "null";
+tmp_observation.audio_id = "null";
+tmp_observation.deck_animcycle_ids = [
+];
+tmp_observation.raw_text = "I should ask the librarian why Wells was here.";
+tmp_observation.blip_wx = -825.170180015727;
+tmp_observation.blip_wy = 266.78842885624107;
+tmp_observation.blip_w = 229;
+tmp_observation.blip_h = 30;
+tmp_observation.notifications_persistent = 0;
+tmp_observation.raw_notifications = [
+];
+tmp_observation.raw_notification_ws = [
+];
+tmp_observation.notice_reqs = [[
+]];
+tmp_observation.notification_reqs = [[
+]];
+tmp_observation.reqs = [[
+"tunic.library.frontdesk.wellsbadge.hub",
+"!tunic.library.frontdesk.worker.wells",
+]];

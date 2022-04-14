@@ -1,0 +1,19 @@
+tmp_zone.ww = 54.99999999999998;
+tmp_zone.wh = 42.000000000000014;
+tmp_zone.wx = -27.50000000000001;
+tmp_zone.wy = -222.99999999999997;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "microfiche";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "paper0";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+]];
+

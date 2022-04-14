@@ -1,0 +1,32 @@
+tmp_person.ww = 199.31861646106404;
+tmp_person.wh = 343.25757575757586;
+tmp_person.wx = -154.03719002588088;
+tmp_person.wy = -5.795454545454618;
+tmp_person.wz = 0;
+tmp_person.act_wx = 245.29136436273882;
+tmp_person.act_wy = -41.78567838584007;
+tmp_person.act_anim = 1;
+tmp_person.hover_icon_wx = 86.3636363642325;
+tmp_person.hover_icon_wy = 172.72727272727272;
+tmp_person.animcycle_id = "gramps";
+tmp_person.hover_cursor_animcycle_id = "hover_ui";
+tmp_person.hover_icon_animcycle_id = "hblip_person";
+tmp_person.notice_icon_animcycle_id = "notice";
+tmp_person.audio_id = "null";
+tmp_person.deck_animcycle_ids = [
+];
+tmp_person.notifications_persistent = 0;
+tmp_person.raw_notifications = [
+];
+tmp_person.raw_notification_ws = [
+];
+tmp_person.notice_reqs = [[
+"!self",
+]];
+tmp_person.notification_reqs = [[
+]];
+tmp_person.reqs = [[
+"tunic.historicalsociety.basement.savedteddy",
+"!tunic.historicalsociety.entry.groupconvo_flag",
+]];
+

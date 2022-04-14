@@ -1,0 +1,56 @@
+tmp_speak.primary = 1;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"tunic.historicalsociety.closet_dirty",
+"!tunic.historicalsociety.stacks.journals.pic_2.bingo",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 198.92932259478476;
+tmp_speak_command.wy = 133.0549836166019;
+tmp_speak_command.w = 279;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Jolie! I was hoping you'd stop by. Any news on the shirt artifact?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -131.19960277377777;
+tmp_speak_command.wy = -76.51211972118566;
+tmp_speak_command.w = 196;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I haven't quite figured it out just yet...";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 196.73113315695878;
+tmp_speak_command.wy = 131.65238244331655;
+tmp_speak_command.w = 226;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Well, get on it. I'm counting on you and your gramps to figure this out!";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

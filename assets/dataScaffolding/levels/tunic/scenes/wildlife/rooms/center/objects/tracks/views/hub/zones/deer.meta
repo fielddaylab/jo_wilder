@@ -1,0 +1,22 @@
+tmp_zone.ww = 84;
+tmp_zone.wh = 124.00000000000003;
+tmp_zone.wx = 274;
+tmp_zone.wy = -29.00000000000002;
+tmp_zone.animcycle_id = "null";
+tmp_zone.audio_id = "null";
+tmp_zone.deck_animcycle_ids = [
+];
+tmp_zone.target_view = "hub";
+tmp_zone.notifications_persistent = 0;
+tmp_zone.raw_notifications = [
+"That hoofprint doesn't match the flag!",
+];
+tmp_zone.raw_notification_ws = [
+];
+tmp_zone.notification_reqs = [[
+]];
+tmp_zone.reqs = [[
+"tunic.wildlife.center.expert.removed_cup",
+"!tunic.wildlife.center.tracks.hub.deer",
+]];
+

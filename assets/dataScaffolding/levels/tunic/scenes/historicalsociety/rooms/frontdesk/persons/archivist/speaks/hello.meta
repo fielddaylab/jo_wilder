@@ -1,0 +1,94 @@
+tmp_speak.primary = 100;
+tmp_speak.options_wx = 100;
+tmp_speak.options_wy = 100;
+tmp_speak.options_w = 100;
+tmp_speak.options_h = 30;
+tmp_speak.notifications_persistent = 0;
+tmp_speak.raw_notifications = [
+];
+tmp_speak.raw_notification_ws = [
+];
+tmp_speak.notification_reqs = [[
+]];
+tmp_speak.reqs = [[
+"!tunic.historicalsociety.frontdesk.archivist.hello",
+]];
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 126.83852131219555;
+tmp_speak_command.wy = 12.472876151484089;
+tmp_speak_command.w = 143.1278839111328;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I need your help!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -89.83874385236948;
+tmp_speak_command.wy = 140.55271238485147;
+tmp_speak_command.w = 161.75186157226562;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "*grumble grumble*";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -91.83630238851185;
+tmp_speak_command.wy = 142.5527123848516;
+tmp_speak_command.w = 113.70390319824219;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "And you are?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 125.1064486997362;
+tmp_speak_command.wy = 15.877175025588455;
+tmp_speak_command.w = 195.20782470703125;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_jo_happy";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I'm Leopold's grandkid!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -91.45041752179961;
+tmp_speak_command.wy = 142.85056294779932;
+tmp_speak_command.w = 223.31178283691406;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "I don't have time for kids.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -89.75332650971923;
+tmp_speak_command.wy = 141.82906857727733;
+tmp_speak_command.w = 250;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "emote_archivist_annoyed";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Now if only I could read this thing. Blasted tiny letters...";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

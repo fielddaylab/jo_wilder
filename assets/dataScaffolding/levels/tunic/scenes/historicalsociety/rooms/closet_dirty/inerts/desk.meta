@@ -1,0 +1,12 @@
+tmp_inert.ww = 441.4886923813697;
+tmp_inert.wh = 273.649948616459;
+tmp_inert.wx = -672.5462720210253;
+tmp_inert.wy = -71.41921340324193;
+tmp_inert.wz = 0.1;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "room_historicalsociety_closet_dirty_desk";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

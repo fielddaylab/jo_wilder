@@ -1,0 +1,12 @@
+tmp_inert.ww = 376.36219748078264;
+tmp_inert.wh = 141.74109910378758;
+tmp_inert.wx = 617.988778991006;
+tmp_inert.wy = 296.6550520992953;
+tmp_inert.wz = 0;
+tmp_inert.g = 0;
+tmp_inert.animcycle_id = "fgdust";
+tmp_inert.deck_animcycle_ids = [
+];
+tmp_inert.reqs = [[
+]];
+

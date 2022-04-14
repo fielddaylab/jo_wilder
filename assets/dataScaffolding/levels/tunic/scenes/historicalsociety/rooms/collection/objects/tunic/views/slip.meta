@@ -1,0 +1,23 @@
+tmp_view.primary = false;
+tmp_view.animcycle_id = "tunic_slip";
+tmp_view.magnify = false;
+tmp_view.audio_id = "null";
+tmp_view.deck_animcycle_ids = [
+];
+tmp_view.notifications_persistent = 0;
+tmp_view.raw_notifications = [
+"This looks like a clue!",
+"I'll record this in my notebook.",
+];
+tmp_view.raw_notification_ws = [
+190.95980834960938,
+268.4317321777344,
+];
+tmp_view.notification_reqs = [[
+"!self",
+]];
+tmp_view.exit_reqs = [[
+]];
+tmp_view.reqs = [[
+]];
+
