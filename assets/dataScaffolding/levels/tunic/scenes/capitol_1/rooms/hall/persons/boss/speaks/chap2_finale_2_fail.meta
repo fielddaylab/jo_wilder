@@ -26,3 +26,42 @@ tmp_speak_command.raw_atext = "That doesn't prove your case.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 153.04940976909307;
+tmp_speak_command.wy = 150.1272952479331;
+tmp_speak_command.w = 120.26390075683594;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Didn't the clothes expert show you some business cards?.";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = -108.77536026426078;
+tmp_speak_command.wy = -38.80649201947346;
+tmp_speak_command.w = 232.2637939453125;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Oh, that's right!";
+tmp_speak_command.speaker = SPEAKER_AVATAR;
+tmp_speak.commands.push(tmp_speak_command);
+
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 153.04940976909307;
+tmp_speak_command.wy = 152.1272952479331;
+tmp_speak_command.w = 106.26390075683594;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "Did those cards help?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+

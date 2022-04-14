@@ -26,3 +26,16 @@ tmp_speak_command.raw_atext = "That doesn't prove your case.";
 tmp_speak_command.speaker = SPEAKER_PERSON;
 tmp_speak.commands.push(tmp_speak_command);
 
+tmp_speak_command = new speak_command();
+tmp_speak_command.wx = 151.68830055970648;
+tmp_speak_command.wy = 148.43722982445928;
+tmp_speak_command.w = 106;
+tmp_speak_command.h = 30;
+tmp_speak_command.animcycle_id = "null";
+tmp_speak_command.audio_id = "null";
+tmp_speak_command.deck_animcycle_ids = [
+];
+tmp_speak_command.raw_atext = "What else was left behind at the apartment?";
+tmp_speak_command.speaker = SPEAKER_PERSON;
+tmp_speak.commands.push(tmp_speak_command);
+
