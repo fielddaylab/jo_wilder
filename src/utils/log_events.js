@@ -78,6 +78,7 @@ var LOG_DATA_DRY              = ENUM; ENUM++;
 var LOG_DATA_NOHUMOR          = ENUM; ENUM++;
 var LOG_DATA_NOSNARK          = ENUM; ENUM++;
 var LOG_DATA_NORMAL           = ENUM; ENUM++;
+var LOG_DATA_SCAFFOLD         = ENUM; ENUM++;
 
 var Logger = function(init){
   self = this;
