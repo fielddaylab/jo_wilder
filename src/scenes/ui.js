@@ -4171,15 +4171,18 @@ var cutsceneview = function()
               //   self.quiz = quiz1
               //   break;
               case "chapter2":
+                self.watch_quiz = false;
                 self.quiz = quiz2
                 break;
               case "chapter3":
-                self.quiz = quiz3
+                self.quiz = quizGramps
                 break;
               case "chapter4":
+                self.watch_quiz = false;
                 self.quiz = quiz4
                 break;
               case "chapter5":
+                self.watch_quiz = false;
                 self.quiz = quiz5
                 break;
             }
