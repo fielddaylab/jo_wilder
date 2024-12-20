@@ -1,0 +1,3 @@
+[submodule "FloatingDropdown"]
+	path = FloatingDropdown
+	url = https://github.com/fielddaylab/FloatingDropdown.git
